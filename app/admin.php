@@ -32,6 +32,7 @@ scratch. This page gets rid of all links and provides the needed markup only.
         src="https://maps.googleapis.com/maps/api/js?key=AIzaSyBu-916DdpKAjTmJNIgngS6HL_kDIKU0aU&callback=myMap"></script>
     <link rel="stylesheet" type="text/css" href="<?=BASE_URL?>css/stylehead.css">
 </head>
+
 <!--
 BODY TAG OPTIONS:
 =================

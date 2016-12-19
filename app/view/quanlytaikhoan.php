@@ -82,7 +82,7 @@ div.container {
       <ul class="sidebar-menu">
         <li class="header">CHỨC NĂNG CHÍNH</li>
          <li class="treeview">
-          <a href="../starter.html">
+          <a href="<?=BASE_URL?>controlleradmin/admin">
             <i class="glyphicon glyphicon-home"></i> <span>HOME</span>
             <span class="pull-right-container">
               <!-- <i class="fa fa-angle-left pull-right"></i> -->
@@ -185,8 +185,6 @@ div.container {
           <div class="polaroid">
             <table class="table">
               <tr>
-                <td>USER</td>
-                <td>PASS</td>
                 <td>HO TÊN</td>
                 <td>ĐỊA CHỈ</td>
                 <td>ĐIỆN THOẠI</td>
@@ -200,14 +198,19 @@ div.container {
                 while ($row = mysqli_fetch_assoc($mysql)) {
               ?>
                 <tr>
-                  <td><?php echo $row['tendangnhap']; ?></td>
-                  <td><?php echo $row['matkhau']; ?></td>
+                <form action="<?=BASE_URL?>controllertaikhoan/trangupdate" method="POST">
+                <input type="hidden" id="txt1" name="txt1" value="<?php echo $row['tendangnhap'];?>">
+                <input type="hidden" name="txt2" value="<?php echo $row['matkhau'];?>">
+                <input type="hidden" name="txt6" value="<?php echo $row['id_vaitro'];?>">
+                <input type="hidden" name="txt3" value="<?php echo $row['hoten'];?>">
+                <input type="hidden" name="txt4" value="<?php echo $row['diachi'];?>">
+                <input type="hidden" name="txt5" value="<?php echo $row['dienthoai'];?>">
                   <td><?php echo $row['hoten']; ?></td>
                   <td><?php echo $row['diachi']; ?></td>
                   <td><?php echo $row['dienthoai']; ?></td>
                   <td><button class="btn btn-info"> UPDATE</button></td>
-                  <td><button class="btn btn-info"> DELETE</button></td>
-
+                </form>
+                 <td><a href="<?=BASE_URL?>controllertaikhoan/delete/user=<?php echo $row['tendangnhap'];?>"<button type="button" class="btn btn-info"> DELETE</button></td>
               </tr>
                <?php  } ?>
             </table>
