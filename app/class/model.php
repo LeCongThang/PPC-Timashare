@@ -1,71 +1,139 @@
 <?php
-class model{
 
-public $db;
+class model
+{
 
-public function __construct(){
+    public $db;
 
-	$this->db= new mysqli(HOST, USER_DB, PASS_DB, DB_NAME);	
-	$this->db->set_charset("utf8");
+    public function __construct()
+    {
 
-} //construct
+        $this->db = new mysqli(HOST, USER_DB, PASS_DB, DB_NAME);
+        $this->db->set_charset("utf8");
 
-public function closeDatabase(){
-    if($this->db){
-        mysqli_close($this->db);
+    } //construct
+
+    public function closeDatabase()
+    {
+        if ($this->db) {
+            mysqli_close($this->db);
+        }
     }
-}
 
-public function laydanhsach($bang){
-    $sql = "SELECT * FROM ".$bang;
-    if(!$kq = $this->db->query($sql))
-        die($this->db->error);
-    foreach ($kq as $row) {
-        $data = $row;
+    public function laydanhsach($bang)
+    {
+        $sql = "SELECT * FROM " . $bang;
+        $result = mysqli_query($this->db, $sql);
+        if (!$result) {
+            die("Error in query");
+        }
+        $list = array();
+        while ($row = mysqli_fetch_assoc($result)) {
+            $list[] = $row;
+        }
+        //remove out of memory
+        mysqli_free_result($result);
+        return $list;
     }
-    return $data; 
-}
 
-public function laymail(){
-    $sql = "SELECT * FROM lienhe WHERE trangthai = 0";
-    if(!$kq = $this->db->query($sql))
-        die($this->db->error);
-    foreach ($kq as $row) {
-        $data = $row;
+    public function layThongTinChiTietKhuNghiDuong($id)
+    {
+        $sql = "SELECT * FROM khunghiduong WHERE id =".$id;
+        if (!$kq = $this->db->query($sql)) die($this->db->error);
+        if (!$kq) return FALSE;
+        return $kq->fetch_assoc();
     }
-    return $data; 
-}
 
-public function dakiemtramail($id){
-    $sql = "UPDATE 'lienhe' SET 'trangthai' = '1' WHERE 'id' = ".$id;
-    if(!$kq = $this->db->query($sql))
-        die($this->db->error);
-    return true; 
-}
+    public function laymail()
+    {
+        $sql = "SELECT * FROM lienhe WHERE trangthai = 0";
+        if (!$kq = $this->db->query($sql))
+            die($this->db->error);
+        foreach ($kq as $row) {
+            $data = $row;
+        }
+        return $data;
+    }
 
-public function xulydangnhap($sql){
-    if(!$kq = $this->db->query($sql))
-        die($this->db->error);
+    public function dakiemtramail($id)
+    {
+        $sql = "UPDATE 'lienhe' SET 'trangthai' = '1' WHERE 'id' = " . $id;
+        if (!$kq = $this->db->query($sql))
+            die($this->db->error);
+        return true;
+    }
 
-    if($kq->num_rows==0)
+    public function xulydangnhap($tendangnhap, $matkhau)
+    {
+        $sql = "SELECT * FROM taikhoan WHERE tendangnhap='" . $tendangnhap . "' and matkhau='" . md5($matkhau) . "' and id_vaitro = 1";
+        if (!$kq = $this->db->query($sql))
+            die($this->db->error);
+
+
+        if ($kq->num_rows == 0)
+            return false;
+        $row = $kq->fetch_assoc();
+        return true;
+    }// xulydangnhap
+
+    public function themTaiKhoan($tendangnhap, $matkhau, $hoten, $diachi, $dienthoai, $loaithaikhoan)
+    {
+        $sql = "insert into taikhoan values ('" . $tendangnhap . "','" . md5($matkhau) . "'," . $loaithaikhoan . ",'" . $hoten . "','" . $diachi . "','" . $dienthoai . "')";
+        return mysqli_query($this->db, $sql);
+    }
+
+    public function themLienHe($ten, $dienthoai, $email, $tinnhan)
+    {
+        $sql = "insert into lienhe(ten_lienhe,sdt_lienhe,email_lienhe,conten_lienhe,trangthai) values ('" . $ten . "','" . $dienthoai . "','" . $email . "','" . $tinnhan . "',0)";
+        return mysqli_query($this->db, $sql);
+    }
+
+    public function booknow($tendangnhap, $idsp)
+    {
+        $sql = "insert into book_now(tendangnhap,idkhunghiduong) values ('" . $tendangnhap . "'," . $idsp . ")";
+        return mysqli_query($this->db, $sql);
+    }
+
+    public function readmor($idsp)
+    {
+        $sql = "SELECT * FROM khunghiduong WHERE id =" . $idsp;
+        return mysqli_query($this->db, $sql);
+    }
+
+    public function xemthongtincanhan($tendangnhap)
+    {
+        $sql = "SELECT * FROM taikhoan WHERE tendangnhap = '" . $tendangnhap . "'";
+        if (!$kq = $this->db->query($sql)) die($this->db->error);
+        if (!$kq) return FALSE;
+        return $kq->fetch_assoc();
+
+    }
+
+    public function kiemtrataikhoan($tendangnhap, $matkhau)
+    {
+        $sql = "SELECT * FROM taikhoan WHERE tendangnhap='" . $tendangnhap . "' and matkhau='" . md5($matkhau) . "' and id_vaitro = 1";
+        if (!$kq = $this->db->query($sql))
+            die($this->db->error);
+
+        if ($kq->num_rows == 0)
+            return false;
+        return true;
+    }// xulydangnhap
+
+    public function doimatkhau($tendangnhap, $matkhaucu, $matkhaumoi)
+    {
+        if ($this->kiemtrataikhoan($tendangnhap, $matkhaucu)) {
+            $sql = "UPDATE taikhoan SET matkhau='" . md5($matkhaumoi) . "' WHERE tendangnhap = '" . $tendangnhap . "'";
+            return mysqli_query($this->db, $sql);
+        }
         return false;
+    }
 
-    $row = $kq->fetch_assoc();
-    $_SESSTION['tendangnhap'] = $row['tendangnhap'];
-    
-    return true;
-}// xulydangnhap
-
-public function themTaiKhoan($tendangnhap,$matkhau,$hoten,$diachi,$dienthoai,$loaithaikhoan)
+    public function capnhatthongtintk($tendangnhap, $hoten, $diachi, $sodienthoai)
     {
-        $sql = "insert into taikhoan values ('".$tendangnhap."','".md5($matkhau)."',".$loaithaikhoan.",'".$hoten."','".$diachi."','".$dienthoai."')";
+        $sql = "UPDATE taikhoan SET hoten='" . $hoten . "', diachi='" . $diachi . "', dienthoai='" . $sodienthoai . "' WHERE tendangnhap = '" . $tendangnhap . "'";
         return mysqli_query($this->db, $sql);
     }
 
-public function themLienHe($ten,$dienthoai,$email,$tinnhan)
-    {
-        $sql = "insert into lienhe(ten_lienhe,sdt_lienhe,email_lienhe,conten_lienhe,trangthai) values ('".$ten."','".$dienthoai."','".$email."','".$tinnhan."',0)";
-        return mysqli_query($this->db, $sql);
-    }
 
 }//class

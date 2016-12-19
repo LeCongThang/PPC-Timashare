@@ -4,7 +4,6 @@ session_start();
 require_once "config.php";
 
 $url = $_SERVER['REQUEST_URI'];
-
 //$kq = tach_url($url, $lang, $cname, $action, $params);
 $kq = tach_url($url, $cname, $action, $params);
 
@@ -67,7 +66,7 @@ function tach_url($url, &$cname, &$action, &$params){
 		return TRUE;
 	}
 
-	$action = isset($arr[3])?$arr[3]:'';
+	$action = $arr[3];
 	if($action==""){
 		$action = DEFAULT_ACTION;
 		$params = NULL;

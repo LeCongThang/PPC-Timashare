@@ -1,6 +1,6 @@
 <?php
-define("BASE_URL",'http://192.168.50.4/ppctimeshare/');
-define("BASE_DIR", "/ppctimeshare/");
+define("BASE_URL",'http://localhost:8080/PPC-Timashare/');
+define("BASE_DIR", "/PPC-Timashare/");
 
 define("HOST", "localhost");
 define('DB_NAME',  "ppctimeshare");

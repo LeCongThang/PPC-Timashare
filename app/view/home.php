@@ -204,21 +204,21 @@
                     <!-- <span class="input-group-addon" id="basic-addon1">@</span> -->
                     <input type="text" class="form-control" placeholder="YOUR NAME"
                            style="width:100%;border:1px solid grey;border-radius:2px;" aria-describedby="basic-addon1" name="ten"
-                           id="banner_5">
+                           id="ten">
                 </div>
             </div>
             <div class="col-md-4 col-sm-12">
                 <div class="input-group" style="width:100%;">
                     <!-- <span class="input-group-addon" id="basic-addon1">@</span> -->
                     <input type="text" class="form-control" style="width:100%;border:1px solid grey; border-radius:2px;"
-                           aria-describedby="basic-addon1" id="banner_5" placeholder="YOUR PHONE"name="dienthoai">
+                           aria-describedby="basic-addon1" id="dienthoai" placeholder="YOUR PHONE"name="dienthoai">
                 </div>
             </div>
             <div class="col-md-4 col-sm-12">
                 <div class="input-group" style="width:100%;">
                     <!-- <span class="input-group-addon" id="basic-addon1">@</span> -->
                     <input type="text" class="form-control" style="width:100%;border:1px solid grey; border-radius:2px;"
-                           aria-describedby="basic-addon1" id="banner_5" placeholder="YOUR EMAIL"name="email">
+                           aria-describedby="basic-addon1" id="email" placeholder="YOUR EMAIL"name="email" >
                 </div>
             </div>
             <div class="col-md-12 col-sm-12" id="banner_5">
@@ -227,9 +227,11 @@
                               class="ckeditor" id="ckeditor" placeholder="YOUR MESSAGE"name="loinhan">
                     </textarea>
                 </div>
+                <p><span style="color: red;" id="thongbaoguilh"></span></p>
             </div>
+
             <div class="col-md-4 col-sm-12">
-                <div class="input-group" style="width:100%;">
+                <div class="input-group" style="width:100%;text-align: center">
                     <!-- <span class="input-group-addon" id="basic-addon1">@</span> -->
                     <input type="submit" class="form-control" style="width:100%;border:1px solid grey; border-radius:2px;"
                            aria-describedby="basic-addon1" id="btn_gui" value="Gửi">

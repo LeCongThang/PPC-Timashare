@@ -13,12 +13,8 @@ function __construct($action,$params){
 }//construct
 
 function index(){
-	require_once "view/dangnhap.php"; //nạp layout
+	require_once "view/dangnhapadmin.php"; //nạp layout
 }//index
-
-public function loadingadmin(){
-        include_once('admin.php');
-    }
 
 public function dangNhap()
     {
@@ -26,7 +22,6 @@ public function dangNhap()
         $matkhau = $_POST["password"];
 
         $ktTonTai = "SELECT * FROM taikhoan WHERE tendangnhap='" . $tendangnhap . "' and matkhau='" . md5($matkhau) . "' and id_vaitro = 2";
-        // echo $ktTonTai;
         $truyvanktTonTai = $this->bv->xulydangnhap($ktTonTai);
         if ($truyvanktTonTai){
             echo "<script>alert('Đăng nhập thành công')</script>";
@@ -41,14 +36,13 @@ public function dangNhap()
                 setcookie("tendangnhap",$tendangnhap,time());
                 setcookie("matkhau",$matkhau,time());
             }
-            // header("location:")        
-          $this->loadingadmin();
+            require_once "view/home.php";
         }
         else{
             echo "<script>alert('Tài khoản hoặc mật khẩu không đúng')</script>";
+            require_once "view/home.php";
         }
     }
-
 
 
 }//class
