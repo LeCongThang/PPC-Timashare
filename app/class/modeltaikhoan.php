@@ -17,11 +17,25 @@ public function closeDatabase(){
     }
 }
 
-public function layuser($user,$pass,$hoten,$diachi,$dienthoai,$id){
-    $sql="DELETE taikhoan SET tendangnhap='$user', matkhau='$pass',id_vaitro='$id', hoten='$hoten',diachi = '$diachi',dienthoai = '$dienthoai'   WHERE user='".$user."'";
+public function delete($user){
+    $sql = "DELETE FROM taikhoan WHERE tendangnhap = '$user' ";
     $kq = $this->db->query($sql);
-    return true;	
+    return true;
 }
+
+public  function update($user,$pass,$hoten,$diachi,$sodienthoai,$vaitro){
+    $sql = "UPDATE taikhoan SET tendangnhap='$user',matkhau='$pass',id_vaitro='$vaitro',hoten='$hoten',
+diachi='$diachi',dienthoai=$sodienthoai WHERE tendangnhap='$user'";
+    $kq = $this->db->query($sql);
+    return true;
+}
+
+    public function load($user){
+        $sql = "SELECT * FROM taikhoan WHERE tendangnhap='$user' limit 1 ";
+        $kq = $this->db->query($sql);
+        $row= $kq->fetch_assoc();
+        return $row;
+    }
 
 }//class
 

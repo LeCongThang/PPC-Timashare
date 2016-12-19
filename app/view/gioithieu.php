@@ -182,6 +182,7 @@ mysqli_query($connect, "SET NAMES 'UTF8'");
                     $sql = "SELECT*FROM gioithieu";
                     $myquery = mysqli_query($connect, $sql);
                     $row = mysqli_fetch_assoc($myquery);
+
                     ?>
                     <div class="col-md-12">
                         <div class="box box-primary">

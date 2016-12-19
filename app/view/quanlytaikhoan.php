@@ -198,7 +198,7 @@ div.container {
                 while ($row = mysqli_fetch_assoc($mysql)) {
               ?>
                 <tr>
-                <form action="<?=BASE_URL?>controllertaikhoan/trangupdate" method="POST">
+                <form action="<?=BASE_URL?>controllertaikhoan/file/<?php echo $row['tendangnhap'];?>" method="POST">
                 <input type="hidden" id="txt1" name="txt1" value="<?php echo $row['tendangnhap'];?>">
                 <input type="hidden" name="txt2" value="<?php echo $row['matkhau'];?>">
                 <input type="hidden" name="txt6" value="<?php echo $row['id_vaitro'];?>">
@@ -210,7 +210,7 @@ div.container {
                   <td><?php echo $row['dienthoai']; ?></td>
                   <td><button class="btn btn-info"> UPDATE</button></td>
                 </form>
-                 <td><a href="<?=BASE_URL?>controllertaikhoan/delete/user=<?php echo $row['tendangnhap'];?>"<button type="button" class="btn btn-info"> DELETE</button></td>
+                 <td><a href="<?=BASE_URL?>controllertaikhoan/delete/<?php echo $row['tendangnhap'];?>"<button type="button" class="btn btn-info"> DELETE</button></td>
               </tr>
                <?php  } ?>
             </table>

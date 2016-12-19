@@ -66,7 +66,6 @@ desired effect
       <!-- logo for regular state and mobile devices -->
       <span class="logo-lg"><b>PPC</b>TIMESHARE</span>
     </a>
-
    
   </header>
   <!-- Left side column. contains the logo and sidebar -->

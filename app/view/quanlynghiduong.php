@@ -197,7 +197,7 @@ mysqli_query($connect, "SET NAMES 'UTF8'");
                             <form action="<?= BASE_URL ?>controllernghiduong/updatedata" method="POST"
                                   enctype="multipart/form-data">
                             <div class="polaroid">
-                                <div class="text-center">
+                                <div class="text-center"><br><br>
                                     <img src="<?= BASE_DIR ?><?php echo $row['img_khu']; ?> " alt="Norway"
                                          class="img-responsive center-block">
                                 </div>
