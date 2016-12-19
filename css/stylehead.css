@@ -1,0 +1,114 @@
+
+.navbar-header {
+    list-style:none;
+    margin:0;
+    padding:0;
+    text-align:center;
+}
+
+
+
+.navbar-brand img {
+	/*margin-top: -30px;*/
+   display: block;
+    height: 125px;
+    text-align: center;
+
+}
+.navbar-nav>li>a{
+	color: white;
+	font-weight: bold;
+    font-family: helvetica;
+    font-size: 14px;
+
+}
+
+#nav_bar{
+    margin-bottom: 0px;
+    height: 100px;
+}
+
+select#language option[value="AsiaEnglish"]   { background-image:url(../img/icon_en.png);   }
+.navbar-nav>li>select{
+    line-height: 20px;
+    position: relative;
+    display: block;
+    background: transparent;
+    border: none;
+    color: white;
+    margin-top: 15px;
+	font-weight: bold;
+}
+.btntt{
+    position: relative;
+    display: block;
+    background-color: #FFFF00;
+    color: black;
+    /*margin-right: 25px;*/
+	font-weight: bold;
+}
+.navbar{
+	background-color:transparent !important;
+   /* padding: 25px 0;*/
+    border: none;
+}
+
+
+.footer1 p{
+	text-align: left;
+	font-weight: bold;
+	line-height: 90%;
+}
+
+.footer1 .footerlogo img{
+	max-width: 70%;
+}
+
+
+.sdt {
+    border: none;
+    padding-left: 40px;
+    margin-top: 60px;
+}
+
+.dc {
+	border: none;
+    padding-left: 40px;
+    margin-top: 60px;
+}
+.footer1 {
+	margin-top: 30px;
+
+}
+
+@media screen and (min-width:768px){
+    .navbar-brand-centered {
+        position: absolute;
+        left: 47%;
+        display: block;
+        width: 160px;
+        text-align: center;
+       
+    }
+   /* .navbar>.container .navbar-brand-centered, 
+    .navbar>.container-fluid .navbar-brand-centered {
+        margin-left: -80px;
+    }*/
+}
+
+#btnBookNow{
+	background-color: #8B4726;
+	color: white;
+	font-weight: bold;
+	text-align: center;
+	margin-left: 48%;
+}
+
+#btnDangNhap{
+	font-size: 13px;
+	font-weight: bold;
+}
+
+#image_option{
+    width: 100%;
+}
