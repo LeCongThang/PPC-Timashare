@@ -1,27 +1,35 @@
-
 <?php
-class modelnghiduong{
 
-public $db;
+class modelnghiduong
+{
 
-public function __construct(){
+    public $db;
 
-    $this->db= new mysqli(HOST, USER_DB, PASS_DB, DB_NAME); 
-    $this->db->set_charset("utf8");
+    public function __construct()
+    {
 
-} //construct
+        $this->db = new mysqli(HOST, USER_DB, PASS_DB, DB_NAME);
+        $this->db->set_charset("utf8");
 
-public function closeDatabase(){
-    if($this->db){
-        mysqli_close($this->db);
+    } //construct
+
+    public function closeDatabase()
+    {
+        if ($this->db) {
+            mysqli_close($this->db);
+        }
     }
-}
 
-public function update($id,$diachi,$noidung,$sodienthoai,$hinh){
-    $sql="UPDATE khunghiduong SET diachi='".$diachi."',thongtin='".$noidung."' ,sdt='".$sodienthoai."' ,img_khu='".$hinh."'  WHERE id_khunghi='".$id."'";
-    $kq = $this->db->query($sql);
-    return true;
-}
+    public function update($id, $diachi, $noidung, $sodienthoai, $hinh)
+    {
+        $sql = "UPDATE khunghiduong SET diachi='" . $diachi . "',thongtin='" . $noidung . "' ,sdt='" . $sodienthoai."'";
+        if ($hinh != null) {
+            $sql .=  " ,img_khu='$hinh'";
+        }
+        $sql .= "  WHERE id_khunghi='{$id}'";
+        $kq = $this->db->query($sql);
+        return $kq;
+    }
 
 }//class
 
