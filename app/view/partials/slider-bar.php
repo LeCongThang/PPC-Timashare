@@ -36,7 +36,7 @@
 
             </li>
             <li class="treeview">
-                <a href="#">
+                <a href="<?= BASE_URL ?>controllerslider/index">
                     <i class="glyphicon glyphicon-picture"></i> <span>QUẢN LÝ ẢNH SLIDE</span>
                     <span class="pull-right-container">
               <!-- <i class="fa fa-angle-left pull-right"></i> -->
