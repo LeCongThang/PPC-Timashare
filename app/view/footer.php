@@ -193,18 +193,17 @@
 <script type="application/javascript">
     $(document).ready(function () {
         <!--Book now-->
-        var btnbooknow = document.getElementById("btnBookNow");
+        var btnBookNow = document.getElementById("btnBookNow");
         var modaldoimatkhau = document.getElementById('ModalDoiMatKhau');
-        btnbooknow.onclick = function (e) {
+
+        btnBookNow.onclick = function (e) {
             e.preventDefault();
             if (<?php echo isset($_SESSION['tendangnhap']) ? 'true' : 'false'; ?>) {
-                var idsp = 1;
-                var diachi = "/ppctimeshare/controller/booknow/" + idsp;
+                var idkhunghiduong = $('#idkhunghiduong').val();
+                var diachi = "/ppctimeshare/controller/booknow/" + idkhunghiduong;
                 $.ajax({
-                    //type : "POST",
                     url: diachi, cache: false,
                     success: function (dulieu) {
-
                     }
                 });
             }

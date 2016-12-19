@@ -1,4 +1,4 @@
-<?php 
+<?php
 $lang='vi';
 session_start();
 require_once "config.php";
@@ -7,12 +7,12 @@ $url = $_SERVER['REQUEST_URI'];
 //$kq = tach_url($url, $lang, $cname, $action, $params);
 $kq = tach_url($url, $cname, $action, $params);
 
-// if (class_exists($cname, true)==true) 
+// if (class_exists($cname, true)==true)
 // 	$c = new $cname($action, $params, $lang);
-// else 
-if (class_exists($cname, true)==true) 
+// else
+if (class_exists($cname, true)==true)
 	$c = new $cname($action, $params);
-else 
+else
 	die('Khong co controller '. $cname);
 
 require "lang_$lang.php";
@@ -20,7 +20,7 @@ ob_start();
 
 if (method_exists($c, $action))
 	$c ->$action();
-else 
+else
 	die('Khong co action'. $action);
 
 $str=ob_get_clean();
@@ -44,9 +44,9 @@ function tach_url($url, &$cname, &$action, &$params){
 	$arr = explode("/", $url);
 	if (count($arr)<=2)
 		return FALSE;
-	
+
 	// $lang= $arr[2];
-	// if (in_array(  $lang, explode(',',NGONNGU)  )==false) 
+	// if (in_array(  $lang, explode(',',NGONNGU)  )==false)
 	// 	$lang='vi';
 
 	// if(count($arr)==3){

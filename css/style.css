@@ -95,6 +95,16 @@ h2 {
 .modal-content {
     background-color: #fefefe;
     right: 0;
+    margin :auto;
+
+    padding: 5px;
+    border: 1px solid #888;
+    width: 40%;
+}
+
+#model-content-dn{
+    background-color: #fefefe;
+    right: 0;
     margin-left: 85%;
     position: absolute;
     padding: 5px;

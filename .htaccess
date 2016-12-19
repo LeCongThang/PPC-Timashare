@@ -1,5 +1,5 @@
 RewriteEngine On
-RewriteBase /PPC-Timashare/
+RewriteBase /PPC-Timeshare/
 RewriteRule css - [L]
 RewriteRule img - [L]
 RewriteRule js - [L]

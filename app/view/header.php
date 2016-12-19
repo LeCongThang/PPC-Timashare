@@ -200,88 +200,88 @@
                 echo '<div class="carousel-caption"><div class = "row"> <div class="col-md offset-4 col-md-8 bannerDecription">';
                 echo '<h3 class = "myh3h4">' . $khuNghiDuong['ten'] . '</h3>';
                 echo '<h4 class = "myh3h4">' . $khuNghiDuong['thongtin'] . '</h4>';
-                echo '<input type ="text" name = "idKhuNghiDuong" value ="' . $khuNghiDuong['id'] . '" style = "display: none">';
+                echo '<input type ="text" name = "idKhuNghiDuong" id = "idKhuNghiDuong" value ="' . $khuNghiDuong['id'] . '" style = "display: none">';
                 echo '</div></div>';
                 echo '<center><a href="" class="btn btn-default" style="margin-bottom:10px;" id="btnBookNow">BOOK
                             NOW</a></center></div></div>';
 
             }
             ?>
-<!--        </div>-->
-        <!-- Left and right controls -->
-        <a class="left carousel-control" href="#myCarousel" role="button" data-slide="prev">
-            <span class="glyphicon glyphicon-chevron-left" aria-hidden="true"></span>
-            <span class="sr-only">Previous</span>
-        </a>
-        <a class="right carousel-control" href="#myCarousel" role="button" data-slide="next">
-            <span class="glyphicon glyphicon-chevron-right" aria-hidden="true"></span>
-            <span class="sr-only">Next</span>
-        </a>
-    </div>
-    <div id="whitecaption">
-    </div>
-    <div class="container" id="contentslide">
-        <div class="row row-no-padding" id="row">
-            <div class="col-sm-12 col-sm-3">
-                <div class="thumbnail">
-                    <img src="img/banner_1.png">
-                    <div class="caption">
-                        <h5>Khu nghỉ dưỡng</h5>
-                        <h4>KRIS VUE</h4>
-                        <p>Kris Vue là dự án nhà ở dành cho các gia đình trẻ do công ty CapitalLand (Singapore) đầu
-                            tư
-                            và phát triển</p>
-                        <a href="about.html" class="btn btn-default" id="btnreadmore">READ MORE</a>
+            <!--        </div>-->
+            <!-- Left and right controls -->
+            <a class="left carousel-control" href="#myCarousel" role="button" data-slide="prev">
+                <span class="glyphicon glyphicon-chevron-left" aria-hidden="true"></span>
+                <span class="sr-only">Previous</span>
+            </a>
+            <a class="right carousel-control" href="#myCarousel" role="button" data-slide="next">
+                <span class="glyphicon glyphicon-chevron-right" aria-hidden="true"></span>
+                <span class="sr-only">Next</span>
+            </a>
+        </div>
+        <div id="whitecaption">
+        </div>
+        <div class="container" id="contentslide">
+            <div class="row row-no-padding" id="row">
+                <div class="col-sm-12 col-sm-3">
+                    <div class="thumbnail">
+                        <img src="img/banner_1.png">
+                        <div class="caption">
+                            <h5>Khu nghỉ dưỡng</h5>
+                            <h4>KRIS VUE</h4>
+                            <p>Kris Vue là dự án nhà ở dành cho các gia đình trẻ do công ty CapitalLand (Singapore) đầu
+                                tư
+                                và phát triển</p>
+                            <a href="about.html" class="btn btn-default" id="btnreadmore">READ MORE</a>
+                        </div>
                     </div>
                 </div>
-            </div>
-            <div class="col-sm-12 col-sm-3">
-                <div class="thumbnail">
-                    <img src="img/banner_2.png">
-                    <div class="caption">
-                        <h5>Khu nghỉ dưỡng</h5>
-                        <h4>VISTA VERDE</h4>
-                        <p>"Verde" có nghĩa là xanh ngát trong tiếng Tây Ban Nha, Vista Verde được thiết kế như một
-                            vườn
-                            ươm xanh mát</p>
-                        <a href="about.html" class="btn btn-default" id="btnreadmore">READ MORE</a>
+                <div class="col-sm-12 col-sm-3">
+                    <div class="thumbnail">
+                        <img src="img/banner_2.png">
+                        <div class="caption">
+                            <h5>Khu nghỉ dưỡng</h5>
+                            <h4>VISTA VERDE</h4>
+                            <p>"Verde" có nghĩa là xanh ngát trong tiếng Tây Ban Nha, Vista Verde được thiết kế như một
+                                vườn
+                                ươm xanh mát</p>
+                            <a href="about.html" class="btn btn-default" id="btnreadmore">READ MORE</a>
+                        </div>
                     </div>
                 </div>
-            </div>
-            <div class="col-sm-12 col-sm-3">
-                <div class="thumbnail">
-                    <img src="img/banner_3.png">
-                    <div class="caption">
-                        <h5>Khu nghỉ dưỡng</h5>
-                        <h4>FLC COMPLEX PHẠM HÙNG</h4>
-                        <p>Trải nghiệm giá trị của cuộc sống hiện đại, hoàn hảo với tổ hợp khu căn hộ, trung tâm
-                            thương
-                            mại - dịch vụ</p>
-                        <a href="about.html" class="btn btn-default" id="btnreadmore">READ MORE</a>
+                <div class="col-sm-12 col-sm-3">
+                    <div class="thumbnail">
+                        <img src="img/banner_3.png">
+                        <div class="caption">
+                            <h5>Khu nghỉ dưỡng</h5>
+                            <h4>FLC COMPLEX PHẠM HÙNG</h4>
+                            <p>Trải nghiệm giá trị của cuộc sống hiện đại, hoàn hảo với tổ hợp khu căn hộ, trung tâm
+                                thương
+                                mại - dịch vụ</p>
+                            <a href="about.html" class="btn btn-default" id="btnreadmore">READ MORE</a>
+                        </div>
                     </div>
                 </div>
-            </div>
-            <div class="col-sm-12 col-sm-3">
-                <div class="thumbnail">
-                    <img src="img/banner_4.png">
-                    <div class="caption">
-                        <h5>Khu nghỉ dưỡng</h5>
-                        <h4>KRIS VUE</h4>
-                        <p>Chủ đầu tư: Cty CVH Mùa Xuân Vị trí: đường Nguyễn Duy Trinh, Phường Bình Trưng Đông, Quận
-                            2,TPHCM</p>
-                        <a href="about.html" class="btn btn-default" id="btnreadmore">READ MORE</a>
+                <div class="col-sm-12 col-sm-3">
+                    <div class="thumbnail">
+                        <img src="img/banner_4.png">
+                        <div class="caption">
+                            <h5>Khu nghỉ dưỡng</h5>
+                            <h4>KRIS VUE</h4>
+                            <p>Chủ đầu tư: Cty CVH Mùa Xuân Vị trí: đường Nguyễn Duy Trinh, Phường Bình Trưng Đông, Quận
+                                2,TPHCM</p>
+                            <a href="about.html" class="btn btn-default" id="btnreadmore">READ MORE</a>
+                        </div>
                     </div>
                 </div>
-            </div>
-        </div><!--  End Row -->
-    </div> <!-- end container -->
+            </div><!--  End Row -->
+        </div> <!-- end container -->
 
-    <!--    Modal dang nhap -->
-    <?php include 'modaldangnhap.php'; ?>
-    <?php include 'modaldangky.php'; ?>
-    <?php include 'modaldoimatkhau.php'; ?>
-    <?php include 'modalquenmatkhau.php'; ?>
-    <div id="thongtincanhan"></div><?php include 'modalxemthongtincanhan.php'; ?> </div>
+        <!--    Modal dang nhap -->
+        <?php include 'modaldangnhap.php'; ?>
+        <?php include 'modaldangky.php'; ?>
+        <?php include 'modaldoimatkhau.php'; ?>
+        <?php include 'modalquenmatkhau.php'; ?>
+        <div id="thongtincanhan"></div><?php include 'modalxemthongtincanhan.php'; ?> </div>
 
 </header>
 
