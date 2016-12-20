@@ -1,5 +1,4 @@
 <aside class="main-sidebar">
-
     <!-- sidebar: style can be found in sidebar.less -->
     <section class="sidebar">
         <!-- Sidebar user panel -->
@@ -24,88 +23,59 @@
          </form> -->
         <!-- /.search form -->
         <!-- sidebar menu: : style can be found in sidebar.less -->
-        <ul class="sidebar-menu">
-            <li class="header">CHỨC NĂNG CHÍNH</li>
-            <li class="treeview">
-                <a href="../starter.html">
-                    <i class="glyphicon glyphicon-home"></i> <span>HOME</span>
-                    <span class="pull-right-container">
-              <!-- <i class="fa fa-angle-left pull-right"></i> -->
-            </span>
-                </a>
+        <?php
+            $menu = new menuhelper([
+                'items' => [
+                    [
+                        'title' => 'CHỨC NĂNG CHÍNH',
+                    ],
+                    [
+                        'title' => 'HOME',
+                        'url' => 'controlleradmin/index',
+                        'icon' => 'glyphicon-home',
+                    ],
+                    [
+                        'title' => 'QUẢN LÝ ẢNH SLIDE',
+                        'url' => 'controllerslider/index',
+                        'icon' => 'glyphicon-home',
+                    ],
+                    [
+                        'title' => 'GIỚI THIỆU',
+                        'url' => 'controllergioithieu/gioithieu',
+                        'icon' => 'glyphicon-home',
+                    ],
+                    [
+                        'title' => 'KHU NGHỈ DƯỠNG',
+                        'url' => 'controllernghiduong/nghiduong',
+                        'icon' => 'glyphicon-home',
+                    ],
+                    [
+                        'title' => 'BOOK',
+                        'url' => 'controlleradmin/index',
+                        'icon' => 'glyphicon-home',
+                    ],
+                    [
+                        'title' => 'MAIL BOX',
+                        'url' => 'controlleradmin/index',
+                        'icon' => 'glyphicon-home',
+                    ],
+                    [
+                        'title' => 'QUẢN LÝ VIDEO',
+                        'url' => 'controllervideo/video',
+                        'icon' => 'glyphicon-home',
+                    ],
+                    [
+                        'title' => 'QUẢN TÀI KHOẢN',
+                        'url' => 'controllertaikhoan/taikhoan',
+                        'icon' => 'glyphicon-home',
+                    ]
+                ],
+                'class' => 'sidebar-menu',
+            ], get_class($this) . "/" . $this->current_action);
 
-            </li>
-            <li class="treeview">
-                <a href="<?= BASE_URL ?>controllerslider/index">
-                    <i class="glyphicon glyphicon-picture"></i> <span>QUẢN LÝ ẢNH SLIDE</span>
-                    <span class="pull-right-container">
-              <!-- <i class="fa fa-angle-left pull-right"></i> -->
-            </span>
-                </a>
+            echo $menu->render();
+        ?>
 
-            </li>
-            <li class=" active treeview">
-                <a href="#">
-                    <i class="glyphicon glyphicon-flag"></i>
-                    <span>GIỚI THIỆU</span>
-                    <span class="pull-right-container">
-              <!-- <span class="label label-primary pull-right">4</span> -->
-            </span>
-                </a>
-                <!--  -->
-            </li>
-            <li class="treeview">
-                <a href="<?= BASE_URL ?>controllernghiduong/nghiduong">
-                    <i class="glyphicon glyphicon-globe"></i> <span>KHU NGHỈ DƯỠNG</span>
-                    <span class="pull-right-container">
-              <!-- <small class="label pull-right bg-green">new</small> -->
-            </span>
-                </a>
-
-            </li>
-            <li class="treeview">
-                <a href="#">
-                    <i class="glyphicon glyphicon-briefcase"></i>
-                    <span>BOOK </span>
-                    <span class="pull-right-container">
-              <!-- <i class="fa fa-angle-left pull-right"></i> -->
-            </span>
-                </a>
-
-            </li>
-            <li>
-                <a href="pages/widgets.html">
-                    <i class="glyphicon glyphicon-envelope"></i> <span>MAIL BOX</span>
-                    <span class="pull-right-container">
-              <!-- <small class="label pull-right bg-green">new</small> -->
-            </span>
-                </a>
-
-            </li>
-            <li>
-                <a href="<?= BASE_URL ?>controllervideo/video">
-                    <i class="glyphicon glyphicon-facetime-video"></i> <span>QUẢN LÝ VIDEO</span>
-                    <span class="pull-right-container">
-              <!-- <small class="label pull-right bg-green">new</small> -->
-            </span>
-                </a>
-
-            </li>
-            <li>
-                <a href="pages/widgets.html">
-                    <i class="glyphicon glyphicon-user"></i> <span>QUẢN TÀI KHOẢN</span>
-                    <span class="pull-right-container">
-              <!-- <small class="label pull-right bg-green">new</small> -->
-            </span>
-                </a>
-
-            </li>
-            <!-- HẾT -->
-            <!--   <li class="header">LABELS</li>
-              <li><a href="#"><i class="fa fa-circle-o text-red"></i> <span>Important</span></a></li>
-              <li><a href="#"><i class="fa fa-circle-o text-yellow"></i> <span>Warning</span></a></li>
-              <li><a href="#"><i class="fa fa-circle-o text-aqua"></i> <span>Information</span></a></li>
-            </ul> -->
-    </section>
+    </section>-->
     <!-- /.sidebar -->
 </aside>
