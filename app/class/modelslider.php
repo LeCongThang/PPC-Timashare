@@ -25,12 +25,13 @@ class modelslider
         return $kq;
     }
 
-    public function update($tieude, $noidung, $hinh)
+    public function update($id, $tieude, $noidung, $hinh)
     {
         $sql = "UPDATE slider SET title='" . $tieude . "', content='" . $noidung . "'";
         if ($hinh != null) {
             $sql .= ",image='" . $hinh . "'";
         }
+        $sql .= " where id = {$id}";
         $kq = $this->db->query($sql);
         return $kq;
     }

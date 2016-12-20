@@ -75,12 +75,13 @@ class controllerslider
             redirect(BASE_URL.'controllerslider/index');
         }
         $id = $this->params[0];
+
         if (count($_POST) > 0) {
             $hinh = $this->uploadHinh();
             $tieuDe = $_POST['title'];
             $noiDung = $_POST['content'];
-            $this->bv->update($tieuDe, $noiDung, $hinh);
-            redirect(BASE_URL.'controlerslider/index');
+            $this->bv->update($id, $tieuDe, $noiDung, $hinh);
+            redirect(BASE_URL.'controllerslider/index');
         }
         $data = $this->bv->get($id);
         require_once("view/create-slider.php");

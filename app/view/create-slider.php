@@ -68,7 +68,7 @@ $isUpdate = isset($this->params[0]);
                 </div>
                 <!-- /.col -->
 
-                <form action="<?= BASE_URL ?>controllerslider/create" method="POST" enctype="multipart/form-data">
+                <form  method="POST" enctype="multipart/form-data">
                     <div class="col-md-12">
                         <div class="box box-primary">
                             <div class="box-header with-border text-center">
