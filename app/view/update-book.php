@@ -51,7 +51,7 @@ $isUpdate = isset($this->params[0]);
     <div class="content-wrapper">
         <section class="content-header">
             <h1><b>
-                    <?php echo $isUpdate ? 'Sửa Slider' :'Thêm slider'; ?>
+                    Cập nhật
                 </b>
                 <!-- <small>13 new messages</small> -->
             </h1>
