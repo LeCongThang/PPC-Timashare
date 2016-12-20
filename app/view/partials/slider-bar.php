@@ -51,7 +51,7 @@
                     ],
                     [
                         'title' => 'BOOK',
-                        'url' => 'controlleradmin/index',
+                        'url' => 'controllerbook/index',
                         'icon' => 'glyphicon-home',
                     ],
                     [
