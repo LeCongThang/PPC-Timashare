@@ -23,6 +23,7 @@ $isUpdate = isset($this->params[0]);
          folder instead of downloading all of them to reduce the load. -->
     <link rel="stylesheet" href="<?= BASE_DIR ?>css/skins/_all-skins.min.css">
     <link rel="stylesheet" type="text/css" href="<?= BASE_URL ?>css/responsive.css">
+    <link rel="stylesheet" type="text/css" href="<?= BASE_URL ?>plugins/datepicker/datepicker3.css">
     <!-- <script type="text/javascript" src="http://code.jquery.com/jquery-1.9.1.min.js"></script> -->
     <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css"
           integrity="sha384-BVYiiSIFeK1dGmJRAkycuHAHRg32OmUcww7on3RYdg4Va+PmSTsz/K68vbdEjh4u" crossorigin="anonymous">
@@ -67,7 +68,6 @@ $isUpdate = isset($this->params[0]);
 
                 </div>
                 <!-- /.col -->
-
                 <form  method="POST" enctype="multipart/form-data">
                     <div class="col-md-12">
                         <div class="box box-primary">
@@ -88,13 +88,12 @@ $isUpdate = isset($this->params[0]);
                                 <div class="row">
                                     <div class="col-md-6">
                                         <div class="form-group">
-                                            <input placeholder="Ngày đến" class="form-control" value="<?php echo $data['ngay_den'] ; ?>" name="ngay_den">
+                                            <input placeholder="Ngày đến" class="form-control date_picker" value="<?php echo $data['ngay_den'] ; ?>" name="ngay_den">
                                         </div>
                                     </div>
                                     <div class="col-md-6">
                                         <div class="form-group">
-                                            <input placeholder="Ngày đi" class="form-control" value="<?php echo $data['ngay_di'] ; ?>" name="ngay_di"
-                                            >
+                                            <input placeholder="Ngày đi" class="form-control date_picker" value="<?php echo $data['ngay_di'] ; ?>" name="ngay_di">
                                         </div>
                                     </div>
                                 </div>
@@ -342,15 +341,14 @@ $isUpdate = isset($this->params[0]);
 <script src="<?= BASE_DIR ?>js/demo.js"></script>
 <!-- iCheck -->
 <script src="<?= BASE_DIR ?>plugins/iCheck/icheck.min.js"></script>
-
+<script src="<?= BASE_DIR ?>plugins/datepicker/bootstrap-datepicker.js"></script>
 <script type="text/javascript" src="<?= BASE_DIR ?>ckeditor/ckeditor.js"></script>
 <!-- Page Script -->
 <script>
     $(function () {
-        //Add text editor
-        $("#compose-textarea").wysihtml5();
-    });
-    CKEDITOR.replace( 'editor1', {
+        $('.date_picker').datepicker({
+            format: 'yyyy-mm-dd',
+        });
 
     });
 </script>

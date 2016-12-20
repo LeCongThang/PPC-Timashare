@@ -85,7 +85,7 @@ mysqli_query($connect, "SET NAMES 'UTF8'");
 
                             <!-- /.box-header -->
                             <div class="box-body">
-                                <table class="table">
+                                <table class="table table-striped table-bordered">
                                     <thead>
                                         <tr>
                                             <th>STT</th>
