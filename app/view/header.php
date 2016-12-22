@@ -123,7 +123,7 @@
                     <span class="icon-bar"></span>
                 </button>
                 <div class="navbar-brand navbar-brand-centered">
-                    <a href="#">
+                    <a href="<?=BASE_URL?>controller/index">
                         <img src="<?= BASE_DIR ?>img/logo.png" id="logo" class="img-responsive">
                     </a>
                 </div>

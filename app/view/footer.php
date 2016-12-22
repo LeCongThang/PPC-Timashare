@@ -195,17 +195,12 @@
         <!--Book now-->
         var btnBookNow = document.getElementById("btnBookNow");
         var modaldoimatkhau = document.getElementById('ModalDoiMatKhau');
+        var modalbooknow = document.getElementById('ModalBookNow');
 
         btnBookNow.onclick = function (e) {
             e.preventDefault();
             if (<?php echo isset($_SESSION['tendangnhap']) ? 'true' : 'false'; ?>) {
-                var idkhunghiduong = $('#idkhunghiduong').val();
-                var diachi = "/ppctimeshare/controller/booknow/" + idkhunghiduong;
-                $.ajax({
-                    url: diachi, cache: false,
-                    success: function (dulieu) {
-                    }
-                });
+                modalbooknow.style.display="block";
             }
             else {
                 alert('Mời bạn đăng nhập trước khi book khu nghỉ dưỡng');
