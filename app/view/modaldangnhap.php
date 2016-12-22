@@ -1,8 +1,5 @@
 <div id="ModalDangNhap" class="modal">
     <div id="model-content-dn">
-
-        <div class="close"><span class="glyphicon glyphicon-remove"></span></div>
-
         <div class="modal-body">
             <form action="<?= BASE_URL ?>controller/dangNhap" method="POST">
                 <div class="input-group" id="banner_5">

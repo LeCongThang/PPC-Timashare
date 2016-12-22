@@ -211,7 +211,7 @@
                 <div class="input-group" style="width:100%;">
                     <!-- <span class="input-group-addon" id="basic-addon1">@</span> -->
                     <input type="text" class="form-control" style="width:100%;border:1px solid grey; border-radius:2px;"
-                           aria-describedby="basic-addon1" id="dienthoai" placeholder="YOUR PHONE"name="dienthoai">
+                           aria-describedby="basic-addon1" id="dienthoaicongty" placeholder="YOUR PHONE"name="dienthoaicongty">
                 </div>
             </div>
             <div class="col-md-4 col-sm-12">
@@ -240,58 +240,58 @@
     </div>
     </form>
     <!-- map  -->
-    <div class="row space">
-        <div class="col-md-12 col-sm-12">
-            <div id="map" style="width:100%;height:400px;background-color:grey;">
-            </div>
-        </div>
-    </div>
-    <div class="row space">
-        <div class="col-md-12 col-sm-12">
-            <hr class="text-left" style="width:70px;border:2px solid #660000;margin-left:0px;margin-bottom:0px;">
-            <h4>PPC TIMESHARE TV</h4>
-        </div>
-        <div class="col-md-6 col-sm-12">
-            <iframe width="100%" height="380" src="https://www.youtube.com/embed/XGSy3_Czz8k">
-            </iframe>
-        </div>
-        <div class="col-md-6 col-sm-12">
-            <h4 style="margin-top:0px;">OUR VIDEOS</h4>
-            <hr style="width:100%;border:1px solid #362516;margin-left:0px;">
-            <div class="media">
-                <div class="media-left">
-                    <img src="<?=BASE_URL?>img/check.png" style="width:70%;">
-                </div>
-                <div class="media-left">
-                    <p> iframe width="100%" height="345" src="https://www.youtube.com/embed/XGSy3_Czz8k"</p>
-                </div>
-            </div>
-            <div class="media">
-                <div class="media-left">
-                    <img src="<?=BASE_URL?>img/check.png" style="width:70%;">
-                </div>
-                <div class="media-left">
-                    <p> iframe width="100%" height="345" src="https://www.youtube.com/embed/XGSy3_Czz8k"</p>
-                </div>
-            </div>
-            <div class="media">
-                <div class="media-left">
-                    <img src="<?=BASE_URL?>img/check.png" style="width:70%;">
-                </div>
-                <div class="media-left">
-                    <p> iframe width="100%" height="345" src="https://www.youtube.com/embed/XGSy3_Czz8k"</p>
-                </div>
-            </div>
-            <div class="media">
-                <div class="media-left">
-                    <img src="<?=BASE_URL?>img/check.png" style="width:70%;">
-                </div>
-                <div class="media-left">
-                    <p> iframe width="100%" height="345" src="https://www.youtube.com/embed/XGSy3_Czz8k"</p>
-                </div>
-            </div>
-        </div>
-    </div>
+<!--    <div class="row space">-->
+<!--        <div class="col-md-12 col-sm-12">-->
+<!--            <div id="map" style="width:100%;height:400px;background-color:grey;">-->
+<!--            </div>-->
+<!--        </div>-->
+<!--    </div>-->
+<!--    <div class="row space">-->
+<!--        <div class="col-md-12 col-sm-12">-->
+<!--            <hr class="text-left" style="width:70px;border:2px solid #660000;margin-left:0px;margin-bottom:0px;">-->
+<!--            <h4>PPC TIMESHARE TV</h4>-->
+<!--        </div>-->
+<!--        <div class="col-md-6 col-sm-12">-->
+<!--            <iframe width="100%" height="380" src="https://www.youtube.com/embed/XGSy3_Czz8k">-->
+<!--            </iframe>-->
+<!--        </div>-->
+<!--        <div class="col-md-6 col-sm-12">-->
+<!--            <h4 style="margin-top:0px;">OUR VIDEOS</h4>-->
+<!--            <hr style="width:100%;border:1px solid #362516;margin-left:0px;">-->
+<!--            <div class="media">-->
+<!--                <div class="media-left">-->
+<!--                    <img src="--><?//=BASE_URL?><!--img/check.png" style="width:70%;">-->
+<!--                </div>-->
+<!--                <div class="media-left">-->
+<!--                    <p> iframe width="100%" height="345" src="https://www.youtube.com/embed/XGSy3_Czz8k"</p>-->
+<!--                </div>-->
+<!--            </div>-->
+<!--            <div class="media">-->
+<!--                <div class="media-left">-->
+<!--                    <img src="--><?//=BASE_URL?><!--img/check.png" style="width:70%;">-->
+<!--                </div>-->
+<!--                <div class="media-left">-->
+<!--                    <p> iframe width="100%" height="345" src="https://www.youtube.com/embed/XGSy3_Czz8k"</p>-->
+<!--                </div>-->
+<!--            </div>-->
+<!--            <div class="media">-->
+<!--                <div class="media-left">-->
+<!--                    <img src="--><?//=BASE_URL?><!--img/check.png" style="width:70%;">-->
+<!--                </div>-->
+<!--                <div class="media-left">-->
+<!--                    <p> iframe width="100%" height="345" src="https://www.youtube.com/embed/XGSy3_Czz8k"</p>-->
+<!--                </div>-->
+<!--            </div>-->
+<!--            <div class="media">-->
+<!--                <div class="media-left">-->
+<!--                    <img src="--><?//=BASE_URL?><!--img/check.png" style="width:70%;">-->
+<!--                </div>-->
+<!--                <div class="media-left">-->
+<!--                    <p> iframe width="100%" height="345" src="https://www.youtube.com/embed/XGSy3_Czz8k"</p>-->
+<!--                </div>-->
+<!--            </div>-->
+<!--        </div>-->
+<!--    </div>-->
 </div>
 <br><br><br>
 <!--phần container giới thiệu thứ 2-->

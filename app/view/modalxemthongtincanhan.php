@@ -1,8 +1,8 @@
 <div id="ModalXemThongTin" class="modal">
     <div class="modal-content">
         <div class="modal-header">
-            <div class="closexemthongtin"><span class="glyphicon glyphicon-remove"></span></div>
-            <h3 style="text-align:center;"><b>THÔNG TIN CÁ NHÂN </b></h3>
+            <div class="close"><span class="glyphicon glyphicon-remove"></span></div>
+            <h3 style="text-align:center;"><b>THÔNG TIN CÁ NHÂN</b></h3>
         </div>
         <div class="modal-body">
             <form action="<?= BASE_URL ?>controller/luuthongtintaikhoan" method="POST">
@@ -34,6 +34,7 @@
                         echo '<input id="sodienthoaitaikhoan" type="text" class="form-control" name="sodienthoaitaikhoan">';
                     ?>
                 </div>
+                <p><span style="color: red;" id="thongbaoXemThongTin"></span></p>
                 <div class="modal-footer text-right">
                     <button type="submit" id="btnLuuThongTin" name="btnLuuThongTin" class="btn btn-default">Lưu thông tin
                     </button>

@@ -1,7 +1,7 @@
 <div id="ModalDoiMatKhau" class="modal">
     <div class="modal-content">
         <div class="modal-header">
-            <div class="close"><span class="glyphicon glyphicon-remove"></span></div>
+            <div class="closeModalDoiMatKhau"><span class="glyphicon glyphicon-remove"></span></div>
             <h3 style="text-align:center;"><b>ĐỔI MẬT KHẨU</b></h3>
         </div>
         <div class="modal-body">

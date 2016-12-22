@@ -94,9 +94,13 @@ class controller
         $remember = $_POST["rememberme"];
         $truyvanktTonTai = $this->bv->xulydangnhap($tendangnhap, $matkhau);
         if ($truyvanktTonTai) {
-
             $_SESSION["tendangnhap"] = $tendangnhap;
-
+            $row = $this->bv->xemthongtincanhan($tendangnhap);
+            if($row >0){
+                $_SESSION['tentaikhoan'] = $row['hoten'];
+                $_SESSION['diachitaikhoan'] = $row['diachi'];
+                $_SESSION['sodienthoaitaikhoan'] = $row['dienthoai'];
+            }
             if (isset($_POST["rememberme"])) {
 
                 setcookie("tendangnhap", $tendangnhap, time() + 2592000);
@@ -110,7 +114,14 @@ class controller
             header('location:' . BASE_URL . "controller/index");
             echo "<script>alert('Đăng nhập thành công')</script>";
         } else {
-            echo "<script>alert('Tài khoản hoặc mật khẩu không đúng')</script>";
+            session_unset();
+            session_destroy();
+            if (isset($_COOKIE["tendangnhap"]))
+            {
+                setcookie("tendangnhap",$_COOKIE["tendangnhap"], time());
+                setcookie("matkhau", $_COOKIE["matkhau"], time());
+                setcookie("rememberme",$_COOKIE["rememberme"], time());
+            }
             header('location:' . BASE_URL . "controller/index");
         }
     }
@@ -123,7 +134,21 @@ class controller
         $diachi = $_POST["diachi"];
         $dienthoai = $_POST["dienthoai"];
         if ($this->bv->themTaiKhoan($tendangnhap, $matkhau, $hoten, $diachi, $dienthoai, 1))
-            echo "<script>alert('Đăng ký thành công')</script>";
+        {
+            $_SESSION["tendangnhap"] = $tendangnhap;
+            $row = $this->bv->xemthongtincanhan($tendangnhap);
+            if($row >0){
+                $_SESSION['tentaikhoan'] = $row['hoten'];
+                $_SESSION['diachitaikhoan'] = $row['diachi'];
+                $_SESSION['sodienthoaitaikhoan'] = $row['dienthoai'];
+            }
+            if (isset($_COOKIE["tendangnhap"]))
+            {
+                setcookie("tendangnhap",$_COOKIE["tendangnhap"], time());
+                setcookie("matkhau", $_COOKIE["matkhau"], time());
+                setcookie("rememberme",$_COOKIE["rememberme"], time());
+            }
+        }
         else
             echo "<script>alert('Đăng ký không thành công')</script>";
         header('location:' . BASE_URL . "controller/index");
@@ -137,7 +162,7 @@ class controller
     public function lienHe()
     {
         $ten = $_POST["ten"];
-        $dienthoai = $_POST["dienthoai"];
+        $dienthoai = $_POST["dienthoaicongty"];
         $email = $_POST["email"];
         $loinhan = $_POST["loinhan"];
         if ($this->bv->themLienHe($ten, $dienthoai, $email, $loinhan)) {
@@ -145,6 +170,7 @@ class controller
         } else
             echo "<script>alert('Gửi lỗi, mời bạn gửi lại')</script>";
         header('location:' . BASE_URL . "controller/index");
+
     }
 
     public function booknow()

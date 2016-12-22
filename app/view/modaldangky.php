@@ -40,7 +40,7 @@
                 <p><span style="color: red;" id="thongbao"></span></p>
                 <div class="modal-footer text-right">
                     <button type="submit" id="btn_dangky" name="dangky" class="btn btn-default">Đăng
-                        nhập
+                        Ký
                     </button>
                     <button type="button" id="btn_thoatdangky" class="btn btn-default">Thoát</button>
 

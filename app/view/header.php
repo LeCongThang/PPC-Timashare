@@ -56,22 +56,45 @@
                 if (loi != 0) {
                     return false;
                 }
+                return true;
+            });
+            $('#btnLuuThongTin').click(function () {
+                tentaikhoan = $('#tentaikhoan').val();
+                diachitaikhoan = $('#diachitaikhoan').val();
+                sodienthoaitaikhoan = $('#sodienthoaitaikhoan').val();
+
+                loi = 0;
+                if (isNaN(dienthoai)) {
+                    loi++;
+                    $('#thongbaoXemThongTin').text("Điện thoại phải là số");
+                }
+                if (tentaikhoan == "" || diachitaikhoan == "" || sodienthoaitaikhoan == ""
+                ) {
+                    loi++;
+                    $('#thongbaoXemThongTin').text("Hãy nhập đầy đủ thông tin");
+                }
+
+
+
+                if (loi != 0) {
+                    return false;
+                }
+                return true;
             });
             $('#btn_gui').click(function () {
                 tencongty = $('#ten').val();
-                dienthoaicongty = $('#dienthoai').val();
+                dienthoaicongty = $('#dienthoaicongty').val();
                 emailcongty = $('#email').val();
                 loiguilh = 0;
 
-//                if (tencongty == "" || dienthoaicongty == "" || emailcongty =="") {
-//                    $('#thongbaoguilh').text("Hãy nhập đầy đủ thông tin liên hệ");
-//                    loiguilh++;
-//                }
-//
-//                if (loiguilh != 0) {
-//                    return false;
-//                }
+                if (tencongty == "" || dienthoaicongty == "" || emailcongty =="") {
+                    $('#thongbaoguilh').text("Hãy nhập đầy đủ thông tin liên hệ");
+                    loiguilh++;
+                }
 
+                if (loiguilh != 0) {
+                    return false;
+                }
                 return true;
             });
 
@@ -104,6 +127,7 @@
                 if (loi != 0) {
                     return false;
                 }
+                return true;
             });
         });
 
