@@ -20,11 +20,19 @@ class controller
     function index()
     {
         $dsslider = $this->bv->laydanhsach("slider");
+        $dssbanner = $this->bv->laydanhsach("banner");
         $dsKhuNghiDuongSlier = array();
+        $dsKhuNghiDuongBanner = array();
         foreach ($dsslider as $slider)
         {
             $khuNghiDuong = $this->bv->layThongTinChiTietKhuNghiDuong($slider['idkhunghiduong']);
             $dsKhuNghiDuongSlier[] = $khuNghiDuong;
+        }
+
+        foreach ($dssbanner as $banner)
+        {
+            $khuNghiDuongBanner = $this->bv->layThongTinChiTietKhuNghiDuong($banner['idkhunghiduong']);
+            $dsKhuNghiDuongBanner[] = $khuNghiDuongBanner;
         }
         //echo count($dsKhuNghiDuongSlier);
         require_once "view/home.php"; //nạp layout
@@ -156,7 +164,19 @@ class controller
 
     public function quenmatkhau()
     {
-        require_once "view/forgetpass.php";
+        $tendangnhapll = $_POST["tendangnhapll"];
+        $sodienthoaitaikhoanll = $_POST["sodienthoaitaikhoanll"];
+        $carrier = "";
+        if($this->bv->ktIdVaSoDienThoai($tendangnhapll, $sodienthoaitaikhoanll)){
+            $message = "Mật khẩu của bạn là PPCTIMESHARE123";
+            $to = $sodienthoaitaikhoanll.'@'.$carrier;
+            $result = @mail($to,'',$message);
+            $this->bv->doiquenmatkhau($tendangnhapll, "PPCTIMESHARE123");
+        }
+        else{
+
+        }
+        header('location:' . BASE_URL . "controller/index");
     }
 
     public function lienHe()
@@ -173,19 +193,7 @@ class controller
 
     }
 
-    public function booknow()
-    {
-        if (!isset($_SESSION['tendangnhap'])) {
-            echo "<script>alert('Bạn cần đăng nhập để có thể book chỗ')</script>";
-        } else {
-            //echo "<script>alert('Bạn cần đăng nhập để có thể ')</script>";
-            $tendangnhap = $_SESSION['tendangnhap'];
-            $idsp = $this->params[0];
-            settype($idsp, "int");
-            if ($this->bv->booknow($tendangnhap, $idsp))
-                echo "<script>alert('Bạn đã book thành công')</script>";
-        }
-    }
+
 
     public function readmore()
     {
@@ -230,6 +238,45 @@ class controller
         session_destroy();
         header('location:' . BASE_URL . "controller/index");
     }
+
+    public function bookKhuNghiDuong(){
+
+        if (!isset($_SESSION['tendangnhap'])) {
+            echo "<script>alert('Bạn cần đăng nhập để có thể book chỗ')</script>";
+        } else {
+            //echo "<script>alert('Bạn cần đăng nhập để có thể ')</script>";
+            $thoigian = $_POST["thoigian"];
+            $ghichu = $_POST["comment"];
+            $tendangnhap = $_SESSION['tendangnhap'];
+            $idsp = 1;
+            settype($idsp, "int");
+            if ($this->bv->booknow($tendangnhap,$idsp, $thoigian, $ghichu))
+                echo "<script>alert('Bạn đã book thành công')</script>";
+        }
+    }
+
+    public function xemChiTietKhuNghiDuong(){
+        $idknd = $this->params[0];
+        //echo $idknd;
+        $knd = $this->bv->layThongTinChiTietKhuNghiDuong($idknd);
+        $dsslider = $this->bv->laydanhsach("slider");
+        $dssbanner = $this->bv->laydanhsach("banner");
+        $dsKhuNghiDuongSlier = array();
+        $dsKhuNghiDuongBanner = array();
+        foreach ($dsslider as $slider)
+        {
+            $khuNghiDuong = $this->bv->layThongTinChiTietKhuNghiDuong($slider['idkhunghiduong']);
+            $dsKhuNghiDuongSlier[] = $khuNghiDuong;
+        }
+
+        foreach ($dssbanner as $banner)
+        {
+            $khuNghiDuongBanner = $this->bv->layThongTinChiTietKhuNghiDuong($banner['idkhunghiduong']);
+            $dsKhuNghiDuongBanner[] = $khuNghiDuongBanner;
+        }
+        require_once "view/xemChiTietKhuNghiDuong.php";
+    }
+
 
 
 }//class

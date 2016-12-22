@@ -38,7 +38,8 @@ class model
 
     public function layThongTinChiTietKhuNghiDuong($id)
     {
-        $sql = "SELECT * FROM khunghiduong WHERE id =".$id;
+        $sql = "SELECT * FROM khunghiduong WHERE id =". $id;
+        //echo $sql;
         if (!$kq = $this->db->query($sql)) die($this->db->error);
         if (!$kq) return FALSE;
         return $kq->fetch_assoc();
@@ -88,9 +89,10 @@ class model
         return mysqli_query($this->db, $sql);
     }
 
-    public function booknow($tendangnhap, $idsp)
+    public function booknow($tendangnhap, $idsp, $thoigian, $ghichu)
     {
-        $sql = "insert into book_now(tendangnhap,idkhunghiduong) values ('" . $tendangnhap . "'," . $idsp . ")";
+        $sql = "insert into book_now(tendangnhap,idkhunghiduong,thoigian,ghichu) values ('" . $tendangnhap . "'," . $idsp . ",'".$thoigian."','".$ghichu."')";
+        echo $sql;
         return mysqli_query($this->db, $sql);
     }
 
@@ -129,10 +131,28 @@ class model
         return false;
     }
 
+    public function doiquenmatkhau($tendangnhap,$matkhaumoi)
+    {
+        $sql = "UPDATE taikhoan SET matkhau='" . md5($matkhaumoi) . "' WHERE tendangnhap = '" . $tendangnhap . "'";
+        return mysqli_query($this->db, $sql);
+
+    }
+
     public function capnhatthongtintk($tendangnhap, $hoten, $diachi, $sodienthoai)
     {
         $sql = "UPDATE taikhoan SET hoten='" . $hoten . "', diachi='" . $diachi . "', dienthoai='" . $sodienthoai . "' WHERE tendangnhap = '" . $tendangnhap . "'";
         return mysqli_query($this->db, $sql);
+    }
+
+    public function ktIdVaSoDienThoai($tendangnhap, $sodienthoai)
+    {
+        $sql = "SELECT * FROM taikhoan WHERE tendangnhap = '".$tendangnhap."' AND dienthoai ='".$sodienthoai."'";
+        if (!$kq = $this->db->query($sql))
+            die($this->db->error);
+
+        if ($kq->num_rows == 0)
+            return false;
+        return true;
     }
 
 

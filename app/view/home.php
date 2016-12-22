@@ -168,22 +168,27 @@
             <div class="media">
                 <div class="media-left" id="banner_5">
                     <img src="<?=BASE_URL?>img/banner-knd1.jpg" style="width:100%;">
+                    <input type="button" value="Tham gia" class="btn btn-default btnThamGia">
                 </div>
                 <div class="media-right" id="banner_5">
                     <img src="<?=BASE_URL?>img/banner-knd2.jpg" style="width:100%;">
+                    <input type="button" value="Tham gia" class="btn btn-default btnThamGia">
                 </div>
             </div>
             <div class="media">
                 <div class="media-body" id="banner_5">
                     <img src="<?=BASE_URL?>img/banner-knd3.jpg" class="img-reponsive">
+                    <input type="button" value="Tham gia" class="btn btn-default btnThamGia">
                 </div>
             </div>
         </div>
         <div class="col-md-6 col-sm-12" id="banner_5">
             <img src="<?=BASE_URL?>img/banner-knd4.jpg" class="img-reponsive">
+            <input type="button" value="Tham gia" class="btn btn-default btnThamGia">
         </div>
         <div class="col-md-12 col-sm-12" id="banner_5">
             <img src="<?=BASE_URL?>img/banner-knd5.jpg" class="img-reponsive">
+            <input type="button" value="Tham gia" class="btn btn-default btnThamGia">
         </div>
     </div>
     <!-- phan tiep theo -->
