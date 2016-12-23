@@ -243,7 +243,7 @@
                 echo '<h3 class = "myh3h4">' . $khuNghiDuong['ten'] . '</h3>';
                 echo '<h4 class = "myh3h4">' . $khuNghiDuong['thongtin'] . '</h4>';
                 echo '</div></div>';
-                echo '<center><a href="" class="btn btn-default" style="margin-bottom:10px;" id="btnBookNow" value ="' . $khuNghiDuong['id'] . '" >BOOK
+                echo '<center><a href="#" class="btnBookNow btn btn-default " style="margin-bottom:10px;" id="btnBN'.$key.'" idsp ="' . $khuNghiDuong['id'] . '" >BOOK
                             NOW</a></center></div></div>';
 
             }
@@ -270,57 +270,6 @@
                     echo '<a href="' . BASE_URL . 'controller/xemChiTietKhuNghiDuong/' . $khuNghiDuongBanner['id'] . '" class="btn btn-default" id="btnreadmore">READ MORE</a></div></div></div>';
                 }
                 ?>
-                <!--                <div class="col-sm-12 col-sm-3">-->
-                <!--                    <div class="thumbnail">-->
-                <!--                        <img src="img/banner_1.png">-->
-                <!--                        <div class="caption">-->
-                <!--                            <h5>Khu nghỉ dưỡng</h5>-->
-                <!--                            <h4>KRIS VUE</h4>-->
-                <!--                            <p>Kris Vue là dự án nhà ở dành cho các gia đình trẻ do công ty CapitalLand (Singapore) đầu-->
-                <!--                                tư-->
-                <!--                                và phát triển</p>-->
-                <!--                            <a href="about.html" class="btn btn-default" id="btnreadmore">READ MORE</a>-->
-                <!--                        </div>-->
-                <!--                    </div>-->
-                <!--                </div>-->
-                <!--                <div class="col-sm-12 col-sm-3">-->
-                <!--                    <div class="thumbnail">-->
-                <!--                        <img src="img/banner_2.png">-->
-                <!--                        <div class="caption">-->
-                <!--                            <h5>Khu nghỉ dưỡng</h5>-->
-                <!--                            <h4>VISTA VERDE</h4>-->
-                <!--                            <p>"Verde" có nghĩa là xanh ngát trong tiếng Tây Ban Nha, Vista Verde được thiết kế như một-->
-                <!--                                vườn-->
-                <!--                                ươm xanh mát</p>-->
-                <!--                            <a href="about.html" class="btn btn-default" id="btnreadmore">READ MORE</a>-->
-                <!--                        </div>-->
-                <!--                    </div>-->
-                <!--                </div>-->
-                <!--                <div class="col-sm-12 col-sm-3">-->
-                <!--                    <div class="thumbnail">-->
-                <!--                        <img src="img/banner_3.png">-->
-                <!--                        <div class="caption">-->
-                <!--                            <h5>Khu nghỉ dưỡng</h5>-->
-                <!--                            <h4>FLC COMPLEX PHẠM HÙNG</h4>-->
-                <!--                            <p>Trải nghiệm giá trị của cuộc sống hiện đại, hoàn hảo với tổ hợp khu căn hộ, trung tâm-->
-                <!--                                thương-->
-                <!--                                mại - dịch vụ</p>-->
-                <!--                            <a href="about.html" class="btn btn-default" id="btnreadmore">READ MORE</a>-->
-                <!--                        </div>-->
-                <!--                    </div>-->
-                <!--                </div>-->
-                <!--                <div class="col-sm-12 col-sm-3">-->
-                <!--                    <div class="thumbnail">-->
-                <!--                        <img src="img/banner_4.png">-->
-                <!--                        <div class="caption">-->
-                <!--                            <h5>Khu nghỉ dưỡng</h5>-->
-                <!--                            <h4>KRIS VUE</h4>-->
-                <!--                            <p>Chủ đầu tư: Cty CVH Mùa Xuân Vị trí: đường Nguyễn Duy Trinh, Phường Bình Trưng Đông, Quận-->
-                <!--                                2,TPHCM</p>-->
-                <!--                            <a href="about.html" class="btn btn-default" id="btnreadmore">READ MORE</a>-->
-                <!--                        </div>-->
-                <!--                    </div>-->
-                <!--                </div>-->
             </div><!--  End Row -->
         </div> <!-- end container -->
     </div>

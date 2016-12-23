@@ -223,7 +223,7 @@ img.pic {
         padding-right: 0 !important;
     }
 
-    #btnBookNow{
+    .btnBookNow{
         color: white;
         padding-top: 10px;
         padding-bottom: 10px;
@@ -234,6 +234,7 @@ img.pic {
         border-color: #362516;
         font-weight: bold;
     }
+
 
     #btnReadMore{
         color: white;

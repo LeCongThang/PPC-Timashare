@@ -77,10 +77,16 @@
             e.preventDefault();
             return false;
         });
-        var btnBookNow = document.getElementById("btnBookNow");
+
+        var btnBookNow0 = document.getElementById("btnBN0");
+        var btnBookNow1 = document.getElementById("btnBN1");
+        var btnBookNow2 = document.getElementById("btnBN2");
+        var btnBookNow3 = document.getElementById("btnBN3");
         //var idKnd = document.getElementById("btnBookNow").value;
-        btnBookNow.onclick = function () {
+        btnBookNow0.onclick = function () {
             if (<?php echo isset($_SESSION['tendangnhap']) ? 'true' : 'false'; ?>) {
+                var temp = $(this).attr("idsp");
+                <?php $_SESSION['idknd'] = 'temp';?>
                 mainModal = ModalBookNow;
                 mainModal.style.display = "block";
             }
@@ -89,6 +95,8 @@
             }
             return false;
         }
+
+
 
         window.onclick = function (event) {
             if (event.target == mainModal) {
