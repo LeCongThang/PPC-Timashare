@@ -24,8 +24,8 @@ class modelmail{
     }
 
 
-    public function read($mail){
-        $sql = "SELECT * FROM lienhe WHERE email_lienhe = '$mail' ";
+    public function read($readmail){
+        $sql = "SELECT * FROM lienhe WHERE email_lienhe = '$readmail' ";
         $kq = $this->db->query($sql);
         $row= $kq->fetch_assoc();
         return $row;

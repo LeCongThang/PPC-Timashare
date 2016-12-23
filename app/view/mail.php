@@ -151,6 +151,13 @@ mysqli_query($connect, "SET NAMES 'UTF8'");
 
     <div class="content-wrapper" >
         <!-- Content Header (Page header) -->
+        <?php
+        $connect = mysqli_connect("localhost","root","","ppctimeshare");
+        mysqli_query($connect,"SET character_set_results=utf8");
+        $sql = "SELECT*FROM lienhe";
+        $query = mysqli_query($connect,$sql);
+        $row = mysqli_fetch_row($query);
+        ?>
         <section class="content-header">
             <h1>
                 Mailbox

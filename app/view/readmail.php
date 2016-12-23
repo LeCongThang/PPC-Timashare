@@ -153,68 +153,32 @@ mysqli_query($connect, "SET NAMES 'UTF8'");
         <!-- Content Header (Page header) -->
         <section class="content-header">
             <h1>
-                Mailbox
-                <small>13 new messages</small>
+                READ MAIL
             </h1>
             <ol class="breadcrumb">
                 <li><a href="#"><i class="fa fa-dashboard"></i> Home</a></li>
                 <li class="active">Mailbox</li>
             </ol>
         </section>
-
+<hr>
         <!-- Main content -->
         <section class="content">
             <div class="row">
-
                 <!-- /.col -->
-                <div class="col-md-12">
-                    <div class="box box-primary">
-                        <div class="box-header with-border">
-                            <h3 class="box-title">Inbox</h3>
-
-                            <!--                            <div class="box-tools pull-right">-->
-                            <!--                                <div class="has-feedback">-->
-                            <!--                                    <input type="text" class="form-control input-sm" placeholder="Search Mail">-->
-                            <!--                                    <span class="glyphicon glyphicon-search form-control-feedback"></span>-->
-                            <!--                                </div>-->
-                            <!--                            </div>-->
-                            <!-- /.box-tools -->
-                        </div>
-                        <!-- /.box-header -->
-                        <div class="box-body no-padding">
-                            <div class="table-responsive mailbox-messages">
-                                <table class="table table-hover table-striped">
-                                    <tbody>
-                                    <?php
-                                    $connect = mysqli_connect("localhost","root","","ppctimeshare");
-                                    mysqli_query($connect,"SET character_set_results=utf8");
-                                    $sql = "SELECT*FROM lienhe";
-                                    $query = mysqli_query($connect,$sql);
-                                    while($row = mysqli_fetch_assoc($query)) {
-                                        ?>
-                                        <tr>
-                                            <!--                                                <td><input type="checkbox" nam></td>-->
-                                            <td class="mailbox-star"><a href="<?=BASE_URL?>controllermail/readmail/<?php echo $row['email_lienhe']; ?>"><i
-                                                        class="fa fa-star text-yellow"></i></a></td>
-                                            <td class="mailbox-name"><a href="read-mail.html"><?php echo $row['ten_lienhe']; ?></a>
-                                            </td>
-                                            <td class="mailbox-subject"><b><?php echo $row['email_lienhe']; ?></b>
-                                            </td>
-                                            <td class="mailbox-attachment"><?php echo $row['sdt_lienhe']; ?></td>
-                                            <td class="mailbox-date"><a href="<?=BASE_URL?>controllermail/delete/<?php echo $row['email_lienhe']; ?> "><button class="btn btn-info"><i class="glyphicon glyphicon-trash"></i></button></a> </td>
-                                        </tr>
-                                        <?php
-                                    }
-                                    ?>
-                                    </tbody>
-                                </table>
-                                <!-- /.table -->
-                            </div>
-                            <!-- /.mail-box-messages -->
-                        </div>
-                        <!-- /.box-body -->
-
-                    </div>
+                <div class="col-md-6" style="background-color: white;">
+                    <h4>Form:&nbspNGUYEN MINH ĐỨC</h4>
+                </div>
+                <div class="col-md-6" style="background-color: white;">
+                    <h4>Email:&nbspNGUYEN MINH ĐỨC</h4>
+                </div>
+                <br><br><br>
+<!--                <div class="col-md-12" style="background-color: white;">-->
+<!--                    <h4>Số điện thoại:&nbspNGUYEN MINH ĐỨC</h4>-->
+<!--                </div>-->
+                <div class="col-md-12" style="background-color: white;">
+                    <h4>NỘI DUNG</h4>
+                    <br>
+                    <p></p>
                 </div>
                 <!-- /. box -->
             </div>
