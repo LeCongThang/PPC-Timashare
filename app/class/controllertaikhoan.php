@@ -50,7 +50,6 @@ class controllertaikhoan
         header('Location: ' . $url, true);
         die();
 
-
     }
 
 

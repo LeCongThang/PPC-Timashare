@@ -107,7 +107,7 @@ desired effect
          
         </li>
         <li class="treeview">
-          <a href="quanlyanh.html">
+          <a href="<?php $this->controllerslider->video(); ?>">
             <i class="glyphicon glyphicon-picture"></i> <span>QUẢN LÝ ẢNH SLIDE</span>
             <span class="pull-right-container">
               <!-- <i class="fa fa-angle-left pull-right"></i> -->
@@ -145,7 +145,7 @@ desired effect
         
         </li>
          <li>
-          <a href="pages/widgets.html">
+          <a href="controllermail/mail">
             <i class="glyphicon glyphicon-envelope"></i> <span>MAIL BOX</span>
             <span class="pull-right-container">
               <!-- <small class="label pull-right bg-green">new</small> -->

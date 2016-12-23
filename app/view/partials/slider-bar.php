@@ -56,7 +56,7 @@
                     ],
                     [
                         'title' => 'MAIL BOX',
-                        'url' => 'controlleradmin/index',
+                        'url' => 'controllermail/mail',
                         'icon' => 'glyphicon-home',
                     ],
                     [
