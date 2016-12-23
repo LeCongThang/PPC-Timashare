@@ -25,11 +25,29 @@
         </div>
     </footer>
 </div>
+
 <script type="text/javascript">
     $(document).ready(function () {
+        var mainModal;
+        var modalThemKND = document.getElementById('ModalThemKND');
         var modalXemThongTin = document.getElementById('ModalXemThongTin');
         var modaldoimatkhau = document.getElementById('ModalDoiMatKhau');
         var ModalBookNow = document.getElementById('ModalBookNow');
+
+        $('#btnThem').click(function (e) {
+            e.preventDefault();
+            var diachixemthongtin = "/ppctimeshare/controller/layDanhSachLoaiDichVu/";
+            $.ajax({
+                url: diachixemthongtin, cache: false,
+                success: function (dulieuxemthongtin) {
+                    //$("#themkhunghiduong").html(dulieuxemthongtin);
+                    mainModal = modalThemKND;
+                    mainModal.style.display = "block";
+                }
+            })
+            e.preventDefault();
+            return true;
+        });
         $('#hrefXemThongTin').click(function (e) {
             e.preventDefault();
             if (<?php echo isset($_SESSION['tendangnhap']) ? 'true' : 'false'; ?>) {
@@ -37,8 +55,9 @@
                 $.ajax({
                     url: diachixemthongtin, cache: false,
                     success: function (dulieuxemthongtin) {
-                        $("#thongtincanhan").html(dulieuxemthongtin);
-                        modalXemThongTin.style.display = "block";
+                        //$("#thongtincanhan").html(dulieuxemthongtin);
+                        mainModal = modalXemThongTin
+                        mainModal.style.display = "block";
                     }
                 });
             }
@@ -52,7 +71,8 @@
 
         $('#hrefDoiMatKhau').click(function (e) {
             e.preventDefault();
-            modaldoimatkhau.style.display = "block";
+            mainModal = modaldoimatkhau;
+            mainModal.style.display = "block";
             $('#thongbaodoimatkhau').text("");
             e.preventDefault();
             return false;
@@ -61,7 +81,8 @@
         //var idKnd = document.getElementById("btnBookNow").value;
         btnBookNow.onclick = function () {
             if (<?php echo isset($_SESSION['tendangnhap']) ? 'true' : 'false'; ?>) {
-                ModalBookNow.style.display = "block";
+                mainModal = ModalBookNow;
+                mainModal.style.display = "block";
             }
             else {
                 alert('Mời bạn đăng nhập trước khi book khu nghỉ dưỡng');
@@ -69,16 +90,28 @@
             return false;
         }
 
-        $('#btnHuyThongTin').click(function () {
-            modalXemThongTin.style.displafy = "none";
-        });
+        window.onclick = function (event) {
+            if (event.target == mainModal) {
+                mainModal.style.display = "none";
+            }
+        }
 
         $('#btnthoatdoimatkhau').click(function () {
-            modaldoimatkhau.style.display = "none";
+            mainModal.style.display = "none";
         });
+
         $('#btn_thoatdangkyknd').click(function () {
-            ModalBookNow.style.display = "none";
+            mainModal.style.display = "none";
         });
+
+        $('#btnHuyThongTin').click(function (e) {
+            mainModal.style.display = "none";
+        });
+
+        $('#btnThoatThemKND').click(function (e) {
+            mainModal.style.display = "none";
+        });
+
     });
 </script>
 <script type="text/javascript">
@@ -174,21 +207,12 @@
         $('#btn_thoatdangkyknd').click(function () {
             mainModal.style.display = "none";
         });
+
+
     });
 
 </script>
-<script type="text/javascript">
-    $(function () {
-        $('#datetimepicker5').datetimepicker({
-            defaultDate: "11/1/2013",
-            disabledDates: [
-                moment("12/25/2013"),
-                new Date(2013, 11 - 1, 21),
-                "11/22/2013 00:53"
-            ]
-        });
-    });
-</script>
+
 
 </body>
 </html>

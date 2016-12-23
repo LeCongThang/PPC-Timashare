@@ -92,7 +92,7 @@ class model
     public function booknow($tendangnhap, $idsp, $thoigian, $ghichu)
     {
         $sql = "insert into book_now(tendangnhap,idkhunghiduong,thoigian,ghichu) values ('" . $tendangnhap . "'," . $idsp . ",'".$thoigian."','".$ghichu."')";
-        echo $sql;
+        //echo $sql;
         return mysqli_query($this->db, $sql);
     }
 

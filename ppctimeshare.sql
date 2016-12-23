@@ -3,7 +3,7 @@
 -- http://www.phpmyadmin.net
 --
 -- Host: 127.0.0.1
--- Generation Time: Dec 19, 2016 at 10:28 AM
+-- Generation Time: Dec 23, 2016 at 05:10 AM
 -- Server version: 10.1.19-MariaDB
 -- PHP Version: 5.6.28
 
@@ -19,6 +19,27 @@ SET time_zone = "+00:00";
 --
 -- Database: `ppctimeshare`
 --
+
+-- --------------------------------------------------------
+
+--
+-- Table structure for table `banner`
+--
+
+CREATE TABLE `banner` (
+  `id` int(11) NOT NULL,
+  `idkhunghiduong` int(11) NOT NULL
+) ENGINE=InnoDB DEFAULT CHARSET=utf8;
+
+--
+-- Dumping data for table `banner`
+--
+
+INSERT INTO `banner` (`id`, `idkhunghiduong`) VALUES
+(1, 1),
+(2, 2),
+(3, 3),
+(4, 4);
 
 -- --------------------------------------------------------
 
@@ -39,7 +60,9 @@ CREATE TABLE `book_now` (
 --
 
 INSERT INTO `book_now` (`id_book`, `tendangnhap`, `idkhunghiduong`, `thoigian`, `ghichu`) VALUES
-(158, 'quangvinh13', 0, '0000-00-00', '');
+(158, 'quangvinh13', 0, '0000-00-00', ''),
+(159, 'quangvinh13', 1, '0000-00-00', ''),
+(160, 'quangvinh13', 1, '0000-00-00', '');
 
 -- --------------------------------------------------------
 
@@ -97,18 +120,23 @@ CREATE TABLE `khunghiduong` (
   `ten` text NOT NULL,
   `thongtin` text NOT NULL,
   `diachi` text NOT NULL,
-  `link` text NOT NULL
+  `link` text NOT NULL,
+  `thoigianbatdau` date NOT NULL,
+  `thoigianketthuc` date NOT NULL,
+  `trangthai` int(11) NOT NULL,
+  `loai` int(11) NOT NULL,
+  `idnguoixacnhan` text NOT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8;
 
 --
 -- Dumping data for table `khunghiduong`
 --
 
-INSERT INTO `khunghiduong` (`id`, `ten`, `thongtin`, `diachi`, `link`) VALUES
-(1, 'KRIS VUE', 'Kris Vue là dự án nhà ở dành cho các gia đình trẻ do công ty CapitalLand (Singapore) đầu tư và phát triển', '0', 'img/banner_1.png'),
-(2, 'VISTA VERDE', '"Verde" có nghĩa là xanh ngát trong tiếng Tây Ban Nha, Vista Verde được thiết kế như một vườn ươm xanh mát', '', 'img/banner_2.png'),
-(3, 'FLC COMPLEX PHẠM HÙNG', 'Trải nghiệm giá trị của cuộc sống hiện đại, hoàn hảo với tổ hợp khu căn hộ, trung tâm thương mại - dịch vụ', '', 'img/banner_3.png'),
-(4, 'KRIS VUE', 'Chủ đầu tư: Cty CVH Mùa Xuân Vị trí: đường Nguyễn Duy Trinh, Phường Bình Trưng Đông, Quận 2,TPHCM', '', 'img/banner_4.png');
+INSERT INTO `khunghiduong` (`id`, `ten`, `thongtin`, `diachi`, `link`, `thoigianbatdau`, `thoigianketthuc`, `trangthai`, `loai`, `idnguoixacnhan`) VALUES
+(1, 'KRIS VUE', 'Kris Vue là dự án nhà ở dành cho các gia đình trẻ do công ty CapitalLand (Singapore) đầu tư và phát triển', '0', 'img/banner_1.png', '0000-00-00', '0000-00-00', 0, 1, 'admin'),
+(2, 'VISTA VERDE', '"Verde" có nghĩa là xanh ngát trong tiếng Tây Ban Nha, Vista Verde được thiết kế như một vườn ươm xanh mát', '', 'img/banner_2.png', '0000-00-00', '0000-00-00', 0, 1, 'admin'),
+(3, 'FLC COMPLEX PHẠM HÙNG', 'Trải nghiệm giá trị của cuộc sống hiện đại, hoàn hảo với tổ hợp khu căn hộ, trung tâm thương mại - dịch vụ', '', 'img/banner_3.png', '0000-00-00', '0000-00-00', 0, 1, 'admin'),
+(4, 'KRIS VUE', 'Chủ đầu tư: Cty CVH Mùa Xuân Vị trí: đường Nguyễn Duy Trinh, Phường Bình Trưng Đông, Quận 2,TPHCM', 'Vị trí: đường Nguyễn Duy Trinh, Phường Bình Trưng Đông, Quận 2,TPHCM', 'img/banner_4.png', '0000-00-00', '0000-00-00', 0, 1, 'admin');
 
 -- --------------------------------------------------------
 
@@ -144,7 +172,35 @@ INSERT INTO `lienhe` (`id`, `ten_lienhe`, `sdt_lienhe`, `email_lienhe`, `conten_
 (12, '', 0, '', '', 0),
 (13, 's', 0, 's', '', 0),
 (14, 'HBB Solutions', 1222222, 'justindno2@gmail.com', '<p>d</p>\r\n', 0),
-(15, 'HBB Solutions', 23456, 'vinhhongquang@gmail.com', '<p>ch&uacute;ng t&ocirc;i l&agrave; hbb solutions</p>\r\n', 0);
+(15, 'HBB Solutions', 23456, 'vinhhongquang@gmail.com', '<p>ch&uacute;ng t&ocirc;i l&agrave; hbb solutions</p>\r\n', 0),
+(16, '', 0, '', '', 0),
+(17, 'x', 0, 'z', '', 0),
+(18, 'x', 0, 'z', '', 0),
+(19, 'x', 0, 'z', '', 0),
+(20, 'x', 0, 'z', '', 0),
+(21, 'x', 0, 'z', '', 0),
+(22, 'HBB Solutions', 0, 'vinhhongquang@gmail.com', '<p><strong>&aacute;dsasadasdasdas</strong></p>\r\n', 0),
+(23, 'HBB Solutions', 1222555, 'justindno2@gmai.com', '<p>sadasdasd</p>\r\n', 0),
+(24, 'x', 0, 'z', '<p>aaa</p>\r\n', 0);
+
+-- --------------------------------------------------------
+
+--
+-- Table structure for table `loaidichvu`
+--
+
+CREATE TABLE `loaidichvu` (
+  `id` int(11) NOT NULL,
+  `tenloai` text NOT NULL
+) ENGINE=InnoDB DEFAULT CHARSET=utf8;
+
+--
+-- Dumping data for table `loaidichvu`
+--
+
+INSERT INTO `loaidichvu` (`id`, `tenloai`) VALUES
+(1, 'Khu Nghỉ Dưỡng'),
+(2, 'Nhà cá nhân');
 
 -- --------------------------------------------------------
 
@@ -236,9 +292,13 @@ INSERT INTO `taikhoan` (`tendangnhap`, `matkhau`, `id_vaitro`, `hoten`, `diachi`
 ('admin', '21232f297a57a5a743894a0e4a801fc3', 2, 'QuangVinh', 'Lầu 3, tòa nhà JABES 1\r\n, 244 Cống Quỳnh, Phường Phạm Ngũ Lão, Quận 1, Thành phố Hồ Chí Minh, Việt Nam', '0839 262 998'),
 ('admin1', 'e00cf25ad42683b3df678c61f42c6bda', 2, 'admin1', '215/B37 Nguyễn Văn Hưởng,P. Thảo Điền,Q. 2,TP. HCM', '0873077477'),
 ('quangvinh', '0f12c7a13c9ebaf1520583010be4dd49', 1, 'quangvinh', '93/6M Phùng Tá Chu', '1'),
-('quangvinh13', 'e10adc3949ba59abbe56e057f20f883e', 1, 'quangvinh', '93/6akskdkasjdkjsa', '2322232'),
+('quangvinh13', 'fcea920f7412b5da7be0cf42b8c93759', 1, 'quangvinh', '93/6M Phùng Tá Chu', '23222333'),
+('quangvinh15', 'd3677da84302bc96677df88295e918d7', 1, 'Hồng Quang Vinh', '93/6M Phùng Tá Chu Phường An Lạc A Quận Bình Tân, Thành Phố Hồ Chí Minh', '01217009796'),
 ('quangvinh17', 'e10adc3949ba59abbe56e057f20f883e', 1, 'quangvinh', '123456', '123456'),
-('quangvinh2', 'e10adc3949ba59abbe56e057f20f883e', 1, 'a', '', '');
+('quangvinh2', 'e10adc3949ba59abbe56e057f20f883e', 1, 'a', '', ''),
+('quangvinh23', 'd3677da84302bc96677df88295e918d7', 1, 'Hồng Quang Vinh', 'abc', '01222222'),
+('quangvinh27', 'd3677da84302bc96677df88295e918d7', 1, 'Hồng Quang Vinh', '93/6M Phùng Tá Chu Phường An Lạc A Quận Bình Tân, Thành Phố Hồ Chí Minh', '01217009796'),
+('quangvinh5', 'e10adc3949ba59abbe56e057f20f883e', 1, 'Hồng Quang Vinh', '93/6M Phùng Tá Chu Phường An Lạc A Quận Bình Tân, Thành Phố Hồ Chí Minh', '01222222');
 
 -- --------------------------------------------------------
 
@@ -286,6 +346,12 @@ CREATE TABLE `video` (
 --
 
 --
+-- Indexes for table `banner`
+--
+ALTER TABLE `banner`
+  ADD PRIMARY KEY (`id`);
+
+--
 -- Indexes for table `book_now`
 --
 ALTER TABLE `book_now`
@@ -313,6 +379,12 @@ ALTER TABLE `khunghiduong`
 -- Indexes for table `lienhe`
 --
 ALTER TABLE `lienhe`
+  ADD PRIMARY KEY (`id`);
+
+--
+-- Indexes for table `loaidichvu`
+--
+ALTER TABLE `loaidichvu`
   ADD PRIMARY KEY (`id`);
 
 --
@@ -362,10 +434,15 @@ ALTER TABLE `vaitro`
 --
 
 --
+-- AUTO_INCREMENT for table `banner`
+--
+ALTER TABLE `banner`
+  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=5;
+--
 -- AUTO_INCREMENT for table `book_now`
 --
 ALTER TABLE `book_now`
-  MODIFY `id_book` int(100) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=159;
+  MODIFY `id_book` int(100) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=161;
 --
 -- AUTO_INCREMENT for table `danhmucmenu`
 --
@@ -380,7 +457,12 @@ ALTER TABLE `khunghiduong`
 -- AUTO_INCREMENT for table `lienhe`
 --
 ALTER TABLE `lienhe`
-  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=16;
+  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=25;
+--
+-- AUTO_INCREMENT for table `loaidichvu`
+--
+ALTER TABLE `loaidichvu`
+  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=3;
 --
 -- AUTO_INCREMENT for table `quyen`
 --

@@ -135,5 +135,6 @@ h2 {
 .btnThamGia{
     margin: 5px;
     text-align: center!important;
+    font-weight: bold;
 }
 

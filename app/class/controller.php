@@ -277,6 +277,12 @@ class controller
         require_once "view/xemChiTietKhuNghiDuong.php";
     }
 
+    public function layDanhSachLoaiDichVu(){
+        $dsdv = $this->bv->laydanhsach("loaidichvu");
+        $_SESSION['dsdv'] = $dsdv;
+        return true;
+    }
+
 
 
 }//class
