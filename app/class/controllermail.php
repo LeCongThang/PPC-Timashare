@@ -24,11 +24,14 @@ class controllermail
 
     public function mail()
     {
+
         require "view/mail.php";
     }
 
     public  function  mail2()
     {
+        $readmail = $this->params[0];
+        $mail = $this->bv->read($readmail);
         require "view/readmail.php";
     }
 
@@ -40,11 +43,9 @@ class controllermail
             die();
     }
 
-    public  function readmail(){
-        $readmail = $this->params[0];
-        $this->bv->read($readmail);
-        $url = BASE_URL."controllermail/mail2";
-        header('Location: ' . $url, true);
-        die();
-    }
+//    public  function readmail(){
+//        $url = BASE_URL."controllermail/mail2";
+//        header('Location: ' . $url, true);
+//        die();
+//    }
 }

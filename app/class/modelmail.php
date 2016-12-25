@@ -25,10 +25,10 @@ class modelmail{
 
 
     public function read($readmail){
-        $sql = "SELECT * FROM lienhe WHERE email_lienhe = '$readmail' ";
+        $sql = "SELECT * FROM lienhe WHERE email_lienhe = '$readmail' limit 1 ";
         $kq = $this->db->query($sql);
-        $row= $kq->fetch_assoc();
-        return $row;
+        $mail= $kq->fetch_assoc();
+        return $mail;
     }
 
 //    public function laymail(){

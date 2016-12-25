@@ -4,10 +4,10 @@
         <!-- Sidebar user panel -->
         <div class="user-panel">
             <div class="pull-left image">
-                <img src="<?= BASE_DIR ?>img/img.png" class="img-circle" alt="User Image">
+                <img src="<?= BASE_DIR ?>img/1.png" class="img-circle" alt="User Image">
             </div>
             <div class="pull-left info">
-                <p style="margin-top:10px;">NGUYỄN MINH ĐỨC</p>
+                <h4 style="margin-top:10px; font-weight: bold;">ADMIN</h4>
                 <!-- <a href="#"><i class="fa fa-circle text-success"></i> Online</a> -->
             </div>
         </div>
@@ -31,43 +31,53 @@
                     ],
                     [
                         'title' => 'HOME',
-                        'url' => 'controlleradmin/index',
+                        'url' => 'controlleradmin/loadingadmin',
                         'icon' => 'glyphicon-home',
                     ],
                     [
                         'title' => 'QUẢN LÝ ẢNH SLIDE',
                         'url' => 'controllerslider/index',
-                        'icon' => 'glyphicon-home',
+                        'icon' => 'glyphicon glyphicon-th-large',
                     ],
                     [
                         'title' => 'GIỚI THIỆU',
                         'url' => 'controllergioithieu/gioithieu',
-                        'icon' => 'glyphicon-home',
+                        'icon' => 'glyphicon glyphicon-pencil',
                     ],
                     [
                         'title' => 'KHU NGHỈ DƯỠNG',
                         'url' => 'controllernghiduong/nghiduong',
-                        'icon' => 'glyphicon-home',
+                        'icon' => 'glyphicon glyphicon-tree-deciduous',
                     ],
                     [
                         'title' => 'BOOK',
                         'url' => 'controllerbook/index',
-                        'icon' => 'glyphicon-home',
+                        'icon' => 'glyphicon glyphicon-globe',
                     ],
                     [
                         'title' => 'MAIL BOX',
                         'url' => 'controllermail/mail',
-                        'icon' => 'glyphicon-home',
+                        'icon' => 'glyphicon glyphicon-envelope',
                     ],
                     [
                         'title' => 'QUẢN LÝ VIDEO',
                         'url' => 'controllervideo/video',
-                        'icon' => 'glyphicon-home',
+                        'icon' => 'glyphicon glyphicon-facetime-video',
                     ],
                     [
                         'title' => 'QUẢN TÀI KHOẢN',
                         'url' => 'controllertaikhoan/taikhoan',
-                        'icon' => 'glyphicon-home',
+                        'icon' => 'glyphicon glyphicon-user',
+                    ],
+                    [
+                        'title' => 'TRẠNG THÁI BOOK',
+                        'url' => 'controllertrangthai/trangthai',
+                        'icon' => 'glyphicon glyphicon-ok',
+                    ],
+                    [
+                        'title' => 'LOG OUT',
+                        'url' => 'controlleradmin/index',
+                        'icon' => 'glyphicon glyphicon-log-out',
                     ]
                 ],
                 'class' => 'sidebar-menu',

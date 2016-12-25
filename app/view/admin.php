@@ -126,7 +126,7 @@ desired effect
          <!--  -->
         </li>
         <li>
-          <a href="pages/quanlynghiduong.php">
+          <a href="<?php $this->controlleradmin->nghiduong() ?>">
             <i class="glyphicon glyphicon-globe"></i> <span>KHU NGHỈ DƯỠNG</span>
             <span class="pull-right-container">
               <!-- <small class="label pull-right bg-green">new</small> -->
@@ -135,7 +135,7 @@ desired effect
           
         </li>
         <li class="treeview">
-          <a href="#">
+          <a href="<?php $this->controllerbook->index() ?>">
             <i class="glyphicon glyphicon-briefcase"></i>
             <span>BOOK </span>
             <span class="pull-right-container">
@@ -145,7 +145,7 @@ desired effect
         
         </li>
          <li>
-          <a href="controllermail/mail">
+          <a href="<?=BASE_URL?>controllermail/mail">
             <i class="glyphicon glyphicon-envelope"></i> <span>MAIL BOX</span>
             <span class="pull-right-container">
               <!-- <small class="label pull-right bg-green">new</small> -->
