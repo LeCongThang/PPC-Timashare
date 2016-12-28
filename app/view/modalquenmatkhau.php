@@ -5,7 +5,7 @@
             <h3 style="text-align:center;"><b>LẤY LẠI MẬT KHẨU</b></h3>
         </div>
         <div class="modal-body">
-            <form action="<?= BASE_URL ?>controller/quenmatkhau" method="POST">
+            <form action="<?= BASE_URL.$_SESSION['lang'] ?>/controller/quenmatkhau" method="POST">
                 <div class="input-group" id="banner_5">
                     <span class="input-group-addon"><i class="glyphicon glyphicon-user"></i></span>
                     <input id="tendangnhapll" type="text" class="form-control" name="tendangnhapll"

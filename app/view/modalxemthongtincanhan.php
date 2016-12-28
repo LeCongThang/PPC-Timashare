@@ -5,7 +5,7 @@
             <h3 style="text-align:center;"><b>THÔNG TIN CÁ NHÂN</b></h3>
         </div>
         <div class="modal-body">
-            <form action="<?= BASE_URL ?>controller/luuthongtintaikhoan" method="POST">
+            <form action="<?= BASE_URL.$_SESSION['lang'] ?>/controller/luuthongtintaikhoan" method="POST">
                 <div class="input-group" id="banner_5">
                     <span class="input-group-addon">Họ tên</span>
                     <?php

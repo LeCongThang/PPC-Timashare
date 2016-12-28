@@ -36,9 +36,46 @@ class model
         return $list;
     }
 
+    public function laydanhsachslider()
+    {
+        $sql = "SELECT slider.image_slider, slider.duongdan_slider, slider_ngonngu.noidung_slider, slider_ngonngu.tieude_slider, slider_ngonngu.mota_slider FROM slider,slider_ngonngu WHERE slider.id_slider = slider_ngonngu.id_slider AND slider_ngonngu.ngon_ngu = '".$_SESSION['lang']."'";
+        $result = mysqli_query($this->db, $sql);
+        if (!$result) {
+            die("Error in query");
+        }
+        $list = array();
+        while ($row = mysqli_fetch_assoc($result)) {
+            $list[] = $row;
+        }
+        //remove out of memory
+        mysqli_free_result($result);
+        return $list;
+    }
+
+    public function layChiTietTheoNgonNgu($idslider){
+        $sql = "SELECT * FROM slider_ngonngu WHERE id_slider=".$idslider." AND ngon_ngu ='".$_SESSION['lang']."'";
+        $result = mysqli_query($this->db, $sql);
+        if (!$result) {
+            die("Error in query in here");
+        }
+        $list = array();
+        while ($row = mysqli_fetch_assoc($result)) {
+            $list[] = $row;
+        }
+        //remove out of memory
+        mysqli_free_result($result);
+        return $list;
+    }
+
+    public function laydulieu($bang){
+        $sql = "SELECT * FROM " . $bang;
+        $result = mysqli_query($this->db, $sql);
+        return mysqli_fetch_assoc($result);
+    }
+
     public function layThongTinChiTietKhuNghiDuong($id)
     {
-        $sql = "SELECT * FROM khunghiduong WHERE id =". $id;
+        $sql = "SELECT * FROM khunghiduong_".$_SESSION['lang']." WHERE id =". $id;
         //echo $sql;
         if (!$kq = $this->db->query($sql)) die($this->db->error);
         if (!$kq) return FALSE;
@@ -98,7 +135,7 @@ class model
 
     public function readmor($idsp)
     {
-        $sql = "SELECT * FROM khunghiduong WHERE id =" . $idsp;
+        $sql = "SELECT * FROM khunghiduong_".$_SESSION['lang']." WHERE id =" . $idsp;
         return mysqli_query($this->db, $sql);
     }
 
@@ -154,6 +191,13 @@ class model
             return false;
         return true;
     }
+
+    public function themTaiKhoanDangKy($email, $sodienthoai){
+        $sql = "insert into taikhoandangky(email_taikhoandk, sdt_taikhoandk, trangthai_taikhoandk) values ('" . $email . "','" . $sodienthoai . "',1)";
+        return mysqli_query($this->db, $sql);
+    }
+
+
 
 
 }//class

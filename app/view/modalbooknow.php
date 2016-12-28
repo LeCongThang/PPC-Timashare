@@ -5,7 +5,7 @@
             <h3 style="text-align:center;"><b>THÔNG TIN BOOK NOW</b></h3>
         </div>
         <div class="modal-body">
-            <form action="<?= BASE_URL ?>controller/bookKhuNghiDuong" method="POST">
+            <form action="<?= BASE_URL.$_SESSION['lang'] ?>/controller/bookKhuNghiDuong" method="POST">
                 <div class="form-group">
                     <label for="comment">Thời gian mà bạn sẽ chọn:</label>
                     <div class='input-group date' id='datetimepicker5'>
@@ -28,6 +28,7 @@
                 </div>
             </form>
         </div>
+
     </div>
     <!-- Modal content -->
 </div>

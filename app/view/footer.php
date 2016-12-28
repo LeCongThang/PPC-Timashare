@@ -27,12 +27,103 @@
 </div>
 
 <script type="text/javascript">
+    function validateEmail(email) {
+        var re = /^(([^<>()[\]\\.,;:\s@\"]+(\.[^<>()[\]\\.,;:\s@\"]+)*)|(\".+\"))@((\[[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}\])|(([a-zA-Z\-0-9]+\.)+[a-zA-Z]{2,}))$/;
+        return re.test(email);
+    }
     $(document).ready(function () {
+
         var mainModal;
         var modalThemKND = document.getElementById('ModalThemKND');
         var modalXemThongTin = document.getElementById('ModalXemThongTin');
         var modaldoimatkhau = document.getElementById('ModalDoiMatKhau');
         var ModalBookNow = document.getElementById('ModalBookNow');
+
+        $('#btn_dangky').click(function () {
+            diaChiEmail = $('#diaChiEmail').val();
+            dienthoai = $('#dienthoai').val();
+
+            if (diaChiEmail == "" || dienthoai == "") {
+                $('#thongbao').text("Hãy nhập đầy đủ thông tin");
+                return false;
+            }
+            if (validateEmail(diaChiEmail)) {
+            } else {
+                $("#thongbao").text("Địa chỉ mail không đúng");
+                return false;
+            }
+            if (isNaN(dienthoai)) {
+                $('#thongbao').text("Điện thoại phải là số");
+                return false;
+            }
+            return true;
+        });
+
+        $('#btn_gui').click(function () {
+            tencongty = $('#ten').val();
+            dienthoaicongty = $('#dienthoaicongty').val();
+            emailcongty = $('#email').val();
+            loiguilh = 0;
+
+            if (tencongty == "" || dienthoaicongty == "" || emailcongty == "") {
+                $('#thongbaoguilh').text("Hãy nhập đầy đủ thông tin liên hệ");
+                loiguilh++;
+            }
+
+            if (loiguilh != 0) {
+                return false;
+            }
+            return true;
+        });
+
+        $('#btnQuenMatKhau').click(function () {
+            tendangnhapll = $('#tendangnhapll').val();
+            sodienthoaitaikhoanll = $('#sodienthoaitaikhoanll').val();
+            loiguiqmk = 0;
+            if (isNaN(sodienthoaitaikhoanll)) {
+                loiguiqmk++;
+                $('#thongbaoQuenMatKhau').text("Điện thoại phải là số");
+            }
+            if (tendangnhapll == "" || sodienthoaitaikhoanll == "") {
+                $('#thongbaoQuenMatKhau').text("Hãy nhập đầy đủ thông tin");
+                loiguiqmk++;
+            }
+            if (loiguiqmk != 0) {
+                return false;
+            }
+            return true;
+        });
+
+        $('#btn_dangnhap').click(function () {
+            tendangnhap = $('#username').val();
+            matkhau = $('#password').val();
+            if (tendangnhap == "" || matkhau == "") {
+                $('#thongbaodn').text("Hãy nhập đầy đủ thông tin");
+                return false;
+            }
+            return true;
+        });
+
+        $('#doimatkhau').click(function () {
+            matkhaucu = $('#matkhaucu').val();
+            matkhaumoi = $('#matkhaumoi').val();
+            nhaplaimatkhaumoi = $('#nhaplaimatkhaumoi').val();
+            loi = 0;
+            if (matkhaucu == "" || matkhaumoi == "") {
+                loi++;
+                $('#thongbaodoimatkhau').text("Hãy nhập đầy đủ thông tin");
+            }
+            else {
+                if (matkhaumoi != nhaplaimatkhaumoi) {
+                    loi++;
+                    $('#thongbaodoimatkhau').text("Mật khẩu nhập lại không trùng khớp");
+                }
+            }
+            if (loi != 0) {
+                return false;
+            }
+            return true;
+        });
 
         $('#btnThem').click(function (e) {
             e.preventDefault();
@@ -95,7 +186,6 @@
             }
             return false;
         }
-
 
 
         window.onclick = function (event) {
@@ -215,12 +305,49 @@
         $('#btn_thoatdangkyknd').click(function () {
             mainModal.style.display = "none";
         });
+        $(function () {
+            $('#datetimepicker3').datetimepicker({
+                defaultDate: "23/12/2016",
+                disabledDates: [
+                    moment("12/23/2016"),
+                    new Date(2016, 11 - 1, 21),
+                    "11/22/2013 00:53"
+                ]
+            });
+        });
+        $(function () {
+            $('#datetimepicker4').datetimepicker({
+                defaultDate: "23/12/2016",
+                disabledDates: [
+                    moment("12/23/2016"),
+                    new Date(2016, 11 - 1, 21),
+                    "11/22/2013 00:53"
+                ]
+            });
+        });
 
+
+        $(".dropdown img.flag").addClass("flagvisibility");
+
+        $(".dropdown dt a").click(function () {
+            $(".dropdown dd ul").toggle();
+        });
+
+        $(document).bind('click', function (e) {
+
+            var $clicked = $(e.target);
+            if (!$clicked.parents().hasClass("dropdown"))
+                $(".dropdown dd ul").hide();
+        });
+        $(".dropdown img.flag").toggleClass("flagvisibility");
 
     });
 
+
 </script>
 
+<script type="text/javascript">
 
+</script>
 </body>
 </html>

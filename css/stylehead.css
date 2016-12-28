@@ -166,14 +166,14 @@ img.pic {
         font-weight: bold;
     }
 
-    #btnDangNhap{
+    #btnDangNhap {
         background-color: #FAF9DB;
         margin-top: 10px;
         margin-left: 25px;
         font-weight: bold;
     }
 
-    #btnXinChao{
+    #btnXinChao {
 
         margin-top: 10px;
         margin-left: 25px;
@@ -195,13 +195,13 @@ img.pic {
         box-shadow: 0 5px 5px 0 #888888;
     }
 
-    #row h5{
-        font-weight: bold!important;
+    #row h5 {
+        font-weight: bold !important;
         color: #8B4726;
     }
 
-    #row h4{
-        font-weight: bold!important;
+    #row h4 {
+        font-weight: bold !important;
         color: #8B4726;
     }
 
@@ -223,7 +223,7 @@ img.pic {
         padding-right: 0 !important;
     }
 
-    .btnBookNow{
+    .btnBookNow {
         color: white;
         padding-top: 10px;
         padding-bottom: 10px;
@@ -235,8 +235,7 @@ img.pic {
         font-weight: bold;
     }
 
-
-    #btnReadMore{
+    #btnReadMore {
         color: white;
         padding-top: 5px;
         padding-bottom: 5x;
@@ -260,14 +259,16 @@ img.pic {
         background-color: black !important;
     }
 
-    .footer1 .footerlogo img{
+    .footer1 .footerlogo img {
         max-width: 70%;
     }
-    .footer1 p{
+
+    .footer1 p {
         text-align: left;
         font-weight: bold;
         line-height: 90%;
     }
+
     .footer1 {
         margin-top: 30px;
 

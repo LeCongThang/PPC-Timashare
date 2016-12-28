@@ -105,11 +105,10 @@ h2 {
 #model-content-dn{
     background-color: #fefefe;
     right: 0;
-    margin-left: 85%;
-    position: absolute;
-    padding: 5px;
+    margin :auto;
+    padding: 15px;
     border: 1px solid #888;
-    width: 20%;
+    width: 60%;
 }
 
 /* The Close Button */

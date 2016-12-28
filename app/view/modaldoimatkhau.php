@@ -2,30 +2,30 @@
     <div class="modal-content">
         <div class="modal-header">
             <div class="closeModalDoiMatKhau"><span class="glyphicon glyphicon-remove"></span></div>
-            <h3 style="text-align:center;"><b>ĐỔI MẬT KHẨU</b></h3>
+            <h3 style="text-align:center;"><b>{TTDoiMatKhau}</b></h3>
         </div>
         <div class="modal-body">
-            <form action="<?= BASE_URL ?>controller/doimatkhau" method="POST">
+            <form action="<?= BASE_URL.$_SESSION['lang'] ?>/controller/doimatkhau" method="POST">
                 <div class="input-group" id="banner_5">
                     <span class="input-group-addon"><i class="glyphicon glyphicon-lock"></i></span>
                     <input id="matkhaucu" type="password" class="form-control" name="matkhaucu"
-                           placeholder="Mật khẩu cũ">
+                           placeholder='{MatKhauCu}'>
                 </div>
                 <div class="input-group" id="banner_5">
                     <span class="input-group-addon"><i class="glyphicon glyphicon-lock"></i></span>
                     <input id="matkhaumoi" type="password" class="form-control" name="matkhaumoi"
-                           placeholder="Mật khẩu mới">
+                           placeholder='{MatKhauMoi}'>
                 </div>
                 <div class="input-group" id="banner_5">
                     <span class="input-group-addon"><i class="glyphicon glyphicon-lock"></i></span>
                     <input id="nhaplaimatkhaumoi" type="password" class="form-control" name="nhaplaimatkhaumoi"
-                           placeholder="Nhập lại mật khẩu mới">
+                           placeholder='{NhapLaiMatKhau}'>
                 </div>
                 <p><span style="color: red;" id="thongbaodoimatkhau"></span></p>
                 <div class="modal-footer text-right">
-                    <button type="submit" id="doimatkhau" name="btn_submit" class="btn btn-default">Thay đổi
+                    <button type="submit" id="doimatkhau" name="btn_submit" class="btn btn-default">{NutDoiMatKhau}
                     </button>
-                    <button type="button" id="btnthoatdoimatkhau" class="btn btn-default">Thoát</button>
+                    <button type="button" id="btnthoatdoimatkhau" class="btn btn-default">{Thoat}</button>
 
                 </div>
             </form>

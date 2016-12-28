@@ -5,9 +5,9 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1">
     <base href="<?= BASE_DIR ?>">
-    <meta name="viewport" content="width=device-width, initial-scale=1">
     <link href="<?= BASE_DIR ?>css/style.css" rel="stylesheet" type="text/css">
     <script type="text/javascript" src="<?= BASE_DIR ?>ckeditor/ckeditor.js"></script>
+    <script type="text/javascript" src="<?= BASE_DIR ?>js/main.js"></script>
     <!-- Latest compiled and minified CSS -->
     <link rel="stylesheet" type="text/css" href="<?= BASE_DIR ?>css/style.css">
     <link rel="stylesheet" type="text/css" href="<?= BASE_DIR ?>css/responsive.css">
@@ -26,43 +26,39 @@
     <script
         src="https://maps.googleapis.com/maps/api/js?key=AIzaSyBu-916DdpKAjTmJNIgngS6HL_kDIKU0aU&callback=myMap"></script>
     <link rel="stylesheet" type="text/css" href="<?= BASE_DIR ?>css/stylehead.css">
+    <script type="text/javascript"
+            src="<?= BASE_DIR ?>bootstrapdatetimepicker/js/bootstrap-datetimepicker.min.js"></script>
+    <link rel="stylesheet" href="<?= BASE_DIR ?>bootstrapdatetimepicker/css/bootstrap.min.css"/>
+    <link rel="stylesheet" href="<?= BASE_DIR ?>bootstrapdatetimepicker/css/bootstrap.css"/>
+    <script type="text/javascript" src="<?= BASE_DIR ?>bootstrapdatetimepicker/js/bootstrap-datetimepicker.min.js"/>
+    <script type="text/javascript" src="<?= BASE_DIR ?>bootstrapdatetimepicker/js/bootstrap-datetimepicker.js"/>
+    <script type="text/javascript" src="<?= BASE_DIR ?>bootstrapdatetimepicker/bootstrapv3/bootstrap/js/bootstrap.js"/>
+
     <script type="text/javascript">
         $(document).ready(function () {
             $('#btn_dangky').click(function () {
-                tendangnhap = $('#tendangnhap').val();
-                matkhau = $('#matkhau').val();
-                nhaplaimatkhau = $('#nhaplaimatkhau').val();
-                hoten = $('#hoten').val();
-                diachi = $('#diachi').val();
+                diaChiEmail = $('#diaChiEmail').val();
                 dienthoai = $('#dienthoai').val();
-
-                loi = 0;
-                if (tendangnhap == "" || matkhau == "" || hoten == ""
-                    || diachi == "" || dienthoai == "") {
-                    loi++;
+                if (validateEmail(email)) {
+                } else {
+                    $("#thongbao").text(email + " không đúng");
+                    return false;
+                }
+                if (diaChiEmail == "" || dienthoai == "") {
                     $('#thongbao').text("Hãy nhập đầy đủ thông tin");
+                    return false;
                 }
-
-                if (matkhau != nhaplaimatkhau) {
-                    loi++;
-                    $('#thongbao').text("Mật khẩu nhập lại không trùng khớp");
-                }
-
                 if (isNaN(dienthoai)) {
-                    loi++;
                     $('#thongbao').text("Điện thoại phải là số");
-                }
-
-                if (loi != 0) {
                     return false;
                 }
                 return true;
             });
+
             $('#btnLuuThongTin').click(function () {
                 tentaikhoan = $('#tentaikhoan').val();
                 diachitaikhoan = $('#diachitaikhoan').val();
                 sodienthoaitaikhoan = $('#sodienthoaitaikhoan').val();
-
                 loi = 0;
                 if (isNaN(sodienthoaitaikhoan)) {
                     loi++;
@@ -73,12 +69,12 @@
                     loi++;
                     $('#thongbaoXemThongTin').text("Hãy nhập đầy đủ thông tin");
                 }
-
                 if (loi != 0) {
                     return false;
                 }
                 return true;
             });
+
             $('#btn_gui').click(function () {
                 tencongty = $('#ten').val();
                 dienthoaicongty = $('#dienthoaicongty').val();
@@ -100,7 +96,6 @@
                 tendangnhapll = $('#tendangnhapll').val();
                 sodienthoaitaikhoanll = $('#sodienthoaitaikhoanll').val();
                 loiguiqmk = 0;
-
                 if (isNaN(sodienthoaitaikhoanll)) {
                     loiguiqmk++;
                     $('#thongbaoQuenMatKhau').text("Điện thoại phải là số");
@@ -109,7 +104,6 @@
                     $('#thongbaoQuenMatKhau').text("Hãy nhập đầy đủ thông tin");
                     loiguiqmk++;
                 }
-
                 if (loiguiqmk != 0) {
                     return false;
                 }
@@ -130,7 +124,6 @@
                 matkhaucu = $('#matkhaucu').val();
                 matkhaumoi = $('#matkhaumoi').val();
                 nhaplaimatkhaumoi = $('#nhaplaimatkhaumoi').val();
-
                 loi = 0;
                 if (matkhaucu == "" || matkhaumoi == "") {
                     loi++;
@@ -148,13 +141,11 @@
                 return true;
             });
         });
-
-
     </script>
 </head>
 <body>
 <div class="container">
-    <nav class="navbar navbar-fixed-top" style="background-color:none" role="navigation">
+    <nav class="navbar navbar-fixed-top" style="background-color:transparent" role="navigation">
         <div class="container-fluid">
             <!-- Brand and toggle get grouped for better mobile display -->
             <div class="navbar-header">
@@ -165,7 +156,7 @@
                     <span class="icon-bar"></span>
                 </button>
                 <div class="navbar-brand navbar-brand-centered">
-                    <a href="<?= BASE_URL ?>controller/index">
+                    <a href="<?= BASE_URL . $_SESSION['lang'] ?>/controller/index">
                         <img src="<?= BASE_DIR ?>img/logo.png" id="logo" class="img-responsive">
                     </a>
                 </div>
@@ -175,14 +166,25 @@
                 <ul class="nav navbar-nav" class="menuleft">
                     <li id="language">
                         <dl id="sample" class="dropdown">
-                            <dt><a href="#"><img class="flag" src="<?= BASE_DIR ?>img/icon_en.png" alt=""/> Asia-English</a>
+                            <dt>
+                                <?php
+                                if ($_SESSION['lang'] == "vi") {
+                                    echo '<a href="#" onclick="return false;"><img class="flag"src="' . BASE_DIR . 'img/vietnamflag.gif"alt=""/> Asia-VietNamese</a>';
+                                } else if ($_SESSION['lang'] == "en") {
+                                    echo '<a href="#" onclick="return false;"><img class="flag"src="' . BASE_DIR . 'img/icon_en.png"alt=""/> Asia-English</a>';
+                                }
+                                ?>
                             </dt>
                             <dd>
                                 <ul>
-                                    <li><a href="#"><img class="flag" src="<?= BASE_DIR ?>img/icon_en.png" alt=""/>
-                                            Asia-English</a></li>
-                                    <li><a href="#"><img class="flag" src="<?= BASE_DIR ?>img/vietnamflag.gif" alt=""/>
-                                            Asia-VietNamese</a></li>
+                                    <li><a href="<?= BASE_URL . "en/" ?>"><img class="flag"
+                                                                               src="<?= BASE_DIR ?>img/icon_en.png"
+                                                                               alt=""/>
+                                            Asia-English<span class="value">En</span></a></li>
+                                    <li><a href="<?= BASE_URL . "vi/" ?>"><img class="flag"
+                                                                               src="<?= BASE_DIR ?>img/vietnamflag.gif"
+                                                                               alt=""/>
+                                            Asia-VietNamese<span class="value">Vi</span></a></li>
                                 </ul>
                             </dd>
                         </dl>
@@ -199,14 +201,14 @@
                     <li>
                         <?php
                         if (!isset($_SESSION['tendangnhap']))
-                            echo '<button class="btn btn-sucessful" id="btnDangNhap" style="border-radius:0px;margin-top:10px;" id="btnDangNhap" type="button">Đăng nhập - Đăng ký ngay </button>';
+                            echo '<button class="btn btn-sucessful" id="btnDangNhap" style="border-radius:0px;margin-top:10px;" id="btnDangNhap" type="button">{DangNhapDangKy}</button>';
                         else {
-                            echo '<div class="dropdown btnUser"> <button id="btnXinChao" class="btn btn-primary dropdown-toggle" type="button" data-toggle="dropdown">Hello, ' . $_SESSION['tendangnhap'];
+                            echo '<div class="dropdown btnUser"> <button id="btnXinChao" class="btn btn-primary dropdown-toggle" type="button" data-toggle="dropdown">' . XinChao . $_SESSION['tendangnhap'];
                             echo '<span class="caret"></span></button><ul style="background-color:#265a88" class="dropdown-menu">';
-                            echo '<li><a href ="#" id="hrefXemThongTin" >Xem thông tin cá nhân</a></li>';
-                            echo "<li><a href ='#' id='hrefDoiMatKhau'>Đổi mật khẩu</a></li>";
+                            //echo '<li><a href ="#" id="hrefXemThongTin" >Xem thông tin cá nhân</a></li>';
+                            echo "<li><a href ='#' id='hrefDoiMatKhau'>" . DoiMatKhau . "</a></li>";
                             echo '<li><a href = "#"></a></li>';
-                            echo '<li><a href ="' . BASE_URL . 'controller/dangxuat" >Thoát</a></li>';
+                            echo '<li><a href ="' . BASE_URL . $_SESSION['lang'] . '/controller/dangxuat" >' . Thoat . '</a></li>';
                             echo '</ul></div>';
                         }
                         ?>
@@ -222,29 +224,36 @@
     <div id="myCarousel" class="carousel slide" data-ride="carousel">
         <!-- Indicators -->
         <ol class="carousel-indicators">
-            <li class="indi active" data-target="#myCarousel" data-slide-to="0"></li>
-            <li class="indi" data-target="#myCarousel" data-slide-to="1"></li>
-            <li class="indi" data-target="#myCarousel" data-slide-to="2"></li>
-            <li class="indi" data-target="#myCarousel" data-slide-to="3"></li>
+            <?php
+            foreach ($dssliderw as $key => $itemSlider) {
+                if ($key == 0)
+                    echo '<li class="indi active" data-target="#myCarousel" data-slide-to="' . $key . '"></li>';
+                else
+                    echo '<li class="indi" data-target="#myCarousel" data-slide-to="' . $key . '"></li>';
+            } ?>
         </ol>
 
         <!-- Wrapper for slides -->
         <div class="carousel-inner" role="listbox">
             <?php
-            foreach ($dsKhuNghiDuongSlier as $key => $khuNghiDuong) {
+            foreach ($dssliderw as $key => $itemSlider) {
                 if ($key == 0)
                     echo '<div class="item active">';
                 else
                     echo '<div class="item">';
                 echo '<div class="row">';
-                echo '<img  class = " img-responsive col-sm-12 col-md-12 col-lg-12  " src ="' . BASE_DIR . $khuNghiDuong['link'] . '">';
+                echo '<img  class = " img-responsive col-sm-12 col-md-12 col-lg-12  " src ="' . BASE_DIR . $itemSlider['image_slider'] . '">';
                 echo '</div>';
-                echo '<div class="carousel-caption"><div class = "row"> <div class="col-md offset-4 col-md-8 bannerDecription">';
-                echo '<h3 class = "myh3h4">' . $khuNghiDuong['ten'] . '</h3>';
-                echo '<h4 class = "myh3h4">' . $khuNghiDuong['thongtin'] . '</h4>';
-                echo '</div></div>';
-                echo '<center><a href="#" class="btnBookNow btn btn-default " style="margin-bottom:10px;" id="btnBN'.$key.'" idsp ="' . $khuNghiDuong['id'] . '" >BOOK
-                            NOW</a></center></div></div>';
+                if ($itemSlider['tieude_slider'] != "" || $itemSlider['mota_slider'] != "") {
+                    echo '<div class="carousel-caption"><div class = "row"> <div class="col-md offset-4 col-md-8 bannerDecription">';
+                    echo '<h3 class = "myh3h4">' . $itemSlider['tieude_slider'] . '</h3>';
+                    echo '<h4 class = "myh3h4">' . $itemSlider['mota_slider'] . '</h4>';
+                    echo '</div></div>';
+                } else {
+                    echo '<div class="carousel-caption"><div class = "row"> <div class="col-md offset-4 col-md-8">';
+                    echo '</div></div>';
+                }
+                echo '<center><a href="' . $itemSlider['duongdan_slider'] . '" class="btnBookNow btn btn-default " style="margin-bottom:10px;" id="btnBN' . $key . '" >' . $itemSlider['noidung_slider'] . '</a></center></div></div>';
 
             }
             ?>
@@ -266,8 +275,8 @@
                 <?php
                 foreach ($dsKhuNghiDuongBanner as $key => $khuNghiDuongBanner) {
                     echo '<div class="col-sm-12 col-sm-3"> <div class="thumbnail"><img src="' . BASE_DIR . $khuNghiDuongBanner['link'] . '">';
-                    echo ' <div class="caption"><h5>Khu nghỉ dưỡng</h5><h4>' . $khuNghiDuongBanner['ten'] . '</h4><p>' . $khuNghiDuongBanner['thongtin'] . '</p>';
-                    echo '<a href="' . BASE_URL . 'controller/xemChiTietKhuNghiDuong/' . $khuNghiDuongBanner['id'] . '" class="btn btn-default" id="btnreadmore">READ MORE</a></div></div></div>';
+                    echo ' <div class="caption"><h5>' ?>{KhuNghiDuong}<?php echo '</h5><h4>' . $khuNghiDuongBanner['ten'] . '</h4><p>' . $khuNghiDuongBanner['thongtin'] . '</p>';
+                    echo '<a href="' . BASE_URL . $_SESSION['lang'] . '/controller/xemChiTietKhuNghiDuong/' . $khuNghiDuongBanner['id'] . '" class="btn btn-default" id="btnreadmore">' ?>{TimHieuThem}<?php echo '</a></div></div></div>';
                 }
                 ?>
             </div><!--  End Row -->
@@ -280,7 +289,7 @@
     <?php include 'modalquenmatkhau.php'; ?>
     <?php include 'modalbooknow.php'; ?>
     <div id="themkhunghiduong"></div><?php include 'modalthemkhunghiduong.php'; ?>
-    <div id="thongtincanhan"> </div><?php include 'modalxemthongtincanhan.php'; ?>
+    <div id="thongtincanhan"></div><?php include 'modalxemthongtincanhan.php'; ?>
 
 </header>
 
