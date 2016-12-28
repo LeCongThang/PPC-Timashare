@@ -214,6 +214,19 @@
 </script>
 <script type="text/javascript">
     $(document).ready(function () {
+        $(".dropdown img.flag").addClass("flagvisibility");
+
+        $(".dropdown dt a").click(function () {
+            $(".dropdown dd ul").toggle();
+        });
+
+        $(document).bind('click', function (e) {
+            var $clicked = $(e.target);
+            if (!$clicked.parents().hasClass("dropdown"))
+                $(".dropdown dd ul").hide();
+        });
+        $(".dropdown img.flag").toggleClass("flagvisibility");
+
         //All Modal
         var mainModal;
         var modal = document.getElementById('ModalDangNhap');
@@ -249,31 +262,13 @@
         //-------------------------------------------------------------------------------------------------------------------
         // Button X in modal
         var span = document.getElementsByClassName("close")[0];// X for Modal dang ky
-//        var closeModalBookNow = document.getElementsByClassName("closeModalBookNow")[0];
-//        var closeModalDoiMatKhau = document.getElementsByClassName("closeModalDoiMatKhau")[0];
-//        var closeModalQuenMatKhau = document.getElementsByClassName("closeModalQuenMatKhau")[0];
-//        var closeXemThongTinCaNhan = document.getElementsByClassName("closeXemThongTinCaNhan")[0];
-        // When the user clicks on <span> (x), close the modal
+
         span.onclick = function () {
             mainModal.style.display = "none";
             $('#thongbaodn').text("");
         }
 
-//        closeModalBookNow.onclick = function () {
-//            mainModal.style.display = "none";
-//        }
-//
-//        closeModalDoiMatKhau.onclick = function () {
-//            mainModal.style.display = "none";
-//        }
-//
-//        closeModalQuenMatKhau.onclick = function () {
-//            mainModal.style.display = "none";
-//        }
-//
-//        closeXemThongTinCaNhan.onclick = function () {
-//            mainModal.style.display = "none";
-//        }
+
 
         // When the user clicks anywhere outside of the modal, close it
         window.onclick = function (event) {
@@ -326,20 +321,6 @@
             });
         });
 
-
-        $(".dropdown img.flag").addClass("flagvisibility");
-
-        $(".dropdown dt a").click(function () {
-            $(".dropdown dd ul").toggle();
-        });
-
-        $(document).bind('click', function (e) {
-
-            var $clicked = $(e.target);
-            if (!$clicked.parents().hasClass("dropdown"))
-                $(".dropdown dd ul").hide();
-        });
-        $(".dropdown img.flag").toggleClass("flagvisibility");
 
     });
 

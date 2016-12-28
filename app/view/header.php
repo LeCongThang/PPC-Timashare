@@ -33,7 +33,6 @@
     <script type="text/javascript" src="<?= BASE_DIR ?>bootstrapdatetimepicker/js/bootstrap-datetimepicker.min.js"/>
     <script type="text/javascript" src="<?= BASE_DIR ?>bootstrapdatetimepicker/js/bootstrap-datetimepicker.js"/>
     <script type="text/javascript" src="<?= BASE_DIR ?>bootstrapdatetimepicker/bootstrapv3/bootstrap/js/bootstrap.js"/>
-
     <script type="text/javascript">
         $(document).ready(function () {
             $('#btn_dangky').click(function () {
@@ -140,6 +139,7 @@
                 }
                 return true;
             });
+
         });
     </script>
 </head>
@@ -188,6 +188,13 @@
                                 </ul>
                             </dd>
                         </dl>
+                        <!--                        <div id="lang">-->
+                        <!--                            <a href="--><? //= BASE_URL ?><!--vi/"> <img src="-->
+                        <? //= BASE_DIR ?><!--img/vietnamflag.gif" align=left></a>-->
+                        <!--                            <a href="--><? //= BASE_URL ?><!--en/"> <img src="-->
+                        <? //= BASE_DIR ?><!--img/icon_en.png" align=left></a>-->
+                        <!--                        </div>-->
+
                         <span id="result"></span>
                     </li>
                     <li><a href="#">{TrangChu}</a></li>
@@ -203,12 +210,12 @@
                         if (!isset($_SESSION['tendangnhap']))
                             echo '<button class="btn btn-sucessful" id="btnDangNhap" style="border-radius:0px;margin-top:10px;" id="btnDangNhap" type="button">{DangNhapDangKy}</button>';
                         else {
-                            echo '<div class="dropdown btnUser"> <button id="btnXinChao" class="btn btn-primary dropdown-toggle" type="button" data-toggle="dropdown">' . XinChao . $_SESSION['tendangnhap'];
+                            echo '<div class="dropdown btnUser"> <button id="btnXinChao" class="btn btn-primary dropdown-toggle" type="button" data-toggle="dropdown">' .XinChao. $_SESSION['tendangnhap'];
                             echo '<span class="caret"></span></button><ul style="background-color:#265a88" class="dropdown-menu">';
                             //echo '<li><a href ="#" id="hrefXemThongTin" >Xem thông tin cá nhân</a></li>';
-                            echo "<li><a href ='#' id='hrefDoiMatKhau'>" . DoiMatKhau . "</a></li>";
+                            echo "<li><a href ='#' id='hrefDoiMatKhau'>".DoiMatKhau."</a></li>";
                             echo '<li><a href = "#"></a></li>';
-                            echo '<li><a href ="' . BASE_URL . $_SESSION['lang'] . '/controller/dangxuat" >' . Thoat . '</a></li>';
+                            echo '<li><a href ="' . BASE_URL . $_SESSION['lang'] . '/controller/dangxuat" >'.Thoat.'</a></li>';
                             echo '</ul></div>';
                         }
                         ?>
