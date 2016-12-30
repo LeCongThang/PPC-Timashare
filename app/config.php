@@ -1,5 +1,5 @@
 <?php
-define("BASE_URL",'http://192.168.50.4/ppctimeshare/');
+define("BASE_URL",'http://localhost:8080/ppctimeshare/');
 define("BASE_DIR", "/ppctimeshare/");
 
 define("HOST", "localhost");
