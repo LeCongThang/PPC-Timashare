@@ -32,7 +32,12 @@
         return re.test(email);
     }
     $(document).ready(function () {
-
+        $('#cauhoi').click(function () {
+            $("#cau_hoi_thuong_gap").toggle();
+        });
+        $('#cachsudung').click(function () {
+            $("#cach_su_dung").toggle();
+        });
         var mainModal;
         var modalThemKND = document.getElementById('ModalThemKND');
         var modalXemThongTin = document.getElementById('ModalXemThongTin');

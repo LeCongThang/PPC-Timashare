@@ -161,7 +161,7 @@
                     <hr class="text-left"
                         style="width:50px;border:2px solid #660000;margin-left:0px;margin-bottom:0px;">
                     <h3><b>{TroGiup}</b></h3>
-                    <a href="#" id="cauhoi" style="color:#660000;"><h4>{CauHoiThuongGap}</h4></a>
+                    <a href="#"  onclick="return false;" id="cauhoi" style="color:#660000;"><h4>{CauHoiThuongGap}</h4></a>
                     <div id="cau_hoi_thuong_gap" style="display: none;">
                         <ul>
                             <li>Tại sao tôi không đăng nhập được? </li>
@@ -171,7 +171,7 @@
                             <li>Tại sao tôi không đăng nhập được? </li>
                         </ul>
                     </div>
-                    <a href="#" id="cachsudung" style="color:#660000;"><h4>{CachSuDung} PPC TIMESHARE</h4></a>
+                    <a href="#" id="cachsudung"  onclick="return false;"style="color:#660000;"><h4>{CachSuDung} PPC TIMESHARE</h4></a>
                     <div id="cach_su_dung" style="display: none;">
                         <ul>
                             <li>Tại sao tôi không đăng nhập được? </li>
@@ -185,7 +185,7 @@
             </section>
             <section id="lienhe">
                 <div class="col-md-12 col-sm-12">
-                    <h4>{LienHe}</h4>
+                    <h4><b>{LienHe}</b></h4>
                 </div>
                 <form action="<?= BASE_URL . $_SESSION['lang'] ?>/controller/lienHe" method="post">
                     <div class="col-md-4 col-sm-12">
