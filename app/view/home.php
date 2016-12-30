@@ -1,23 +1,25 @@
 <?php include 'header.php'; ?>
     <!--phần container giới thiệu thứ 1-->
-    <div class="container">
-        <div class="row text-left">
-            <div class="col-md-12 col-sm-12">
-                <hr class="text-left" style="width:50px;border:2px solid #362516;margin-left:0px;">
-                <h2>{GioiThieu}</h2>
-            </div>
-            <div class="col-md-6 col-sm-12">
-                <img src="<?= BASE_URL ?><?= $gioithieu['img_tieude'] ?>" style="width:100%;">
-            </div>
-            <div class="col-md-6 col-sm-12">
-                <h4><b><?= $gioithieu['tieu_de'] ?></b></h4>
-                <hr class="text-left" style="width:50px;border:2px solid #362516;margin-left:0px;">
-                <br>
-                <p id="van_ban"> <?= $gioithieu['noidung_gioithieu1'] ?></p>
-                <p id="van_ban"> <?= $gioithieu['noidung_gioithieu2'] ?></p>
+    <section id="introduce">
+        <div class="container">
+            <div class="row text-left">
+                <div class="col-md-12 col-sm-12">
+                    <hr class="text-left" style="width:50px;border:2px solid #362516;margin-left:0px;">
+                    <h2>{GioiThieu}</h2>
+                </div>
+                <div class="col-md-6 col-sm-12">
+                    <img src="<?= BASE_URL ?><?= $gioithieu['img_tieude'] ?>" style="width:100%;">
+                </div>
+                <div class="col-md-6 col-sm-12">
+                    <h4><b><?= $gioithieu['tieu_de'] ?></b></h4>
+                    <hr class="text-left" style="width:50px;border:2px solid #362516;margin-left:0px;">
+                    <br>
+                    <p id="van_ban"> <?= $gioithieu['noidung_gioithieu1'] ?></p>
+                    <p id="van_ban"> <?= $gioithieu['noidung_gioithieu2'] ?></p>
+                </div>
             </div>
         </div>
-    </div>
+    </section>
     <!--phần container giới thiệu thứ 1-->
 
     <!--phần container giới thiệu thứ 2-->
@@ -120,145 +122,152 @@
             </div>
             <!--col so 2-->
         </div>
-        <div class="row space">
+        <section id="thamgia">
+            <div class="row space">
 
-            <div class="col-md-12 col-sm-12">
-                <hr class="text-left" style="width:50px;border:2px solid #362516;margin-left:0px;">
-                <h3>{ThamGia} PPC TIMESHARE</h3>
-            </div>
-            <div class="col-md-6 col-sm-12" id="banner_5">
-                <div class="media">
-                    <div class="media-left" id="banner_5">
-                        <img src="<?= BASE_URL ?>img/banner-knd1.jpg" style="width:100%;">
-                    </div>
-                    <div class="media-right" id="banner_5">
-                        <img src="<?= BASE_URL ?>img/banner-knd2.jpg" style="width:100%;">
+                <div class="col-md-12 col-sm-12">
+                    <hr class="text-left" style="width:50px;border:2px solid #362516;margin-left:0px;">
+                    <h3>{ThamGia} PPC TIMESHARE</h3>
+                </div>
+                <div class="col-md-6 col-sm-12" id="banner_5">
+                    <div class="media">
+                        <div class="media-left" id="banner_5">
+                            <img src="<?= BASE_URL ?>img/banner-knd1.jpg" style="width:100%;">
+                        </div>
+                        <div class="media-right" id="banner_5">
+                            <img src="<?= BASE_URL ?>img/banner-knd2.jpg" style="width:100%;">
 
+                        </div>
+                    </div>
+                    <div class="media">
+                        <div class="media-body" id="banner_5">
+                            <img src="<?= BASE_URL ?>img/banner-knd3.jpg" class="img-reponsive">
+                        </div>
                     </div>
                 </div>
-                <div class="media">
-                    <div class="media-body" id="banner_5">
-                        <img src="<?= BASE_URL ?>img/banner-knd3.jpg" class="img-reponsive">
-                    </div>
-                </div>
-            </div>
-            <div class="col-md-6 col-sm-12" id="banner_5">
-                <img src="<?= BASE_URL ?>img/banner-knd4.jpg" class="img-reponsive">
-            </div>
-            <div class="col-md-12 col-sm-12" id="banner_5">
-                <img src="<?= BASE_URL ?>img/banner-knd5.jpg" class="img-reponsive">
-            </div>
-        </div>
-        <!-- phan tiep theo -->
-        <div class="row space">
-            <div class="col-md-12 col-sm-12">
-                <hr class="text-left" style="width:50px;border:2px solid #660000;margin-left:0px;margin-bottom:0px;">
-                <h3><b>{TroGiup}</b></h3>
-                <a href="#" style="color:#660000;"><h4>{CauHoiThuongGap}</h4></a>
-                <a href="#" style="color:#660000;"><h4>{CachSuDung} PPC TIMESHARE</h4></a>
-
-            </div>
-            <div class="col-md-12 col-sm-12">
-                <h4>{LienHe}</h4>
-            </div>
-            <form action="<?= BASE_URL . $_SESSION['lang'] ?>/controller/lienHe" method="post">
-                <div class="col-md-4 col-sm-12">
-                    <div class="input-group" style="width:100%;">
-                        <!-- <span class="input-group-addon" id="basic-addon1">@</span> -->
-                        <input type="text" class="form-control" placeholder='{Ten}'
-                               style="width:100%;border:1px solid grey;border-radius:2px;"
-                               aria-describedby="basic-addon1" name="ten"
-                               id="ten">
-                    </div>
-                </div>
-                <div class="col-md-4 col-sm-12">
-                    <div class="input-group" style="width:100%;">
-                        <!-- <span class="input-group-addon" id="basic-addon1">@</span> -->
-                        <input type="text" class="form-control"
-                               style="width:100%;border:1px solid grey; border-radius:2px;"
-                               aria-describedby="basic-addon1" id="dienthoaicongty" placeholder='{DienThoai}'
-                               name="dienthoaicongty">
-                    </div>
-                </div>
-                <div class="col-md-4 col-sm-12">
-                    <div class="input-group" style="width:100%;">
-                        <!-- <span class="input-group-addon" id="basic-addon1">@</span> -->
-                        <input type="text" class="form-control"
-                               style="width:100%;border:1px solid grey; border-radius:2px;"
-                               aria-describedby="basic-addon1" id="email" placeholder='{Email}' name="email">
-                    </div>
+                <div class="col-md-6 col-sm-12" id="banner_5">
+                    <img src="<?= BASE_URL ?>img/banner-knd4.jpg" class="img-reponsive">
                 </div>
                 <div class="col-md-12 col-sm-12" id="banner_5">
-                    <div class="input-group" style="width:100%;">
+                    <img src="<?= BASE_URL ?>img/banner-knd5.jpg" class="img-reponsive">
+                </div>
+            </div>
+        </section>
+        <!-- phan tiep theo -->
+
+        <div class="row space">
+            <section id="trogiup">
+                <div class="col-md-12 col-sm-12">
+                    <hr class="text-left"
+                        style="width:50px;border:2px solid #660000;margin-left:0px;margin-bottom:0px;">
+                    <h3><b>{TroGiup}</b></h3>
+                    <a href="#" id="cauhoi" style="color:#660000;"><h4>{CauHoiThuongGap}</h4></a>
+                    <div id="cau_hoi_thuong_gap" style="display: none;">
+                        <ul>
+                            <li>Tại sao tôi không đăng nhập được? </li>
+                            <li>Tại sao tôi không đăng nhập được? </li>
+                            <li>Tại sao tôi không đăng nhập được? </li>
+                            <li>Tại sao tôi không đăng nhập được? </li>
+                            <li>Tại sao tôi không đăng nhập được? </li>
+                        </ul>
+                    </div>
+                    <a href="#" id="cachsudung" style="color:#660000;"><h4>{CachSuDung} PPC TIMESHARE</h4></a>
+                    <div id="cach_su_dung" style="display: none;">
+                        <ul>
+                            <li>Tại sao tôi không đăng nhập được? </li>
+                            <li>Tại sao tôi không đăng nhập được? </li>
+                            <li>Tại sao tôi không đăng nhập được? </li>
+                            <li>Tại sao tôi không đăng nhập được? </li>
+                            <li>Tại sao tôi không đăng nhập được? </li>
+                        </ul>
+                    </div>
+                </div>
+            </section>
+            <section id="lienhe">
+                <div class="col-md-12 col-sm-12">
+                    <h4>{LienHe}</h4>
+                </div>
+                <form action="<?= BASE_URL . $_SESSION['lang'] ?>/controller/lienHe" method="post">
+                    <div class="col-md-4 col-sm-12">
+                        <div class="input-group" style="width:100%;">
+                            <!-- <span class="input-group-addon" id="basic-addon1">@</span> -->
+                            <input type="text" class="form-control" placeholder='{Ten}'
+                                   style="width:100%;border:1px solid grey;border-radius:2px;"
+                                   aria-describedby="basic-addon1" name="ten"
+                                   id="ten">
+                        </div>
+                    </div>
+                    <div class="col-md-4 col-sm-12">
+                        <div class="input-group" style="width:100%;">
+                            <!-- <span class="input-group-addon" id="basic-addon1">@</span> -->
+                            <input type="text" class="form-control"
+                                   style="width:100%;border:1px solid grey; border-radius:2px;"
+                                   aria-describedby="basic-addon1" id="dienthoaicongty" placeholder='{DienThoai}'
+                                   name="dienthoaicongty">
+                        </div>
+                    </div>
+                    <div class="col-md-4 col-sm-12">
+                        <div class="input-group" style="width:100%;">
+                            <!-- <span class="input-group-addon" id="basic-addon1">@</span> -->
+                            <input type="text" class="form-control"
+                                   style="width:100%;border:1px solid grey; border-radius:2px;"
+                                   aria-describedby="basic-addon1" id="email" placeholder='{Email}' name="email">
+                        </div>
+                    </div>
+                    <div class="col-md-12 col-sm-12" id="banner_5">
+                        <div class="input-group" style="width:100%;">
                     <textarea rows="10" cols="159" style="width:100%;border:1px solid grey; border-radius:2px;"
                               class="ckeditor" id="ckeditor" placeholder="YOUR MESSAGE" name="loinhan">
                     </textarea>
+                        </div>
+                        <p><span style="color: red;" id="thongbaoguilh"></span></p>
                     </div>
-                    <p><span style="color: red;" id="thongbaoguilh"></span></p>
-                </div>
 
-                <div class="col-md-4 col-sm-12">
-                    <div class="input-group" style="width:100%;text-align: center!important;">
-                        <input type="submit" class="form-control"
-                               style="width:100%;border:1px solid grey; border-radius:2px;"
-                               aria-describedby="basic-addon1" id="btn_gui" value={Gui}>
+                    <div class="col-md-12 ">
+                        <div class="input-group" style="width:100%">
+                            <input type="submit" class="form-control"
+                                   style="width:100%;border:1px solid grey; border-radius:2px;"
+                                   aria-describedby="basic-addon1" id="btn_gui" value={Gui}>
+                        </div>
                     </div>
-                </div>
+            </section>
         </div>
         </form>
-        <!-- map  -->
-        <!--    <div class="row space">-->
-        <!--        <div class="col-md-12 col-sm-12">-->
-        <!--            <div id="map" style="width:100%;height:400px;background-color:grey;">-->
-        <!--            </div>-->
-        <!--        </div>-->
-        <!--    </div>-->
-        <!--    <div class="row space">-->
-        <!--        <div class="col-md-12 col-sm-12">-->
-        <!--            <hr class="text-left" style="width:70px;border:2px solid #660000;margin-left:0px;margin-bottom:0px;">-->
-        <!--            <h4>PPC TIMESHARE TV</h4>-->
-        <!--        </div>-->
-        <!--        <div class="col-md-6 col-sm-12">-->
-        <!--            <iframe width="100%" height="380" src="https://www.youtube.com/embed/XGSy3_Czz8k">-->
-        <!--            </iframe>-->
-        <!--        </div>-->
-        <!--        <div class="col-md-6 col-sm-12">-->
-        <!--            <h4 style="margin-top:0px;">OUR VIDEOS</h4>-->
-        <!--            <hr style="width:100%;border:1px solid #362516;margin-left:0px;">-->
-        <!--            <div class="media">-->
-        <!--                <div class="media-left">-->
-        <!--                    <img src="--><? //=BASE_URL?><!--img/check.png" style="width:70%;">-->
-        <!--                </div>-->
-        <!--                <div class="media-left">-->
-        <!--                    <p> iframe width="100%" height="345" src="https://www.youtube.com/embed/XGSy3_Czz8k"</p>-->
-        <!--                </div>-->
-        <!--            </div>-->
-        <!--            <div class="media">-->
-        <!--                <div class="media-left">-->
-        <!--                    <img src="--><? //=BASE_URL?><!--img/check.png" style="width:70%;">-->
-        <!--                </div>-->
-        <!--                <div class="media-left">-->
-        <!--                    <p> iframe width="100%" height="345" src="https://www.youtube.com/embed/XGSy3_Czz8k"</p>-->
-        <!--                </div>-->
-        <!--            </div>-->
-        <!--            <div class="media">-->
-        <!--                <div class="media-left">-->
-        <!--                    <img src="--><? //=BASE_URL?><!--img/check.png" style="width:70%;">-->
-        <!--                </div>-->
-        <!--                <div class="media-left">-->
-        <!--                    <p> iframe width="100%" height="345" src="https://www.youtube.com/embed/XGSy3_Czz8k"</p>-->
-        <!--                </div>-->
-        <!--            </div>-->
-        <!--            <div class="media">-->
-        <!--                <div class="media-left">-->
-        <!--                    <img src="--><? //=BASE_URL?><!--img/check.png" style="width:70%;">-->
-        <!--                </div>-->
-        <!--                <div class="media-left">-->
-        <!--                    <p> iframe width="100%" height="345" src="https://www.youtube.com/embed/XGSy3_Czz8k"</p>-->
-        <!--                </div>-->
-        <!--            </div>-->
-        <!--        </div>-->
-        <!--    </div>-->
+        <div class="row space">
+            <div class="col-md-12 col-sm-12">
+                <div id="map" style="width:100%;height:400px;background-color:grey;">
+                </div>
+            </div>
+        </div>
+        <div class="row space">
+            <div class="col-md-12 col-sm-12">
+                <hr class="text-left" style="width:70px;border:2px solid #660000;margin-left:0px;margin-bottom:0px;">
+                <h4>PPC TIMESHARE TV</h4>
+            </div>
+            <?php
+            foreach ($ds_video as $key => $item_video) {
+                if ($key == 0) {
+                    echo ' <div class="col-md-7 col-sm-12">
+                    <iframe width="100%" height="380" src="' . $item_video['url_video'] . '">
+                    </iframe>
+                </div>
+                <div class="col-md-5 col-sm-12">
+                    <h4 style="margin-top:-45px;">{VideoCuaChungToi}</h4>
+                    <hr style="width:100%;border:1px solid #362516;margin-left:0px;">';
+                } else {
+                    echo '  <div class="media">
+                        <div class="media-left" style="width: 20%;height: 10%">
+                            <img src="https://img.youtube.com/vi/' . substr($item_video['url_video'], 30) . '/0.jpg" style="width:100%;">
+                        </div>
+                        <div class="media-left">
+                            <a href="#">' . $item_video['ten_video'] . '</a>
+                        </div>
+                    </div>';
+                }
+            }
+            ?>
+        </div>
+    </div>
     </div>
     <br><br><br>
     <!--phần container giới thiệu thứ 2-->

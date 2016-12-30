@@ -22,6 +22,7 @@ class controller
     function index()
     {
         $dssbanner = $this->control->laydanhsach("banner");
+        $ds_video = $this->control->laydanhsach("video");
         $dssliderw = $this->control->laydanhsachslider();
         $gioithieu = $this->control->laydulieu("gioithieu_" . $_SESSION['lang']);
         $dsKhuNghiDuongBanner = array();

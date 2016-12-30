@@ -31,7 +31,7 @@ body {
 }
 
 .dropdown dt a {
-    background-color: transparent url('http://www.jankoatwarpspeed.com/wp-content/uploads/examples/reinventing-drop-down/arrow.png') no-repeat scroll right center;
+    background-color: transparent;
     display: block;
     border: none;
     width: 180px;
@@ -44,7 +44,7 @@ body {
 }
 
 .dropdown dd ul {
-    background-color: transparent none repeat scroll 0 0;
+    background-color: transparent;
     border: none;
     color: #C5C0B0;
     display: none;
@@ -148,7 +148,7 @@ img.pic {
     }
 
     .navbar-custom {
-        background-color: none;
+        background-color: transparent;
     }
 
     select#language option[value="AsiaEnglish"] {
@@ -230,21 +230,23 @@ img.pic {
         padding-left: 35px;
         padding-right: 35px;
         text-align: center;
-        background-color: #362516;
-        border-color: #362516;
+        background-color: #362516 !important;
+        border-color: #362516 !important;
         font-weight: bold;
+        background-image: none !important;
     }
 
     #btnReadMore {
         color: white;
         padding-top: 5px;
-        padding-bottom: 5x;
+        padding-bottom: 5px;
         padding-left: 10px;
         padding-right: 10px;
         text-align: center;
         background-color: #362516;
         border-color: #362516;
         font-weight: bold;
+        background-image: none !important;
     }
 
     .carousel-indicators {
@@ -273,6 +275,7 @@ img.pic {
         margin-top: 30px;
 
     }
+
 
 
 

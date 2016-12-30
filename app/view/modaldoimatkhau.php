@@ -1,7 +1,6 @@
 <div id="ModalDoiMatKhau" class="modal">
     <div class="modal-content">
         <div class="modal-header">
-            <div class="closeModalDoiMatKhau"><span class="glyphicon glyphicon-remove"></span></div>
             <h3 style="text-align:center;"><b>{TTDoiMatKhau}</b></h3>
         </div>
         <div class="modal-body">

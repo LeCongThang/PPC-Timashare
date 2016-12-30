@@ -58,3 +58,4 @@ define("TTDangKy","ĐĂNG KÝ");
 define("DiaChiEmail","Địa chỉ thư điện tử");
 define("DienThoaiDK","Số điện thoại");
 define("DangKy","Đăng ký");
+define("VideoCuaChungToi","VIDEO CỦA CHÚNG TÔI");

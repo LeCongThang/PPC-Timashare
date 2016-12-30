@@ -58,3 +58,5 @@ define("TTDangKy","REGISTER");
 define("DiaChiEmail","Email Address");
 define("DienThoaiDK","Number phone");
 define("DangKy","Submit");
+
+define("VideoCuaChungToi","OUR VIDEOS");

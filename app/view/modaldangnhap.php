@@ -10,22 +10,22 @@
                     <span class="input-group-addon"><i class="glyphicon glyphicon-user"></i></span>
                     <?php
                     if (isset($_COOKIE["tendangnhap"]) && isset($_COOKIE["rememberme"]))
-                        echo " <input id='username' type='text' class='form-control' name='username'
-                           placeholder=" . '{TenDangNhap}' . " value='" . $_COOKIE["tendangnhap"] . "'>";
+                        echo ' <input id="username" type="text" class="form-control" name="username"
+                           placeholder="' . '{TenDangNhap}' . '" value="' . $_COOKIE["tendangnhap"] . '">';
                     else
-                        echo " <input id='username' type='text' class='form-control' name='username'
-                           placeholder=" . '{TenDangNhap}' . " value=''>";
+                        echo ' <input id="username" type="text" class="form-control" name="username"
+                         placeholder="' . '{TenDangNhap}' . '" value="">';
                     ?>
                 </div>
                 <div class="input-group" id="banner_5">
                     <span class="input-group-addon"><i class="glyphicon glyphicon-lock"></i></span>
                     <?php
                     if (isset($_COOKIE["matkhau"]) && isset($_COOKIE["rememberme"]))
-                        echo " <input id='password' type='password' class='form-control' name='password'
-                           placeholder=" . '{Password}' . " value='" . $_COOKIE["matkhau"] . "'>";
+                        echo' <input id="password" type="password" class="form-control" name="password"
+                           placeholder="'. '{Password}' . '" value="' . $_COOKIE["matkhau"] . '">';
                     else
-                        echo " <input id='password' type='password' class='form-control' name='password'
-                           placeholder=" . '{Password}'. " value=''>";
+                        echo ' <input id="password" type="password" class="form-control" name="password"
+                           placeholder="' . '{Password}'. '" value="">';
                     ?>
                 </div>
                 <div class="input-group" id="banner_5" style="margin-top: 10px">

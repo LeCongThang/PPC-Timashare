@@ -214,6 +214,7 @@
 </script>
 <script type="text/javascript">
     $(document).ready(function () {
+
         $(".dropdown img.flag").addClass("flagvisibility");
 
         $(".dropdown dt a").click(function () {
@@ -233,7 +234,7 @@
         var modaldangky = document.getElementById('ModalDangKy');
         var modalquenmatkhau = document.getElementById('ModalQuenMatKhau');
         // All Button open modal
-        var btn = document.getElementById("btnDangNhap");
+        var btn = document.getElementById('btnDangNhap');
 
         btn.onclick = function () {
             mainModal = modal;
@@ -269,7 +270,6 @@
         }
 
 
-
         // When the user clicks anywhere outside of the modal, close it
         window.onclick = function (event) {
             if (event.target == mainModal) {
@@ -300,31 +300,9 @@
         $('#btn_thoatdangkyknd').click(function () {
             mainModal.style.display = "none";
         });
-        $(function () {
-            $('#datetimepicker3').datetimepicker({
-                defaultDate: "23/12/2016",
-                disabledDates: [
-                    moment("12/23/2016"),
-                    new Date(2016, 11 - 1, 21),
-                    "11/22/2013 00:53"
-                ]
-            });
-        });
-        $(function () {
-            $('#datetimepicker4').datetimepicker({
-                defaultDate: "23/12/2016",
-                disabledDates: [
-                    moment("12/23/2016"),
-                    new Date(2016, 11 - 1, 21),
-                    "11/22/2013 00:53"
-                ]
-            });
-        });
 
 
     });
-
-
 </script>
 
 <script type="text/javascript">

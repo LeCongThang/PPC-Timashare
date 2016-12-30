@@ -78,6 +78,7 @@ $str = str_replace("{TTDangKy}", TTDangKy, $str);
 $str = str_replace("{DiaChiEmail}", DiaChiEmail, $str);
 $str = str_replace("{DienThoaiDK}", DienThoaiDK, $str);
 $str = str_replace("{DangKy}", DangKy, $str);
+$str = str_replace("{VideoCuaChungToi}", VideoCuaChungToi, $str);
 echo $str;
 
 

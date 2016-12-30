@@ -25,9 +25,9 @@
         padding-left: 20px;
         padding-right: 20px;
         text-align: center;
-        background-color: #8B4726;
-        border-color: #8B4726;
-        background-image: url("button_color_362516.png");
+        background-color: #362516 !important;
+        border-color: #362516 !important;
+        background-image: none !important;
     }
 
     .menuright {
@@ -61,7 +61,7 @@
         text-align: center;
         background-color: #8B4726;
         border-color: #8B4726;
-        background-image: url("button_color_362516.png");
+        background-image: none !important;
     }
 }
 
@@ -120,9 +120,9 @@
         padding-left: 20px;
         padding-right: 20px;
         text-align: center;
-        background-color: #8B4726;
-        border-color: #8B4726;
-        background-image: url("button_color_362516.png");
+        background-color: #362516 !important;
+        border-color: #362516 !important;
+        background-image: none !important;
     }
 
     #btnreadmore {
@@ -134,7 +134,7 @@
         text-align: center;
         background-color: #8B4726;
         border-color: #8B4726;
-        background-image: url("button_color_362516.png");
+        background-image: none !important;
     }
 
     .bannerDecription {
@@ -199,9 +199,9 @@
         padding-left: 20px;
         padding-right: 20px;
         text-align: center;
-        background-color: #8B4726;
-        border-color: #8B4726;
-        background-image: url("button_color_362516.png");
+        background-color: #362516 !important;
+        border-color: #362516 !important;
+        background-image: none !important;
     }
 
     #btnreadmore {
@@ -213,7 +213,7 @@
         text-align: center;
         background-color: #8B4726;
         border-color: #8B4726;
-        background-image: url("button_color_362516.png");
+        background-image: none !important;
     }
 
     .bannerDecription {
@@ -242,7 +242,7 @@
 /* Retina Devices */
 @media only screen and (-webkit-min-device-pixel-ratio: 2), only screen and (   min--moz-device-pixel-ratio: 2), only screen and (   -moz-min-device-pixel-ratio: 2), only screen and (     -o-min-device-pixel-ratio: 2/1), only screen and (        min-device-pixel-ratio: 2), only screen and (                min-resolution: 192dpi), only screen and (                min-resolution: 2dppx) {
     .selector {
-        background: url() no-repeat center center;
+        background: none no-repeat center center;
         background-size: 20px 20px;
     }
 
