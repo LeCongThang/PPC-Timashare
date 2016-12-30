@@ -46,7 +46,7 @@
   </aside>
 
   <!-- Content Wrapper. Contains page content -->
-  <div class="content-wrapper">
+  <div class="content-wrapper"  style="height:1000px;">
     <section class="content-header">
       <h1><b>
         VIDEO
@@ -75,20 +75,20 @@
           <div class="row" style="margin-top:20px;">
           <div class="col-md-1 col-sm-12"></div>
             <div class="col-md-3 col-sm-12" >
-              <embed width="200" height="200" src="<?php echo trim($row['link_video']) ?> ">
+              <embed width="200" height="200" src="<?php echo trim($row['url_video']) ?> ">
             </div>
             <div class="col-md-3 col-sm-12">
                <div class="form-group">
-                    <input type="hidden" name="id" value="<?php echo $row['id_video']; ?>" />
+                    <input type="hidden" name="id" value="<?php echo $row['url_video']; ?>" />
                      <textarea rows="10" cols="159" style="width:100%;border:1px solid grey; border-radius:2px;" name="noidung1">
-                     <?php echo $row['link_video']; ?>
+                     <?php echo $row['url_video']; ?>
                       </textarea>
                 </div>
             </div>
              <div class="col-md-3 col-sm-12">
                <div class="form-group">
                      <textarea rows="10" cols="159" style="width:100%;border:1px solid grey; border-radius:2px;" name="noidung2">
-                     <?php echo $row['name_video']; ?>
+                     <?php echo $row['ten_viedeo']; ?>
                       </textarea>
                 </div>
             </div>

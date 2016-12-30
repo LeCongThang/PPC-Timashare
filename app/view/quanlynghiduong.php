@@ -88,10 +88,10 @@ mysqli_query($connect, "SET NAMES 'UTF8'");
                                   enctype="multipart/form-data">
                             <div class="polaroid">
                                 <div class="text-center"><br><br>
-                                    <img src="<?= BASE_DIR ?><?php echo $row['img_khu']; ?> " alt="Norway"
+                                    <img src="<?= BASE_DIR ?><?php echo $row['link']; ?> " alt="Norway"
                                          class="img-responsive center-block">
                                 </div>
-                                <input type="hidden" name="id" value="<?php echo $row['id_khunghi']; ?>"/>
+                                <input type="hidden" name="id" value="<?php echo $row['id']; ?>"/>
                                 <br>
                                 <button type="button" class="btn btn-info btn-file btn-block">
                                     <span class="glyphicon glyphicon-picture"></span>

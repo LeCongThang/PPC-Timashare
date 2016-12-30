@@ -101,11 +101,11 @@ mysqli_query($connect, "SET NAMES 'UTF8'");
                                                 <?= $key+1 ?>
                                             </td>
                                             <td width="50%">
-                                                <img class="img-responsive" src="<?= BASE_URL.$slider['image'] ?>" alt="">
+                                                <img class="img-responsive" src="<?= BASE_URL.$slider['image_slider'] ?>" alt="">
                                             </td>
                                             <td>
-                                                <a href="<?= BASE_DIR ?>controllerslider/update/<?= $slider['id'] ?>" class="btn btn-primary">Sửa</a>
-                                                <a href="<?= BASE_DIR ?>controllerslider/delete/<?= $slider['id'] ?>" class="btn btn-danger">Xóa</a>
+                                                <a href="<?= BASE_DIR ?>controllerslider/update/<?= $slider['id_slider'] ?>" class="btn btn-primary">Sửa</a>
+                                                <a href="<?= BASE_DIR ?>controllerslider/delete/<?= $slider['id_slider'] ?>" class="btn btn-danger">Xóa</a>
                                             </td>
                                         </tr>
                                         <?php endforeach; ?>
