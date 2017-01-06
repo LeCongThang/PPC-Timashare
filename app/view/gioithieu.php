@@ -43,63 +43,84 @@ mysqli_query($connect, "SET NAMES 'UTF8'");
     <!-- <header class="main-header"> -->
 
     <!-- Left side column. contains the logo and sidebar -->
-    <?php  require 'partials/slider-bar.php' ?>
+    <?php require 'partials/slider-bar.php' ?>
 
     <!-- Content Wrapper. Contains page content -->
     <div class="content-wrapper">
         <section class="content-header">
-            <h1><b>
-                    GIỚI THIỆU
-                </b>
-                <!-- <small>13 new messages</small> -->
-            </h1>
-            <ol class="breadcrumb">
-                <!-- <li><a href="#"><i class="fa fa-dashboard"></i> Home</a></li> -->
-                <!-- <li class="active">Mailbox</li> -->
-            </ol>
+            <h1><b> GIỚI THIỆU </b></h1>
         </section>
 
         <!-- Main content -->
         <section class="content">
             <div class="row">
-                <div class="col-md-12">
-
-                </div>
-                <!-- /.col -->
-
-                <form action="<?= BASE_URL ?>controllergioithieu/gioithieu" method="POST" enctype="multipart/form-data">
-                    <?php
-                    $sql = "SELECT*FROM gioithieu";
-                    $myquery = mysqli_query($connect, $sql);
-                    $row = mysqli_fetch_assoc($myquery);
-
-                    ?>
+                <form action="<?= BASE_URL.$_SESSION['lang'] ?>/controllergioithieu/capnhatgioithieu" method="POST"
+                      enctype="multipart/form-data">
                     <div class="col-md-12">
                         <div class="box box-primary">
                             <div class="box-header with-border text-center">
-                                <?php if ($row['img_tieude']): ?>
-                                    <img src="<?= BASE_DIR . $row['img_tieude'] ?>" style="width:70%;">
+                                <?php if ($gioithieu_vi['img_tieude']): ?>
+                                    <img id="blah" src="<?= BASE_DIR . $gioithieu_vi['img_tieude'] ?>"
+                                         style="width:70%;">
                                 <?php endif; ?>
                             </div>
                             <br>
                             <div class="form-group" style="margin-left:10px;">
                                 <div class="btn btn-default btn-file">
                                     <i class="glyphicon glyphicon-picture"></i> TẢI LÊN
-                                    <input type="file" name="fileup">
+                                    <input type="file" name="fileup" id="imgInp">
                                 </div>
                                 <!-- up file anh -->
                             </div>
-                            <!-- /.box-header -->
-                            <div class="box-body">
-                                <div class="form-group">
-                                    <input class="form-control" value="<?php echo $row['tieu_de']; ?>" name="tieude"
-                                           style="font-size:17px;font-family:verdana;text-align:justify;">
-                                </div>
-                                <div class="form-group">
-                                    <textarea name="noidung" id="editor1" cols="30" rows="10" title="">
-                                        <?php echo $row['noidung_gioithieu']; ?>
+                            <div class="bs-example bs-example-tabs" data-example-id="togglable-tabs">
+                                <ul class="nav nav-tabs" id="myTabs" role="tablist">
+                                    <li role="presentation" class="active"><a href="#vi" id="vi-tab" role="tab"
+                                                                              data-toggle="tab"
+                                                                              aria-controls="gioithieu_vi"
+                                                                              aria-expanded="true">Tiếng
+                                            Việt</a></li>
+                                    <li role="presentation" class=""><a href="#en" role="tab" id="en-tab"
+                                                                        data-toggle="tab"
+                                                                        aria-controls="gioithieu_en"
+                                                                        aria-expanded="false">Tiếng
+                                            Anh</a></li>
+                                </ul>
+                                <div class="tab-content" id="myTabContent">
+                                    <div class="tab-pane fade active in" role="tabpanel" id="vi"
+                                         aria-labelledby="vi-tab">
+                                        <!-- /.box-header -->
+                                        <div class="box-body">
+                                            <div class="form-group">
+                                                <input class="form-control"
+                                                       value="<?php echo $gioithieu_vi['tieu_de']; ?>"
+                                                       name="tieude_vi"
+                                                       style="font-size:17px;font-family:verdana;text-align:justify;">
+                                            </div>
+                                            <div class="form-group">
+                                    <textarea name="noidung_vi" class="ckeditor" id="noidung_en" cols="30" rows="10" title="">
+                                        <?php echo $gioithieu_vi['noidung_gioithieu']; ?>
+                                    </textarea>
+                                            </div>
+                                        </div>
+                                    </div>
+                                    <!-- /. box -->
+                                    <div class="tab-pane fade" role="tabpanel" id="en" aria-labelledby="en-tab">
+                                        <div class="box-body">
+                                            <div class="form-group">
+                                                <input class="form-control"
+                                                       value="<?php echo $gioithieu_en['tieu_de']; ?>"
+                                                       name="tieude_en"
+                                                       style="font-size:17px;font-family:verdana;text-align:justify;">
+                                            </div>
+                                            <div class="form-group">
+                                    <textarea name="noidung_en" class="ckeditor" id="noidung_en" cols="30" rows="10"
+                                              title="">
+                                        <?php echo $gioithieu_en['noidung_gioithieu']; ?>
                                     </textarea>
 
+                                            </div>
+                                        </div>
+                                    </div>
                                 </div>
                             </div>
                             <!-- /.box-body -->
@@ -107,7 +128,8 @@ mysqli_query($connect, "SET NAMES 'UTF8'");
                                 <div class="pull-right">
                                     <!-- <button type="button" class="btn btn-default"><i class="fa fa-pencil"></i> Draft</button> -->
                                     <button type="submit" name="submit" class="btn btn-info"><i
-                                            class="glyphicon glyphicon-th-large"></i>&nbsp <b>UPDATE</b></button>
+                                            class="glyphicon glyphicon-th-large"></i>&nbsp <b>Cập nhật</b>
+                                    </button>
                                 </div>
                                 <!-- <button type="reset" class="btn btn-default"><i class="fa fa-times"></i> Discard</button> -->
                             </div>
@@ -115,6 +137,8 @@ mysqli_query($connect, "SET NAMES 'UTF8'");
                         </div>
                         <!-- /. box -->
                     </div>
+
+
                 </form>
                 <!-- /.col -->
             </div>
@@ -133,196 +157,7 @@ mysqli_query($connect, "SET NAMES 'UTF8'");
     reserved.
 </footer>
 
-<!-- Control Sidebar -->
-<aside class="control-sidebar control-sidebar-dark">
-    <!-- Create the tabs -->
-    <ul class="nav nav-tabs nav-justified control-sidebar-tabs">
-        <li><a href="#control-sidebar-home-tab" data-toggle="tab"><i class="fa fa-home"></i></a></li>
-        <li><a href="#control-sidebar-settings-tab" data-toggle="tab"><i class="fa fa-gears"></i></a></li>
-    </ul>
-    <!-- Tab panes -->
-    <div class="tab-content">
-        <!-- Home tab content -->
-        <div class="tab-pane" id="control-sidebar-home-tab">
-            <h3 class="control-sidebar-heading">Recent Activity</h3>
-            <ul class="control-sidebar-menu">
-                <li>
-                    <a href="javascript:void(0)">
-                        <i class="menu-icon fa fa-birthday-cake bg-red"></i>
 
-                        <div class="menu-info">
-                            <h4 class="control-sidebar-subheading">Langdon's Birthday</h4>
-
-                            <p>Will be 23 on April 24th</p>
-                        </div>
-                    </a>
-                </li>
-                <li>
-                    <a href="javascript:void(0)">
-                        <i class="menu-icon fa fa-user bg-yellow"></i>
-
-                        <div class="menu-info">
-                            <h4 class="control-sidebar-subheading">Frodo Updated His Profile</h4>
-
-                            <p>New phone +1(800)555-1234</p>
-                        </div>
-                    </a>
-                </li>
-                <li>
-                    <a href="javascript:void(0)">
-                        <i class="menu-icon fa fa-envelope-o bg-light-blue"></i>
-
-                        <div class="menu-info">
-                            <h4 class="control-sidebar-subheading">Nora Joined Mailing List</h4>
-
-                            <p>nora@example.com</p>
-                        </div>
-                    </a>
-                </li>
-                <li>
-                    <a href="javascript:void(0)">
-                        <i class="menu-icon fa fa-file-code-o bg-green"></i>
-
-                        <div class="menu-info">
-                            <h4 class="control-sidebar-subheading">Cron Job 254 Executed</h4>
-
-                            <p>Execution time 5 seconds</p>
-                        </div>
-                    </a>
-                </li>
-            </ul>
-            <!-- /.control-sidebar-menu -->
-
-            <h3 class="control-sidebar-heading">Tasks Progress</h3>
-            <ul class="control-sidebar-menu">
-                <li>
-                    <a href="javascript:void(0)">
-                        <h4 class="control-sidebar-subheading">
-                            Custom Template Design
-                            <span class="label label-danger pull-right">70%</span>
-                        </h4>
-
-                        <div class="progress progress-xxs">
-                            <div class="progress-bar progress-bar-danger" style="width: 70%"></div>
-                        </div>
-                    </a>
-                </li>
-                <li>
-                    <a href="javascript:void(0)">
-                        <h4 class="control-sidebar-subheading">
-                            Update Resume
-                            <span class="label label-success pull-right">95%</span>
-                        </h4>
-
-                        <div class="progress progress-xxs">
-                            <div class="progress-bar progress-bar-success" style="width: 95%"></div>
-                        </div>
-                    </a>
-                </li>
-                <li>
-                    <a href="javascript:void(0)">
-                        <h4 class="control-sidebar-subheading">
-                            Laravel Integration
-                            <span class="label label-warning pull-right">50%</span>
-                        </h4>
-
-                        <div class="progress progress-xxs">
-                            <div class="progress-bar progress-bar-warning" style="width: 50%"></div>
-                        </div>
-                    </a>
-                </li>
-                <li>
-                    <a href="javascript:void(0)">
-                        <h4 class="control-sidebar-subheading">
-                            Back End Framework
-                            <span class="label label-primary pull-right">68%</span>
-                        </h4>
-
-                        <div class="progress progress-xxs">
-                            <div class="progress-bar progress-bar-primary" style="width: 68%"></div>
-                        </div>
-                    </a>
-                </li>
-            </ul>
-            <!-- /.control-sidebar-menu -->
-
-        </div>
-        <!-- /.tab-pane -->
-        <!-- Stats tab content -->
-        <div class="tab-pane" id="control-sidebar-stats-tab">Stats Tab Content</div>
-        <!-- /.tab-pane -->
-        <!-- Settings tab content -->
-        <div class="tab-pane" id="control-sidebar-settings-tab">
-            <form method="post">
-                <h3 class="control-sidebar-heading">General Settings</h3>
-
-                <div class="form-group">
-                    <label class="control-sidebar-subheading">
-                        Report panel usage
-                        <input type="checkbox" class="pull-right" checked>
-                    </label>
-
-                    <p>
-                        Some information about this general settings option
-                    </p>
-                </div>
-                <!-- /.form-group -->
-
-                <div class="form-group">
-                    <label class="control-sidebar-subheading">
-                        Allow mail redirect
-                        <input type="checkbox" class="pull-right" checked>
-                    </label>
-
-                    <p>
-                        Other sets of options are available
-                    </p>
-                </div>
-                <!-- /.form-group -->
-
-                <div class="form-group">
-                    <label class="control-sidebar-subheading">
-                        Expose author name in posts
-                        <input type="checkbox" class="pull-right" checked>
-                    </label>
-
-                    <p>
-                        Allow the user to show his name in blog posts
-                    </p>
-                </div>
-                <!-- /.form-group -->
-
-                <h3 class="control-sidebar-heading">Chat Settings</h3>
-
-                <div class="form-group">
-                    <label class="control-sidebar-subheading">
-                        Show me as online
-                        <input type="checkbox" class="pull-right" checked>
-                    </label>
-                </div>
-                <!-- /.form-group -->
-
-                <div class="form-group">
-                    <label class="control-sidebar-subheading">
-                        Turn off notifications
-                        <input type="checkbox" class="pull-right">
-                    </label>
-                </div>
-                <!-- /.form-group -->
-
-                <div class="form-group">
-                    <label class="control-sidebar-subheading">
-                        Delete chat history
-                        <a href="javascript:void(0)" class="text-red pull-right"><i class="fa fa-trash-o"></i></a>
-                    </label>
-                </div>
-                <!-- /.form-group -->
-            </form>
-        </div>
-        <!-- /.tab-pane -->
-    </div>
-</aside>
-<!-- /.control-sidebar -->
 <!-- Add the sidebar's background. This div must be placed
      immediately after the control sidebar -->
 <div class="control-sidebar-bg"></div>
@@ -345,12 +180,20 @@ mysqli_query($connect, "SET NAMES 'UTF8'");
 <script type="text/javascript" src="<?= BASE_DIR ?>ckeditor/ckeditor.js"></script>
 <!-- Page Script -->
 <script>
-    $(function () {
-        //Add text editor
-        $("#compose-textarea").wysihtml5();
-    });
-    CKEDITOR.replace( 'editor1', {
+    function readURL(input) {
+        if (input.files && input.files[0]) {
+            var reader = new FileReader();
 
+            reader.onload = function (e) {
+                $('#blah').attr('src', e.target.result);
+            }
+
+            reader.readAsDataURL(input.files[0]);
+        }
+    }
+
+    $("#imgInp").change(function(){
+        readURL(this);
     });
 </script>
 

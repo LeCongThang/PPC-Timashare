@@ -2,7 +2,7 @@
 
 class controllertaikhoan
 {
-    public $bv;
+    public $controllertaikhoan;
     public $params;
     public $current_action;
     public $cname = "controllertaikhoan";
@@ -10,7 +10,7 @@ class controllertaikhoan
 
     function __construct($action, $params)
     {
-        $this->bv = new modeltaikhoan;
+        $this->controllertaikhoan = new modeltaikhoan;
         $this->current_action = $action;
         $this->params = $params;
         $this->lang = 'vi';
@@ -22,9 +22,9 @@ class controllertaikhoan
         require_once("view/quanlytaikhoan.php");
     }
 
-    public  function file(){
+    public  function layThongTinUser(){
         $user =$this->params[0];
-        $row = $this->bv->load($user);
+        $row = $this->controllertaikhoan->layThongTinUser($user);
         require_once("view/update.php");
     }
 
@@ -37,7 +37,7 @@ class controllertaikhoan
         $diachi = $_POST['box4'];
         $sodienthoai = $_POST['box5'];
         $vaitro = $_POST['box6'];
-        $this->bv->update($user,$pass,$hoten,$diachi,$sodienthoai,$vaitro);
+        $this->controllertaikhoan->update($user,$pass,$hoten,$diachi,$sodienthoai,$vaitro);
         $url = BASE_URL."controllertaikhoan/taikhoan";
         header('Location: ' . $url, true);
         die();
@@ -45,11 +45,17 @@ class controllertaikhoan
 
     public function delete(){
         $user=$this->params[0];
-        $this->bv->delete($user);
+        $this->controllertaikhoan->delete($user);
         $url = BASE_URL."controllertaikhoan/taikhoan";
         header('Location: ' . $url, true);
         die();
 
+    }
+
+    public function index(){
+
+        $ds_tai_khoan = $this->controllertaikhoan->laydanhsachtaikhoan();
+        require_once("view/quanlytaikhoan.php");
     }
 
 

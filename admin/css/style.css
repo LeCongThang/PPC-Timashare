@@ -1,0 +1,139 @@
+body {
+    overflow-x: hidden;
+}
+
+#van_ban {
+    font-family: verdana;
+    text-align: justify;
+    padding-top: 10px;
+    letter-spacing: 1px;
+    font-weight: bold;
+}
+
+#row_so {
+    background-image: url('../img/bg_img.jpg');
+    width: 100%;
+    height: 560px;
+    /*background-repeat: no-repeat;*/
+    margin-left: 0px;
+    margin-right: 0px;
+}
+
+.space {
+    margin-top: 50px;
+}
+
+h2 {
+    color: white;
+    font-family: Arial, Helvetica, sans-serif;
+    text-align: justify;
+    /*padding-top: 10px;*/
+    /*letter-spacing: 1px;*/
+    font-weight: bold;
+}
+
+#conten_banner {
+    color: white;
+    font-family: Arial, Helvetica, sans-serif;
+    text-align: justify;
+    /*padding-top: 10px;*/
+    /*letter-spacing: 1px;*/
+    font-weight: bold;
+    font-size: 13px;
+}
+
+#conten_banner2 {
+    font-family: Arial, Helvetica, sans-serif;
+    text-align: justify;
+    /*padding-top: 10px;*/
+    /*letter-spacing: 1px;*/
+    text-align: center;
+    font-weight: bold;
+    font-size: 16px;
+}
+
+#banner_5 {
+    margin-top: 20px;
+}
+
+#khoang_cach {
+    margin-bottom: 0px;
+}
+
+#footer_banner {
+    margin-top: 150px;
+}
+
+#foo {
+    font-family: verdana;
+    text-align: left;
+    padding-top: 10px;
+    font-size: 14px;
+    font-weight: bold;
+}
+
+.modal {
+    display: none; /* Hidden by default */
+    position: fixed; /* Stay in place */
+    z-index: 1; /* Sit on top */
+    padding-top: 25px; /* Location of the box */
+    left: 0;
+    top: 0;
+    position: relative;
+    width: 100%; /* Full width */
+    height: 100%; /* Full height */
+    overflow: auto; /* Enable scroll if needed */
+    background-color: rgb(0, 0, 0); /* Fallback color */
+    background-color: rgba(0, 0, 0, 0.4); /* Black w/ opacity */
+}
+
+
+
+
+
+/* Modal Content */
+.modal-content {
+    background-color: #fefefe;
+    right: 0;
+    margin :auto;
+
+    padding: 5px;
+    border: 1px solid #888;
+    width: 40%;
+}
+
+#model-content-dn{
+    background-color: #fefefe;
+    right: 0;
+    margin :auto;
+    padding: 15px;
+    border: 1px solid #888;
+    width: 60%;
+}
+
+/* The Close Button */
+
+#cbNhoMatKhau {
+    background-color:transparent;
+    border: none;
+}
+
+.btnUser{
+    background-color:transparent;
+    border: none;
+}
+
+#btn_gui{
+    background-color: #8B4726;
+    border-color: #8B4726;
+    text-align: center;
+    font-weight: bold;
+    color: white;
+}
+
+.btnThamGia{
+    margin: 5px;
+    text-align: center!important;
+    font-weight: bold;
+}
+

@@ -1,9 +1,9 @@
-<div class="container">
+<div class="container" >
     <footer>
         <div class="container-fluid">
             <div class="row">
                 <div class="footer1">
-                    <div class="col-lg-3 text-center">
+                    <div class="col-lg-3 text-center" style="margin-bottom: 5%">
                         <div class="footerlogo" class="img-responsive">
                             <img src="<?= BASE_URL ?>/img/logo.png">
                         </div>

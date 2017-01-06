@@ -4,16 +4,16 @@ class controllerslider
 {
     const UPDATE_DIR = '../';
 
-    public $bv;
+    public $controllerslider;
     public $params;
     public $current_action;
     public $cname = "controllerslider";
     public $lang;
-    public $errors=[];
+    public $errors = [];
 
     function __construct($action, $params)
     {
-        $this->bv = new modelslider();
+        $this->controllerslider = new modelslider();
         $this->current_action = $action;
         $this->params = $params;
         $this->lang = 'vi';
@@ -39,30 +39,27 @@ class controllerslider
 
     public function index()
     {
-        if (count($_POST) > 0) {
-            $hinh = $this->uploadHinh();
-            $tieuDe = $_POST['tieude'];
-            $noiDung = $_POST['noidung'];
-            $this->bv->update($tieuDe, $noiDung, $hinh);
-        }
-        $sliders = $this->bv->getAll();
+        $sliders = $this->controllerslider->getAll();
         require_once("view/slider.php");
     }
 
 
     public function create()
     {
-        $data = ['title'=>'', 'content'=>''];
+        $data = ['title' => '', 'content' => ''];
         if (count($_POST) > 0) {
             $hinh = $this->uploadHinh();
             if ($hinh != null) {
-                $tieuDe = $_POST['title'];
-                $noiDung = $_POST['content'];
-                $this->bv->create($tieuDe, $noiDung, $hinh);
-                redirect(BASE_URL.'controllerslider/index');
+                $duong_dan = $_POST['duongdan'];
+                $tieu_de_vi = $_POST['tieude_vi'];
+                $noi_dung_vi = $_POST['noidung_vi'];
+                $mo_ta_vi = $_POST['mota_vi'];
+                $tieu_de_en = $_POST['tieude_en'];
+                $noi_dung_en = $_POST['noidung_en'];
+                $mo_ta_en = $_POST['mota_en'];
+                $this->controllerslider->create($tieu_de_vi, $noi_dung_vi, $mo_ta_vi, $tieu_de_en, $noi_dung_en, $mo_ta_en, $duong_dan, $hinh);
+                //redirect(BASE_URL . $_SESSION['lang'] . '/controllerslider/index');
             } else {
-                $data['title'] = post('title');
-                $data['content'] = post('title');
                 $this->errors[] = 'Vui lòng chọn hình ảnh!';
             }
         }
@@ -72,27 +69,33 @@ class controllerslider
     public function update()
     {
         if (!isset($this->params[0])) {
-            redirect(BASE_URL.'controllerslider/index');
+            redirect(BASE_URL . $_SESSION['lang'] . '/controllerslider/index');
         }
         $id = $this->params[0];
 
         if (count($_POST) > 0) {
             $hinh = $this->uploadHinh();
-            $tieuDe = $_POST['title'];
-            $noiDung = $_POST['content'];
-            $this->bv->update($id, $tieuDe, $noiDung, $hinh);
-            redirect(BASE_URL.'controllerslider/index');
+            $duong_dan = $_POST['duongdan'];
+            $tieu_de_vi = $_POST['tieude_vi'];
+            $noi_dung_vi = $_POST['noidung_vi'];
+            $mo_ta_vi = $_POST['mota_vi'];
+            $tieu_de_en = $_POST['tieude_en'];
+            $noi_dung_en = $_POST['noidung_en'];
+            $mo_ta_en = $_POST['mota_en'];
+            $this->controllerslider->update($id, $tieu_de_vi, $noi_dung_vi, $mo_ta_vi, $tieu_de_en, $noi_dung_en, $mo_ta_en, $duong_dan, $hinh);
+            redirect(BASE_URL . $_SESSION['lang'] . '/controllerslider/index');
         }
-        $data = $this->bv->get($id);
+        $data_vi = $this->controllerslider->get($id,"vi");
+        $data_en = $this->controllerslider->get($id,"en");
         require_once("view/create-slider.php");
     }
 
     public function delete()
     {
         if (!isset($this->params[0])) {
-            redirect(BASE_URL.'controllerslider/index');
+            redirect(BASE_URL . $_SESSION['lang'] . '/controllerslider/index');
         }
-        $this->bv->delete($this->params[0]);
-        redirect(BASE_URL.'controllerslider/index');
+        $this->controllerslider->delete($this->params[0]);
+        redirect(BASE_URL . $_SESSION['lang'] . '/controllerslider/index');
     }
 }//class

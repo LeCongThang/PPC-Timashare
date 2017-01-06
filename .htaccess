@@ -1,8 +1,9 @@
+<IfModule mod_rewrite.c>
 RewriteEngine On
 RewriteBase /PPC-Timeshare/
-RewriteRule css - [L]
-RewriteRule img - [L]
-RewriteRule js - [L]
-RewriteRule png - [L]
-RewriteRule (.*) app/index.php [L]
-AddDefaultCharset UTF-8
+# Parse requests that doesn't map to real files
+RewriteCond %{REQUEST_FILENAME} -s [OR]
+RewriteCond %{REQUEST_FILENAME} -l
+RewriteRule ^.*$ - [NC,L]
+RewriteRule ^.*$ app/index.php [NC,L]
+</IfModule>

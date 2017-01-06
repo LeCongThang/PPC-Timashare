@@ -8,15 +8,16 @@
  */
 class controllermail
 {
-    public $bv;
+    public $controllermail;
     public $params;
     public $current_action;
     public $cname = "controllermail";
     public $lang;
     public $errors = [];
+
     function __construct($action, $params)
     {
-        $this->bv = new modelmail();
+        $this->controllermail = new modelmail();
         $this->current_action = $action;
         $this->params = $params;
         $this->lang = 'vi';
@@ -28,24 +29,22 @@ class controllermail
         require "view/mail.php";
     }
 
-    public  function  mail2()
+    public function xemmail()
     {
         $readmail = $this->params[0];
-        $mail = $this->bv->read($readmail);
+        $mail = $this->controllermail->read($readmail);
         require "view/readmail.php";
     }
 
-    public function delete(){
-            $user=$this->params[0];
-            $this->bv->delete($user);
-            $url = BASE_URL."controllermail/mail ";
-            header('Location: ' . $url, true);
-            die();
+    public function delete()
+    {
+        $user = $this->params[0];
+        $this->controllermail->delete($user);
+        $this->index();
     }
 
-//    public  function readmail(){
-//        $url = BASE_URL."controllermail/mail2";
-//        header('Location: ' . $url, true);
-//        die();
-//    }
+    public function index(){
+        $ds_mail = $this->controllermail->laydanhsachmail();
+        require "view/mail.php";
+    }
 }

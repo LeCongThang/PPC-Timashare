@@ -43,85 +43,70 @@ mysqli_query($connect, "SET NAMES 'UTF8'");
     <!-- <header class="main-header"> -->
 
     <!-- Left side column. contains the logo and sidebar -->
-    <?php  require 'partials/slider-bar.php' ?>
+    <?php require 'partials/slider-bar.php' ?>
 
     <!-- Content Wrapper. Contains page content -->
     <div class="content-wrapper">
         <section class="content-header">
-            <h1>
-                <b>
-                    GIỚI THIỆU
-                </b>
-                <!-- <small>13 new messages</small> -->
-            </h1>
-            <ol class="breadcrumb">
-                <!-- <li><a href="#"><i class="fa fa-dashboard"></i> Home</a></li> -->
-                <!-- <li class="active">Mailbox</li> -->
-            </ol>
+            <h1><b> QUẢN LÝ SLIDER </b></h1>
         </section>
 
         <!-- Main content -->
         <section class="content">
             <div class="row">
                 <div class="col-md-12">
+                    <div class="box box-primary">
+                        <div class="box-header with-border text-center">
+                            <div class="pull-left">
+                                <a href="<?= BASE_URL . $_SESSION['lang'] ?>/controllerslider/create"
+                                   class="btn btn-success"><i
+                                        class="glyphicon glyphicon-th-large"></i>&nbsp <b>Thêm slider</b></a>
+                                <!-- <button type="button" class="btn btn-default"><i class="fa fa-pencil"></i> Draft</button> -->
 
-                </div>
-                <!-- /.col -->
-
-                <form action="<?= BASE_URL ?>controllergioithieu/gioithieu" method="POST" enctype="multipart/form-data">
-                    <?php
-
-                    ?>
-                    <div class="col-md-12">
-                        <div class="box box-primary">
-                            <div class="box-header with-border text-center">
-                                <div class="pull-left">
-                                    <a href="<?= BASE_URL ?>controllerslider/create" class="btn btn-success"><i
-                                            class="glyphicon glyphicon-th-large"></i>&nbsp <b>Thêm slider</b></a>
-                                    <!-- <button type="button" class="btn btn-default"><i class="fa fa-pencil"></i> Draft</button> -->
-
-                                </div>
                             </div>
-                            <br>
-
-                            <!-- /.box-header -->
-                            <div class="box-body">
-                                <table class="table">
-                                    <thead>
-                                    <tr>
-                                        <th>STT</th>
-                                        <th>Hình ảnh</th>
-                                        <th></th>
-                                    </tr>
-                                    </thead>
-                                    <tbody>
-                                        <?php foreach ($sliders as $key => $slider): ?>
-                                        <tr>
-                                            <td>
-                                                <?= $key+1 ?>
-                                            </td>
-                                            <td width="50%">
-                                                <img class="img-responsive" src="<?= BASE_URL.$slider['image_slider'] ?>" alt="">
-                                            </td>
-                                            <td>
-                                                <a href="<?= BASE_DIR ?>controllerslider/update/<?= $slider['id_slider'] ?>" class="btn btn-primary">Sửa</a>
-                                                <a href="<?= BASE_DIR ?>controllerslider/delete/<?= $slider['id_slider'] ?>" class="btn btn-danger">Xóa</a>
-                                            </td>
-                                        </tr>
-                                        <?php endforeach; ?>
-                                    </tbody>
-                                </table>
-                            </div>
-                            <!-- /.box-body -->
-                            <div class="box-footer">
-
-                                <!-- <button type="reset" class="btn btn-default"><i class="fa fa-times"></i> Discard</button> -->
-                            </div>
-                            <!-- /.box-footer -->
                         </div>
-                        <!-- /. box -->
+                        <br>
+
+                        <!-- /.box-header -->
+                        <div class="box-body">
+                            <table class="table">
+                                <thead>
+                                <tr>
+                                    <th>STT</th>
+                                    <th>Hình ảnh</th>
+                                    <th></th>
+                                </tr>
+                                </thead>
+                                <tbody>
+                                <?php foreach ($sliders as $key => $slider): ?>
+                                    <tr>
+                                        <td>
+                                            <?= $key + 1 ?>
+                                        </td>
+                                        <td width="50%">
+                                            <img class="img-responsive"
+                                                 src="<?= BASE_URL . $slider['image_slider'] ?>" alt="">
+                                        </td>
+                                        <td>
+                                            <a href="<?= BASE_DIR . $_SESSION['lang'] ?>/controllerslider/update/<?= $slider['id_slider'] ?>"
+                                               class="btn btn-primary">Sửa</a>
+                                            <a href="<?= BASE_DIR . $_SESSION['lang'] ?>/controllerslider/delete/<?= $slider['id_slider'] ?>"
+                                               class="btn btn-danger">Xóa</a>
+                                        </td>
+                                    </tr>
+                                <?php endforeach; ?>
+                                </tbody>
+                            </table>
+                        </div>
+                        <!-- /.box-body -->
+                        <div class="box-footer">
+
+                            <!-- <button type="reset" class="btn btn-default"><i class="fa fa-times"></i> Discard</button> -->
+                        </div>
+                        <!-- /.box-footer -->
                     </div>
-                </form>
+                    <!-- /. box -->
+                </div>
                 <!-- /.col -->
             </div>
             <!-- /.row -->
@@ -355,9 +340,7 @@ mysqli_query($connect, "SET NAMES 'UTF8'");
         //Add text editor
         $("#compose-textarea").wysihtml5();
     });
-    CKEDITOR.replace( 'editor1', {
-
-    });
+    CKEDITOR.replace('editor1', {});
 </script>
 
 </body>

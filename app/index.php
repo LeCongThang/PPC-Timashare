@@ -89,52 +89,6 @@ function __autoload($class_name)
         require_once($filename);
 }// autoload
 
-<<<<<<< HEAD
-//function tach_url($url, &$lang, &$cname, &$action, &$params){
-function tach_url($url, &$cname, &$action, &$params){
-
-	$arr = explode("/", $url);
-	if (count($arr)<=2)
-		return FALSE;
-	
-	// $lang= $arr[2];
-	// if (in_array(  $lang, explode(',',NGONNGU)  )==false) 
-	// 	$lang='vi';
-
-	// if(count($arr)==3){
-	// 	if($cname==""){
-	// 	$cname = DEFAULT_CONTROLLER;
-	// 	$action = DEFAULT_ACTION;
-	// 	$params = NULL;
-	// 	return TRUE;
-	// 	}
-	// }
-
-	$cname = $arr[2];
-	if($cname==""){
-		$cname = DEFAULT_CONTROLLER;
-		$action = DEFAULT_ACTION;
-		$params = NULL;
-		return TRUE;
-	}
-
-	$action = isset($arr[3])?$arr[3]:'';
-	if($action==""){
-		$action = DEFAULT_ACTION;
-		$params = NULL;
-		return TRUE;
-	}
-
-	array_shift($arr);
-	array_shift($arr);
-	array_shift($arr);
-	array_shift($arr);
-	//array_shift($arr);
-
-	$params = $arr;
-
-	return TRUE;
-=======
 function tach_url($url, &$lang, &$cname, &$action, &$params)
 {
 //function tach_url($url, &$cname, &$action, &$params){
@@ -154,14 +108,7 @@ function tach_url($url, &$lang, &$cname, &$action, &$params)
     if (in_array($lang, explode(',', NGONNGU)) == false)
         $lang = 'vi';
 
-//	 if(count($arr)==3){
-//	 	if($cname==""){
-//	 	$cname = DEFAULT_CONTROLLER;
-//	 	$action = DEFAULT_ACTION;
-//	 	$params = NULL;
-//	 	return TRUE;
-//	 	}
-//	 }
+
 
     $cname = $arr[3];
     if ($cname == "") {
@@ -187,5 +134,5 @@ function tach_url($url, &$lang, &$cname, &$action, &$params)
     $params = $arr;
 
     return TRUE;
->>>>>>> ClientSlide
+
 }// tach_url

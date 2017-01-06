@@ -52,6 +52,16 @@ class model
         return $list;
     }
 
+    public function laygioithieu()
+    {
+        $sql = "SELECT gioithieu.id, gioithieu.img_tieude, gioithieu_ngonngu.tieu_de, gioithieu_ngonngu.noidung_gioithieu  FROM gioithieu,gioithieu_ngonngu WHERE gioithieu.id = gioithieu_ngonngu.id_gioithieu AND gioithieu_ngonngu.ngonngu = '".$_SESSION['lang']."'";
+        $result = mysqli_query($this->db, $sql);
+        if (!$result) {
+            die("Error in query");
+        }
+        return mysqli_fetch_assoc($result);
+    }
+
     public function layChiTietTheoNgonNgu($idslider){
         $sql = "SELECT * FROM slider_ngonngu WHERE id_slider=".$idslider." AND ngon_ngu ='".$_SESSION['lang']."'";
         $result = mysqli_query($this->db, $sql);

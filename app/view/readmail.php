@@ -1,5 +1,5 @@
 <?php
-$connect = mysqli_connect("localhost","root","","ppctimeshare");
+$connect = mysqli_connect("localhost", "root", "", "ppctimeshare");
 mysqli_query($connect, "SET NAMES 'UTF8'");
 ?>
 <!DOCTYPE html>
@@ -9,13 +9,13 @@ mysqli_query($connect, "SET NAMES 'UTF8'");
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <title>Admin || PPC TIMESHARE</title>
     <meta content="width=device-width, initial-scale=1, maximum-scale=1, user-scalable=no" name="viewport">
-    <link rel="stylesheet" href="<?=BASE_URL?>/css/bootstrap.min.css">
+    <link rel="stylesheet" href="<?= BASE_URL ?>/css/bootstrap.min.css">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.5.0/css/font-awesome.min.css">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/ionicons/2.0.1/css/ionicons.min.css">
-    <link rel="stylesheet" href="<?=BASE_URL?>/css/AdminLTE.min.css">
-    <link rel="stylesheet" href="<?=BASE_URL?>/css/skins/skin-blue.min.css">
-    <link rel="stylesheet" type="text/css" href="<?=BASE_URL?>css/style.css">
-    <link rel="stylesheet" type="text/css" href="<?=BASE_URL?>css/responsive.css">
+    <link rel="stylesheet" href="<?= BASE_URL ?>/css/AdminLTE.min.css">
+    <link rel="stylesheet" href="<?= BASE_URL ?>/css/skins/skin-blue.min.css">
+    <link rel="stylesheet" type="text/css" href="<?= BASE_URL ?>css/style.css">
+    <link rel="stylesheet" type="text/css" href="<?= BASE_URL ?>css/responsive.css">
     <script type="text/javascript" src="http://code.jquery.com/jquery-1.9.1.min.js"></script>
     <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css"
           integrity="sha384-BVYiiSIFeK1dGmJRAkycuHAHRg32OmUcww7on3RYdg4Va+PmSTsz/K68vbdEjh4u" crossorigin="anonymous">
@@ -30,44 +30,50 @@ mysqli_query($connect, "SET NAMES 'UTF8'");
             crossorigin="anonymous"></script>
     <script
         src="https://maps.googleapis.com/maps/api/js?key=AIzaSyBu-916DdpKAjTmJNIgngS6HL_kDIKU0aU&callback=myMap"></script>
-    <link rel="stylesheet" type="text/css" href="<?=BASE_URL?>css/stylehead.css">
+    <link rel="stylesheet" type="text/css" href="<?= BASE_URL ?>css/stylehead.css">
 </head>
 <body class="hold-transition skin-blue sidebar-mini">
 <div class="wrapper" style="height: 1000px;">
-    <?php  require 'partials/slider-bar.php' ?>
+    <?php require 'partials/slider-bar.php' ?>
 
-    <div class="content-wrapper" >
+    <div class="content-wrapper">
         <!-- Content Header (Page header) -->
         <section class="content-header">
             <h1>
                 READ MAIL
             </h1>
-<!--            <hr style="boder:1px solid black;">-->
+            <!--            <hr style="boder:1px solid black;">-->
             <ol class="breadcrumb">
-                <li><a href="#"><i class="fa fa-dashboard"></i> Home</a></li>
+                <li><a href="<?=BASE_DIR.$_SESSION['lang']?>/controllermail/index"><i class="fa fa-dashboard"></i>Quản lý mail</a></li>
                 <li class="active">Mailbox</li>
             </ol>
         </section>
-<hr>
+        <hr>
         <!-- Main content -->
         <section class="content">
 
             <div class="row">
                 <!-- /.col -->
                 <div class="col-md-6" style="background-color: white;">
-                    <h4>Form:&nbsp <?= $mail['ten_lienhe'];?></h4>
+                    <h4>Form:&nbsp <?= $mail['ten_lienhe']; ?></h4>
                 </div>
                 <div class="col-md-6" style="background-color: white;">
-                    <h4>Email:&nbsp<?= $mail['email_lienhe'];?></h4>
+                    <h4>Email:&nbsp<?= $mail['email_lienhe']; ?></h4>
                 </div>
                 <br><br><br>
                 <div class="col-md-12" style="background-color: white;">
                     <h4>Số điện thoại:&nbsp<?= $mail['sdt_lienhe']; ?></h4>
-                </div><br><br><br>
+                </div>
+                <br><br><br>
                 <div class="col-md-12" style="background-color: white;">
                     <h4>NỘI DUNG</h4>
                     <br>
                     <p style="text-align: justify;font-family: verdana;font-size: medium;"><?= $mail['conten_lienhe']; ?></p>
+                </div>
+                <br><br><br>
+                <br><br><br>
+                <div class="col-md-12" style="background-color: white;">
+                    <input type="checkbox" name="is_kiem_tra"> Đã xem
                 </div>
                 <!-- /. box -->
             </div>
@@ -75,8 +81,8 @@ mysqli_query($connect, "SET NAMES 'UTF8'");
     </div>
     <!-- /.row -->
     </section>
-    </div>
-    <!-- /.content -->
+</div>
+<!-- /.content -->
 </div>
 <!-- /.content-wrapper -->
 

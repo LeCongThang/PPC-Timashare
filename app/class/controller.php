@@ -24,7 +24,7 @@ class controller
         $dssbanner = $this->control->laydanhsach("banner");
         $ds_video = $this->control->laydanhsach("video");
         $dssliderw = $this->control->laydanhsachslider();
-        $gioithieu = $this->control->laydulieu("gioithieu_" . $_SESSION['lang']);
+        $gioithieu = $this->control->laygioithieu();
         $dsKhuNghiDuongBanner = array();
         foreach ($dssbanner as $banner) {
             $khuNghiDuongBanner = $this->control->layThongTinChiTietKhuNghiDuong($banner['idkhunghiduong']);

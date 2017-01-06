@@ -7,7 +7,7 @@
                 <img src="<?= BASE_DIR ?>img/1.png" class="img-circle" alt="User Image">
             </div>
             <div class="pull-left info">
-                <h4 style="margin-top:10px; font-weight: bold;">ADMIN</h4>
+                <h4 style="margin-top:10px; font-weight: bold;"><?=$_SESSION['tendangnhap']?></h4>
                 <!-- <a href="#"><i class="fa fa-circle text-success"></i> Online</a> -->
             </div>
         </div>
@@ -31,52 +31,52 @@
                     ],
                     [
                         'title' => 'HOME',
-                        'url' => 'controlleradmin/loadingadmin',
+                        'url' => $_SESSION['lang'].'/controlleradmin/loadingadmin',
                         'icon' => 'glyphicon-home',
                     ],
                     [
                         'title' => 'QUẢN LÝ ẢNH SLIDE',
-                        'url' => 'controllerslider/index',
+                        'url' =>  $_SESSION['lang'].'/controllerslider/index',
                         'icon' => 'glyphicon glyphicon-th-large',
                     ],
                     [
                         'title' => 'GIỚI THIỆU',
-                        'url' => 'controllergioithieu/gioithieu',
+                        'url' =>  $_SESSION['lang'].'/controllergioithieu/index',
                         'icon' => 'glyphicon glyphicon-pencil',
                     ],
                     [
                         'title' => 'KHU NGHỈ DƯỠNG',
-                        'url' => 'controllernghiduong/nghiduong',
+                        'url' =>  $_SESSION['lang'].'/controllernghiduong/nghiduong',
                         'icon' => 'glyphicon glyphicon-tree-deciduous',
                     ],
                     [
                         'title' => 'BOOK',
-                        'url' => 'controllerbook/index',
+                        'url' =>  $_SESSION['lang'].'/controllerbook/index',
                         'icon' => 'glyphicon glyphicon-globe',
                     ],
                     [
                         'title' => 'MAIL BOX',
-                        'url' => 'controllermail/mail',
+                        'url' =>  $_SESSION['lang'].'/controllermail/index',
                         'icon' => 'glyphicon glyphicon-envelope',
                     ],
                     [
                         'title' => 'QUẢN LÝ VIDEO',
-                        'url' => 'controllervideo/video',
+                        'url' =>  $_SESSION['lang'].'/controllervideo/index',
                         'icon' => 'glyphicon glyphicon-facetime-video',
                     ],
                     [
                         'title' => 'QUẢN TÀI KHOẢN',
-                        'url' => 'controllertaikhoan/taikhoan',
+                        'url' =>  $_SESSION['lang'].'/controllertaikhoan/index',
                         'icon' => 'glyphicon glyphicon-user',
                     ],
                     [
                         'title' => 'TRẠNG THÁI BOOK',
-                        'url' => 'controllertrangthai/trangthai',
+                        'url' =>  $_SESSION['lang'].'/controllertrangthai/trangthai',
                         'icon' => 'glyphicon glyphicon-ok',
                     ],
                     [
                         'title' => 'LOG OUT',
-                        'url' => 'controlleradmin/index',
+                        'url' =>  $_SESSION['lang'].'/controlleradmin/index',
                         'icon' => 'glyphicon glyphicon-log-out',
                     ]
                 ],
