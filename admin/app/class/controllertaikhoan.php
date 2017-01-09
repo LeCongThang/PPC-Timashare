@@ -52,6 +52,7 @@ class controllertaikhoan
 
     public function index(){
         $ds_tai_khoan = $this->controllertaikhoan->laydanhsachtaikhoan();
+        $ds_tai_khoan_dk = $this->controllertaikhoan->laydanhsachtaikhoandk();
         require_once("app/view/quanlytaikhoan.php");
     }
 

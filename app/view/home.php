@@ -131,24 +131,24 @@
                 <div class="col-md-6 col-sm-12" id="banner_5">
                     <div class="media">
                         <div class="media-left" id="banner_5">
-                            <img src="<?= BASE_URL ?>img/banner-knd1.jpg" style="width:100%;">
+                            <?php echo "<img class='img-responsive' src='data:image/jpg;base64," . base64_encode($array_img[0]->getImageBlob()) . "' />"; ?>
                         </div>
                         <div class="media-right" id="banner_5">
-                            <img src="<?= BASE_URL ?>img/banner-knd2.jpg" style="width:100%;">
+                            <?php echo "<img class='img-responsive' src='data:image/jpg;base64," . base64_encode($array_img[1]->getImageBlob()) . "' />"; ?>
 
                         </div>
                     </div>
                     <div class="media">
                         <div class="media-body" id="banner_5">
-                            <img src="<?= BASE_URL ?>img/banner-knd3.jpg" class="img-reponsive">
+                            <?php echo "<img class='img-responsive' src='data:image/jpg;base64," . base64_encode($array_img[2]->getImageBlob()) . "' />"; ?>
                         </div>
                     </div>
                 </div>
                 <div class="col-md-6 col-sm-12" id="banner_5">
-                    <img src="<?= BASE_URL ?>img/banner-knd4.jpg" class="img-reponsive">
+                    <?php echo "<img class='img-responsive' src='data:image/jpg;base64," . base64_encode($array_img[3]->getImageBlob()) . "' />"; ?>
                 </div>
                 <div class="col-md-12 col-sm-12" id="banner_5">
-                    <img src="<?= BASE_URL ?>img/banner-knd5.jpg" class="img-reponsive">
+                    <?php echo "<img class='img-responsive' src='data:image/jpg;base64," . base64_encode($array_img[4]->getImageBlob()) . "' />"; ?>
                 </div>
             </div>
         </section>
@@ -164,24 +164,24 @@
                     </a>
                     <div id="cau_hoi_thuong_gap" style="display: none;">
                         <ul>
-                            <li>Tại sao tôi không đăng nhập được?</li>
-                            <li>Tại sao tôi không đăng nhập được?</li>
-                            <li>Tại sao tôi không đăng nhập được?</li>
-                            <li>Tại sao tôi không đăng nhập được?</li>
-                            <li>Tại sao tôi không đăng nhập được?</li>
+                            <?php
+                            foreach ($cau_hoi_thuong_gap as $key => $items_cau_hoi) {
+                                echo '<li><a href="#" onclick="return false;">' . $items_cau_hoi['cauhoi'] . '</a></li>';
+                            }
+                            ?>
                         </ul>
                     </div>
-                    <a href="#" id="cachsudung" onclick="return false;" style="color:#660000;"><h4>{CachSuDung} PPC
-                            TIMESHARE</h4></a>
-                    <div id="cach_su_dung" style="display: none;">
-                        <ul>
-                            <li>Tại sao tôi không đăng nhập được?</li>
-                            <li>Tại sao tôi không đăng nhập được?</li>
-                            <li>Tại sao tôi không đăng nhập được?</li>
-                            <li>Tại sao tôi không đăng nhập được?</li>
-                            <li>Tại sao tôi không đăng nhập được?</li>
-                        </ul>
-                    </div>
+                    <!--                    <a href="#" id="cachsudung" onclick="return false;" style="color:#660000;"><h4>{CachSuDung} PPC-->
+                    <!--                            TIMESHARE</h4></a>-->
+                    <!--                    <div id="cach_su_dung" style="display: none;">-->
+                    <!--                        <ul>-->
+                    <!--                            <li>Tại sao tôi không đăng nhập được?</li>-->
+                    <!--                            <li>Tại sao tôi không đăng nhập được?</li>-->
+                    <!--                            <li>Tại sao tôi không đăng nhập được?</li>-->
+                    <!--                            <li>Tại sao tôi không đăng nhập được?</li>-->
+                    <!--                            <li>Tại sao tôi không đăng nhập được?</li>-->
+                    <!--                        </ul>-->
+                    <!--                    </div>-->
                 </div>
             </section>
             <section id="lienhe">

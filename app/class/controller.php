@@ -25,12 +25,48 @@ class controller
         $ds_video = $this->control->laydanhsach("video");
         $dssliderw = $this->control->laydanhsachslider();
         $gioithieu = $this->control->laygioithieu();
+        $du_lieu_tham_gia = $this->control->layDuLieuThamGia();
+
+        $cau_hoi_thuong_gap = $this->control->layDanhSachCauHoiThuongGap();
         $dsKhuNghiDuongBanner = array();
         foreach ($dssbanner as $banner) {
             $khuNghiDuongBanner = $this->control->layThongTinChiTietKhuNghiDuong($banner['idkhunghiduong']);
             $dsKhuNghiDuongBanner[] = $khuNghiDuongBanner;
         }
         //echo count($dsKhuNghiDuongSlier);
+
+        $imagick = new \Imagick(realpath('C:\xampp\htdocs' . BASE_DIR . $du_lieu_tham_gia['hinh_anh']));
+        $imagick->resizeImage(1070, 868, Imagick::FILTER_LANCZOS, 1);
+        $width_khung_1_2 = 267.5;
+        $high_khung_1_2 = 217;
+        $width_khung_3 = 535;
+        $high_khung_3 = 217;
+        $width_khung_4 = 535;
+        $high_khung_4 = 434;
+        $width_khung_5 = 1070;
+        $high_khung_5 = 434;
+        $array_img = array();
+        $img_khung_1 = clone $imagick;
+        $img_khung_1->cropImage($width_khung_1_2, $high_khung_1_2, 0, 0);
+        $img_khung_1->resizeImage(266.67,216.35, Imagick::FILTER_LANCZOS, 1);
+        array_push($array_img, $img_khung_1);
+        $img_khung_2 = clone $imagick;
+        $img_khung_2->cropImage($width_khung_1_2, $high_khung_1_2, 267.5, 0);
+        $img_khung_2->resizeImage(267.78,217.26, Imagick::FILTER_LANCZOS, 1);
+        array_push($array_img, $img_khung_2);
+        $img_khung_3 = clone $imagick;
+        $img_khung_3->cropImage($width_khung_3, $high_khung_3, 0, 217);
+        $img_khung_3->resizeImage(580.99,217, Imagick::FILTER_LANCZOS, 1);
+        array_push($array_img, $img_khung_3);
+        $img_khung_4 = clone $imagick;
+        $img_khung_4->cropImage($width_khung_4, $high_khung_4, 535, 0);
+        $img_khung_4->resizeImage(568.99,453.99, Imagick::FILTER_LANCZOS, 1);
+        array_push($array_img, $img_khung_4);
+        $img_khung_5 = clone $imagick;
+        $img_khung_5->cropImage($width_khung_5, $high_khung_5, 0, 434);
+        $img_khung_5->resizeImage(1157.99,350, Imagick::FILTER_LANCZOS, 1);
+        array_push($array_img, $img_khung_5);
+
         require_once "view/home.php"; //nạp layout
     }//index
 
@@ -38,15 +74,6 @@ class controller
     {
         require_once "view/home.php";
     }//detail
-
-    function laydanhsachmail()
-    {
-        $id = $this->params[0];
-        settype($id, "int");
-        if ($id <= 0) return;
-        return $this->control->laymail($id);
-        //require_once "view/dangky.php";
-    }
 
     public function kiemtramail()
     {
@@ -223,12 +250,7 @@ class controller
         require_once "view/xemChiTietKhuNghiDuong.php";
     }
 
-    public function layDanhSachLoaiDichVu()
-    {
-        $dsdv = $this->control->laydanhsach("loaidichvu");
-        $_SESSION['dsdv'] = $dsdv;
-        return true;
-    }
+
 
 
 }//class

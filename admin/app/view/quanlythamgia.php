@@ -1,10 +1,5 @@
-<?php
-$connect = mysqli_connect("localhost", "root", "", "ppctimeshare");
-mysqli_query($connect, "SET NAMES 'UTF8'");
-$isUpdate = isset($this->params[0]);
-?>
 <!DOCTYPE html>
-<html>
+<html xmlns="http://www.w3.org/1999/html">
 <head>
     <meta charset="utf-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
@@ -23,7 +18,6 @@ $isUpdate = isset($this->params[0]);
          folder instead of downloading all of them to reduce the load. -->
     <link rel="stylesheet" href="<?= BASE_DIR ?>css/skins/_all-skins.min.css">
     <link rel="stylesheet" type="text/css" href="<?= BASE_URL ?>css/responsive.css">
-    <link rel="stylesheet" type="text/css" href="<?= BASE_URL ?>plugins/datepicker/datepicker3.css">
     <!-- <script type="text/javascript" src="http://code.jquery.com/jquery-1.9.1.min.js"></script> -->
     <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css"
           integrity="sha384-BVYiiSIFeK1dGmJRAkycuHAHRg32OmUcww7on3RYdg4Va+PmSTsz/K68vbdEjh4u" crossorigin="anonymous">
@@ -45,77 +39,83 @@ $isUpdate = isset($this->params[0]);
     <!-- <header class="main-header"> -->
 
     <!-- Left side column. contains the logo and sidebar -->
-    <?php  require 'partials/slider-bar.php' ?>
+    <?php require 'partials/slider-bar.php' ?>
 
     <!-- Content Wrapper. Contains page content -->
     <div class="content-wrapper">
         <section class="content-header">
-            <h1><b>
-                    Cập nhật
-                </b>
-                <!-- <small>13 new messages</small> -->
-            </h1>
-            <ol class="breadcrumb">
-                <!-- <li><a href="#"><i class="fa fa-dashboard"></i> Home</a></li> -->
-                <!-- <li class="active">Mailbox</li> -->
-            </ol>
+            <h1><b> QUẢN LÝ THAM GIA </b></h1>
         </section>
 
         <!-- Main content -->
         <section class="content">
             <div class="row">
                 <div class="col-md-12">
-
-                </div>
-                <!-- /.col -->
-                <form  method="POST" enctype="multipart/form-data">
-                    <div class="col-md-12">
+                    <form action="<?= BASE_URL_ADMIN ?>controllerthamgia/capNhatThamGia" method="POST"
+                          enctype="multipart/form-data">
                         <div class="box box-primary">
-                            <div class="box-header with-border text-center">
-                            </div>
                             <!-- /.box-header -->
                             <div class="box-body">
-                                <?php foreach ($this->errors as $error): ?>
-                                    <div class="alert alert-danger" role="alert"><?= $error ?></div>
-                                <?php endforeach; ?>
-                                <div class="row">
-                                    <ul class="list-unstyled col-md-6">
-                                        <li>Người đặt: <b><?= $data['tendangnhap'] ?></b></li>
-                                        <li>Khu nghĩ dưỡng: <b><?= $data['thongtin'] ?></b></li>
-                                    </ul>
-                                </div>
-                                <br>
-                                <div class="row">
-                                    <div class="col-md-6">
-                                        <div class="form-group">
-                                            <input placeholder="Ngày đến" class="form-control date_picker" value="<?php echo $data['ngay_den'] ; ?>" name="ngay_den">
-                                        </div>
-                                    </div>
-                                    <div class="col-md-6">
-                                        <div class="form-group">
-                                            <input placeholder="Ngày đi" class="form-control date_picker" value="<?php echo $data['ngay_di'] ; ?>" name="ngay_di">
-                                        </div>
-                                    </div>
-                                </div>
-                                <div class="form-group">
-                                    <label for="content">Ghi chú</label>
-                                    <textarea placeholder="Ghi chú" name="ghichu" rows="4" title="" class="form-control"><?php echo $data['ghichu']; ?></textarea>
-                                </div>
-
+                                <table class="table">
+                                    <thead>
+                                    <tr>
+                                        <th>STT</th>
+                                        <th>Hình ảnh</th>
+                                        <th></th>
+                                    </tr>
+                                    </thead>
+                                    <tbody>
+                                    <?php for ($i = 1; $i <= 5; $i++): ?>
+                                        <tr>
+                                            <td>
+                                                <?= $i ?>
+                                            </td>
+                                            <td width="50%">
+                                                <?php echo "<img class='img-responsive' src='data:image/jpg;base64," . base64_encode($array_img[$i - 1]->getImageBlob()) . "' />"; ?>
+                                            </td>
+                                            <td>
+                                                <div class="form-group">
+                                                    <label for="noidung">Đường dẫn</label>
+                                                    <input placeholder="Đường dẫn" class="form-control"
+                                                           value="<?php echo $du_lieu_vi['link_hinh_' . $i] ?>"
+                                                           name=<?= "duong_dan_" . $i ?>
+                                                           style="font-size:17px;font-family:verdana;text-align:justify;">
+                                                </div>
+                                                <div class="form-group">
+                                                    <label for="noidung">Tiêu đề tiếng việt</label>
+                                                    <input placeholder="Tiêu đề tiếng việt" class="form-control"
+                                                           value="<?php echo $du_lieu_vi['label_hinh_' . $i] ?>"
+                                                           name=<?= "tieu_de_vi_" . $i ?>
+                                                           style="font-size:17px;font-family:verdana;text-align:justify;">
+                                                </div>
+                                                <div class="form-group">
+                                                    <label for="noidung">Tiêu đề tiếng anh</label>
+                                                    <input placeholder="Tiêu đề tiếng anh" class="form-control"
+                                                           value="<?php echo $du_lieu_en['label_hinh_' . $i] ?>"
+                                                           name=<?= "tieu_de_en_" . $i ?>
+                                                           style="font-size:17px;font-family:verdana;text-align:justify;">
+                                                </div>
+                                            </td>
+                                        </tr>
+                                    <?php endfor; ?>
+                                    </tbody>
+                                </table>
                             </div>
                             <!-- /.box-body -->
                             <div class="box-footer">
                                 <div class="pull-right">
-                                    <a href="<?= BASE_URL . "controllerbook/index"?>" class="btn btn-default"><i class="glyphicon glyphicon-arrow-left"></i> Quay lại</a>
-                                    <button type="submit" name="submit" class="btn btn-info"><i class="glyphicon glyphicon-th-large"></i>&nbsp <b>Cập nhật</b></button>
+                                    <!-- <button type="button" class="btn btn-default"><i class="fa fa-pencil"></i> Draft</button> -->
+                                    <button type="submit" name="submit" class="btn btn-info"><i
+                                            class="glyphicon glyphicon-th-large"></i>&nbsp <b>Cập nhật</b>
+                                    </button>
                                 </div>
                                 <!-- <button type="reset" class="btn btn-default"><i class="fa fa-times"></i> Discard</button> -->
                             </div>
                             <!-- /.box-footer -->
                         </div>
                         <!-- /. box -->
-                    </div>
-                </form>
+                    </form>
+                </div>
                 <!-- /.col -->
             </div>
             <!-- /.row -->
@@ -341,16 +341,15 @@ $isUpdate = isset($this->params[0]);
 <script src="<?= BASE_DIR ?>js/demo.js"></script>
 <!-- iCheck -->
 <script src="<?= BASE_DIR ?>plugins/iCheck/icheck.min.js"></script>
-<script src="<?= BASE_DIR ?>plugins/datepicker/bootstrap-datepicker.js"></script>
+
 <script type="text/javascript" src="<?= BASE_DIR ?>ckeditor/ckeditor.js"></script>
 <!-- Page Script -->
 <script>
     $(function () {
-        $('.date_picker').datepicker({
-            format: 'yyyy-mm-dd',
-        });
-
+        //Add text editor
+        $("#compose-textarea").wysihtml5();
     });
+    CKEDITOR.replace('editor1', {});
 </script>
 
 </body>

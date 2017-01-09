@@ -79,7 +79,7 @@ mysqli_query($connect, "SET NAMES 'UTF8'");
                                 </tr>
                                 </thead>
                                 <tbody>
-                                <?php foreach ($ds_cau_hoi as $key => $cau_hoi): ?>
+                                <?php foreach ($ds_cau_hoi_vi as $key => $cau_hoi): ?>
                                     <tr>
                                         <td>
                                             <?= $key + 1 ?>

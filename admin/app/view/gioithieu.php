@@ -1,7 +1,3 @@
-<?php
-$connect = mysqli_connect("localhost", "root", "", "ppctimeshare");
-mysqli_query($connect, "SET NAMES 'UTF8'");
-?>
 <!DOCTYPE html>
 <html>
 <head>

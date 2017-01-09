@@ -70,6 +70,11 @@
                     'icon' => 'glyphicon glyphicon-user',
                 ],
                 [
+                    'title' => 'QUẢN LÝ THAM GIA',
+                    'url' => 'controllerthamgia/index',
+                    'icon' => 'glyphicon glyphicon-log-in',
+                ],
+                [
                     'title' => 'QUẢN LÝ CÂU HỎI',
                     'url' => 'controllercauhoi/index',
                     'icon' => 'glyphicon glyphicon-question-sign',

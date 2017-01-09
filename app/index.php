@@ -2,7 +2,6 @@
 $lang = 'vi';
 session_start();
 require_once "config.php";
-require_once "helper.php";
 $url = $_SERVER['REQUEST_URI'];
 $kq = tach_url($url, $lang, $cname, $action, $params);
 //$kq = tach_url($url, $cname, $action, $params);

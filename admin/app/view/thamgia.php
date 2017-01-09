@@ -1,7 +1,3 @@
-<?php
-$connect = mysqli_connect("localhost", "root", "", "ppctimeshare");
-mysqli_query($connect, "SET NAMES 'UTF8'");
-?>
 <!DOCTYPE html>
 <html>
 <head>
@@ -48,21 +44,19 @@ mysqli_query($connect, "SET NAMES 'UTF8'");
     <!-- Content Wrapper. Contains page content -->
     <div class="content-wrapper">
         <section class="content-header">
-            <h1><b> GIỚI THIỆU </b></h1>
+            <h1><b> THAM GIA PPC-TIMESHARE </b></h1>
         </section>
 
         <!-- Main content -->
         <section class="content">
             <div class="row">
-                <form action="<?= BASE_URL.$_SESSION['lang'] ?>/controllergioithieu/capnhatgioithieu" method="POST"
+                <form action="<?=BASE_URL_ADMIN?>controllerthamgia/hienThiDanhSachHinh" method="POST"
                       enctype="multipart/form-data">
                     <div class="col-md-12">
                         <div class="box box-primary">
                             <div class="box-header with-border text-center">
-                                <?php if ($gioithieu_vi['img_tieude']): ?>
-                                    <img id="blah" src="<?= BASE_DIR . $gioithieu_vi['img_tieude'] ?>"
-                                         style="width:70%;">
-                                <?php endif; ?>
+                                <img id="blah" src="<?=BASE_DIR.$du_lieu_vi['hinh_anh']?>"
+                                     style="width:70%;">
                             </div>
                             <br>
                             <div class="form-group" style="margin-left:10px;">
@@ -72,63 +66,12 @@ mysqli_query($connect, "SET NAMES 'UTF8'");
                                 </div>
                                 <!-- up file anh -->
                             </div>
-                            <div class="bs-example bs-example-tabs" data-example-id="togglable-tabs">
-                                <ul class="nav nav-tabs" id="myTabs" role="tablist">
-                                    <li role="presentation" class="active"><a href="#vi" id="vi-tab" role="tab"
-                                                                              data-toggle="tab"
-                                                                              aria-controls="gioithieu_vi"
-                                                                              aria-expanded="true">Tiếng
-                                            Việt</a></li>
-                                    <li role="presentation" class=""><a href="#en" role="tab" id="en-tab"
-                                                                        data-toggle="tab"
-                                                                        aria-controls="gioithieu_en"
-                                                                        aria-expanded="false">Tiếng
-                                            Anh</a></li>
-                                </ul>
-                                <div class="tab-content" id="myTabContent">
-                                    <div class="tab-pane fade active in" role="tabpanel" id="vi"
-                                         aria-labelledby="vi-tab">
-                                        <!-- /.box-header -->
-                                        <div class="box-body">
-                                            <div class="form-group">
-                                                <input class="form-control"
-                                                       value="<?php echo $gioithieu_vi['tieu_de']; ?>"
-                                                       name="tieude_vi"
-                                                       style="font-size:17px;font-family:verdana;text-align:justify;">
-                                            </div>
-                                            <div class="form-group">
-                                    <textarea name="noidung_vi" class="ckeditor" id="noidung_en" cols="30" rows="10" title="">
-                                        <?php echo $gioithieu_vi['noidung_gioithieu']; ?>
-                                    </textarea>
-                                            </div>
-                                        </div>
-                                    </div>
-                                    <!-- /. box -->
-                                    <div class="tab-pane fade" role="tabpanel" id="en" aria-labelledby="en-tab">
-                                        <div class="box-body">
-                                            <div class="form-group">
-                                                <input class="form-control"
-                                                       value="<?php echo $gioithieu_en['tieu_de']; ?>"
-                                                       name="tieude_en"
-                                                       style="font-size:17px;font-family:verdana;text-align:justify;">
-                                            </div>
-                                            <div class="form-group">
-                                    <textarea name="noidung_en" class="ckeditor" id="noidung_en" cols="30" rows="10"
-                                              title="">
-                                        <?php echo $gioithieu_en['noidung_gioithieu']; ?>
-                                    </textarea>
-
-                                            </div>
-                                        </div>
-                                    </div>
-                                </div>
-                            </div>
                             <!-- /.box-body -->
                             <div class="box-footer">
                                 <div class="pull-right">
                                     <!-- <button type="button" class="btn btn-default"><i class="fa fa-pencil"></i> Draft</button> -->
                                     <button type="submit" name="submit" class="btn btn-info"><i
-                                            class="glyphicon glyphicon-th-large"></i>&nbsp <b>Cập nhật</b>
+                                            class="glyphicon glyphicon-th-large"></i>&nbsp <b>Bước kế</b>
                                     </button>
                                 </div>
                                 <!-- <button type="reset" class="btn btn-default"><i class="fa fa-times"></i> Discard</button> -->
@@ -194,7 +137,10 @@ mysqli_query($connect, "SET NAMES 'UTF8'");
 
     $("#imgInp").change(function(){
         readURL(this);
+
     });
+
+
 </script>
 
 </body>

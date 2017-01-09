@@ -6,36 +6,24 @@
     <meta name="viewport" content="width=device-width, initial-scale=1">
     <base href="<?= BASE_DIR ?>">
     <link href="<?= BASE_DIR ?>css/style.css" rel="stylesheet" type="text/css">
+    <script type="text/javascript" src="http://code.jquery.com/jquery-1.9.1.min.js"></script>
     <!-- Latest compiled and minified CSS -->
     <link rel="stylesheet" type="text/css" href="<?= BASE_DIR ?>css/style.css">
     <link rel="stylesheet" type="text/css" href="<?= BASE_DIR ?>css/responsive.css">
-    <script type="text/javascript" src="http://code.jquery.com/jquery-1.9.1.min.js"></script>
     <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css"
           integrity="sha384-BVYiiSIFeK1dGmJRAkycuHAHRg32OmUcww7on3RYdg4Va+PmSTsz/K68vbdEjh4u" crossorigin="anonymous">
-
     <!-- Optional theme -->
     <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap-theme.min.css"
           integrity="sha384-rHyoN1iRsVXV4nD0JutlnGaslCJuC7uwjduW9SVrLvRYooPp2bWYgmgJQIXwl/Sp" crossorigin="anonymous">
-
+    <link rel="stylesheet" type="text/css" href="<?= BASE_DIR ?>css/stylehead.css">
     <!-- Latest compiled and minified JavaScript -->
     <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"
             integrity="sha384-Tc5IQib027qvyjSMfHjOMaLkfuWVxZxUPnCJA7l2mCWNIpG9mGCD8wGNIcPD7Txa"
             crossorigin="anonymous"></script>
-    <script
-        src="https://maps.googleapis.com/maps/api/js?key=AIzaSyBu-916DdpKAjTmJNIgngS6HL_kDIKU0aU&callback=myMap"></script>
-    <link rel="stylesheet" type="text/css" href="<?= BASE_DIR ?>css/stylehead.css">
-    <script type="text/javascript"
-            src="<?= BASE_DIR ?>bootstrapdatetimepicker/js/bootstrap-datetimepicker.min.js"></script>
     <script type="text/javascript" src="<?= BASE_DIR ?>ckeditor/ckeditor.js"></script>
     <script type="text/javascript" src="<?= BASE_DIR ?>js/main.js"></script>
     <link rel="stylesheet" href="<?= BASE_DIR ?>bootstrapdatetimepicker/css/bootstrap.min.css"/>
     <link rel="stylesheet" href="<?= BASE_DIR ?>bootstrapdatetimepicker/css/bootstrap.css"/>
-    <script type="text/javascript" src="<?= BASE_DIR ?>bootstrapdatetimepicker/js/bootstrap-datetimepicker.min.js"/>
-    <script type="text/javascript" src="<?= BASE_DIR ?>bootstrapdatetimepicker/js/bootstrap-datetimepicker.js"/>
-    <script type="text/javascript" src="<?= BASE_DIR ?>bootstrapdatetimepicker/bootstrapv3/bootstrap/js/bootstrap.js"/>
-    <script type="text/javascript">
-
-    </script>
 </head>
 <body>
 <div class="container">
@@ -147,7 +135,7 @@
                     echo '<div class="carousel-caption"><div class = "row"> <div class="col-md offset-4 col-md-8">';
                     echo '</div></div>';
                 }
-                echo '<center><a href="' . $itemSlider['duongdan_slider'] . '" class="btnBookNow btn btn-default " style="margin-bottom:10px;" id="btnBN' . $key . '" >' . $itemSlider['noidung_slider'] . '</a></center></div></div>';
+                echo '<center><a href="' . $itemSlider['duongdan_slider'] . '" class="btnBookNow btn btn-default " style="margin-bottom:10px;" >' . $itemSlider['noidung_slider'] . '</a></center></div></div>';
 
             }
             ?>

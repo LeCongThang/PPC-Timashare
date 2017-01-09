@@ -1,6 +1,7 @@
 <?php
 error_reporting(E_ALL);
 session_start();
+//phpinfo();
 ini_set('display_errors', 1);
 require_once "app/config.php";
 require_once "app/helper.php";

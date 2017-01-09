@@ -36,7 +36,7 @@ class modeltaikhoan
     }
 
     public  function laydanhsachtaikhoandk(){
-        $sql = "SELECT * FROM taikhoandangky WHERE id_vaitro = 1";
+        $sql = "SELECT * FROM taikhoandangky WHERE trangthai_taikhoandk = 1";
         $result = mysqli_query($this->db, $sql);
         if (!$result) {
             die("Error in query");

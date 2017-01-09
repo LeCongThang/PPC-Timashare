@@ -1,1 +1,0 @@
-ALTER TABLE `slider` CHANGE `id` `id` INT(11) NOT NULL, ADD COLUMN `title` VARCHAR(255) NULL AFTER `idnhadat`, ADD COLUMN `content` TEXT NULL AFTER `title`, ADD COLUMN `status` TINYINT(1) NULL AFTER `content`, ADD PRIMARY KEY (`id`);
