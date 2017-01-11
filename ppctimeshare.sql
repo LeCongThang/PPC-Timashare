@@ -3,7 +3,7 @@
 -- http://www.phpmyadmin.net
 --
 -- Host: 127.0.0.1
--- Generation Time: Dec 28, 2016 at 10:52 AM
+-- Generation Time: Jan 11, 2017 at 06:04 AM
 -- Server version: 10.1.19-MariaDB
 -- PHP Version: 5.6.28
 
@@ -67,6 +67,45 @@ INSERT INTO `book_now` (`id_book`, `tendangnhap`, `idkhunghiduong`, `thoigian`, 
 -- --------------------------------------------------------
 
 --
+-- Table structure for table `cauhoithuonggap`
+--
+
+CREATE TABLE `cauhoithuonggap` (
+  `id` int(11) NOT NULL
+) ENGINE=InnoDB DEFAULT CHARSET=utf8;
+
+--
+-- Dumping data for table `cauhoithuonggap`
+--
+
+INSERT INTO `cauhoithuonggap` (`id`) VALUES
+(1);
+
+-- --------------------------------------------------------
+
+--
+-- Table structure for table `cauhoithuonggap_ngonngu`
+--
+
+CREATE TABLE `cauhoithuonggap_ngonngu` (
+  `id` int(11) NOT NULL,
+  `id_cauhoithuonggap` int(11) NOT NULL,
+  `cauhoi` text NOT NULL,
+  `cautraloi` text NOT NULL,
+  `ngonngu` text NOT NULL
+) ENGINE=InnoDB DEFAULT CHARSET=utf8;
+
+--
+-- Dumping data for table `cauhoithuonggap_ngonngu`
+--
+
+INSERT INTO `cauhoithuonggap_ngonngu` (`id`, `id_cauhoithuonggap`, `cauhoi`, `cautraloi`, `ngonngu`) VALUES
+(1, 1, '<p>T&ocirc;i C&oacute; Thể Hẹn Thời Gian Giao H&agrave;ng Cụ Thể Hay Hẹn&nbsp;</p>\r\n', '<p>Tiki giao h&agrave;ng trong giờ h&agrave;nh ch&iacute;nh: từ 8 giờ s&aacute;ng đến 5 giờ chiều v&agrave; trong c&aacute;c ng&agrave;y từ Thứ 2 đến thứ 6. Do nh&acirc;n vi&ecirc;n vận chuyển giao h&agrave;ng theo tuyến n&ecirc;n rất tiếc Tiki chưa thể hỗ trợ thời gian giao h&agrave;ng cụ thể. Sau khi đặt h&agrave;ng th&agrave;nh c&ocirc;ng, Tiki sẽ th&ocirc;ng b&aacute;o thời gian giao h&agrave;ng dự kiến cho đơn h&agrave;ng, qu&yacute; kh&aacute;ch vui l&ograve;ng sắp xếp thời gian v&agrave; giữ li&ecirc;n lạc để nhận h&agrave;ng trong thời gian Tiki đ&atilde; th&ocirc;ng b&aacute;o. Trong trường hợp nh&acirc;n vi&ecirc;n vận chuyển li&ecirc;n hệ v&agrave;o thời gian chưa ph&ugrave; hợp, qu&yacute; kh&aacute;ch c&oacute; thể giữ li&ecirc;n lạc qua điện thoại v&agrave; hẹn lại thời gian giao h&agrave;ng kh&aacute;c, nh&acirc;n vi&ecirc;n vận chuyển sẽ cố gắng hỗ trợ trong mức c&oacute; thể.</p>\r\n', 'vi'),
+(2, 1, '<p>I Can Romance Specific Delivery Time Delivery On Sunday Romance Or Not?</p>\r\n', '<p>Tiki delivery during office hours: from 8 am to 5 pm and during the day from Monday to Friday 6. Do shipping delivery staff according Tiki online so unfortunately can not support a specific delivery time . After a successful order, Tiki will announce the expected delivery time for orders, please arrange a time and keep in touch to receive goods in time Tiki announced. In the case of transport staff contact time is not appropriate, you can keep in touch by phone and reschedule another time delivery, transportation staff will try to support as possible.</p>\r\n', 'en');
+
+-- --------------------------------------------------------
+
+--
 -- Table structure for table `chitietquyenvaitro`
 --
 
@@ -78,64 +117,42 @@ CREATE TABLE `chitietquyenvaitro` (
 -- --------------------------------------------------------
 
 --
--- Table structure for table `danhmuc`
+-- Table structure for table `gioithieu`
 --
 
-CREATE TABLE `danhmuc` (
-  `id_danhmuc` int(11) NOT NULL,
-  `name_danhmuc` int(11) NOT NULL
-) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_vietnamese_ci;
-
--- --------------------------------------------------------
-
---
--- Table structure for table `danhmucmenu`
---
-
-CREATE TABLE `danhmucmenu` (
+CREATE TABLE `gioithieu` (
   `id` int(11) NOT NULL,
-  `tendanhmuc` text
+  `img_tieude` text NOT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8;
+
+--
+-- Dumping data for table `gioithieu`
+--
+
+INSERT INTO `gioithieu` (`id`, `img_tieude`) VALUES
+(1, 'img/1483948305_banner_main.jpg');
 
 -- --------------------------------------------------------
 
 --
--- Table structure for table `gioithieu_en`
+-- Table structure for table `gioithieu_ngonngu`
 --
 
-CREATE TABLE `gioithieu_en` (
-  `tieu_de` text,
-  `img_tieude` text,
-  `noidung_gioithieu1` text,
-  `noidung_gioithieu2` text NOT NULL
+CREATE TABLE `gioithieu_ngonngu` (
+  `id` int(11) NOT NULL,
+  `tieu_de` text NOT NULL,
+  `noidung_gioithieu` text NOT NULL,
+  `id_gioithieu` int(11) NOT NULL,
+  `ngonngu` text NOT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8;
 
 --
--- Dumping data for table `gioithieu_en`
+-- Dumping data for table `gioithieu_ngonngu`
 --
 
-INSERT INTO `gioithieu_en` (`tieu_de`, `img_tieude`, `noidung_gioithieu1`, `noidung_gioithieu2`) VALUES
-('About PPC TimeShare', 'img/banner_gioithieu.png', 'In addition, the PPC PPC Timeshare Property was established in the hope of a bridge for customers and investors to participate in the field of timeshare, vacation exchange together, and flexibility in the use of property ownership not only each other''s products in Vietnam market in particular, but also in the US, Japan, South Korea, ...', 'Timeshare also provides additional services to help Housekeeping staff for the home comfort and peace of mind in the exchange of ownership of the same property before and after the holiday.');
-
--- --------------------------------------------------------
-
---
--- Table structure for table `gioithieu_vi`
---
-
-CREATE TABLE `gioithieu_vi` (
-  `tieu_de` text,
-  `img_tieude` text,
-  `noidung_gioithieu1` text,
-  `noidung_gioithieu2` text NOT NULL
-) ENGINE=InnoDB DEFAULT CHARSET=utf8;
-
---
--- Dumping data for table `gioithieu_vi`
---
-
-INSERT INTO `gioithieu_vi` (`tieu_de`, `img_tieude`, `noidung_gioithieu1`, `noidung_gioithieu2`) VALUES
-('Về PPC TIMESHARE', 'img/banner_gioithieu.png', 'Ngoài PPC Property thì PPC Timeshare được thành lập với hy vọng là cầu nối cho các khách hàng và các chủ đầu tư tham gia trong lĩnh vực Timeshare, cùng nhau trao đổi kỳ nghỉ, đồng thời linh hoạt trong việc sử dụng quyền sở hữu tài sản của nhau không chỉ tại thị trường Việt Nam nói riêng mà còn tại thị trường Mỹ, Nhật Bản, Hàn Quốc,…', 'Timeshare cũng cung cấp thêm dịch vụ nhân viên buồng phòng nhằm giúp cho các chủ nhà thoải mái và yên tâm hơn trong việc trao đổi quyền sở hữu tài sản của nhau trước và sau kỳ nghỉ.');
+INSERT INTO `gioithieu_ngonngu` (`id`, `tieu_de`, `noidung_gioithieu`, `id_gioithieu`, `ngonngu`) VALUES
+(1, 'Về PPC TIMESHARE', '<p><strong><em>Ngo&agrave;i PPC Property th&igrave; PPC Timeshare được th&agrave;nh lập với hy vọng l&agrave; cầu nối cho c&aacute;c kh&aacute;ch h&agrave;ng v&agrave; c&aacute;c chủ đầu tư tham gia trong lĩnh vực Timeshare, c&ugrave;ng nhau trao đổi kỳ nghỉ, đồng thời linh hoạt trong việc sử dụng quyền sở hữu t&agrave;i sản của nhau kh&ocirc;ng chỉ tại thị trường Việt Nam n&oacute;i ri&ecirc;ng m&agrave; c&ograve;n tại thị trường Mỹ, Nhật Bản, H&agrave;n Quốc,&hellip; </em></strong></p>\r\n\r\n<p><strong><em>Timeshare cũng cung cấp th&ecirc;m dịch vụ nh&acirc;n vi&ecirc;n buồng ph&ograve;ng nhằm gi&uacute;p cho c&aacute;c chủ nh&agrave; thoải m&aacute;i v&agrave; y&ecirc;n t&acirc;m hơn trong việc trao đổi quyền sở hữu t&agrave;i sản của nhau trước v&agrave; sau kỳ nghỉ.&nbsp;</em></strong></p>\r\n', 1, 'vi'),
+(2, 'About PPC TimeShare', '<p><strong>In addition, the PPC PPC Timeshare Property was established in the hope of a bridge for customers and investors to participate in the field of timeshare, vacation exchange together, and flexibility in the use of property ownership not only each other&#39;s products in Vietnam market in particular, but also in the US, Japan, South Korea, ...</strong></p>\r\n\r\n<p><strong>Timeshare also provides additional services to help Housekeeping staff for the home comfort and peace of mind in the exchange of ownership of the same property before and after the holiday.</strong></p>\r\n', 1, 'en');
 
 -- --------------------------------------------------------
 
@@ -215,32 +232,7 @@ CREATE TABLE `lienhe` (
 --
 
 INSERT INTO `lienhe` (`id`, `ten_lienhe`, `sdt_lienhe`, `email_lienhe`, `conten_lienhe`, `trangthai`) VALUES
-(1, 'HBB Solutions', 1222222, 'sadsa@gmail.com', '\r\nádasdsakmdlkasmldmaslmdasd', 1),
-(2, 'HBB Solutions', 1222222, 'sadsa@gmail.com', '<p>&aacute;dasdsakmdlkasmldmaslmdasd</p>\r\n', 0),
-(3, 'HBB Solutions', 2147483647, 'asdnjasnd@gmail.com', '<p>sadjasnkdnasndjknaskjdnkajsndkjnaskjdnkj &aacute;ndkjasjkdnkasndkansdkjasnkdnksajd</p>\n', 0),
-(4, 'abc', 0, 'abc', '<h3 style="color:#aaaaaa; font-style:italic"><span style="font-size:12px"><em>abcadsjkaskdnjkansdknaskndkansdnasndjasndkjnaskjnd</em></span></h3>\r\n', 0),
-(5, '', 0, '', '', 0),
-(6, 'anc', 0, 'abc', '<p>abc</p>\r\n', 0),
-(7, 'QV', 0, 'justindno2@gmai.com', '<p>abc</p>\r\n', 0),
-(8, '', 0, '', '                    ', 0),
-(9, '', 0, '', '', 0),
-(10, '', 0, '', '', 0),
-(11, 'ádasd', 0, 'sadasd', '<p>đ&acirc;sdasd&aacute;dasdasd</p>\r\n', 0),
-(12, '', 0, '', '', 0),
-(13, 's', 0, 's', '', 0),
-(14, 'HBB Solutions', 1222222, 'justindno2@gmail.com', '<p>d</p>\r\n', 0),
-(15, 'HBB Solutions', 23456, 'vinhhongquang@gmail.com', '<p>ch&uacute;ng t&ocirc;i l&agrave; hbb solutions</p>\r\n', 0),
-(16, '', 0, '', '', 0),
-(17, 'x', 0, 'z', '', 0),
-(18, 'x', 0, 'z', '', 0),
-(19, 'x', 0, 'z', '', 0),
-(20, 'x', 0, 'z', '', 0),
-(21, 'x', 0, 'z', '', 0),
-(22, 'HBB Solutions', 0, 'vinhhongquang@gmail.com', '<p><strong>&aacute;dsasadasdasdas</strong></p>\r\n', 0),
-(23, 'HBB Solutions', 1222555, 'justindno2@gmai.com', '<p>sadasdasd</p>\r\n', 0),
-(24, 'x', 0, 'z', '<p>aaa</p>\r\n', 0),
-(25, '', 0, '', '', 0),
-(26, '', 0, '', '', 0);
+(6, 'HBB Solutions', 1222555, 'vinhhongquang@gmail.com', '<p>cxczxc</p>\r\n', 1);
 
 -- --------------------------------------------------------
 
@@ -260,39 +252,6 @@ CREATE TABLE `loaidichvu` (
 INSERT INTO `loaidichvu` (`id`, `tenloai`) VALUES
 (1, 'Khu Nghỉ Dưỡng'),
 (2, 'Nhà cá nhân');
-
--- --------------------------------------------------------
-
---
--- Table structure for table `ngon_ngu`
---
-
-CREATE TABLE `ngon_ngu` (
-  `vietnam` varchar(50) COLLATE utf8mb4_vietnamese_ci NOT NULL,
-  `english` varchar(50) COLLATE utf8mb4_vietnamese_ci NOT NULL
-) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_vietnamese_ci;
-
--- --------------------------------------------------------
-
---
--- Table structure for table `nhadat`
---
-
-CREATE TABLE `nhadat` (
-  `id_nha` varchar(50) COLLATE utf8mb4_vietnamese_ci NOT NULL,
-  `diachi_nha` varchar(100) COLLATE utf8mb4_vietnamese_ci NOT NULL
-) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_vietnamese_ci;
-
--- --------------------------------------------------------
-
---
--- Table structure for table `nha_ngonngu`
---
-
-CREATE TABLE `nha_ngonngu` (
-  `id_nha_ngonngu` varchar(100) COLLATE utf8mb4_vietnamese_ci NOT NULL,
-  `diachi_nha_ngonngu` varchar(100) COLLATE utf8mb4_vietnamese_ci NOT NULL
-) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_vietnamese_ci;
 
 -- --------------------------------------------------------
 
@@ -322,7 +281,7 @@ CREATE TABLE `slider` (
 --
 
 INSERT INTO `slider` (`id_slider`, `image_slider`, `duongdan_slider`) VALUES
-(1, 'img/banner_main.jpg', '#'),
+(1, 'img/1483497797_banner_1.png', '#'),
 (2, 'img/banner_1.png', '#'),
 (3, 'img/banner_3.png', '#'),
 (4, 'img/banner_4.png', '#');
@@ -347,11 +306,11 @@ CREATE TABLE `slider_ngonngu` (
 --
 
 INSERT INTO `slider_ngonngu` (`id`, `id_slider`, `noidung_slider`, `tieude_slider`, `mota_slider`, `ngon_ngu`) VALUES
-(1, 1, 'LEARN MORE', 'Treat yourself this Christmas!', 'Upgrade to RCI Platinum and enjoy the benefits all year round', 'en'),
-(2, 1, 'XEM THÊM', 'Tận hưởng giáng sinh của bạn!', 'Nâng cấp gói RCI bạch kim và tận hưởng những ưu đãi quanh năm', 'vi'),
+(1, 1, 'LEARN MORE', 'Treat yourself this Christmas!', '<p>Upgrade to RCI Platinum and enjoy the benefits all year round</p>\r\n', 'en'),
+(2, 1, 'XEM THÊM A', 'Tận hưởng giáng sinh của bạn!', '<p>N&acirc;ng cấp g&oacute;i RCI bạch kim v&agrave; tận hưởng những ưu đ&atilde;i quanh năm A</p>\r\n', 'vi'),
 (3, 2, 'XEM THÊM', 'Vùng đất nào có mùa đông tuyệt vời nhất?', 'Chia sẽ kì nghỉ yêu thích với những bức ảnh lên Instagram với liên kết #gorci', 'vi'),
 (4, 2, 'LEARN MORE', 'Where''s  Winter Wonderland?', 'Share your favourite festive holiday photos on our Instagram page with #gorci', 'en'),
-(5, 3, 'BOOK NOW', '', '', 'en'),
+(5, 3, 'REGISTER NOW', '', '', 'en'),
 (7, 3, 'ĐĂNG KÝ', '', '', 'vi'),
 (8, 4, 'ĐẶT CHỖ', '', '', 'vi'),
 (9, 4, 'BOOK NOW', '', '', 'en');
@@ -368,27 +327,18 @@ CREATE TABLE `taikhoan` (
   `id_vaitro` int(11) NOT NULL,
   `hoten` text COLLATE utf8mb4_vietnamese_ci,
   `diachi` text COLLATE utf8mb4_vietnamese_ci,
-  `dienthoai` text COLLATE utf8mb4_vietnamese_ci,
-  `email` text COLLATE utf8mb4_vietnamese_ci NOT NULL
+  `dienthoai` text COLLATE utf8mb4_vietnamese_ci
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_vietnamese_ci;
 
 --
 -- Dumping data for table `taikhoan`
 --
 
-INSERT INTO `taikhoan` (`tendangnhap`, `matkhau`, `id_vaitro`, `hoten`, `diachi`, `dienthoai`, `email`) VALUES
-('', 'd41d8cd98f00b204e9800998ecf8427e', 1, '', '', '', ''),
-('abcd', 'e2fc714c4727ee9395f324cd2e7f331f', 1, 'đá', 'ádasd', '366386', ''),
-('admin', '21232f297a57a5a743894a0e4a801fc3', 2, 'QuangVinh', 'Lầu 3, tòa nhà JABES 1\r\n, 244 Cống Quỳnh, Phường Phạm Ngũ Lão, Quận 1, Thành phố Hồ Chí Minh, Việt Nam', '0839 262 998', ''),
-('admin1', 'e00cf25ad42683b3df678c61f42c6bda', 2, 'admin1', '215/B37 Nguyễn Văn Hưởng,P. Thảo Điền,Q. 2,TP. HCM', '0873077477', ''),
-('quangvinh', '0f12c7a13c9ebaf1520583010be4dd49', 1, 'quangvinh', '93/6M Phùng Tá Chu', '1', ''),
-('quangvinh13', 'e10adc3949ba59abbe56e057f20f883e', 1, 'quangvinh', '93/6M Phùng Tá Chu', '23222333', ''),
-('quangvinh15', 'd3677da84302bc96677df88295e918d7', 1, 'Hồng Quang Vinh', '93/6M Phùng Tá Chu Phường An Lạc A Quận Bình Tân, Thành Phố Hồ Chí Minh', '01217009796', ''),
-('quangvinh17', 'e10adc3949ba59abbe56e057f20f883e', 1, 'quangvinh', '123456', '123456', ''),
-('quangvinh2', 'e10adc3949ba59abbe56e057f20f883e', 1, 'a', '', '', ''),
-('quangvinh23', 'd3677da84302bc96677df88295e918d7', 1, 'Hồng Quang Vinh', 'abc', '01222222', ''),
-('quangvinh27', 'd3677da84302bc96677df88295e918d7', 1, 'Hồng Quang Vinh', '93/6M Phùng Tá Chu Phường An Lạc A Quận Bình Tân, Thành Phố Hồ Chí Minh', '01217009796', ''),
-('quangvinh5', 'e10adc3949ba59abbe56e057f20f883e', 1, 'Hồng Quang Vinh', '93/6M Phùng Tá Chu Phường An Lạc A Quận Bình Tân, Thành Phố Hồ Chí Minh', '01222222', '');
+INSERT INTO `taikhoan` (`tendangnhap`, `matkhau`, `id_vaitro`, `hoten`, `diachi`, `dienthoai`) VALUES
+('admin@hbbsolution.com', '21232f297a57a5a743894a0e4a801fc3', 2, 'QuangVinh', 'Lầu 3, tòa nhà JABES 1\r\n, 244 Cống Quỳnh, Phường Phạm Ngũ Lão, Quận 1, Thành phố Hồ Chí Minh, Việt Nam', '0839 262 998'),
+('admin1@hbbsolution.com', 'e00cf25ad42683b3df678c61f42c6bda', 2, 'admin1', '215/B37 Nguyễn Văn Hưởng,P. Thảo Điền,Q. 2,TP. HCM', '0873077477'),
+('quangvinh@gmail.com', 'c56d0e9a7ccec67b4ea131655038d604', 1, 'Quang Vinh', '3rd Floor, JABES 1 Building244 Cong Quynh, Pham Ngu Lao Ward District 1, HCM City, Vietnam', '+84(08)82253248'),
+('vinh@gmail.com', '81dc9bdb52d04dc20036dbd8313ed055', 1, 'Vinh', 'ABC ', '01217009796');
 
 -- --------------------------------------------------------
 
@@ -401,26 +351,57 @@ CREATE TABLE `taikhoandangky` (
   `email_taikhoandk` text NOT NULL,
   `sdt_taikhoandk` text NOT NULL,
   `trangthai_taikhoandk` int(11) NOT NULL,
-  `nguoiduyet_taikhoandk` text NOT NULL
+  `nguoiduyet_taikhoandk` text NOT NULL,
+  `ghichu` text NOT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8;
-
---
--- Dumping data for table `taikhoandangky`
---
-
-INSERT INTO `taikhoandangky` (`id_taikhoandk`, `email_taikhoandk`, `sdt_taikhoandk`, `trangthai_taikhoandk`, `nguoiduyet_taikhoandk`) VALUES
-(1, 'justindno2@gmail.com', '01222222', 1, '');
 
 -- --------------------------------------------------------
 
 --
--- Table structure for table `trang`
+-- Table structure for table `thamgia`
 --
 
-CREATE TABLE `trang` (
+CREATE TABLE `thamgia` (
   `id` int(11) NOT NULL,
-  `link` text NOT NULL
+  `hinh_anh` text NOT NULL,
+  `link_hinh_1` text NOT NULL,
+  `link_hinh_2` text NOT NULL,
+  `link_hinh_3` text NOT NULL,
+  `link_hinh_4` text NOT NULL,
+  `link_hinh_5` text NOT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8;
+
+--
+-- Dumping data for table `thamgia`
+--
+
+INSERT INTO `thamgia` (`id`, `hinh_anh`, `link_hinh_1`, `link_hinh_2`, `link_hinh_3`, `link_hinh_4`, `link_hinh_5`) VALUES
+(1, 'img/1483957778_banner_main.jpg', '#', '#', '#', '#', '#');
+
+-- --------------------------------------------------------
+
+--
+-- Table structure for table `thamgia_ngonngu`
+--
+
+CREATE TABLE `thamgia_ngonngu` (
+  `id` int(11) NOT NULL,
+  `label_hinh_1` text NOT NULL,
+  `label_hinh_2` text NOT NULL,
+  `label_hinh_3` text NOT NULL,
+  `label_hinh_4` text NOT NULL,
+  `label_hinh_5` text NOT NULL,
+  `ngonngu` text NOT NULL,
+  `id_thamgia` int(11) NOT NULL
+) ENGINE=InnoDB DEFAULT CHARSET=utf8;
+
+--
+-- Dumping data for table `thamgia_ngonngu`
+--
+
+INSERT INTO `thamgia_ngonngu` (`id`, `label_hinh_1`, `label_hinh_2`, `label_hinh_3`, `label_hinh_4`, `label_hinh_5`, `ngonngu`, `id_thamgia`) VALUES
+(1, 'Tiếng Việt', 'Lợi ích sở hữu TIMESHARE', 'Kết nối với PPC TIMESHARE', 'Khách đã sở hữu TIMESHARE', 'Thông cáo báo chí', 'vi', 1),
+(2, 'Tiếng Anh', 'Benefit of owning a TIMESHARE', 'Working with PPC TIMESHARE', 'For whom already owing a TIMESHARE', 'PRESS RELEASE FOR PPC TS', 'en', 1);
 
 -- --------------------------------------------------------
 
@@ -448,9 +429,22 @@ INSERT INTO `vaitro` (`id_vaitro`, `tenvaitro`) VALUES
 --
 
 CREATE TABLE `video` (
+  `id_video` int(11) NOT NULL,
   `ten_video` varchar(100) COLLATE utf8mb4_vietnamese_ci NOT NULL,
   `url_video` varchar(1000) COLLATE utf8mb4_vietnamese_ci NOT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_vietnamese_ci;
+
+--
+-- Dumping data for table `video`
+--
+
+INSERT INTO `video` (`id_video`, `ten_video`, `url_video`) VALUES
+(1, 'Video10                                                                                             ', 'https://www.youtube.com/embed/XGSy3_Czz8k                                                                                                                                                                                                                                                                                                 '),
+(2, 'Video2', 'https://www.youtube.com/embed/4jHQ8ciHe28'),
+(3, 'Review Điện thoại                                                                                   ', 'https://www.youtube.com/embed/mrGbgv1ZS_0                                      '),
+(4, 'Video4', 'https://www.youtube.com/embed/dwFUinYXkm0'),
+(5, 'Video5', 'https://www.youtube.com/embed/72g4Zkexu3E'),
+(6, 'Video 6', 'https://www.youtube.com/embed/FK8BlX-8pUI');
 
 --
 -- Indexes for dumped tables
@@ -469,15 +463,27 @@ ALTER TABLE `book_now`
   ADD PRIMARY KEY (`id_book`);
 
 --
--- Indexes for table `danhmuc`
+-- Indexes for table `cauhoithuonggap`
 --
-ALTER TABLE `danhmuc`
-  ADD PRIMARY KEY (`id_danhmuc`);
+ALTER TABLE `cauhoithuonggap`
+  ADD PRIMARY KEY (`id`);
 
 --
--- Indexes for table `danhmucmenu`
+-- Indexes for table `cauhoithuonggap_ngonngu`
 --
-ALTER TABLE `danhmucmenu`
+ALTER TABLE `cauhoithuonggap_ngonngu`
+  ADD PRIMARY KEY (`id`);
+
+--
+-- Indexes for table `gioithieu`
+--
+ALTER TABLE `gioithieu`
+  ADD PRIMARY KEY (`id`);
+
+--
+-- Indexes for table `gioithieu_ngonngu`
+--
+ALTER TABLE `gioithieu_ngonngu`
   ADD PRIMARY KEY (`id`);
 
 --
@@ -503,18 +509,6 @@ ALTER TABLE `lienhe`
 --
 ALTER TABLE `loaidichvu`
   ADD PRIMARY KEY (`id`);
-
---
--- Indexes for table `nhadat`
---
-ALTER TABLE `nhadat`
-  ADD PRIMARY KEY (`id_nha`);
-
---
--- Indexes for table `nha_ngonngu`
---
-ALTER TABLE `nha_ngonngu`
-  ADD PRIMARY KEY (`id_nha_ngonngu`);
 
 --
 -- Indexes for table `quyen`
@@ -547,9 +541,15 @@ ALTER TABLE `taikhoandangky`
   ADD PRIMARY KEY (`id_taikhoandk`);
 
 --
--- Indexes for table `trang`
+-- Indexes for table `thamgia`
 --
-ALTER TABLE `trang`
+ALTER TABLE `thamgia`
+  ADD PRIMARY KEY (`id`);
+
+--
+-- Indexes for table `thamgia_ngonngu`
+--
+ALTER TABLE `thamgia_ngonngu`
   ADD PRIMARY KEY (`id`);
 
 --
@@ -557,6 +557,12 @@ ALTER TABLE `trang`
 --
 ALTER TABLE `vaitro`
   ADD PRIMARY KEY (`id_vaitro`);
+
+--
+-- Indexes for table `video`
+--
+ALTER TABLE `video`
+  ADD PRIMARY KEY (`id_video`);
 
 --
 -- AUTO_INCREMENT for dumped tables
@@ -573,10 +579,25 @@ ALTER TABLE `banner`
 ALTER TABLE `book_now`
   MODIFY `id_book` int(100) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=161;
 --
--- AUTO_INCREMENT for table `danhmucmenu`
+-- AUTO_INCREMENT for table `cauhoithuonggap`
 --
-ALTER TABLE `danhmucmenu`
-  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT;
+ALTER TABLE `cauhoithuonggap`
+  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=2;
+--
+-- AUTO_INCREMENT for table `cauhoithuonggap_ngonngu`
+--
+ALTER TABLE `cauhoithuonggap_ngonngu`
+  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=3;
+--
+-- AUTO_INCREMENT for table `gioithieu`
+--
+ALTER TABLE `gioithieu`
+  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=2;
+--
+-- AUTO_INCREMENT for table `gioithieu_ngonngu`
+--
+ALTER TABLE `gioithieu_ngonngu`
+  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=3;
 --
 -- AUTO_INCREMENT for table `khunghiduong_en`
 --
@@ -591,7 +612,7 @@ ALTER TABLE `khunghiduong_vi`
 -- AUTO_INCREMENT for table `lienhe`
 --
 ALTER TABLE `lienhe`
-  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=27;
+  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=7;
 --
 -- AUTO_INCREMENT for table `loaidichvu`
 --
@@ -606,27 +627,37 @@ ALTER TABLE `quyen`
 -- AUTO_INCREMENT for table `slider`
 --
 ALTER TABLE `slider`
-  MODIFY `id_slider` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=5;
+  MODIFY `id_slider` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=6;
 --
 -- AUTO_INCREMENT for table `slider_ngonngu`
 --
 ALTER TABLE `slider_ngonngu`
-  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=10;
+  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=12;
 --
 -- AUTO_INCREMENT for table `taikhoandangky`
 --
 ALTER TABLE `taikhoandangky`
-  MODIFY `id_taikhoandk` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=2;
+  MODIFY `id_taikhoandk` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=5;
 --
--- AUTO_INCREMENT for table `trang`
+-- AUTO_INCREMENT for table `thamgia`
 --
-ALTER TABLE `trang`
-  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT;
+ALTER TABLE `thamgia`
+  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=2;
+--
+-- AUTO_INCREMENT for table `thamgia_ngonngu`
+--
+ALTER TABLE `thamgia_ngonngu`
+  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=3;
 --
 -- AUTO_INCREMENT for table `vaitro`
 --
 ALTER TABLE `vaitro`
   MODIFY `id_vaitro` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=3;
+--
+-- AUTO_INCREMENT for table `video`
+--
+ALTER TABLE `video`
+  MODIFY `id_video` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=7;
 /*!40101 SET CHARACTER_SET_CLIENT=@OLD_CHARACTER_SET_CLIENT */;
 /*!40101 SET CHARACTER_SET_RESULTS=@OLD_CHARACTER_SET_RESULTS */;
 /*!40101 SET COLLATION_CONNECTION=@OLD_COLLATION_CONNECTION */;
