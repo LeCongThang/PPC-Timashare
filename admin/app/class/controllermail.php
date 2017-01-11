@@ -44,7 +44,16 @@ class controllermail
     }
 
     public function index(){
+        if (!isset($_SESSION['tendangnhapadmin']))
+            header('location:' . BASE_URL_ADMIN . "controlleradmin/index");
         $ds_mail = $this->controllermail->laydanhsachmail();
+        $ds_mail_da_duyet = $this->controllermail->layDanhSachMailDaDuyet();
         require "app/view/mail.php";
+    }
+
+    public function update(){
+        $user = $this->params[0];
+        $this->controllermail->update($user);
+        $this->index();
     }
 }

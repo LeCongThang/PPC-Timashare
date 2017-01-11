@@ -2,52 +2,36 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="48675101-2802-42b6-bd9d-0b7e31c69e3a" name="Default" comment="">
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/admin/app/class/controllerthamgia.php" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/admin/app/class/modelthamgia.php" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/app/admin.php" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/app/class/controllerbook.php" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/app/class/controllermail.php" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/app/class/controllernghiduong.php" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/app/class/controllerslider.php" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/app/class/controllertaikhoan.php" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/app/class/controllertrangthai.php" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/app/class/menuhelper.php" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/app/class/modelbook.php" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/app/class/modelmail.php" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/app/class/modelnghiduong.php" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/app/class/modelslider.php" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/app/class/modeltaikhoan.php" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/app/class/modeltrangthai.php" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/app/helper.php" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/app/view/chitiettrangthai.php" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/app/view/create-slider.php" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/app/view/dangky.php" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/app/view/mail.php" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/app/view/partials/slider-bar.php" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/app/view/quanlymail.php" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/app/view/quanlynghiduong.php" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/app/view/quanlytaikhoan.php" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/app/view/quanlyvideo.php" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/app/view/readmail.php" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/app/view/trangthai.php" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/app/view/update-book.php" afterPath="" />
-      <change type="MOVED" beforePath="$PROJECT_DIR$/app/view/gioithieu.php" afterPath="$PROJECT_DIR$/admin/app/view/thamgia.php" />
-      <change type="MOVED" beforePath="$PROJECT_DIR$/app/view/slider.php" afterPath="$PROJECT_DIR$/admin/app/view/quanlythamgia.php" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/admin/app/view/create-account-2.php" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/admin/app/view/create-account.php" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/admin/app/view/modaltuchoi.php" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/admin/app/view/update.php" afterPath="" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.idea/workspace.xml" afterPath="$PROJECT_DIR$/.idea/workspace.xml" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/admin/app/class/controlleradmin.php" afterPath="$PROJECT_DIR$/admin/app/class/controlleradmin.php" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/admin/app/class/controllercauhoi.php" afterPath="$PROJECT_DIR$/admin/app/class/controllercauhoi.php" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/admin/app/class/controllergioithieu.php" afterPath="$PROJECT_DIR$/admin/app/class/controllergioithieu.php" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/admin/app/class/controllermail.php" afterPath="$PROJECT_DIR$/admin/app/class/controllermail.php" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/admin/app/class/controllerslider.php" afterPath="$PROJECT_DIR$/admin/app/class/controllerslider.php" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/admin/app/class/controllertaikhoan.php" afterPath="$PROJECT_DIR$/admin/app/class/controllertaikhoan.php" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/admin/app/class/controllerthamgia.php" afterPath="$PROJECT_DIR$/admin/app/class/controllerthamgia.php" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/admin/app/class/controllervideo.php" afterPath="$PROJECT_DIR$/admin/app/class/controllervideo.php" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/admin/app/class/modeladmin.php" afterPath="$PROJECT_DIR$/admin/app/class/modeladmin.php" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/admin/app/class/modelmail.php" afterPath="$PROJECT_DIR$/admin/app/class/modelmail.php" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/admin/app/class/modeltaikhoan.php" afterPath="$PROJECT_DIR$/admin/app/class/modeltaikhoan.php" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/admin/app/view/create-question.php" afterPath="$PROJECT_DIR$/admin/app/view/create-question.php" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/admin/app/view/create-slider.php" afterPath="$PROJECT_DIR$/admin/app/view/create-slider.php" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/admin/app/view/gioithieu.php" afterPath="$PROJECT_DIR$/admin/app/view/gioithieu.php" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/admin/app/view/mail.php" afterPath="$PROJECT_DIR$/admin/app/view/mail.php" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/admin/app/view/partials/slider-bar.php" afterPath="$PROJECT_DIR$/admin/app/view/partials/slider-bar.php" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/admin/app/view/quanlycauhoi.php" afterPath="$PROJECT_DIR$/admin/app/view/quanlycauhoi.php" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/admin/app/view/quanlytaikhoan.php" afterPath="$PROJECT_DIR$/admin/app/view/quanlytaikhoan.php" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/admin/app/view/quanlythamgia.php" afterPath="$PROJECT_DIR$/admin/app/view/quanlythamgia.php" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/admin/app/view/quanlyvideo.php" afterPath="$PROJECT_DIR$/admin/app/view/quanlyvideo.php" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/admin/app/view/readmail.php" afterPath="$PROJECT_DIR$/admin/app/view/readmail.php" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/admin/app/view/slider.php" afterPath="$PROJECT_DIR$/admin/app/view/slider.php" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/admin/index.php" afterPath="$PROJECT_DIR$/admin/index.php" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/app/class/controller.php" afterPath="$PROJECT_DIR$/app/class/controller.php" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/app/class/model.php" afterPath="$PROJECT_DIR$/app/class/model.php" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/app/index.php" afterPath="$PROJECT_DIR$/app/index.php" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/admin/app/view/thamgia.php" afterPath="$PROJECT_DIR$/admin/app/view/thamgia.php" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/app/view/footer.php" afterPath="$PROJECT_DIR$/app/view/footer.php" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/app/view/header.php" afterPath="$PROJECT_DIR$/app/view/header.php" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/app/view/home.php" afterPath="$PROJECT_DIR$/app/view/home.php" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/js/main.js" afterPath="$PROJECT_DIR$/js/main.js" />
     </list>
     <ignored path="PPC-Timeshare.iws" />
     <ignored path=".idea/workspace.xml" />
@@ -75,7 +59,108 @@
     <favorites_list name="PPC-Timeshare" />
   </component>
   <component name="FileEditorManager">
-    <leaf SIDE_TABS_SIZE_LIMIT_KEY="300" />
+    <leaf SIDE_TABS_SIZE_LIMIT_KEY="300">
+      <file leaf-file-name="main.js" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/js/main.js">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="347">
+              <caret line="58" column="26" selection-start-line="58" selection-start-column="26" selection-end-line="58" selection-end-column="26" />
+              <folding />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="readmail.php" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/admin/app/view/readmail.php">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="340">
+              <caret line="75" column="76" selection-start-line="75" selection-start-column="76" selection-end-line="75" selection-end-column="76" />
+              <folding>
+                <element signature="n#style#0;n#div#3;n#div#0;n#div#0;n#div#0;n#div#0;n#section#1;n#div#0;n#div#0;n#body#0;n#html#0;n#!!top" expanded="true" />
+                <element signature="n#style#0;n#div#4;n#div#0;n#div#0;n#div#0;n#div#0;n#section#1;n#div#0;n#div#0;n#body#0;n#html#0;n#!!top" expanded="true" />
+              </folding>
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="controllermail.php" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/admin/app/class/controllermail.php">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="369">
+              <caret line="49" column="25" selection-start-line="49" selection-start-column="8" selection-end-line="49" selection-end-column="25" />
+              <folding />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="modelmail.php" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/admin/app/class/modelmail.php">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="131">
+              <caret line="40" column="52" selection-start-line="40" selection-start-column="52" selection-end-line="40" selection-end-column="52" />
+              <folding>
+                <marker date="1484110608723" expanded="true" signature="367:414" ph="DELETE FROM " />
+                <marker date="1484110608723" expanded="true" signature="538:599" ph="SELECT * FRO... lienhe" />
+                <marker date="1484110608723" expanded="true" signature="760:799" ph="SELECT * FRO... lienhe" />
+                <marker date="1484110608723" expanded="true" signature="1194:1233" ph="SELECT * FRO... lienhe" />
+                <marker date="1484110608723" expanded="true" signature="1621:1663" ph="UPDATE lienh... " />
+                <marker date="1484110608723" expanded="true" signature="1621:1664" ph="UPDATE lienh... " />
+              </folding>
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="mail.php" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/admin/app/view/mail.php">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="169">
+              <caret line="128" column="74" selection-start-line="128" selection-start-column="74" selection-end-line="128" selection-end-column="74" />
+              <folding />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="footer.php" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/app/view/footer.php">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="467">
+              <caret line="46" column="37" selection-start-line="46" selection-start-column="37" selection-end-line="46" selection-end-column="37" />
+              <folding />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="controllertaikhoan.php" pinned="false" current-in-tab="true">
+        <entry file="file://$PROJECT_DIR$/admin/app/class/controllertaikhoan.php">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="293">
+              <caret line="93" column="31" selection-start-line="93" selection-start-column="31" selection-end-line="93" selection-end-column="31" />
+              <folding />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="controllerthamgia.php" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/admin/app/class/controllerthamgia.php">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="344">
+              <caret line="27" column="75" selection-start-line="27" selection-start-column="75" selection-end-line="27" selection-end-column="75" />
+              <folding />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="controllervideo.php" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/admin/app/class/controllervideo.php">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="199">
+              <caret line="26" column="35" selection-start-line="26" selection-start-column="35" selection-end-line="26" selection-end-column="35" />
+              <folding />
+            </state>
+          </provider>
+        </entry>
+      </file>
+    </leaf>
   </component>
   <component name="FileTemplateManagerImpl">
     <option name="RECENT_TEMPLATES">
@@ -90,57 +175,57 @@
   <component name="IdeDocumentHistory">
     <option name="CHANGED_PATHS">
       <list>
-        <option value="$PROJECT_DIR$/app/class/modelmail.php" />
-        <option value="$PROJECT_DIR$/app/view/mail.php" />
-        <option value="$PROJECT_DIR$/app/class/controllermail.php" />
-        <option value="$PROJECT_DIR$/app/view/readmail.php" />
-        <option value="$PROJECT_DIR$/app/view/quanlyvideo.php" />
-        <option value="$PROJECT_DIR$/app/class/controllervideo.php" />
         <option value="$PROJECT_DIR$/app/class/modelvideo.php" />
         <option value="$PROJECT_DIR$/app/class/modeltaikhoan.php" />
         <option value="$PROJECT_DIR$/app/view/quanlytaikhoan.php" />
         <option value="$PROJECT_DIR$/app/class/controllertaikhoan.php" />
         <option value="$PROJECT_DIR$/ckeditor/config.js" />
         <option value="$PROJECT_DIR$/admin/app/index.php" />
-        <option value="$PROJECT_DIR$/admin/app/class/modeladmin.php" />
         <option value="$PROJECT_DIR$/admin/app/abc.php" />
         <option value="$PROJECT_DIR$/admin/app/view/dangnhap.php" />
         <option value="$PROJECT_DIR$/.htaccess" />
         <option value="$PROJECT_DIR$/admin/.htaccess" />
-        <option value="$PROJECT_DIR$/admin/app/class/controlleradmin.php" />
         <option value="$PROJECT_DIR$/admin/app/view/admin.php" />
         <option value="$PROJECT_DIR$/admin/app/config.php" />
         <option value="$PROJECT_DIR$/app/view/partials/slider-bar.php" />
         <option value="$PROJECT_DIR$/admin/app/class/menuhelper.php" />
-        <option value="$PROJECT_DIR$/admin/app/class/controllermail.php" />
-        <option value="$PROJECT_DIR$/admin/app/class/controllervideo.php" />
-        <option value="$PROJECT_DIR$/admin/app/view/mail.php" />
-        <option value="$PROJECT_DIR$/admin/app/view/readmail.php" />
-        <option value="$PROJECT_DIR$/admin/app/view/quanlyvideo.php" />
         <option value="$PROJECT_DIR$/admin/app/view/update.php" />
-        <option value="$PROJECT_DIR$/admin/app/class/controllerslider.php" />
-        <option value="$PROJECT_DIR$/admin/app/view/create-question.php" />
         <option value="$PROJECT_DIR$/admin/app/class/modelcauhoi.php" />
-        <option value="$PROJECT_DIR$/admin/app/class/controllercauhoi.php" />
         <option value="$PROJECT_DIR$/admin/app/view/quanlycauhoi.php" />
-        <option value="$PROJECT_DIR$/admin/app/class/controllertaikhoan.php" />
-        <option value="$PROJECT_DIR$/admin/app/class/modeltaikhoan.php" />
-        <option value="$PROJECT_DIR$/admin/app/view/quanlytaikhoan.php" />
-        <option value="$PROJECT_DIR$/admin/app/view/partials/slider-bar.php" />
-        <option value="$PROJECT_DIR$/admin/app/view/gioithieu.php" />
-        <option value="$PROJECT_DIR$/admin/app/class/controllergioithieu.php" />
         <option value="$PROJECT_DIR$/admin/index.php" />
-        <option value="$PROJECT_DIR$/admin/app/view/slider.php" />
-        <option value="$PROJECT_DIR$/admin/app/view/thamgia.php" />
-        <option value="$PROJECT_DIR$/admin/app/class/controllerthamgia.php" />
         <option value="$PROJECT_DIR$/admin/app/class/modelthamgia.php" />
         <option value="$PROJECT_DIR$/app/class/model.php" />
         <option value="$PROJECT_DIR$/app/class/controller.php" />
-        <option value="$PROJECT_DIR$/app/view/footer.php" />
-        <option value="$PROJECT_DIR$/admin/app/view/quanlythamgia.php" />
         <option value="$PROJECT_DIR$/app/view/home.php" />
-        <option value="$PROJECT_DIR$/app/view/header.php" />
         <option value="$PROJECT_DIR$/app/index.php" />
+        <option value="$PROJECT_DIR$/app/view/header.php" />
+        <option value="$PROJECT_DIR$/admin/app/view/create-account-2.php" />
+        <option value="$PROJECT_DIR$/admin/app/view/modaltuchoi.php" />
+        <option value="$PROJECT_DIR$/app/view/footer.php" />
+        <option value="$PROJECT_DIR$/admin/app/class/modeltaikhoan.php" />
+        <option value="$PROJECT_DIR$/admin/app/view/quanlyvideo.php" />
+        <option value="$PROJECT_DIR$/admin/app/view/thamgia.php" />
+        <option value="$PROJECT_DIR$/admin/app/view/quanlythamgia.php" />
+        <option value="$PROJECT_DIR$/admin/app/view/create-slider.php" />
+        <option value="$PROJECT_DIR$/admin/app/view/gioithieu.php" />
+        <option value="$PROJECT_DIR$/admin/app/view/create-account.php" />
+        <option value="$PROJECT_DIR$/admin/app/view/create-question.php" />
+        <option value="$PROJECT_DIR$/admin/app/class/modeladmin.php" />
+        <option value="$PROJECT_DIR$/admin/app/view/partials/slider-bar.php" />
+        <option value="$PROJECT_DIR$/admin/app/class/controlleradmin.php" />
+        <option value="$PROJECT_DIR$/admin/app/class/controllerslider.php" />
+        <option value="$PROJECT_DIR$/admin/app/class/controllergioithieu.php" />
+        <option value="$PROJECT_DIR$/admin/app/class/controllercauhoi.php" />
+        <option value="$PROJECT_DIR$/admin/app/class/controllerthamgia.php" />
+        <option value="$PROJECT_DIR$/admin/app/class/controllervideo.php" />
+        <option value="$PROJECT_DIR$/admin/app/view/quanlytaikhoan.php" />
+        <option value="$PROJECT_DIR$/admin/app/view/slider.php" />
+        <option value="$PROJECT_DIR$/js/main.js" />
+        <option value="$PROJECT_DIR$/admin/app/view/readmail.php" />
+        <option value="$PROJECT_DIR$/admin/app/class/controllermail.php" />
+        <option value="$PROJECT_DIR$/admin/app/view/mail.php" />
+        <option value="$PROJECT_DIR$/admin/app/class/modelmail.php" />
+        <option value="$PROJECT_DIR$/admin/app/class/controllertaikhoan.php" />
       </list>
     </option>
   </component>
@@ -155,10 +240,9 @@
   </component>
   <component name="PhpWorkspaceProjectConfiguration" backward_compatibility_performed="true" />
   <component name="ProjectFrameBounds">
-    <option name="x" value="-8" />
-    <option name="y" value="-8" />
-    <option name="width" value="1382" />
-    <option name="height" value="744" />
+    <option name="x" value="-7" />
+    <option name="width" value="1378" />
+    <option name="height" value="735" />
   </component>
   <component name="ProjectLevelVcsManager" settingsEditedManually="false">
     <OptionsSetting value="true" id="Add" />
@@ -185,7 +269,6 @@
       <foldersAlwaysOnTop value="true" />
     </navigator>
     <panes>
-      <pane id="Scratches" />
       <pane id="ProjectPane">
         <subPane>
           <PATH>
@@ -214,13 +297,166 @@
               <option name="myItemType" value="com.jetbrains.php.projectView.PhpTreeStructureProvider$1" />
             </PATH_ELEMENT>
             <PATH_ELEMENT>
+              <option name="myItemId" value="js" />
+              <option name="myItemType" value="com.jetbrains.php.projectView.PhpTreeStructureProvider$1" />
+            </PATH_ELEMENT>
+          </PATH>
+          <PATH>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="PPC-Timeshare" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.ProjectViewProjectNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="PPC-Timeshare" />
+              <option name="myItemType" value="com.jetbrains.php.projectView.PhpTreeStructureProvider$1" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="app" />
+              <option name="myItemType" value="com.jetbrains.php.projectView.PhpTreeStructureProvider$1" />
+            </PATH_ELEMENT>
+          </PATH>
+          <PATH>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="PPC-Timeshare" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.ProjectViewProjectNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="PPC-Timeshare" />
+              <option name="myItemType" value="com.jetbrains.php.projectView.PhpTreeStructureProvider$1" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="app" />
+              <option name="myItemType" value="com.jetbrains.php.projectView.PhpTreeStructureProvider$1" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="view" />
+              <option name="myItemType" value="com.jetbrains.php.projectView.PhpTreeStructureProvider$1" />
+            </PATH_ELEMENT>
+          </PATH>
+          <PATH>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="PPC-Timeshare" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.ProjectViewProjectNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="PPC-Timeshare" />
+              <option name="myItemType" value="com.jetbrains.php.projectView.PhpTreeStructureProvider$1" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="app" />
+              <option name="myItemType" value="com.jetbrains.php.projectView.PhpTreeStructureProvider$1" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="class" />
+              <option name="myItemType" value="com.jetbrains.php.projectView.PhpTreeStructureProvider$1" />
+            </PATH_ELEMENT>
+          </PATH>
+          <PATH>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="PPC-Timeshare" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.ProjectViewProjectNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="PPC-Timeshare" />
+              <option name="myItemType" value="com.jetbrains.php.projectView.PhpTreeStructureProvider$1" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
               <option name="myItemId" value="admin" />
+              <option name="myItemType" value="com.jetbrains.php.projectView.PhpTreeStructureProvider$1" />
+            </PATH_ELEMENT>
+          </PATH>
+          <PATH>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="PPC-Timeshare" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.ProjectViewProjectNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="PPC-Timeshare" />
+              <option name="myItemType" value="com.jetbrains.php.projectView.PhpTreeStructureProvider$1" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="admin" />
+              <option name="myItemType" value="com.jetbrains.php.projectView.PhpTreeStructureProvider$1" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="app" />
+              <option name="myItemType" value="com.jetbrains.php.projectView.PhpTreeStructureProvider$1" />
+            </PATH_ELEMENT>
+          </PATH>
+          <PATH>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="PPC-Timeshare" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.ProjectViewProjectNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="PPC-Timeshare" />
+              <option name="myItemType" value="com.jetbrains.php.projectView.PhpTreeStructureProvider$1" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="admin" />
+              <option name="myItemType" value="com.jetbrains.php.projectView.PhpTreeStructureProvider$1" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="app" />
+              <option name="myItemType" value="com.jetbrains.php.projectView.PhpTreeStructureProvider$1" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="view" />
+              <option name="myItemType" value="com.jetbrains.php.projectView.PhpTreeStructureProvider$1" />
+            </PATH_ELEMENT>
+          </PATH>
+          <PATH>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="PPC-Timeshare" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.ProjectViewProjectNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="PPC-Timeshare" />
+              <option name="myItemType" value="com.jetbrains.php.projectView.PhpTreeStructureProvider$1" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="admin" />
+              <option name="myItemType" value="com.jetbrains.php.projectView.PhpTreeStructureProvider$1" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="app" />
+              <option name="myItemType" value="com.jetbrains.php.projectView.PhpTreeStructureProvider$1" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="view" />
+              <option name="myItemType" value="com.jetbrains.php.projectView.PhpTreeStructureProvider$1" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="partials" />
+              <option name="myItemType" value="com.jetbrains.php.projectView.PhpTreeStructureProvider$1" />
+            </PATH_ELEMENT>
+          </PATH>
+          <PATH>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="PPC-Timeshare" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.ProjectViewProjectNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="PPC-Timeshare" />
+              <option name="myItemType" value="com.jetbrains.php.projectView.PhpTreeStructureProvider$1" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="admin" />
+              <option name="myItemType" value="com.jetbrains.php.projectView.PhpTreeStructureProvider$1" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="app" />
+              <option name="myItemType" value="com.jetbrains.php.projectView.PhpTreeStructureProvider$1" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="class" />
               <option name="myItemType" value="com.jetbrains.php.projectView.PhpTreeStructureProvider$1" />
             </PATH_ELEMENT>
           </PATH>
         </subPane>
       </pane>
       <pane id="Scope" />
+      <pane id="Scratches" />
     </panes>
   </component>
   <component name="PropertiesComponent">
@@ -322,7 +558,9 @@
       <workItem from="1483669069389" duration="13477000" />
       <workItem from="1483696454054" duration="2587000" />
       <workItem from="1483881473810" duration="620000" />
-      <workItem from="1483927748513" duration="14977000" />
+      <workItem from="1483927748513" duration="24960000" />
+      <workItem from="1484058447012" duration="1109000" />
+      <workItem from="1484101244850" duration="9441000" />
     </task>
     <task id="LOCAL-00001" summary="Update all">
       <created>1483670120952</created>
@@ -335,20 +573,19 @@
     <servers />
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="181048000" />
+    <option name="totallyTimeSpent" value="201581000" />
   </component>
   <component name="ToolWindowManager">
-    <frame x="-8" y="-8" width="1382" height="744" extended-state="6" />
-    <editor active="false" />
+    <frame x="-7" y="0" width="1378" height="735" extended-state="0" />
+    <editor active="true" />
     <layout>
-      <window_info id="Project" active="true" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" show_stripe_button="true" weight="0.27987897" sideWeight="0.5" order="0" side_tool="false" content_ui="combo" />
+      <window_info id="Project" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" show_stripe_button="true" weight="0.28907436" sideWeight="0.5" order="0" side_tool="false" content_ui="combo" />
       <window_info id="TODO" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="6" side_tool="false" content_ui="tabs" />
       <window_info id="Event Log" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.32991454" sideWeight="0.5" order="7" side_tool="true" content_ui="tabs" />
       <window_info id="Database" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.32980332" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
-      <window_info id="Find" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.50427353" sideWeight="0.5" order="1" side_tool="false" content_ui="tabs" />
       <window_info id="Version Control" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="9" side_tool="false" content_ui="tabs" />
       <window_info id="Structure" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.24962178" sideWeight="0.5" order="1" side_tool="false" content_ui="tabs" />
-      <window_info id="Terminal" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="8" side_tool="false" content_ui="tabs" />
+      <window_info id="Terminal" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.3298611" sideWeight="0.5" order="8" side_tool="false" content_ui="tabs" />
       <window_info id="Favorites" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="2" side_tool="true" content_ui="tabs" />
       <window_info id="Cvs" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.25" sideWeight="0.5" order="4" side_tool="false" content_ui="tabs" />
       <window_info id="Message" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="0" side_tool="false" content_ui="tabs" />
@@ -356,6 +593,7 @@
       <window_info id="Inspection" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.4" sideWeight="0.5" order="5" side_tool="false" content_ui="tabs" />
       <window_info id="Run" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="2" side_tool="false" content_ui="tabs" />
       <window_info id="Hierarchy" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.25" sideWeight="0.5" order="2" side_tool="false" content_ui="combo" />
+      <window_info id="Find" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.50427353" sideWeight="0.5" order="1" side_tool="false" content_ui="tabs" />
       <window_info id="Ant Build" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.25" sideWeight="0.5" order="1" side_tool="false" content_ui="tabs" />
       <window_info id="Debug" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.4" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
     </layout>
@@ -376,52 +614,19 @@
     <option name="LAST_COMMIT_MESSAGE" value="Update all" />
   </component>
   <component name="XDebuggerManager">
-    <breakpoint-manager />
+    <breakpoint-manager>
+      <breakpoints>
+        <line-breakpoint enabled="true" type="php">
+          <url>file://$PROJECT_DIR$/admin/app/view/quanlytaikhoan.php</url>
+          <line>98</line>
+          <option name="timeStamp" value="1" />
+        </line-breakpoint>
+      </breakpoints>
+      <option name="time" value="2" />
+    </breakpoint-manager>
     <watches-manager />
   </component>
   <component name="editorHistoryManager">
-    <entry file="file://$PROJECT_DIR$/admin/css/skins/skin-red.css">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="119">
-          <caret line="7" column="26" selection-start-line="7" selection-start-column="26" selection-end-line="7" selection-end-column="26" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/admin/js/moment.js">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="0">
-          <caret line="0" column="0" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/admin/plugins/flot/excanvas.js">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="0">
-          <caret line="0" column="0" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/admin/app/view/.htaccess">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="0">
-          <caret line="0" column="0" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/admin/app/view/dangnhap.php">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="268">
-          <caret line="26" column="83" selection-start-line="26" selection-start-column="75" selection-end-line="26" selection-end-column="83" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/admin/app/config.php">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="238">
-          <caret line="14" column="0" selection-start-line="14" selection-start-column="0" selection-end-line="14" selection-end-column="0" />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/.htaccess">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="136">
@@ -436,20 +641,7 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/admin/app/class/controllerbook.php">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="0">
-          <caret line="0" column="0" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/app/view/partials/slider-bar.php">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="102">
-          <caret line="33" column="33" selection-start-line="33" selection-start-column="33" selection-end-line="33" selection-end-column="51" />
-        </state>
-      </provider>
-    </entry>
+    <entry file="file://$PROJECT_DIR$/app/view/partials/slider-bar.php" />
     <entry file="file://$PROJECT_DIR$/admin/app/class/menuhelper.php">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="164">
@@ -457,55 +649,7 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/admin/app/class/controllermail.php">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="395">
-          <caret line="47" column="21" selection-start-line="47" selection-start-column="21" selection-end-line="47" selection-end-column="21" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/admin/app/class/controllervideo.php">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="378">
-          <caret line="34" column="42" selection-start-line="34" selection-start-column="31" selection-end-line="34" selection-end-column="42" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/admin/app/view/mail.php">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="215">
-          <caret line="77" column="88" selection-start-line="77" selection-start-column="88" selection-end-line="77" selection-end-column="88" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/admin/app/view/readmail.php">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="-4024">
-          <caret line="46" column="47" selection-start-line="46" selection-start-column="47" selection-end-line="46" selection-end-column="47" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/admin/app/view/quanlyvideo.php">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="222">
-          <caret line="132" column="19" selection-start-line="132" selection-start-column="19" selection-end-line="132" selection-end-column="19" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/admin/app/view/update.php">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="185">
-          <caret line="24" column="43" selection-start-line="24" selection-start-column="29" selection-end-line="24" selection-end-column="43" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/admin/app/class/modeladmin.php">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="-81">
-          <caret line="14" column="0" selection-start-line="14" selection-start-column="0" selection-end-line="14" selection-end-column="0" />
-        </state>
-      </provider>
-    </entry>
+    <entry file="file://$PROJECT_DIR$/admin/app/view/update.php" />
     <entry file="file://$PROJECT_DIR$/admin/app/class/modelgioithieu.php">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="782">
@@ -513,20 +657,7 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/app/class/modelslider.php">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="262">
-          <caret line="23" column="51" selection-start-line="23" selection-start-column="8" selection-end-line="23" selection-end-column="51" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/admin/app/view/create-question.php">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="-170">
-          <caret line="68" column="34" selection-start-line="68" selection-start-column="30" selection-end-line="68" selection-end-column="34" />
-        </state>
-      </provider>
-    </entry>
+    <entry file="file://$PROJECT_DIR$/app/class/modelslider.php" />
     <entry file="file://$PROJECT_DIR$/admin/app/class/modelcauhoi.php">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="228">
@@ -534,25 +665,103 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/admin/app/view/home.php">
+    <entry file="file://$PROJECT_DIR$/admin/index.php">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="0">
-          <caret line="0" column="0" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
+        <state relative-caret-position="51">
+          <caret line="3" column="2" selection-start-line="3" selection-start-column="2" selection-end-line="3" selection-end-column="2" />
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/admin/app/class/controllercauhoi.php">
+    <entry file="file://$PROJECT_DIR$/admin/app/view/create-thamgia.php" />
+    <entry file="file://$PROJECT_DIR$/admin/app/class/modelslider.php">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="220">
-          <caret line="24" column="22" selection-start-line="24" selection-start-column="22" selection-end-line="24" selection-end-column="22" />
+        <state relative-caret-position="327">
+          <caret line="65" column="20" selection-start-line="63" selection-start-column="8" selection-end-line="65" selection-end-column="20" />
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/admin/app/view/partials/slider-bar.php">
+    <entry file="file://$PROJECT_DIR$/admin/app/class/modelthamgia.php">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="1258">
-          <caret line="74" column="50" selection-start-line="74" selection-start-column="50" selection-end-line="74" selection-end-column="50" />
+        <state relative-caret-position="255">
+          <caret line="33" column="5" selection-start-line="27" selection-start-column="3" selection-end-line="33" selection-end-column="5" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/app/index.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="-1428">
+          <caret line="3" column="26" selection-start-line="3" selection-start-column="26" selection-end-line="3" selection-end-column="26" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/app/admin.php" />
+    <entry file="file://$PROJECT_DIR$/admin/app/view/quanlycauhoi.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="693">
+          <caret line="96" column="73" selection-start-line="96" selection-start-column="70" selection-end-line="96" selection-end-column="73" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/app/view/home.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="215">
+          <caret line="141" column="46" selection-start-line="141" selection-start-column="46" selection-end-line="141" selection-end-column="46" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/app/class/model.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="391">
+          <caret line="209" column="5" selection-start-line="209" selection-start-column="5" selection-end-line="209" selection-end-column="5" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/admin/app/view/create-account-2.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="1020">
+          <caret line="108" column="64" selection-start-line="108" selection-start-column="64" selection-end-line="108" selection-end-column="64" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/app/view/header.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="391">
+          <caret line="23" column="6" selection-start-line="23" selection-start-column="6" selection-end-line="23" selection-end-column="6" />
+          <folding>
+            <marker date="1483948580828" expanded="true" signature="4997:5031" ph="..." />
+            <marker date="1483948580828" expanded="true" signature="5410:5434" ph="..." />
+            <marker date="1483948580828" expanded="true" signature="7987:8006" ph="..." />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/app/view/modaldangky.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="170">
+          <caret line="10" column="42" selection-start-line="10" selection-start-column="31" selection-end-line="10" selection-end-column="42" />
           <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/admin/app/class/modeltaikhoan.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="284">
+          <caret line="109" column="122" selection-start-line="109" selection-start-column="122" selection-end-line="109" selection-end-column="122" />
+          <folding>
+            <marker date="1484103496625" expanded="true" signature="394:436" ph="SELECT * FRO... taikhoan" />
+            <marker date="1484103496625" expanded="true" signature="832:891" ph="SELECT * FRO... taikhoandangky" />
+            <marker date="1484103496625" expanded="true" signature="1294:1353" ph="SELECT * FRO... taikhoandangky" />
+            <marker date="1484103496625" expanded="true" signature="1743:1791" ph="DELETE FROM " />
+            <marker date="1484103496625" expanded="true" signature="1924:1983" ph="DELETE FROM " />
+            <marker date="1484103496625" expanded="true" signature="2156:2313" ph="UPDATE taikh... " />
+            <marker date="1484103496625" expanded="true" signature="2447:2503" ph="SELECT * FRO... taikhoan" />
+            <marker date="1484103496625" expanded="true" signature="2716:2905" ph="insert into taikhoan... " />
+            <marker date="1484103496625" expanded="true" signature="3076:3252" ph="UPDATE taikh... " />
+            <marker date="1484103496625" expanded="true" signature="3381:3458" ph="UPDATE taikh... " />
+            <marker date="1484103496625" expanded="true" signature="3381:3492" ph="UPDATE taikh... " />
+            <marker date="1484103496625" expanded="true" signature="3381:3518" ph="UPDATE taikh... " />
+            <marker date="1484103496625" expanded="true" signature="3381:3535" ph="UPDATE taikh... " />
+          </folding>
         </state>
       </provider>
     </entry>
@@ -564,23 +773,134 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/admin/index.php">
+    <entry file="file://$PROJECT_DIR$/admin/app/view/modaltuchoi.php">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="51">
-          <caret line="3" column="2" selection-start-line="3" selection-start-column="2" selection-end-line="3" selection-end-column="2" />
+        <state relative-caret-position="238">
+          <caret line="14" column="29" selection-start-line="14" selection-start-column="29" selection-end-line="14" selection-end-column="29" />
           <folding />
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/admin/app/view/create-thamgia.php">
+    <entry file="file://$PROJECT_DIR$/admin/app/view/thamgia.php">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="51">
-          <caret line="51" column="0" selection-start-line="50" selection-start-column="0" selection-end-line="51" selection-end-column="0" />
+        <state relative-caret-position="381">
+          <caret line="76" column="82" selection-start-line="76" selection-start-column="82" selection-end-line="77" selection-end-column="34" />
           <folding />
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/admin/app/view/slider.php">
+    <entry file="file://$PROJECT_DIR$/admin/app/view/quanlyvideo.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="174">
+          <caret line="63" column="60" selection-start-line="63" selection-start-column="60" selection-end-line="63" selection-end-column="60" />
+          <folding>
+            <element signature="n#style#0;n#div#3;n#div#0;n#form#0;n#div#0;n#div#0;n#div#0;n#div#0;n#section#1;n#div#0;n#div#0;n#body#0;n#html#0;n#!!top" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/admin/app/view/quanlythamgia.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="313">
+          <caret line="109" column="45" selection-start-line="109" selection-start-column="45" selection-end-line="109" selection-end-column="45" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/admin/app/view/gioithieu.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="195">
+          <caret line="126" column="77" selection-start-line="126" selection-start-column="77" selection-end-line="126" selection-end-column="77" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/admin/app/view/create-account.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="293">
+          <caret line="125" column="77" selection-start-line="125" selection-start-column="77" selection-end-line="125" selection-end-column="77" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/admin/app/view/create-slider.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="221">
+          <caret line="172" column="81" selection-start-line="172" selection-start-column="81" selection-end-line="172" selection-end-column="81" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/admin/app/view/create-question.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="238">
+          <caret line="141" column="34" selection-start-line="141" selection-start-column="34" selection-end-line="141" selection-end-column="34" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/admin/app/class/modeladmin.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="425">
+          <caret line="25" column="25" selection-start-line="25" selection-start-column="25" selection-end-line="25" selection-end-column="25" />
+          <folding>
+            <marker date="1484106418626" expanded="true" signature="387:410" ph="SELECT * FRO... gioithieu" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/admin/app/view/home.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="-1207">
+          <caret line="27" column="23" selection-start-line="27" selection-start-column="23" selection-end-line="27" selection-end-column="23" />
+          <folding>
+            <marker date="1483412901462" expanded="true" signature="12487:12634" ph="..." />
+            <marker date="1483412901462" expanded="true" signature="12581:12611" ph="..." />
+            <marker date="1483412901462" expanded="true" signature="12683:12843" ph="..." />
+            <marker date="1483412901462" expanded="false" signature="12716:12733" ph="..." />
+            <marker date="1483412901462" expanded="false" signature="12790:12842" ph="..." />
+            <marker date="1483412901462" expanded="true" signature="12918:13351" ph="..." />
+            <marker date="1483412901462" expanded="false" signature="12975:12997" ph="..." />
+            <marker date="1483412901462" expanded="true" signature="12998:13167" ph="..." />
+            <marker date="1483412901462" expanded="false" signature="13124:13135" ph="..." />
+            <marker date="1483412901462" expanded="true" signature="13216:13324" ph="..." />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/admin/app/view/admin.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="514">
+          <caret line="653" column="14" selection-start-line="653" selection-start-column="14" selection-end-line="653" selection-end-column="14" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/app/class/controller.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="420">
+          <caret line="217" column="5" selection-start-line="212" selection-start-column="4" selection-end-line="217" selection-end-column="5" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/admin/app/view/partials/slider-bar.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="321">
+          <caret line="88" column="45" selection-start-line="88" selection-start-column="30" selection-end-line="88" selection-end-column="45" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/admin/app/class/controllergioithieu.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="216">
+          <caret line="37" column="50" selection-start-line="37" selection-start-column="50" selection-end-line="37" selection-end-column="50" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/admin/app/class/controllerbook.php">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="0">
           <caret line="0" column="0" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
@@ -588,263 +908,127 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/admin/app/view/create-slider.php">
+    <entry file="file://$PROJECT_DIR$/admin/app/class/controllercauhoi.php">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="187">
-          <caret line="119" column="50" selection-start-line="113" selection-start-column="44" selection-end-line="119" selection-end-column="50" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/admin/app/class/controllergioithieu.php">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="-47">
-          <caret line="17" column="0" selection-start-line="17" selection-start-column="0" selection-end-line="17" selection-end-column="0" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/admin/app/class/modelslider.php">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="327">
-          <caret line="65" column="20" selection-start-line="63" selection-start-column="8" selection-end-line="65" selection-end-column="20" />
-          <folding>
-            <marker date="1483429690631" expanded="true" signature="481:560" ph="INSERT INTO slider... " />
-            <marker date="1483429690631" expanded="true" signature="721:876" ph="INSERT INTO slider_ngonngu... " />
-            <marker date="1483429690631" expanded="true" signature="909:1064" ph="INSERT INTO slider_ngonngu... " />
-            <marker date="1483429690631" expanded="true" signature="1466:1517" ph="UPDATE slide... " />
-            <marker date="1483429690631" expanded="true" signature="1692:1861" ph="UPDATE slide... " />
-            <marker date="1483429690631" expanded="true" signature="1890:2059" ph="UPDATE slide... " />
-            <marker date="1483429690631" expanded="true" signature="2403:2424" ph="select * fro... slider" />
-            <marker date="1483429690631" expanded="true" signature="2545:2826" ph="SELECT slide... slider" />
-            <marker date="1483429690631" expanded="true" signature="2998:3035" ph="DELETE FROM " />
-            <marker date="1483429690631" expanded="true" signature="3067:3112" ph="DELETE FROM " />
-          </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/admin/app/view/quanlycauhoi.php">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="684">
-          <caret line="101" column="36" selection-start-line="101" selection-start-column="36" selection-end-line="101" selection-end-column="36" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/admin/app/view/gioithieu.php">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="-1105">
-          <caret line="52" column="16" selection-start-line="52" selection-start-column="16" selection-end-line="52" selection-end-column="16" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/admin/app/class/controllerslider.php">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="347">
-          <caret line="62" column="9" selection-start-line="47" selection-start-column="7" selection-end-line="62" selection-end-column="9" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/admin/app/class/controllertaikhoan.php">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="-323">
-          <caret line="14" column="13" selection-start-line="14" selection-start-column="13" selection-end-line="14" selection-end-column="13" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/admin/app/class/modeltaikhoan.php">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="323">
-          <caret line="55" column="37" selection-start-line="55" selection-start-column="8" selection-end-line="55" selection-end-column="37" />
-          <folding>
-            <marker date="1483675854491" expanded="true" signature="394:436" ph="SELECT * FRO... taikhoan" />
-            <marker date="1483675854491" expanded="true" signature="832:891" ph="SELECT * FRO... taikhoandangky" />
-            <marker date="1483675854491" expanded="true" signature="1281:1329" ph="DELETE FROM " />
-            <marker date="1483675854491" expanded="true" signature="1502:1659" ph="UPDATE taikh... " />
-            <marker date="1483675854491" expanded="true" signature="1793:1849" ph="SELECT * FRO... taikhoan" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/admin/app/view/quanlytaikhoan.php">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="741">
-          <caret line="144" column="157" selection-start-line="144" selection-start-column="157" selection-end-line="144" selection-end-column="157" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/admin/app/view/thamgia.php">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="211">
-          <caret line="57" column="63" selection-start-line="57" selection-start-column="55" selection-end-line="57" selection-end-column="63" />
-          <folding>
-            <element signature="n#style#0;n#img#0;n#div#0;n#div#0;n#div#0;n#form#0;n#div#0;n#section#1;n#div#0;n#div#0;n#body#0;n#html#0;n#!!top" expanded="true" />
-            <marker date="1483934756014" expanded="true" signature="5618:5770" ph="{...}" />
-            <marker date="1483934756014" expanded="true" signature="5663:5770" ph="{...}" />
-            <marker date="1483934756014" expanded="true" signature="5750:5770" ph="{...}" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/admin/app/class/modelthamgia.php">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="255">
-          <caret line="33" column="5" selection-start-line="27" selection-start-column="3" selection-end-line="33" selection-end-column="5" />
-          <folding>
-            <marker date="1483938720716" expanded="true" signature="481:880" ph="SELECT thamg... thamgia" />
-            <marker date="1483938720716" expanded="true" signature="1114:1142" ph="UPDATE thamg... " />
-            <marker date="1483938720716" expanded="true" signature="1114:1168" ph="UPDATE thamg... " />
-            <marker date="1483938720716" expanded="true" signature="1114:1192" ph="UPDATE thamg... " />
-            <marker date="1483938720716" expanded="true" signature="1114:1206" ph="UPDATE thamg... " />
-            <marker date="1483938720716" expanded="true" signature="1114:1207" ph="UPDATE thamg... " />
-            <marker date="1483938720716" expanded="true" signature="1114:1230" ph="UPDATE thamg... " />
-            <marker date="1483938720716" expanded="true" signature="1114:1231" ph="UPDATE thamg... " />
-            <marker date="1483938720716" expanded="true" signature="1114:1246" ph="UPDATE thamg... " />
-            <marker date="1483938720716" expanded="true" signature="1114:1270" ph="UPDATE thamg... " />
-            <marker date="1483938720716" expanded="true" signature="1114:1271" ph="UPDATE thamg... " />
-            <marker date="1483938720716" expanded="true" signature="1114:1272" ph="UPDATE thamg... " />
-            <marker date="1483938720716" expanded="true" signature="1114:1285" ph="UPDATE thamg... " />
-            <marker date="1483938720716" expanded="true" signature="1114:1309" ph="UPDATE thamg... " />
-            <marker date="1483938720716" expanded="true" signature="1114:1324" ph="UPDATE thamg... " />
-            <marker date="1483938720716" expanded="true" signature="1114:1346" ph="UPDATE thamg... " />
-            <marker date="1483938720716" expanded="true" signature="1114:1361" ph="UPDATE thamg... " />
-            <marker date="1483938720716" expanded="true" signature="1114:1362" ph="UPDATE thamg... " />
-            <marker date="1483938720716" expanded="true" signature="1391:1666" ph="UPDATE thamg... " />
-            <marker date="1483938720716" expanded="true" signature="1696:1971" ph="UPDATE thamg... " />
-          </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/app/class/model.php">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="347">
-          <caret line="224" column="37" selection-start-line="224" selection-start-column="37" selection-end-line="224" selection-end-column="37" />
-          <folding>
-            <marker date="1483941427924" expanded="true" signature="387:401" ph="SELECT * FRO... ${$bang}" />
-            <marker date="1483941427924" expanded="true" signature="805:1075" ph="SELECT slide... slider" />
-            <marker date="1483941427924" expanded="true" signature="1466:1713" ph="SELECT gioit... gioithieu" />
-            <marker date="1483941427924" expanded="true" signature="1951:2221" ph="SELECT cauho... cauhoithuonggap" />
-            <marker date="1483941427924" expanded="true" signature="2625:2721" ph="SELECT * FRO... slider_ngonngu" />
-            <marker date="1483941427924" expanded="true" signature="3117:3131" ph="SELECT * FRO... ${$bang}" />
-            <marker date="1483941427924" expanded="true" signature="3320:3379" ph="SELECT * FRO... khunghiduong_" />
-            <marker date="1483941427924" expanded="true" signature="3600:3640" ph="SELECT * FRO... lienhe" />
-            <marker date="1483941427924" expanded="true" signature="4124:4241" ph="SELECT * FRO... taikhoan" />
-            <marker date="1483941427924" expanded="true" signature="4584:4739" ph="insert into taikhoan... " />
-            <marker date="1483941427924" expanded="true" signature="4884:5045" ph="insert into lienhe... " />
-            <marker date="1483941427924" expanded="true" signature="5192:5332" ph="insert into book_now... " />
-            <marker date="1483941427924" expanded="true" signature="5466:5525" ph="SELECT * FRO... khunghiduong_" />
-            <marker date="1483941427924" expanded="true" signature="5663:5728" ph="SELECT * FRO... taikhoan" />
-            <marker date="1483941427924" expanded="true" signature="5954:6071" ph="SELECT * FRO... taikhoan" />
-            <marker date="1483941427924" expanded="true" signature="6414:6511" ph="UPDATE taikh... " />
-            <marker date="1483941427924" expanded="true" signature="6686:6783" ph="UPDATE taikh... " />
-            <marker date="1483941427924" expanded="true" signature="6945:7090" ph="UPDATE taikh... " />
-            <marker date="1483941427924" expanded="true" signature="7234:7329" ph="SELECT * FRO... taikhoan" />
-            <marker date="1483941427924" expanded="true" signature="7575:7708" ph="insert into taikhoandangky... " />
-            <marker date="1483941427924" expanded="true" signature="7825:8236" ph="SELECT thamg... thamgia" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/admin/app/class/controllerthamgia.php">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="242">
-          <caret line="54" column="67" selection-start-line="54" selection-start-column="39" selection-end-line="54" selection-end-column="67" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/app/class/controller.php">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="242">
-          <caret line="56" column="24" selection-start-line="56" selection-start-column="24" selection-end-line="56" selection-end-column="24" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/app/view/footer.php">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="232">
-          <caret line="227" column="0" selection-start-line="227" selection-start-column="0" selection-end-line="227" selection-end-column="0" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/admin/app/view/quanlythamgia.php">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="58">
-          <caret line="73" column="176" selection-start-line="73" selection-start-column="176" selection-end-line="73" selection-end-column="176" />
-          <folding>
-            <marker date="1483945170293" expanded="true" signature="3795:3855" ph="..." />
-          </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/app/view/header.php">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="158">
-          <caret line="137" column="85" selection-start-line="137" selection-start-column="85" selection-end-line="137" selection-end-column="85" />
-          <folding>
-            <marker date="1483945478029" expanded="true" signature="5481:5515" ph="..." />
-            <marker date="1483945478029" expanded="true" signature="5894:5918" ph="..." />
-            <marker date="1483945478029" expanded="true" signature="8471:8490" ph="..." />
-          </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/app/view/home.php">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="121">
-          <caret line="48" column="10" selection-start-line="48" selection-start-column="10" selection-end-line="48" selection-end-column="10" />
-          <folding>
-            <marker date="1483945217738" expanded="true" signature="13036:13183" ph="..." />
-            <marker date="1483945217738" expanded="true" signature="13130:13160" ph="..." />
-            <marker date="1483945217738" expanded="true" signature="13232:13392" ph="..." />
-            <marker date="1483945217738" expanded="false" signature="13265:13282" ph="..." />
-            <marker date="1483945217738" expanded="false" signature="13339:13391" ph="..." />
-            <marker date="1483945217738" expanded="true" signature="13467:13900" ph="..." />
-            <marker date="1483945217738" expanded="false" signature="13524:13546" ph="..." />
-            <marker date="1483945217738" expanded="true" signature="13547:13716" ph="..." />
-            <marker date="1483945217738" expanded="false" signature="13673:13684" ph="..." />
-            <marker date="1483945217738" expanded="true" signature="13765:13873" ph="..." />
-          </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/app/index.php">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="-1428">
-          <caret line="3" column="26" selection-start-line="3" selection-start-column="26" selection-end-line="3" selection-end-column="26" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/admin/app/view/admin.php">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="11101">
-          <caret line="653" column="14" selection-start-line="653" selection-start-column="14" selection-end-line="653" selection-end-column="14" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/app/admin.php">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="-306">
-          <caret line="0" column="0" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
+        <state relative-caret-position="237">
+          <caret line="25" column="75" selection-start-line="25" selection-start-column="75" selection-end-line="25" selection-end-column="75" />
           <folding />
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/admin/app/class/controlleradmin.php">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="342">
-          <caret line="40" column="35" selection-start-line="40" selection-start-column="35" selection-end-line="40" selection-end-column="35" />
+        <state relative-caret-position="335">
+          <caret line="61" column="71" selection-start-line="61" selection-start-column="8" selection-end-line="61" selection-end-column="71" />
           <folding>
-            <marker date="1483502184604" expanded="true" signature="627:744" ph="SELECT * FRO... taikhoan" />
+            <marker date="1484106755072" expanded="true" signature="627:744" ph="SELECT * FRO... taikhoan" />
           </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/admin/app/class/controllerslider.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="225">
+          <caret line="40" column="75" selection-start-line="40" selection-start-column="75" selection-end-line="40" selection-end-column="75" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/admin/app/class/controllerthamgia.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="344">
+          <caret line="27" column="75" selection-start-line="27" selection-start-column="75" selection-end-line="27" selection-end-column="75" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/admin/app/class/controllervideo.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="199">
+          <caret line="26" column="35" selection-start-line="26" selection-start-column="35" selection-end-line="26" selection-end-column="35" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/js/main.js">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="347">
+          <caret line="58" column="26" selection-start-line="58" selection-start-column="26" selection-end-line="58" selection-end-column="26" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/admin/app/view/readmail.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="340">
+          <caret line="75" column="76" selection-start-line="75" selection-start-column="76" selection-end-line="75" selection-end-column="76" />
+          <folding>
+            <element signature="n#style#0;n#div#3;n#div#0;n#div#0;n#div#0;n#div#0;n#section#1;n#div#0;n#div#0;n#body#0;n#html#0;n#!!top" expanded="true" />
+            <element signature="n#style#0;n#div#4;n#div#0;n#div#0;n#div#0;n#div#0;n#section#1;n#div#0;n#div#0;n#body#0;n#html#0;n#!!top" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/admin/app/view/slider.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="136">
+          <caret line="54" column="27" selection-start-line="54" selection-start-column="27" selection-end-line="54" selection-end-column="27" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/app/view/footer.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="467">
+          <caret line="46" column="37" selection-start-line="46" selection-start-column="37" selection-end-line="46" selection-end-column="37" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/admin/app/class/controllermail.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="369">
+          <caret line="49" column="25" selection-start-line="49" selection-start-column="8" selection-end-line="49" selection-end-column="25" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/admin/app/view/mail.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="169">
+          <caret line="128" column="74" selection-start-line="128" selection-start-column="74" selection-end-line="128" selection-end-column="74" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/admin/app/view/quanlytaikhoan.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="612">
+          <caret line="81" column="62" selection-start-line="61" selection-start-column="24" selection-end-line="81" selection-end-column="62" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/admin/app/class/modelmail.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="131">
+          <caret line="40" column="52" selection-start-line="40" selection-start-column="52" selection-end-line="40" selection-end-column="52" />
+          <folding>
+            <marker date="1484110608723" expanded="true" signature="367:414" ph="DELETE FROM " />
+            <marker date="1484110608723" expanded="true" signature="538:599" ph="SELECT * FRO... lienhe" />
+            <marker date="1484110608723" expanded="true" signature="760:799" ph="SELECT * FRO... lienhe" />
+            <marker date="1484110608723" expanded="true" signature="1194:1233" ph="SELECT * FRO... lienhe" />
+            <marker date="1484110608723" expanded="true" signature="1621:1663" ph="UPDATE lienh... " />
+            <marker date="1484110608723" expanded="true" signature="1621:1664" ph="UPDATE lienh... " />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/admin/app/class/controllertaikhoan.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="293">
+          <caret line="93" column="31" selection-start-line="93" selection-start-column="31" selection-end-line="93" selection-end-column="31" />
+          <folding />
         </state>
       </provider>
     </entry>

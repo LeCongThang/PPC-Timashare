@@ -70,8 +70,8 @@
                             <div class="box-footer">
                                 <div class="pull-right">
                                     <!-- <button type="button" class="btn btn-default"><i class="fa fa-pencil"></i> Draft</button> -->
-                                    <button type="submit" name="submit" class="btn btn-info"><i
-                                            class="glyphicon glyphicon-th-large"></i>&nbsp <b>Bước kế</b>
+                                    <button type="submit" name="submit" class="btn btn-info"><b>Bước kế</b>&nbsp <i
+                                            class="glyphicon glyphicon-hand-right"></i>
                                     </button>
                                 </div>
                                 <!-- <button type="reset" class="btn btn-default"><i class="fa fa-times"></i> Discard</button> -->

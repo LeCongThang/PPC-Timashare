@@ -35,6 +35,8 @@ class controllergioithieu
     }
 
     public function index(){
+        if (!isset($_SESSION['tendangnhapadmin']))
+            header('location:' . BASE_URL_ADMIN . "controlleradmin/index");
         $gioithieu_en = $this->controller_gioithieu->laygioithieu("en");
         $gioithieu_vi = $this->controller_gioithieu->laygioithieu("vi");
         if($gioithieu_en !=null && $gioithieu_vi !=null){

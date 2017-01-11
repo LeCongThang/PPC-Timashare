@@ -31,6 +31,8 @@ class controllervideo
     }
 
     public function index(){
+        if (!isset($_SESSION['tendangnhapadmin']))
+            header('location:' . BASE_URL_ADMIN . "controlleradmin/index");
         $ds_video = $this->controllervideo->laydanhvideo();
         require_once("app/view/quanlyvideo.php");
     }

@@ -32,7 +32,7 @@ class modelmail{
     }
 
     public function laydanhsachmail(){
-        $sql = "SELECT * FROM lienhe";
+        $sql = "SELECT * FROM lienhe WHERE trangthai =0";
         $result = mysqli_query($this->db, $sql);
         if (!$result) {
             die("Error in query");
@@ -44,6 +44,26 @@ class modelmail{
         //remove out of memory
         mysqli_free_result($result);
         return $list;
+    }
+    public function layDanhSachMailDaDuyet(){
+        $sql = "SELECT * FROM lienhe WHERE trangthai =1";
+        $result = mysqli_query($this->db, $sql);
+        if (!$result) {
+            die("Error in query");
+        }
+        $list = array();
+        while ($row = mysqli_fetch_assoc($result)) {
+            $list[] = $row;
+        }
+        //remove out of memory
+        mysqli_free_result($result);
+        return $list;
+    }
+
+    public function update($id)
+    {
+        $sql = "UPDATE lienhe SET trangthai = 1 WHERE id = ".$id;
+        return $this->db->query($sql);
     }
 }//class
 

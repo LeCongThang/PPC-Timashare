@@ -1,18 +1,22 @@
+function validateEmail(email) {
+    var re = /^(([^<>()[\]\\.,;:\s@\"]+(\.[^<>()[\]\\.,;:\s@\"]+)*)|(\".+\"))@((\[[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}\])|(([a-zA-Z\-0-9]+\.)+[a-zA-Z]{2,}))$/;
+    return re.test(email);
+}
+
 $(document).ready(function () {
     $('#btn_dangky').click(function () {
         diaChiEmail = $('#diaChiEmail').val();
         dienthoai = $('#dienthoai').val();
-        if (validateEmail(email)) {
-        } else {
-            $("#thongbao").text(email + " không đúng");
-            return false;
-        }
         if (diaChiEmail == "" || dienthoai == "") {
             $('#thongbao').text("Hãy nhập đầy đủ thông tin");
             return false;
         }
         if (isNaN(dienthoai)) {
             $('#thongbao').text("Điện thoại phải là số");
+            return false;
+        }
+        if (!validateEmail(diaChiEmail)) {
+            $("#thongbao").text( diaChiEmail+" không đúng");
             return false;
         }
         return true;
@@ -42,16 +46,20 @@ $(document).ready(function () {
         tencongty = $('#ten').val();
         dienthoaicongty = $('#dienthoaicongty').val();
         emailcongty = $('#email').val();
-        loiguilh = 0;
 
         if (tencongty == "" || dienthoaicongty == "" || emailcongty == "") {
             $('#thongbaoguilh').text("Hãy nhập đầy đủ thông tin liên hệ");
-            loiguilh++;
-        }
-
-        if (loiguilh != 0) {
             return false;
         }
+        if (isNaN(dienthoaicongty)) {
+            $('#thongbaoguilh').text("Điện thoại phải là số");
+            return false;
+        }
+        if (!validateEmail(emailcongty)) {
+            $("#thongbaoguilh").text( "Email không đúng");
+            return false;
+        }
+
         return true;
     });
 

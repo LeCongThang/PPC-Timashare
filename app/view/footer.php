@@ -27,10 +27,6 @@
 </div>
 
 <script type="text/javascript">
-    function validateEmail(email) {
-        var re = /^(([^<>()[\]\\.,;:\s@\"]+(\.[^<>()[\]\\.,;:\s@\"]+)*)|(\".+\"))@((\[[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}\])|(([a-zA-Z\-0-9]+\.)+[a-zA-Z]{2,}))$/;
-        return re.test(email);
-    }
     $(document).ready(function () {
         $('#cauhoi').click(function () {
             $("#cau_hoi_thuong_gap").toggle();
@@ -44,91 +40,72 @@
         var modaldoimatkhau = document.getElementById('ModalDoiMatKhau');
         var ModalBookNow = document.getElementById('ModalBookNow');
 
-        $('#btn_dangky').click(function () {
-            diaChiEmail = $('#diaChiEmail').val();
-            dienthoai = $('#dienthoai').val();
 
-            if (diaChiEmail == "" || dienthoai == "") {
-                $('#thongbao').text("Hãy nhập đầy đủ thông tin");
-                return false;
-            }
-            if (validateEmail(diaChiEmail)) {
-            } else {
-                $("#thongbao").text("Địa chỉ mail không đúng");
-                return false;
-            }
-            if (isNaN(dienthoai)) {
-                $('#thongbao').text("Điện thoại phải là số");
-                return false;
-            }
-            return true;
-        });
+//        $('#btn_gui').click(function () {
+//            tencongty = $('#ten').val();
+//            dienthoaicongty = $('#dienthoaicongty').val();
+//            emailcongty = $('#email').val();
+//            loiguilh = 0;
+//
+//            if (tencongty == "" || dienthoaicongty == "" || emailcongty == "") {
+//                $('#thongbaoguilh').text("Hãy nhập đầy đủ thông tin liên hệ");
+//                loiguilh++;
+//            }
+//
+//            if (loiguilh != 0) {
+//                return false;
+//            }
+//            return true;
+//        });
 
-        $('#btn_gui').click(function () {
-            tencongty = $('#ten').val();
-            dienthoaicongty = $('#dienthoaicongty').val();
-            emailcongty = $('#email').val();
-            loiguilh = 0;
+//        $('#btnQuenMatKhau').click(function () {
+//            tendangnhapll = $('#tendangnhapll').val();
+//            sodienthoaitaikhoanll = $('#sodienthoaitaikhoanll').val();
+//            loiguiqmk = 0;
+//            if (isNaN(sodienthoaitaikhoanll)) {
+//                loiguiqmk++;
+//                $('#thongbaoQuenMatKhau').text("Điện thoại phải là số");
+//            }
+//            if (tendangnhapll == "" || sodienthoaitaikhoanll == "") {
+//                $('#thongbaoQuenMatKhau').text("Hãy nhập đầy đủ thông tin");
+//                loiguiqmk++;
+//            }
+//            if (loiguiqmk != 0) {
+//                return false;
+//            }
+//            return true;
+//        });
 
-            if (tencongty == "" || dienthoaicongty == "" || emailcongty == "") {
-                $('#thongbaoguilh').text("Hãy nhập đầy đủ thông tin liên hệ");
-                loiguilh++;
-            }
+//        $('#btn_dangnhap').click(function () {
+//            tendangnhap = $('#username').val();
+//            matkhau = $('#password').val();
+//            if (tendangnhap == "" || matkhau == "") {
+//                $('#thongbaodn').text("Hãy nhập đầy đủ thông tin");
+//                return false;
+//            }
+//            return true;
+//        });
 
-            if (loiguilh != 0) {
-                return false;
-            }
-            return true;
-        });
-
-        $('#btnQuenMatKhau').click(function () {
-            tendangnhapll = $('#tendangnhapll').val();
-            sodienthoaitaikhoanll = $('#sodienthoaitaikhoanll').val();
-            loiguiqmk = 0;
-            if (isNaN(sodienthoaitaikhoanll)) {
-                loiguiqmk++;
-                $('#thongbaoQuenMatKhau').text("Điện thoại phải là số");
-            }
-            if (tendangnhapll == "" || sodienthoaitaikhoanll == "") {
-                $('#thongbaoQuenMatKhau').text("Hãy nhập đầy đủ thông tin");
-                loiguiqmk++;
-            }
-            if (loiguiqmk != 0) {
-                return false;
-            }
-            return true;
-        });
-
-        $('#btn_dangnhap').click(function () {
-            tendangnhap = $('#username').val();
-            matkhau = $('#password').val();
-            if (tendangnhap == "" || matkhau == "") {
-                $('#thongbaodn').text("Hãy nhập đầy đủ thông tin");
-                return false;
-            }
-            return true;
-        });
-
-        $('#doimatkhau').click(function () {
-            matkhaucu = $('#matkhaucu').val();
-            matkhaumoi = $('#matkhaumoi').val();
-            nhaplaimatkhaumoi = $('#nhaplaimatkhaumoi').val();
-            loi = 0;
-            if (matkhaucu == "" || matkhaumoi == "") {
-                loi++;
-                $('#thongbaodoimatkhau').text("Hãy nhập đầy đủ thông tin");
-            }
-            else {
-                if (matkhaumoi != nhaplaimatkhaumoi) {
-                    loi++;
-                    $('#thongbaodoimatkhau').text("Mật khẩu nhập lại không trùng khớp");
-                }
-            }
-            if (loi != 0) {
-                return false;
-            }
-            return true;
-        });
+//        $('#doimatkhau').click(function () {
+//            matkhaucu = $('#matkhaucu').val();
+//            matkhaumoi = $('#matkhaumoi').val();
+//            nhaplaimatkhaumoi = $('#nhaplaimatkhaumoi').val();
+//            loi = 0;
+//            if (matkhaucu == "" || matkhaumoi == "") {
+//                loi++;
+//                $('#thongbaodoimatkhau').text("Hãy nhập đầy đủ thông tin");
+//            }
+//            else {
+//                if (matkhaumoi != nhaplaimatkhaumoi) {
+//                    loi++;
+//                    $('#thongbaodoimatkhau').text("Mật khẩu nhập lại không trùng khớp");
+//                }
+//            }
+//            if (loi != 0) {
+//                return false;
+//            }
+//            return true;
+//        });
 
         $('#btnThem').click(function (e) {
             e.preventDefault();
@@ -174,23 +151,6 @@
             return false;
         });
 
-        var btnBookNow0 = document.getElementById("btnBN0");
-        var btnBookNow1 = document.getElementById("btnBN1");
-        var btnBookNow2 = document.getElementById("btnBN2");
-        var btnBookNow3 = document.getElementById("btnBN3");
-        //var idKnd = document.getElementById("btnBookNow").value;
-        btnBookNow0.onclick = function () {
-            if (<?php echo isset($_SESSION['tendangnhap']) ? 'true' : 'false'; ?>) {
-                var temp = $(this).attr("idsp");
-                <?php $_SESSION['idknd'] = 'temp';?>
-                mainModal = ModalBookNow;
-                mainModal.style.display = "block";
-            }
-            else {
-                alert('Mời bạn đăng nhập trước khi book khu nghỉ dưỡng');
-            }
-            return false;
-        }
 
 
         window.onclick = function (event) {
@@ -238,7 +198,6 @@
         var modal = document.getElementById('ModalDangNhap');
         var modaldangky = document.getElementById('ModalDangKy');
         var modalquenmatkhau = document.getElementById('ModalQuenMatKhau');
-        // All Button open modal
         var btn = document.getElementById('btnDangNhap');
 
         btn.onclick = function () {

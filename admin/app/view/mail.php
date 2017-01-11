@@ -35,12 +35,11 @@
         <!-- Content Header (Page header) -->
         <section class="content-header">
             <h1>
-                Mailbox
-                <small>new messages</small>
+                Liên hệ
             </h1>
             <ol class="breadcrumb">
-                <li><a href="#"><i class="fa fa-dashboard"></i> Home</a></li>
-                <li class="active">Mailbox</li>
+                <li><a href="#"><i class="fa fa-dashboard"></i>Quản lý liên hệ</a></li>
+                <li class="active">Hộp thư đến</li>
             </ol>
         </section>
 
@@ -52,70 +51,129 @@
                 <div class="col-md-12">
                     <div class="box box-primary">
                         <div class="box-header with-border">
-                            <h3 class="box-title">Inbox</h3>
-
-                            <!--                            <div class="box-tools pull-right">-->
-                            <!--                                <div class="has-feedback">-->
-                            <!--                                    <input type="text" class="form-control input-sm" placeholder="Search Mail">-->
-                            <!--                                    <span class="glyphicon glyphicon-search form-control-feedback"></span>-->
-                            <!--                                </div>-->
-                            <!--                            </div>-->
-                            <!-- /.box-tools -->
+                            <h3 class="box-title">Hộp thư đến</h3>
                         </div>
                         <!-- /.box-header -->
-                        <div class="box-body no-padding">
-                            <div class="table-responsive mailbox-messages">
-                                <table class="table table-hover table-striped">
-                                    <tbody>
-                                    <?php
-                                    foreach ($ds_mail as $key => $item_mail) {
-                                        ?>
-                                        <tr>
-                                            <!--                                                <td><input type="checkbox" nam></td>-->
-                                            <td class="mailbox-star"><a href=""><i
-                                                        class="fa fa-star text-yellow"></i></a></td>
-                                            <td class="mailbox-name"><a
-                                                    href="<?= BASE_URL_ADMIN?>controllermail/xemmail/<?php echo $item_mail['email_lienhe']; ?> "><?php echo $item_mail['ten_lienhe']; ?></a>
-                                            </td>
-                                            <td class="mailbox-subject"><b><?php echo $item_mail['email_lienhe']; ?></b>
-                                            </td>
-                                            <td class="mailbox-attachment"><?php echo $item_mail['sdt_lienhe']; ?></td>
-                                            <td class="mailbox-date"><a
-                                                    href="<?= BASE_URL_ADMIN?>controllermail/delete/<?php echo $item_mail['email_lienhe']; ?> ">
-                                                    <button class="btn btn-info"><i
-                                                            class="glyphicon glyphicon-trash"></i></button>
-                                                </a></td>
-                                        </tr>
-                                        <?php
-                                    }
-                                    ?>
-                                    </tbody>
-                                </table>
-                                <!-- /.table -->
+                        <div class="bs-example bs-example-tabs" data-example-id="togglable-tabs">
+                            <ul class="nav nav-tabs" id="myTabs" role="tablist">
+                                <li role="presentation" class="active"><a href="#vi" id="vi-tab" role="tab"
+                                                                          data-toggle="tab"
+                                                                          aria-controls="gioithieu_vi"
+                                                                          aria-expanded="true">Liên hệ chưa duyệt</a>
+                                </li>
+                                <li role="presentation" class=""><a href="#en" role="tab" id="en-tab"
+                                                                    data-toggle="tab"
+                                                                    aria-controls="gioithieu_en"
+                                                                    aria-expanded="false">Liên hệ đã
+                                        duyệt</a></li>
+                            </ul>
+                            <div class="tab-content" id="myTabContent">
+                                <div class="tab-pane fade active in" role="tabpanel" id="vi"
+                                     aria-labelledby="vi-tab">
+                                    <div class="box-body no-padding">
+                                        <div class="table-responsive mailbox-messages">
+                                            <table class="table table-hover table-striped">
+                                                <thead>
+                                                <tr>
+                                                    <th>Tên công ty</th>
+                                                    <th>Địa chỉ email</th>
+                                                    <th>Số điện thoại</th>
+                                                    <th></th>
+                                                </tr>
+                                                </thead>
+                                                <tbody>
+                                                <?php
+                                                foreach ($ds_mail as $key => $item_mail) {
+                                                    ?>
+                                                    <tr>
+                                                        <!--                                                <td><input type="checkbox" nam></td>-->
+                                                        <td class="mailbox-name"><a
+                                                                href="<?= BASE_URL_ADMIN ?>controllermail/xemmail/<?php echo $item_mail['email_lienhe']; ?> "><?php echo $item_mail['ten_lienhe']; ?></a>
+                                                        </td>
+                                                        <td class="mailbox-subject">
+                                                            <b><?php echo $item_mail['email_lienhe']; ?></b>
+                                                        </td>
+                                                        <td class="mailbox-attachment"><?php echo $item_mail['sdt_lienhe']; ?></td>
+                                                        <td class="mailbox-date"><a
+                                                                href="<?= BASE_URL_ADMIN ?>controllermail/delete/<?php echo $item_mail['email_lienhe']; ?> ">
+                                                                <button class="btn btn-info"><i
+                                                                        class="glyphicon glyphicon-trash"></i></button>
+                                                            </a></td>
+                                                    </tr>
+                                                    <?php
+                                                }
+                                                ?>
+                                                </tbody>
+                                            </table>
+                                            <!-- /.table -->
+                                        </div>
+                                        <!-- /.mail-box-messages -->
+                                    </div>
+                                    <!-- /.box-body -->
+                                </div>
+                                <div class="tab-pane" role="tabpanel" id="en"
+                                     aria-labelledby="en-tab">
+                                    <div class="box-body no-padding">
+                                        <div class="table-responsive mailbox-messages">
+                                            <table class="table table-hover table-striped">
+                                                <thead>
+                                                <tr>
+                                                    <th>Tên công ty</th>
+                                                    <th>Địa chỉ email</th>
+                                                    <th>Số điện thoại</th>
+                                                    <th></th>
+                                                </tr>
+                                                </thead>
+                                                <tbody>
+                                                <?php
+                                                foreach ($ds_mail_da_duyet as $key => $item_mail) {
+                                                    ?>
+                                                    <tr>
+                                                        <!--                                                <td><input type="checkbox" nam></td>-->
+                                                        <td class="mailbox-name"><a
+                                                                href="<?= BASE_URL_ADMIN ?>controllermail/xemmail/<?php echo $item_mail['email_lienhe']; ?> "><?php echo $item_mail['ten_lienhe']; ?></a>
+                                                        </td>
+                                                        <td class="mailbox-subject">
+                                                            <b><?php echo $item_mail['email_lienhe']; ?></b>
+                                                        </td>
+                                                        <td class="mailbox-attachment"><?php echo $item_mail['sdt_lienhe']; ?></td>
+                                                        <td class="mailbox-date"><a
+                                                                href="<?= BASE_URL_ADMIN ?>controllermail/delete/<?php echo $item_mail['email_lienhe']; ?> ">
+                                                                <button class="btn btn-info"><i
+                                                                        class="glyphicon glyphicon-trash"></i></button>
+                                                            </a></td>
+                                                    </tr>
+                                                    <?php
+                                                }
+                                                ?>
+                                                </tbody>
+                                            </table>
+                                            <!-- /.table -->
+                                        </div>
+                                        <!-- /.mail-box-messages -->
+                                    </div>
+                                    <!-- /.box-body -->
+                                </div>
                             </div>
-                            <!-- /.mail-box-messages -->
                         </div>
-                        <!-- /.box-body -->
-
+                        <!-- /. box -->
                     </div>
                 </div>
-                <!-- /. box -->
+                <!-- /.col -->
             </div>
-            <!-- /.col -->
+            <!-- /.row -->
+        </section>
+        <!-- /.content -->
     </div>
-    <!-- /.row -->
-    </section>
-    <!-- /.content -->
-</div>
-<!-- /.content-wrapper -->
+    <!-- /.content-wrapper -->
 
-<footer class="main-footer">
-    <div class="pull-right hidden-xs">
-        <b>Version</b> 2.3.6
-    </div>
-    <strong>Copyright &copy; 2014-2016 <a href="http://almsaeedstudio.com">Almsaeed Studio</a>.</strong> All rights
-    reserved.
-</footer>
+    <footer class="main-footer">
+        <div class="pull-right hidden-xs">
+            <b>Version</b> 2.3.6
+        </div>
+        <strong>Copyright &copy; 2014-2016 <a href="http://almsaeedstudio.com">Almsaeed Studio</a>.</strong> All rights
+        reserved.
+    </footer>
 
 
 </div>

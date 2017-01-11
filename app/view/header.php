@@ -6,7 +6,7 @@
     <meta name="viewport" content="width=device-width, initial-scale=1">
     <base href="<?= BASE_DIR ?>">
     <link href="<?= BASE_DIR ?>css/style.css" rel="stylesheet" type="text/css">
-    <script type="text/javascript" src="http://code.jquery.com/jquery-1.9.1.min.js"></script>
+
     <!-- Latest compiled and minified CSS -->
     <link rel="stylesheet" type="text/css" href="<?= BASE_DIR ?>css/style.css">
     <link rel="stylesheet" type="text/css" href="<?= BASE_DIR ?>css/responsive.css">
@@ -17,11 +17,7 @@
           integrity="sha384-rHyoN1iRsVXV4nD0JutlnGaslCJuC7uwjduW9SVrLvRYooPp2bWYgmgJQIXwl/Sp" crossorigin="anonymous">
     <link rel="stylesheet" type="text/css" href="<?= BASE_DIR ?>css/stylehead.css">
     <!-- Latest compiled and minified JavaScript -->
-    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"
-            integrity="sha384-Tc5IQib027qvyjSMfHjOMaLkfuWVxZxUPnCJA7l2mCWNIpG9mGCD8wGNIcPD7Txa"
-            crossorigin="anonymous"></script>
-    <script type="text/javascript" src="<?= BASE_DIR ?>ckeditor/ckeditor.js"></script>
-    <script type="text/javascript" src="<?= BASE_DIR ?>js/main.js"></script>
+
     <link rel="stylesheet" href="<?= BASE_DIR ?>bootstrapdatetimepicker/css/bootstrap.min.css"/>
     <link rel="stylesheet" href="<?= BASE_DIR ?>bootstrapdatetimepicker/css/bootstrap.css"/>
 </head>
@@ -174,6 +170,11 @@
     <div id="thongtincanhan"></div><?php include 'modalxemthongtincanhan.php'; ?>
 
 </header>
-
+<script type="text/javascript" src="http://code.jquery.com/jquery-1.9.1.min.js"></script>
+<script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"
+        integrity="sha384-Tc5IQib027qvyjSMfHjOMaLkfuWVxZxUPnCJA7l2mCWNIpG9mGCD8wGNIcPD7Txa"
+        crossorigin="anonymous"></script>
+<script type="text/javascript" src="<?= BASE_DIR ?>ckeditor/ckeditor.js"></script>
+<script type="text/javascript" src="<?= BASE_DIR ?>js/main.js"></script>
 </body>
 </html>

@@ -48,7 +48,7 @@ $isUpdate = isset($this->params[0]);
     <div class="content-wrapper">
         <section class="content-header">
             <h1><b>
-                    <?php echo $isUpdate ? 'Cập nhật câu hỏi' : 'Thêm Câu hỏi'; ?>
+                    <?php echo $isUpdate ? 'Cập nhật tài khoản' : 'Thêm tài khoản'; ?>
                 </b>
                 <!-- <small>13 new messages</small> -->
             </h1>
@@ -69,79 +69,69 @@ $isUpdate = isset($this->params[0]);
                 <form method="POST" enctype="multipart/form-data">
                     <div class="col-md-12">
                         <div class="box box-primary">
-                            <div class="box-body">
-<!--                                --><?php //foreach ($this->errors as $error): ?>
-<!--                                    <div class="alert alert-danger" role="alert">--><?//= $error ?><!--</div>-->
-<!--                                --><?php //endforeach; ?>
-                                <div class="bs-example bs-example-tabs" data-example-id="togglable-tabs">
-                                    <ul class="nav nav-tabs" id="myTabs" role="tablist">
-                                        <li role="presentation" class="active"><a href="#vi" id="vi-tab" role="tab"
-                                                                                  data-toggle="tab"
-                                                                                  aria-controls="gioithieu_vi"
-                                                                                  aria-expanded="true">Tiếng
-                                                Việt</a></li>
-                                        <li role="presentation" class=""><a href="#en" role="tab" id="en-tab"
-                                                                            data-toggle="tab"
-                                                                            aria-controls="gioithieu_en"
-                                                                            aria-expanded="false">Tiếng
-                                                Anh</a></li>
-                                    </ul>
-                                    <div class="tab-content" id="myTabContent">
-                                        <div class="tab-pane fade active in" role="tabpanel" id="vi"
-                                             aria-labelledby="vi-tab">
-                                            <div class="form-group">
-                                                <label for="noidung">Câu hỏi</label>
-                                                <textarea placeholder="Câu hỏi" name="cau_hoi_vi" class="ckeditor" cols="30"
-                                                          rows="10"
-                                                          title="">
-                                        <?php echo $isUpdate ? $data_vi['cauhoi'] : "" ?>
-                                    </textarea>
-                                            </div>
-                                            <div class="form-group">
-                                                <label for="noidung">Câu trả lời</label>
-                                                <textarea placeholder="Câu trả lời" name="cau_tra_loi_vi" class="ckeditor" cols="30"
-                                                          rows="10"
-                                                          title="">
-                                        <?php echo $isUpdate ? $data_vi['cautraloi'] : "" ?>
-                                    </textarea>
-                                            </div>
-
-                                        </div>
-                                        <div class="tab-pane fade" role="tabpanel" id="en"
-                                             aria-labelledby="en-tab">
-                                            <div class="form-group">
-                                                <label for="noidung">Câu hỏi</label>
-                                                <textarea placeholder="Câu hỏi" name="cau_hoi_en" class="ckeditor" cols="30"
-                                                          rows="10"
-                                                          title="">
-                                        <?php echo $isUpdate ? $data_en['cauhoi'] : "" ?>
-                                    </textarea>
-                                            </div>
-                                            <div class="form-group">
-                                                <label for="noidung">Câu trả lời</label>
-                                                <textarea placeholder="Câu trả lời" name="cau_tra_loi_en" class="ckeditor" cols="30"
-                                                          rows="10"
-                                                          title="">
-                                        <?php echo $isUpdate ? $data_en['cautraloi'] : "" ?>
-                                    </textarea>
-                                            </div>
-                                        </div>
-                                    </div>
-                                </div>
-                                <!-- /.box-body -->
-                                <div class="box-footer">
-                                    <div class="pull-right">
-                                        <!-- <button type="button" class="btn btn-default"><i class="fa fa-pencil"></i> Draft</button> -->
-                                        <button type="submit" name="submit" class="btn btn-info"><i
-                                                class="glyphicon glyphicon-pencil"></i>&nbsp
-                                            <b><?php echo $isUpdate ? "Cập nhật" : "Thêm" ?></b></button>
-                                    </div>
-                                    <!-- <button type="reset" class="btn btn-default"><i class="fa fa-times"></i> Discard</button> -->
-                                </div>
-                                <!-- /.box-footer -->
+                            <div class="box-header with-border text-center">
+                                <h2><b>THÔNG TIN TÀI KHOẢN</b></h2>
                             </div>
-                            <!-- /. box -->
+                            <!-- /.box-header -->
+                            <div class="box-body">
+                                <?php foreach ($this->errors as $error): ?>
+                                    <div class="alert alert-danger" role="alert"><?= $error ?></div>
+                                <?php endforeach; ?>
+                                <div class="bs-example bs-example-tabs" data-example-id="togglable-tabs">
+                                    <div class="tab-content" id="myTabContent">
+                                        <div class="form-group">
+                                            <label for="noidung">Tên đăng nhập</label>
+                                            <input placeholder="Email" class="form-control"
+                                                   value="<?php echo $isUpdate ? $data['tendangnhap'] : "" ?>"
+                                                   name="ten_dang_nhap"
+                                                   style="font-size:17px;font-family:verdana;text-align:justify;"  >
+                                        </div>
+                                        <div class="form-group">
+                                            <label for="noidung">Mật khẩu</label>
+                                            <input placeholder="Mật khẩu" class="form-control" type="password"
+                                                   value="<?php echo $isUpdate ? $data['matkhau'] : "" ?>"
+                                                   name="mat_khau"
+                                                   style="font-size:17px;font-family:verdana;text-align:justify;">
+                                        </div>
+
+                                        <div class="form-group">
+                                            <label for="noidung">Họ tên</label>
+                                            <input placeholder="Họ tên" class="form-control"
+                                                   value="<?php echo $isUpdate ? $data['hoten'] : "" ?>"
+                                                   name="ho_ten"
+                                                   style="font-size:17px;font-family:verdana;text-align:justify;">
+                                        </div>
+                                        <div class="form-group">
+                                            <label for="noidung">Địa chỉ</label>
+                                            <input placeholder="Địa chỉ" class="form-control"
+                                                   value="<?php echo $isUpdate ? $data['diachi'] : "" ?>"
+                                                   name="dia_chi"
+                                                   style="font-size:17px;font-family:verdana;text-align:justify;">
+                                        </div>
+                                        <div class="form-group">
+                                            <label for="noidung">Điện thoại</label>
+                                            <input placeholder="Điện thoại" class="form-control"
+                                                   value="<?php echo $isUpdate ? $data['dienthoai'] : "" ?>"
+                                                   name="dien_thoai"
+                                                   style="font-size:17px;font-family:verdana;text-align:justify;">
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                            <!-- /.box-body -->
+                            <div class="box-footer">
+                                <div class="pull-right">
+                                    <!-- <button type="button" class="btn btn-default"><i class="fa fa-pencil"></i> Draft</button> -->
+                                    <button type="submit" name="submit" class="btn btn-info"><i
+                                            class="glyphicon glyphicon-pencil"></i>&nbsp
+                                        <b><?php echo $isUpdate ? "Cập nhật" : "Tạo tài khoản" ?></b></button>
+                                </div>
+                                <!-- <button type="reset" class="btn btn-default"><i class="fa fa-times"></i> Discard</button> -->
+                            </div>
+                            <!-- /.box-footer -->
                         </div>
+                        <!-- /. box -->
+                    </div>
                 </form>
                 <!-- /.col -->
             </div>

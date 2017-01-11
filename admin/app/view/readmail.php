@@ -39,51 +39,53 @@ mysqli_query($connect, "SET NAMES 'UTF8'");
     <div class="content-wrapper">
         <!-- Content Header (Page header) -->
         <section class="content-header">
-            <h1>
-                READ MAIL
-            </h1>
+            <h1><b> XEM MAIL </b></h1>
             <!--            <hr style="boder:1px solid black;">-->
             <ol class="breadcrumb">
-                <li><a href="<?= BASE_DIR_ADMIN?>controllermail/index"><i class="fa fa-dashboard"></i>Quản
+                <li><a href="<?= BASE_DIR_ADMIN ?>controllermail/index"><i class="fa fa-dashboard"></i>Quản
                         lý mail</a></li>
                 <li class="active">Mailbox</li>
             </ol>
         </section>
-        <hr>
         <!-- Main content -->
         <section class="content">
-
             <div class="row">
-                <!-- /.col -->
-                <div class="col-md-6" style="background-color: white;">
-                    <h4>Form:&nbsp <?= $mail['ten_lienhe']; ?></h4>
+                <div class="col-md-12">
+                    <div class="box box-primary">
+                        <div class="box-body">
+                            <!-- /.col -->
+                            <div class="col-md-6" style="background-color: white;">
+                                <h4>Form:&nbsp <?= $mail['ten_lienhe']; ?></h4>
+                            </div>
+                            <div class="col-md-6" style="background-color: white;">
+                                <h4>Email:&nbsp<?= $mail['email_lienhe']; ?></h4>
+                            </div>
+                            <br><br><br>
+                            <div class="col-md-12" style="background-color: white;">
+                                <h4>Số điện thoại:&nbsp<?= $mail['sdt_lienhe']; ?></h4>
+                            </div>
+                            <br><br><br>
+                            <div class="col-md-12" style="background-color: white;">
+                                <h4>NỘI DUNG</h4>
+                                <br>
+                                <p style="text-align: justify;font-family: verdana;font-size: medium;"><?= $mail['conten_lienhe']; ?></p>
+                            </div>
+                            <br><br><br>
+                            <br><br><br>
+                            <div class="col-md-12" style="background-color: white;text-align: center">
+                                <a href="<?= BASE_URL_ADMIN ?>controllermail/update/<?= $mail['id'] ?>"
+                                   class="btn btn-info">Duyệt Mail</a>
+                            </div>
+                            <!-- /. box -->
+                        </div>
+                        <!-- /.col -->
+                    </div>
                 </div>
-                <div class="col-md-6" style="background-color: white;">
-                    <h4>Email:&nbsp<?= $mail['email_lienhe']; ?></h4>
-                </div>
-                <br><br><br>
-                <div class="col-md-12" style="background-color: white;">
-                    <h4>Số điện thoại:&nbsp<?= $mail['sdt_lienhe']; ?></h4>
-                </div>
-                <br><br><br>
-                <div class="col-md-12" style="background-color: white;">
-                    <h4>NỘI DUNG</h4>
-                    <br>
-                    <p style="text-align: justify;font-family: verdana;font-size: medium;"><?= $mail['conten_lienhe']; ?></p>
-                </div>
-                <br><br><br>
-                <br><br><br>
-                <div class="col-md-12" style="background-color: white;">
-                    <input type="checkbox" name="is_kiem_tra"> Đã xem
-                </div>
-                <!-- /. box -->
             </div>
-            <!-- /.col -->
+            <!-- /.row -->
+        </section>
     </div>
-    <!-- /.row -->
-    </section>
-</div>
-<!-- /.content -->
+    <!-- /.content -->
 </div>
 <!-- /.content-wrapper -->
 

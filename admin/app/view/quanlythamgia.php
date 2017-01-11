@@ -106,7 +106,7 @@
                                 <div class="pull-right">
                                     <!-- <button type="button" class="btn btn-default"><i class="fa fa-pencil"></i> Draft</button> -->
                                     <button type="submit" name="submit" class="btn btn-info"><i
-                                            class="glyphicon glyphicon-th-large"></i>&nbsp <b>Cập nhật</b>
+                                            class="glyphicon glyphicon-pencil"></i>&nbsp <b>Cập nhật</b>
                                     </button>
                                 </div>
                                 <!-- <button type="reset" class="btn btn-default"><i class="fa fa-times"></i> Discard</button> -->

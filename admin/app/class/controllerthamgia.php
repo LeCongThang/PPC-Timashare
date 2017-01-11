@@ -24,6 +24,8 @@ class controllerthamgia
 
     public function index()
     {
+        if (!isset($_SESSION['tendangnhapadmin']))
+            header('location:' . BASE_URL_ADMIN . "controlleradmin/index");
         $du_lieu_vi = $this->controllerthamgia->layDuLieuThamGia("vi");
         $du_lieu_en = $this->controllerthamgia->layDuLieuThamGia("en");
         require_once("app/view/thamgia.php");

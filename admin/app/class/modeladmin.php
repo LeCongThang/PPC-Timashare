@@ -37,8 +37,7 @@ class modeladmin
         if ($kq->num_rows == 0)
             return false;
         $row = $kq->fetch_assoc();
-        $_SESSTION['tendangnhap'] = $row['tendangnhap'];
-
+        $_SESSION["tentaikhoan"] = $row['hoten'];
         return true;
     }// xulydangnhap
 }//class

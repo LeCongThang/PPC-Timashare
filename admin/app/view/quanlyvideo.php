@@ -44,56 +44,55 @@
     <!-- Content Wrapper. Contains page content -->
     <div class="content-wrapper" style="height:1000px;">
         <section class="content-header">
-            <h1><b>
-                    VIDEO
-                </b>
-                <!-- <small>13 new messages</small> -->
-            </h1>
-            <ol class="breadcrumb">
-                <!-- <li><a href="#"><i class="fa fa-dashboard"></i> Home</a></li> -->
-                <!-- <li class="active">Mailbox</li> -->
-            </ol>
+            <h1><b> QUẢN LÝ VIDEO TV </b></h1>
         </section>
 
         <!-- Main content -->
         <section class="content">
             <div class="row">
-                <!-- /.col -->
-                <?php
-                foreach ($ds_video as $key => $item_video) {
-                    ?>
-                    <form action="<?= BASE_URL_ADMIN?>controllervideo/update/<?=$item_video['id_video']?>" method="POST" enctype="multipart/form-data">
-                        <div class="row" style="margin-top:20px;height: 100%">
-                            <div class="col-md-1 col-sm-12"></div>
-                            <div class="col-md-3 col-sm-12">
-                                <embed width="100%" height="100%" src="<?php echo trim($item_video['url_video']) ?> ">
-                            </div>
-                            <div class="col-md-3 col-sm-12">
-                                <div class="form-group">
-                                    <textarea
-                                              style="width:100%;border:1px solid grey; border-radius:2px;"
-                                              name="noidung1">
-                                    <?php echo $item_video['url_video']; ?>
-                                    </textarea>
-                                </div>
-                            </div>
-                            <div class="col-md-3 col-sm-12">
-                                <div class="form-group">
-                                    <textarea  style="width:100%;border:1px solid grey; border-radius:2px;" name="noidung2">
-                                    <?php echo $item_video['ten_video']; ?>
-                                    </textarea>
-                                </div>
-                            </div>
-                            <div class="col-md-1 col-sm-12">
-                                <button type="submit" class="btn btn-info" name="submit">UPDATE</button>
-                            </div>
-                            <div class="col-md-1 col-sm-12">
-                            </div>
+                <div class="col-md-12">
+                    <div class="box box-primary">
+                        <div class="box-body">
+                            <!-- /.col -->
+                            <?php
+                            foreach ($ds_video as $key => $item_video) {
+                                ?>
+                                <form
+                                    action="<?= BASE_URL_ADMIN ?>controllervideo/update/<?= $item_video['id_video'] ?>"
+                                    method="POST" enctype="multipart/form-data">
+                                    <div class="row" style="margin-top:20px;height: 100%">
+                                        <div class="col-md-4 col-sm-12">
+                                            <embed width="100%" height="100%"
+                                                   src="<?php echo trim($item_video['url_video']) ?> ">
+                                        </div>
+                                        <div class="col-md-3 col-sm-12">
+                                            <div class="form-group">
+                                                <label for="noidung">Đường dẫn video</label>
+                                                <textarea placeholder="Đường dẫn video" class="form-control"
+                                                          name="noidung1"
+                                                          style="font-size:17px;font-family:verdana;text-align:justify;"> <?php echo $item_video['url_video']; ?> </textarea>
+                                            </div>
+                                        </div>
+                                        <div class="col-md-3 col-sm-12">
+                                            <div class="form-group">
+                                                <label for="noidung">Tên video</label>
+                                                <textarea placeholder="Tên video" class="form-control"
+                                                          name="noidung2"
+                                                          style="font-size:17px;font-family:verdana;text-align:justify;"><?php echo $item_video['ten_video']; ?>
+                                        </textarea>
+                                            </div>
+                                        </div>
+                                        <div class="col-md-1 col-sm-12" style="margin-top: 25px">
+                                            <button type="submit" class="btn btn-info" name="submit">Cập nhật</button>
+                                        </div>
+                                    </div>
+                                </form>
+                            <?php } ?>
+                            <!-- /.col -->
+                            <!-- </table> -->
                         </div>
-                    </form>
-                <?php } ?>
-                <!-- /.col -->
-                <!-- </table> -->
+                    </div>
+                </div>
             </div>
             <!-- /.row -->
         </section>
@@ -113,21 +112,21 @@
 </div>
 <!-- ./wrapper -->
 <!-- jQuery 2.2.3 -->
-<script src="<?=BASE_DIR?>plugins/jQuery/jquery-2.2.3.min.js"></script>
+<script src="<?= BASE_DIR ?>plugins/jQuery/jquery-2.2.3.min.js"></script>
 <!-- Bootstrap 3.3.6 -->
-<script src="<?=BASE_DIR?>bootstrap/js/bootstrap.min.js"></script>
+<script src="<?= BASE_DIR ?>bootstrap/js/bootstrap.min.js"></script>
 <!-- Slimscroll -->
-<script src="<?=BASE_DIR?>plugins/slimScroll/jquery.slimscroll.min.js"></script>
+<script src="<?= BASE_DIR ?>plugins/slimScroll/jquery.slimscroll.min.js"></script>
 <!-- FastClick -->
-<script src="<?=BASE_DIR?>plugins/fastclick/fastclick.js"></script>
+<script src="<?= BASE_DIR ?>plugins/fastclick/fastclick.js"></script>
 <!-- AdminLTE App -->
-<script src="<?=BASE_DIR?>dist/js/app.min.js"></script>
+<script src="<?= BASE_DIR ?>dist/js/app.min.js"></script>
 <!-- AdminLTE for demo purposes -->
-<script src="<?=BASE_DIR?>dist/js/demo.js"></script>
+<script src="<?= BASE_DIR ?>dist/js/demo.js"></script>
 <!-- iCheck -->
-<script src="<?=BASE_DIR?>plugins/iCheck/icheck.min.js"></script>
+<script src="<?= BASE_DIR ?>plugins/iCheck/icheck.min.js"></script>
 <!-- Bootstrap WYSIHTML5 -->
-<script src="<?=BASE_DIR?>plugins/bootstrap-wysihtml5/bootstrap3-wysihtml5.all.min.js"></script>
+<script src="<?= BASE_DIR ?>plugins/bootstrap-wysihtml5/bootstrap3-wysihtml5.all.min.js"></script>
 <!-- Page Script -->
 <script>
     $(function () {

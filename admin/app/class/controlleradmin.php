@@ -36,7 +36,8 @@ class controlleradmin
         // echo $ktTonTai;
         $truyvanktTonTai = $this->bv->xulydangnhap($ktTonTai);
         if ($truyvanktTonTai) {
-            $_SESSION["tendangnhap"] = $tendangnhap;
+            $_SESSION["tendangnhapadmin"] = $tendangnhap;
+
             if (isset($_POST["rememberme"])) {
                 $remember = $_POST["rememberme"];
                 setcookie("tendangnhap", $tendangnhap, time() + 2592000);
@@ -52,6 +53,13 @@ class controlleradmin
             echo "<script>alert('Tài khoản hoặc mật khẩu không đúng')</script>";
             header('location:' . BASE_URL_ADMIN."controlleradmin/index");
         }
+    }
+
+    public function dangxuat()
+    {
+        session_unset();
+        session_destroy();
+        header('location:' . BASE_URL_ADMIN . "controlleradmin/index");
     }
 
 

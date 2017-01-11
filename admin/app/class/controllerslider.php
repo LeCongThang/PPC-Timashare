@@ -37,6 +37,8 @@ class controllerslider
 
     public function index()
     {
+        if (!isset($_SESSION['tendangnhapadmin']))
+            header('location:' . BASE_URL_ADMIN . "controlleradmin/index");
         $sliders = $this->controllerslider->getAll();
         require_once("app/view/slider.php");
     }

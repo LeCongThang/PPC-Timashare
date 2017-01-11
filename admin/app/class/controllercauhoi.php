@@ -22,6 +22,8 @@ class controllercauhoi
 
     public function index()
     {
+        if (!isset($_SESSION['tendangnhapadmin']))
+            header('location:' . BASE_URL_ADMIN . "controlleradmin/index");
         $ds_cau_hoi_vi = $this->controller_cauhoi->layDanhSachCauHoi("vi");
         $ds_cau_hoi_en = $this->controller_cauhoi->layDanhSachCauHoi("en");
         require_once("app/view/quanlycauhoi.php");

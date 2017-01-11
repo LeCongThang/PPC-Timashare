@@ -7,7 +7,7 @@
                 <img src="<?= BASE_DIR ?>img/1.png" class="img-circle" alt="User Image">
             </div>
             <div class="pull-left info">
-                <h4 style="margin-top:10px; font-weight: bold;"><?= $_SESSION['tendangnhap'] ?></h4>
+                <h4 style="margin-top:10px; font-weight: bold;"><?= $_SESSION['tentaikhoan'] ?></h4>
                 <!-- <a href="#"><i class="fa fa-circle text-success"></i> Online</a> -->
             </div>
         </div>
@@ -86,7 +86,7 @@
                 ],
                 [
                     'title' => 'LOG OUT',
-                    'url' => 'controlleradmin/index',
+                    'url' => 'controlleradmin/dangxuat',
                     'icon' => 'glyphicon glyphicon-log-out',
                 ]
             ],
