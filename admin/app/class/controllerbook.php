@@ -6,8 +6,10 @@
  * Date: 12/20/2016
  * Time: 1:59 PM
  */
+//begin class controller admin
 class controllerbook
 {
+    // begin variable declaration of the class
     public $bv;
     public $params;
     public $current_action;

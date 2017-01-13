@@ -1,6 +1,6 @@
 <?php include 'header.php'; ?>
     <!--phần container giới thiệu thứ 1-->
-    <section id="introduce">
+    <section id="introduce" xmlns="http://www.w3.org/1999/html">
         <div class="container">
             <div class="row text-left">
                 <div class="col-md-12 col-sm-12">
@@ -11,7 +11,7 @@
                     <img src="<?= BASE_URL ?><?= $gioithieu['img_tieude'] ?>" style="width:100%;">
                 </div>
                 <div class="col-md-6 col-sm-12">
-                    <h4><b><?= $gioithieu['tieu_de'] ?></b></h4>
+                    <h4 style="margin-top: 0px"><b><?= $gioithieu['tieu_de'] ?></b></h4>
                     <hr class="text-left" style="width:50px;border:2px solid #362516;margin-left:0px;">
                     <br>
                     <p id="van_ban"> <?= $gioithieu['noidung_gioithieu'] ?></p>
@@ -52,22 +52,18 @@
             <div class="col-md-12 col-sm-12">
                 <h3><b>{TitleActivitiesOfTimeShare}</b></h3>
                 <hr class="text-left" style="width:150px;border:2px solid #362516;">
-
                 <p id="van_ban"><b>{ContentActivitiesOfTimeShare}</b></p>
-
             </div>
         </div>
         <!--row so 2-->
         <div class="row space">
-
             <div class="col-md-12 col-sm-12">
                 <hr class="text-left" style="width:50px;border:2px solid #362516;margin-left:0px;">
                 <h3><b>{InternationalCorporation}</b></h3>
             </div>
             <div class="col-md-6 col-sm-12" id="banner_5">
-
-                <h4><b>1.{InternationalCorporation1}</b></h4>
-                <h5><b>{TTInternationalCorporation1}</b></h5>
+                <h4><b>1. {InternationalCorporation1}</b></h4>
+                <h5><b style="color: #6B0706; font-weight: bold">{TTInternationalCorporation1}</b></h5>
                 <div id="van_ban">
                     <p>{CTInternationalCorporation11}</p>
                     <p{TTInternationalCorporation12}</p>
@@ -80,32 +76,33 @@
         </div>
         <!--row so 2-->
         <div class="row space text-center">
-            <h3><b>{ExchangeEasier}</b></h3>
+            <h3><b style="color: #6B0706">{ExchangeEasier}</b></h3>
             <div class="col-md-4 col-sm-12" id="banner_5">
                 <!--<div class="media">-->
                 <img src="<?= BASE_URL ?>img/money.png" alt=""><br>
                 <br>
-                <h4>{TTInternationalCorporation2}</h4>
+                <h4 style="font-weight: bold">{TTInternationalCorporation2}</h4>
                 <div class="thongtin_so" style="text-align:justify;">
-                    <p id="van_ban">{CTInternationalCorporation2}<br><a href="#">{TimHieuThem}</a></p>
+                    <p id="van_ban">{CTInternationalCorporation2}<br><a href="#"><span class="link_tim_hieu">{TimHieuThem}</span></a>
+                    </p>
                 </div>
             </div>
             <!--so 1-->
             <div class="col-md-4 col-sm-12" id="banner_5">
                 <img src="<?= BASE_URL ?>img/coconut tree.png" alt=""> <br>
-                <br><h4>{TTInternationalCorporation3}</h4>
+                <br><h4 style="font-weight: bold">{TTInternationalCorporation3}</h4>
                 <div class="van_ban" style="text-align:justify;">
-                    <p id="van_ban">{CTInternationalCorporation3}<br> <a href="#">{TimHieuThem}</a></p>
+                    <p id="van_ban">{CTInternationalCorporation3}<br> <a href="#"><span class="link_tim_hieu">{TimHieuThem}</span></a>
+                    </p>
                 </div>
             </div>
             <!--so 2-->
             <div class="col-md-4 col-sm-12" id="banner_5">
                 <img src="<?= BASE_URL ?>img/check.png" alt="">
                 <br><br>
-                <h4>{TTInternationalCorporation4}</h4>
+                <h4 style="font-weight: bold">{TTInternationalCorporation4}</h4>
                 <div id="van_ban" style="text-align:justify;">
-                    <p>{CTInternationalCorporation4}<br><a href="#">{TimHieuThem}</a></p>
-
+                    <p>{CTInternationalCorporation4}<br></p>
                 </div>
             </div>
             <!--so 3-->
@@ -113,7 +110,7 @@
         <!-- phan tiep theo -->
         <div class="row space">
             <div class="col-md-12 col-sm-12" id="banner_5">
-                <h4><b>2.{InternationalCorporation2}</b></h4>
+                <h4><b>2. {InternationalCorporation2}</b></h4>
                 <!-- <h4>MẠNG LƯỚI KHU NGHĨ DƯỠNG PHONG PHÚ</h4> -->
                 <div id="van_ban">
                     <p>{ContentInternationalCorporation2}</p>
@@ -123,65 +120,87 @@
         </div>
         <section id="thamgia">
             <div class="row space">
-
                 <div class="col-md-12 col-sm-12">
                     <hr class="text-left" style="width:50px;border:2px solid #362516;margin-left:0px;">
-                    <h3>{ThamGia} PPC TIMESHARE</h3>
+                    <h3 style="font-weight: bold">{ThamGia} PPC TIMESHARE</h3>
                 </div>
-                <div class="col-md-6 col-sm-12" id="banner_5">
+                <div class="col-md-6 col-sm-12 thamgia" id="banner_5">
                     <div class="media">
                         <div class="media-left" id="banner_5">
-                            <?php echo "<img class='img-responsive' src='data:image/jpg;base64," . base64_encode($array_img[0]->getImageBlob()) . "' />"; ?>
+                            <div class='th'>
+                                <div class='caps'>
+                                    <p>
+                                        <a href="<?= $du_lieu_tham_gia['link_hinh_1'] ?>"><?= $du_lieu_tham_gia['label_hinh_1'] ?></a>
+                                    </p>
+                                </div>
+                                <?php echo "<img class='img-responsive' src='data:image/jpg;base64," . base64_encode($array_img[0]->getImageBlob()) . "' />"; ?>
+                            </div>
                         </div>
                         <div class="media-right" id="banner_5">
-                            <?php echo "<img class='img-responsive' src='data:image/jpg;base64," . base64_encode($array_img[1]->getImageBlob()) . "' />"; ?>
-
+                            <div class='th'>
+                                <div class='caps'>
+                                    <p>
+                                        <a href="<?= $du_lieu_tham_gia['link_hinh_2'] ?>"><?= $du_lieu_tham_gia['label_hinh_2'] ?></a>
+                                    </p>
+                                </div>
+                                <?php echo "<img class='img-responsive' src='data:image/jpg;base64," . base64_encode($array_img[1]->getImageBlob()) . "' />"; ?>
+                            </div>
                         </div>
                     </div>
                     <div class="media">
                         <div class="media-body" id="banner_5">
-                            <?php echo "<img class='img-responsive' src='data:image/jpg;base64," . base64_encode($array_img[2]->getImageBlob()) . "' />"; ?>
+                            <div class='th'>
+                                <div class='caps'>
+                                    <p>
+                                        <a href="<?= $du_lieu_tham_gia['link_hinh_3'] ?>"><?= $du_lieu_tham_gia['label_hinh_3'] ?></a>
+                                    </p>
+                                </div>
+                                <?php echo "<img class='img-responsive' src='data:image/jpg;base64," . base64_encode($array_img[2]->getImageBlob()) . "' />"; ?>
+                            </div>
                         </div>
                     </div>
                 </div>
-                <div class="col-md-6 col-sm-12" id="banner_5">
-                    <?php echo "<img class='img-responsive' src='data:image/jpg;base64," . base64_encode($array_img[3]->getImageBlob()) . "' />"; ?>
+                <div class="col-md-6 col-sm-12 thamgia" id="banner_5">
+                    <div class='th'>
+                        <div class='caps'>
+                            <p>
+                                <a href="<?= $du_lieu_tham_gia['link_hinh_4'] ?>"><?= $du_lieu_tham_gia['label_hinh_4'] ?></a>
+                            </p>
+                        </div>
+                        <?php echo "<img class='img-responsive' src='data:image/jpg;base64," . base64_encode($array_img[3]->getImageBlob()) . "' />"; ?>
+                    </div>
                 </div>
-                <div class="col-md-12 col-sm-12" id="banner_5">
-                    <?php echo "<img class='img-responsive' src='data:image/jpg;base64," . base64_encode($array_img[4]->getImageBlob()) . "' />"; ?>
+                <div class="col-md-12 col-sm-12 thamgia" id="banner_5">
+                    <div class='th'>
+                        <div class='caps'>
+                            <p>
+                                <a href="<?= $du_lieu_tham_gia['link_hinh_5'] ?>"><?= $du_lieu_tham_gia['label_hinh_5'] ?></a>
+                            </p>
+                        </div>
+                        <?php echo "<img class='img-responsive' src='data:image/jpg;base64," . base64_encode($array_img[4]->getImageBlob()) . "' />"; ?>
+                    </div>
                 </div>
             </div>
         </section>
         <!-- phan tiep theo -->
-
         <div class="row space">
             <section id="trogiup">
                 <div class="col-md-12 col-sm-12">
                     <hr class="text-left"
                         style="width:50px;border:2px solid #660000;margin-left:0px;margin-bottom:0px;">
                     <h3><b>{TroGiup}</b></h3>
-                    <a href="#" onclick="return false;" id="cauhoi" style="color:#660000;"><h4>{CauHoiThuongGap}</h4>
+                    <a href="#" onclick="return false;" class="trogiup" style="color:#660000;"><h4>
+                            {CauHoiThuongGap}</h4>
                     </a>
-                    <div id="cau_hoi_thuong_gap" style="display: none;">
+                    <div id="tro_giup" style="display: none;">
                         <ul>
                             <?php
                             foreach ($cau_hoi_thuong_gap as $key => $items_cau_hoi) {
-                                echo '<li><a href="#" onclick="return false;">' . $items_cau_hoi['cauhoi'] . '</a></li>';
+                                echo '<li class="cauhoi"><a class="test" href="#" onclick="return false;" ><span class="link_tim_hieu">' . $items_cau_hoi['cauhoi'] . '</span></a><ul class="cautraloi" style="display: none;" ><li><p><span style="text-align:justify;color:#660000;">' . $items_cau_hoi['cautraloi'] . '</span></p></li></ul></li>';
                             }
                             ?>
                         </ul>
                     </div>
-                    <!--                    <a href="#" id="cachsudung" onclick="return false;" style="color:#660000;"><h4>{CachSuDung} PPC-->
-                    <!--                            TIMESHARE</h4></a>-->
-                    <!--                    <div id="cach_su_dung" style="display: none;">-->
-                    <!--                        <ul>-->
-                    <!--                            <li>Tại sao tôi không đăng nhập được?</li>-->
-                    <!--                            <li>Tại sao tôi không đăng nhập được?</li>-->
-                    <!--                            <li>Tại sao tôi không đăng nhập được?</li>-->
-                    <!--                            <li>Tại sao tôi không đăng nhập được?</li>-->
-                    <!--                            <li>Tại sao tôi không đăng nhập được?</li>-->
-                    <!--                        </ul>-->
-                    <!--                    </div>-->
                 </div>
             </section>
             <section id="lienhe">
@@ -242,25 +261,27 @@
         <div class="row space">
             <div class="col-md-12 col-sm-12">
                 <hr class="text-left" style="width:70px;border:2px solid #660000;margin-left:0px;margin-bottom:0px;">
-                <h4>PPC TIMESHARE TV</h4>
+                <h3><b>PPC TIMESHARE TV</b></h3>
+                <br><br>
             </div>
+
             <?php
             foreach ($ds_video as $key => $item_video) {
                 if ($key == 0) {
                     echo ' <div class="col-md-7 col-sm-12">
-                    <iframe width="100%" height="380" src="' . $item_video['url_video'] . '">
+                    <iframe id="main_video" width="100%" height="380" src="' . $item_video['url_video'] . '">
                     </iframe>
                 </div>
                 <div class="col-md-5 col-sm-12">
-                    <h4 style="margin-top:-45px;">{VideoCuaChungToi}</h4>
+                    <h4 style="margin-top:-45px;"><b>{VideoCuaChungToi}</b></h4>
                     <hr style="width:100%;border:1px solid #362516;margin-left:0px;">';
                 } else {
                     echo '  <div class="media">
                         <div class="media-left" style="width: 20%;height: 10%">
-                            <img src="https://img.youtube.com/vi/' . substr($item_video['url_video'], 30) . '/0.jpg" style="width:100%;">
+                            <img src="https://img.youtube.com/vi/' . substr(trim($item_video['url_video']), 30) . '/0.jpg" style="width:100%;">
                         </div>
-                        <div class="media-left">
-                            <a href="#">' . $item_video['ten_video'] . '</a>
+                        <div class="media-left name-video video">
+                            <a href="#" data-value="' . $item_video['url_video'] . '"><span class="link_video">' . $item_video['ten_video'] . '</span></a>
                         </div>
                     </div>';
                 }

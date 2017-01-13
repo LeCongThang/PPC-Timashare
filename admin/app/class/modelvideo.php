@@ -37,7 +37,7 @@ class modelvideo
 
     public function update($id, $link, $noidung)
     {
-        $sql = "UPDATE video SET ten_video ='" . $noidung . "',url_video ='" . $link . "' WHERE id_video='" . $id . "'";
+        $sql = "UPDATE video SET ten_video ='" . $noidung . "',url_video ='" . trim($link) . "' WHERE id_video='" . $id . "'";
         $kq = $this->db->query($sql);
         return true;
     }

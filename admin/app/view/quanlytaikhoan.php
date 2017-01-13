@@ -85,10 +85,10 @@
                                         <table class="table">
                                             <thead>
                                             <tr>
-                                                <td>TÊN ĐĂNG NHẬP</td>
-                                                <td>HỌ TÊN</td>
-                                                <td>ĐỊA CHỈ</td>
-                                                <td>ĐIỆN THOẠI</td>
+                                                <td>Tên đăng nhập</td>
+                                                <td>Họ tên</td>
+                                                <td>Địa chỉ</td>
+                                                <td>Điện thoại</td>
 
                                                 <td></td>
                                                 <td></td>
@@ -140,9 +140,9 @@
                                     <div class="box-body">
                                         <table class="table">
                                             <tr>
-                                                <td>ĐIỆN THOẠI</td>
-                                                <td>EMAIL</td>
-                                                <td>TÌNH TRẠNG</td>
+                                                <td>Điện thoại</td>
+                                                <td>Email</td>
+                                                <td>Tình trạng</td>
                                                 <td style="width:10%;"></td>
                                                 <td></td>
                                             </tr>
@@ -189,10 +189,10 @@
                                     <div class="box-body">
                                         <table class="table">
                                             <tr>
-                                                <td>ĐIỆN THOẠI</td>
-                                                <td>EMAIL</td>
-                                                <td>NGƯỜI DUYỆT</td>
-                                                <td>GHI CHÚ</td>
+                                                <td>Điện thoại</td>
+                                                <td>Email</td>
+                                                <td>Người duyệt</td>
+                                                <td>Ghi chú</td>
                                                 <td style="width:10%;"></td>
                                                 <td></td>
                                             </tr>

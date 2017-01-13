@@ -8,7 +8,13 @@ class controllergioithieu
     public $params;
     public $current_action;
     public $cname = "controllergioithieu";
+    public $errors = [];
 
+    /**
+     * controllergioithieu constructor.
+     * @param $action
+     * @param $params
+     */
     function __construct($action, $params)
     {
         $this->controller_gioithieu = new modelgioithieu();
@@ -34,29 +40,35 @@ class controllergioithieu
         return null;
     }
 
-    public function index(){
+
+    /**
+     * @deprecated
+     */
+    public function index()
+    {
         if (!isset($_SESSION['tendangnhapadmin']))
             header('location:' . BASE_URL_ADMIN . "controlleradmin/index");
         $gioithieu_en = $this->controller_gioithieu->laygioithieu("en");
         $gioithieu_vi = $this->controller_gioithieu->laygioithieu("vi");
-        if($gioithieu_en !=null && $gioithieu_vi !=null){
+        if ($gioithieu_en != null && $gioithieu_vi != null) {
             require_once("app/view/gioithieu.php");
-        }
-        else{
+        } else {
             //Trang loi
         }
     }
 
     public function capnhatgioithieu()
     {
-
         if (count($_POST) > 0) {
             $hinh = $this->uploadHinh();
             $tieuDe_vi = $_POST['tieude_vi'];
             $noiDung_vi = $_POST['noidung_vi'];
             $tieuDe_en = $_POST['tieude_en'];
             $noiDung_en = $_POST['noidung_en'];
-            $this->controller_gioithieu->update($tieuDe_vi, $noiDung_vi, $tieuDe_en, $noiDung_en, $hinh);
+            if($this->controller_gioithieu->update($tieuDe_vi, $noiDung_vi, $tieuDe_en, $noiDung_en, $hinh))
+                $this->errors[] = 'Cập nhật thông tin thành công';
+            else
+                $this->errors[] = 'Lỗi! Cập nhật không thành công';
         }
         $this->index();
     }

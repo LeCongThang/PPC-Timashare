@@ -1,4 +1,4 @@
-<div class="container" >
+<div class="container">
     <footer>
         <div class="container-fluid">
             <div class="row">
@@ -28,119 +28,35 @@
 
 <script type="text/javascript">
     $(document).ready(function () {
-        $('#cauhoi').click(function () {
-            $("#cau_hoi_thuong_gap").toggle();
+
+        $("[rel='tooltip']").tooltip();
+
+        $('.th').hover(
+            function () {
+                $(this).find('.caps').slideDown(250); //.fadeIn(250)
+            },
+            function () {
+                $(this).find('.caps').slideUp(250); //.fadeOut(205)
+            }
+        );
+        $('.trogiup').click(function () {
+            $("#tro_giup").toggle();
         });
-        $('#cachsudung').click(function () {
-            $("#cach_su_dung").toggle();
+        $('.cauhoi a.test').on("click", function (e) {
+            $(this).next('ul').toggle();
+            e.stopPropagation();
+            e.preventDefault();
         });
+        $('div.video a').on("click", function (e) {
+            e.preventDefault();
+            data = $(this).data("value");
+            $('#main_video').attr('src', data);
+            e.preventDefault();
+        });
+
         var mainModal;
-        var modalThemKND = document.getElementById('ModalThemKND');
-        var modalXemThongTin = document.getElementById('ModalXemThongTin');
         var modaldoimatkhau = document.getElementById('ModalDoiMatKhau');
-        var ModalBookNow = document.getElementById('ModalBookNow');
 
-
-//        $('#btn_gui').click(function () {
-//            tencongty = $('#ten').val();
-//            dienthoaicongty = $('#dienthoaicongty').val();
-//            emailcongty = $('#email').val();
-//            loiguilh = 0;
-//
-//            if (tencongty == "" || dienthoaicongty == "" || emailcongty == "") {
-//                $('#thongbaoguilh').text("Hãy nhập đầy đủ thông tin liên hệ");
-//                loiguilh++;
-//            }
-//
-//            if (loiguilh != 0) {
-//                return false;
-//            }
-//            return true;
-//        });
-
-//        $('#btnQuenMatKhau').click(function () {
-//            tendangnhapll = $('#tendangnhapll').val();
-//            sodienthoaitaikhoanll = $('#sodienthoaitaikhoanll').val();
-//            loiguiqmk = 0;
-//            if (isNaN(sodienthoaitaikhoanll)) {
-//                loiguiqmk++;
-//                $('#thongbaoQuenMatKhau').text("Điện thoại phải là số");
-//            }
-//            if (tendangnhapll == "" || sodienthoaitaikhoanll == "") {
-//                $('#thongbaoQuenMatKhau').text("Hãy nhập đầy đủ thông tin");
-//                loiguiqmk++;
-//            }
-//            if (loiguiqmk != 0) {
-//                return false;
-//            }
-//            return true;
-//        });
-
-//        $('#btn_dangnhap').click(function () {
-//            tendangnhap = $('#username').val();
-//            matkhau = $('#password').val();
-//            if (tendangnhap == "" || matkhau == "") {
-//                $('#thongbaodn').text("Hãy nhập đầy đủ thông tin");
-//                return false;
-//            }
-//            return true;
-//        });
-
-//        $('#doimatkhau').click(function () {
-//            matkhaucu = $('#matkhaucu').val();
-//            matkhaumoi = $('#matkhaumoi').val();
-//            nhaplaimatkhaumoi = $('#nhaplaimatkhaumoi').val();
-//            loi = 0;
-//            if (matkhaucu == "" || matkhaumoi == "") {
-//                loi++;
-//                $('#thongbaodoimatkhau').text("Hãy nhập đầy đủ thông tin");
-//            }
-//            else {
-//                if (matkhaumoi != nhaplaimatkhaumoi) {
-//                    loi++;
-//                    $('#thongbaodoimatkhau').text("Mật khẩu nhập lại không trùng khớp");
-//                }
-//            }
-//            if (loi != 0) {
-//                return false;
-//            }
-//            return true;
-//        });
-
-        $('#btnThem').click(function (e) {
-            e.preventDefault();
-            var diachixemthongtin = "/ppctimeshare/controller/layDanhSachLoaiDichVu/";
-            $.ajax({
-                url: diachixemthongtin, cache: false,
-                success: function (dulieuxemthongtin) {
-                    //$("#themkhunghiduong").html(dulieuxemthongtin);
-                    mainModal = modalThemKND;
-                    mainModal.style.display = "block";
-                }
-            })
-            e.preventDefault();
-            return true;
-        });
-        $('#hrefXemThongTin').click(function (e) {
-            e.preventDefault();
-            if (<?php echo isset($_SESSION['tendangnhap']) ? 'true' : 'false'; ?>) {
-                var diachixemthongtin = "/ppctimeshare/controller/xemthongtincanhan/";
-                $.ajax({
-                    url: diachixemthongtin, cache: false,
-                    success: function (dulieuxemthongtin) {
-                        //$("#thongtincanhan").html(dulieuxemthongtin);
-                        mainModal = modalXemThongTin
-                        mainModal.style.display = "block";
-                    }
-                });
-            }
-            else {
-                alert('Mời bạn đăng nhập trước khi book khu nghỉ dưỡng');
-            }
-            $('#thongbaodoimatkhau').text("");
-            e.preventDefault();
-            return false;
-        });
 
         $('#hrefDoiMatKhau').click(function (e) {
             e.preventDefault();
@@ -150,8 +66,6 @@
             e.preventDefault();
             return false;
         });
-
-
 
         window.onclick = function (event) {
             if (event.target == mainModal) {
@@ -166,20 +80,10 @@
         $('#btn_thoatdangkyknd').click(function () {
             mainModal.style.display = "none";
         });
-
-        $('#btnHuyThongTin').click(function (e) {
-            mainModal.style.display = "none";
-        });
-
-        $('#btnThoatThemKND').click(function (e) {
-            mainModal.style.display = "none";
-        });
-
     });
 </script>
 <script type="text/javascript">
     $(document).ready(function () {
-
         $(".dropdown img.flag").addClass("flagvisibility");
 
         $(".dropdown dt a").click(function () {
@@ -200,10 +104,13 @@
         var modalquenmatkhau = document.getElementById('ModalQuenMatKhau');
         var btn = document.getElementById('btnDangNhap');
 
-        btn.onclick = function () {
-            mainModal = modal;
-            mainModal.style.display = "block";
-            $('#thongbaodn').text("");
+        if (btn != null) {
+            btn.onclick = function () {
+                mainModal = modal;
+                mainModal.style.display = "block";
+                $('#thongbaodn').text("");
+                return true;
+            }
         }
 
 
@@ -260,17 +167,7 @@
         $('#btnThoatQuenMatKhau').click(function () {
             mainModal.style.display = "none";
         });
-
-        $('#btn_thoatdangkyknd').click(function () {
-            mainModal.style.display = "none";
-        });
-
-
     });
-</script>
-
-<script type="text/javascript">
-
 </script>
 </body>
 </html>

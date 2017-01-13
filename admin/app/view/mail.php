@@ -53,6 +53,9 @@
                         <div class="box-header with-border">
                             <h3 class="box-title">Hộp thư đến</h3>
                         </div>
+                        <?php foreach ($this->errors as $error): ?>
+                            <div class="alert alert-danger" role="alert"><?= $error ?></div>
+                        <?php endforeach; ?>
                         <!-- /.box-header -->
                         <div class="bs-example bs-example-tabs" data-example-id="togglable-tabs">
                             <ul class="nav nav-tabs" id="myTabs" role="tablist">
@@ -88,14 +91,14 @@
                                                     <tr>
                                                         <!--                                                <td><input type="checkbox" nam></td>-->
                                                         <td class="mailbox-name"><a
-                                                                href="<?= BASE_URL_ADMIN ?>controllermail/xemmail/<?php echo $item_mail['email_lienhe']; ?> "><?php echo $item_mail['ten_lienhe']; ?></a>
+                                                                href="<?= BASE_URL_ADMIN ?>controllermail/xemmail/<?php echo $item_mail['id']; ?> "><?php echo $item_mail['ten_lienhe']; ?></a>
                                                         </td>
                                                         <td class="mailbox-subject">
                                                             <b><?php echo $item_mail['email_lienhe']; ?></b>
                                                         </td>
                                                         <td class="mailbox-attachment"><?php echo $item_mail['sdt_lienhe']; ?></td>
                                                         <td class="mailbox-date"><a
-                                                                href="<?= BASE_URL_ADMIN ?>controllermail/delete/<?php echo $item_mail['email_lienhe']; ?> ">
+                                                                href="<?= BASE_URL_ADMIN ?>controllermail/delete/<?php echo $item_mail['id']; ?> ">
                                                                 <button class="btn btn-info"><i
                                                                         class="glyphicon glyphicon-trash"></i></button>
                                                             </a></td>
@@ -121,6 +124,7 @@
                                                     <th>Tên công ty</th>
                                                     <th>Địa chỉ email</th>
                                                     <th>Số điện thoại</th>
+                                                    <th>Người duyệt</th>
                                                     <th></th>
                                                 </tr>
                                                 </thead>
@@ -131,14 +135,17 @@
                                                     <tr>
                                                         <!--                                                <td><input type="checkbox" nam></td>-->
                                                         <td class="mailbox-name"><a
-                                                                href="<?= BASE_URL_ADMIN ?>controllermail/xemmail/<?php echo $item_mail['email_lienhe']; ?> "><?php echo $item_mail['ten_lienhe']; ?></a>
+                                                                href="<?= BASE_URL_ADMIN ?>controllermail/xemMailDaKiemTra/<?php echo $item_mail['id']; ?> "><?php echo $item_mail['ten_lienhe']; ?></a>
                                                         </td>
                                                         <td class="mailbox-subject">
                                                             <b><?php echo $item_mail['email_lienhe']; ?></b>
                                                         </td>
                                                         <td class="mailbox-attachment"><?php echo $item_mail['sdt_lienhe']; ?></td>
+                                                        <td class="mailbox-subject">
+                                                            <b><?php echo $item_mail['nguoi_duyet']; ?></b>
+                                                        </td>
                                                         <td class="mailbox-date"><a
-                                                                href="<?= BASE_URL_ADMIN ?>controllermail/delete/<?php echo $item_mail['email_lienhe']; ?> ">
+                                                                href="<?= BASE_URL_ADMIN ?>controllermail/delete/<?php echo $item_mail['id']; ?> ">
                                                                 <button class="btn btn-info"><i
                                                                         class="glyphicon glyphicon-trash"></i></button>
                                                             </a></td>

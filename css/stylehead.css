@@ -6,6 +6,8 @@ body {
     margin-bottom: 400px;
     text-align: justify;
     margin-left: -300px;
+    padding-top: 20px;
+    padding-bottom: 20px;
     background-color: rgba(249, 252, 233, 0.5);
 }
 
@@ -20,6 +22,15 @@ body {
     color: white;
     font-weight: bold;
 }
+
+.thamgia a{
+    font-weight: bold;
+    text-decoration: none;
+    outline: none;
+    color: white;
+    font-weight: bold;
+}
+
 
 .dropdown a:hover {
     color: #5d4617;
@@ -88,9 +99,14 @@ body {
     margin-top: 15px;
 }
 
-.myh3h4 {
+.myh4 {
     margin-left: 200px;
     color: #362516;
+}
+.myh3 {
+    margin-left: 200px;
+    color: #362516;
+    font-weight: bolder;
 }
 
 img.pic {
@@ -120,10 +136,10 @@ img.pic {
     padding-top: 15px;
 }
 
-@media screen and (min-width: 768px) {
     .navbar {
         position: absolute;
     }
+
 
     .navbar-brand-centered {
         position: absolute;
@@ -174,7 +190,7 @@ img.pic {
     }
 
     #btnXinChao {
-
+        background-color: #FAF9DB;
         margin-top: 10px;
         margin-left: 25px;
         font-weight: bold;
@@ -195,13 +211,13 @@ img.pic {
         box-shadow: 0 5px 5px 0 #888888;
     }
 
-    #row h5 {
-        font-weight: bold !important;
+    #row h6 {
+        font-weight: bolder !important;
         color: #8B4726;
     }
 
-    #row h4 {
-        font-weight: bold !important;
+    #row h5 {
+        font-weight: bolder !important;
         color: #8B4726;
     }
 

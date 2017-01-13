@@ -136,6 +136,7 @@ class model
         if ($kq->num_rows == 0)
             return false;
         $row = $kq->fetch_assoc();
+        $_SESSION["tentaikhoannguoidung"] = $row['hoten'];
         return true;
     }// xulydangnhap
 

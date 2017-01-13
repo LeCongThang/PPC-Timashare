@@ -57,8 +57,13 @@ class controllerslider
                 $tieu_de_en = $_POST['tieude_en'];
                 $noi_dung_en = $_POST['noidung_en'];
                 $mo_ta_en = $_POST['mota_en'];
-                $this->controllerslider->create($tieu_de_vi, $noi_dung_vi, $mo_ta_vi, $tieu_de_en, $noi_dung_en, $mo_ta_en, $duong_dan, $hinh);
-                //redirect(BASE_URL . $_SESSION['lang'] . '/controllerslider/index');
+                if($this->controllerslider->create($tieu_de_vi, $noi_dung_vi, $mo_ta_vi, $tieu_de_en, $noi_dung_en, $mo_ta_en, $duong_dan, $hinh))
+                    $this->errors[] = 'Tạo slider thành công!';
+                else
+                    $this->errors[] = 'Lỗi! Tạo slider không thành công!';
+                $sliders = $this->controllerslider->getAll();
+                require_once("app/view/slider.php");
+                return true;
             } else {
                 $this->errors[] = 'Vui lòng chọn hình ảnh!';
             }
@@ -82,12 +87,18 @@ class controllerslider
             $tieu_de_en = $_POST['tieude_en'];
             $noi_dung_en = $_POST['noidung_en'];
             $mo_ta_en = $_POST['mota_en'];
-            $this->controllerslider->update($id, $tieu_de_vi, $noi_dung_vi, $mo_ta_vi, $tieu_de_en, $noi_dung_en, $mo_ta_en, $duong_dan, $hinh);
-            redirect(BASE_URL_ADMIN. 'controllerslider/index');
+            if ($this->controllerslider->update($id, $tieu_de_vi, $noi_dung_vi, $mo_ta_vi, $tieu_de_en, $noi_dung_en, $mo_ta_en, $duong_dan, $hinh))
+                $this->errors[] = 'Cập nhật slider thành công!';
+            else
+                $this->errors[] = 'Lỗi! Cập nhật slider không thành công!';
+            $sliders = $this->controllerslider->getAll();
+            require_once("app/view/slider.php");
+            return true;
         }
         $data_vi = $this->controllerslider->get($id,"vi");
         $data_en = $this->controllerslider->get($id,"en");
         require_once("app/view/create-slider.php");
+        return true;
     }
 
     public function delete()
@@ -95,7 +106,12 @@ class controllerslider
         if (!isset($this->params[0])) {
             redirect(BASE_URL_ADMIN. 'controllerslider/index');
         }
-        $this->controllerslider->delete($this->params[0]);
-        redirect(BASE_URL_ADMIN. 'controllerslider/index');
+        if($this->controllerslider->delete($this->params[0]))
+            $this->errors[] = 'Xóa slider thành công!';
+        else
+            $this->errors[] = 'Lỗi! Xóa slider không thành công!';
+        $sliders = $this->controllerslider->getAll();
+        require_once("app/view/slider.php");
+        return true;
     }
 }//class

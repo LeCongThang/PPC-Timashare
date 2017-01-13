@@ -83,7 +83,8 @@
                                             </div>
                                         </div>
                                         <div class="col-md-1 col-sm-12" style="margin-top: 25px">
-                                            <button type="submit" class="btn btn-info" name="submit">Cập nhật</button>
+                                            <button type="submit" class="btn btn-primary" name="submit">Cập nhật
+                                            </button>
                                         </div>
                                     </div>
                                 </form>

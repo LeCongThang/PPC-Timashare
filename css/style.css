@@ -24,12 +24,12 @@ body {
 }
 
 h2 {
-    color: white;
     font-family: Arial, Helvetica, sans-serif;
     text-align: justify;
     /*padding-top: 10px;*/
     /*letter-spacing: 1px;*/
     font-weight: bold;
+    padding-bottom: 10px;
 }
 
 #conten_banner {
@@ -40,6 +40,11 @@ h2 {
     /*letter-spacing: 1px;*/
     font-weight: bold;
     font-size: 13px;
+}
+
+#conten_banner > h4 > b {
+    color: #FFFCD5;
+
 }
 
 #conten_banner2 {
@@ -87,25 +92,21 @@ h2 {
     background-color: rgba(0, 0, 0, 0.4); /* Black w/ opacity */
 }
 
-
-
-
-
 /* Modal Content */
 .modal-content {
     background-color: #fefefe;
     right: 0;
-    margin :auto;
+    margin: auto;
 
     padding: 5px;
     border: 1px solid #888;
     width: 40%;
 }
 
-#model-content-dn{
+#model-content-dn {
     background-color: #fefefe;
     right: 0;
-    margin :auto;
+    margin: auto;
     padding: 15px;
     border: 1px solid #888;
     width: 60%;
@@ -114,16 +115,16 @@ h2 {
 /* The Close Button */
 
 #cbNhoMatKhau {
-    background-color:transparent;
+    background-color: transparent;
     border: none;
 }
 
-.btnUser{
-    background-color:transparent;
+.btnUser {
+    background-color: transparent;
     border: none;
 }
 
-#btn_gui{
+#btn_gui {
     background-color: #8B4726;
     border-color: #8B4726;
     text-align: center;
@@ -131,9 +132,55 @@ h2 {
     color: white;
 }
 
-.btnThamGia{
+.btnThamGia {
     margin: 5px;
-    text-align: center!important;
+    text-align: center !important;
     font-weight: bold;
 }
 
+.cautraloi {
+    list-style: none;
+    text-align: justify;
+}
+
+.name-video > a:link {
+    font-size: large;
+    font-weight: bold;
+    color: #362516 !important;
+    text-decoration: none;
+}
+
+.name-video > a:visited {
+    text-decoration: none;
+}
+
+.name-video > a:hover {
+    text-decoration: underline;
+}
+
+.name-video > a:active {
+    text-decoration: underline;
+}
+
+.caption {
+    font-weight: bolder;
+    text-align: justify;
+    padding-bottom: 20px;
+}
+
+.caps > p > a {
+    font-size: medium;
+}
+
+.link_video {
+    color: #362516 !important;
+}
+
+.link_tim_hieu {
+    color: #6B0706;
+}
+
+.indi {
+    margin-left: 5px !important;
+    margin-right: 5px !important;
+}

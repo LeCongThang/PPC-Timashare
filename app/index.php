@@ -26,6 +26,7 @@ $str = ob_get_clean();
 $str = str_replace("{TrangChu}", TrangChu, $str);
 $str = str_replace("{GioiThieu}", GioiThieu, $str);
 $str = str_replace("{KhuNghiDuong}", KhuNghiDuong, $str);
+$str = str_replace("{KhuNghiDuong2}", KhuNghiDuong2, $str);
 $str = str_replace("{ThamGia}", ThamGia, $str);
 $str = str_replace("{TroGiup}", TroGiup, $str);
 $str = str_replace("{LienHe}", LienHe, $str);

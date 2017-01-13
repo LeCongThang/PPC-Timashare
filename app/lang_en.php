@@ -2,6 +2,7 @@
 define("TrangChu","HOME PAGE");
 define("GioiThieu","INTRODUCE");
 define("KhuNghiDuong","RESORT");
+define("KhuNghiDuong2","Resort");
 define("ThamGia","PARTICIPATE");
 define("TroGiup","HELP");
 define("LienHe","CONTACT");

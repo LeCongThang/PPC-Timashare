@@ -50,10 +50,13 @@
         <!-- Main content -->
         <section class="content">
             <div class="row">
-                <form action="<?=BASE_URL_ADMIN?>controllergioithieu/capnhatgioithieu" method="POST"
+                <form action="<?= BASE_URL_ADMIN ?>controllergioithieu/capnhatgioithieu" method="POST"
                       enctype="multipart/form-data">
                     <div class="col-md-12">
                         <div class="box box-primary">
+                            <?php foreach ($this->errors as $error): ?>
+                                <div class="alert alert-danger" role="alert"><?= $error ?></div>
+                            <?php endforeach; ?>
                             <div class="box-header with-border text-center">
                                 <?php if ($gioithieu_vi['img_tieude']): ?>
                                     <img id="blah" src="<?= BASE_DIR . $gioithieu_vi['img_tieude'] ?>"
@@ -93,7 +96,8 @@
                                                        style="font-size:17px;font-family:verdana;text-align:justify;">
                                             </div>
                                             <div class="form-group">
-                                    <textarea name="noidung_vi" class="ckeditor" id="noidung_en" cols="30" rows="10" title="">
+                                    <textarea name="noidung_vi" class="ckeditor" id="noidung_en" cols="30" rows="10"
+                                              title="">
                                         <?php echo $gioithieu_vi['noidung_gioithieu']; ?>
                                     </textarea>
                                             </div>
@@ -188,7 +192,7 @@
         }
     }
 
-    $("#imgInp").change(function(){
+    $("#imgInp").change(function () {
         readURL(this);
     });
 </script>

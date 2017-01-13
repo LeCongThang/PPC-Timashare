@@ -20,7 +20,8 @@ class modeltaikhoan
         }
     }
 
-    public  function laydanhsachtaikhoan(){
+    public function laydanhsachtaikhoan()
+    {
         $sql = "SELECT * FROM taikhoan WHERE id_vaitro = 1";
         $result = mysqli_query($this->db, $sql);
         if (!$result) {
@@ -35,7 +36,8 @@ class modeltaikhoan
         return $list;
     }
 
-    public  function laydanhsachtaikhoandk(){
+    public function laydanhsachtaikhoandk()
+    {
         $sql = "SELECT * FROM taikhoandangky WHERE trangthai_taikhoandk = 1";
         $result = mysqli_query($this->db, $sql);
         if (!$result) {
@@ -49,7 +51,9 @@ class modeltaikhoan
         mysqli_free_result($result);
         return $list;
     }
-    public  function laydanhsachtaikhoandk_daduyet(){
+
+    public function laydanhsachtaikhoandk_daduyet()
+    {
         $sql = "SELECT * FROM taikhoandangky WHERE trangthai_taikhoandk = 0";
         $result = mysqli_query($this->db, $sql);
         if (!$result) {
@@ -80,8 +84,7 @@ class modeltaikhoan
 
     public function update($user, $pass, $hoten, $diachi, $sodienthoai, $vaitro)
     {
-        $sql = "UPDATE taikhoan SET tendangnhap='$user',matkhau='$pass',id_vaitro='$vaitro',hoten='$hoten',
-diachi='$diachi',dienthoai=$sodienthoai WHERE tendangnhap='$user'";
+        $sql = "UPDATE taikhoan SET tendangnhap='$user',matkhau='$pass',id_vaitro='$vaitro',hoten='$hoten', diachi='$diachi',dienthoai=$sodienthoai WHERE tendangnhap='$user'";
         $kq = $this->db->query($sql);
         return true;
     }
@@ -102,14 +105,17 @@ diachi='$diachi',dienthoai=$sodienthoai WHERE tendangnhap='$user'";
 
     public function capnhatthongtintk($tendangnhap, $matkhau, $hoten, $diachi, $sodienthoai)
     {
-        $sql = "UPDATE taikhoan SET hoten='" . $hoten . "', matkhau ='". md5($matkhau)."', diachi='" . $diachi . "', dienthoai='" . $sodienthoai . "' WHERE tendangnhap = '" . $tendangnhap . "'";
+        $sql = "UPDATE taikhoan SET hoten='" . $hoten . "', matkhau ='" . md5($matkhau) . "', diachi='" . $diachi . "', dienthoai='" . $sodienthoai . "' WHERE tendangnhap = '" . $tendangnhap . "'";
         return mysqli_query($this->db, $sql);
     }
 
-    public function capNhatTaiKhoanDangKy($tendangnhap){
-        $sql = "UPDATE taikhoandangky SET trangthai_taikhoandk = 0, nguoiduyet_taikhoandk = '".$_SESSION['tendangnhapadmin']."' WHERE email_taikhoandk ='".$tendangnhap."'";
+    public function capNhatTaiKhoanDangKy($tendangnhap)
+    {
+        $sql = "UPDATE taikhoandangky SET trangthai_taikhoandk = 0, nguoiduyet_taikhoandk = '" . $_SESSION['tendangnhapadmin'] . "' WHERE email_taikhoandk ='" . $tendangnhap . "'";
         return mysqli_query($this->db, $sql);
     }
+
+
 
 }//class
 

@@ -6,8 +6,8 @@
     <meta name="viewport" content="width=device-width, initial-scale=1">
     <base href="<?= BASE_DIR ?>">
     <link href="<?= BASE_DIR ?>css/style.css" rel="stylesheet" type="text/css">
-
     <!-- Latest compiled and minified CSS -->
+    <link rel="stylesheet" type="text/css" href="<?= BASE_DIR ?>css/stylehover.css">
     <link rel="stylesheet" type="text/css" href="<?= BASE_DIR ?>css/style.css">
     <link rel="stylesheet" type="text/css" href="<?= BASE_DIR ?>css/responsive.css">
     <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css"
@@ -18,8 +18,6 @@
     <link rel="stylesheet" type="text/css" href="<?= BASE_DIR ?>css/stylehead.css">
     <!-- Latest compiled and minified JavaScript -->
 
-    <link rel="stylesheet" href="<?= BASE_DIR ?>bootstrapdatetimepicker/css/bootstrap.min.css"/>
-    <link rel="stylesheet" href="<?= BASE_DIR ?>bootstrapdatetimepicker/css/bootstrap.css"/>
 </head>
 <body>
 <div class="container">
@@ -79,14 +77,14 @@
                     <li>
                         <?php
                         if (!isset($_SESSION['tendangnhap']))
-                            echo '<button class="btn btn-sucessful" id="btnDangNhap" style="border-radius:0px;margin-top:10px;" id="btnDangNhap" type="button">{DangNhapDangKy}</button>';
+                            echo '<button class="btn btn-sucessful" style="border-radius:0px;margin-top:10px;" id="btnDangNhap" type="button">{DangNhapDangKy}</button>';
                         else {
-                            echo '<div class="dropdown btnUser"> <button id="btnXinChao" class="btn btn-primary dropdown-toggle" type="button" data-toggle="dropdown">' . XinChao . $_SESSION['tendangnhap'];
-                            echo '<span class="caret"></span></button><ul style="background-color:#265a88" class="dropdown-menu">';
+                            echo '<div class="dropdown btnUser"> <button id="btnXinChao"   class="btn btn-sucessful dropdown-toggle" type="button" data-toggle="dropdown">' . XinChao . $_SESSION['tentaikhoannguoidung'];
+                            echo ' <span class="caret"></span></button><ul  style="background-color: #FAF9DB" class="dropdown-menu">';
                             //echo '<li><a href ="#" id="hrefXemThongTin" >Xem thông tin cá nhân</a></li>';
-                            echo "<li><a href ='#' id='hrefDoiMatKhau'>" . DoiMatKhau . "</a></li>";
+                            echo "<li><a href ='#' id='hrefDoiMatKhau'><span style='color: #333'>" . DoiMatKhau . "</span></a></li>";
                             echo '<li><a href = "#"></a></li>';
-                            echo '<li><a href ="' . BASE_URL . $_SESSION['lang'] . '/controller/dangxuat" >' . Thoat . '</a></li>';
+                            echo '<li><a href ="' . BASE_URL . $_SESSION['lang'] . '/controller/dangxuat" ><span style="color: #333">' . Thoat . '</a></span></li>';
                             echo '</ul></div>';
                         }
                         ?>
@@ -124,8 +122,8 @@
                 echo '</div>';
                 if ($itemSlider['tieude_slider'] != "" || $itemSlider['mota_slider'] != "") {
                     echo '<div class="carousel-caption"><div class = "row"> <div class="col-md offset-4 col-md-8 bannerDecription">';
-                    echo '<h3 class = "myh3h4">' . $itemSlider['tieude_slider'] . '</h3>';
-                    echo '<h4 class = "myh3h4">' . $itemSlider['mota_slider'] . '</h4>';
+                    echo '<h3 class = "myh3">' . $itemSlider['tieude_slider'] . '</h3>';
+                    echo '<h4 class = "myh4">' . $itemSlider['mota_slider'] . '</h4>';
                     echo '</div></div>';
                 } else {
                     echo '<div class="carousel-caption"><div class = "row"> <div class="col-md offset-4 col-md-8">';
@@ -153,7 +151,7 @@
                 <?php
                 foreach ($dsKhuNghiDuongBanner as $key => $khuNghiDuongBanner) {
                     echo '<div class="col-sm-12 col-sm-3"> <div class="thumbnail"><img src="' . BASE_DIR . $khuNghiDuongBanner['link'] . '">';
-                    echo ' <div class="caption"><h5>' ?>{KhuNghiDuong}<?php echo '</h5><h4>' . $khuNghiDuongBanner['ten'] . '</h4><p>' . $khuNghiDuongBanner['thongtin'] . '</p>';
+                    echo ' <div class="caption"><h6>' ?>{KhuNghiDuong2}<?php echo '</h6><h5>' . $khuNghiDuongBanner['ten'] . '</h5><p>' . $khuNghiDuongBanner['thongtin'] . '</p>';
                     echo '<a href="' . BASE_URL . $_SESSION['lang'] . '/controller/xemChiTietKhuNghiDuong/' . $khuNghiDuongBanner['id'] . '" class="btn btn-default" id="btnreadmore">' ?>{TimHieuThem}<?php echo '</a></div></div></div>';
                 }
                 ?>

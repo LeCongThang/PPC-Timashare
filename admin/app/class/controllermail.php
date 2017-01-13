@@ -36,6 +36,13 @@ class controllermail
         require "app/view/readmail.php";
     }
 
+    public function xemMailDaKiemTra()
+    {
+        $readmail = $this->params[0];
+        $mail = $this->controllermail->read($readmail);
+        require "app/view/readmailchecked.php";
+    }
+
     public function delete()
     {
         $user = $this->params[0];
@@ -43,7 +50,8 @@ class controllermail
         $this->index();
     }
 
-    public function index(){
+    public function index()
+    {
         if (!isset($_SESSION['tendangnhapadmin']))
             header('location:' . BASE_URL_ADMIN . "controlleradmin/index");
         $ds_mail = $this->controllermail->laydanhsachmail();
@@ -51,9 +59,15 @@ class controllermail
         require "app/view/mail.php";
     }
 
-    public function update(){
+    public function update()
+    {
         $user = $this->params[0];
-        $this->controllermail->update($user);
-        $this->index();
+        if ($this->controllermail->update($user))
+            $errors[] = "Duyệt thành công";
+        else
+            $errors[] = "Duyệt chưa thành công";
+        $ds_mail = $this->controllermail->laydanhsachmail();
+        $ds_mail_da_duyet = $this->controllermail->layDanhSachMailDaDuyet();
+        require "app/view/mail.php";
     }
 }

@@ -1,7 +1,8 @@
 <?php 
 define("TrangChu","TRANG CHỦ");
 define("GioiThieu","GIỚI THIỆU");
-define("KhuNghiDuong","KHU NGHĨ DƯỠNG");
+define("KhuNghiDuong","KHU NGHỈ DƯỠNG");
+define("KhuNghiDuong2","Khu nghỉ dưỡng");
 define("ThamGia","THAM GIA");
 define("TroGiup","TRỢ GIÚP");
 define("LienHe","LIÊN HỆ");

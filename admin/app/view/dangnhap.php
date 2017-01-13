@@ -28,6 +28,7 @@
         <h1 class="form-signin-heading text-muted">Đăng nhập</h1>
         <input type="text" class="form-control" placeholder="Tên đăng nhập" required="" autofocus="" name="username">
         <input type="password" class="form-control" placeholder="Mật khẩu" required="" name="password">
+
         <button class="btn btn-lg btn-primary btn-block" type="submit">
             Đăng nhập
         </button>

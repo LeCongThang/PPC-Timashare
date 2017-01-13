@@ -2,14 +2,8 @@
     <!-- sidebar: style can be found in sidebar.less -->
     <section class="sidebar">
         <!-- Sidebar user panel -->
-        <div class="user-panel">
-            <div class="pull-left image">
-                <img src="<?= BASE_DIR ?>img/1.png" class="img-circle" alt="User Image">
-            </div>
-            <div class="pull-left info">
-                <h4 style="margin-top:10px; font-weight: bold;"><?= $_SESSION['tentaikhoan'] ?></h4>
-                <!-- <a href="#"><i class="fa fa-circle text-success"></i> Online</a> -->
-            </div>
+        <div class="user-panel" style="color: white">
+            <h4 style="margin-top:10px; font-weight: bold;">Xin chào, <?= $_SESSION['tentaikhoan'] ?></h4>
         </div>
         <!-- search form -->
         <!--  <form action="#" method="get" class="sidebar-form">
@@ -35,6 +29,11 @@
                     'icon' => 'glyphicon-home',
                 ],
                 [
+                    'title' => 'THÔNG TIN CÁ NHÂN',
+                    'url' => 'controlleradmin/layThongTinAdmin',
+                    'icon' => 'glyphicon-info-sign',
+                ],
+                [
                     'title' => 'QUẢN LÝ ẢNH SLIDE',
                     'url' => 'controllerslider/index',
                     'icon' => 'glyphicon glyphicon-th-large',
@@ -44,18 +43,18 @@
                     'url' => 'controllergioithieu/index',
                     'icon' => 'glyphicon glyphicon-pencil',
                 ],
+//                [
+//                    'title' => 'KHU NGHỈ DƯỠNG',
+//                    'url' => 'controllernghiduong/nghiduong',
+//                    'icon' => 'glyphicon glyphicon-tree-deciduous',
+//                ],
+//                [
+//                    'title' => 'BOOK',
+//                    'url' => 'controllerbook/index',
+//                    'icon' => 'glyphicon glyphicon-globe',
+//                ],
                 [
-                    'title' => 'KHU NGHỈ DƯỠNG',
-                    'url' => 'controllernghiduong/nghiduong',
-                    'icon' => 'glyphicon glyphicon-tree-deciduous',
-                ],
-                [
-                    'title' => 'BOOK',
-                    'url' => 'controllerbook/index',
-                    'icon' => 'glyphicon glyphicon-globe',
-                ],
-                [
-                    'title' => 'MAIL BOX',
+                    'title' => 'QUẢN LÝ LIÊN HỆ',
                     'url' => 'controllermail/index',
                     'icon' => 'glyphicon glyphicon-envelope',
                 ],
@@ -79,11 +78,11 @@
                     'url' => 'controllercauhoi/index',
                     'icon' => 'glyphicon glyphicon-question-sign',
                 ],
-                [
-                    'title' => 'TRẠNG THÁI BOOK',
-                    'url' => 'controllertrangthai/trangthai',
-                    'icon' => 'glyphicon glyphicon-ok',
-                ],
+//                [
+//                    'title' => 'TRẠNG THÁI BOOK',
+//                    'url' => 'controllertrangthai/trangthai',
+//                    'icon' => 'glyphicon glyphicon-ok',
+//                ],
                 [
                     'title' => 'LOG OUT',
                     'url' => 'controlleradmin/dangxuat',

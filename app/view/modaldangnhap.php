@@ -21,11 +21,11 @@
                     <span class="input-group-addon"><i class="glyphicon glyphicon-lock"></i></span>
                     <?php
                     if (isset($_COOKIE["matkhau"]) && isset($_COOKIE["rememberme"]))
-                        echo' <input id="password" type="password" class="form-control" name="password"
-                           placeholder="'. '{Password}' . '" value="' . $_COOKIE["matkhau"] . '">';
+                        echo ' <input id="password" type="password" class="form-control" name="password"
+                           placeholder="' . '{Password}' . '" value="' . $_COOKIE["matkhau"] . '">';
                     else
                         echo ' <input id="password" type="password" class="form-control" name="password"
-                           placeholder="' . '{Password}'. '" value="">';
+                           placeholder="' . '{Password}' . '" value="">';
                     ?>
                 </div>
                 <div class="input-group" id="banner_5" style="margin-top: 10px">
@@ -45,7 +45,8 @@
                 <p><a href="" id="hrefquenmatkhau"><b>{ForgotPassword}</b></a></p>
                 <p><span style="color: red;" id="thongbaodn"></span></p>
                 <div class="modal-footer text-right">
-                    <button type="submit" id="btn_dangnhap" name="btn_submit" class="btn btn-default">{NutDangNhap}</button>
+                    <button type="submit" id="btn_dangnhap" name="btn_submit" class="btn btn-default">{NutDangNhap}
+                    </button>
                     <button type="button" id="btn_close" class="btn btn-default">{Thoat}</button>
 
                 </div>

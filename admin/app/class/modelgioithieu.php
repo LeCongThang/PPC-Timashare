@@ -21,15 +21,15 @@ class modelgioithieu
 
     public function update($tieude_vi, $noidung_vi, $tieude_en, $noidung_en, $hinh)
     {
+        $kq_hinh = 1;
         $sql_hinh = "UPDATE gioithieu SET ";
         if ($hinh != null) {
             $sql_hinh .= "img_tieude ='" . $hinh . "'";
+            $kq_hinh = $this->db->query($sql_hinh);
         }
 
         $sql_gioithieu_vi = "UPDATE gioithieu_ngonngu SET tieu_de = '" . $tieude_vi . "', noidung_gioithieu = '" . $noidung_vi . "' WHERE ngonngu = 'vi'";
         $sql_gioithieu_en = "UPDATE gioithieu_ngonngu SET tieu_de = '" . $tieude_en . "', noidung_gioithieu = '" . $noidung_en . "' WHERE ngonngu = 'en'";
-
-        $kq_hinh = $this->db->query($sql_hinh);
         $kq_gt_vi = $this->db->query($sql_gioithieu_vi);
         $kq_gt_en = $this->db->query($sql_gioithieu_en);
         if ($kq_hinh && $kq_gt_vi && $kq_gt_en)
