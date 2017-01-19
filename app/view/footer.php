@@ -29,16 +29,6 @@
 <script type="text/javascript">
     $(document).ready(function () {
 
-        $("[rel='tooltip']").tooltip();
-
-        $('.th').hover(
-            function () {
-                $(this).find('.caps').slideDown(250); //.fadeIn(250)
-            },
-            function () {
-                $(this).find('.caps').slideUp(250); //.fadeOut(205)
-            }
-        );
         $('.trogiup').click(function () {
             $("#tro_giup").toggle();
         });
@@ -47,12 +37,7 @@
             e.stopPropagation();
             e.preventDefault();
         });
-        $('div.video a').on("click", function (e) {
-            e.preventDefault();
-            data = $(this).data("value");
-            $('#main_video').attr('src', data);
-            e.preventDefault();
-        });
+
 
         var mainModal;
         var modaldoimatkhau = document.getElementById('ModalDoiMatKhau');

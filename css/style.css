@@ -177,10 +177,159 @@ h2 {
 }
 
 .link_tim_hieu {
-    color: #6B0706;
+    color: #333;
+}
+
+.noi_dung_link_tim_hieu {
+    color: #772221;
+    font-weight: bold;
+    text-align: justify;
 }
 
 .indi {
     margin-left: 5px !important;
     margin-right: 5px !important;
+}
+
+.banner_margin {
+    margin-right: 0px !important;
+}
+
+#img_top_img {
+    height: 270px;
+    width: 835px;
+    padding: 0px !important;
+    margin-left: 0px !important;
+    margin-top: 10px;
+    margin-right: 0px;
+    margin-bottom: 10px;
+}
+
+#img_mid_bottom_img {
+    height: 270px;
+    width: 265px;
+    padding: 0px !important;
+    margin-left: 10px;
+    margin-top: 10px;
+    margin-right: 10px;
+    margin-bottom: 10px;
+}
+
+#img_left_bottom_img {
+    height: 270px;
+    width: 265px;
+    padding: 0px !important;
+    margin-left: 0px;
+    margin-top: 10px;
+    margin-right: 10px;
+    margin-bottom: 10px;
+}
+
+#img_right_bottom_img {
+    height: 270px;
+    width: 265px;
+    padding: 0px !important;
+    margin-left: 10px;
+    margin-top: 10px;
+    margin-bottom: 10px;
+}
+
+#img_right_img {
+    position: relative;
+    height: 568px;
+    width: 280px;
+    padding: 0px !important;
+    margin-top: 10px;
+    margin-right: 0px;
+    margin-bottom: 10px;
+}
+
+#img_left_img {
+    position: relative;
+    height: 270px;
+    width: 845px;
+    margin-right: 10px;
+    margin-left: 15px;
+    padding: 0px !important;
+}
+
+.captions > p > a {
+    color: white;
+    font-size: large;
+    font-weight: bold;
+}
+
+.captions_top > p > a {
+    color: white;
+    font-size: 24px;
+}
+
+.captions_bottom > p > a {
+    padding-top: 20px;
+    color: white;
+    font-size: large;
+}
+
+.captions_right > p > a {
+    color: white;
+    font-size: 24px;
+}
+
+.captions > p > a:visited {
+    text-decoration: none;
+}
+
+.captions > p > a:hover {
+    text-decoration: none;
+}
+
+.captions > p > a:active {
+    text-decoration: none;
+}
+
+.carousel-caption > center > p > a:active {
+    color: blue;
+}
+
+.caption_deals > h3 > a {
+    color: #680101;
+    font-weight:bold;
+}
+
+.title_deals{
+    color: #362516;
+    font-weight: bold;
+    margin-top: -20px;
+    margin-bottom: 20px;
+}
+
+.content_deals{
+    font-family: verdana;
+    text-align: justify;
+    margin-top: 10px;
+    padding-top: 10px;
+    letter-spacing: 1px;
+    font-weight: bold;
+}
+
+.title_h2{
+    font-weight: bold;
+    color: #680101;
+    text-align: center;
+}
+
+.title_h3{
+    font-weight: bold;
+    color: #362516;
+    text-align: left;
+}
+
+.content_{
+    color: #362516;
+    text-align: justify;
+}
+
+.pages{
+    text-align: center;
+    padding: 2px;
 }

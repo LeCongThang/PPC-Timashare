@@ -118,6 +118,50 @@
             </div>
             <!--col so 2-->
         </div>
+
+        <section id="khunghiduong">
+            <div class="row space">
+                <div class="col-md-12 col-sm-12">
+                    <hr class="text-left" style="width:50px;border:2px solid #362516;margin-left:0px;">
+                    <h3 style="font-weight: bold">{KhuNghiDuongGiaCa}</h3>
+                </div>
+                <div class="col-md-9 col-sm-12" id="img_left_img">
+                    <div class="col-md-12 col-sm-12" id="img_top_img">
+                        <div class='captions captions_top'>
+                            <p><a href="<?= BASE_DIR . $_SESSION['lang'] ?>/controller/chuyenTrangKhuNghiDuongGiaCa">{DanhMucKhuNghiDuong}</a>
+                            </p>
+                        </div>
+                        <?php echo "<img class='img-responsive khu_nghi_duong_gia_ca_img' src='data:image/jpg;base64," . base64_encode($array_img_t[0]->getImageBlob()) . "' />"; ?>
+                    </div>
+                    <div class="col-md-4 col-sm-4" id="img_left_bottom_img">
+                        <div class='captions captions_bottom'>
+                            <p><a href="#">{GoiYChoKyNghi}</a></p>
+                        </div>
+                        <?php echo "<img class='img-responsive khu_nghi_duong_gia_ca_img' src='data:image/jpg;base64," . base64_encode($array_img_t[1]->getImageBlob()) . "' />"; ?>
+                    </div>
+                    <div class="col-md-4 col-sm-4" id="img_mid_bottom_img">
+                        <div class='captions captions_bottom'>
+                            <p><a href="#">{KhamPhaCacDiaDiem}</a></p>
+                        </div>
+                        <?php echo "<img class='img-responsive khu_nghi_duong_gia_ca_img' src='data:image/jpg;base64," . base64_encode($array_img_t[2]->getImageBlob()) . "' />"; ?>
+                    </div>
+                    <div class="col-md-4 col-sm-4" id="img_right_bottom_img">
+                        <div class='captions captions_bottom'>
+                            <p><a href="#">{CoGiMoiTaiTimeShare}</a></p>
+                        </div>
+                        <?php echo "<img class='img-responsive khu_nghi_duong_gia_ca_img' src='data:image/jpg;base64," . base64_encode($array_img_t[3]->getImageBlob()) . "' />"; ?>
+                    </div>
+                </div>
+                <div class="col-md-3 col-sm-4" id="img_right_img">
+                    <div class='captions captions_right'>
+                        <p style="padding-top: 65%;text-align: center"><a href="<?=BASE_URL.$_SESSION['lang']?>/controller/loadingDealsPage">{UuDaiDacBiet}</a></p>
+                    </div>
+                    <?php echo "<img class='img-responsive khu_nghi_duong_gia_ca_img' src='data:image/jpg;base64," . base64_encode($array_img_t[4]->getImageBlob()) . "' />"; ?>
+                </div>
+
+            </div>
+
+        </section>
         <section id="thamgia">
             <div class="row space">
                 <div class="col-md-12 col-sm-12">
@@ -152,7 +196,7 @@
                             <div class='th'>
                                 <div class='caps'>
                                     <p>
-                                        <a href="<?= $du_lieu_tham_gia['link_hinh_3'] ?>"><?= $du_lieu_tham_gia['label_hinh_3'] ?></a>
+                                        <a href="<?=BASE_URL.$_SESSION['lang']?>/controller/loadingConnectPage"><?= $du_lieu_tham_gia['label_hinh_3'] ?></a>
                                     </p>
                                 </div>
                                 <?php echo "<img class='img-responsive' src='data:image/jpg;base64," . base64_encode($array_img[2]->getImageBlob()) . "' />"; ?>
@@ -174,7 +218,7 @@
                     <div class='th'>
                         <div class='caps'>
                             <p>
-                                <a href="<?= $du_lieu_tham_gia['link_hinh_5'] ?>"><?= $du_lieu_tham_gia['label_hinh_5'] ?></a>
+                                <a href="<?= BASE_URL.$_SESSION['lang'] ?>/controller/loadingAnnouncePage"><?= $du_lieu_tham_gia['label_hinh_5'] ?></a>
                             </p>
                         </div>
                         <?php echo "<img class='img-responsive' src='data:image/jpg;base64," . base64_encode($array_img[4]->getImageBlob()) . "' />"; ?>
@@ -193,10 +237,10 @@
                             {CauHoiThuongGap}</h4>
                     </a>
                     <div id="tro_giup" style="display: none;">
-                        <ul>
+                        <ul style="list-style-type: square;">
                             <?php
                             foreach ($cau_hoi_thuong_gap as $key => $items_cau_hoi) {
-                                echo '<li class="cauhoi"><a class="test" href="#" onclick="return false;" ><span class="link_tim_hieu">' . $items_cau_hoi['cauhoi'] . '</span></a><ul class="cautraloi" style="display: none;" ><li><p><span style="text-align:justify;color:#660000;">' . $items_cau_hoi['cautraloi'] . '</span></p></li></ul></li>';
+                                echo '<li class="cauhoi"><a class="test" href="#" onclick="return false;" ><span class="link_tim_hieu">' . $items_cau_hoi['cauhoi'] . '</span></a><ul class="cautraloi" style="display: none;" ><li class="noi_dung_link_tim_hieu"><p >' . $items_cau_hoi['cautraloi'] . '</p></li></ul></li>';
                             }
                             ?>
                         </ul>
@@ -242,8 +286,8 @@
                         </div>
                         <p><span style="color: red;" id="thongbaoguilh"></span></p>
                     </div>
-
-                    <div class="col-md-12 ">
+                    <div class="col-md-9"></div>
+                    <div class="col-md-3">
                         <div class="input-group" style="width:100%">
                             <input type="submit" class="form-control"
                                    style="width:100%;border:1px solid grey; border-radius:2px;"
@@ -253,7 +297,8 @@
             </section>
         </div>
         </form>
-        <div class="col-md-12 col-sm-12" STYLE="margin-top: 50px; margin-bottom: 50px">
+        <div class="col-md-12 col-sm-12"
+             STYLE="margin-top: 50px; margin-bottom: 50px; padding-left: 0px; padding-right: 0px">
             <iframe
                 src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3919.5748836254843!2d106.68554394907014!3d10.767209992290113!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x31752f181c80d37b%3A0x11f037e825f6300e!2zMjQ0IEPhu5FuZyBRdeG7s25oLCBQaOG6oW0gTmfFqSBMw6NvLCBRdeG6rW4gMSwgSOG7kyBDaMOtIE1pbmgsIFZpZXRuYW0!5e0!3m2!1sen!2s!4v1482477318231"
                 width="100%" height="400px" frameborder="0" style="border:0" allowfullscreen></iframe>
@@ -269,24 +314,22 @@
             foreach ($ds_video as $key => $item_video) {
                 if ($key == 0) {
                     echo ' <div class="col-md-7 col-sm-12">
-                    <iframe id="main_video" width="100%" height="380" src="' . $item_video['url_video'] . '">
+                    <iframe id="main_video" width="100%" height="392" src="' . $item_video['url_video'] . '">
                     </iframe>
                 </div>
                 <div class="col-md-5 col-sm-12">
-                    <h4 style="margin-top:-45px;"><b>{VideoCuaChungToi}</b></h4>
-                    <hr style="width:100%;border:1px solid #362516;margin-left:0px;">';
+                    <h4 style="margin-top:-45px;"><b>{VideoCuaChungToi}</b> <div style="float:right">
+                    <div class="goPrevious glyphicon glyphicon-triangle-left"></div>
+                    <div class="goNext glyphicon glyphicon-triangle-right"></div></div></h4>
+                    <hr style="width:100%;border:1px solid #362516;margin-left:0px;margin-top:25px;">';
                 } else {
-                    echo '  <div class="media">
-                        <div class="media-left" style="width: 20%;height: 10%">
-                            <img src="https://img.youtube.com/vi/' . substr(trim($item_video['url_video']), 30) . '/0.jpg" style="width:100%;">
-                        </div>
-                        <div class="media-left name-video video">
-                            <a href="#" data-value="' . $item_video['url_video'] . '"><span class="link_video">' . $item_video['ten_video'] . '</span></a>
-                        </div>
-                    </div>';
                 }
             }
             ?>
+            <div id="paging">
+                <div id="rows" style="padding-left: 0px"></div>
+                <div class="clr"></div>
+            </div>
         </div>
     </div>
     </div>

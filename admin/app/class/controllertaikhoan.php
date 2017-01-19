@@ -77,11 +77,13 @@ class controllertaikhoan
 
     public function create()
     {
-        if (isset($this->params[0])) {
+        if (isset($this->params[0])&&isset($this->params[1])) {
             $email = $this->params[0];
             $sdt = $this->params[1];
             require_once("app/view/create-account-2.php");
         }
+        else
+            require_once("app/view/create-account.php");
         if (count($_POST) > 0) {
             $ten_dang_nhap = $_POST['ten_dang_nhap'];
             $mat_khau = $_POST['mat_khau'];
@@ -91,12 +93,9 @@ class controllertaikhoan
             if ($this->controllertaikhoan->themTaiKhoan($ten_dang_nhap, $mat_khau, $ho_ten, $dia_chi, $dien_thoai)) {
                 $this->errors[] = 'Tạo tài khoản thành công';
                 $this->controllertaikhoan->capNhatTaiKhoanDangKy($ten_dang_nhap);
-                $this->index();
             } else
                 $this->errors[] = 'Lỗi xin mời bạn thử lại';
         }
-        require_once("app/view/create-account.php");
-
     }
 
     public function update()

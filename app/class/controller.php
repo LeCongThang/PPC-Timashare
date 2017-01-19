@@ -34,12 +34,13 @@ class controller
             $dsKhuNghiDuongBanner[] = $khuNghiDuongBanner;
         }
         //echo count($dsKhuNghiDuongSlier);
-
         $imagick = new \Imagick(realpath('C:\xampp\htdocs' . BASE_DIR . $du_lieu_tham_gia['hinh_anh']));
         $imagick->resizeImage(1070, 868, Imagick::FILTER_LANCZOS, 1);
-        $width_khung_1_2 = 267.5;
-        $high_khung_1_2 = 217;
-        $width_khung_3 = 535;
+        $width_khung_1 = 257.5;
+        $high_khung_1 = 217;
+        $width_khung_2 = 252.5;
+        $high_khung_2 = 217;
+        $width_khung_3 = 520;
         $high_khung_3 = 217;
         $width_khung_4 = 535;
         $high_khung_4 = 434;
@@ -47,26 +48,59 @@ class controller
         $high_khung_5 = 434;
         $array_img = array();
         $img_khung_1 = clone $imagick;
-        $img_khung_1->cropImage($width_khung_1_2, $high_khung_1_2, 0, 0);
-        $img_khung_1->resizeImage(266.67,216.35, Imagick::FILTER_LANCZOS, 1);
+        $img_khung_1->cropImage($width_khung_1, $high_khung_1, 0, 0);
+        $img_khung_1->resizeImage(266.67, 216.35, Imagick::FILTER_LANCZOS, 1);
         array_push($array_img, $img_khung_1);
         $img_khung_2 = clone $imagick;
-        $img_khung_2->cropImage($width_khung_1_2, $high_khung_1_2, 267.5, 0);
-        $img_khung_2->resizeImage(267.78,217.26, Imagick::FILTER_LANCZOS, 1);
+        $img_khung_2->cropImage($width_khung_2, $high_khung_2, 277.5, 0);
+        $img_khung_2->resizeImage(267.78, 217.26, Imagick::FILTER_LANCZOS, 1);
         array_push($array_img, $img_khung_2);
         $img_khung_3 = clone $imagick;
         $img_khung_3->cropImage($width_khung_3, $high_khung_3, 0, 217);
-        $img_khung_3->resizeImage(580.99,217, Imagick::FILTER_LANCZOS, 1);
+        $img_khung_3->resizeImage(580.99, 217, Imagick::FILTER_LANCZOS, 1);
         array_push($array_img, $img_khung_3);
         $img_khung_4 = clone $imagick;
-        $img_khung_4->cropImage($width_khung_4, $high_khung_4, 535, 0);
-        $img_khung_4->resizeImage(568.99,453.99, Imagick::FILTER_LANCZOS, 1);
+        $img_khung_4->cropImage($width_khung_4, $high_khung_4, 550, 0);
+        $img_khung_4->resizeImage(568.99, 453.99, Imagick::FILTER_LANCZOS, 1);
         array_push($array_img, $img_khung_4);
         $img_khung_5 = clone $imagick;
         $img_khung_5->cropImage($width_khung_5, $high_khung_5, 0, 434);
-        $img_khung_5->resizeImage(1157.99,350, Imagick::FILTER_LANCZOS, 1);
+        $img_khung_5->resizeImage(1157.99, 350, Imagick::FILTER_LANCZOS, 1);
         array_push($array_img, $img_khung_5);
 
+        $imagick_t = new \Imagick(realpath('C:\xampp\htdocs' . BASE_DIR . "img/wallpaper_nature.jpg"));
+        $imagick_t->resizeImage(1140, 560, Imagick::FILTER_LANCZOS, 1);
+        $width_khung_1_t = 850;
+        $high_khung_1_t = 270;
+        $width_khung_2_t = 270;
+        $high_khung_2_t = 270;
+        $width_khung_3_t = 270;
+        $high_khung_3_t = 270;
+        $width_khung_4_t = 270;
+        $high_khung_4_t = 270;
+        $width_khung_5_t = 280;
+        $high_khung_5_t = 560;
+        $array_img_t = array();
+        $img_khung_1_t = clone $imagick_t;
+        $img_khung_1_t->cropImage($width_khung_1_t, $high_khung_1_t, 0, 0);
+        //$img_khung_1->resizeImage(266.67,216.35, Imagick::FILTER_LANCZOS, 1);
+        array_push($array_img_t, $img_khung_1_t);
+        $img_khung_2_t = clone $imagick_t;
+        $img_khung_2_t->cropImage($width_khung_2_t, $high_khung_2_t, 0, 290);
+        //$img_khung_2_t->resizeImage(267.78,217.26, Imagick::FILTER_LANCZOS, 1);
+        array_push($array_img_t, $img_khung_2_t);
+        $img_khung_3_t = clone $imagick_t;
+        $img_khung_3_t->cropImage($width_khung_3_t, $high_khung_3_t, 290, 290);
+        //$img_khung_3_t->resizeImage(580.99,217, Imagick::FILTER_LANCZOS, 1);
+        array_push($array_img_t, $img_khung_3_t);
+        $img_khung_4_t = clone $imagick_t;
+        $img_khung_4_t->cropImage($width_khung_4_t, $high_khung_4_t, 580, 290);
+        //$img_khung_4_t->resizeImage(568.99,453.99, Imagick::FILTER_LANCZOS, 1);
+        array_push($array_img_t, $img_khung_4_t);
+        $img_khung_5_t = clone $imagick_t;
+        $img_khung_5_t->cropImage($width_khung_5_t, $high_khung_5_t, 860, 0);
+        //$img_khung_5_t->resizeImage(1157.99,350, Imagick::FILTER_LANCZOS, 1);
+        array_push($array_img_t, $img_khung_5_t);
         require_once "view/home.php"; //nạp layout
     }//index
 
@@ -247,10 +281,185 @@ class controller
         $idknd = $this->params[0];
         //echo $idknd;
         $knd = $this->control->layThongTinChiTietKhuNghiDuong($idknd);
-        require_once "view/xemChiTietKhuNghiDuong.php";
     }
 
+    public function chuyenTrangKhuNghiDuongGiaCa()
+    {
+        $dssbanner = $this->control->laydanhsach("banner");
+        $ds_video = $this->control->laydanhsach("video");
+        $dssliderw = $this->control->laydanhsachslider();
+        $gioithieu = $this->control->laygioithieu();
+        $du_lieu_tham_gia = $this->control->layDuLieuThamGia();
 
+        $cau_hoi_thuong_gap = $this->control->layDanhSachCauHoiThuongGap();
+        $dsKhuNghiDuongBanner = array();
+        foreach ($dssbanner as $banner) {
+            $khuNghiDuongBanner = $this->control->layThongTinChiTietKhuNghiDuong($banner['idkhunghiduong']);
+            $dsKhuNghiDuongBanner[] = $khuNghiDuongBanner;
+        }
+        require_once("view/KhuNghiDuongGiaCa.php");
+    }
 
+    public function laySoLuongVideo()
+    {
+        $total = array("total" => 0);
+        $pages = $this->control->laySoLuongVideo() / 5;
+        $total = array("total" => 0);
+        $tmp = explode(".", $pages);
+        if (count($tmp) > 1) {
+            $pages = $tmp[0] + 1;
+        } else {
+            $pages = $tmp[0];
+        }
+        $total["total"] = $pages;
+        echo json_encode($total);
+    }
+
+    public function layDanhSachVideo()
+    {
+        $items = 5;
+        $currentPage = (int)$_POST["currentPage"];
+        $offset = ($currentPage - 1) * $items;
+        $danh_sach_video = $this->control->layDanhSachVideo($offset, $items);
+        echo json_encode($danh_sach_video);
+    }
+
+    public function loadingDealsPage()
+    {
+        $list_deals = $this->control->getListDeals();
+        $dssbanner = $this->control->laydanhsach("banner");
+        $dssliderw = $this->control->laydanhsachslider();
+        $dsKhuNghiDuongBanner = array();
+        foreach ($dssbanner as $banner) {
+            $khuNghiDuongBanner = $this->control->layThongTinChiTietKhuNghiDuong($banner['idkhunghiduong']);
+            $dsKhuNghiDuongBanner[] = $khuNghiDuongBanner;
+        }
+        require_once("view/UuDaiDacBiet.php");
+    }
+
+    public function getListDeals(){
+        $items = 6;
+        $currentPage = (int)$_POST["currentPage"];
+        $offset = ($currentPage - 1) * $items;
+        $list_deals = $this->control->getListDealsPage($offset, $items);
+        echo json_encode($list_deals);
+    }
+
+    public function getNumberDeals()
+    {
+        $total = array("total" => 0);
+        $pages = $this->control->getNumberDeals() / 6;
+        $total = array("total" => 0);
+        $tmp = explode(".", $pages);
+        if (count($tmp) > 1) {
+            $pages = $tmp[0] + 1;
+        } else {
+            $pages = $tmp[0];
+        }
+        $total["total"] = $pages;
+        echo json_encode($total);
+    }
+
+    public function getDetailDeals()
+    {
+        $id_deals = $this->params[0];
+        settype($id_deals, "int");
+        $deals = $this->control->getDetailDeals($id_deals);
+        $list_deals = $this->control->getListDeals();
+        $dssbanner = $this->control->laydanhsach("banner");
+        $dssliderw = $this->control->laydanhsachslider();
+        $dsKhuNghiDuongBanner = array();
+        foreach ($dssbanner as $banner) {
+            $khuNghiDuongBanner = $this->control->layThongTinChiTietKhuNghiDuong($banner['idkhunghiduong']);
+            $dsKhuNghiDuongBanner[] = $khuNghiDuongBanner;
+        }
+        require_once("view/DetailDeals.php");
+    }
+
+    public function getNumberConnect()
+    {
+        $total = array("total" => 0);
+        $pages = $this->control->getNumberConnect() / 6;
+        $total = array("total" => 0);
+        $tmp = explode(".", $pages);
+        if (count($tmp) > 1) {
+            $pages = $tmp[0] + 1;
+        } else {
+            $pages = $tmp[0];
+        }
+        $total["total"] = $pages;
+        echo json_encode($total);
+    }
+
+    public function getListConnect(){
+        $items = 6;
+        $currentPage = (int)$_POST["currentPage"];
+        $offset = ($currentPage - 1) * $items;
+        $list_connect = $this->control->getListConnect($offset, $items);
+        echo json_encode($list_connect);
+    }
+
+    public function loadingConnectPage()
+    {
+        $dssbanner = $this->control->laydanhsach("banner");
+        $dssliderw = $this->control->laydanhsachslider();
+        $dsKhuNghiDuongBanner = array();
+        foreach ($dssbanner as $banner) {
+            $khuNghiDuongBanner = $this->control->layThongTinChiTietKhuNghiDuong($banner['idkhunghiduong']);
+            $dsKhuNghiDuongBanner[] = $khuNghiDuongBanner;
+        }
+        require_once("view/KetNoiPPC.php");
+    }
+
+    public function getDetailConnect()
+    {
+        $id_deals = $this->params[0];
+        settype($id_deals, "int");
+        $deals = $this->control->getDetailConnect($id_deals);
+        $list_deals = $this->control->getListDeals();
+        $dssbanner = $this->control->laydanhsach("banner");
+        $dssliderw = $this->control->laydanhsachslider();
+        $dsKhuNghiDuongBanner = array();
+        foreach ($dssbanner as $banner) {
+            $khuNghiDuongBanner = $this->control->layThongTinChiTietKhuNghiDuong($banner['idkhunghiduong']);
+            $dsKhuNghiDuongBanner[] = $khuNghiDuongBanner;
+        }
+        require_once("view/DetailConnect.php");
+    }
+
+    public function getNumberAnncounce()
+    {
+        $total = array("total" => 0);
+        $pages = $this->control->getNumberAnncounce() / 6;
+        $total = array("total" => 0);
+        $tmp = explode(".", $pages);
+        if (count($tmp) > 1) {
+            $pages = $tmp[0] + 1;
+        } else {
+            $pages = $tmp[0];
+        }
+        $total["total"] = $pages;
+        echo json_encode($total);
+    }
+
+    public function getListAnnounce(){
+        $items = 6;
+        $currentPage = (int)$_POST["currentPage"];
+        $offset = ($currentPage - 1) * $items;
+        $list_connect = $this->control->getListAnnounce($offset, $items);
+        echo json_encode($list_connect);
+    }
+
+    public function loadingAnnouncePage()
+    {
+        $dssbanner = $this->control->laydanhsach("banner");
+        $dssliderw = $this->control->laydanhsachslider();
+        $dsKhuNghiDuongBanner = array();
+        foreach ($dssbanner as $banner) {
+            $khuNghiDuongBanner = $this->control->layThongTinChiTietKhuNghiDuong($banner['idkhunghiduong']);
+            $dsKhuNghiDuongBanner[] = $khuNghiDuongBanner;
+        }
+        require_once("view/ThongBaoBaoChi.php");
+    }
 
 }//class

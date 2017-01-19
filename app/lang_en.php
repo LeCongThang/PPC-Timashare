@@ -61,3 +61,13 @@ define("DienThoaiDK","Number phone");
 define("DangKy","Submit");
 
 define("VideoCuaChungToi","OUR VIDEOS");
+
+
+define("KhuNghiDuongGiaCa","RESORTS & PRICE");
+define("DanhMucKhuNghiDuong","LIST OF RESORTS");
+define("GoiYChoKyNghi","HINTS FOR VACATION");
+define("KhamPhaCacDiaDiem","DISCOVER PLACES");
+define("CoGiMoiTaiTimeShare","WHAT NEW IN PPC TIMESHARE");
+define("UuDaiDacBiet","SPECIAL OFFER");
+define("KetNoiVoi","CONNECT WITH");
+define("ThongCaoBaoChi","PRESS RELEASE FOR PPC TS");

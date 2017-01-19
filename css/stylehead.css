@@ -23,14 +23,13 @@ body {
     font-weight: bold;
 }
 
-.thamgia a{
+.thamgia a {
     font-weight: bold;
     text-decoration: none;
     outline: none;
     color: white;
     font-weight: bold;
 }
-
 
 .dropdown a:hover {
     color: #5d4617;
@@ -103,6 +102,7 @@ body {
     margin-left: 200px;
     color: #362516;
 }
+
 .myh3 {
     margin-left: 200px;
     color: #362516;
@@ -136,161 +136,161 @@ img.pic {
     padding-top: 15px;
 }
 
-    .navbar {
-        position: absolute;
-    }
+.navbar {
+    position: absolute;
+}
 
+.navbar-brand-centered {
+    position: absolute;
+    left: 50%;
+    display: block;
+    width: 160px;
+    text-align: center;
 
-    .navbar-brand-centered {
-        position: absolute;
-        left: 50%;
-        display: block;
-        width: 160px;
-        text-align: center;
+}
 
-    }
+.navbar > .container .navbar-brand-centered,
+.navbar > .container-fluid .navbar-brand-centered {
+    margin-left: -80px;
+}
 
-    .navbar > .container .navbar-brand-centered,
-    .navbar > .container-fluid .navbar-brand-centered {
-        margin-left: -80px;
-    }
+.navbar-nav > li > a {
+    color: white;
+    font-weight: bold;
+    font-family: helvetica;
+    font-size: 14px;
 
-    .navbar-nav > li > a {
-        color: white;
-        font-weight: bold;
-        font-family: helvetica;
-        font-size: 14px;
+}
 
-    }
+.navbar-custom {
+    background-color: transparent;
+}
 
-    .navbar-custom {
-        background-color: transparent;
-    }
+select#language option[value="AsiaEnglish"] {
+    background-image: url(../img/icon_en.png);
+}
 
-    select#language option[value="AsiaEnglish"] {
-        background-image: url(../img/icon_en.png);
-    }
+.navbar-nav > li > select {
+    line-height: 20px;
+    position: relative;
+    display: block;
+    background: transparent;
+    border: none;
+    color: white;
+    margin-top: 15px;
+    font-weight: bold;
+}
 
-    .navbar-nav > li > select {
-        line-height: 20px;
-        position: relative;
-        display: block;
-        background: transparent;
-        border: none;
-        color: white;
-        margin-top: 15px;
-        font-weight: bold;
-    }
+#btnDangNhap {
+    background-color: #FAF9DB;
+    margin-top: 10px;
+    margin-left: 25px;
+    font-weight: bold;
+}
 
-    #btnDangNhap {
-        background-color: #FAF9DB;
-        margin-top: 10px;
-        margin-left: 25px;
-        font-weight: bold;
-    }
+#btnXinChao {
+    background-color: #FAF9DB;
+    margin-top: 10px;
+    margin-left: 25px;
+    font-weight: bold;
+}
 
-    #btnXinChao {
-        background-color: #FAF9DB;
-        margin-top: 10px;
-        margin-left: 25px;
-        font-weight: bold;
-    }
+.carousel {
+    width: 100%;
+    display: block;
+}
 
-    .carousel {
-        width: 100%;
-        display: block;
-    }
+.carousel-inner > .item > img,
+.carousel-inner > .item > a > img {
+    width: 100%;
+}
 
-    .carousel-inner > .item > img,
-    .carousel-inner > .item > a > img {
-        width: 100%;
-    }
+#row {
+    background-color: white;
+    box-shadow: 0 5px 5px 0 #888888;
+}
 
-    #row {
-        background-color: white;
-        box-shadow: 0 5px 5px 0 #888888;
-    }
+#row h6 {
+    font-weight: bolder !important;
+    color: #8B4726;
+}
 
-    #row h6 {
-        font-weight: bolder !important;
-        color: #8B4726;
-    }
+#row h5 {
+    font-weight: bolder !important;
+    color: #8B4726;
+}
 
-    #row h5 {
-        font-weight: bolder !important;
-        color: #8B4726;
-    }
+.thumbnail {
+    text-align: left;
+    background-color: white;
+    border: none;
+    padding: 0px;
+    margin: 6px;
+    color: black;
+    margin-top: 10px;
+}
 
-    .thumbnail {
-        text-align: left;
-        background-color: white;
-        border: none;
-        padding: 0px;
-        margin: 6px;
-        color: black
-    }
+.thumbnail img {
+    width: 100%;
+}
 
-    .thumbnail img {
-        width: 100%;
-    }
+.row-no-padding > [class*="col-sm-3"] {
+    padding-left: 0 !important;
+    padding-right: 0 !important;
+}
 
-    .row-no-padding > [class*="col-sm-3"] {
-        padding-left: 0 !important;
-        padding-right: 0 !important;
-    }
+.btnBookNow {
+    color: white;
+    padding-top: 10px;
+    padding-bottom: 10px;
+    padding-left: 35px;
+    padding-right: 35px;
+    text-align: center;
+    background-color: #362516 !important;
+    border-color: #362516 !important;
+    font-weight: bold;
+    background-image: none !important;
+}
 
-    .btnBookNow {
-        color: white;
-        padding-top: 10px;
-        padding-bottom: 10px;
-        padding-left: 35px;
-        padding-right: 35px;
-        text-align: center;
-        background-color: #362516 !important;
-        border-color: #362516 !important;
-        font-weight: bold;
-        background-image: none !important;
-    }
+#btnReadMore {
+    color: white;
+    padding-top: 5px;
+    padding-bottom: 5px;
+    padding-left: 10px;
+    padding-right: 10px;
+    text-align: center;
+    background-color: #362516;
+    border-color: #362516;
+    font-weight: bold;
+    background-image: none !important;
+}
 
-    #btnReadMore {
-        color: white;
-        padding-top: 5px;
-        padding-bottom: 5px;
-        padding-left: 10px;
-        padding-right: 10px;
-        text-align: center;
-        background-color: #362516;
-        border-color: #362516;
-        font-weight: bold;
-        background-image: none !important;
-    }
+.carousel-indicators {
+    margin-bottom: 120px;
+}
 
-    .carousel-indicators {
-        margin-bottom: 120px;
-    }
+.indi {
+    border: 1px solid black !important;
+}
 
-    .indi {
-        border: 1px solid black !important;
-    }
+.indi.active {
+    background-color: black !important;
+}
 
-    .indi.active {
-        background-color: black !important;
-    }
+.footer1 .footerlogo img {
+    max-width: 70%;
+}
 
-    .footer1 .footerlogo img {
-        max-width: 70%;
-    }
+.footer1 p {
+    text-align: left;
+    font-weight: bold;
+    line-height: 90%;
+}
 
-    .footer1 p {
-        text-align: left;
-        font-weight: bold;
-        line-height: 90%;
-    }
+.footer1 {
+    margin-top: 30px;
 
-    .footer1 {
-        margin-top: 30px;
-
-    }
+}
 
 
 

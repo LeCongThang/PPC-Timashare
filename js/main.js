@@ -4,6 +4,14 @@ function validateEmail(email) {
 }
 
 $(document).ready(function () {
+
+    $(document).on("click", 'div.name-video a', function (e) {
+        e.preventDefault();
+        data = $(this).data("value");
+        $('#main_video').attr('src', data);
+        e.preventDefault();
+    });
+
     $('#btn_dangky').click(function () {
         diaChiEmail = $('#diaChiEmail').val();
         dienthoai = $('#dienthoai').val();
@@ -16,7 +24,7 @@ $(document).ready(function () {
             return false;
         }
         if (!validateEmail(diaChiEmail)) {
-            $("#thongbao").text( diaChiEmail+" không đúng");
+            $("#thongbao").text(diaChiEmail + " không đúng");
             return false;
         }
         return true;
@@ -56,7 +64,7 @@ $(document).ready(function () {
             return false;
         }
         if (!validateEmail(emailcongty)) {
-            $("#thongbaoguilh").text( "Email không đúng");
+            $("#thongbaoguilh").text("Email không đúng");
             return false;
         }
 

@@ -50,6 +50,9 @@
             <div class="row">
                 <div class="col-md-12">
                     <div class="box box-primary">
+                        <?php foreach ($this->errors as $error): ?>
+                            <div class="alert alert-danger" role="alert"><?= $error ?></div>
+                        <?php endforeach; ?>
                         <div class="box-header with-border text-center">
                             <div class="pull-left">
                                 <a href="<?= BASE_URL_ADMIN ?>controllertaikhoan/create"

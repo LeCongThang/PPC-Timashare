@@ -231,6 +231,130 @@ class model
         return $row;
     }
 
+    public function laySoLuongVideo(){
+        $sql = "select count(id_video) as total from video";
+        $result = $this->db->query($sql);
+        $row = mysqli_fetch_assoc($result);
+        return $row['total'];
+    }
+
+    public function layDanhSachVideo($offset, $items){
+        $sql = "SELECT * FROM video ORDER BY id_video ASC LIMIT " . $offset . "," .$items;
+        $result = mysqli_query($this->db, $sql);
+        if (!$result) {
+            die("Error in query in here");
+        }
+        $list = array();
+        while ($row = mysqli_fetch_assoc($result)) {
+            $list[] = $row;
+        }
+        //remove out of memory
+        mysqli_free_result($result);
+        return $list;
+    }
+
+    public function getListDeals(){
+        $sql = "SELECT deals.id, deals.image, deals_language.title, deals_language.content FROM deals, deals_language WHERE deals.id = deals_language.id_deals AND deals_language.language ='".$_SESSION['lang']."'";
+        $result = mysqli_query($this->db, $sql);
+        if (!$result) {
+            die("Error in query in here");
+        }
+        $list = array();
+        while ($row = mysqli_fetch_assoc($result)) {
+            $list[] = $row;
+        }
+        //remove out of memory
+        mysqli_free_result($result);
+        return $list;
+    }
+
+    public function getListDealsPage($offset, $items){
+        $sql = "SELECT deals.id, deals.image, deals_language.title, deals_language.content FROM deals, deals_language WHERE deals.id = deals_language.id_deals AND deals_language.language ='".$_SESSION['lang']."' ORDER BY id ASC LIMIT " . $offset . "," .$items;
+        $result = mysqli_query($this->db, $sql);
+        if (!$result) {
+            die("Error in query in here");
+        }
+        $list = array();
+        while ($row = mysqli_fetch_assoc($result)) {
+            $list[] = $row;
+        }
+        //remove out of memory
+        mysqli_free_result($result);
+        return $list;
+    }
+
+    public function getNumberDeals(){
+        $sql = "select count(id) as total from deals";
+        $result = $this->db->query($sql);
+        $row = mysqli_fetch_assoc($result);
+        return $row['total'];
+    }
+
+    public function getDetailDeals($id){
+        $sql = "SELECT deals.id, deals.image, deals_language.title, deals_language.content FROM deals, deals_language WHERE deals.id = deals_language.id_deals AND deals_language.language ='".$_SESSION['lang']."' AND deals.id = ".$id;
+        $result = mysqli_query($this->db, $sql);
+        if (!$result) {
+            die("Error in query in here");
+        }
+        $row = $result->fetch_assoc();
+        return $row;
+    }
+
+    public function getNumberConnect(){
+        $sql = "select count(id) as total from connect_ppc";
+        $result = $this->db->query($sql);
+        $row = mysqli_fetch_assoc($result);
+        return $row['total'];
+    }
+
+    public function getListConnect($offset, $items){
+        $sql = "SELECT connect_ppc.id, connect_ppc.image, connect_ppc.date, connect_ppc_language.title, connect_ppc_language.content FROM connect_ppc, connect_ppc_language WHERE connect_ppc.id = connect_ppc_language.id_connect_ppc AND connect_ppc_language.language ='".$_SESSION['lang']."' ORDER BY id ASC LIMIT " . $offset . "," .$items;
+        $result = mysqli_query($this->db, $sql);
+        if (!$result) {
+            die("Error in query in here");
+        }
+        $list = array();
+        while ($row = mysqli_fetch_assoc($result)) {
+            $list[] = $row;
+        }
+        //remove out of memory
+        mysqli_free_result($result);
+        return $list;
+    }
+
+    public function getDetailConnect($id){
+        $sql = "SELECT connect_ppc.id, connect_ppc.image, connect_ppc.date, connect_ppc_language.title, connect_ppc_language.content FROM connect_ppc, connect_ppc_language WHERE connect_ppc.id = connect_ppc_language.id_connect_ppc AND connect_ppc_language.language ='".$_SESSION['lang']."' AND connect_ppc.id = ".$id;
+        $result = mysqli_query($this->db, $sql);
+        if (!$result) {
+            die("Error in query in here");
+        }
+        $row = $result->fetch_assoc();
+        return $row;
+    }
+
+    public function getNumberAnncounce(){
+        $sql = "select count(id) as total from announce_papers";
+        $result = $this->db->query($sql);
+        $row = mysqli_fetch_assoc($result);
+        return $row['total'];
+    }
+
+    public function getListAnnounce($offset, $items){
+        $sql = "SELECT announce_papers.id, announce_papers.link, announce_papers.image, announce_papers.date, announce_papers_language.title, announce_papers_language.content FROM announce_papers, announce_papers_language WHERE announce_papers.id = announce_papers_language.id_announce_papers AND announce_papers_language.language ='".$_SESSION['lang']."' ORDER BY id ASC LIMIT " . $offset . "," .$items;
+        $result = mysqli_query($this->db, $sql);
+        if (!$result) {
+            die("Error in query in here");
+        }
+        $list = array();
+        while ($row = mysqli_fetch_assoc($result)) {
+            $list[] = $row;
+        }
+        //remove out of memory
+        mysqli_free_result($result);
+        return $list;
+    }
+
+
 
 
 

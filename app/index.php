@@ -79,6 +79,15 @@ $str = str_replace("{DiaChiEmail}", DiaChiEmail, $str);
 $str = str_replace("{DienThoaiDK}", DienThoaiDK, $str);
 $str = str_replace("{DangKy}", DangKy, $str);
 $str = str_replace("{VideoCuaChungToi}", VideoCuaChungToi, $str);
+$str = str_replace("{NhapLaiMatKhau}", NhapLaiMatKhau, $str);
+$str = str_replace("{KhuNghiDuongGiaCa}", KhuNghiDuongGiaCa, $str);
+$str = str_replace("{DanhMucKhuNghiDuong}", DanhMucKhuNghiDuong, $str);
+$str = str_replace("{KhamPhaCacDiaDiem}", KhamPhaCacDiaDiem, $str);
+$str = str_replace("{CoGiMoiTaiTimeShare}", CoGiMoiTaiTimeShare, $str);
+$str = str_replace("{UuDaiDacBiet}", UuDaiDacBiet, $str);
+$str = str_replace("{GoiYChoKyNghi}", GoiYChoKyNghi, $str);
+$str = str_replace("{KetNoiVoi}", KetNoiVoi, $str);
+$str = str_replace("{ThongCaoBaoChi}", ThongCaoBaoChi, $str);
 echo $str;
 
 

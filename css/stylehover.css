@@ -5,15 +5,49 @@ overflow:hidden;
 }
 
 .caps {
-position:absolute;
-top:0;
-right:0;
-background:rgba(0, 0, 0, 0.75);
-width:100%;
-height:100%;
-padding:2%;
-display: none;
-text-align:center;
-color:#fff !important;
-z-index:2;
+    margin: auto;
+    position:absolute;
+    padding: 10px;
+    padding-left: 20px;
+    background-color: rgba(0, 0, 0, 0.5);
+    border: 1px solid black;
+    opacity: 0.8;
+    width: 100%;
+    height: 100%;
+    filter: alpha(opacity=60); /* For IE8 and earlier */
+}
+
+.captions_top {
+    position:absolute;
+    padding: 10px;
+    margin: auto;
+    background-color: rgba(0, 0, 0, 0.5);
+    border: 1px solid black;
+    opacity: 0.8;
+    width: 100%;
+    height: 20%;
+    filter: alpha(opacity=60); /* For IE8 and earlier */
+}
+
+.captions_bottom {
+    margin: auto;
+     position:absolute;
+     padding: 10px;
+     background-color: rgba(0, 0, 0, 0.5);
+     border: 1px solid black;
+     opacity: 0.8;
+     width: 100%;
+     height: 30%;
+     filter: alpha(opacity=60); /* For IE8 and earlier */
+ }
+.captions_right {
+    position:absolute;
+    padding: 10px;
+    background-color: rgba(0, 0, 0, 0.5);
+    border: 1px solid black;
+    opacity: 0.8;
+    width: 100%;
+    height: 40%;
+    text-align: inherit;
+    filter: alpha(opacity=60); /* For IE8 and earlier */
 }
