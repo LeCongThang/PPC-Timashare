@@ -7,17 +7,18 @@
         <div class="col-md-12 col-sm-12">
             <hr class="text-left" style="width:50px;border:2px solid #362516;margin-left:0px;">
             <h3 class="title_h3">{ThamGia} PPC TIMESHARE</h3>
-            <h2 class="title_h2">{}</h2>
-            <div id="paging_connect">
-                <div id="row_connect" ></div>
+            <h2 class="title_h2">{KetNoiVoi} PPC TIMESHARE</h2>
+            <div id="paging_connect" style="margin-bottom: 40px">
+                <div id="row_connect"></div>
             </div>
 
-            <div>
-                <div class="goPrevious_connect glyphicon glyphicon-triangle-left">Trước  Tiếp theo</div>
-                <div class="goNext_connect glyphicon glyphicon-triangle-right"></div></div>
-            </div>
+<!--            <div >-->
+<!--                <div class="goPrevious_connect glyphicon glyphicon-triangle-left">Trước Tiếp theo</div>-->
+<!--                <div class="goNext_connect glyphicon glyphicon-triangle-right"></div>-->
+<!--            </div>-->
         </div>
-        <img src="">
     </div>
+    <img src="">
+</div>
 </div>
 <?php include 'footer.php'; ?>

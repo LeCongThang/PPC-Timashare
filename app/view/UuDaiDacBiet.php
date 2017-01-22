@@ -12,11 +12,11 @@
                 <div id="row1" ></div>
             </div>
 
-            <div>
-
-                <div class="goPrevious1 glyphicon glyphicon-triangle-left">Trước  Tiếp theo</div>
-                <div class="goNext1 glyphicon glyphicon-triangle-right"></div></div>
-            </div>
+<!--            <div>-->
+<!---->
+<!--                <div class="goPrevious1 glyphicon glyphicon-triangle-left">Trước  Tiếp theo</div>-->
+<!--                <div class="goNext1 glyphicon glyphicon-triangle-right"></div></div>-->
+<!--            </div>-->
         </div>
         <img src="">
     </div>

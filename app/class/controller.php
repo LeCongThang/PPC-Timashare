@@ -297,7 +297,7 @@ class controller
             $khuNghiDuongBanner = $this->control->layThongTinChiTietKhuNghiDuong($banner['idkhunghiduong']);
             $dsKhuNghiDuongBanner[] = $khuNghiDuongBanner;
         }
-        require_once("view/KhuNghiDuongGiaCa.php");
+        require_once("view/ResortDirectory.php");
     }
 
     public function laySoLuongVideo()
@@ -337,7 +337,8 @@ class controller
         require_once("view/UuDaiDacBiet.php");
     }
 
-    public function getListDeals(){
+    public function getListDeals()
+    {
         $items = 6;
         $currentPage = (int)$_POST["currentPage"];
         $offset = ($currentPage - 1) * $items;
@@ -391,7 +392,8 @@ class controller
         echo json_encode($total);
     }
 
-    public function getListConnect(){
+    public function getListConnect()
+    {
         $items = 6;
         $currentPage = (int)$_POST["currentPage"];
         $offset = ($currentPage - 1) * $items;
@@ -442,7 +444,8 @@ class controller
         echo json_encode($total);
     }
 
-    public function getListAnnounce(){
+    public function getListAnnounce()
+    {
         $items = 6;
         $currentPage = (int)$_POST["currentPage"];
         $offset = ($currentPage - 1) * $items;
@@ -460,6 +463,33 @@ class controller
             $dsKhuNghiDuongBanner[] = $khuNghiDuongBanner;
         }
         require_once("view/ThongBaoBaoChi.php");
+    }
+
+    public function getDetailsResort()
+    {
+
+    }
+
+    public function loadingDetailsResort()
+    {
+        $id = $this->params[0];
+        $dssbanner = $this->control->laydanhsach("banner");
+        $dssliderw = $this->control->laydanhsachslider();
+        $dsKhuNghiDuongBanner = array();
+        foreach ($dssbanner as $banner) {
+            $khuNghiDuongBanner = $this->control->layThongTinChiTietKhuNghiDuong($banner['idkhunghiduong']);
+            $dsKhuNghiDuongBanner[] = $khuNghiDuongBanner;
+        }
+        $resort = $this->control->getDetailsResort($id);
+        $listImageResort = $this->control->getListImageResort($id);
+        $address = $resort["address"];
+        $url = 'http://maps.google.com/maps/api/geocode/json?address=' . urlencode($address);
+        $output = $this->control->httpGet($url);
+        $data = json_decode($output, true);
+        $geometry = $data['results'][0]['geometry']['location'];
+        $lat = $geometry['lat'];
+        $lng = $geometry['lng'];
+        require_once("view/DetailsResort.php");
     }
 
 }//class

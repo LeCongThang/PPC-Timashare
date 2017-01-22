@@ -1,3 +1,4 @@
+<hr class="text-left" style="width:100%;border:2px solid #362516;margin-left:0px;margin-bottom:0px;">
 <div class="container">
     <footer>
         <div class="container-fluid">

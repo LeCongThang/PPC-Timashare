@@ -78,6 +78,21 @@
                     'url' => 'controllercauhoi/index',
                     'icon' => 'glyphicon glyphicon-question-sign',
                 ],
+                [
+                    'title' => 'QUẢN LÝ ƯU ĐÃI',
+                    'url' => 'controlleruudai/index',
+                    'icon' => 'glyphicon glyphicon-gift',
+                ],
+                [
+                    'title' => 'QUẢN LÝ THÔNG BÁO',
+                    'url' => 'controllerthongcaobaochi/index',
+                    'icon' => 'glyphicon glyphicon-bell',
+                ],
+                [
+                    'title' => 'QUẢN LÝ TUYỂN DỤNG',
+                    'url' => 'controlleruudai/index',
+                    'icon' => 'glyphicon glyphicon-briefcase',
+                ],
 //                [
 //                    'title' => 'TRẠNG THÁI BOOK',
 //                    'url' => 'controllertrangthai/trangthai',

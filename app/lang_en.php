@@ -71,3 +71,7 @@ define("CoGiMoiTaiTimeShare","WHAT NEW IN PPC TIMESHARE");
 define("UuDaiDacBiet","SPECIAL OFFER");
 define("KetNoiVoi","CONNECT WITH");
 define("ThongCaoBaoChi","PRESS RELEASE FOR PPC TS");
+define("ViTri","LOCATION");
+define("DichVuLuuTru","SERVICE");
+define("ThietBiVaDichVuLuuTru","EQUIPMENT AND SERVICE");
+define("DatCho","BOOK NOW");

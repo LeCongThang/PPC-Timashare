@@ -38,7 +38,7 @@ class model
 
     public function laydanhsachslider()
     {
-        $sql = "SELECT slider.image_slider, slider.duongdan_slider, slider_ngonngu.noidung_slider, slider_ngonngu.tieude_slider, slider_ngonngu.mota_slider FROM slider,slider_ngonngu WHERE slider.id_slider = slider_ngonngu.id_slider AND slider_ngonngu.ngon_ngu = '".$_SESSION['lang']."'";
+        $sql = "SELECT slider.image_slider, slider.duongdan_slider, slider_ngonngu.noidung_slider, slider_ngonngu.tieude_slider, slider_ngonngu.mota_slider FROM slider,slider_ngonngu WHERE slider.id_slider = slider_ngonngu.id_slider AND slider_ngonngu.ngon_ngu = '" . $_SESSION['lang'] . "'";
         $result = mysqli_query($this->db, $sql);
         if (!$result) {
             die("Error in query");
@@ -54,7 +54,7 @@ class model
 
     public function laygioithieu()
     {
-        $sql = "SELECT gioithieu.id, gioithieu.img_tieude, gioithieu_ngonngu.tieu_de, gioithieu_ngonngu.noidung_gioithieu  FROM gioithieu,gioithieu_ngonngu WHERE gioithieu.id = gioithieu_ngonngu.id_gioithieu AND gioithieu_ngonngu.ngonngu = '".$_SESSION['lang']."'";
+        $sql = "SELECT gioithieu.id, gioithieu.img_tieude, gioithieu_ngonngu.tieu_de, gioithieu_ngonngu.noidung_gioithieu  FROM gioithieu,gioithieu_ngonngu WHERE gioithieu.id = gioithieu_ngonngu.id_gioithieu AND gioithieu_ngonngu.ngonngu = '" . $_SESSION['lang'] . "'";
         $result = mysqli_query($this->db, $sql);
         if (!$result) {
             die("Error in query");
@@ -62,8 +62,9 @@ class model
         return mysqli_fetch_assoc($result);
     }
 
-    public function layDanhSachCauHoiThuongGap(){
-        $sql = "SELECT cauhoithuonggap.id, cauhoithuonggap_ngonngu.cauhoi, cauhoithuonggap_ngonngu.cautraloi FROM cauhoithuonggap, cauhoithuonggap_ngonngu WHERE cauhoithuonggap.id = cauhoithuonggap_ngonngu.id_cauhoithuonggap AND cauhoithuonggap_ngonngu.ngonngu = '".$_SESSION['lang']."'";
+    public function layDanhSachCauHoiThuongGap()
+    {
+        $sql = "SELECT cauhoithuonggap.id, cauhoithuonggap_ngonngu.cauhoi, cauhoithuonggap_ngonngu.cautraloi FROM cauhoithuonggap, cauhoithuonggap_ngonngu WHERE cauhoithuonggap.id = cauhoithuonggap_ngonngu.id_cauhoithuonggap AND cauhoithuonggap_ngonngu.ngonngu = '" . $_SESSION['lang'] . "'";
         $result = mysqli_query($this->db, $sql);
         if (!$result) {
             die("Error in query");
@@ -77,8 +78,9 @@ class model
         return $list;
     }
 
-    public function layChiTietTheoNgonNgu($idslider){
-        $sql = "SELECT * FROM slider_ngonngu WHERE id_slider=".$idslider." AND ngon_ngu ='".$_SESSION['lang']."'";
+    public function layChiTietTheoNgonNgu($idslider)
+    {
+        $sql = "SELECT * FROM slider_ngonngu WHERE id_slider=" . $idslider . " AND ngon_ngu ='" . $_SESSION['lang'] . "'";
         $result = mysqli_query($this->db, $sql);
         if (!$result) {
             die("Error in query in here");
@@ -92,7 +94,8 @@ class model
         return $list;
     }
 
-    public function laydulieu($bang){
+    public function laydulieu($bang)
+    {
         $sql = "SELECT * FROM " . $bang;
         $result = mysqli_query($this->db, $sql);
         return mysqli_fetch_assoc($result);
@@ -100,7 +103,7 @@ class model
 
     public function layThongTinChiTietKhuNghiDuong($id)
     {
-        $sql = "SELECT * FROM khunghiduong_".$_SESSION['lang']." WHERE id =". $id;
+        $sql = "SELECT * FROM khunghiduong_" . $_SESSION['lang'] . " WHERE id =" . $id;
         //echo $sql;
         if (!$kq = $this->db->query($sql)) die($this->db->error);
         if (!$kq) return FALSE;
@@ -154,14 +157,14 @@ class model
 
     public function booknow($tendangnhap, $idsp, $thoigian, $ghichu)
     {
-        $sql = "insert into book_now(tendangnhap,idkhunghiduong,thoigian,ghichu) values ('" . $tendangnhap . "'," . $idsp . ",'".$thoigian."','".$ghichu."')";
+        $sql = "insert into book_now(tendangnhap,idkhunghiduong,thoigian,ghichu) values ('" . $tendangnhap . "'," . $idsp . ",'" . $thoigian . "','" . $ghichu . "')";
         //echo $sql;
         return mysqli_query($this->db, $sql);
     }
 
     public function readmor($idsp)
     {
-        $sql = "SELECT * FROM khunghiduong_".$_SESSION['lang']." WHERE id =" . $idsp;
+        $sql = "SELECT * FROM khunghiduong_" . $_SESSION['lang'] . " WHERE id =" . $idsp;
         return mysqli_query($this->db, $sql);
     }
 
@@ -194,7 +197,7 @@ class model
         return false;
     }
 
-    public function doiquenmatkhau($tendangnhap,$matkhaumoi)
+    public function doiquenmatkhau($tendangnhap, $matkhaumoi)
     {
         $sql = "UPDATE taikhoan SET matkhau='" . md5($matkhaumoi) . "' WHERE tendangnhap = '" . $tendangnhap . "'";
         return mysqli_query($this->db, $sql);
@@ -209,7 +212,7 @@ class model
 
     public function ktIdVaSoDienThoai($tendangnhap, $sodienthoai)
     {
-        $sql = "SELECT * FROM taikhoan WHERE tendangnhap = '".$tendangnhap."' AND dienthoai ='".$sodienthoai."'";
+        $sql = "SELECT * FROM taikhoan WHERE tendangnhap = '" . $tendangnhap . "' AND dienthoai ='" . $sodienthoai . "'";
         if (!$kq = $this->db->query($sql))
             die($this->db->error);
 
@@ -218,7 +221,8 @@ class model
         return true;
     }
 
-    public function themTaiKhoanDangKy($email, $sodienthoai){
+    public function themTaiKhoanDangKy($email, $sodienthoai)
+    {
         $sql = "insert into taikhoandangky(email_taikhoandk, sdt_taikhoandk, trangthai_taikhoandk) values ('" . $email . "','" . $sodienthoai . "',1)";
         return mysqli_query($this->db, $sql);
     }
@@ -231,15 +235,17 @@ class model
         return $row;
     }
 
-    public function laySoLuongVideo(){
+    public function laySoLuongVideo()
+    {
         $sql = "select count(id_video) as total from video";
         $result = $this->db->query($sql);
         $row = mysqli_fetch_assoc($result);
         return $row['total'];
     }
 
-    public function layDanhSachVideo($offset, $items){
-        $sql = "SELECT * FROM video ORDER BY id_video ASC LIMIT " . $offset . "," .$items;
+    public function layDanhSachVideo($offset, $items)
+    {
+        $sql = "SELECT * FROM video ORDER BY id_video ASC LIMIT " . $offset . "," . $items;
         $result = mysqli_query($this->db, $sql);
         if (!$result) {
             die("Error in query in here");
@@ -253,8 +259,9 @@ class model
         return $list;
     }
 
-    public function getListDeals(){
-        $sql = "SELECT deals.id, deals.image, deals_language.title, deals_language.content FROM deals, deals_language WHERE deals.id = deals_language.id_deals AND deals_language.language ='".$_SESSION['lang']."'";
+    public function getListDeals()
+    {
+        $sql = "SELECT deals.id, deals.image, deals_language.title, deals_language.content FROM deals, deals_language WHERE deals.id = deals_language.id_deals AND deals_language.language ='" . $_SESSION['lang'] . "'";
         $result = mysqli_query($this->db, $sql);
         if (!$result) {
             die("Error in query in here");
@@ -268,8 +275,9 @@ class model
         return $list;
     }
 
-    public function getListDealsPage($offset, $items){
-        $sql = "SELECT deals.id, deals.image, deals_language.title, deals_language.content FROM deals, deals_language WHERE deals.id = deals_language.id_deals AND deals_language.language ='".$_SESSION['lang']."' ORDER BY id ASC LIMIT " . $offset . "," .$items;
+    public function getListDealsPage($offset, $items)
+    {
+        $sql = "SELECT deals.id, deals.image, deals_language.title, deals_language.content FROM deals, deals_language WHERE deals.id = deals_language.id_deals AND deals_language.language ='" . $_SESSION['lang'] . "' ORDER BY id ASC LIMIT " . $offset . "," . $items;
         $result = mysqli_query($this->db, $sql);
         if (!$result) {
             die("Error in query in here");
@@ -283,15 +291,17 @@ class model
         return $list;
     }
 
-    public function getNumberDeals(){
+    public function getNumberDeals()
+    {
         $sql = "select count(id) as total from deals";
         $result = $this->db->query($sql);
         $row = mysqli_fetch_assoc($result);
         return $row['total'];
     }
 
-    public function getDetailDeals($id){
-        $sql = "SELECT deals.id, deals.image, deals_language.title, deals_language.content FROM deals, deals_language WHERE deals.id = deals_language.id_deals AND deals_language.language ='".$_SESSION['lang']."' AND deals.id = ".$id;
+    public function getDetailDeals($id)
+    {
+        $sql = "SELECT deals.id, deals.image, deals_language.title, deals_language.content FROM deals, deals_language WHERE deals.id = deals_language.id_deals AND deals_language.language ='" . $_SESSION['lang'] . "' AND deals.id = " . $id;
         $result = mysqli_query($this->db, $sql);
         if (!$result) {
             die("Error in query in here");
@@ -300,15 +310,17 @@ class model
         return $row;
     }
 
-    public function getNumberConnect(){
+    public function getNumberConnect()
+    {
         $sql = "select count(id) as total from connect_ppc";
         $result = $this->db->query($sql);
         $row = mysqli_fetch_assoc($result);
         return $row['total'];
     }
 
-    public function getListConnect($offset, $items){
-        $sql = "SELECT connect_ppc.id, connect_ppc.image, connect_ppc.date, connect_ppc_language.title, connect_ppc_language.content FROM connect_ppc, connect_ppc_language WHERE connect_ppc.id = connect_ppc_language.id_connect_ppc AND connect_ppc_language.language ='".$_SESSION['lang']."' ORDER BY id ASC LIMIT " . $offset . "," .$items;
+    public function getListConnect($offset, $items)
+    {
+        $sql = "SELECT connect_ppc.id, connect_ppc.image, connect_ppc.date, connect_ppc_language.title, connect_ppc_language.content FROM connect_ppc, connect_ppc_language WHERE connect_ppc.id = connect_ppc_language.id_connect_ppc AND connect_ppc_language.language ='" . $_SESSION['lang'] . "' ORDER BY id ASC LIMIT " . $offset . "," . $items;
         $result = mysqli_query($this->db, $sql);
         if (!$result) {
             die("Error in query in here");
@@ -322,8 +334,9 @@ class model
         return $list;
     }
 
-    public function getDetailConnect($id){
-        $sql = "SELECT connect_ppc.id, connect_ppc.image, connect_ppc.date, connect_ppc_language.title, connect_ppc_language.content FROM connect_ppc, connect_ppc_language WHERE connect_ppc.id = connect_ppc_language.id_connect_ppc AND connect_ppc_language.language ='".$_SESSION['lang']."' AND connect_ppc.id = ".$id;
+    public function getDetailConnect($id)
+    {
+        $sql = "SELECT connect_ppc.id, connect_ppc.image, connect_ppc.date, connect_ppc_language.title, connect_ppc_language.content FROM connect_ppc, connect_ppc_language WHERE connect_ppc.id = connect_ppc_language.id_connect_ppc AND connect_ppc_language.language ='" . $_SESSION['lang'] . "' AND connect_ppc.id = " . $id;
         $result = mysqli_query($this->db, $sql);
         if (!$result) {
             die("Error in query in here");
@@ -332,15 +345,17 @@ class model
         return $row;
     }
 
-    public function getNumberAnncounce(){
+    public function getNumberAnncounce()
+    {
         $sql = "select count(id) as total from announce_papers";
         $result = $this->db->query($sql);
         $row = mysqli_fetch_assoc($result);
         return $row['total'];
     }
 
-    public function getListAnnounce($offset, $items){
-        $sql = "SELECT announce_papers.id, announce_papers.link, announce_papers.image, announce_papers.date, announce_papers_language.title, announce_papers_language.content FROM announce_papers, announce_papers_language WHERE announce_papers.id = announce_papers_language.id_announce_papers AND announce_papers_language.language ='".$_SESSION['lang']."' ORDER BY id ASC LIMIT " . $offset . "," .$items;
+    public function getListAnnounce($offset, $items)
+    {
+        $sql = "SELECT announce_papers.id, announce_papers.link, announce_papers.image, announce_papers.date, announce_papers_language.title, announce_papers_language.content FROM announce_papers, announce_papers_language WHERE announce_papers.id = announce_papers_language.id_announce_papers AND announce_papers_language.language ='" . $_SESSION['lang'] . "' ORDER BY id ASC LIMIT " . $offset . "," . $items;
         $result = mysqli_query($this->db, $sql);
         if (!$result) {
             die("Error in query in here");
@@ -354,8 +369,44 @@ class model
         return $list;
     }
 
+    public function getDetailsResort($id)
+    {
+        $sql = "SELECT resort.id, resort.address, resort_language.introduce, resort_language.location, resort_language.service, resort_language.equipment FROM resort, resort_language WHERE resort.id = resort_language.id_resort AND resort_language.language ='" . $_SESSION['lang'] . "' AND resort.id = " . $id . " AND resort.status = 0";
+        $result = mysqli_query($this->db, $sql);
+        if (!$result) {
+            die("Error in query in here");
+        }
+        $row = $result->fetch_assoc();
+        return $row;
+    }
 
+    public function getListImageResort($id)
+    {
+        $sql = "SELECT * FROM resort_image WHERE id_resort=" . $id;
+        $result = mysqli_query($this->db, $sql);
+        if (!$result) {
+            die("Error in query in here");
+        }
+        $list = array();
+        while ($row = mysqli_fetch_assoc($result)) {
+            $list[] = $row;
+        }
+        //remove out of memory
+        mysqli_free_result($result);
+        return $list;
+    }
 
+    public function httpGet($url)
+    {
+        $ch = curl_init();
 
+        curl_setopt($ch, CURLOPT_URL, $url);
+        curl_setopt($ch, CURLOPT_RETURNTRANSFER, true);
+        //  curl_setopt($ch,CURLOPT_HEADER, false);
 
+        $output = curl_exec($ch);
+
+        curl_close($ch);
+        return $output;
+    }
 }//class

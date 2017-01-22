@@ -11,10 +11,10 @@
             <div id="paging_announce">
                 <div id="row_announce" ></div>
             </div>
-            <div>
-                <div class="goPrevious_announce glyphicon glyphicon-triangle-left">Trước  Tiếp theo</div>
-                <div class="goNext_announce glyphicon glyphicon-triangle-right"></div></div>
-            </div>
+<!--            <div>-->
+<!--                <div class="goPrevious_announce glyphicon glyphicon-triangle-left">Trước  Tiếp theo</div>-->
+<!--                <div class="goNext_announce glyphicon glyphicon-triangle-right"></div></div>-->
+<!--            </div>-->
         </div>
         <img src="">
     </div>

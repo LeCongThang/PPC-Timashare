@@ -333,3 +333,52 @@ h2 {
     text-align: center;
     padding: 2px;
 }
+
+.pages > p > a {
+    color: #680101;
+}
+
+.pages > p > a:visited {
+    font-weight: bolder;
+    text-decoration: none;
+}
+
+.pages > p > a:hover {
+    text-decoration: none;
+}
+
+.pages > p > a:active {
+    font-weight: bolder;
+    text-decoration: none;
+}
+
+#map {
+    height: 900px;
+}
+
+.a_active{
+    font-weight: bolder;
+}
+
+.h4_content_resort{
+    font-weight: bold;
+    font-family: verdana;
+    color: #680101;
+    text-align: justify;
+}
+
+.h5_content_resort{
+    font-family: verdana;
+    text-align: justify;
+}
+#map {
+    height: 400px;
+    width: 100%;
+}
+
+#map_google{
+    margin-top: 40px;
+    padding-left: 0px;
+    padding-right: 0px;
+    margin-bottom: 40px;
+ }

@@ -117,7 +117,7 @@
                 else
                     echo '<div class="item">';
                 echo '<div class="row">';
-                echo '<img  class = " img-responsive col-sm-12 col-md-12 col-lg-12  " src ="' . BASE_DIR . $itemSlider['image_slider'] . '">';
+                echo '<img  class = "img-responsive col-sm-12 col-md-12 col-lg-12  " src ="' . BASE_DIR . $itemSlider['image_slider'] . '">';
                 echo '</div>';
                 if ($itemSlider['tieude_slider'] != "" || $itemSlider['mota_slider'] != "") {
                     echo '<div class="carousel-caption"><div class = "row"> <div class="col-md offset-4 col-md-8 bannerDecription">';

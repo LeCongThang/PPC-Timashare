@@ -88,6 +88,10 @@ $str = str_replace("{UuDaiDacBiet}", UuDaiDacBiet, $str);
 $str = str_replace("{GoiYChoKyNghi}", GoiYChoKyNghi, $str);
 $str = str_replace("{KetNoiVoi}", KetNoiVoi, $str);
 $str = str_replace("{ThongCaoBaoChi}", ThongCaoBaoChi, $str);
+$str = str_replace("{Vitri}", ViTri, $str);
+$str = str_replace("{DichVuLuuTru}", DichVuLuuTru, $str);
+$str = str_replace("{ThietBiVaDichVuLuuTru}", ThietBiVaDichVuLuuTru, $str);
+$str = str_replace("{DatCho}", DatCho, $str);
 echo $str;
 
 

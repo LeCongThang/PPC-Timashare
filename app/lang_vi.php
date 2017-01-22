@@ -69,3 +69,7 @@ define("CoGiMoiTaiTimeShare","CÓ GÌ MỚI TẠI PPC TIMESHARE");
 define("UuDaiDacBiet","ƯU ĐÃI ĐẶC BIỆT");
 define("KetNoiVoi","KẾT NỐI VỚI");
 define("ThongCaoBaoChi","THÔNG CÁO BÁO CHÍ");
+define("ViTri","VỊ TRÍ");
+define("DichVuLuuTru","DỊCH VỤ LƯU TRÚ");
+define("ThietBiVaDichVuLuuTru","THIẾT BỊ VÀ DỊCH VỤ LƯU TRÚ");
+define("DatCho","ĐẶT CHỖ");

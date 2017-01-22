@@ -81,7 +81,12 @@
                 }
 
             });
-
+            $(document).on("click", 'div.pages a', function (e) {
+                e.preventDefault();
+                data = $(this).data("value");
+                goCurrentPage(data);
+                e.preventDefault();
+            });
 
         }
 
@@ -119,6 +124,14 @@
         //=============================================
         function setCurrentPage(value) {
             txtCurrentPage.val(value);
+        }
+
+        function goCurrentPage(value) {
+            //console.log("goNext: " + options.currentPage);
+            loadData(value);
+            setCurrentPage(value);
+            options.currentPage = value;
+            pageInfo();
         }
 
         //=============================================
@@ -163,16 +176,27 @@
 
                     //console.log(rows);
                     var temp = "";
-                    var num = 0;
                     var num_sub = options.total - page;
-                    if (num_sub < 2) num = num_sub + 1; else num = 3;
-                    for (var i = page; i < page + num; i++)
-                        temp += '<a style="margin-right: 3px">' + i + '</a>';
-                    var front = "";
-                    var end = "";
-                    var bottom_content = '<div class="pages"><p >Trang ' + temp + '</p></div>';
+                    if (num_sub == 0) {
+                        for (var i = page - 2; i <= page; i++) {
+                            if (i == page)  temp += '<a class="a_active" href="#" style="margin-right: 3px" data-value = ' + i + '>' + i + '</a>';
+                            else if (i != 0)
+                                temp += '<a href="#" style="margin-right: 3px" data-value = ' + i + '>' + i + '</a>';
+                        }
+                    }
+                    else {
+                        for (var i = page - 1; i <= page + 1; i++) {
+                            if (i == page)  temp += '<a class="a_active" href="#" style="margin-right: 3px" data-value = ' + i + '>' + i + '</a>';
+                            else if (i != 0)
+                                temp += '<a href="#" style="margin-right: 3px" data-value = ' + i + '>' + i + '</a>';
+                        }
+                    }
+                    var page_name = ""
+                    if (lang == "vi")
+                        page_name = "Trang ";
+                    else page_name = "Page ";
+                    var bottom_content = '<div class="pages"><p >' + page_name + temp + '</p></div>';
                     rows.append(bottom_content);
-
                 }
             });
         }
