@@ -297,6 +297,21 @@ class controller
             $khuNghiDuongBanner = $this->control->layThongTinChiTietKhuNghiDuong($banner['idkhunghiduong']);
             $dsKhuNghiDuongBanner[] = $khuNghiDuongBanner;
         }
+
+        $regions = array(array());
+        $listContinents = $this->control->getListContinents();
+        foreach ($listContinents as $key => $continent) {
+            $regions[$key] = $this->control->getListRegions($continent['id']);
+        }
+
+        $address = "42 Broadwat Suit 12-233 New York, NY 10004";
+        $url = 'http://maps.google.com/maps/api/geocode/json?address=' . urlencode($address);
+        $output = $this->control->httpGet($url);
+        $data = json_decode($output, true);
+        $geometry = $data['results'][0]['geometry']['location'];
+        $lat = $geometry['lat'];
+        $lng = $geometry['lng'];
+
         require_once("view/ResortDirectory.php");
     }
 
@@ -490,6 +505,44 @@ class controller
         $lat = $geometry['lat'];
         $lng = $geometry['lng'];
         require_once("view/DetailsResort.php");
+    }
+
+    public function loadingOwingATimeShare()
+    {
+        $dssbanner = $this->control->laydanhsach("banner");
+        $dssliderw = $this->control->laydanhsachslider();
+        $dsKhuNghiDuongBanner = array();
+        foreach ($dssbanner as $banner) {
+            $khuNghiDuongBanner = $this->control->layThongTinChiTietKhuNghiDuong($banner['idkhunghiduong']);
+            $dsKhuNghiDuongBanner[] = $khuNghiDuongBanner;
+        }
+        $data = $this->control->getOwingATimeShare();
+        require_once("view/KhachChuaSoHuu.php");
+    }
+
+    public function loadingBenefitTimeShare()
+    {
+        $dssbanner = $this->control->laydanhsach("banner");
+        $dssliderw = $this->control->laydanhsachslider();
+        $dsKhuNghiDuongBanner = array();
+        foreach ($dssbanner as $banner) {
+            $khuNghiDuongBanner = $this->control->layThongTinChiTietKhuNghiDuong($banner['idkhunghiduong']);
+            $dsKhuNghiDuongBanner[] = $khuNghiDuongBanner;
+        }
+        $data = $this->control->getBenefitTimeShare();
+        require_once("view/LoiIchTimeShare.php");
+    }
+
+    public function updateContinent()
+    {
+        $listCountry = $this->control->laydanhsach("country");
+        foreach ($listCountry as $country) {
+            $name = $this->control->countrytocontinent($country['sort_name']);
+            $id = $this->control->getIdContinents($name);
+            $idCountry = $country['id'];
+            $this->control->setIdContinents($idCountry,$id);
+        }
+
     }
 
 }//class

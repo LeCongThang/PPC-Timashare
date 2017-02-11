@@ -154,7 +154,9 @@
                 </div>
                 <div class="col-md-3 col-sm-4" id="img_right_img">
                     <div class='captions captions_right'>
-                        <p style="padding-top: 65%;text-align: center"><a href="<?=BASE_URL.$_SESSION['lang']?>/controller/loadingDealsPage">{UuDaiDacBiet}</a></p>
+                        <p style="padding-top: 65%;text-align: center"><a
+                                href="<?= BASE_URL . $_SESSION['lang'] ?>/controller/loadingDealsPage">{UuDaiDacBiet}</a>
+                        </p>
                     </div>
                     <?php echo "<img class='img-responsive khu_nghi_duong_gia_ca_img' src='data:image/jpg;base64," . base64_encode($array_img_t[4]->getImageBlob()) . "' />"; ?>
                 </div>
@@ -184,7 +186,7 @@
                             <div class='th'>
                                 <div class='caps'>
                                     <p>
-                                        <a href="<?= $du_lieu_tham_gia['link_hinh_2'] ?>"><?= $du_lieu_tham_gia['label_hinh_2'] ?></a>
+                                        <a href="<?= BASE_URL . $_SESSION['lang'] ?>/controller/loadingBenefitTimeShare"><?= $du_lieu_tham_gia['label_hinh_2'] ?></a>
                                     </p>
                                 </div>
                                 <?php echo "<img class='img-responsive' src='data:image/jpg;base64," . base64_encode($array_img[1]->getImageBlob()) . "' />"; ?>
@@ -196,7 +198,7 @@
                             <div class='th'>
                                 <div class='caps'>
                                     <p>
-                                        <a href="<?=BASE_URL.$_SESSION['lang']?>/controller/loadingConnectPage"><?= $du_lieu_tham_gia['label_hinh_3'] ?></a>
+                                        <a href="<?= BASE_URL . $_SESSION['lang'] ?>/controller/loadingConnectPage"><?= $du_lieu_tham_gia['label_hinh_3'] ?></a>
                                     </p>
                                 </div>
                                 <?php echo "<img class='img-responsive' src='data:image/jpg;base64," . base64_encode($array_img[2]->getImageBlob()) . "' />"; ?>
@@ -208,7 +210,7 @@
                     <div class='th'>
                         <div class='caps'>
                             <p>
-                                <a href="<?= $du_lieu_tham_gia['link_hinh_4'] ?>"><?= $du_lieu_tham_gia['label_hinh_4'] ?></a>
+                                <a href="<?= BASE_URL . $_SESSION['lang'] ?>/controller/loadingOwingATimeShare"><?= $du_lieu_tham_gia['label_hinh_4'] ?></a>
                             </p>
                         </div>
                         <?php echo "<img class='img-responsive' src='data:image/jpg;base64," . base64_encode($array_img[3]->getImageBlob()) . "' />"; ?>
@@ -218,7 +220,7 @@
                     <div class='th'>
                         <div class='caps'>
                             <p>
-                                <a href="<?= BASE_URL.$_SESSION['lang'] ?>/controller/loadingAnnouncePage"><?= $du_lieu_tham_gia['label_hinh_5'] ?></a>
+                                <a href="<?= BASE_URL . $_SESSION['lang'] ?>/controller/loadingAnnouncePage"><?= $du_lieu_tham_gia['label_hinh_5'] ?></a>
                             </p>
                         </div>
                         <?php echo "<img class='img-responsive' src='data:image/jpg;base64," . base64_encode($array_img[4]->getImageBlob()) . "' />"; ?>
@@ -281,13 +283,12 @@
                     <div class="col-md-12 col-sm-12" id="banner_5">
                         <div class="input-group" style="width:100%;">
                     <textarea rows="10" cols="159" style="width:100%;border:1px solid grey; border-radius:2px;"
-                              class="ckeditor" id="ckeditor" placeholder="YOUR MESSAGE" name="loinhan">
-                    </textarea>
+                              placeholder="{NoiDung}" name="loinhan"></textarea>
                         </div>
                         <p><span style="color: red;" id="thongbaoguilh"></span></p>
                     </div>
                     <div class="col-md-9"></div>
-                    <div class="col-md-3">
+                    <div class="col-md-3" style="margin-top: -48px">
                         <div class="input-group" style="width:100%">
                             <input type="submit" class="form-control"
                                    style="width:100%;border:1px solid grey; border-radius:2px;"

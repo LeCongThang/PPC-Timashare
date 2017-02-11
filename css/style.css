@@ -371,10 +371,6 @@ h2 {
     font-family: verdana;
     text-align: justify;
 }
-#map {
-    height: 400px;
-    width: 100%;
-}
 
 #map_google{
     margin-top: 40px;

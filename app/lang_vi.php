@@ -73,3 +73,4 @@ define("ViTri","VỊ TRÍ");
 define("DichVuLuuTru","DỊCH VỤ LƯU TRÚ");
 define("ThietBiVaDichVuLuuTru","THIẾT BỊ VÀ DỊCH VỤ LƯU TRÚ");
 define("DatCho","ĐẶT CHỖ");
+define("NoiDung"," NỘI DUNG");
