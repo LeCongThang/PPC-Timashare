@@ -756,8 +756,23 @@ class model
 
     public function setIdContinents($idCountry, $idContinents)
     {
-        echo $idContinents;
         $sql = "UPDATE country SET id_continents = ".$idContinents." WHERE id=".$idCountry;
         return mysqli_query($this->db, $sql);
+    }
+
+    public function getAllResort()
+    {
+        $sql = "SELECT * FROM resort, resort_language WHERE resort.id = resort_language.id_resort AND resort_language.language='".$_SESSION['lang']."'";
+        $result = mysqli_query($this->db, $sql);
+        if (!$result) {
+            die("Error in query in here");
+        }
+        $list = array();
+        while ($row = mysqli_fetch_assoc($result)) {
+            $list[] = $row;
+        }
+        //remove out of memory
+        mysqli_free_result($result);
+        return $list;
     }
 }//class

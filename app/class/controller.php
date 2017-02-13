@@ -304,14 +304,7 @@ class controller
             $regions[$key] = $this->control->getListRegions($continent['id']);
         }
 
-        $address = "42 Broadwat Suit 12-233 New York, NY 10004";
-        $url = 'http://maps.google.com/maps/api/geocode/json?address=' . urlencode($address);
-        $output = $this->control->httpGet($url);
-        $data = json_decode($output, true);
-        $geometry = $data['results'][0]['geometry']['location'];
-        $lat = $geometry['lat'];
-        $lng = $geometry['lng'];
-
+        $listResort = $this->control->getAllResort();
         require_once("view/ResortDirectory.php");
     }
 

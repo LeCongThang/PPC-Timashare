@@ -43,11 +43,11 @@
                     'url' => 'controllergioithieu/index',
                     'icon' => 'glyphicon glyphicon-pencil',
                 ],
-//                [
-//                    'title' => 'KHU NGHỈ DƯỠNG',
-//                    'url' => 'controllernghiduong/nghiduong',
-//                    'icon' => 'glyphicon glyphicon-tree-deciduous',
-//                ],
+                [
+                    'title' => 'KHU NGHỈ DƯỠNG',
+                    'url' => 'controllernghiduong/index',
+                    'icon' => 'glyphicon glyphicon-tree-deciduous',
+                ],
 //                [
 //                    'title' => 'BOOK',
 //                    'url' => 'controllerbook/index',

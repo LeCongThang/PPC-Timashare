@@ -99,20 +99,17 @@
                     var markerCluster = new MarkerClusterer(map, markers,
                         {imagePath: 'https://developers.google.com/maps/documentation/javascript/examples/markerclusterer/m'});
                 }
-                var content = '<div id="bodyContent""><img style="height: 100px; width:200px;float:left" border="0" src="<?=BASE_DIR?>img/h1.jpg"/> <a href ="#"> <b>KHU NGHỈ DƯỠNG NOVALAND</b></a><br/><br/>  244 Cống Quỳnh,P. Phạm Ngũ Lão, Quận 1, Tp HCM</div>'
-
                 var locations = [
-                    {lat: -31.563910, lng: 147.154312, info: content},
-                    {lat: -33.718234, lng: 150.363181, info: content},
-                    {lat: -33.727111, lng: 150.371124, info: content},
-                    {lat: -33.848588, lng: 151.209834, info: content},
-                    {lat: -33.851702, lng: 151.216968, info: content},
-                    {lat: -34.671264, lng: 150.863657, info: content},
-                    {lat: -35.304724, lng: 148.662905, info: content},
-                    {lat: -36.817685, lng: 175.699196, info: content},
-                    {lat: -36.828611, lng: 175.790222, info: content},
-                    {lat: -37.750000, lng: 145.116667, info: content},
-                    {lat: -43.999792, lng: 170.463352, info: content}
+
+                    <?php foreach ($listResort as $key => $resort)
+                    {
+                        $count = count($listResort);
+                        if($key < $count-1)
+                            echo "{lat: ".$listResort[$key]['lat'].", lng:".$listResort[$key]['lng'].", info:'".$listResort[$key]['info_map']."'},";
+                        else
+                            echo "{lat: ".$listResort[$key]['lat'].", lng:".$listResort[$key]['lng'].", info:'".$listResort[$key]['info_map']."'}";
+                        ?>
+                    <?php }?>
                 ]
 
             </script>
