@@ -1,5 +1,14 @@
 <?php include 'header.php'; ?>
+<script>var lang = '<?=$_SESSION['lang']?>'</script>
+<script>var base_dir = '<?=BASE_DIR?>'</script>
+<script>var base_url = '<?=BASE_URL?>'</script>
+<script>var tim_hieu_them = '{TimHieuThem}'</script>
+<script>var id = <?=$id?></script>
 
+
+<?php $isWorld = isset($this->params[0]);
+        if(!$isWorld) echo '<script type="text/javascript" src="'.BASE_DIR.'js/paging_resort.js"></script>';
+else echo '<script type="text/javascript" src="'.BASE_DIR.'js/paging_resort_id.js"></script>';?>
 <script
     src="https://developers.google.com/maps/documentation/javascript/examples/markerclusterer/markerclusterer.js"></script>
 <div class="container">
@@ -14,17 +23,24 @@
         <div class="col-md-4 col-sm-4">
             <div class="panel-border">
                 <h4 style="background: #362416 !important;color: white;padding-top: 15px;padding-bottom: 15px;padding-left: 10px;margin-bottom: 0px">
-                    <b>Region</b></h4>
+                    <b>{KhuVuc}</b></h4>
                 <div class="dimAlignments" style="background: #E8E7E5 !important;">
                     <ul id="dimListPrim"
                         style=" list-style:none;padding-left: 15px;margin-top: 0px;padding-top: 10px;padding-bottom: 10px">
                         <?php
-                        foreach ($listContinents as $key => $continent) {
-                            echo '<li class="cauhoi" style="margin: 5px"><a class="test" href="#" onclick="return false;" ><span class="link_tim_hieu" style="color: #640100;">' . $continent['name'] . ' (' . $continent['number'] . ')</span></a><ul class="cautraloi" style="display: none;padding-left:15px;" >
+                        if (!$isWorld) {
+                            foreach ($listContinents as $key => $continent) {
+                                echo '<li class="cauhoi" style="margin: 5px"><a class="test" href="#" onclick="return false;" ><span class="link_tim_hieu" style="color: #640100;">' . $continent['name'] . ' (' . $continent['number'] . ')</span></a><ul class="cautraloi" style="display: none;padding-left:15px;" >
                                 ';
-                            foreach ($regions[$continent['id'] - 1] as $key2 => $region)
-                                echo '<li style="margin-top: 5px;margin-bottom: 5px;"  class="noi_dung_link_tim_hieu"><a href="#" style="color:#3C2A1D;" >' . $region['long_name'] . ' (' . $region['number'] . ')</a></li>';
-                            echo '</ul></a>';
+                                foreach ($regions[$continent['id'] - 1] as $key2 => $region) {
+                                    if ($region['number'] > 0)
+                                        echo '<li style="margin-top: 5px;margin-bottom: 5px;"  class="noi_dung_link_tim_hieu"><a href="' . BASE_DIR . $_SESSION['lang'] . '/controller/chuyenTrangKhuNghiDuongGiaCa/' . $region['id'] . '" style="color:#3C2A1D;" >' . $region['long_name'] . ' (' . $region['number'] . ')</a></li>';
+                                }
+
+                                echo '</ul></a>';
+                            }
+                        } else {
+                            echo $country_name;
                         }
                         ?>
                     </ul>
@@ -40,86 +56,89 @@
                     <li role="presentation" class="active"><a href="#vi" id="vi-tab" role="tab"
                                                               data-toggle="tab"
                                                               aria-controls="gioithieu_vi"
-                                                              aria-expanded="true"><i
-                                class="glyphicon glyphicon-th-list"></i></a></li>
+                                                              aria-expanded="true">
+                            <i class="glyphicon glyphicon-map-marker"></i>
+                        </a></li>
                     <li role="presentation" class=""><a href="#en" role="tab" id="en-tab"
                                                         data-toggle="tab"
                                                         aria-controls="gioithieu_en"
-                                                        aria-expanded="false"><i
-                                class="glyphicon glyphicon-map-marker"></i></a></li>
+                                                        aria-expanded="false">
+                            <i class="glyphicon glyphicon-th-list"></i></a></li>
                 </ul>
                 <div class="tab-content" id="myTabContent">
                     <div class="tab-pane fade active in" role="tabpanel" id="vi"
                          aria-labelledby="vi-tab">
                         <div class="box-body">
                             <div id="map" style="height: 500px;"></div>
+
                         </div>
                     </div>
 
                     <div class="tab-pane fade " role="tabpanel" id="en" aria-labelledby="en-tab">
-                        <div class="box-body">
+                        <div class="box-body" style="margin-top: 15px;">
+                            <?php if (!$isWorld)
+                                echo '<div id="paging_announce" style="margin-bottom: 40px"><div id="row_announce"></div></div>';
+                            else
+                                echo '<div id="paging_resort" style="margin-bottom: 40px"><div id="row_resort"></div></div>';
+                            ?>
 
                         </div>
                     </div>
                 </div>
             </div>
-
-            <script>
-                function initMap() {
-                    var map = new google.maps.Map(document.getElementById('map'), {
-                        disableDoubleClickZoom: true,
-                        zoom: 1,
-                        scrollwheel: false,
-                        navigationControl: false,
-                        mapTypeControl: false,
-                        scaleControl: false,
-                        draggable: false,
-                        mapTypeId: google.maps.MapTypeId.ROADMAP,
-                        center: {lat: 0, lng: 0}
-                    });
-                    var infoWin = new google.maps.InfoWindow();
-                    // Create an array of alphabetical characters used to label the markers.
-                    var labels = 'ABCDEFGHIJKLMNOPQRSTUVWXYZ';
-                    // Add some markers to the map.
-                    // Note: The code uses the JavaScript Array.prototype.map() method to
-                    // create an array of markers based on a given "locations" array.
-                    // The map() method here has nothing to do with the Google Maps API.
-                    var markers = locations.map(function (location, i) {
-                        var marker = new google.maps.Marker({
-                            position: location
-                        });
-                        google.maps.event.addListener(marker, 'click', function (evt) {
-                            infoWin.setContent(location.info);
-                            infoWin.open(map, marker);
-                        })
-                        return marker;
-                    });
-
-                    // Add a marker clusterer to manage the markers.
-                    var markerCluster = new MarkerClusterer(map, markers,
-                        {imagePath: 'https://developers.google.com/maps/documentation/javascript/examples/markerclusterer/m'});
-                }
-                var locations = [
-
-                    <?php foreach ($listResort as $key => $resort)
-                    {
-                        $count = count($listResort);
-                        if($key < $count-1)
-                            echo "{lat: ".$listResort[$key]['lat'].", lng:".$listResort[$key]['lng'].", info:'".$listResort[$key]['info_map']."'},";
-                        else
-                            echo "{lat: ".$listResort[$key]['lat'].", lng:".$listResort[$key]['lng'].", info:'".$listResort[$key]['info_map']."'}";
-                        ?>
-                    <?php }?>
-                ]
-
-            </script>
-            <script
-                src="https://developers.google.com/maps/documentation/javascript/examples/markerclusterer/markerclusterer.js">
-            </script>
-            <script async defer
-                    src="https://maps.googleapis.com/maps/api/js?key=AIzaSyBsxl-PSyZFShpM_s-k4t4eI8P6dSvf9-M&callback=initMap">
-            </script>
         </div>
+
+        <script>
+            function initMap() {
+                var map = new google.maps.Map(document.getElementById('map'), {
+                    zoom: <?php if (!$isWorld) echo 1; else echo 5 ?>,
+                    center: {
+                        lat: <?php if (!$isWorld) echo 0; else echo $lat ?>,
+                        lng: <?php if (!$isWorld) echo 0; else echo $lng ?>}
+                });
+                var infoWin = new google.maps.InfoWindow();
+                // Create an array of alphabetical characters used to label the markers.
+                var labels = 'ABCDEFGHIJKLMNOPQRSTUVWXYZ';
+                // Add some markers to the map.
+                // Note: The code uses the JavaScript Array.prototype.map() method to
+                // create an array of markers based on a given "locations" array.
+                // The map() method here has nothing to do with the Google Maps API.
+                var markers = locations.map(function (location, i) {
+                    var marker = new google.maps.Marker({
+                        position: location
+                    });
+                    google.maps.event.addListener(marker, 'click', function (evt) {
+                        infoWin.setContent(location.info);
+                        infoWin.open(map, marker);
+                    })
+                    return marker;
+                });
+
+                // Add a marker clusterer to manage the markers.
+                var markerCluster = new MarkerClusterer(map, markers,
+                    {imagePath: 'https://developers.google.com/maps/documentation/javascript/examples/markerclusterer/m'});
+            }
+            var locations = [
+
+                <?php foreach ($listResort as $key => $resort)
+                {
+                $count = count($listResort);
+                if ($key < $count - 1)
+                    echo "{lat: " . $listResort[$key]['lat'] . ", lng:" . $listResort[$key]['lng'] . ", info:'" . $listResort[$key]['info_map'] . "'},";
+                else
+                    echo "{lat: " . $listResort[$key]['lat'] . ", lng:" . $listResort[$key]['lng'] . ", info:'" . $listResort[$key]['info_map'] . "'}";
+                ?>
+                <?php }?>
+            ]
+
+        </script>
+        <script
+            src="https://developers.google.com/maps/documentation/javascript/examples/markerclusterer/markerclusterer.js">
+        </script>
+        <script async defer
+                src="https://maps.googleapis.com/maps/api/js?key=AIzaSyBsxl-PSyZFShpM_s-k4t4eI8P6dSvf9-M&callback=initMap">
+        </script>
     </div>
+</div>
 </div>
 <?php include 'footer.php'; ?>

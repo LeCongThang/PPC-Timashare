@@ -292,6 +292,22 @@ select#language option[value="AsiaEnglish"] {
 
 }
 
+.resort_info h4{
+    font-weight: bold;
+    color: #680101;
+}
 
+.resort_info h5{
+    font-weight: bold;
+}
 
-
+.resort_info .resort_introduce{
+    text-align: justify;
+    width: 100%;
+    height: 50%;
+    text-overflow: ellipsis;
+    overflow: hidden;
+    display: -webkit-box;
+    -webkit-line-clamp: 6;
+    -webkit-box-orient: vertical;
+}

@@ -298,6 +298,7 @@
             </section>
         </div>
         </form>
+        <script>var lang = '<?=$_SESSION['lang']?>'</script>
         <div class="col-md-12 col-sm-12"
              STYLE="margin-top: 50px; margin-bottom: 50px; padding-left: 0px; padding-right: 0px">
             <iframe

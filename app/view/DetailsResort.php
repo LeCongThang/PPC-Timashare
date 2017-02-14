@@ -5,7 +5,7 @@
     <div class="row">
         <div class="col-md-12 col-sm-12" style="padding-left: 0px;padding-right: 0px">
             <hr class="text-left" style="width:50px;border:2px solid #362516;margin-left:0px;">
-            <h3 class="title_h3">SACOM TUYỀN LÂM</h3>
+            <h3 class="title_h3"><?php echo $resort['name']?></h3>
             <div id="Carousel" class="carousel slide" data-ride="carousel" style="height: 555px">
                 <div class="carousel-inner" role="listbox">
                     <?php
@@ -41,7 +41,7 @@
                 </ul>
             </div>
             <div class="col-md-2 col-md-offset-5" style="margin-top: 20px">
-                <button class="btnBookNow" style="width: 100%; height: 100%">{DatCho}</button>
+                <button class="btnBookNow" style="margin-top: 0px">{DatCho}</button>
             </div>
             <div class="col-md-12 col-sm-12" id="map_google">
                 <div id="map"></div>

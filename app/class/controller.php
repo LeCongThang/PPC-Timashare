@@ -285,6 +285,7 @@ class controller
 
     public function chuyenTrangKhuNghiDuongGiaCa()
     {
+        $id = 0;
         $dssbanner = $this->control->laydanhsach("banner");
         $ds_video = $this->control->laydanhsach("video");
         $dssliderw = $this->control->laydanhsachslider();
@@ -298,13 +299,26 @@ class controller
             $dsKhuNghiDuongBanner[] = $khuNghiDuongBanner;
         }
 
-        $regions = array(array());
-        $listContinents = $this->control->getListContinents();
-        foreach ($listContinents as $key => $continent) {
-            $regions[$key] = $this->control->getListRegions($continent['id']);
+        if (!isset($this->params[0])) {
+            $regions = array(array());
+            $listContinents = $this->control->getListContinents();
+            foreach ($listContinents as $key => $continent) {
+                $regions[$key] = $this->control->getListRegions($continent['id']);
+            }
+            $listResort = $this->control->getAllResort();
+        } else {
+            $id = $this->params[0];
+            $country_name = $this->control->getLongNameCountry($id);
+            $listResort = $this->control->getResortByCountryName($id);
+            $address = $country_name;
+            $url = 'http://maps.google.com/maps/api/geocode/json?address=' . urlencode($address);
+            $output = $this->control->httpGet($url);
+            $data = json_decode($output, true);
+            $geometry = $data['results'][0]['geometry']['location'];
+            $lat = $geometry['lat'];
+            $lng = $geometry['lng'];
+            require_once("view/ResortDirectory.php");
         }
-
-        $listResort = $this->control->getAllResort();
         require_once("view/ResortDirectory.php");
     }
 
@@ -473,10 +487,6 @@ class controller
         require_once("view/ThongBaoBaoChi.php");
     }
 
-    public function getDetailsResort()
-    {
-
-    }
 
     public function loadingDetailsResort()
     {
@@ -488,15 +498,11 @@ class controller
             $khuNghiDuongBanner = $this->control->layThongTinChiTietKhuNghiDuong($banner['idkhunghiduong']);
             $dsKhuNghiDuongBanner[] = $khuNghiDuongBanner;
         }
+
         $resort = $this->control->getDetailsResort($id);
         $listImageResort = $this->control->getListImageResort($id);
-        $address = $resort["address"];
-        $url = 'http://maps.google.com/maps/api/geocode/json?address=' . urlencode($address);
-        $output = $this->control->httpGet($url);
-        $data = json_decode($output, true);
-        $geometry = $data['results'][0]['geometry']['location'];
-        $lat = $geometry['lat'];
-        $lng = $geometry['lng'];
+        $lat = $resort['lat'];
+        $lng = $resort['lng'];
         require_once("view/DetailsResort.php");
     }
 
@@ -533,9 +539,61 @@ class controller
             $name = $this->control->countrytocontinent($country['sort_name']);
             $id = $this->control->getIdContinents($name);
             $idCountry = $country['id'];
-            $this->control->setIdContinents($idCountry,$id);
+            $this->control->setIdContinents($idCountry, $id);
         }
 
     }
+
+    public function getNumberResort()
+    {
+        $isWorld = isset($this->params[0]);
+        if (!$isWorld) {
+            $total = array("total" => 0);
+            $pages = $this->control->getNumberResort() / 4;
+            $total = array("total" => 0);
+            $tmp = explode(".", $pages);
+            if (count($tmp) > 1) {
+                $pages = $tmp[0] + 1;
+            } else {
+                $pages = $tmp[0];
+            }
+            $total["total"] = $pages;
+            echo json_encode($total);
+        } else {
+            $id = $this->params[0];
+            $total = array("total" => 0);
+            $pages = $this->control->getNumberResortById($id) / 4;
+            $total = array("total" => 0);
+            $tmp = explode(".", $pages);
+            if (count($tmp) > 1) {
+                $pages = $tmp[0] + 1;
+            } else {
+                $pages = $tmp[0];
+            }
+            $total["total"] = $pages;
+            echo json_encode($total);
+        }
+    }
+
+
+    public function getAllResort()
+    {
+        $isWorld = isset($this->params[0]);
+        if (!$isWorld) {
+            $items = 4;
+            $currentPage = (int)$_POST["currentPage"];
+            $offset = ($currentPage - 1) * $items;
+            $danh_sach_resort = $this->control->getAllResortPage($offset, $items);
+            echo json_encode($danh_sach_resort);
+        }else{
+            $id = $this->params[0];
+            $items = 4;
+            $currentPage = (int)$_POST["currentPage"];
+            $offset = ($currentPage - 1) * $items;
+            $danh_sach_resort = $this->control->getAllResortPageById($id, $offset, $items);
+            echo json_encode($danh_sach_resort);
+        }
+    }
+
 
 }//class

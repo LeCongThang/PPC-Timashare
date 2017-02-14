@@ -7,16 +7,16 @@
         //Cac gia mac cua options
         //=============================================
         var defaults = {
-            "rows": "#rows",
-            "pages": "#pages",
+            "rows": "#row_announce",
+            "pages": "#",
             "items": 5,
             "height": 27,
             "currentPage": 1,
             "total": 0,
-            "btnPrevious": ".goPrevious",
-            "btnNext": ".goNext",
-            "txtCurrentPage": "#currentPage",
-            "pageInfo": ".pageInfo"
+            "btnPrevious": ".goPrevious_announce",
+            "btnNext": ".goNext_announce",
+            "txtCurrentPage": "#currentPage_announce",
+            "pageInfo": ".pageInfo_announce"
         };
         options = $.extend(defaults, options);
         //=============================================
@@ -44,7 +44,7 @@
 
             //Lay tong so trang
             $.ajax({
-                url: lang + "/controller/laySoLuongVideo",
+                url: lang + "/controller/getNumberResort",
                 type: "GET",
                 dataType: "json"
             }).done(function (data) {
@@ -83,6 +83,14 @@
             });
 
 
+            $(document).on("click", 'div.pages a', function (e) {
+                e.preventDefault();
+                data = $(this).data("value");
+                goCurrentPage(data);
+                e.preventDefault();
+            });
+
+
         }
 
         //=============================================
@@ -111,6 +119,14 @@
                 options.currentPage = p;
                 pageInfo();
             }
+        }
+
+        function goCurrentPage(value) {
+            //console.log("goNext: " + options.currentPage);
+            loadData(value);
+            setCurrentPage(value);
+            options.currentPage = value;
+            pageInfo();
         }
 
         //=============================================
@@ -142,7 +158,7 @@
         function loadData(page) {
             //console.log("loadData");
             $.ajax({
-                url: lang +"/controller/layDanhSachVideo",
+                url: lang + "/controller/getAllResort",
                 type: "POST",
                 dataType: "json",
                 cache: false,
@@ -157,11 +173,39 @@
                     rows.empty();
 
                     $.each(data, function (i, val) {
-                        var str = '<div class="media"> <div class="media-left" style="width: 20%;height: 10%"> <img src="https://img.youtube.com/vi/' + val.url_video.substring(30) + '/0.jpg" style="width:100%;"> </div><div class="media-left name-video video"> <a href="#" data-value="' + val.url_video + '"><span class="link_video">' + val.ten_video + '</span></a> </div> </div>';
+                        var str = ' <div class="resort_item" style="margin-bottom: 15px;height:200px ">' +
+                            '<div class="col-sm-4 " style="padding-left: 0px">' + '<img src="' + base_dir + val.image + '" class="img-responsive" style="height: 200px"/></div>' +
+                            '<div class="col-sm-8 resort_info" style="padding-right: 0px;position: relative;height: 100%;margin-bottom: 40px"  >' +
+                            '<h4>' + val.name + '</h4>' +
+                            '<h5>' + val.address + '</h5>' +
+                            '<div class="resort_introduce">' + val.introduce + '</div>' +
+                            '<a href="' + base_url + lang + '/controller/loadingDetailsResort/' + val.id + '" id="btnreadmore" style="position: absolute;bottom: 0px;left: 15px"><b>' + tim_hieu_them + '</b></a></div>';
                         rows.append(str);
                     });
 
                     //console.log(rows);
+                    var temp = "";
+                    var num_sub = options.total - page;
+                    if (num_sub == 0) {
+                        for (var i = page - 2; i <= page; i++) {
+                            if (i == page)  temp += '<a class="a_active" href="#" style="margin-right: 3px" data-value = ' + i + '>' + i + '</a>';
+                            else if (i != 0)
+                                temp += '<a href="#" style="margin-right: 3px" data-value = ' + i + '>' + i + '</a>';
+                        }
+                    }
+                    else {
+                        for (var i = page - 1; i <= page + 1; i++) {
+                            if (i == page)  temp += '<a class="a_active" href="#" style="margin-right: 3px" data-value = ' + i + '>' + i + '</a>';
+                            else if (i != 0)
+                                temp += '<a href="#" style="margin-right: 3px" data-value = ' + i + '>' + i + '</a>';
+                        }
+                    }
+                    var page_name = "";
+                    if (lang == "vi")
+                        page_name = "Trang ";
+                    else page_name = "Page ";
+                    var bottom_content = '<div class="pages"><p >' + page_name + temp + '</p></div><br><br><br>';
+                    rows.append(bottom_content);
                 }
             });
         }
@@ -170,7 +214,7 @@
 
 $(document).ready(function (e) {
     var obj = {'items': 2};
-    $("#paging").zPaging(obj);
+    $("#paging_announce").zPaging(obj);
 });
 
 

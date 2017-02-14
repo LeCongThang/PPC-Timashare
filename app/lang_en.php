@@ -76,3 +76,4 @@ define("DichVuLuuTru","SERVICE");
 define("ThietBiVaDichVuLuuTru","EQUIPMENT AND SERVICE");
 define("DatCho","BOOK NOW");
 define("NoiDung"," YOUR MESSAGE");
+define("KhuVuc","Region");

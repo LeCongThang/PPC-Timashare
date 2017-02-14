@@ -93,7 +93,7 @@ class modelnghiduong
         $this->insertImageResort($last_id, $list_img);
         $this->insertDetailResort($last_id, "vi", $resort_name, $resort_introduce, $resort_location, $resort_service, $resort_equipment, $resort_address);
         $this->updateInfoMap($last_id,$list_img[0],$resort_name,$resort_address);
-
+        $this->updateNumberContinentsCountry($idCountry);
         return true;
     }
 
@@ -131,8 +131,7 @@ class modelnghiduong
 
     public function updateInfoMap($id, $img, $name, $address)
     {
-        $info_map = '<div id="bodyContent"><img style="height: 100px; width:200px;float:left" border="0" src="<?=BASE_DIR?>'
-            .$img.'"/> <a href ="#"> <b>'.$name.'</b></a><br/><br/>'.$address.'</div>';
+        $info_map = '<div id="bodyContent"><img style="height: 100px; width:200px;float:left" border="0" src="'.BASE_DIR.$img.'"/> <a href ="'.BASE_URL.$_SESSION['lang'].'/controller/loadingDetailsResort/'.$id.'"> <b>'.$name.'</b></a><br/><br/>'.$address.'</div>';
         $sql = "UPDATE resort_language SET info_map ='".$info_map."' WHERE id =".$id;
         $result = mysqli_query($this->db, $sql);
 
@@ -140,6 +139,62 @@ class modelnghiduong
             die("Error in updateInfoMap");
         }
         return $result;
+    }
+
+    public function updateNumberContinentsCountry($id)
+    {
+        $country = $this->getNumberCountry($id);
+        $countinents = $this->getNumberContinents($country['id_continents']);
+        $numberContinents = $countinents['number'] + 1;
+        $numberCountry = $country['number'] +1;
+        $sqlCountry = "UPDATE country SET number =". $numberCountry ." WHERE id =".$id;
+        $sqlContinent = "UPDATE continents SET number =". $numberContinents. " WHERE id =". $countinents['id'];
+
+        $resultCountry = mysqli_query($this->db, $sqlCountry);
+        $resultContinent = mysqli_query($this->db, $sqlContinent);
+
+        if (!$resultContinent || !$resultCountry) {
+            die("Error in updateNumberContinentsCountry");
+        }
+
+        return true;
+    }
+
+
+    public function getNumberCountry($id){
+        $sql = "SELECT * FROM country WHERE id =".$id;
+        $result = mysqli_query($this->db, $sql);
+
+        if (!$result) {
+            die("Error in getNumberCountry");
+        }
+
+        return mysqli_fetch_assoc($result);
+    }
+
+    public function getNumberContinents($id){
+        $sql = "SELECT  *  FROM continents WHERE id =".$id;
+        $result = mysqli_query($this->db, $sql);
+        if (!$result) {
+            die("Error in getNumberContinents");
+        }
+
+        return mysqli_fetch_assoc($result);
+    }
+    // đang làm tới đây
+    public function getResortByCountryName($id,$lang){
+        $sql = "SELECT * FROM resort, resort_language WHERE resort.id = resort_language.id_resort AND resort_language.language ='" . $lang . "' AND resort.id_resort_type = 1";
+        $result = mysqli_query($this->db, $sql);
+        if (!$result) {
+            die("Error in query getListResort");
+        }
+        $list = array();
+        while ($row = mysqli_fetch_assoc($result)) {
+            $list[] = $row;
+        }
+        //remove out of memory
+        mysqli_free_result($result);
+        return $list;
     }
 
 

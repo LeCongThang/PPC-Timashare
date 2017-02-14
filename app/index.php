@@ -93,6 +93,7 @@ $str = str_replace("{DichVuLuuTru}", DichVuLuuTru, $str);
 $str = str_replace("{ThietBiVaDichVuLuuTru}", ThietBiVaDichVuLuuTru, $str);
 $str = str_replace("{DatCho}", DatCho, $str);
 $str = str_replace("{NoiDung}", NoiDung, $str);
+$str = str_replace("{KhuVuc}", KhuVuc, $str);
 echo $str;
 
 

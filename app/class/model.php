@@ -302,6 +302,7 @@ class model
     public function getDetailDeals($id)
     {
         $sql = "SELECT deals.id, deals.image, deals_language.title, deals_language.content FROM deals, deals_language WHERE deals.id = deals_language.id_deals AND deals_language.language ='" . $_SESSION['lang'] . "' AND deals.id = " . $id;
+        //echo $sql;
         $result = mysqli_query($this->db, $sql);
         if (!$result) {
             die("Error in query in here");
@@ -371,7 +372,7 @@ class model
 
     public function getDetailsResort($id)
     {
-        $sql = "SELECT resort.id, resort.address, resort_language.introduce, resort_language.location, resort_language.service, resort_language.equipment FROM resort, resort_language WHERE resort.id = resort_language.id_resort AND resort_language.language ='" . $_SESSION['lang'] . "' AND resort.id = " . $id . " AND resort.status = 0";
+        $sql = "SELECT resort.lat, resort.lng, resort_language.name, resort.id, resort_language.address, resort_language.introduce, resort_language.location, resort_language.service, resort_language.equipment FROM resort, resort_language WHERE resort.id = resort_language.id_resort AND resort_language.language ='" . $_SESSION['lang'] . "' AND resort.id = " . $id . " AND resort.status = 0";
         $result = mysqli_query($this->db, $sql);
         if (!$result) {
             die("Error in query in here");
@@ -756,13 +757,85 @@ class model
 
     public function setIdContinents($idCountry, $idContinents)
     {
-        $sql = "UPDATE country SET id_continents = ".$idContinents." WHERE id=".$idCountry;
+        $sql = "UPDATE country SET id_continents = " . $idContinents . " WHERE id=" . $idCountry;
         return mysqli_query($this->db, $sql);
     }
 
     public function getAllResort()
     {
-        $sql = "SELECT * FROM resort, resort_language WHERE resort.id = resort_language.id_resort AND resort_language.language='".$_SESSION['lang']."'";
+        $sql = "SELECT * FROM resort, resort_image, resort_language WHERE resort.id = resort_image.id_resort AND resort_language.id_resort = resort.id AND resort_language.language = '" . $_SESSION['lang'] . "' GROUP BY resort.id";
+        $result = mysqli_query($this->db, $sql);
+        if (!$result) {
+            die("Error in query in here");
+        }
+        $list = array();
+        while ($row = mysqli_fetch_assoc($result)) {
+            $list[] = $row;
+        }
+        //remove out of memory
+        mysqli_free_result($result);
+        return $list;
+    }
+
+
+    public function getNumberResort()
+    {
+        $sql = "select count(id) as total from resort";
+        $result = $this->db->query($sql);
+        $row = mysqli_fetch_assoc($result);
+        return $row['total'];
+    }
+
+    public function getNumberResortById($id)
+    {
+        $sql = "select count(id) as total from resort WHERE resort.id_country =".$id;
+        $result = $this->db->query($sql);
+        $row = mysqli_fetch_assoc($result);
+        return $row['total'];
+    }
+
+    public function getAllResortPage($offset, $items)
+    {
+        $sql = "SELECT * FROM resort, resort_image, resort_language WHERE resort.id = resort_image.id_resort AND resort_language.id_resort = resort.id AND resort_language.language = '" . $_SESSION['lang'] . "' GROUP BY resort.id ORDER BY resort.id ASC LIMIT " . $offset . "," . $items;
+        $result = mysqli_query($this->db, $sql);
+        if (!$result) {
+            die($sql);
+        }
+        $list = array();
+        while ($row = mysqli_fetch_assoc($result)) {
+            $list[] = $row;
+        }
+        //remove out of memory
+        mysqli_free_result($result);
+        return $list;
+    }
+    public function getAllResortPageById($id, $offset, $items)
+    {
+        $sql = "SELECT * FROM resort, resort_image, resort_language WHERE resort.id = resort_image.id_resort AND resort_language.id_resort = resort.id AND resort_language.language = '" . $_SESSION['lang'] . "' AND resort.id_country = " . $id . " GROUP BY resort.id ORDER BY resort.id ASC LIMIT " . $offset . "," . $items;
+        $result = mysqli_query($this->db, $sql);
+        if (!$result) {
+            die($sql);
+        }
+        $list = array();
+        while ($row = mysqli_fetch_assoc($result)) {
+            $list[] = $row;
+        }
+        //remove out of memory
+        mysqli_free_result($result);
+        return $list;
+    }
+
+    public function getLongNameCountry($id)
+    {
+        $sql = "SELECT * FROM country WHERE id = " . $id;
+        $result = $this->db->query($sql);
+        $row = mysqli_fetch_assoc($result);
+        return $row['long_name'];
+    }
+
+    public function getResortByCountryName($id)
+    {
+        $sql = "SELECT * FROM resort, resort_image, resort_language WHERE resort.id = resort_image.id_resort AND resort_language.id_resort = resort.id AND resort_language.language = '" . $_SESSION['lang'] . "' AND resort.id_country = " . $id . " GROUP BY resort.id";
         $result = mysqli_query($this->db, $sql);
         if (!$result) {
             die("Error in query in here");

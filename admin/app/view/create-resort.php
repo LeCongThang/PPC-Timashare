@@ -160,16 +160,16 @@ $isUpdate = isset($this->params[0]);
                                         <div id="us2" style="width: 100%; height: 400px;"></div>
                                         <div class="clearfix">&nbsp;</div>
                                         <div class="form-group">
-                                            <input type="text" class="form-control"
+                                            <input type="text" class="form-control" style="visibility: hidden"
                                                    name="resort_lat" id="us2-lat"/>
                                         </div>
 
                                         <div class="form-group">
-                                            <input type="text" class="form-control"
+                                            <input type="text" class="form-control" style="visibility: hidden"
                                                    name="resort_lon" id="us2-lon"/>
                                         </div>
                                         <div class="form-group">
-                                            <input type="text" class="form-control"
+                                            <input type="text" class="form-control" style="visibility: hidden"
                                                    id="us2-country" name="resort_country"/>
                                         </div>
                                         <div class="clearfix"></div>
