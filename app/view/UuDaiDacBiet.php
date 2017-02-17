@@ -9,16 +9,15 @@
             <h3 class="title_h3">{KhuNghiDuongGiaCa}</h3>
             <h2 class="title_h2">{UuDaiDacBiet}</h2>
             <div id="paging1">
-                <div id="row1" ></div>
+                <div id="row1"></div>
             </div>
 
-<!--            <div>-->
-<!---->
-<!--                <div class="goPrevious1 glyphicon glyphicon-triangle-left">Trước  Tiếp theo</div>-->
-<!--                <div class="goNext1 glyphicon glyphicon-triangle-right"></div></div>-->
-<!--            </div>-->
+            <!--            <div>-->
+            <!---->
+            <!--                <div class="goPrevious1 glyphicon glyphicon-triangle-left">Trước  Tiếp theo</div>-->
+            <!--                <div class="goNext1 glyphicon glyphicon-triangle-right"></div></div>-->
+            <!--            </div>-->
         </div>
-        <img src="">
     </div>
 </div>
 <?php include 'footer.php'; ?>

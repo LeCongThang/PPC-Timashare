@@ -44,7 +44,7 @@
     <!-- Content Wrapper. Contains page content -->
     <div class="content-wrapper">
         <section class="content-header">
-            <h1><b> QUẢN LÝ CÂU HỎI </b></h1>
+            <h1><b> QUẢN LÝ ƯU ĐÃI </b></h1>
         </section>
 
         <!-- Main content -->
@@ -54,9 +54,9 @@
                     <div class="box box-primary">
                         <div class="box-header with-border text-center">
                             <div class="pull-left">
-                                <a href="<?= BASE_URL_ADMIN ?>controllercauhoi/create"
+                                <a href="<?= BASE_URL_ADMIN ?>controllertuyendung/create"
                                    class="btn btn-success"><i
-                                        class="glyphicon glyphicon-th-large"></i>&nbsp <b>Thêm câu hỏi</b></a>
+                                        class="glyphicon glyphicon-th-large"></i>&nbsp <b>Thêm ưu đãi</b></a>
                                 <!-- <button type="button" class="btn btn-default"><i class="fa fa-pencil"></i> Draft</button> -->
 
                             </div>
@@ -69,27 +69,27 @@
                                 <thead>
                                 <tr>
                                     <th>STT</th>
-                                    <th>Câu hỏi</th>
-                                    <th>Câu trả lời</th>
+                                    <th>Tiêu đề</th>
+                                    <th>Hình ảnh</th>
                                     <th></th>
                                 </tr>
                                 </thead>
                                 <tbody>
-                                <?php foreach ($ds_cau_hoi_vi as $key => $cau_hoi): ?>
+                                <?php foreach ($list_deals as $key => $deals): ?>
                                     <tr>
                                         <td>
                                             <?= $key + 1 ?>
                                         </td>
                                         <td width="25%">
-                                            <?=$cau_hoi['cauhoi']?>
+                                            <?= $deals['title'] ?>
                                         </td>
-                                        <td width="50%">
-                                            <?=$cau_hoi['cautraloi']?>
+                                        <td width="50% ">
+                                            <img src=" <?= BASE_DIR. $deals['image'] ?>" class="img-responsive" style="height:50% "/>
                                         </td>
                                         <td>
-                                            <a href="<?= BASE_URL_ADMIN ?>controllercauhoi/update/<?= $cau_hoi['id'] ?>"
+                                            <a href="<?= BASE_URL_ADMIN ?>controllertuyendung/update/<?= $deals['id'] ?>"
                                                class="btn btn-primary">Sửa</a>
-                                            <a href="<?= BASE_URL_ADMIN ?>controllercauhoi/delete/<?= $cau_hoi['id'] ?>"
+                                            <a href="<?= BASE_URL_ADMIN ?>controllertuyendung/delete/<?= $deals['id'] ?>"
                                                class="btn btn-danger">Xóa</a>
                                         </td>
                                     </tr>
@@ -334,13 +334,6 @@
 
 <script type="text/javascript" src="<?= BASE_DIR ?>ckeditor/ckeditor.js"></script>
 <!-- Page Script -->
-<script>
-    $(function () {
-        //Add text editor
-        $("#compose-textarea").wysihtml5();
-    });
-    CKEDITOR.replace('editor1', {});
-</script>
 
 </body>
 </html>

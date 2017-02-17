@@ -50,7 +50,6 @@ class modelslider
             return true;
         return false;
     }
-
     public function getAll($customWhere = "")
     {
         $sql = "select * from slider ".$customWhere;

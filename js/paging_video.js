@@ -157,7 +157,13 @@
                     rows.empty();
 
                     $.each(data, function (i, val) {
-                        var str = '<div class="media"> <div class="media-left" style="width: 20%;height: 10%"> <img src="https://img.youtube.com/vi/' + val.url_video.substring(30) + '/0.jpg" style="width:100%;"> </div><div class="media-left name-video video"> <a href="#" data-value="' + val.url_video + '"><span class="link_video">' + val.ten_video + '</span></a> </div> </div>';
+                        var ten_video = "";
+                        if (lang == 'vi')
+                            ten_video = val.ten_video_vi;
+                        else
+                            ten_video = val.ten_video_en;
+
+                        var str = '<div class="media"> <div class="media-left" style="width: 20%;height: 10%"> <img src="https://img.youtube.com/vi/' + val.url_video.substring(30) + '/0.jpg" style="width:100%;"> </div><div class="media-left name-video video"> <a href="#" data-value="' + val.url_video + '"><span class="link_video">' + ten_video + '</span></a> </div> </div>';
                         rows.append(str);
                     });
 

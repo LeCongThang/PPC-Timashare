@@ -334,13 +334,5 @@
 
 <script type="text/javascript" src="<?= BASE_DIR ?>ckeditor/ckeditor.js"></script>
 <!-- Page Script -->
-<script>
-    $(function () {
-        //Add text editor
-        $("#compose-textarea").wysihtml5();
-    });
-    CKEDITOR.replace('editor1', {});
-</script>
-
 </body>
 </html>

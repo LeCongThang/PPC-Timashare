@@ -208,7 +208,7 @@
                     if (lang == "vi")
                         page_name = "Trang ";
                     else page_name = "Page ";
-                    var bottom_content = '<div class="pages"><p >' + page_name + temp + '</p></div><br><br><br>';
+                    var bottom_content = '<div class="pages col-md-12"><p >' + page_name + temp + '</p></div><br><br><br>';
                     rows.append(bottom_content);
                 }
             });

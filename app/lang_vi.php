@@ -75,3 +75,6 @@ define("ThietBiVaDichVuLuuTru","THIẾT BỊ VÀ DỊCH VỤ LƯU TRÚ");
 define("DatCho","ĐẶT CHỖ");
 define("NoiDung"," NỘI DUNG");
 define("KhuVuc","Khu vực");
+define("KhuNghiDuongVaGiaCa","KHU NGHỈ DƯỠNG & GIÁ CẢ");
+define("DanhMucKhuNghiDuong1","Danh mục khu nghỉ dưỡng");
+define("CoGiMoiTai","CÓ GÌ MỚI TẠI");

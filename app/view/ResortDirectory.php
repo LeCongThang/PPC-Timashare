@@ -4,19 +4,28 @@
 <script>var base_url = '<?=BASE_URL?>'</script>
 <script>var tim_hieu_them = '{TimHieuThem}'</script>
 <script>var id = <?=$id?></script>
+<script>var id_city = <?php if(!isset($this->params[1])) echo 0; else echo $id_city;?></script>
 
 
-<?php $isWorld = isset($this->params[0]);
-        if(!$isWorld) echo '<script type="text/javascript" src="'.BASE_DIR.'js/paging_resort.js"></script>';
-else echo '<script type="text/javascript" src="'.BASE_DIR.'js/paging_resort_id.js"></script>';?>
+<?php
+$isWorld = isset($this->params[0]);
+$isCountry = isset($this->params[1]);
+if(!$isWorld)
+    echo '<script type="text/javascript" src="'.BASE_DIR.'js/paging_resort.js"></script>';
+else {
+    if(!$isCountry)
+        echo '<script type="text/javascript" src="'.BASE_DIR.'js/paging_resort_id.js"></script>';
+    else
+        echo '<script type="text/javascript" src="'.BASE_DIR.'js/paging_resort_city.js"></script>';
+}?>
 <script
     src="https://developers.google.com/maps/documentation/javascript/examples/markerclusterer/markerclusterer.js"></script>
 <div class="container">
     <div class="row text-left">
         <div class="col-md-12 col-sm-12">
             <hr class="text-left" style="width:50px;border:2px solid #362516;margin-left:0px;">
-            <h2 class="title_h2">KHU NGHỈ DƯỠNG & GIÁ CẢ</h2>
-            <h3 class="title_h3">Danh mục khu nghỉ dưỡng</h3>
+            <h2 class="title_h2">{KhuNghiDuongVaGiaCa}</h2>
+            <h3 class="title_h3">{DanhMucKhuNghiDuong1}</h3>
         </div>
     </div>
     <div class="row">
@@ -40,7 +49,15 @@ else echo '<script type="text/javascript" src="'.BASE_DIR.'js/paging_resort_id.j
                                 echo '</ul></a>';
                             }
                         } else {
-                            echo $country_name;
+                            if(!$isCountry){
+                            echo '<li class="cauhoi" style="margin: 5px"><a class="test" href="#" onclick="return false;" ><span class="link_tim_hieu" style="color: #640100;">' . $country_name . '</span></a><ul class="cautraloi" style="display: none;padding-left:15px;" >
+                                ';
+                            foreach ($listCity as $key => $city){
+                                echo '<li style="margin-top: 5px;margin-bottom: 5px;"  class="noi_dung_link_tim_hieu"><a href="' . BASE_DIR . $_SESSION['lang'] . '/controller/chuyenTrangKhuNghiDuongGiaCa/' . $id . '/'.$city['id'].'" style="color:#3C2A1D;" >' . $city['name'] . ' (' . $city['number'] . ')</a></li>';
+                            }
+                            }
+                            else
+                                echo $name_city;
                         }
                         ?>
                     </ul>
@@ -78,8 +95,12 @@ else echo '<script type="text/javascript" src="'.BASE_DIR.'js/paging_resort_id.j
                         <div class="box-body" style="margin-top: 15px;">
                             <?php if (!$isWorld)
                                 echo '<div id="paging_announce" style="margin-bottom: 40px"><div id="row_announce"></div></div>';
-                            else
-                                echo '<div id="paging_resort" style="margin-bottom: 40px"><div id="row_resort"></div></div>';
+                            else{
+                                if(!$isCountry)
+                                    echo '<div id="paging_resort" style="margin-bottom: 40px"><div id="row_resort"></div></div>';
+                                else
+                                    echo '<div id="paging_resort_city" style="margin-bottom: 40px"><div id="row_resort_city"></div></div>';
+                            }
                             ?>
 
                         </div>
@@ -91,7 +112,7 @@ else echo '<script type="text/javascript" src="'.BASE_DIR.'js/paging_resort_id.j
         <script>
             function initMap() {
                 var map = new google.maps.Map(document.getElementById('map'), {
-                    zoom: <?php if (!$isWorld) echo 1; else echo 5 ?>,
+                    zoom: <?php if (!$isWorld) echo 1; else {if (!$isCountry) echo 5; else echo 7;} ?>,
                     center: {
                         lat: <?php if (!$isWorld) echo 0; else echo $lat ?>,
                         lng: <?php if (!$isWorld) echo 0; else echo $lng ?>}

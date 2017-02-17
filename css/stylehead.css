@@ -311,3 +311,12 @@ select#language option[value="AsiaEnglish"] {
     -webkit-line-clamp: 6;
     -webkit-box-orient: vertical;
 }
+
+.resort_info_discover h4{
+    font-weight: bold;
+    color: #362516;
+}
+
+.resort_info_discover h5{
+    font-weight: bold;
+}

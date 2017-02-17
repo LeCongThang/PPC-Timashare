@@ -308,9 +308,18 @@ class controller
             $listResort = $this->control->getAllResort();
         } else {
             $id = $this->params[0];
-            $country_name = $this->control->getLongNameCountry($id);
-            $listResort = $this->control->getResortByCountryName($id);
-            $address = $country_name;
+            if (!isset($this->params[1])) {
+                $country_name = $this->control->getLongNameCountry($id);
+                $listResort = $this->control->getResortByCountryName($id);
+                $listCity = $this->control->getListCityByIdCountry($id);
+                $address = $country_name;
+            } else {
+                $id_city = $this->params[1];
+                $city = $this->control->getCityById($id_city);
+                $name_city = $city['name'];
+                $listResort = $this->control->getAllResortByIdCity($id_city);
+                $address = $name_city;
+            }
             $url = 'http://maps.google.com/maps/api/geocode/json?address=' . urlencode($address);
             $output = $this->control->httpGet($url);
             $data = json_decode($output, true);
@@ -562,7 +571,12 @@ class controller
         } else {
             $id = $this->params[0];
             $total = array("total" => 0);
-            $pages = $this->control->getNumberResortById($id) / 4;
+            if(!isset($this->params[1]))
+                $pages = $this->control->getNumberResortById($id) / 4;
+            else {
+                $id = $this->params[1];
+                $pages = $this->control->getNumberResortByIdCity($id) / 4;
+            }
             $total = array("total" => 0);
             $tmp = explode(".", $pages);
             if (count($tmp) > 1) {
@@ -585,14 +599,101 @@ class controller
             $offset = ($currentPage - 1) * $items;
             $danh_sach_resort = $this->control->getAllResortPage($offset, $items);
             echo json_encode($danh_sach_resort);
-        }else{
+        } else {
             $id = $this->params[0];
             $items = 4;
             $currentPage = (int)$_POST["currentPage"];
             $offset = ($currentPage - 1) * $items;
-            $danh_sach_resort = $this->control->getAllResortPageById($id, $offset, $items);
+            if(!isset($this->params[1]))
+                $danh_sach_resort = $this->control->getAllResortPageById($id, $offset, $items);
+            else
+            {
+                $id = $this->params[1];
+                $danh_sach_resort = $this->control->getAllResortPageByIdCity($id, $offset, $items);
+            }
             echo json_encode($danh_sach_resort);
         }
+    }
+
+    public function getNumberResortSortByPriority()
+    {
+        $total = array("total" => 0);
+        $pages = $this->control->getNumberResort() / 9;
+        $total = array("total" => 0);
+        $tmp = explode(".", $pages);
+        if (count($tmp) > 1) {
+            $pages = $tmp[0] + 1;
+        } else {
+            $pages = $tmp[0];
+        }
+        $total["total"] = $pages;
+        echo json_encode($total);
+    }
+
+    public function getAllResortSortByPriority()
+    {
+        $items = 9;
+        $currentPage = (int)$_POST["currentPage"];
+        $offset = ($currentPage - 1) * $items;
+        $danh_sach_resort = $this->control->getAllResortPageSortByPriority($offset, $items);
+        echo json_encode($danh_sach_resort);
+    }
+
+    public function loadingDiscoverPage()
+    {
+        $dssbanner = $this->control->laydanhsach("banner");
+        $dssliderw = $this->control->laydanhsachslider();
+        $dsKhuNghiDuongBanner = array();
+        foreach ($dssbanner as $banner) {
+            $khuNghiDuongBanner = $this->control->layThongTinChiTietKhuNghiDuong($banner['idkhunghiduong']);
+            $dsKhuNghiDuongBanner[] = $khuNghiDuongBanner;
+        }
+        require_once("view/KhamPha.php");
+    }
+
+    public function loadingResortNewPage()
+    {
+        $dssbanner = $this->control->laydanhsach("banner");
+        $dssliderw = $this->control->laydanhsachslider();
+        $dsKhuNghiDuongBanner = array();
+        foreach ($dssbanner as $banner) {
+            $khuNghiDuongBanner = $this->control->layThongTinChiTietKhuNghiDuong($banner['idkhunghiduong']);
+            $dsKhuNghiDuongBanner[] = $khuNghiDuongBanner;
+        }
+        require_once("view/CoGiMoiPPC.php");
+    }
+
+    public function loadingResortHintPage()
+    {
+        $dssbanner = $this->control->laydanhsach("banner");
+        $dssliderw = $this->control->laydanhsachslider();
+        $dsKhuNghiDuongBanner = array();
+        foreach ($dssbanner as $banner) {
+            $khuNghiDuongBanner = $this->control->layThongTinChiTietKhuNghiDuong($banner['idkhunghiduong']);
+            $dsKhuNghiDuongBanner[] = $khuNghiDuongBanner;
+        }
+        require_once("view/GoiYKyNghi.php");
+    }
+
+
+    public function getAllResortSortByDate()
+    {
+        $items = 9;
+        $currentPage = (int)$_POST["currentPage"];
+        $offset = ($currentPage - 1) * $items;
+        $danh_sach_resort = $this->control->getAllResortPageSortByDate($offset, $items);
+        echo json_encode($danh_sach_resort);
+    }
+
+    public function getAllResortSortByHint()
+    {
+        $lat = $this->params[0];
+        $lng = $this->params[1];
+        $items = 9;
+        $currentPage = (int)$_POST["currentPage"];
+        $offset = ($currentPage - 1) * $items;
+        $danh_sach_resort = $this->control->getAllResortSortByHint($offset, $items, $lat, $lng, 1000);
+        echo json_encode($danh_sach_resort);
     }
 
 

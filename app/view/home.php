@@ -135,19 +135,19 @@
                     </div>
                     <div class="col-md-4 col-sm-4" id="img_left_bottom_img">
                         <div class='captions captions_bottom'>
-                            <p><a href="#">{GoiYChoKyNghi}</a></p>
+                            <p><a href="<?=BASE_URL.$_SESSION['lang']?>/controller/loadingResortHintPage">{GoiYChoKyNghi}</a></p>
                         </div>
                         <?php echo "<img class='img-responsive khu_nghi_duong_gia_ca_img' src='data:image/jpg;base64," . base64_encode($array_img_t[1]->getImageBlob()) . "' />"; ?>
                     </div>
                     <div class="col-md-4 col-sm-4" id="img_mid_bottom_img">
                         <div class='captions captions_bottom'>
-                            <p><a href="#">{KhamPhaCacDiaDiem}</a></p>
+                            <p><a href="<?=BASE_URL.$_SESSION['lang']?>/controller/loadingDiscoverPage">{KhamPhaCacDiaDiem}</a></p>
                         </div>
                         <?php echo "<img class='img-responsive khu_nghi_duong_gia_ca_img' src='data:image/jpg;base64," . base64_encode($array_img_t[2]->getImageBlob()) . "' />"; ?>
                     </div>
                     <div class="col-md-4 col-sm-4" id="img_right_bottom_img">
                         <div class='captions captions_bottom'>
-                            <p><a href="#">{CoGiMoiTaiTimeShare}</a></p>
+                            <p><a href="<?=BASE_URL.$_SESSION['lang']?>/controller/loadingResortNewPage">{CoGiMoiTaiTimeShare}</a></p>
                         </div>
                         <?php echo "<img class='img-responsive khu_nghi_duong_gia_ca_img' src='data:image/jpg;base64," . base64_encode($array_img_t[3]->getImageBlob()) . "' />"; ?>
                     </div>

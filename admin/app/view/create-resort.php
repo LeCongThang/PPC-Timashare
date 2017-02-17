@@ -24,7 +24,9 @@ $isUpdate = isset($this->params[0]);
     <link rel="stylesheet" type="text/css" href="<?= BASE_URL ?>css/responsive.css">
     <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css"
           integrity="sha384-BVYiiSIFeK1dGmJRAkycuHAHRg32OmUcww7on3RYdg4Va+PmSTsz/K68vbdEjh4u" crossorigin="anonymous">
-    <script src="https://code.jquery.com/jquery-1.10.2.min.js"></script>
+    <link href="<?= BASE_DIR_ADMIN ?>css/fileinput.css" media="all" rel="stylesheet" type="text/css"/>
+    <link href="<?= BASE_DIR_ADMIN ?>themes/explorer/theme.css" media="all" rel="stylesheet" type="text/css"/>
+    <script src="http://ajax.googleapis.com/ajax/libs/jquery/2.1.1/jquery.min.js"></script>
     <script src="https://oss.maxcdn.com/html5shiv/3.7.3/html5shiv.min.js"></script>
     <script src="https://oss.maxcdn.com/respond/1.4.2/respond.min.js"></script>
 
@@ -74,131 +76,233 @@ $isUpdate = isset($this->params[0]);
                                     <div class="alert alert-danger" role="alert"><?= $error ?></div>
                                 <?php endforeach; ?>
                                 <div class="form-group">
-                                    <div class="btn btn-default btn-file">
-                                        <i class="glyphicon glyphicon-picture"></i> TẢI LÊN
-                                        <input type="file" name="fileup[]" id="imgInp" multiple>
+                                    <label for="noidung">Hình ảnh </label>
+
+                                    <div class="form-group">
+                                        <input id="image-upload" type="file" name="fileup[]" multiple class="file"
+                                               data-overwrite-initial="false" <?php if($isUpdate) echo (count($resort_image)<0)?'data-min-file-count="2"':""; else echo 'data-min-file-count="2"';?>>
                                     </div>
-                                    <!-- up file anh -->
+                                    <?php if($isUpdate)
+                                    {
+                                        echo '<div class="col-md-12 list_image_update">';
+                                        foreach ($resort_image as $key => $item_image){
+                                            echo '<div class="col-md-2"><img class="img-responsive" src="'.BASE_DIR.$item_image['image'].'">
+                                        <p style="text-align: center;margin-top: 5px"><a href="'.BASE_URL_ADMIN.'controllernghiduong/update/'.$resort_vi['id'].'/'.$item_image['id_resort_image'].'" type="button" class="btn btn-danger">Xóa</a></p></div>';}
+                                        echo '</div>';
+
+                                    }
+                                        ?>
+
                                 </div>
                                 <div class="bs-example bs-example-tabs" data-example-id="togglable-tabs">
+                                    <ul class="nav nav-tabs" id="myTabs" role="tablist">
+                                        <li role="presentation" class="active"><a href="#vi" id="vi-tab" role="tab"
+                                                                                  data-toggle="tab"
+                                                                                  aria-controls="gioithieu_vi"
+                                                                                  aria-expanded="true">Tiếng
+                                                Việt</a></li>
+                                        <li role="presentation" class=""><a href="#en" role="tab" id="en-tab"
+                                                                            data-toggle="tab"
+                                                                            aria-controls="gioithieu_en"
+                                                                            aria-expanded="false">Tiếng
+                                                Anh</a></li>
+                                    </ul>
                                     <div class="tab-content" id="myTabContent">
-                                        <div class="form-group">
-                                            <label for="noidung">Tên </label>
-                                            <input placeholder="Tên khu nghỉ dưỡng" class="form-control"
-                                                   value="<?php echo $isUpdate ? $data_vi['ten'] : "" ?>"
-                                                   name="resort_name"
-                                                   style="font-size:17px;font-family:verdana;text-align:justify;">
-                                        </div>
-                                        <div class="form-group">
-                                            <label for="noidung">Giới thiệu</label>
-                                            <textarea placeholder="Giới thiệu" name="resort_introduce" class="ckeditor"
-                                                      cols="30"
-                                                      rows="10"
-                                                      title=""><?php echo $isUpdate ? $data_vi['introduce'] : "" ?></textarea>
+                                        <div class="tab-pane fade active in" role="tabpanel" id="vi"
+                                             aria-labelledby="vi-tab">
+                                            <!--                                        start vi-->
+                                            <div class="form-group">
+                                                <label for="noidung">Tên </label>
+                                                <input placeholder="Tên khu nghỉ dưỡng" class="form-control"
+                                                       value="<?php echo $isUpdate ? $resort_vi['name'] : "" ?>"
+                                                       name="resort_name"
+                                                       style="font-size:17px;font-family:verdana;text-align:justify;">
+                                            </div>
+                                            <div class="form-group">
+                                                <label for="noidung">Giới thiệu</label>
+                                                <textarea placeholder="Giới thiệu" name="resort_introduce"
+                                                          class="ckeditor"
+                                                          cols="30"
+                                                          rows="10"
+                                                          title=""><?php echo $isUpdate ? $resort_vi['introduce'] : "" ?></textarea>
 
+                                            </div>
+                                            <div class="form-group">
+                                                <label for="noidung">Mô tả địa thế</label>
+                                                <textarea placeholder="Địa thế" name="resort_location" class="ckeditor"
+                                                          cols="30"
+                                                          rows="10"
+                                                          title=""><?php echo $isUpdate ? $resort_vi['location'] : "" ?></textarea>
+                                            </div>
+                                            <div class="form-group">
+                                                <label for="noidung">Mô tả dịch vụ</label>
+                                                <textarea placeholder="Dịch vụ" name="resort_service" class="ckeditor"
+                                                          cols="30"
+                                                          rows="10"
+                                                          title=""><?php echo $isUpdate ? $resort_vi['service'] : "" ?></textarea>
+                                            </div>
+                                            <div class="form-group">
+                                                <label for="noidung">Mô tả thiết bị</label>
+                                                <textarea placeholder="Thiết bị" name="resort_equipment"
+                                                          class="ckeditor"
+                                                          cols="30"
+                                                          rows="10"
+                                                          title=""><?php echo $isUpdate ? $resort_vi['equipment'] : "" ?></textarea>
+                                            </div>
                                         </div>
-                                        <div class="form-group">
-                                            <label for="noidung">Mô tả địa thế</label>
-                                            <textarea placeholder="Địa thế" name="resort_location" class="ckeditor"
-                                                      cols="30"
-                                                      rows="10"
-                                                      title=""><?php echo $isUpdate ? $data_vi['location'] : "" ?></textarea>
-                                        </div>
-                                        <div class="form-group">
-                                            <label for="noidung">Mô tả dịch vụ</label>
-                                            <textarea placeholder="Dịch vụ" name="resort_service" class="ckeditor"
-                                                      cols="30"
-                                                      rows="10"
-                                                      title=""><?php echo $isUpdate ? $data_vi['service'] : "" ?></textarea>
-                                        </div>
-                                        <div class="form-group">
-                                            <label for="noidung">Mô tả thiết bị</label>
-                                            <textarea placeholder="Thiết bị" name="resort_equipment" class="ckeditor"
-                                                      cols="30"
-                                                      rows="10"
-                                                      title=""><?php echo $isUpdate ? $data_vi['equipment'] : "" ?></textarea>
-                                        </div>
-                                        <div class="form-group">
-                                            <label for="noidung">Trạng thái</label>
-                                            <label class="radio-inline"><input type="radio" name="resort_status"
-                                                                               value="0">Còn
-                                                hàng</label>
-                                            <label class="radio-inline"><input type="radio" name="resort_status"
-                                                                               value="1">Hết
-                                                hàng</label>
-                                        </div>
-                                        <div class="form-group">
-                                            <label for="noidung">Loại dịch vụ</label>
-                                            <label class="radio-inline"><input type="radio" name="resort_type"
-                                                                               value="0">Khu nghỉ
-                                                dưỡng</label>
-                                            <label class="radio-inline"><input type="radio" name="resort_type"
-                                                                               value="1">Nhà nghỉ
-                                                mát</label>
-                                        </div>
-                                        <div class="form-group">
-                                            <label for="sel1">Độ ưu tiên</label>
-                                            <select class="form-control" name="resort_priority">
-                                                <option value="1">1</option>
-                                                <option value="2">2</option>
-                                                <option value="4">3</option>
-                                            </select>
-                                        </div>
-                                        <div class="form-group">
-                                            <label for="noidung">Giá </label>
-                                            <input placeholder="Gía mỗi phòng" class="form-control"
-                                                   value="<?php echo $isUpdate ? $data_vi['price'] : "" ?>"
-                                                   name="resort_price"
-                                                   style="font-size:17px;font-family:verdana;text-align:justify;">
-                                        </div>
-                                        <div class="form-group">
-                                            <label for="noidung">Địa chỉ</label>
-                                            <input type="text" class="form-control" id="us2-address"
-                                                   name="resort_address"
-                                                   style="margin-bottom: 15px"/>
-                                        </div>
-                                        <div id="us2" style="width: 100%; height: 400px;"></div>
-                                        <div class="clearfix">&nbsp;</div>
-                                        <div class="form-group">
-                                            <input type="text" class="form-control" style="visibility: hidden"
-                                                   name="resort_lat" id="us2-lat"/>
-                                        </div>
+                                        <!--                                        end vi-->
+                                        <div class="tab-pane fade" role="tabpanel" id="en"
+                                             aria-labelledby="en-tab">
+                                            <!--                                        start en-->
+                                            <div class="form-group">
+                                                <label for="noidung">Tên </label>
+                                                <input placeholder="Tên khu nghỉ dưỡng" class="form-control"
+                                                       value="<?php echo $isUpdate ? $resort_en['name'] : "" ?>"
+                                                       name="resort_name_en"
+                                                       style="font-size:17px;font-family:verdana;text-align:justify;">
+                                            </div>
+                                            <div class="form-group">
+                                                <label for="noidung">Giới thiệu</label>
+                                                <textarea placeholder="Giới thiệu" name="resort_introduce_en"
+                                                          class="ckeditor"
+                                                          cols="30"
+                                                          rows="10"
+                                                          title=""><?php echo $isUpdate ? $resort_en['introduce'] : "" ?></textarea>
 
-                                        <div class="form-group">
-                                            <input type="text" class="form-control" style="visibility: hidden"
-                                                   name="resort_lon" id="us2-lon"/>
+                                            </div>
+                                            <div class="form-group">
+                                                <label for="noidung">Mô tả địa thế</label>
+                                                <textarea placeholder="Địa thế" name="resort_location_en"
+                                                          class="ckeditor"
+                                                          cols="30"
+                                                          rows="10"
+                                                          title=""><?php echo $isUpdate ? $resort_en['location'] : "" ?></textarea>
+                                            </div>
+                                            <div class="form-group">
+                                                <label for="noidung">Mô tả dịch vụ</label>
+                                                <textarea placeholder="Dịch vụ" name="resort_service_en"
+                                                          class="ckeditor"
+                                                          cols="30"
+                                                          rows="10"
+                                                          title=""><?php echo $isUpdate ? $resort_en['service'] : "" ?></textarea>
+                                            </div>
+                                            <div class="form-group">
+                                                <label for="noidung">Mô tả thiết bị</label>
+                                                <textarea placeholder="Thiết bị" name="resort_equipment_en"
+                                                          class="ckeditor"
+                                                          cols="30"
+                                                          rows="10"
+                                                          title=""><?php echo $isUpdate ? $resort_en['equipment'] : "" ?></textarea>
+                                            </div>
                                         </div>
-                                        <div class="form-group">
-                                            <input type="text" class="form-control" style="visibility: hidden"
-                                                   id="us2-country" name="resort_country"/>
-                                        </div>
-                                        <div class="clearfix"></div>
-                                        <script>
-                                            var lct = $('#us2').locationpicker({
-                                                location: {
-                                                    latitude: 46.15242437752303,
-                                                    longitude: 2.7470703125
-                                                },
-                                                inputBinding: {
-                                                    latitudeInput: $('#us2-lat'),
-                                                    longitudeInput: $('#us2-lon'),
-                                                    radiusInput: $('#us2-radius'),
-                                                    locationNameInput: $('#us2-address')
-                                                },
-                                                enableAutocomplete: true,
-                                                onchanged: function (currentLocation, radius, isMarkerDropped) {
-                                                    var addressComponents = $(this).locationpicker('map').location.addressComponents;
-                                                    $('#us2-country').val(addressComponents.country);
-                                                },
-                                                oninitialized: function (component) {
-                                                    var addressComponents = component.locationpicker('map').location.addressComponents;
-                                                    $('#us2-country').val(addressComponents.country);
-                                                }
-                                            });
-                                        </script>
-
+                                        <!--                                        end en-->
                                     </div>
                                 </div>
+                                <hr class="text-left"
+                                    style="width:100%;border:1px solid #D3D3D3;margin-left:0px;margin-bottom:0px;">
+                                <br>
+                                <div class="form-group">
+                                    <label for="noidung">Trạng thái</label>
+                                    <?php if($isUpdate)  $resort_vi['status'] == 0 ? $inStock = true : $inStock = false; ?>
+                                    <label class="radio-inline"><input type="radio" name="resort_status"
+                                                                       value="0" <?php if($isUpdate)  echo $inStock ? "checked" : "" ?> >Còn
+                                        hàng</label>
+                                    <label class="radio-inline"><input type="radio" name="resort_status"
+                                                                       value="1" <?php if($isUpdate)  echo !$inStock ? "checked" : "" ?>>Hết
+                                        hàng</label>
+                                </div>
+                                <div class="form-group">
+                                    <label for="noidung">Loại dịch vụ</label>
+                                    <?php if($isUpdate)  $resort_vi['id_resort_type'] == 0 ? $inResort = true : $inResort = false; ?>
+                                    <label class="radio-inline"><input type="radio" name="resort_type"
+                                                                       value="0" <?php if($isUpdate)  echo $inResort ? "checked" : "" ?>>Khu
+                                        nghỉ
+                                        dưỡng</label>
+                                    <label class="radio-inline"><input type="radio" name="resort_type"
+                                                                       value="1" <?php if($isUpdate)  echo !$inResort ? "checked" : "" ?>>Nhà
+                                        nghỉ
+                                        mát</label>
+                                </div>
+                                <div class="form-group">
+                                    <label for="sel1">Độ ưu tiên</label>
+
+                                    <select class="form-control" name="resort_priority">
+                                        <option
+                                            value="1" <?php if($isUpdate) echo $resort_vi['priority'] == 1 ? 'selected="selected"' : ''; ?>>
+                                            1
+                                        </option>
+                                        <option
+                                            value="2" <?php if($isUpdate)  echo $resort_vi['priority'] == 2 ? 'selected="selected"' :'' ; ?>>
+                                            2
+                                        </option>
+                                        <option
+                                            value="3" <?php if($isUpdate) echo $resort_vi['priority'] == 3 ? 'selected="selected"' : ''; ?>>
+                                            3
+                                        </option>
+                                        <option
+                                            value="4" <?php if($isUpdate) echo $resort_vi['priority'] == 4 ? 'selected="selected"' : ''; ?>>
+                                            4
+                                        </option>
+                                        <option
+                                            value="5" <?php if($isUpdate) echo $resort_vi['priority'] == 5 ? 'selected="selected"' : ''; ?>>
+                                            5
+                                        </option>
+                                    </select>
+                                </div>
+                                <div class="form-group">
+                                    <label for="noidung">Giá </label>
+                                    <input placeholder="Gía mỗi phòng" class="form-control"
+                                           value="<?php echo $isUpdate ? $resort_vi['price'] : "" ?>"
+                                           name="resort_price"
+                                           style="font-size:17px;font-family:verdana;text-align:justify;">
+                                </div>
+                                <div class="form-group">
+                                    <label for="noidung">Địa chỉ</label>
+                                    <input type="text" class="form-control" id="us2-address"
+                                           value="<?php echo $isUpdate ? $resort_vi['address'] : "" ?>"
+                                           name="resort_address"
+                                           style="margin-bottom: 15px"/>
+                                </div>
+                                <div id="us2" style="width: 100%; height: 400px;"></div>
+                                <div class="clearfix">&nbsp;</div>
+                                <div class="form-group">
+                                    <input type="text" class="form-control" style="visibility: hidden"
+                                           name="resort_lat" id="us2-lat"/>
+                                </div>
+
+                                <div class="form-group">
+                                    <input type="text" class="form-control" style="visibility: hidden"
+                                           name="resort_lon" id="us2-lon"/>
+                                </div>
+                                <div class="form-group">
+                                    <input type="text" class="form-control" style="visibility: hidden"
+                                           id="us2-country" name="resort_country"/>
+                                </div>
+                                <div class="clearfix"></div>
+                                <script>
+                                    var lct = $('#us2').locationpicker({
+                                        location: {
+                                            latitude: <?php echo $isUpdate ? $resort_vi['lat'] : "0" ?>,
+                                            longitude: <?php echo $isUpdate ? $resort_vi['lng'] : "0" ?>
+                                        },
+                                        inputBinding: {
+                                            latitudeInput: $('#us2-lat'),
+                                            longitudeInput: $('#us2-lon'),
+                                            radiusInput: $('#us2-radius'),
+                                            locationNameInput: $('#us2-address')
+                                        },
+                                        enableAutocomplete: true,
+                                        onchanged: function (currentLocation, radius, isMarkerDropped) {
+                                            var addressComponents = $(this).locationpicker('map').location.addressComponents;
+                                            $('#us2-country').val(addressComponents.country);
+                                        },
+                                        oninitialized: function (component) {
+                                            var addressComponents = component.locationpicker('map').location.addressComponents;
+                                            $('#us2-country').val(addressComponents.country);
+                                        }
+                                    });
+                                </script>
+
                             </div>
                             <!-- /.box-body -->
                             <div class="box-footer">
@@ -425,6 +529,9 @@ $isUpdate = isset($this->params[0]);
 <!-- Add the sidebar's background. This div must be placed
      immediately after the control sidebar -->
 <div class="control-sidebar-bg"></div>
+<script src="<?= BASE_DIR_ADMIN ?>js/plugins/sortable.js" type="text/javascript"></script>
+<script src="<?= BASE_DIR_ADMIN ?>js/fileinput.js" type="text/javascript"></script>
+
 <!-- Bootstrap 3.3.6 -->
 <script src="<?= BASE_DIR ?>js/bootstrap.min.js"></script>
 <!-- Slimscroll -->
@@ -441,21 +548,13 @@ $isUpdate = isset($this->params[0]);
 <script type="text/javascript" src="<?= BASE_DIR ?>ckeditor/ckeditor.js"></script>
 <!-- Page Script -->
 <script>
-    function readURL(input) {
-        if (input.files && input.files[0]) {
-            var reader = new FileReader();
-
-            reader.onload = function (e) {
-                $('#blah').attr('src', e.target.result);
-            }
-
-            reader.readAsDataURL(input.files[0]);
-        }
-    }
-
-    $("#imgInp").change(function () {
-        readURL(this);
-
+    $("#image-upload").fileinput({
+        'showUpload': false,
+        'previewFileType': 'image',
+        'showRemove': true,
+        'showCaption': true,
+        'allowedFileTypes': ['image'],
+        'allowedFileExtensions': ['jpg', 'gif', 'png', 'jpeg'],
     });
 </script>
 

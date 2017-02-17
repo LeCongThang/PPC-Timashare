@@ -94,6 +94,9 @@ $str = str_replace("{ThietBiVaDichVuLuuTru}", ThietBiVaDichVuLuuTru, $str);
 $str = str_replace("{DatCho}", DatCho, $str);
 $str = str_replace("{NoiDung}", NoiDung, $str);
 $str = str_replace("{KhuVuc}", KhuVuc, $str);
+$str = str_replace("{KhuNghiDuongVaGiaCa}", KhuNghiDuongVaGiaCa, $str);
+$str = str_replace("{DanhMucKhuNghiDuong1}", DanhMucKhuNghiDuong1, $str);
+$str = str_replace("{CoGiMoiTai}", CoGiMoiTai, $str);
 echo $str;
 
 

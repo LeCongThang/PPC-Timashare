@@ -85,12 +85,12 @@
                 ],
                 [
                     'title' => 'QUẢN LÝ THÔNG BÁO',
-                    'url' => 'controllerthongcaobaochi/index',
+                    'url' => 'controllerthongbao/index',
                     'icon' => 'glyphicon glyphicon-bell',
                 ],
                 [
                     'title' => 'QUẢN LÝ TUYỂN DỤNG',
-                    'url' => 'controlleruudai/index',
+                    'url' => 'controllertuyendung/index',
                     'icon' => 'glyphicon glyphicon-briefcase',
                 ],
 //                [

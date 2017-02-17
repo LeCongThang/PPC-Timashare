@@ -177,26 +177,30 @@
 
                     //console.log(rows);
                     var temp = "";
-                    var num_sub = options.total - page;
-                    if (num_sub == 0) {
-                        for (var i = page - 2; i <= page; i++) {
-                            if (i == page)  temp += '<a class="a_active" href="#" style="margin-right: 3px" data-value = ' + i + '>' + i + '</a>';
-                            else if (i != 0)
-                                temp += '<a href="#" style="margin-right: 3px" data-value = ' + i + '>' + i + '</a>';
+                    if(options.total>1){
+                        var num_sub = options.total - page;
+                        if (num_sub == 0) {
+                            for (var i = page - 2; i <= page; i++) {
+                                if (i == page)  temp += '<a class="a_active" href="#" style="margin-right: 3px" data-value = ' + i + '>' + i + '</a>';
+                                else if (i != 0)
+                                    temp += '<a href="#" style="margin-right: 3px" data-value = ' + i + '>' + i + '</a>';
+                            }
                         }
-                    }
-                    else {
-                        for (var i = page - 1; i <= page + 1; i++) {
-                            if (i == page)  temp += '<a class="a_active" href="#" style="margin-right: 3px" data-value = ' + i + '>' + i + '</a>';
-                            else if (i != 0)
-                                temp += '<a href="#" style="margin-right: 3px" data-value = ' + i + '>' + i + '</a>';
+                        else {
+                            for (var i = page - 1; i <= page + 1; i++) {
+                                if (i == page)  temp += '<a class="a_active" href="#" style="margin-right: 3px" data-value = ' + i + '>' + i + '</a>';
+                                else if (i != 0)
+                                    temp += '<a href="#" style="margin-right: 3px" data-value = ' + i + '>' + i + '</a>';
+                            }
                         }
+                    }else {
+                        temp += '<a class="a_active" href="#" style="margin-right: 3px" data-value = ' + 1 + '>' + 1 + '</a>';
                     }
                     var page_name = "";
                     if (lang == "vi")
                         page_name = "Trang ";
                     else page_name = "Page ";
-                    var bottom_content = '<div class="pages"><p >' + page_name + temp + '</p></div>';
+                    var bottom_content = '<div class="pages col-md-12"><p >' + page_name + temp + '</p></div>';
                     rows.append(bottom_content);
                 }
             });

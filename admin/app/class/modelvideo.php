@@ -35,9 +35,9 @@ class modelvideo
         return $list;
     }
 
-    public function update($id, $link, $noidung)
+    public function update($id, $link, $ten_video_vi, $ten_video_en)
     {
-        $sql = "UPDATE video SET ten_video ='" . $noidung . "',url_video ='" . trim($link) . "' WHERE id_video='" . $id . "'";
+        $sql = "UPDATE video SET ten_video_vi ='" . $ten_video_vi . "', ten_video_en = '".$ten_video_en."', url_video ='" . trim($link) . "' WHERE id_video='" . $id . "'";
         $kq = $this->db->query($sql);
         return true;
     }
@@ -51,6 +51,20 @@ class modelvideo
             $data = $row;
         }
         return $data;
+    }
+
+    public function create($url_video, $ten_video_vi, $ten_video_en)
+    {
+        $sql = "INSERT INTO video (url_video, ten_video_vi, ten_video_en) VALUES ('{$url_video}','{$ten_video_vi}','{$ten_video_en}')";
+        $kq = $this->db->query($sql);
+        return $kq;
+    }
+
+    public function delete($id)
+    {
+        $sql = "DELETE FROM video where id_video  = {$id}";
+        $kq_deals = $this->db->query($sql);
+        return $kq_deals;
     }
 
 }//class

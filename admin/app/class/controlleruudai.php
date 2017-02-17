@@ -1,104 +1,113 @@
 <?php
 
-/**
- * Created by PhpStorm.
- * User: DELL
- * Date: 04/01/2017
- * Time: 2:02 CH
- */
 class controlleruudai
 {
-    public $controller_uudai;
+    const UPDATE_DIR = '../';
+
+    public $controlleruudai;
     public $params;
     public $current_action;
     public $cname = "controlleruudai";
+    public $errors = [];
 
-    /**
-     * controlleruudai constructor.
-     * @param $action
-     * @param $params
-     */
     function __construct($action, $params)
     {
-        $this->controller_uudai = new modeluudai();
+        $this->controlleruudai = new modeluudai();
         $this->current_action = $action;
         $this->params = $params;
     }//construct
 
+
     /**
-     * controllercauhoi index
-     * input: null
-     * content: load data list question
-     * output: quanlycauhoi screen
+     * @return string
      */
+    private function uploadHinh()
+    {
+        if (isset($_FILES['fileup'])) {
+            $error = $_FILES['fileup']['error'];
+            if ($error == UPLOAD_ERR_OK) {
+                $tmp_name = $_FILES["fileup"]["tmp_name"];
+                $name = "img/" . time() . "_" . basename($_FILES["fileup"]["name"]);
+                move_uploaded_file($tmp_name, self::UPDATE_DIR . $name);
+                return $name;
+            }
+        }
+        return null;
+    }
+
     public function index()
     {
         if (!isset($_SESSION['tendangnhapadmin']))
             header('location:' . BASE_URL_ADMIN . "controlleradmin/index");
-        $ds_cau_hoi_vi = $this->controller_uudai->getListDeals("vi");
-        $ds_cau_hoi_en = $this->controller_uudai->getListDeals("en");
+        $list_deals = $this->controlleruudai->getAll();
         require_once("app/view/quanlyuudai.php");
     }
 
-    /**
-     * controllercauhoi index
-     * input: null
-     * content: load data list question
-     * output: quanlycauhoi screen
-     */
+
     public function create()
     {
+        $data = ['title' => '', 'content' => ''];
         if (count($_POST) > 0) {
-            $cau_hoi_vi = $_POST['cau_hoi_vi'];
-            $cau_hoi_en = $_POST['cau_hoi_en'];
-            $cau_tra_loi_vi = $_POST['cau_tra_loi_vi'];
-            $cau_tra_loi_en = $_POST['cau_tra_loi_en'];
-            $this->controller_cauhoi->themMoiCauHoi($cau_hoi_vi, $cau_hoi_en, $cau_tra_loi_vi, $cau_tra_loi_en);
-            redirect(BASE_URL_ADMIN . 'controllercauhoi/index');
+            $hinh = $this->uploadHinh();
+            if ($hinh != null) {
+                $tieu_de_vi = $_POST['tieude_vi'];
+                $noi_dung_vi = $_POST['noidung_vi'];
+                $tieu_de_en = $_POST['tieude_en'];
+                $noi_dung_en = $_POST['noidung_en'];
+                if ($this->controlleruudai->create($tieu_de_vi, $noi_dung_vi, $tieu_de_en, $noi_dung_en, $hinh))
+                    $this->errors[] = 'Tạo ưu đãi thành công!';
+                else
+                    $this->errors[] = 'Lỗi! Tạo ưu đãi không thành công!';
+                $list_deals = $this->controlleruudai->getAll();
+                require_once("app/view/quanlyuudai.php");
+                return true;
+            } else {
+                $this->errors[] = 'Vui lòng chọn hình ảnh!';
+            }
         }
-        require_once("app/view/create-question.php");
+        require_once("app/view/create-deals.php");
     }
 
-    /**
-     * controllercauhoi update
-     * input: id
-     * content: update
-     * output: quanlycauhoi screen
-     */
     public function update()
     {
         if (!isset($this->params[0])) {
-            redirect(BASE_URL_ADMIN . 'controllercauhoi/index');
+            redirect(BASE_URL_ADMIN . 'controlleruudai/index');
         }
-        $id = $this->params[0];
+        $id_deals = $this->params[0];
 
         if (count($_POST) > 0) {
-            $cau_hoi_vi = $_POST['cau_hoi_vi'];
-            $cau_hoi_en = $_POST['cau_hoi_en'];
-            $cau_tra_loi_vi = $_POST['cau_tra_loi_vi'];
-            $cau_tra_loi_en = $_POST['cau_tra_loi_en'];
-            $this->controller_cauhoi->suaThongTinCauHoi($id, $cau_hoi_vi, $cau_hoi_en, $cau_tra_loi_vi, $cau_tra_loi_en);
-            redirect(BASE_URL_ADMIN . 'controllercauhoi/index');
+            $hinh = $this->uploadHinh();
+            $tieu_de_vi = $_POST['tieude_vi'];
+            $noi_dung_vi = $_POST['noidung_vi'];
+            $tieu_de_en = $_POST['tieude_en'];
+            $noi_dung_en = $_POST['noidung_en'];
+            if ($this->controlleruudai->update($id_deals, $tieu_de_vi, $noi_dung_vi, $tieu_de_en, $noi_dung_en, $hinh))
+                $this->errors[] = 'Cập nhật ưu đãi thành công!';
+            else
+                $this->errors[] = 'Lỗi! Cập nhật ưu đãi không thành công!';
+            $list_deals = $this->controlleruudai->getAll();
+            require_once("app/view/quanlyuudai.php");
+            return true;
         }
-        $data_vi = $this->controller_cauhoi->xemChiTietCauHoi($id, "vi");
-        $data_en = $this->controller_cauhoi->xemChiTietCauHoi($id, "en");
-        require_once("app/view/create-question.php");
+        $data_vi = $this->controlleruudai->get($id_deals, "vi");
+        $data_en = $this->controlleruudai->get($id_deals, "en");
+        require_once("app/view/create-deals.php");
+        return true;
     }
 
-    /**
-     * controllercauhoi delete
-     * input: id
-     * content: delete
-     * output: quanlycauhoi screen
-     */
     public function delete()
     {
         if (!isset($this->params[0])) {
-            redirect(BASE_URL_ADMIN . 'controllercauhoi/index');
+            redirect(BASE_URL_ADMIN . 'controlleruudai/index');
         }
-        $this->controller_cauhoi->xoaCauHoi($this->params[0]);
-        $this->index();
+        if ($this->controlleruudai->delete($this->params[0]))
+            $this->errors[] = 'Xóa ưu đãi thành công!';
+        else
+            $this->errors[] = 'Lỗi! Xóa ưu đãi không thành công!';
+        $list_deals = $this->controlleruudai->getAll();
+        require_once("app/view/quanlyuudai.php");
+        return true;
     }
+}//class
 
-
-}
+?>

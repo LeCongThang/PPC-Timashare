@@ -20,5 +20,4 @@
     </div>
     <img src="">
 </div>
-</div>
 <?php include 'footer.php'; ?>

@@ -76,4 +76,7 @@ define("DichVuLuuTru","SERVICE");
 define("ThietBiVaDichVuLuuTru","EQUIPMENT AND SERVICE");
 define("DatCho","BOOK NOW");
 define("NoiDung"," YOUR MESSAGE");
+define("KhuNghiDuongVaGiaCa","RESORT & COST PRICE");
+define("DanhMucKhuNghiDuong1","LIST RESORT");
 define("KhuVuc","Region");
+define("CoGiMoiTai","WHAT IS NEW IN");

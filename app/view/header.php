@@ -47,14 +47,14 @@
                                 if ($_SESSION['lang'] == "vi") {
                                     echo '<a href="#" onclick="return false;"><img class="flag"src="' . BASE_DIR . 'img/vietnamflag.gif"alt=""/> Asia-VietNamese</a>';
                                 } else if ($_SESSION['lang'] == "en") {
-                                    echo '<a href="#" onclick="return false;"><img class="flag"src="' . BASE_DIR . 'img/icon_en.png"alt=""/> Asia-English</a>';
+                                    echo '<a href="#" onclick="return false;"><img class="flag"src="' . BASE_DIR . 'img/icon_flag_usa.png"alt=""/> Asia-English</a>';
                                 }
                                 ?>
                             </dt>
                             <dd>
                                 <ul>
                                     <li><a href="<?= BASE_URL . "en/" ?>"><img class="flag"
-                                                                               src="<?= BASE_DIR ?>img/icon_en.png"
+                                                                               src="<?= BASE_DIR ?>img/icon_flag_usa.png"
                                                                                alt=""/>
                                             Asia-English<span class="value">En</span></a></li>
                                     <li><a href="<?= BASE_URL . "vi/" ?>"><img class="flag"
@@ -67,13 +67,13 @@
                         <span id="result"></span>
                     </li>
                     <li><a href="<?= BASE_URL . $_SESSION['lang'] ?>/controller/index">{TrangChu}</a></li>
-                    <li><a href="#introduce">{GioiThieu}</a></li>
-                    <li><a href="#khunghiduong">{KhuNghiDuong}</a></li>
+                    <li><a href="<?=$_SESSION['lang'] ?>/#introduce">{GioiThieu}</a></li>
+                    <li><a href="<?=$_SESSION['lang'] ?>/#khunghiduong">{KhuNghiDuong}</a></li>
                 </ul>
                 <ul class="nav navbar-nav navbar-right" class="menuright">
-                    <li><a href="#thamgia">{ThamGia}</a></li>
-                    <li><a href="#trogiup">{TroGiup}</a></li>
-                    <li><a href="#lienhe">{LienHe}</a></li>
+                    <li><a href="<?=$_SESSION['lang'] ?>/#thamgia">{ThamGia}</a></li>
+                    <li><a href="<?=$_SESSION['lang'] ?>/#trogiup">{TroGiup}</a></li>
+                    <li><a href="<?=$_SESSION['lang'] ?>/#lienhe">{LienHe}</a></li>
                     <li>
                         <?php
                         if (!isset($_SESSION['tendangnhap']))
@@ -177,7 +177,7 @@
         crossorigin="anonymous"></script>
 <script type="text/javascript" src="<?= BASE_DIR ?>ckeditor/ckeditor.js"></script>
 <script type="text/javascript" src="<?= BASE_DIR ?>js/main.js"></script>
-
+<script>var lang = '<?=$_SESSION['lang']?>'</script>
 <script type="text/javascript" src="<?= BASE_DIR ?>js/paging_video.js"></script>
 </body>
 </html>

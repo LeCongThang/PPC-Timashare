@@ -34,7 +34,7 @@
     <![endif]-->
 </head>
 <body class="hold-transition skin-blue sidebar-mini">
-<div class="wrapper">
+    <div class="wrapper">
 
     <!-- Left side column. contains the logo and sidebar -->
     <?php require 'partials/slider-bar.php' ?>
@@ -72,12 +72,6 @@
                                                                     data-toggle="tab"
                                                                     aria-controls="gioithieu_en"
                                                                     aria-expanded="false">Home Share</a></li>
-
-                                <li role="presentation" class=""><a href="#tkdaduyet" role="tab" id="en-tab"
-                                                                    data-toggle="tab"
-                                                                    aria-controls="gioithieu_en"
-                                                                    aria-expanded="false">Tài khoản đã
-                                        duyệt</a></li>
                             </ul>
                             <div class="tab-content" id="myTabContent">
                                 <div class="tab-pane fade active in" role="tabpanel" id="vi"
@@ -87,7 +81,7 @@
                                         <table class="table">
                                             <thead>
                                             <tr>
-                                                <td>Tên </td>
+                                                <td>Tên</td>
                                                 <td>Địa chỉ</td>
                                                 <td>Trạng thái</td>
 
@@ -98,24 +92,24 @@
                                             <tbody>
                                             <div class="row text-center">
                                                 <?php
-                                                foreach ($listResortVi as $key => $item_resort) {
-                                                    ?>
-                                                    <tr>
+                                                    foreach ($listResortVi as $key => $item_resort) {
+                                                        ?>
+                                                        <tr>
                                                             <td><?php echo $item_resort['name']; ?></td>
                                                             <td><?php echo $item_resort['address']; ?></td>
-                                                            <td><?php if ($item_resort['status']==0) echo 'Còn hiệu lực'; else "Hết hiệu lực"; ?></td>
+                                                            <td><?php if ($item_resort['status'] == 0) echo 'Còn hiệu lực'; else "Hết hiệu lực"; ?></td>
 
                                                             <td>
-                                                                <a href="<?= BASE_URL_ADMIN ?>controllertaikhoan/update/<?= $item_taikhoan['tendangnhap'] ?>"
+                                                                <a href="<?= BASE_URL_ADMIN ?>controllernghiduong/update/<?= $item_resort['id'] ?>"
                                                                    class="btn btn-primary">Sửa</a>
 
                                                             </td>
                                                             <td>
-                                                                <a href="<?= BASE_URL_ADMIN ?>controllertaikhoan/delete/<?= $item_taikhoan['tendangnhap'] ?>"
+                                                                <a href="<?= BASE_URL_ADMIN ?>controllernghiduong/delete/<?= $item_resort['id'] ?>"
                                                                    class="btn btn-danger">Xóa</a>
                                                             </td>
-                                                    </tr>
-                                                <?php } ?>
+                                                        </tr>
+                                                    <?php } ?>
                                             </div>
                                             </tbody>
                                         </table>
@@ -129,7 +123,7 @@
                                         <table class="table">
                                             <thead>
                                             <tr>
-                                                <td>Tên </td>
+                                                <td>Tên</td>
                                                 <td>Địa chỉ</td>
                                                 <td>Trạng thái</td>
 
@@ -138,73 +132,27 @@
                                             </tr>
                                             </thead>
                                             <tbody>
-                                            <div class="row text-center">
-                                                <?php
-                                                foreach ($listHomeVi as $key => $item_home) {
-                                                    ?>
-                                                    <tr>
-                                                        <td><?php echo $item_home['name']; ?></td>
-                                                        <td><?php echo $item_home['address']; ?></td>
-                                                        <td><?php if ($item_home['status']==0) echo 'Còn hiệu lực'; else "Hết hiệu lực"; ?></td>
+                                                <div class="row text-center">
+                                                    <?php
+                                                    foreach ($listHomeVi as $key => $item_home) {
+                                                        ?>
+                                                        <tr>
+                                                            <td><?php echo $item_home['name']; ?></td>
+                                                            <td><?php echo $item_home['address']; ?></td>
+                                                            <td><?php if ($item_home['status'] == 0) echo 'Còn hiệu lực'; else "Hết hiệu lực"; ?></td>
 
-                                                        <td>
-                                                            <a href="<?= BASE_URL_ADMIN ?>controllertaikhoan/update/<?= $item_taikhoan['tendangnhap'] ?>"
-                                                               class="btn btn-primary">Sửa</a>
+                                                            <td>
+                                                                <a href="<?= BASE_URL_ADMIN ?>controllernghiduong/update/<?= $item_home['id'] ?>"
+                                                                   class="btn btn-primary">Sửa</a>
 
-                                                        </td>
-                                                        <td>
-                                                            <a href="<?= BASE_URL_ADMIN ?>controllertaikhoan/delete/<?= $item_taikhoan['tendangnhap'] ?>"
-                                                               class="btn btn-danger">Xóa</a>
-                                                        </td>
-                                                    </tr>
-                                                <?php } ?>
-                                            </div>
-                                            </tbody>
-                                        </table>
-                                    </div>
-                                </div>
-                                <div class="tab-pane fade" role="tabpanel" id="tkdaduyet"
-                                     aria-labelledby="tkdaduyet-tab">
-                                    <!-- /.box-header -->
-                                    <div class="box-body">
-                                        <table class="table">
-                                            <tr>
-                                                <td>Điện thoại</td>
-                                                <td>Email</td>
-                                                <td>Người duyệt</td>
-                                                <td>Ghi chú</td>
-                                                <td style="width:10%;"></td>
-                                                <td></td>
-                                            </tr>
-                                            <tbody>
-                                            <div class="row text-center">
-                                                <?php
-                                                foreach ($ds_tai_khoan_dk_da_duyet as $key => $item_taikhoan) {
-                                                    ?>
-                                                    <tr>
-                                                        <form
-                                                            action="<?= BASE_URL_ADMIN ?>controllertaikhoan/layThongTinUser/<?php echo $item_taikhoan['tendangnhap']; ?>"
-                                                            method="POST">
-                                                            <input type="hidden" id="txt1" name="txt1"
-                                                                   value="<?php echo $item_taikhoan['tendangnhap']; ?>">
-                                                            <input type="hidden" name="txt3"
-                                                                   value="<?php echo $item_taikhoan['hoten']; ?>">
-                                                            <input type="hidden" name="txt4"
-                                                                   value="<?php echo $item_taikhoan['diachi']; ?>">
-                                                            <input type="hidden" name="txt5"
-                                                                   value="<?php echo $item_taikhoan['dienthoai']; ?>">
-                                                            <td><?php echo $item_taikhoan['sdt_taikhoandk']; ?></td>
-                                                            <td><?php echo $item_taikhoan['email_taikhoandk']; ?></td>
-                                                            <td><?php echo $item_taikhoan['nguoiduyet_taikhoandk']; ?></td>
-                                                            <td><?php echo $item_taikhoan['ghichu'] ?></td>
-                                                        </form>
-                                                        <td>
-                                                            <a href="<?= BASE_URL_ADMIN ?>controllertaikhoan/deleteAccount/<?php echo $item_taikhoan['email_taikhoandk']; ?>"
-                                                            <button type="button" class="btn btn-danger"> XÓA</button>
-                                                        </td>
-                                                    </tr>
-                                                <?php } ?>
-                                            </div>
+                                                            </td>
+                                                            <td>
+                                                                <a href="<?= BASE_URL_ADMIN ?>controllernghiduong/delete/<?= $item_home['id'] ?>"
+                                                                   class="btn btn-danger">Xóa</a>
+                                                            </td>
+                                                        </tr>
+                                                    <?php } ?>
+                                                </div>
                                             </tbody>
                                         </table>
                                     </div>

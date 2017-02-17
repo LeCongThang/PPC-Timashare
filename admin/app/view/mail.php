@@ -24,8 +24,6 @@
     <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"
             integrity="sha384-Tc5IQib027qvyjSMfHjOMaLkfuWVxZxUPnCJA7l2mCWNIpG9mGCD8wGNIcPD7Txa"
             crossorigin="anonymous"></script>
-    <script
-        src="https://maps.googleapis.com/maps/api/js?key=AIzaSyBu-916DdpKAjTmJNIgngS6HL_kDIKU0aU&callback=myMap"></script>
     <link rel="stylesheet" type="text/css" href="<?= BASE_DIR ?>css/stylehead.css">
 </head>
 <body class="hold-transition skin-blue sidebar-mini">
@@ -187,16 +185,12 @@
 <!-- ./wrapper -->
 <!-- jQuery 2.2.3 -->
 <script src="<?= BASE_DIR ?>plugins/jQuery/jquery-2.2.3.min.js"></script>
-<!-- Bootstrap 3.3.6 -->
-<script src="<?= BASE_DIR ?>bootstrap/js/bootstrap.min.js"></script>
+
 <!-- Slimscroll -->
 <script src="<?= BASE_DIR ?>plugins/slimScroll/jquery.slimscroll.min.js"></script>
 <!-- FastClick -->
 <script src="<?= BASE_DIR ?>plugins/fastclick/fastclick.js"></script>
-<!-- AdminLTE App -->
-<script src="<?= BASE_DIR ?>dist/js/app.min.js"></script>
-<!-- AdminLTE for demo purposes -->
-<script src="<?= BASE_DIR ?>dist/js/demo.js"></script>
+
 <!-- iCheck -->
 <script src="<?= BASE_DIR ?>plugins/iCheck/icheck.min.js"></script>
 <!-- Bootstrap WYSIHTML5 -->
