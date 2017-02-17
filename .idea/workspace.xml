@@ -1,106 +1,9 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <project version="4">
   <component name="ChangeListManager">
-    <list default="true" id="48675101-2802-42b6-bd9d-0b7e31c69e3a" name="Default" comment="Update all">
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/admin/app/class/controllerthongbao.php" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/admin/app/class/controllertuyendung.php" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/admin/app/class/modelthongbao.php" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/admin/app/class/modeltuyendung.php" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/admin/app/themes/explorer/theme.css" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/admin/app/themes/explorer/theme.js" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/admin/app/themes/fa/theme.js" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/admin/app/themes/gly/theme.js" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/admin/app/view/create-announce_papers.php" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/admin/app/view/create-deals.php" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/admin/app/view/create-recruitment.php" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/admin/app/view/create-video.php" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/admin/app/view/quanlythongbao.php" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/admin/app/view/quanlytuyendung.php" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/admin/css/fileinput.css" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/admin/css/fileinput.min.css" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/admin/js/fileinput.js" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/admin/js/fileinput.min.js" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/admin/js/locales/LANG.js" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/admin/js/locales/ar.js" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/admin/js/locales/bg.js" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/admin/js/locales/ca.js" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/admin/js/locales/cr.js" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/admin/js/locales/cz.js" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/admin/js/locales/da.js" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/admin/js/locales/de.js" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/admin/js/locales/el.js" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/admin/js/locales/es.js" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/admin/js/locales/fa.js" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/admin/js/locales/fi.js" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/admin/js/locales/fr.js" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/admin/js/locales/hu.js" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/admin/js/locales/id.js" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/admin/js/locales/it.js" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/admin/js/locales/ja.js" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/admin/js/locales/kr.js" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/admin/js/locales/kz.js" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/admin/js/locales/nl.js" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/admin/js/locales/pl.js" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/admin/js/locales/pt-BR.js" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/admin/js/locales/pt.js" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/admin/js/locales/ro.js" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/admin/js/locales/ru.js" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/admin/js/locales/sk.js" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/admin/js/locales/sl.js" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/admin/js/locales/th.js" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/admin/js/locales/tr.js" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/admin/js/locales/uk.js" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/admin/js/locales/vi.js" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/admin/js/locales/zh-TW.js" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/admin/js/locales/zh.js" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/admin/js/plugins/canvas-to-blob.js" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/admin/js/plugins/canvas-to-blob.min.js" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/admin/js/plugins/purify.js" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/admin/js/plugins/purify.min.js" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/admin/js/plugins/sortable.js" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/admin/js/plugins/sortable.min.js" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/app/view/CoGiMoiPPC.php" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/app/view/GoiYKyNghi.php" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/app/view/KhamPha.php" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/js/paging_discover.js" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/js/paging_resort_city.js" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/js/paging_resort_hint.js" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/js/paging_resort_new.js" />
+    <list default="true" id="48675101-2802-42b6-bd9d-0b7e31c69e3a" name="Default" comment="">
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.idea/workspace.xml" afterPath="$PROJECT_DIR$/.idea/workspace.xml" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/admin/app/class/controllernghiduong.php" afterPath="$PROJECT_DIR$/admin/app/class/controllernghiduong.php" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/admin/app/class/controlleruudai.php" afterPath="$PROJECT_DIR$/admin/app/class/controlleruudai.php" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/admin/app/class/controllervideo.php" afterPath="$PROJECT_DIR$/admin/app/class/controllervideo.php" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/admin/app/class/modelnghiduong.php" afterPath="$PROJECT_DIR$/admin/app/class/modelnghiduong.php" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/admin/app/class/modelslider.php" afterPath="$PROJECT_DIR$/admin/app/class/modelslider.php" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/admin/app/class/modeluudai.php" afterPath="$PROJECT_DIR$/admin/app/class/modeluudai.php" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/admin/app/class/modelvideo.php" afterPath="$PROJECT_DIR$/admin/app/class/modelvideo.php" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/admin/app/view/admin.php" afterPath="$PROJECT_DIR$/admin/app/view/admin.php" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/admin/app/view/create-resort.php" afterPath="$PROJECT_DIR$/admin/app/view/create-resort.php" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/admin/app/view/mail.php" afterPath="$PROJECT_DIR$/admin/app/view/mail.php" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/admin/app/view/partials/slider-bar.php" afterPath="$PROJECT_DIR$/admin/app/view/partials/slider-bar.php" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/admin/app/view/quanlycauhoi.php" afterPath="$PROJECT_DIR$/admin/app/view/quanlycauhoi.php" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/admin/app/view/quanlykhunghiduong.php" afterPath="$PROJECT_DIR$/admin/app/view/quanlykhunghiduong.php" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/admin/app/view/quanlyuudai.php" afterPath="$PROJECT_DIR$/admin/app/view/quanlyuudai.php" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/admin/app/view/quanlyvideo.php" afterPath="$PROJECT_DIR$/admin/app/view/quanlyvideo.php" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/admin/app/view/slider.php" afterPath="$PROJECT_DIR$/admin/app/view/slider.php" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/app/class/controller.php" afterPath="$PROJECT_DIR$/app/class/controller.php" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/app/class/model.php" afterPath="$PROJECT_DIR$/app/class/model.php" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/app/index.php" afterPath="$PROJECT_DIR$/app/index.php" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/app/lang_en.php" afterPath="$PROJECT_DIR$/app/lang_en.php" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/app/lang_vi.php" afterPath="$PROJECT_DIR$/app/lang_vi.php" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/app/view/KetNoiPPC.php" afterPath="$PROJECT_DIR$/app/view/KetNoiPPC.php" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/app/view/ResortDirectory.php" afterPath="$PROJECT_DIR$/app/view/ResortDirectory.php" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/app/view/UuDaiDacBiet.php" afterPath="$PROJECT_DIR$/app/view/UuDaiDacBiet.php" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/app/view/header.php" afterPath="$PROJECT_DIR$/app/view/header.php" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/app/view/home.php" afterPath="$PROJECT_DIR$/app/view/home.php" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/css/style.css" afterPath="$PROJECT_DIR$/css/style.css" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/css/stylehead.css" afterPath="$PROJECT_DIR$/css/stylehead.css" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/js/paging_announce.js" afterPath="$PROJECT_DIR$/js/paging_announce.js" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/js/paging_connect.js" afterPath="$PROJECT_DIR$/js/paging_connect.js" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/js/paging_deals.js" afterPath="$PROJECT_DIR$/js/paging_deals.js" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/js/paging_resort.js" afterPath="$PROJECT_DIR$/js/paging_resort.js" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/js/paging_resort_id.js" afterPath="$PROJECT_DIR$/js/paging_resort_id.js" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/js/paging_video.js" afterPath="$PROJECT_DIR$/js/paging_video.js" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/ppctimeshare.sql" afterPath="$PROJECT_DIR$/ppctimeshare.sql" />
     </list>
     <ignored path="PPC-Timeshare.iws" />
     <ignored path=".idea/workspace.xml" />
@@ -392,8 +295,8 @@
       <file leaf-file-name="paging_resort_new.js" pinned="false" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/js/paging_resort_new.js">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="238">
-              <caret line="163" column="29" selection-start-line="163" selection-start-column="29" selection-end-line="163" selection-end-column="29" />
+            <state relative-caret-position="391">
+              <caret line="172" column="33" selection-start-line="172" selection-start-column="33" selection-end-line="172" selection-end-column="33" />
               <folding>
                 <marker date="1487152652384" expanded="true" signature="6160:6171" ph="..." />
                 <marker date="1487152652384" expanded="true" signature="6753:6770" ph="..." />
@@ -797,7 +700,7 @@
       <workItem from="1487255155837" duration="3189000" />
       <workItem from="1487298766911" duration="23524000" />
       <workItem from="1487338667962" duration="611000" />
-      <workItem from="1487348501732" duration="6337000" />
+      <workItem from="1487348501732" duration="6434000" />
     </task>
     <task id="LOCAL-00001" summary="Update all">
       <created>1483670120952</created>
@@ -834,11 +737,18 @@
       <option name="project" value="LOCAL" />
       <updated>1487091019422</updated>
     </task>
-    <option name="localTasksCounter" value="6" />
+    <task id="LOCAL-00006" summary="Update all">
+      <created>1487354920895</created>
+      <option name="number" value="00006" />
+      <option name="presentableId" value="LOCAL-00006" />
+      <option name="project" value="LOCAL" />
+      <updated>1487354920895</updated>
+    </task>
+    <option name="localTasksCounter" value="7" />
     <servers />
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="516298000" />
+    <option name="totallyTimeSpent" value="516395000" />
   </component>
   <component name="TodoView">
     <todo-panel id="selected-file">
@@ -1501,8 +1411,8 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/js/paging_resort_new.js">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="238">
-          <caret line="163" column="29" selection-start-line="163" selection-start-column="29" selection-end-line="163" selection-end-column="29" />
+        <state relative-caret-position="391">
+          <caret line="172" column="33" selection-start-line="172" selection-start-column="33" selection-end-line="172" selection-end-column="33" />
           <folding>
             <marker date="1487152652384" expanded="true" signature="6160:6171" ph="..." />
             <marker date="1487152652384" expanded="true" signature="6753:6770" ph="..." />
