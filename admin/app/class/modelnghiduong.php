@@ -99,7 +99,7 @@ class modelnghiduong
             $id_city_insert = $this->getIdCityByIdCountry($idCountry, $type)['id'];
 
         $date_insert = date("Y/m/d");
-        if (!$this->insertResort($resort_status, $resort_type, $resort_priority, $resort_price, $resort_lat, $resort_lon, $id_city_insert, $date_insert, $idCountry)) {
+        if (!$this->insertResort($resort_status, $resort_type, $resort_priority, $resort_price, $resort_lat, $resort_lon, $id_city_insert, $date_insert)) {
             die("Error in createResort");
         }
         $last_id = mysqli_insert_id($this->db);
@@ -114,6 +114,7 @@ class modelnghiduong
         $this->updateNumberContinentsCountry($idCountry, $id_city_insert);
         return true;
     }
+
     // insert Resort co them truong id_country de de gom
     public function insertResort($resort_status, $resort_type, $resort_priority, $resort_price, $resort_lat, $resort_lon, $id_city, $date_insert)
     {

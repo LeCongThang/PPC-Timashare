@@ -54,7 +54,7 @@
                     <div class="box box-primary">
                         <div class="box-header with-border text-center">
                             <div class="pull-left">
-                                <a href="<?= BASE_URL_ADMIN ?>controllertuyendung/create"
+                                <a href="<?= BASE_URL_ADMIN ?>controlleruudai/create"
                                    class="btn btn-success"><i
                                         class="glyphicon glyphicon-th-large"></i>&nbsp <b>Thêm ưu đãi</b></a>
                                 <!-- <button type="button" class="btn btn-default"><i class="fa fa-pencil"></i> Draft</button> -->
@@ -87,9 +87,9 @@
                                             <img src=" <?= BASE_DIR. $deals['image'] ?>" class="img-responsive" style="height:50% "/>
                                         </td>
                                         <td>
-                                            <a href="<?= BASE_URL_ADMIN ?>controllertuyendung/update/<?= $deals['id'] ?>"
+                                            <a href="<?= BASE_URL_ADMIN ?>controlleruudai/update/<?= $deals['id'] ?>"
                                                class="btn btn-primary">Sửa</a>
-                                            <a href="<?= BASE_URL_ADMIN ?>controllertuyendung/delete/<?= $deals['id'] ?>"
+                                            <a href="<?= BASE_URL_ADMIN ?>controlleruudai/delete/<?= $deals['id'] ?>"
                                                class="btn btn-danger">Xóa</a>
                                         </td>
                                     </tr>

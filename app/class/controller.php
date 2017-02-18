@@ -179,17 +179,60 @@ class controller
 
     public function quenmatkhau()
     {
-        $tendangnhapll = $_POST["tendangnhapll"];
-        $sodienthoaitaikhoanll = $_POST["sodienthoaitaikhoanll"];
-        $carrier = "";
-        if ($this->control->ktIdVaSoDienThoai($tendangnhapll, $sodienthoaitaikhoanll)) {
-            $message = "Mật khẩu của bạn là PPCTIMESHARE123";
-            $to = $sodienthoaitaikhoanll . '@' . $carrier;
-            $result = @mail($to, '', $message);
-            $this->control->doiquenmatkhau($tendangnhapll, "PPCTIMESHARE123");
-        } else {
+        // input tendangnhap($email khach hang)
+        $email = $_POST["tendangnhapll"];
+        // lay id cua khach hang
+        $user = $this->control->getUserByEmail($email);
+        $id_account = $user['id'];
+        if ($id_account != "") {
+            $date_now = date("Y-m-dh:i:sa");
 
+            $password_key = md5($date_now . $id_account . $email);
+
+            $this->control->updatePasswordKey($password_key, $id_account);
+
+            require 'PHPMailerAutoload.php';
+
+            $mail = new PHPMailer();
+            //Khai báo gửi mail bằng SMTP
+            $mail->IsSMTP();
+            //Tắt mở kiểm tra lỗi trả về, chấp nhận các giá trị 0 1 2
+            // 0 = off không thông báo bất kì gì, tốt nhất nên dùng khi đã hoàn thành.
+            // 1 = Thông báo lỗi ở client
+            // 2 = Thông báo lỗi cả client và lỗi ở server
+            $mail->SMTPDebug = 2;
+
+            $mail->Debugoutput = "html"; // Lỗi trả về hiển thị với cấu trúc HTML
+            $mail->Host = "smtp.gmail.com"; //host smtp để gửi mail
+            $mail->Port = 587; // cổng để gửi mail
+            $mail->SMTPSecure = "tls"; //Phương thức mã hóa thư - ssl hoặc tls
+            $mail->SMTPAuth = true; //Xác thực SMTP
+            $mail->Username = "mailer.proimage@gmail.com"; // Tên đăng nhập tài khoản Gmail
+            $mail->Password = "yhejvnfznrlvfxzo"; //Mật khẩu của gmail
+            $mail->SetFrom("PPC-TimeShare Company", "Change password PPC-TimeShare account"); // Thông tin người gửi
+            $mail->AddReplyTo("mailer.proimage@gmail.com", "PPC-TimeShare Company");// Ấn định email sẽ nhận khi người dùng reply lại.
+            $mail->AddAddress($email, $user['hoten']);//Email của người nhận
+            $mail->Subject = "Change password PPC-TimeShare account"; //Tiêu đề của thư
+            ob_start();
+            $user_name = $user['hoten'];
+            $password_key = BASE_URL . $_SESSION['lang'] . "/controller/changePassword/" . $password_key;
+            require "forget-pass.blade.php";
+
+            $mail->Body = ob_get_contents();
+            //$mail->MsgHTML("lorem"); //Nội dung của bức thư.
+            // $mail->MsgHTML(file_get_contents("email-template.html"), dirname(__FILE__));
+            // Gửi thư với tập tin html
+            $mail->AltBody = "This is mail to change password PPC-TimeShare account";//Nội dung rút gọn hiển thị bên ngoài thư mục thư.
+            //$mail->AddAttachment("images/attact-tui.gif");//Tập tin cần attach
+
+            //Tiến hành gửi email và kiểm tra lỗi
+            if (!$mail->Send()) {
+                echo "Có lỗi khi gửi mail: " . $mail->ErrorInfo;
+            } else {
+                echo "Đã gửi thư thành công!";
+            }
         }
+
         header('location:' . BASE_URL . $this->lang . "/controller/index");
     }
 
@@ -571,7 +614,7 @@ class controller
         } else {
             $id = $this->params[0];
             $total = array("total" => 0);
-            if(!isset($this->params[1]))
+            if (!isset($this->params[1]))
                 $pages = $this->control->getNumberResortById($id) / 4;
             else {
                 $id = $this->params[1];
@@ -604,10 +647,9 @@ class controller
             $items = 4;
             $currentPage = (int)$_POST["currentPage"];
             $offset = ($currentPage - 1) * $items;
-            if(!isset($this->params[1]))
+            if (!isset($this->params[1]))
                 $danh_sach_resort = $this->control->getAllResortPageById($id, $offset, $items);
-            else
-            {
+            else {
                 $id = $this->params[1];
                 $danh_sach_resort = $this->control->getAllResortPageByIdCity($id, $offset, $items);
             }
@@ -694,6 +736,37 @@ class controller
         $offset = ($currentPage - 1) * $items;
         $danh_sach_resort = $this->control->getAllResortSortByHint($offset, $items, $lat, $lng, 1000);
         echo json_encode($danh_sach_resort);
+    }
+
+    public function changePassword()
+    {
+        if (isset($this->params[0])) {
+            $password_key = $this->params[0];
+            $user = $this->control->checkPasswordKey($password_key);
+            if($user!=""){
+                $id_user = $user['id'];
+                $dssbanner = $this->control->laydanhsach("banner");
+                $dssliderw = $this->control->laydanhsachslider();
+                $dsKhuNghiDuongBanner = array();
+                foreach ($dssbanner as $banner) {
+                    $khuNghiDuongBanner = $this->control->layThongTinChiTietKhuNghiDuong($banner['idkhunghiduong']);
+                    $dsKhuNghiDuongBanner[] = $khuNghiDuongBanner;
+                }
+                require_once("view/ChangeNewPassword.php");
+            }
+        }
+    }
+
+    public function updatePassword()
+    {
+        if(isset($this->params[0])){
+            $id_user = $this->params[0];
+            $password = $_POST['new_password'];
+            if($this->control->updatePassword($id_user,$password))
+            {
+                header('location:' . BASE_URL . $this->lang . "/controller/index");
+            }
+        }
     }
 
 

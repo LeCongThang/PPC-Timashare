@@ -80,18 +80,18 @@ $isUpdate = isset($this->params[0]);
 
                                     <div class="form-group">
                                         <input id="image-upload" type="file" name="fileup[]" multiple class="file"
-                                               data-overwrite-initial="false" <?php if($isUpdate) echo (count($resort_image)<0)?'data-min-file-count="2"':""; else echo 'data-min-file-count="2"';?>>
+                                               data-overwrite-initial="false" <?php if ($isUpdate) echo (count($resort_image) < 0) ? 'data-min-file-count="2"' : ""; else echo 'data-min-file-count="2"'; ?>>
                                     </div>
-                                    <?php if($isUpdate)
-                                    {
+                                    <?php if ($isUpdate) {
                                         echo '<div class="col-md-12 list_image_update">';
-                                        foreach ($resort_image as $key => $item_image){
-                                            echo '<div class="col-md-2"><img class="img-responsive" src="'.BASE_DIR.$item_image['image'].'">
-                                        <p style="text-align: center;margin-top: 5px"><a href="'.BASE_URL_ADMIN.'controllernghiduong/update/'.$resort_vi['id'].'/'.$item_image['id_resort_image'].'" type="button" class="btn btn-danger">Xóa</a></p></div>';}
+                                        foreach ($resort_image as $key => $item_image) {
+                                            echo '<div class="col-md-2"><img class="img-responsive" src="' . BASE_DIR . $item_image['image'] . '">
+                                        <p style="text-align: center;margin-top: 5px"><a href="' . BASE_URL_ADMIN . 'controllernghiduong/update/' . $resort_vi['id'] . '/' . $item_image['id_resort_image'] . '" type="button" class="btn btn-danger">Xóa</a></p></div>';
+                                        }
                                         echo '</div>';
 
                                     }
-                                        ?>
+                                    ?>
 
                                 </div>
                                 <div class="bs-example bs-example-tabs" data-example-id="togglable-tabs">
@@ -203,23 +203,23 @@ $isUpdate = isset($this->params[0]);
                                 <br>
                                 <div class="form-group">
                                     <label for="noidung">Trạng thái</label>
-                                    <?php if($isUpdate)  $resort_vi['status'] == 0 ? $inStock = true : $inStock = false; ?>
+                                    <?php if ($isUpdate) $resort_vi['status'] == 0 ? $inStock = true : $inStock = false; ?>
                                     <label class="radio-inline"><input type="radio" name="resort_status"
-                                                                       value="0" <?php if($isUpdate)  echo $inStock ? "checked" : "" ?> >Còn
+                                                                       value="0" <?php if ($isUpdate) echo $inStock ? "checked" : "" ?> >Còn
                                         hàng</label>
                                     <label class="radio-inline"><input type="radio" name="resort_status"
-                                                                       value="1" <?php if($isUpdate)  echo !$inStock ? "checked" : "" ?>>Hết
+                                                                       value="1" <?php if ($isUpdate) echo !$inStock ? "checked" : "" ?>>Hết
                                         hàng</label>
                                 </div>
                                 <div class="form-group">
                                     <label for="noidung">Loại dịch vụ</label>
-                                    <?php if($isUpdate)  $resort_vi['id_resort_type'] == 0 ? $inResort = true : $inResort = false; ?>
+                                    <?php if ($isUpdate) $resort_vi['id_resort_type'] == 0 ? $inResort = true : $inResort = false; ?>
                                     <label class="radio-inline"><input type="radio" name="resort_type"
-                                                                       value="0" <?php if($isUpdate)  echo $inResort ? "checked" : "" ?>>Khu
+                                                                       value="0" <?php if ($isUpdate) echo $inResort ? "checked" : "" ?>>Khu
                                         nghỉ
                                         dưỡng</label>
                                     <label class="radio-inline"><input type="radio" name="resort_type"
-                                                                       value="1" <?php if($isUpdate)  echo !$inResort ? "checked" : "" ?>>Nhà
+                                                                       value="1" <?php if ($isUpdate) echo !$inResort ? "checked" : "" ?>>Nhà
                                         nghỉ
                                         mát</label>
                                 </div>
@@ -228,23 +228,23 @@ $isUpdate = isset($this->params[0]);
 
                                     <select class="form-control" name="resort_priority">
                                         <option
-                                            value="1" <?php if($isUpdate) echo $resort_vi['priority'] == 1 ? 'selected="selected"' : ''; ?>>
+                                            value="1" <?php if ($isUpdate) echo $resort_vi['priority'] == 1 ? 'selected="selected"' : ''; ?>>
                                             1
                                         </option>
                                         <option
-                                            value="2" <?php if($isUpdate)  echo $resort_vi['priority'] == 2 ? 'selected="selected"' :'' ; ?>>
+                                            value="2" <?php if ($isUpdate) echo $resort_vi['priority'] == 2 ? 'selected="selected"' : ''; ?>>
                                             2
                                         </option>
                                         <option
-                                            value="3" <?php if($isUpdate) echo $resort_vi['priority'] == 3 ? 'selected="selected"' : ''; ?>>
+                                            value="3" <?php if ($isUpdate) echo $resort_vi['priority'] == 3 ? 'selected="selected"' : ''; ?>>
                                             3
                                         </option>
                                         <option
-                                            value="4" <?php if($isUpdate) echo $resort_vi['priority'] == 4 ? 'selected="selected"' : ''; ?>>
+                                            value="4" <?php if ($isUpdate) echo $resort_vi['priority'] == 4 ? 'selected="selected"' : ''; ?>>
                                             4
                                         </option>
                                         <option
-                                            value="5" <?php if($isUpdate) echo $resort_vi['priority'] == 5 ? 'selected="selected"' : ''; ?>>
+                                            value="5" <?php if ($isUpdate) echo $resort_vi['priority'] == 5 ? 'selected="selected"' : ''; ?>>
                                             5
                                         </option>
                                     </select>

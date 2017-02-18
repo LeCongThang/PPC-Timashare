@@ -30,6 +30,26 @@ $(document).ready(function () {
         return true;
     });
 
+    $('#btn_change_newpass').click(function () {
+        matkhaumoi = $('#new_password').val();
+        nhaplaimatkhaumoi = $('#re_new_password').val();
+        loi = 0;
+        if (matkhaumoi == "") {
+            loi++;
+            $('#annouce_change_newpass').text("Hãy nhập đầy đủ thông tin");
+        }
+        else {
+            if (matkhaumoi != nhaplaimatkhaumoi) {
+                loi++;
+                $('#annouce_change_newpass').text("Mật khẩu nhập lại không trùng khớp");
+            }
+        }
+        if (loi != 0) {
+            return false;
+        }
+        return true;
+    });
+
     $('#btnLuuThongTin').click(function () {
         tentaikhoan = $('#tentaikhoan').val();
         diachitaikhoan = $('#diachitaikhoan').val();

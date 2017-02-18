@@ -976,4 +976,49 @@ class model
         mysqli_free_result($result);
         return $list;
     }
+
+    public function getUserByEmail ($email)
+    {
+        $sql = "SELECT * FROM taikhoan WHERE tendangnhap ='".$email."'";
+        $result = mysqli_query($this->db, $sql);
+
+        if (!$result) {
+            die("Error in getIdUserByEmail");
+        }
+
+        return mysqli_fetch_assoc($result);
+    }
+
+    public function updatePasswordKey($password_key, $id_account)
+    {
+        $sql = "UPDATE taikhoan SET password_key ='".$password_key."' WHERE id =".$id_account;
+        $result = mysqli_query($this->db, $sql);
+        if (!$result) {
+            die("Error in updatePasswordKey");
+        }
+        return $result;
+    }
+
+    public function checkPasswordKey($password_key){
+        $sql = "SELECT * FROM taikhoan WHERE password_key ='".$password_key."'";
+        $result = mysqli_query($this->db, $sql);
+
+        if (!$result) {
+            die("Error in getIdUserByEmail");
+        }
+
+        return mysqli_fetch_assoc($result);
+    }
+
+    public function updatePassword($id_user, $password){
+        $sql = "UPDATE taikhoan SET matkhau ='".md5($password)."' WHERE id =".$id_user;
+        $result = mysqli_query($this->db, $sql);
+        if (!$result) {
+            die("Error in updatePasswordKey");
+        }
+        else{
+            $this->updatePasswordKey("",$id_user);
+        }
+        return $result;
+    }
 }//class

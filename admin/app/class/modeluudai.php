@@ -19,10 +19,12 @@ class modeluudai
         }
     }
 
-    public function create($tieu_de_vi, $noi_dung_vi, $tieu_de_en, $noi_dung_en, $hinh)
+    public function create($tieu_de_vi, $noi_dung_vi, $tieu_de_en, $noi_dung_en, $hinh, $list_id_resort, $date_start, $date_end)
     {
         $sql_deals = "INSERT INTO deals(image) VALUES('$hinh')";
         $kq_deals = $this->db->query($sql_deals);
+        if ($kq_deals)
+            $id_deals_inserted = mysqli_insert_id($this->db);
         if ($kq_deals) {
             $id_deals = mysqli_insert_id($this->db);
             $sql_deals_vi = "INSERT INTO deals_language(id_deals,title,content,language) VALUES ('$id_deals', '$tieu_de_vi', '$noi_dung_vi','vi')";
@@ -30,8 +32,12 @@ class modeluudai
             $kq_deals_vi = $this->db->query($sql_deals_vi);
             $kq_deals_en = $this->db->query($sql_deals_en);
         }
-        if ($kq_deals && $kq_deals_vi && $kq_deals_en)
-            return true;
+        if ($kq_deals && $kq_deals_vi && $kq_deals_en) {
+            foreach ($list_id_resort as $key => $resort_id) {
+                $this->insertDetail_Resort_Deals($resort_id, $id_deals_inserted, $date_start, $date_end);
+            }
+
+        }
         return false;
     }
 
@@ -55,7 +61,23 @@ class modeluudai
 
     public function getAll()
     {
-        $sql = "select deals.id, deals.image, deals_language.title, deals_language.content from deals,deals_language WHERE deals.id = deals_language.id_deals AND deals_language.language = 'vi'" ;
+        $sql = "select deals.id, deals.image, deals_language.title, deals_language.content from deals,deals_language WHERE deals.id = deals_language.id_deals AND deals_language.language = 'vi'";
+        $result = mysqli_query($this->db, $sql);
+        if (!$result) {
+            die("Error in query getListResort");
+        }
+        $list = array();
+        while ($row = mysqli_fetch_assoc($result)) {
+            $list[] = $row;
+        }
+        //remove out of memory
+        mysqli_free_result($result);
+        return $list;
+    }
+
+    public function getListResort()
+    {
+        $sql = "SELECT resort.id, resort_language.name FROM resort, resort_language WHERE resort_language.language ='vi' AND resort.id = resort_language.id_resort";
         $result = mysqli_query($this->db, $sql);
         if (!$result) {
             die("Error in query getListResort");
@@ -82,10 +104,47 @@ class modeluudai
     {
         $sql = "DELETE FROM deals where id  = {$id}";
         $sql_ngonngu = "DELETE FROM deals_language WHERE id_deals = {$id}";
+        $sql_deals_resort = "DELETE FROM details_deal_resort WHERE id_deal ={$id}";
         $kq_deals = $this->db->query($sql);
         $kq_deals_ngonngu = $this->db->query($sql_ngonngu);
-        if ($kq_deals && $kq_deals_ngonngu)
+        $kq_deals_resort = $this->db->query($sql_deals_resort);
+        if ($kq_deals && $kq_deals_ngonngu && $kq_deals_resort)
             return true;
         return false;
+    }
+
+    public function insertDetail_Resort_Deals($id_resort, $id_deals, $date_start, $date_end)
+    {
+        $sql = "INSERT INTO details_deal_resort(id_resort, id_deal, date_start, date_end) VALUES ({$id_resort},{$id_deals},'{$date_start}','{$date_end}')";
+        $kq_deals = $this->db->query($sql);
+        return $kq_deals;
+    }
+
+    public function getDetailsDealsResort($deals_id)
+    {
+        $sql = "SELECT details_deal_resort.date_start, details_deal_resort.date_end, details_deal_resort.id, details_deal_resort.id_resort, details_deal_resort.id_deal, resort_language.name FROM details_deal_resort, resort, resort_language WHERE resort.id = resort_language.id_resort AND resort_language.language = 'vi' AND resort.id = details_deal_resort.id_resort AND id_deal =" . $deals_id;
+        $result = mysqli_query($this->db, $sql);
+        if (!$result) {
+            die("Error in query getDetailsDealsResort");
+        }
+        $list = array();
+        while ($row = mysqli_fetch_assoc($result)) {
+            $list[] = $row;
+        }
+        //remove out of memory
+        mysqli_free_result($result);
+        return $list;
+    }
+
+    public function updateDetails($id_deals, $list_resort_choose, $date_start, $date_end)
+    {
+        $sql_deals_resort = "DELETE FROM details_deal_resort WHERE id_deal ={$id_deals}";
+        $kq_deals_resort = $this->db->query($sql_deals_resort);
+        if ($kq_deals_resort) {
+            foreach ($list_resort_choose as $key => $resort_id) {
+                $this->insertDetail_Resort_Deals($resort_id, $id_deals, $date_start, $date_end);
+            }
+        }
+        return true;
     }
 }

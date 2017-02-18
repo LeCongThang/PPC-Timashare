@@ -11,7 +11,7 @@ $kq = tach_url($url, $cname, $action, $params);
 
 
 if (class_exists($cname, true)==true)
-	$c = new $cname($action, $params);
+    $c = new $cname($action, $params);
 else
     die('Khong co controller ' . $cname);
 

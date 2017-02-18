@@ -10,14 +10,7 @@ body {
     font-weight: bold;
 }
 
-#row_so {
-    background-image: url('../img/bg_img.jpg');
-    width: 100%;
-    height: 560px;
-    /*background-repeat: no-repeat;*/
-    margin-left: 0px;
-    margin-right: 0px;
-}
+
 
 .space {
     margin-top: 50px;
