@@ -1,26 +1,34 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <project version="4">
   <component name="ChangeListManager">
-    <list default="true" id="48675101-2802-42b6-bd9d-0b7e31c69e3a" name="Default" comment="">
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/.idea/blade.xml" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/admin/js/bootstrap-datetimepicker.js" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/admin/js/collapse.js" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/admin/js/transition.js" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/app/class/forget-pass.blade.php" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/app/view/ChangeNewPassword.php" />
+    <list default="true" id="48675101-2802-42b6-bd9d-0b7e31c69e3a" name="Default" comment="Update all">
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/app/class/PHPMailerAutoload.php" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/app/class/class.phpmailer.php" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/app/class/class.pop3.php" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/app/class/class.smtp.php" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/css/AdminLTE.css" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/css/AdminLTE.min.css" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/css/font-awesome.min.css" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/locationpicker/.gitignore" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/locationpicker/Gruntfile.js" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/locationpicker/LICENSE" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/locationpicker/README.md" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/locationpicker/bower.json" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/locationpicker/dist/angularLocationpicker.jquery.js" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/locationpicker/dist/angularLocationpicker.jquery.min.js" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/locationpicker/dist/angularLocationpicker.jquery.min.js.map" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/locationpicker/dist/locationpicker.jquery.js" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/locationpicker/dist/locationpicker.jquery.min.js" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/locationpicker/dist/locationpicker.jquery.min.js.map" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/locationpicker/examples/angularExample.html" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/locationpicker/examples/examples.html" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/locationpicker/examples/mapInModalDialog.html" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/locationpicker/examples/simple.html" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/locationpicker/locationpicker.jquery.json" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/locationpicker/package.json" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/locationpicker/src/angularLocationpicker.jquery.js" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/locationpicker/src/locationpicker.jquery.js" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.idea/workspace.xml" afterPath="$PROJECT_DIR$/.idea/workspace.xml" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/admin/app/class/controlleruudai.php" afterPath="$PROJECT_DIR$/admin/app/class/controlleruudai.php" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/admin/app/class/modelnghiduong.php" afterPath="$PROJECT_DIR$/admin/app/class/modelnghiduong.php" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/admin/app/class/modeluudai.php" afterPath="$PROJECT_DIR$/admin/app/class/modeluudai.php" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/admin/app/view/create-deals.php" afterPath="$PROJECT_DIR$/admin/app/view/create-deals.php" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/admin/app/view/create-resort.php" afterPath="$PROJECT_DIR$/admin/app/view/create-resort.php" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/admin/app/view/quanlyuudai.php" afterPath="$PROJECT_DIR$/admin/app/view/quanlyuudai.php" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/admin/css/style.css" afterPath="$PROJECT_DIR$/admin/css/style.css" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/admin/index.php" afterPath="$PROJECT_DIR$/admin/index.php" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/admin/js/bootstrap.min.js" afterPath="$PROJECT_DIR$/admin/js/bootstrap.min.js" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/app/class/controller.php" afterPath="$PROJECT_DIR$/app/class/controller.php" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/app/class/model.php" afterPath="$PROJECT_DIR$/app/class/model.php" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/js/main.js" afterPath="$PROJECT_DIR$/js/main.js" />
     </list>
     <ignored path="PPC-Timeshare.iws" />
     <ignored path=".idea/workspace.xml" />
@@ -165,8 +173,8 @@
       <file leaf-file-name="main.js" pinned="false" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/js/main.js">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="217">
-              <caret line="14" column="18" selection-start-line="14" selection-start-column="18" selection-end-line="14" selection-end-column="18" />
+            <state relative-caret-position="289">
+              <caret line="102" column="38" selection-start-line="102" selection-start-column="38" selection-end-line="102" selection-end-column="38" />
               <folding />
             </state>
           </provider>
@@ -282,6 +290,7 @@
       <foldersAlwaysOnTop value="true" />
     </navigator>
     <panes>
+      <pane id="Scratches" />
       <pane id="ProjectPane">
         <subPane>
           <PATH>
@@ -290,120 +299,9 @@
               <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.ProjectViewProjectNode" />
             </PATH_ELEMENT>
           </PATH>
-          <PATH>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="PPC-Timeshare" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.ProjectViewProjectNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="PPC-Timeshare" />
-              <option name="myItemType" value="com.jetbrains.php.projectView.PhpTreeStructureProvider$1" />
-            </PATH_ELEMENT>
-          </PATH>
-          <PATH>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="PPC-Timeshare" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.ProjectViewProjectNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="PPC-Timeshare" />
-              <option name="myItemType" value="com.jetbrains.php.projectView.PhpTreeStructureProvider$1" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="js" />
-              <option name="myItemType" value="com.jetbrains.php.projectView.PhpTreeStructureProvider$1" />
-            </PATH_ELEMENT>
-          </PATH>
-          <PATH>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="PPC-Timeshare" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.ProjectViewProjectNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="PPC-Timeshare" />
-              <option name="myItemType" value="com.jetbrains.php.projectView.PhpTreeStructureProvider$1" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="app" />
-              <option name="myItemType" value="com.jetbrains.php.projectView.PhpTreeStructureProvider$1" />
-            </PATH_ELEMENT>
-          </PATH>
-          <PATH>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="PPC-Timeshare" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.ProjectViewProjectNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="PPC-Timeshare" />
-              <option name="myItemType" value="com.jetbrains.php.projectView.PhpTreeStructureProvider$1" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="app" />
-              <option name="myItemType" value="com.jetbrains.php.projectView.PhpTreeStructureProvider$1" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="view" />
-              <option name="myItemType" value="com.jetbrains.php.projectView.PhpTreeStructureProvider$1" />
-            </PATH_ELEMENT>
-          </PATH>
-          <PATH>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="PPC-Timeshare" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.ProjectViewProjectNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="PPC-Timeshare" />
-              <option name="myItemType" value="com.jetbrains.php.projectView.PhpTreeStructureProvider$1" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="admin" />
-              <option name="myItemType" value="com.jetbrains.php.projectView.PhpTreeStructureProvider$1" />
-            </PATH_ELEMENT>
-          </PATH>
-          <PATH>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="PPC-Timeshare" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.ProjectViewProjectNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="PPC-Timeshare" />
-              <option name="myItemType" value="com.jetbrains.php.projectView.PhpTreeStructureProvider$1" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="admin" />
-              <option name="myItemType" value="com.jetbrains.php.projectView.PhpTreeStructureProvider$1" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="app" />
-              <option name="myItemType" value="com.jetbrains.php.projectView.PhpTreeStructureProvider$1" />
-            </PATH_ELEMENT>
-          </PATH>
-          <PATH>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="PPC-Timeshare" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.ProjectViewProjectNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="PPC-Timeshare" />
-              <option name="myItemType" value="com.jetbrains.php.projectView.PhpTreeStructureProvider$1" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="admin" />
-              <option name="myItemType" value="com.jetbrains.php.projectView.PhpTreeStructureProvider$1" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="app" />
-              <option name="myItemType" value="com.jetbrains.php.projectView.PhpTreeStructureProvider$1" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="class" />
-              <option name="myItemType" value="com.jetbrains.php.projectView.PhpTreeStructureProvider$1" />
-            </PATH_ELEMENT>
-          </PATH>
         </subPane>
       </pane>
       <pane id="Scope" />
-      <pane id="Scratches" />
     </panes>
   </component>
   <component name="PropertiesComponent">
@@ -537,7 +435,8 @@
       <workItem from="1487338667962" duration="611000" />
       <workItem from="1487348501732" duration="6465000" />
       <workItem from="1487384660202" duration="18443000" />
-      <workItem from="1487432097808" duration="6990000" />
+      <workItem from="1487432097808" duration="7035000" />
+      <workItem from="1487476906298" duration="2615000" />
     </task>
     <task id="LOCAL-00001" summary="Update all">
       <created>1483670120952</created>
@@ -588,11 +487,18 @@
       <option name="project" value="LOCAL" />
       <updated>1487354987582</updated>
     </task>
-    <option name="localTasksCounter" value="8" />
+    <task id="LOCAL-00008" summary="Update all">
+      <created>1487442195148</created>
+      <option name="number" value="00008" />
+      <option name="presentableId" value="LOCAL-00008" />
+      <option name="project" value="LOCAL" />
+      <updated>1487442195148</updated>
+    </task>
+    <option name="localTasksCounter" value="9" />
     <servers />
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="541859000" />
+    <option name="totallyTimeSpent" value="544519000" />
   </component>
   <component name="TodoView">
     <todo-panel id="selected-file">
@@ -607,7 +513,7 @@
     <frame x="1" y="1" width="1364" height="726" extended-state="0" />
     <editor active="true" />
     <layout>
-      <window_info id="Project" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" show_stripe_button="true" weight="0.30138037" sideWeight="0.4940171" order="0" side_tool="false" content_ui="combo" />
+      <window_info id="Project" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" show_stripe_button="true" weight="0.3059816" sideWeight="0.4940171" order="0" side_tool="false" content_ui="combo" />
       <window_info id="TODO" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.32991454" sideWeight="0.5" order="6" side_tool="false" content_ui="tabs" />
       <window_info id="Event Log" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.32991454" sideWeight="0.5" order="7" side_tool="true" content_ui="tabs" />
       <window_info id="Database" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.32980332" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
@@ -674,7 +580,6 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="0">
           <caret line="0" column="0" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
-          <folding />
         </state>
       </provider>
     </entry>
@@ -745,7 +650,6 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="119">
           <caret line="7" column="26" selection-start-line="7" selection-start-column="21" selection-end-line="7" selection-end-column="26" />
-          <folding />
         </state>
       </provider>
     </entry>
@@ -753,7 +657,6 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="136">
           <caret line="8" column="11" selection-start-line="8" selection-start-column="11" selection-end-line="8" selection-end-column="11" />
-          <folding />
         </state>
       </provider>
     </entry>
@@ -768,7 +671,6 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="411">
           <caret line="132" column="0" selection-start-line="132" selection-start-column="0" selection-end-line="132" selection-end-column="0" />
-          <folding />
         </state>
       </provider>
     </entry>
@@ -797,9 +699,6 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="505">
           <caret line="2635" column="4" selection-start-line="2635" selection-start-column="4" selection-end-line="2635" selection-end-column="4" />
-          <folding>
-            <element signature="n#!!doc" expanded="false" />
-          </folding>
         </state>
       </provider>
     </entry>
@@ -828,7 +727,6 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="697">
           <caret line="83" column="0" selection-start-line="83" selection-start-column="0" selection-end-line="83" selection-end-column="0" />
-          <folding />
         </state>
       </provider>
     </entry>
@@ -850,7 +748,6 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="-1490">
           <caret line="0" column="0" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
-          <folding />
         </state>
       </provider>
     </entry>
@@ -858,7 +755,6 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="0">
           <caret line="0" column="0" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
-          <folding />
         </state>
       </provider>
     </entry>
@@ -866,7 +762,6 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="-1275">
           <caret line="0" column="0" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
-          <folding />
         </state>
       </provider>
     </entry>
@@ -881,9 +776,6 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="158">
           <caret line="85" column="106" selection-start-line="85" selection-start-column="106" selection-end-line="85" selection-end-column="106" />
-          <folding>
-            <element signature="n#style#0;n#table#0;n#td#0;n#tr#0;n#tbody#0;n#table#0;n#td#0;n#tr#0;n#table#0;n#td#0;n#tr#0;n#table#0;n#div#0;n#td#1;n#tr#0;n#table#0;n#body#0;n#html#0;n#!!top" expanded="false" />
-          </folding>
         </state>
       </provider>
     </entry>
@@ -891,92 +783,6 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="173">
           <caret line="108" column="50" selection-start-line="0" selection-start-column="0" selection-end-line="414" selection-end-column="0" />
-          <folding>
-            <marker date="1487436603892" expanded="true" signature="398:511" ph="SELECT * FRO... resort" />
-            <marker date="1487436603892" expanded="true" signature="398:525" ph="SELECT * FRO... resort" />
-            <marker date="1487436603892" expanded="true" signature="398:555" ph="SELECT * FRO... resort" />
-            <marker date="1487436603892" expanded="true" signature="963:995" ph="SELECT * FRO... resort_image" />
-            <marker date="1487436603892" expanded="true" signature="963:996" ph="SELECT * FRO... resort_image" />
-            <marker date="1487436603892" expanded="true" signature="963:1020" ph="SELECT * FRO... resort_image" />
-            <marker date="1487436603892" expanded="true" signature="1421:1578" ph="SELECT * FRO... resort" />
-            <marker date="1487436603892" expanded="true" signature="1994:2058" ph="SELECT * FRO... country" />
-            <marker date="1487436603892" expanded="true" signature="4558:4810" ph="INSERT INTO resort... " />
-            <marker date="1487436603892" expanded="true" signature="4558:4812" ph="INSERT INTO resort... " />
-            <marker date="1487436603892" expanded="true" signature="4558:4833" ph="INSERT INTO resort... " />
-            <marker date="1487436603892" expanded="true" signature="4558:4834" ph="INSERT INTO resort... " />
-            <marker date="1487436603892" expanded="true" signature="5085:5112" ph="UPDATE resor... " />
-            <marker date="1487436603892" expanded="true" signature="5085:5134" ph="UPDATE resor... " />
-            <marker date="1487436603892" expanded="true" signature="5085:5152" ph="UPDATE resor... " />
-            <marker date="1487436603892" expanded="true" signature="5085:5153" ph="UPDATE resor... " />
-            <marker date="1487436603892" expanded="true" signature="5085:5185" ph="UPDATE resor... " />
-            <marker date="1487436603892" expanded="true" signature="5085:5186" ph="UPDATE resor... " />
-            <marker date="1487436603892" expanded="true" signature="5085:5218" ph="UPDATE resor... " />
-            <marker date="1487436603892" expanded="true" signature="5085:5219" ph="UPDATE resor... " />
-            <marker date="1487436603892" expanded="true" signature="5085:5247" ph="UPDATE resor... " />
-            <marker date="1487436603892" expanded="true" signature="5085:5267" ph="UPDATE resor... " />
-            <marker date="1487436603892" expanded="true" signature="5085:5275" ph="UPDATE resor... " />
-            <marker date="1487436603892" expanded="true" signature="5085:5295" ph="UPDATE resor... " />
-            <marker date="1487436603892" expanded="true" signature="5085:5309" ph="UPDATE resor... " />
-            <marker date="1487436603892" expanded="true" signature="5085:5310" ph="UPDATE resor... " />
-            <marker date="1487436603892" expanded="true" signature="5085:5338" ph="UPDATE resor... " />
-            <marker date="1487436603892" expanded="true" signature="5635:5758" ph="INSERT INTO resort_language... " />
-            <marker date="1487436603892" expanded="true" signature="5635:5868" ph="INSERT INTO resort_language... " />
-            <marker date="1487436603892" expanded="true" signature="5635:5882" ph="INSERT INTO resort_language... " />
-            <marker date="1487436603892" expanded="true" signature="5635:5883" ph="INSERT INTO resort_language... " />
-            <marker date="1487436603892" expanded="true" signature="5635:5895" ph="INSERT INTO resort_language... " />
-            <marker date="1487436603892" expanded="true" signature="5635:5896" ph="INSERT INTO resort_language... " />
-            <marker date="1487436603892" expanded="true" signature="5635:5919" ph="INSERT INTO resort_language... " />
-            <marker date="1487436603892" expanded="true" signature="5635:5942" ph="INSERT INTO resort_language... " />
-            <marker date="1487436603892" expanded="true" signature="5635:5945" ph="INSERT INTO resort_language... " />
-            <marker date="1487436603892" expanded="true" signature="5635:5964" ph="INSERT INTO resort... " />
-            <marker date="1487436603892" expanded="true" signature="6233:6267" ph="UPDATE resor... " />
-            <marker date="1487436603892" expanded="true" signature="6233:6288" ph="UPDATE resor... " />
-            <marker date="1487436603892" expanded="true" signature="6233:6302" ph="UPDATE resor... " />
-            <marker date="1487436603892" expanded="true" signature="6233:6328" ph="UPDATE resor... " />
-            <marker date="1487436603892" expanded="true" signature="6233:6341" ph="UPDATE resor... " />
-            <marker date="1487436603892" expanded="true" signature="6233:6366" ph="UPDATE resor... " />
-            <marker date="1487436603892" expanded="true" signature="6233:6378" ph="UPDATE resor... " />
-            <marker date="1487436603892" expanded="true" signature="6233:6402" ph="UPDATE resor... " />
-            <marker date="1487436603892" expanded="true" signature="6233:6416" ph="UPDATE resor... " />
-            <marker date="1487436603892" expanded="true" signature="6233:6442" ph="UPDATE resor... " />
-            <marker date="1487436603892" expanded="true" signature="6233:6454" ph="UPDATE resor... " />
-            <marker date="1487436603892" expanded="true" signature="6233:6478" ph="UPDATE resor... " />
-            <marker date="1487436603892" expanded="true" signature="6233:6505" ph="UPDATE resor... " />
-            <marker date="1487436603892" expanded="true" signature="6751:6800" ph="INSERT INTO resort_image... " />
-            <marker date="1487436603892" expanded="true" signature="7351:7388" ph="..." />
-            <marker date="1487436603892" expanded="true" signature="7578:7594" ph="..." />
-            <marker date="1487436603892" expanded="true" signature="7596:7634" ph="UPDATE resor... " />
-            <marker date="1487436603892" expanded="true" signature="7596:7652" ph="UPDATE resor... " />
-            <marker date="1487436603892" expanded="true" signature="7596:7659" ph="UPDATE resor... " />
-            <marker date="1487436603892" expanded="true" signature="7596:7680" ph="UPDATE resor... " />
-            <marker date="1487436603892" expanded="true" signature="8584:8613" ph="SELECT * FRO... city" />
-            <marker date="1487436603892" expanded="true" signature="8887:8919" ph="SELECT * FRO... country" />
-            <marker date="1487436603892" expanded="true" signature="9171:9200" ph="SELECT * FRO... city" />
-            <marker date="1487436603892" expanded="true" signature="9458:9495" ph="SELECT * FRO... continents" />
-            <marker date="1487436603892" expanded="true" signature="9789:9946" ph="SELECT * FRO... resort" />
-            <marker date="1487436603892" expanded="true" signature="11508:11538" ph="DELETE FROM " />
-            <marker date="1487436603892" expanded="true" signature="11577:11623" ph="DELETE FROM " />
-            <marker date="1487436603892" expanded="true" signature="11660:11703" ph="DELETE FROM " />
-            <marker date="1487436603892" expanded="true" signature="12085:12141" ph="UPDATE city " />
-            <marker date="1487436603892" expanded="true" signature="12312:12339" ph="UPDATE count... " />
-            <marker date="1487436603892" expanded="true" signature="12312:12340" ph="UPDATE count... " />
-            <marker date="1487436603892" expanded="true" signature="12312:12374" ph="UPDATE count... " />
-            <marker date="1487436603892" expanded="true" signature="12557:12625" ph="UPDATE conti... " />
-            <marker date="1487436603892" expanded="true" signature="12782:12831" ph="DELETE FROM " />
-            <marker date="1487436603892" expanded="true" signature="12988:13132" ph="SELECT * FRO... resort" />
-            <marker date="1487436603892" expanded="true" signature="13400:13443" ph="SELECT * FRO... resort_image" />
-            <marker date="1487436603892" expanded="true" signature="15541:15589" ph="SELECT langu... " />
-            <marker date="1487436603892" expanded="true" signature="15541:15623" ph="SELECT langu... " />
-            <marker date="1487436603892" expanded="true" signature="15541:15637" ph="SELECT langu... " />
-            <marker date="1487436603892" expanded="true" signature="15541:15638" ph="SELECT langu... " />
-            <marker date="1487436603892" expanded="true" signature="15932:15970" ph="SELECT * FRO... city" />
-            <marker date="1487436603892" expanded="true" signature="15932:15990" ph="SELECT * FRO... city" />
-            <marker date="1487436603892" expanded="true" signature="15932:16001" ph="SELECT * FRO... city" />
-            <marker date="1487436603892" expanded="true" signature="15932:16003" ph="SELECT * FRO... city" />
-            <marker date="1487436603892" expanded="true" signature="15932:16022" ph="SELECT * FRO... city" />
-            <marker date="1487436603892" expanded="true" signature="15932:16023" ph="SELECT * FRO... city" />
-            <marker date="1487436603892" expanded="true" signature="16288:16370" ph="INSERT INTO city... " />
-          </folding>
         </state>
       </provider>
     </entry>
@@ -984,7 +790,6 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="2108">
           <caret line="124" column="30" selection-start-line="124" selection-start-column="30" selection-end-line="124" selection-end-column="30" />
-          <folding />
         </state>
       </provider>
     </entry>
@@ -992,7 +797,6 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="209">
           <caret line="49" column="18" selection-start-line="49" selection-start-column="8" selection-end-line="49" selection-end-column="18" />
-          <folding />
         </state>
       </provider>
     </entry>
@@ -1000,9 +804,6 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="-45">
           <caret line="14" column="42" selection-start-line="14" selection-start-column="42" selection-end-line="14" selection-end-column="42" />
-          <folding>
-            <element signature="n#style#0;n#hr#0;n#!!top" expanded="true" />
-          </folding>
         </state>
       </provider>
     </entry>
@@ -1010,15 +811,6 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="-1819">
           <caret line="47" column="28" selection-start-line="47" selection-start-column="28" selection-end-line="47" selection-end-column="28" />
-          <folding>
-            <marker date="1487153394642" expanded="true" signature="5018:5052" ph="..." />
-            <marker date="1487153394642" expanded="true" signature="5446:5471" ph="..." />
-            <marker date="1487153394642" expanded="true" signature="5690:5701" ph="..." />
-            <marker date="1487153394642" expanded="true" signature="5924:5935" ph="..." />
-            <marker date="1487153394642" expanded="true" signature="8084:8103" ph="..." />
-            <marker date="1487153394642" expanded="true" signature="9192:9209" ph="..." />
-            <marker date="1487153394642" expanded="true" signature="9286:9304" ph="..." />
-          </folding>
         </state>
       </provider>
     </entry>
@@ -1026,13 +818,6 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="88">
           <caret line="17" column="39" selection-start-line="17" selection-start-column="39" selection-end-line="17" selection-end-column="39" />
-          <folding>
-            <element signature="n#style#0;n#div#0;n#div#0;n#form#0;n#div#0;n#div#0;n#!!top" expanded="true" />
-            <element signature="n#style#0;n#div#0;n#div#1;n#form#0;n#div#0;n#div#0;n#!!top" expanded="true" />
-            <element signature="n#style#0;n#p#0;n#form#0;n#div#0;n#div#0;n#!!top" expanded="true" />
-            <element signature="n#style#0;n#span#0;n#p#0;n#form#0;n#div#0;n#div#0;n#!!top" expanded="true" />
-            <element signature="n#style#0;n#div#0;n#div#2;n#form#0;n#div#0;n#div#0;n#!!top" expanded="true" />
-          </folding>
         </state>
       </provider>
     </entry>
@@ -1040,95 +825,6 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="17357">
           <caret line="1021" column="23" selection-start-line="1021" selection-start-column="23" selection-end-line="1021" selection-end-column="23" />
-          <folding>
-            <marker date="1487439005328" expanded="true" signature="387:401" ph="SELECT * FRO... ${$bang}" />
-            <marker date="1487439005328" expanded="true" signature="805:1079" ph="SELECT slide... slider" />
-            <marker date="1487439005328" expanded="true" signature="1470:1721" ph="SELECT gioit... gioithieu" />
-            <marker date="1487439005328" expanded="true" signature="1964:2238" ph="SELECT cauho... cauhoithuonggap" />
-            <marker date="1487439005328" expanded="true" signature="2647:2751" ph="SELECT * FRO... slider_ngonngu" />
-            <marker date="1487439005328" expanded="true" signature="3152:3166" ph="SELECT * FRO... ${$bang}" />
-            <marker date="1487439005328" expanded="true" signature="3355:3418" ph="SELECT * FRO... khunghiduong_" />
-            <marker date="1487439005328" expanded="true" signature="3640:3680" ph="SELECT * FRO... lienhe" />
-            <marker date="1487439005328" expanded="true" signature="4164:4281" ph="SELECT * FRO... taikhoan" />
-            <marker date="1487439005328" expanded="true" signature="4683:4838" ph="insert into taikhoan... " />
-            <marker date="1487439005328" expanded="true" signature="4983:5144" ph="insert into lienhe... " />
-            <marker date="1487439005328" expanded="true" signature="5291:5439" ph="insert into book_now... " />
-            <marker date="1487439005328" expanded="true" signature="5573:5636" ph="SELECT * FRO... khunghiduong_" />
-            <marker date="1487439005328" expanded="true" signature="5774:5839" ph="SELECT * FRO... taikhoan" />
-            <marker date="1487439005328" expanded="true" signature="6065:6182" ph="SELECT * FRO... taikhoan" />
-            <marker date="1487439005328" expanded="true" signature="6525:6622" ph="UPDATE taikh... " />
-            <marker date="1487439005328" expanded="true" signature="6798:6895" ph="UPDATE taikh... " />
-            <marker date="1487439005328" expanded="true" signature="7057:7202" ph="UPDATE taikh... " />
-            <marker date="1487439005328" expanded="true" signature="7346:7449" ph="SELECT * FRO... taikhoan" />
-            <marker date="1487439005328" expanded="true" signature="7700:7833" ph="insert into taikhoandangky... " />
-            <marker date="1487439005328" expanded="true" signature="7950:8361" ph="SELECT thamg... thamgia" />
-            <marker date="1487439005328" expanded="true" signature="8533:8575" ph="select count... video" />
-            <marker date="1487439005328" expanded="true" signature="8777:8824" ph="SELECT * FRO... products" />
-            <marker date="1487439005328" expanded="true" signature="8777:8840" ph="SELECT * FRO... video" />
-            <marker date="1487439005328" expanded="true" signature="8777:8841" ph="SELECT * FRO... products" />
-            <marker date="1487439005328" expanded="true" signature="8777:8844" ph="SELECT * FRO... products" />
-            <marker date="1487439005328" expanded="true" signature="9249:9422" ph="SELECT deals... deals" />
-            <marker date="1487439005328" expanded="true" signature="9249:9448" ph="SELECT deals... deals" />
-            <marker date="1487439005328" expanded="true" signature="9866:10065" ph="SELECT deals... deals" />
-            <marker date="1487439005328" expanded="true" signature="9866:10088" ph="SELECT deals... deals" />
-            <marker date="1487439005328" expanded="true" signature="9866:10104" ph="SELECT deals... deals" />
-            <marker date="1487439005328" expanded="true" signature="9866:10107" ph="SELECT deals... deals" />
-            <marker date="1487439005328" expanded="true" signature="9866:10163" ph="SELECT deals... deals" />
-            <marker date="1487439005328" expanded="true" signature="10514:10550" ph="select count... deals" />
-            <marker date="1487439005328" expanded="true" signature="10738:10937" ph="SELECT deals... deals" />
-            <marker date="1487439005328" expanded="true" signature="10738:10952" ph="SELECT deals... deals" />
-            <marker date="1487439005328" expanded="true" signature="10738:10953" ph="SELECT deals... deals" />
-            <marker date="1487439005328" expanded="true" signature="11237:11279" ph="select count... connect_ppc" />
-            <marker date="1487439005328" expanded="true" signature="11479:11795" ph="SELECT conne... connect_ppc" />
-            <marker date="1487439005328" expanded="true" signature="12210:12509" ph="SELECT deals... deals" />
-            <marker date="1487439005328" expanded="true" signature="12774:12820" ph="select count... announce_papers" />
-            <marker date="1487439005328" expanded="true" signature="13021:13403" ph="SELECT annou... announce_papers" />
-            <marker date="1487439005328" expanded="true" signature="13818:14073" ph="SELECT resor... resort" />
-            <marker date="1487439005328" expanded="true" signature="13818:14191" ph="SELECT resor... resort" />
-            <marker date="1487439005328" expanded="true" signature="14453:14496" ph="SELECT * FRO... resort_image" />
-            <marker date="1487439005328" expanded="true" signature="15220:15296" ph="SELECT * FRO... owning_a_timeshare" />
-            <marker date="1487439005328" expanded="true" signature="15556:15631" ph="SELECT * FRO... benefit_timeshare" />
-            <marker date="1487439005328" expanded="true" signature="15889:15913" ph="SELECT * FRO... continents" />
-            <marker date="1487439005328" expanded="true" signature="16317:16360" ph="SELECT * FRO... country" />
-            <marker date="1487439005328" expanded="true" signature="23045:23097" ph="SELECT * FRO... continents" />
-            <marker date="1487439005328" expanded="true" signature="23384:23450" ph="UPDATE count... " />
-            <marker date="1487439005328" expanded="true" signature="23576:23788" ph="SELECT * FRO... resort" />
-            <marker date="1487439005328" expanded="true" signature="24191:24228" ph="select count... resort" />
-            <marker date="1487439005328" expanded="true" signature="24421:24563" ph="select count... resort" />
-            <marker date="1487439005328" expanded="true" signature="24421:24573" ph="SELECT COUNT... resort" />
-            <marker date="1487439005328" expanded="true" signature="24421:24574" ph="SELECT COUNT... resort" />
-            <marker date="1487439005328" expanded="true" signature="24477:24563" ph="SELECT city.... city" />
-            <marker date="1487439005328" expanded="true" signature="24770:24833" ph="SELECT COUNT... resort" />
-            <marker date="1487439005328" expanded="true" signature="24770:24834" ph="SELECT COUNT... resort" />
-            <marker date="1487439005328" expanded="true" signature="24821:24824" ph="SELECT city.... city" />
-            <marker date="1487439005328" expanded="true" signature="25035:25293" ph="SELECT * FRO... resort" />
-            <marker date="1487439005328" expanded="true" signature="25709:26081" ph="SELECT * FRO... resort" />
-            <marker date="1487439005328" expanded="true" signature="26501:26791" ph="SELECT * FRO... resort" />
-            <marker date="1487439005328" expanded="true" signature="27188:27221" ph="SELECT * FRO... country" />
-            <marker date="1487439005328" expanded="true" signature="27427:27754" ph="SELECT * FRO... resort" />
-            <marker date="1487439005328" expanded="true" signature="28166:28446" ph="SELECT * FRO... resort" />
-            <marker date="1487439005328" expanded="true" signature="28281:28446" ph="SELECT * FRO... resort" />
-            <marker date="1487439005328" expanded="true" signature="28863:29146" ph="SELECT * FRO... resort" />
-            <marker date="1487439005328" expanded="true" signature="29583:29795" ph="SELECT * FRO... resort" />
-            <marker date="1487439005328" expanded="true" signature="29583:29804" ph="SELECT * FRO... resort" />
-            <marker date="1487439005328" expanded="true" signature="29583:29839" ph="SELECT * FRO... resort" />
-            <marker date="1487439005328" expanded="true" signature="29583:29919" ph="SELECT * FRO... resort" />
-            <marker date="1487439005328" expanded="true" signature="30338:30428" ph="SELECT * FRO... city" />
-            <marker date="1487439005328" expanded="true" signature="30695:30753" ph="SELECT * FRO... city" />
-            <marker date="1487439005328" expanded="true" signature="31134:31181" ph="SELECT * FRO... city" />
-            <marker date="1487439005328" expanded="true" signature="31438:31683" ph="SELECT * FRO... resort" />
-            <marker date="1487439005328" expanded="true" signature="32071:32113" ph="SELECT * FRO... taikhoan" />
-            <marker date="1487439005328" expanded="true" signature="32071:32114" ph="SELECT * FRO... taikhoan" />
-            <marker date="1487439005328" expanded="true" signature="32071:32125" ph="SELECT * FRO... taikhoan" />
-            <marker date="1487439005328" expanded="true" signature="32071:32126" ph="SELECT * FRO... taikhoan" />
-            <marker date="1487439005328" expanded="true" signature="32398:32433" ph="UPDATE taikh... " />
-            <marker date="1487439005328" expanded="true" signature="32398:32451" ph="UPDATE taikh... " />
-            <marker date="1487439005328" expanded="true" signature="32398:32462" ph="UPDATE taikh... " />
-            <marker date="1487439005328" expanded="true" signature="32707:32751" ph="SELECT * FRO... taikhoan" />
-            <marker date="1487439005328" expanded="true" signature="32707:32769" ph="SELECT * FRO... taikhoan" />
-            <marker date="1487439005328" expanded="true" signature="33027:33057" ph="UPDATE taikh... " />
-            <marker date="1487439005328" expanded="true" signature="33027:33087" ph="UPDATE taikh... " />
-          </folding>
         </state>
       </provider>
     </entry>
@@ -1136,9 +832,6 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="235">
           <caret line="766" column="16" selection-start-line="766" selection-start-column="16" selection-end-line="766" selection-end-column="16" />
-          <folding>
-            <element signature="e#10233#10724#0#PHP" expanded="false" />
-          </folding>
         </state>
       </provider>
     </entry>
@@ -1146,7 +839,6 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="0">
           <caret line="0" column="0" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
-          <folding />
         </state>
       </provider>
     </entry>
@@ -1154,7 +846,6 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="0">
           <caret line="0" column="0" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
-          <folding />
         </state>
       </provider>
     </entry>
@@ -1255,8 +946,8 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/js/main.js">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="217">
-          <caret line="14" column="18" selection-start-line="14" selection-start-column="18" selection-end-line="14" selection-end-column="18" />
+        <state relative-caret-position="289">
+          <caret line="102" column="38" selection-start-line="102" selection-start-column="38" selection-end-line="102" selection-end-column="38" />
           <folding />
         </state>
       </provider>
