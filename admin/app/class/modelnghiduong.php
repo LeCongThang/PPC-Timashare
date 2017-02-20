@@ -111,7 +111,7 @@ class modelnghiduong
         $this->insertDetailResort($last_id, "vi", $resort_name, $resort_introduce, $resort_location, $resort_service, $resort_equipment, $resort_address);
         $last_id_vi = mysqli_insert_id($this->db);
         $this->updateInfoMap($last_id, $last_id_vi, $list_img[0], $resort_name, $resort_address, 'vi');
-        $this->updateNumberContinentsCountry($idCountry, $id_city_insert);
+        $this->updateNumberContinentsCountry($idCountry, $id_city_insert, $resort_type);
         return true;
     }
 
@@ -174,18 +174,24 @@ class modelnghiduong
         return $result;
     }
 
-    public function updateNumberContinentsCountry($id, $id_city)
+    public function updateNumberContinentsCountry($id, $id_city, $resort_type)
     {
         $city = $this->getNumberCity($id_city);
         $country = $this->getNumberCountry($this->getIdCountryByIdCity($id_city));
         $countinents = $this->getNumberContinents($country['id_continents']);
-        $numberCity = $city['number'] + 1;
-        $numberContinents = $countinents['number'] + 1;
-        $numberCountry = $country['number'] + 1;
+        if ($resort_type == 1) {
+            $numberCity = $city['number'] + 1;
+            $numberContinents = $countinents['number'] + 1;
+            $numberCountry = $country['number'] + 1;
+        } else {
+            $numberCity = $city['number_home'] + 1;
+            $numberContinents = $countinents['number_home'] + 1;
+            $numberCountry = $country['number_home'] + 1;
+        }
 
-        $this->updateNumberCountry($id, $numberCountry);
-        $this->updateNumberContinents($countinents['id'], $numberContinents);
-        $this->updateNumberCity($id_city, $numberCity);
+        $this->updateNumberCountry($id, $numberCountry, $resort_type);
+        $this->updateNumberContinents($countinents['id'], $numberContinents, $resort_type);
+        $this->updateNumberCity($id_city, $numberCity, $resort_type);
         return true;
     }
 
@@ -270,18 +276,24 @@ class modelnghiduong
     {
         $resort = $this->getDetailsResort($id_resort, 'vi');
         $id_city = $resort['id_city'];
+        $resort_type = $resort['id_resort_type'];
         $city = $this->getNumberCity($id_city);
-        $number_city = $city['number'] - 1;
         $id_country = $this->getIdCountryByIdCity($id_city);
         $country = $this->getNumberCountry($id_country);
-        $number_country = $country['number'] - 1;
         $continents = $this->getNumberContinents($country['id_continents']);
         $id_continents = $continents['id'];
-        $number_continents = $continents['number'] - 1;
-
-        $this->updateNumberCity($id_city, $number_city);
-        $this->updateNumberCountry($id_country, $number_country);
-        $this->updateNumberContinents($id_continents, $number_continents);
+        if ($resort_type == 1) {
+            $number_continents = $continents['number'] - 1;
+            $number_city = $city['number'] - 1;
+            $number_country = $country['number'] - 1;
+        } else {
+            $number_continents = $continents['number_home'] - 1;
+            $number_city = $city['number_home'] - 1;
+            $number_country = $country['number_home'] - 1;
+        }
+        $this->updateNumberCity($id_city, $number_city, $resort_type);
+        $this->updateNumberCountry($id_country, $number_country, $resort_type);
+        $this->updateNumberContinents($id_continents, $number_continents, $resort_type);
 
         $sql = "DELETE FROM resort where id = {$id_resort}";
         $sql_ngonngu = "DELETE FROM resort_language WHERE id_resort = {$id_resort}";
@@ -295,23 +307,35 @@ class modelnghiduong
         return false;
     }
 
-    public function updateNumberCity($id_city, $number_city)
+    public function updateNumberCity($id_city, $number_city, $resort_type)
     {
-        $sql = "UPDATE city SET number = " . $number_city . " WHERE id =" . $id_city;
+        if ($resort_type == 1)
+            $number = "number";
+        else
+            $number = "number_home";
+        $sql = "UPDATE city SET " . $number . " = " . $number_city . " WHERE id =" . $id_city;
         $kq = $this->db->query($sql);
         return $kq;
     }
 
-    public function updateNumberCountry($id_country, $number_country)
+    public function updateNumberCountry($id_country, $number_country, $resort_type)
     {
-        $sql = "UPDATE country SET number = " . $number_country . " WHERE id =" . $id_country;
+        if ($resort_type == 1)
+            $number = "number";
+        else
+            $number = "number_home";
+        $sql = "UPDATE country SET " . $number . " = " . $number_country . " WHERE id =" . $id_country;
         $kq = $this->db->query($sql);
         return $kq;
     }
 
-    public function updateNumberContinents($id_continents, $number_continents)
+    public function updateNumberContinents($id_continents, $number_continents, $resort_type)
     {
-        $sql = "UPDATE continents SET number = " . $number_continents . " WHERE id =" . $id_continents;
+        if ($resort_type == 1)
+            $number = "number";
+        else
+            $number = "number_home";
+        $sql = "UPDATE continents SET " . $number . " = " . $number_continents . " WHERE id =" . $id_continents;
         $kq = $this->db->query($sql);
         return $kq;
     }

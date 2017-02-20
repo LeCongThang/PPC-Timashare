@@ -1,6 +1,9 @@
 <?php include 'header.php'; ?>
+<?php include 'modalbooknow.php'; ?>
 <script
     src="https://developers.google.com/maps/documentation/javascript/examples/markerclusterer/markerclusterer.js"></script>
+<script>var resort_id = <?=$resort['id']?></script>
+<script>var account_id = <?php  echo isset($_SESSION["id"]) ? $_SESSION["id"] : "-1"?></script>
 <div class="container">
     <div class="row">
         <div class="col-md-12 col-sm-12" style="padding-left: 0px;padding-right: 0px">
@@ -41,7 +44,8 @@
                 </ul>
             </div>
             <div class="col-md-2 col-md-offset-5" style="margin-top: 20px">
-                <button class="btnBookNow" style="margin-top: 0px">{DatCho}</button>
+
+                <button id="btnDatCho" class="btnBookNow" style="margin-top: 0px"  idsp="<?=$resort['id'];?>" >{DatCho}</button>
             </div>
             <div class="col-md-12 col-sm-12" id="map_google">
                 <div id="map"></div>

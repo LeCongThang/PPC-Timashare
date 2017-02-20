@@ -97,6 +97,12 @@ $str = str_replace("{KhuVuc}", KhuVuc, $str);
 $str = str_replace("{KhuNghiDuongVaGiaCa}", KhuNghiDuongVaGiaCa, $str);
 $str = str_replace("{DanhMucKhuNghiDuong1}", DanhMucKhuNghiDuong1, $str);
 $str = str_replace("{CoGiMoiTai}", CoGiMoiTai, $str);
+$str = str_replace("{Loai}", Loai, $str);
+$str = str_replace("{TatCa}", TatCa, $str);
+$str = str_replace("{HomeShare}", HomeShare, $str);
+$str = str_replace("{SapXepTheo}", SapXepTheo, $str);
+$str = str_replace("{KhuyenMai}", KhuyenMai, $str);
+$str = str_replace("{Moi}", Moi, $str);
 echo $str;
 
 

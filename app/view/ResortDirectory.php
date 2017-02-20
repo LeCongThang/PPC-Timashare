@@ -3,21 +3,27 @@
 <script>var base_dir = '<?=BASE_DIR?>'</script>
 <script>var base_url = '<?=BASE_URL?>'</script>
 <script>var tim_hieu_them = '{TimHieuThem}'</script>
-<script>var id = <?=$id?></script>
-<script>var id_city = <?php if(!isset($this->params[1])) echo 0; else echo $id_city;?></script>
-
+<script>var id = <?= $id ?></script>
+<script>var id_city = <?php if (!isset($this->params[1])) echo 0; else echo $id_city; ?></script>
+<script>var resort_type = <?=$resort_type?></script>
+<script>var sort_by = <?= $sort_by ?></script>
 
 <?php
 $isWorld = isset($this->params[0]);
 $isCountry = isset($this->params[1]);
-if(!$isWorld)
-    echo '<script type="text/javascript" src="'.BASE_DIR.'js/paging_resort.js"></script>';
-else {
-    if(!$isCountry)
-        echo '<script type="text/javascript" src="'.BASE_DIR.'js/paging_resort_id.js"></script>';
-    else
-        echo '<script type="text/javascript" src="'.BASE_DIR.'js/paging_resort_city.js"></script>';
-}?>
+$link = BASE_URL.$_SESSION['lang']."/controller/chuyenTrangKhuNghiDuongGiaCa";
+if (!$isWorld) {
+    echo '<script type="text/javascript" src="' . BASE_DIR . 'js/paging_resort.js"></script>';
+} else {
+    if (!$isCountry) {
+        $link = $link."/".$this->params[0];
+        echo '<script type="text/javascript" src="' . BASE_DIR . 'js/paging_resort_id.js"></script>';
+    } else {
+        $link = $link."/".$this->params[0]."/".$this->params[1];
+        echo '<script type="text/javascript" src="' . BASE_DIR . 'js/paging_resort_city.js"></script>';
+    }
+}
+?>
 <script
     src="https://developers.google.com/maps/documentation/javascript/examples/markerclusterer/markerclusterer.js"></script>
 <div class="container">
@@ -26,6 +32,24 @@ else {
             <hr class="text-left" style="width:50px;border:2px solid #362516;margin-left:0px;">
             <h2 class="title_h2">{KhuNghiDuongVaGiaCa}</h2>
             <h3 class="title_h3">{DanhMucKhuNghiDuong1}</h3>
+            <form method="post" action="<?=$link?>" name="resort_sort">
+                <div class="form-group">
+                    <label for="resort_type">{Loai}: </label>
+                    <select class="form-control" id="resort_type" name="resort_type">
+                        <option value="0" <?php echo $resort_type==0 ? 'selected="selected"' : ''?>>{TatCa}</option>
+                        <option value="1" <?php echo $resort_type==1 ? 'selected="selected"' : ''?>>{KhuNghiDuong2}</option>
+                        <option value="2" <?php echo $resort_type==2 ? 'selected="selected"' : ''?>>{HomeShare}</option>
+                    </select>
+                </div>
+                <div class="form-group">
+                    <label for="sort_by">{SapXepTheo}: </label>
+                    <select class="form-control" id="sort_by" name ="sort_by">
+                        <option value="0" <?php echo $sort_by==0 ? 'selected="selected"' : ''?>>{TatCa}</option>
+                        <option value="1" <?php echo $sort_by==1 ? 'selected="selected"' : ''?>>{Moi}</option>
+                        <option value="2" <?php echo $sort_by==2 ? 'selected="selected"' : ''?>>{KhuyenMai}</option>
+                    </select>
+                </div>
+            </form>
         </div>
     </div>
     <div class="row">
@@ -39,6 +63,7 @@ else {
                         <?php
                         if (!$isWorld) {
                             foreach ($listContinents as $key => $continent) {
+                                $number_show = "";
                                 echo '<li class="cauhoi" style="margin: 5px"><a class="test" href="#" onclick="return false;" ><span class="link_tim_hieu" style="color: #640100;">' . $continent['name'] . ' (' . $continent['number'] . ')</span></a><ul class="cautraloi" style="display: none;padding-left:15px;" >
                                 ';
                                 foreach ($regions[$continent['id'] - 1] as $key2 => $region) {
@@ -49,14 +74,13 @@ else {
                                 echo '</ul></a>';
                             }
                         } else {
-                            if(!$isCountry){
-                            echo '<li class="cauhoi" style="margin: 5px"><a class="test" href="#" onclick="return false;" ><span class="link_tim_hieu" style="color: #640100;">' . $country_name . '</span></a><ul class="cautraloi" style="display: none;padding-left:15px;" >
+                            if (!$isCountry) {
+                                echo '<li class="cauhoi" style="margin: 5px"><a class="test" href="#" onclick="return false;" ><span class="link_tim_hieu" style="color: #640100;">' . $country_name . '</span></a><ul class="cautraloi" style="display: none;padding-left:15px;" >
                                 ';
-                            foreach ($listCity as $key => $city){
-                                echo '<li style="margin-top: 5px;margin-bottom: 5px;"  class="noi_dung_link_tim_hieu"><a href="' . BASE_DIR . $_SESSION['lang'] . '/controller/chuyenTrangKhuNghiDuongGiaCa/' . $id . '/'.$city['id'].'" style="color:#3C2A1D;" >' . $city['name'] . ' (' . $city['number'] . ')</a></li>';
-                            }
-                            }
-                            else
+                                foreach ($listCity as $key => $city) {
+                                    echo '<li style="margin-top: 5px;margin-bottom: 5px;"  class="noi_dung_link_tim_hieu"><a href="' . BASE_DIR . $_SESSION['lang'] . '/controller/chuyenTrangKhuNghiDuongGiaCa/' . $id . '/' . $city['id'] . '" style="color:#3C2A1D;" >' . $city['name'] . ' (' . $city['number'] . ')</a></li>';
+                                }
+                            } else
                                 echo $name_city;
                         }
                         ?>
@@ -95,8 +119,8 @@ else {
                         <div class="box-body" style="margin-top: 15px;">
                             <?php if (!$isWorld)
                                 echo '<div id="paging_announce" style="margin-bottom: 40px"><div id="row_announce"></div></div>';
-                            else{
-                                if(!$isCountry)
+                            else {
+                                if (!$isCountry)
                                     echo '<div id="paging_resort" style="margin-bottom: 40px"><div id="row_resort"></div></div>';
                                 else
                                     echo '<div id="paging_resort_city" style="margin-bottom: 40px"><div id="row_resort_city"></div></div>';
@@ -112,7 +136,9 @@ else {
         <script>
             function initMap() {
                 var map = new google.maps.Map(document.getElementById('map'), {
-                    zoom: <?php if (!$isWorld) echo 1; else {if (!$isCountry) echo 5; else echo 7;} ?>,
+                    zoom: <?php if (!$isWorld) echo 1; else {
+                    if (!$isCountry) echo 5; else echo 7;
+                } ?>,
                     center: {
                         lat: <?php if (!$isWorld) echo 0; else echo $lat ?>,
                         lng: <?php if (!$isWorld) echo 0; else echo $lng ?>}

@@ -45,8 +45,13 @@
             //Lay tong so trang
             $.ajax({
                 url: lang + "/controller/getNumberResort/" +id,
-                type: "GET",
-                dataType: "json"
+                type: "POST",
+                dataType: "json",
+                cache: false,
+                data: {
+                    "resort_type": resort_type,
+                    "sort_by": sort_by
+                },
             }).done(function (data) {
                 options.total = data.total;
                 loadData(options.currentPage);
@@ -163,10 +168,11 @@
                 dataType: "json",
                 cache: false,
                 data: {
+                    "resort_type": resort_type,
+                    "sort_by": sort_by,
                     "items": options.items,
                     "currentPage": page
                 }
-
             }).done(function (data) {
                 //console.log(data);
                 if (data.length > 0) {

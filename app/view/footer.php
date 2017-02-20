@@ -70,6 +70,14 @@
 </script>
 <script type="text/javascript">
     $(document).ready(function () {
+
+        $("#sort_by").change(function () {
+            resort_sort.submit();
+        });
+        $("#resort_type").change(function () {
+            resort_sort.submit();
+        });
+
         $(".dropdown img.flag").addClass("flagvisibility");
 
         $(".dropdown dt a").click(function () {
@@ -87,8 +95,21 @@
         var mainModal;
         var modal = document.getElementById('ModalDangNhap');
         var modaldangky = document.getElementById('ModalDangKy');
+        var modalxemthongtin = document.getElementById('ModalXemThongTin');
         var modalquenmatkhau = document.getElementById('ModalQuenMatKhau');
+        var modaldatcho = document.getElementById('ModalBookNow');
         var btn = document.getElementById('btnDangNhap');
+        var btnDatCho = document.getElementById('btnDatCho');
+
+
+        if(btnDatCho != null){
+            btnDatCho.onclick = function () {
+                mainModal = modaldatcho;
+                mainModal.style.display = "block";
+                $('#thongbaodatcho').text("");
+                return true;
+            }
+        }
 
         if (btn != null) {
             btn.onclick = function () {
@@ -101,15 +122,20 @@
 
 
         $('#hrefdangky').click(function () {
-            mainModal.style.display = "none";
             mainModal = modaldangky;
             mainModal.style.display = "block";
             $('#thongbao').text("");
             return false;
         });
 
+        $('#hrefXemThongTin').click(function () {
+            mainModal = modalxemthongtin;
+            mainModal.style.display = "block";
+            $('#thongbao').text("");
+            return false;
+        });
+
         $('#hrefquenmatkhau').click(function () {
-            mainModal.style.display = "none";
             mainModal = modalquenmatkhau;
             mainModal.style.display = "block";
             modalquenmatkhau.style.display = "block";
@@ -153,7 +179,16 @@
         $('#btnThoatQuenMatKhau').click(function () {
             mainModal.style.display = "none";
         });
+
+
+        $('#btnHuyThongTin').click(function () {
+            mainModal.style.display = "none";
+        });
+
+
     });
+
+
 </script>
 </body>
 </html>

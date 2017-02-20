@@ -104,7 +104,6 @@ class model
     public function layThongTinChiTietKhuNghiDuong($id)
     {
         $sql = "SELECT * FROM khunghiduong_" . $_SESSION['lang'] . " WHERE id =" . $id;
-        //echo $sql;
         if (!$kq = $this->db->query($sql)) die($this->db->error);
         if (!$kq) return FALSE;
         return $kq->fetch_assoc();
@@ -158,7 +157,6 @@ class model
     public function booknow($tendangnhap, $idsp, $thoigian, $ghichu)
     {
         $sql = "insert into book_now(tendangnhap,idkhunghiduong,thoigian,ghichu) values ('" . $tendangnhap . "'," . $idsp . ",'" . $thoigian . "','" . $ghichu . "')";
-        //echo $sql;
         return mysqli_query($this->db, $sql);
     }
 
@@ -302,7 +300,6 @@ class model
     public function getDetailDeals($id)
     {
         $sql = "SELECT deals.id, deals.image, deals_language.title, deals_language.content FROM deals, deals_language WHERE deals.id = deals_language.id_deals AND deals_language.language ='" . $_SESSION['lang'] . "' AND deals.id = " . $id;
-        //echo $sql;
         $result = mysqli_query($this->db, $sql);
         if (!$result) {
             die("Error in query in here");
@@ -761,9 +758,9 @@ class model
         return mysqli_query($this->db, $sql);
     }
 
-    public function getAllResort()
+    public function getAllResort($resort_type_clause, $sort_by_clause)
     {
-        $sql = "SELECT * FROM resort, resort_image, resort_language WHERE resort.id = resort_image.id_resort AND resort_language.id_resort = resort.id AND resort_language.language = '" . $_SESSION['lang'] . "' GROUP BY resort.id";
+        $sql = "SELECT * FROM resort, resort_image, resort_language WHERE resort.id = resort_image.id_resort AND resort_language.id_resort = resort.id AND resort_language.language = '" . $_SESSION['lang'] . "' " . $resort_type_clause . $sort_by_clause . " GROUP BY resort.id";
         $result = mysqli_query($this->db, $sql);
         if (!$result) {
             die("Error in query in here");
@@ -778,9 +775,11 @@ class model
     }
 
 
-    public function getNumberResort()
+    public function getNumberResort($resort_type_clause, $sort_by_clause)
     {
-        $sql = "select count(id) as total from resort";
+        $sql = "select count(id) as total from resort WHERE " . $resort_type_clause . $sort_by_clause;
+        if ($resort_type_clause == "" && $sort_by_clause == "")
+            $sql = $sql . " 1";
         $result = $this->db->query($sql);
         $row = mysqli_fetch_assoc($result);
         return $row['total'];
@@ -788,7 +787,7 @@ class model
 
     public function getNumberResortById($id)
     {
-        $sql = "SELECT COUNT(id) as total FROM resort WHERE id_city IN (SELECT city.id FROM city, country WHERE city.id_country = country.id AND country.id = " . $id.")";
+        $sql = "SELECT COUNT(id) as total FROM resort WHERE id_city IN (SELECT city.id FROM city, country WHERE city.id_country = country.id AND country.id = " . $id . ")";
         $result = $this->db->query($sql);
         $row = mysqli_fetch_assoc($result);
         return $row['total'];
@@ -796,15 +795,15 @@ class model
 
     public function getNumberResortByIdCity($id)
     {
-        $sql = "SELECT COUNT(id) as total FROM resort WHERE id_city = " . $id."";
+        $sql = "SELECT COUNT(id) as total FROM resort WHERE id_city = " . $id . "";
         $result = $this->db->query($sql);
         $row = mysqli_fetch_assoc($result);
         return $row['total'];
     }
 
-    public function getAllResortPage($offset, $items)
+    public function getAllResortPage($offset, $items, $resort_type_clause, $sort_by_clause)
     {
-        $sql = "SELECT * FROM resort, resort_image, resort_language WHERE resort.id = resort_image.id_resort AND resort_language.id_resort = resort.id AND resort_language.language = '" . $_SESSION['lang'] . "' GROUP BY resort.id ORDER BY resort.id ASC LIMIT " . $offset . "," . $items;
+        $sql = "SELECT * FROM resort, resort_image, resort_language WHERE resort.id = resort_image.id_resort AND resort_language.id_resort = resort.id AND resort_language.language = '" . $_SESSION['lang'] . "' " . $resort_type_clause . $sort_by_clause . " GROUP BY resort.id ORDER BY resort.id ASC LIMIT " . $offset . "," . $items;
         $result = mysqli_query($this->db, $sql);
         if (!$result) {
             die($sql);
@@ -818,9 +817,9 @@ class model
         return $list;
     }
 
-    public function getAllResortPageById($id, $offset, $items)
+    public function getAllResortPageById($id, $offset, $items, $resort_type_clause, $sort_by_clause)
     {
-        $sql = "SELECT * FROM resort, resort_image, resort_language WHERE resort.id = resort_image.id_resort AND resort_language.id_resort = resort.id AND resort_language.language = '" . $_SESSION['lang'] . "' AND id_city IN (SELECT city.id FROM city, country WHERE city.id_country = country.id AND country.id =" . $id . ") GROUP BY resort.id ORDER BY resort.id ASC LIMIT " . $offset . "," . $items;
+        $sql = "SELECT * FROM resort, resort_image, resort_language WHERE resort.id = resort_image.id_resort AND resort_language.id_resort = resort.id AND resort_language.language = '" . $_SESSION['lang'] . "' ".$resort_type_clause.$sort_by_clause." AND id_city IN (SELECT city.id FROM city, country WHERE city.id_country = country.id AND country.id =" . $id . ") GROUP BY resort.id ORDER BY resort.id ASC LIMIT " . $offset . "," . $items;
         $result = mysqli_query($this->db, $sql);
         if (!$result) {
             die($sql);
@@ -858,9 +857,9 @@ class model
         return $row['long_name'];
     }
 
-    public function getResortByCountryName($id)
+    public function getResortByCountryName($id, $resort_type_clause, $sort_by_clause)
     {
-        $sql = "SELECT * FROM resort, resort_image, resort_language WHERE resort.id = resort_image.id_resort AND resort_language.id_resort = resort.id AND resort_language.language = '" . $_SESSION['lang'] . "' AND id_city IN (SELECT city.id FROM city, country WHERE city.id_country = country.id AND country.id = " . $id . ") GROUP BY resort.id";
+        $sql = "SELECT * FROM resort, resort_image, resort_language WHERE resort.id = resort_image.id_resort AND resort_language.id_resort = resort.id AND resort_language.language = '" . $_SESSION['lang'] . "' " . $resort_type_clause . $sort_by_clause . " AND id_city IN (SELECT city.id FROM city, country WHERE city.id_country = country.id AND country.id = " . $id . ") GROUP BY resort.id";
         $result = mysqli_query($this->db, $sql);
         if (!$result) {
             die($sql);
@@ -906,9 +905,9 @@ class model
         return $list;
     }
 
-    public function getAllResortSortByHint($offset, $items,  $lat, $lng, $distance)
+    public function getAllResortSortByHint($offset, $items, $lat, $lng, $distance)
     {
-        $sql = "SELECT * FROM resort, resort_image, resort_language WHERE resort.id = resort_image.id_resort AND resort_language.id_resort = resort.id AND resort_language.language = '" . $_SESSION['lang'] . "' AND calc_distance(".$lat.",".$lng.", resort.lat, resort.lng) < ".$distance." GROUP BY resort.id ORDER BY  resort.id ASC LIMIT " . $offset . "," . $items;
+        $sql = "SELECT * FROM resort, resort_image, resort_language WHERE resort.id = resort_image.id_resort AND resort_language.id_resort = resort.id AND resort_language.language = '" . $_SESSION['lang'] . "' AND calc_distance(" . $lat . "," . $lng . ", resort.lat, resort.lng) < " . $distance . " GROUP BY resort.id ORDER BY  resort.id ASC LIMIT " . $offset . "," . $items;
         $result = mysqli_query($this->db, $sql);
         if (!$result) {
             die($sql);
@@ -950,7 +949,8 @@ class model
         return $list;
     }
 
-    public function getCityById($id_city){
+    public function getCityById($id_city)
+    {
         $sql = "SELECT * FROM city WHERE id ='" . $id_city . "'";
         $result = mysqli_query($this->db, $sql);
 
@@ -961,9 +961,9 @@ class model
         return mysqli_fetch_assoc($result);
     }
 
-    public function getAllResortByIdCity($id)
+    public function getAllResortByIdCity($id, $resort_type_clause, $sort_by_clause)
     {
-        $sql = "SELECT * FROM resort, resort_image, resort_language WHERE resort.id = resort_image.id_resort AND resort_language.id_resort = resort.id AND resort_language.language = '" . $_SESSION['lang'] . "' AND resort.id_city = " . $id . " GROUP BY resort.id";
+        $sql = "SELECT * FROM resort, resort_image, resort_language WHERE resort.id = resort_image.id_resort AND resort_language.id_resort = resort.id AND resort_language.language = '" . $_SESSION['lang'] . "' " . $resort_type_clause . $sort_by_clause . " AND resort.id_city = " . $id . " GROUP BY resort.id";
         $result = mysqli_query($this->db, $sql);
         if (!$result) {
             die($sql);
@@ -977,9 +977,9 @@ class model
         return $list;
     }
 
-    public function getUserByEmail ($email)
+    public function getUserByEmail($email)
     {
-        $sql = "SELECT * FROM taikhoan WHERE tendangnhap ='".$email."'";
+        $sql = "SELECT * FROM taikhoan WHERE tendangnhap ='" . $email . "'";
         $result = mysqli_query($this->db, $sql);
 
         if (!$result) {
@@ -991,7 +991,7 @@ class model
 
     public function updatePasswordKey($password_key, $id_account)
     {
-        $sql = "UPDATE taikhoan SET password_key ='".$password_key."' WHERE id =".$id_account;
+        $sql = "UPDATE taikhoan SET password_key ='" . $password_key . "' WHERE id =" . $id_account;
         $result = mysqli_query($this->db, $sql);
         if (!$result) {
             die("Error in updatePasswordKey");
@@ -999,8 +999,9 @@ class model
         return $result;
     }
 
-    public function checkPasswordKey($password_key){
-        $sql = "SELECT * FROM taikhoan WHERE password_key ='".$password_key."'";
+    public function checkPasswordKey($password_key)
+    {
+        $sql = "SELECT * FROM taikhoan WHERE password_key ='" . $password_key . "'";
         $result = mysqli_query($this->db, $sql);
 
         if (!$result) {
@@ -1010,14 +1011,14 @@ class model
         return mysqli_fetch_assoc($result);
     }
 
-    public function updatePassword($id_user, $password){
-        $sql = "UPDATE taikhoan SET matkhau ='".md5($password)."' WHERE id =".$id_user;
+    public function updatePassword($id_user, $password)
+    {
+        $sql = "UPDATE taikhoan SET matkhau ='" . md5($password) . "' WHERE id =" . $id_user;
         $result = mysqli_query($this->db, $sql);
         if (!$result) {
             die("Error in updatePasswordKey");
-        }
-        else{
-            $this->updatePasswordKey("",$id_user);
+        } else {
+            $this->updatePasswordKey("", $id_user);
         }
         return $result;
     }

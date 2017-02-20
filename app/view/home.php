@@ -1,4 +1,5 @@
 <?php include 'header.php'; ?>
+    <script type="text/javascript" src="<?= BASE_DIR ?>js/paging_video.js"></script>
     <!--phần container giới thiệu thứ 1-->
     <section id="introduce" xmlns="http://www.w3.org/1999/html">
         <div class="container">
