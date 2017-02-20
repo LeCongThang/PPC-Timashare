@@ -2,26 +2,7 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="48675101-2802-42b6-bd9d-0b7e31c69e3a" name="Default" comment="">
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/js/bootstrap-datetimepicker.js" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/js/collapse.js" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/js/transition.js" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.idea/workspace.xml" afterPath="$PROJECT_DIR$/.idea/workspace.xml" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/admin/app/class/modelnghiduong.php" afterPath="$PROJECT_DIR$/admin/app/class/modelnghiduong.php" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/admin/js/main.js" afterPath="$PROJECT_DIR$/admin/js/main.js" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/app/class/controller.php" afterPath="$PROJECT_DIR$/app/class/controller.php" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/app/class/model.php" afterPath="$PROJECT_DIR$/app/class/model.php" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/app/index.php" afterPath="$PROJECT_DIR$/app/index.php" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/app/lang_en.php" afterPath="$PROJECT_DIR$/app/lang_en.php" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/app/lang_vi.php" afterPath="$PROJECT_DIR$/app/lang_vi.php" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/app/view/DetailsResort.php" afterPath="$PROJECT_DIR$/app/view/DetailsResort.php" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/app/view/ResortDirectory.php" afterPath="$PROJECT_DIR$/app/view/ResortDirectory.php" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/app/view/footer.php" afterPath="$PROJECT_DIR$/app/view/footer.php" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/app/view/header.php" afterPath="$PROJECT_DIR$/app/view/header.php" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/app/view/home.php" afterPath="$PROJECT_DIR$/app/view/home.php" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/app/view/modalbooknow.php" afterPath="$PROJECT_DIR$/app/view/modalbooknow.php" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/js/bootstrap.min.js" afterPath="$PROJECT_DIR$/js/bootstrap.min.js" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/js/paging_resort.js" afterPath="$PROJECT_DIR$/js/paging_resort.js" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/js/paging_resort_id.js" afterPath="$PROJECT_DIR$/js/paging_resort_id.js" />
     </list>
     <ignored path="PPC-Timeshare.iws" />
     <ignored path=".idea/workspace.xml" />
@@ -564,7 +545,7 @@
       <workItem from="1487384660202" duration="18443000" />
       <workItem from="1487432097808" duration="7035000" />
       <workItem from="1487476906298" duration="4130000" />
-      <workItem from="1487556206490" duration="26752000" />
+      <workItem from="1487556206490" duration="26793000" />
     </task>
     <task id="LOCAL-00001" summary="Update all">
       <created>1483670120952</created>
@@ -629,11 +610,18 @@
       <option name="project" value="LOCAL" />
       <updated>1487493521597</updated>
     </task>
-    <option name="localTasksCounter" value="10" />
+    <task id="LOCAL-00010" summary="Tim Kiem Book Now">
+      <created>1487587829519</created>
+      <option name="number" value="00010" />
+      <option name="presentableId" value="LOCAL-00010" />
+      <option name="project" value="LOCAL" />
+      <updated>1487587829519</updated>
+    </task>
+    <option name="localTasksCounter" value="11" />
     <servers />
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="572786000" />
+    <option name="totallyTimeSpent" value="572827000" />
   </component>
   <component name="TodoView">
     <todo-panel id="selected-file">
@@ -682,7 +670,8 @@
   <component name="VcsManagerConfiguration">
     <MESSAGE value="Update all" />
     <MESSAGE value="Add lirbary" />
-    <option name="LAST_COMMIT_MESSAGE" value="Add lirbary" />
+    <MESSAGE value="Tim Kiem Book Now" />
+    <option name="LAST_COMMIT_MESSAGE" value="Tim Kiem Book Now" />
   </component>
   <component name="XDebuggerManager">
     <breakpoint-manager>
