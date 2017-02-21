@@ -48,6 +48,21 @@
                     'url' => 'controllernghiduong/index',
                     'icon' => 'glyphicon glyphicon-tree-deciduous',
                 ],
+                [
+                    'title' => 'VỀ TIMESHARE',
+                    'url' => 'controllerthongtin/index',
+                    'icon' => 'glyphicon glyphicon-pencil',
+                ],
+                [
+                    'title' => 'LỢI ÍCH TIMESHARE',
+                    'url' => 'controllerloiich/index',
+                    'icon' => 'glyphicon glyphicon-pencil',
+                ],
+                [
+                    'title' => 'THÔNG TIN TIMESHARE',
+                    'url' => 'controllertimeshare/index',
+                    'icon' => 'glyphicon glyphicon-pencil',
+                ],
 //                [
 //                    'title' => 'BOOK',
 //                    'url' => 'controllerbook/index',

@@ -1,5 +1,5 @@
 <?php
-$lang = 'vi';
+$lang = 'en';
 session_start();
 require_once "config.php";
 $url = $_SERVER['REQUEST_URI'];
@@ -122,7 +122,7 @@ function tach_url($url, &$lang, &$cname, &$action, &$params)
     $lang = $arr[2];
 
     if($lang==""){
-        $lang = 'vi';
+        $lang = 'en';
         $cname = DEFAULT_CONTROLLER;
         $action = DEFAULT_ACTION;
         $params = NULL;
@@ -130,7 +130,7 @@ function tach_url($url, &$lang, &$cname, &$action, &$params)
     }
 
     if (in_array($lang, explode(',', NGONNGU)) == false)
-        $lang = 'vi';
+        $lang = 'en';
 
 
 

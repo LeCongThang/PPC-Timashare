@@ -32,6 +32,7 @@
         var aRows = '';
         var lat = "";
         var lng = "";
+
         function getLocation() {
             if (navigator.geolocation) {
                 navigator.geolocation.getCurrentPosition(showPosition);
@@ -189,7 +190,7 @@
                     rows.empty();
 
                     $.each(data, function (i, val) {
-                        var str = ' <div class="col-md-4 resort_info_discover"><img src="'+base_dir+val.image+'" class="img-responsive" style="width: 100%"><a href="'+base_url+lang+'/controller/loadingDetailsResort/'+val.id+'"><h4>'+val.name+'</h4></a><h5>'+val.address+'</h5> </div>';
+                        var str = ' <div class="col-md-4 resort_info_discover"><img src="'+base_dir+val.image+'" class="img-responsive" style="width: 360px;height: 280px"><a href="'+base_url+lang+'/controller/loadingDetailsResort/'+val.id+'"><h4>'+val.name+'</h4></a><h5>'+val.address+'</h5> </div>';
                         rows.append(str);
                     });
 

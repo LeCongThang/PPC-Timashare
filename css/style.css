@@ -378,3 +378,6 @@ h2 {
     padding-right: 0px;
     margin-bottom: 40px;
  }
+.nav>li>a:focus, .nav>li>a:hover{
+    background-color: #8a6d3b!important;
+}

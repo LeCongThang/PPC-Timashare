@@ -7,7 +7,7 @@ define("ThamGia","PARTICIPATE");
 define("TroGiup","HELP");
 define("LienHe","CONTACT");
 define("DangNhapDangKy","LOGIN - REGISTER NOW");
-define("TimHieuThem","READMORE");
+define("TimHieuThem","READ MORE");
 define("NgonNgu","Select language");
 define("Ten","YOUR NAME");
 define("DienThoai","YOUR PHONE");

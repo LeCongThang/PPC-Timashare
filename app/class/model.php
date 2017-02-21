@@ -154,9 +154,10 @@ class model
         return mysqli_query($this->db, $sql);
     }
 
-    public function booknow($tendangnhap, $idsp, $thoigian, $ghichu)
+    public function bookNow($id_user, $id_resort, $date_start, $date_end,$room, $adults, $childs ,$note)
     {
-        $sql = "insert into book_now(tendangnhap,idkhunghiduong,thoigian,ghichu) values ('" . $tendangnhap . "'," . $idsp . ",'" . $thoigian . "','" . $ghichu . "')";
+        $date_created = date("Y/m/d");
+        $sql = "insert into book_now(id_user,id_resort,note,start_date, end_date, adults, childs, room, status, created_at) values ({$id_user},{$id_resort},'{$note}','{$date_start}','{$date_end}',{$adults},{$childs},{$room},0,'{$date_created}')";
         return mysqli_query($this->db, $sql);
     }
 
@@ -785,17 +786,17 @@ class model
         return $row['total'];
     }
 
-    public function getNumberResortById($id)
+    public function getNumberResortById($id,$resort_type_clause, $sort_by_clause)
     {
-        $sql = "SELECT COUNT(id) as total FROM resort WHERE id_city IN (SELECT city.id FROM city, country WHERE city.id_country = country.id AND country.id = " . $id . ")";
+        $sql = "SELECT COUNT(id) as total FROM resort WHERE id_city IN (SELECT city.id FROM city, country WHERE city.id_country = country.id AND country.id = " . $id . " ".$resort_type_clause.$sort_by_clause.")";
         $result = $this->db->query($sql);
         $row = mysqli_fetch_assoc($result);
         return $row['total'];
     }
 
-    public function getNumberResortByIdCity($id)
+    public function getNumberResortByIdCity($id,$resort_type_clause, $sort_by_clause)
     {
-        $sql = "SELECT COUNT(id) as total FROM resort WHERE id_city = " . $id . "";
+        $sql = "SELECT COUNT(id) as total FROM resort WHERE id_city = " . $id . " ".$resort_type_clause.$sort_by_clause."";
         $result = $this->db->query($sql);
         $row = mysqli_fetch_assoc($result);
         return $row['total'];
@@ -833,9 +834,9 @@ class model
         return $list;
     }
 
-    public function getAllResortPageByIdCity($id, $offset, $items)
+    public function getAllResortPageByIdCity($id, $offset, $items, $resort_type_clause, $sort_by_clause)
     {
-        $sql = "SELECT * FROM resort, resort_image, resort_language WHERE resort.id = resort_image.id_resort AND resort_language.id_resort = resort.id AND resort_language.language = '" . $_SESSION['lang'] . "' AND resort.id_city =" . $id . " GROUP BY resort.id ORDER BY resort.id ASC LIMIT " . $offset . "," . $items;
+        $sql = "SELECT * FROM resort, resort_image, resort_language WHERE resort.id = resort_image.id_resort AND resort_language.id_resort = resort.id AND resort_language.language = '" . $_SESSION['lang'] . "' AND resort.id_city =" . $id . " ".$resort_type_clause.$sort_by_clause." GROUP BY resort.id ORDER BY resort.id ASC LIMIT " . $offset . "," . $items;
         $result = mysqli_query($this->db, $sql);
         if (!$result) {
             die($sql);

@@ -1,5 +1,5 @@
 <?php include 'header.php'; ?>
-<?php include 'modalbooknow.php'; ?>
+
 <script
     src="https://developers.google.com/maps/documentation/javascript/examples/markerclusterer/markerclusterer.js"></script>
 <script>var resort_id = <?=$resort['id']?></script>
@@ -45,7 +45,7 @@
             </div>
             <div class="col-md-2 col-md-offset-5" style="margin-top: 20px">
 
-                <button id="btnDatCho" class="btnBookNow" style="margin-top: 0px"  idsp="<?=$resort['id'];?>" >{DatCho}</button>
+                <button id="btnDatCho" class="btnBookNow" style="margin-top: 0px"  >{DatCho}</button>
             </div>
             <div class="col-md-12 col-sm-12" id="map_google">
                 <div id="map"></div>
@@ -53,6 +53,7 @@
         </div>
     </div>
 </div>
+<?php include 'modalbooknow.php'; ?>
 <script>
     function initMap() {
         var lat = <?php echo $lat?>;

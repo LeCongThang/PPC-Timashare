@@ -39,45 +39,16 @@
             e.preventDefault();
         });
 
-
-        var mainModal;
-        var modaldoimatkhau = document.getElementById('ModalDoiMatKhau');
-
-
-        $('#hrefDoiMatKhau').click(function (e) {
-            e.preventDefault();
-            mainModal = modaldoimatkhau;
-            mainModal.style.display = "block";
-            $('#thongbaodoimatkhau').text("");
-            e.preventDefault();
-            return false;
-        });
-
-        window.onclick = function (event) {
-            if (event.target == mainModal) {
-                mainModal.style.display = "none";
-            }
-        }
-
-        $('#btnthoatdoimatkhau').click(function () {
-            mainModal.style.display = "none";
-        });
-
-        $('#btn_thoatdangkyknd').click(function () {
-            mainModal.style.display = "none";
-        });
-    });
-</script>
-<script type="text/javascript">
-    $(document).ready(function () {
-
+        // start submit search type and sort by resort
         $("#sort_by").change(function () {
             resort_sort.submit();
         });
         $("#resort_type").change(function () {
             resort_sort.submit();
         });
+        // end submit search type and sort by resort
 
+        // start code toggle question
         $(".dropdown img.flag").addClass("flagvisibility");
 
         $(".dropdown dt a").click(function () {
@@ -91,18 +62,30 @@
         });
         $(".dropdown img.flag").toggleClass("flagvisibility");
 
+        // end code toggle question
+
         //All Modal
-        var mainModal;
+        var mainModal = "" ;
         var modal = document.getElementById('ModalDangNhap');
         var modaldangky = document.getElementById('ModalDangKy');
         var modalxemthongtin = document.getElementById('ModalXemThongTin');
         var modalquenmatkhau = document.getElementById('ModalQuenMatKhau');
         var modaldatcho = document.getElementById('ModalBookNow');
+        var modaldoimatkhau = document.getElementById('ModalDoiMatKhau');
         var btn = document.getElementById('btnDangNhap');
         var btnDatCho = document.getElementById('btnDatCho');
 
+        $('#hrefDoiMatKhau').click(function (e) {
+            e.preventDefault();
+            mainModal = modaldoimatkhau;
+            mainModal.style.display = "block";
+            $('#thongbaodoimatkhau').text("");
+            e.preventDefault();
+            return false;
+        });
 
-        if(btnDatCho != null){
+
+        if (btnDatCho != null) {
             btnDatCho.onclick = function () {
                 mainModal = modaldatcho;
                 mainModal.style.display = "block";
@@ -142,6 +125,9 @@
             return false;
         });
 
+        $('#btnthoatdoimatkhau').click(function () {
+            mainModal.style.display = "none";
+        });
 
         //-------------------------------------------------------------------------------------------------------------------
         // Button X in modal
@@ -185,6 +171,10 @@
             mainModal.style.display = "none";
         });
 
+        $('#btn_thoatdangkyknd').click(function () {
+            mainModal.style.display = "none";
+            $('#thongbaodn').text("");
+        });
 
     });
 

@@ -17,7 +17,7 @@
           integrity="sha384-rHyoN1iRsVXV4nD0JutlnGaslCJuC7uwjduW9SVrLvRYooPp2bWYgmgJQIXwl/Sp" crossorigin="anonymous">
     <link rel="stylesheet" type="text/css" href="<?= BASE_DIR ?>css/stylehead.css">
     <!-- Latest compiled and minified JavaScript -->
-
+    <script src="<?= BASE_DIR ?>plugins/jQuery/jquery-2.2.3.min.js"></script>
 </head>
 <body>
 <div class="container">
@@ -33,7 +33,7 @@
                 </button>
                 <div class="navbar-brand navbar-brand-centered">
                     <a href="<?= BASE_URL . $_SESSION['lang'] ?>/controller/index">
-                        <img src="<?= BASE_DIR ?>img/logo.png" id="logo" class="img-responsive">
+                        <img src="<?= BASE_DIR ?>img/ppctimeshare.png" id="logo" class="img-responsive">
                     </a>
                 </div>
             </div> <!--  end banner brand -->
@@ -45,22 +45,22 @@
                             <dt>
                                 <?php
                                 if ($_SESSION['lang'] == "vi") {
-                                    echo '<a href="#" onclick="return false;"><img class="flag"src="' . BASE_DIR . 'img/vietnamflag.gif"alt=""/> Asia-VietNamese</a>';
+                                    echo '<a style="color: white;" href="#" onclick="return false;"><img class="flag"src="' . BASE_DIR . 'img/vietnamflag.gif"alt=""/></a>';
                                 } else if ($_SESSION['lang'] == "en") {
-                                    echo '<a href="#" onclick="return false;"><img class="flag"src="' . BASE_DIR . 'img/icon_flag_usa.png"alt=""/> Asia-English</a>';
+                                    echo '<a style="color: white;" href="#" onclick="return false;"><img class="flag"src="' . BASE_DIR . 'img/icon_flag_usa.png"alt=""/></a>';
                                 }
                                 ?>
                             </dt>
                             <dd>
                                 <ul>
-                                    <li><a href="<?= BASE_URL . "en/" ?>"><img class="flag"
+                                    <li><a  style="color: white;" href="<?= BASE_URL . "en/" ?>"><img class="flag"
                                                                                src="<?= BASE_DIR ?>img/icon_flag_usa.png"
                                                                                alt=""/>
-                                            Asia-English<span class="value">En</span></a></li>
-                                    <li><a href="<?= BASE_URL . "vi/" ?>"><img class="flag"
+                                            <span class="value">En</span></a></li>
+                                    <li><a  style="color: white;" href="<?= BASE_URL . "vi/" ?>"><img class="flag"
                                                                                src="<?= BASE_DIR ?>img/vietnamflag.gif"
                                                                                alt=""/>
-                                            Asia-VietNamese<span class="value">Vi</span></a></li>
+                                            <span class="value">Vi</span></a></li>
                                 </ul>
                             </dd>
                         </dl>
@@ -155,7 +155,7 @@
                     else echo'<div class="thumbnail">';
                     echo '<img src="' . BASE_DIR . $khuNghiDuongBanner['link'] . '">';
                     echo ' <div class="caption"><h6>' ?>{KhuNghiDuong2}<?php echo '</h6><h5>' . $khuNghiDuongBanner['ten'] . '</h5><p>' . $khuNghiDuongBanner['thongtin'] . '</p>';
-                    echo '<a href="' . BASE_URL . $_SESSION['lang'] . '/controller/xemChiTietKhuNghiDuong/' . $khuNghiDuongBanner['id'] . '" class="btn btn-default" id="btnreadmore">' ?>{TimHieuThem}<?php echo '</a></div></div></div>';
+                    echo '<a href="' . BASE_URL . $_SESSION['lang'] . '/controller/loadingDetailsResort/' . $khuNghiDuongBanner['id'] . '" class="btn btn-default" id="btnreadmore">' ?>{TimHieuThem}<?php echo '</a></div></div></div>';
                 }
                 ?>
             </div><!--  End Row -->
@@ -170,7 +170,7 @@
     <div id="thongtincanhan"></div><?php include 'modalxemthongtincanhan.php'; ?>
 
 </header>
-<script type="text/javascript" src="http://code.jquery.com/jquery-1.9.1.min.js"></script>
+
 <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"
         integrity="sha384-Tc5IQib027qvyjSMfHjOMaLkfuWVxZxUPnCJA7l2mCWNIpG9mGCD8wGNIcPD7Txa"
         crossorigin="anonymous"></script>

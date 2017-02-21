@@ -6,7 +6,7 @@ class controller
     public $params;
     public $current_action;
     public $cname = "controller";
-    public $lang = 'vi';
+    public $lang = 'en';
 
     function __construct($action, $params, $lang)
     {
@@ -299,16 +299,23 @@ class controller
     {
 
         if (!isset($_SESSION['tendangnhap'])) {
-            echo "<script>alert('Bạn cần đăng nhập để có thể book chỗ')</script>";
+            //Ban Can Dang nhap De Boook
         } else {
-            //echo "<script>alert('Bạn cần đăng nhập để có thể ')</script>";
-            $thoigian = $_POST["thoigian"];
-            $ghichu = $_POST["comment"];
-            $tendangnhap = $_SESSION['tendangnhap'];
-            $idsp = 1;
-            settype($idsp, "int");
-            if ($this->control->booknow($tendangnhap, $idsp, $thoigian, $ghichu))
-                echo "<script>alert('Bạn đã book thành công')</script>";
+            $id_user = $_SESSION["id"];
+            $id_resort = $_POST["resort_id"];
+            $date_start = $_POST["date_start"];
+            $date_end = $_POST["date_end"];
+            $room = $_POST["room"];
+            $adults = $_POST["adults"];
+            $childs = $_POST["childs"];
+            $note = $_POST["note"];
+            if ($this->control->bookNow($id_user, $id_resort, $date_start, $date_end,$room, $adults, $childs ,$note))
+            {
+                $this->index();
+            }
+            {
+
+            }
         }
     }
 
@@ -652,55 +659,76 @@ class controller
     public function getNumberResort()
     {
         $isWorld = isset($this->params[0]);
+        if (isset($_POST["resort_type"]))
+            $resort_type = $_POST["resort_type"];
+        if (isset($_POST["sort_by"]))
+            $sort_by = $_POST["sort_by"];
+        if ($resort_type == 0) {
+            if ($sort_by == 0) {
+                $resort_type_clause = "";
+                $sort_by_clause = "";
+            } else if ($sort_by == 1) {
+                $date = new DateTime('now');
+                date_sub($date, date_interval_create_from_date_string('7 days'));
+                $resort_type_clause = "";
+                if(!$isWorld)
+                    $sort_by_clause = " resort.date_created >= '" . $date->format('Y-m-d') . "' ";
+                else
+                    $sort_by_clause = " AND resort.date_created >= '" . $date->format('Y-m-d') . "' ";
+            } else if ($sort_by == 2) {
+                $resort_type_clause = "";
+                $date = new DateTime('now');
+                $sort_by_clause = " resort.id IN (SELECT details_deal_resort.id_resort FROM `details_deal_resort` WHERE date_start <= '" . $date->format('Y-m-d') . "' AND date_end >= '" . $date->format('Y-m-d') . "')";
+            }
+        } else if ($resort_type == 1) {
+            if ($sort_by == 0) {
+                if(!$isWorld)
+                    $resort_type_clause = " resort.id_resort_type = 0 ";
+                else
+                    $resort_type_clause = " AND resort.id_resort_type = 0 ";
+                $sort_by_clause = "";
+            } else if ($sort_by == 1) {
+                $date = new DateTime('now');
+                date_sub($date, date_interval_create_from_date_string('7 days'));
+                if(!$isWorld)
+                    $resort_type_clause = " resort.id_resort_type = 0 ";
+                else
+                    $resort_type_clause = " AND resort.id_resort_type = 0 ";
+                $sort_by_clause = " AND resort.date_created > '" . $date->format('Y-m-d') . "' ";
+            } else if ($sort_by == 2) {
+                if(!$isWorld)
+                    $resort_type_clause = " resort.id_resort_type = 0 ";
+                else
+                    $resort_type_clause = " AND resort.id_resort_type = 0 ";
+                $date = new DateTime('now');
+                $sort_by_clause = " AND resort.id IN (SELECT details_deal_resort.id_resort FROM `details_deal_resort` WHERE date_start <= '" . $date->format('Y-m-d') . "' AND date_end >= '" . $date->format('Y-m-d') . "')";
+            }
+        } else if ($resort_type == 2) {
+            if ($sort_by == 0) {
+                if(!$isWorld)
+                    $resort_type_clause = " resort.id_resort_type = 1 ";
+                else
+                    $resort_type_clause = " AND resort.id_resort_type = 1 ";
+                $sort_by_clause = "";
+            } else if ($sort_by == 1) {
+                $date = new DateTime('now');
+                date_sub($date, date_interval_create_from_date_string('7 days'));
+                if(!$isWorld)
+                    $resort_type_clause = " resort.id_resort_type = 1";
+                else
+                    $resort_type_clause = " AND resort.id_resort_type = 1 ";
+                $sort_by_clause = " AND resort.date_created > '" . $date->format('Y-m-d') . "' ";
+            } else if ($sort_by == 2) {
+                if(!$isWorld)
+                    $resort_type_clause = " resort.id_resort_type = 1 ";
+                else
+                    $resort_type_clause = " AND resort.id_resort_type = 1 ";
+                $date = new DateTime('now');
+                $sort_by_clause = " AND resort.id IN (SELECT details_deal_resort.id_resort FROM `details_deal_resort` WHERE date_start <= '" . $date->format('Y-m-d') . "' AND date_end >= '" . $date->format('Y-m-d') . "')";
+            }
+        }
         if (!$isWorld) {
             $total = array("total" => 0);
-            if (isset($_POST["resort_type"]))
-                $resort_type = $_POST["resort_type"];
-            if (isset($_POST["sort_by"]))
-                $sort_by = $_POST["sort_by"];
-            if ($resort_type == 0) {
-                if ($sort_by == 0) {
-                    $resort_type_clause = "";
-                    $sort_by_clause = "";
-                } else if ($sort_by == 1) {
-                    $date = new DateTime('now');
-                    date_sub($date, date_interval_create_from_date_string('7 days'));
-                    $resort_type_clause = "";
-                    $sort_by_clause = " resort.date_created > '" . $date->format('Y-m-d') . "' ";
-                } else if ($sort_by == 2) {
-                    $resort_type_clause = "";
-                    $date = new DateTime('now');
-                    $sort_by_clause = " resort.id IN (SELECT details_deal_resort.id_resort FROM `details_deal_resort` WHERE date_start <= '" . $date->format('Y-m-d') . "' AND date_end >= '" . $date->format('Y-m-d') . "')";
-                }
-            } else if ($resort_type == 1) {
-                if ($sort_by == 0) {
-                    $resort_type_clause = "resort.id_resort_type = 0 ";
-                    $sort_by_clause = "";
-                } else if ($sort_by == 1) {
-                    $date = new DateTime('now');
-                    date_sub($date, date_interval_create_from_date_string('7 days'));
-                    $resort_type_clause = "resort.id_resort_type = 0 ";
-                    $sort_by_clause = " AND resort.date_created > '" . $date->format('Y-m-d') . "' ";
-                } else if ($sort_by == 2) {
-                    $resort_type_clause = " resort.id_resort_type = 0 ";
-                    $date = new DateTime('now');
-                    $sort_by_clause = " AND resort.id IN (SELECT details_deal_resort.id_resort FROM `details_deal_resort` WHERE date_start <= '" . $date->format('Y-m-d') . "' AND date_end >= '" . $date->format('Y-m-d') . "')";
-                }
-            } else if ($resort_type == 2) {
-                if ($sort_by == 0) {
-                    $resort_type_clause = "resort.id_resort_type = 1 ";
-                    $sort_by_clause = "";
-                } else if ($sort_by == 1) {
-                    $date = new DateTime('now');
-                    date_sub($date, date_interval_create_from_date_string('7 days'));
-                    $resort_type_clause = " resort.id_resort_type = 1 ";
-                    $sort_by_clause = " AND resort.date_created > '" . $date->format('Y-m-d') . "' ";
-                } else if ($sort_by == 2) {
-                    $resort_type_clause = " resort.id_resort_type = 1 ";
-                    $date = new DateTime('now');
-                    $sort_by_clause = " AND resort.id IN (SELECT details_deal_resort.id_resort FROM `details_deal_resort` WHERE date_start <= '" . $date->format('Y-m-d') . "' AND date_end >= '" . $date->format('Y-m-d') . "')";
-                }
-            }
             $pages = $this->control->getNumberResort($resort_type_clause, $sort_by_clause) / 4;
             $total = array("total" => 0);
             $tmp = explode(".", $pages);
@@ -715,10 +743,10 @@ class controller
             $id = $this->params[0];
             $total = array("total" => 0);
             if (!isset($this->params[1]))
-                $pages = $this->control->getNumberResortById($id) / 4;
+                $pages = $this->control->getNumberResortById($id, $resort_type_clause, $sort_by_clause) / 4;
             else {
                 $id = $this->params[1];
-                $pages = $this->control->getNumberResortByIdCity($id) / 4;
+                $pages = $this->control->getNumberResortByIdCity($id, $resort_type_clause, $sort_by_clause) / 4;
             }
             $total = array("total" => 0);
             $tmp = explode(".", $pages);
@@ -801,7 +829,7 @@ class controller
                 $danh_sach_resort = $this->control->getAllResortPageById($id, $offset, $items, $resort_type_clause, $sort_by_clause);
             else {
                 $id = $this->params[1];
-                $danh_sach_resort = $this->control->getAllResortPageByIdCity($id, $offset, $items);
+                $danh_sach_resort = $this->control->getAllResortPageByIdCity($id, $offset, $items, $resort_type_clause, $sort_by_clause);
             }
             echo json_encode($danh_sach_resort);
         }

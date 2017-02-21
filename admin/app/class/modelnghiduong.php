@@ -179,7 +179,7 @@ class modelnghiduong
         $city = $this->getNumberCity($id_city);
         $country = $this->getNumberCountry($this->getIdCountryByIdCity($id_city));
         $countinents = $this->getNumberContinents($country['id_continents']);
-        if ($resort_type == 1) {
+        if ($resort_type == 0) {
             $numberCity = $city['number'] + 1;
             $numberContinents = $countinents['number'] + 1;
             $numberCountry = $country['number'] + 1;
@@ -282,7 +282,7 @@ class modelnghiduong
         $country = $this->getNumberCountry($id_country);
         $continents = $this->getNumberContinents($country['id_continents']);
         $id_continents = $continents['id'];
-        if ($resort_type == 1) {
+        if ($resort_type == 0) {
             $number_continents = $continents['number'] - 1;
             $number_city = $city['number'] - 1;
             $number_country = $country['number'] - 1;
@@ -309,7 +309,7 @@ class modelnghiduong
 
     public function updateNumberCity($id_city, $number_city, $resort_type)
     {
-        if ($resort_type == 1)
+        if ($resort_type == 0)
             $number = "number";
         else
             $number = "number_home";
@@ -320,7 +320,7 @@ class modelnghiduong
 
     public function updateNumberCountry($id_country, $number_country, $resort_type)
     {
-        if ($resort_type == 1)
+        if ($resort_type == 0)
             $number = "number";
         else
             $number = "number_home";
@@ -331,7 +331,7 @@ class modelnghiduong
 
     public function updateNumberContinents($id_continents, $number_continents, $resort_type)
     {
-        if ($resort_type == 1)
+        if ($resort_type == 0)
             $number = "number";
         else
             $number = "number_home";

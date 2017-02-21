@@ -51,7 +51,7 @@
                 data: {
                     "resort_type": resort_type,
                     "sort_by": sort_by
-                },
+                }
             }).done(function (data) {
                 options.total = data.total;
                 loadData(options.currentPage);
