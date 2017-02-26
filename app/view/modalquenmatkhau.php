@@ -11,11 +11,6 @@
                     <input id="tendangnhapll" type="text" class="form-control" name="tendangnhapll"
                            placeholder="Tên đăng nhập">
                 </div>
-                <div class="input-group" id="banner_5">
-                    <span class="input-group-addon"><i class="glyphicon glyphicon-phone"></i></span>
-                    <input id="sodienthoaitaikhoanll" type="text" class="form-control" name="sodienthoaitaikhoanll"
-                           placeholder="Nhập số điện thoại">
-                </div>
                 <p><span style="color: red;" id="thongbaoQuenMatKhau"></span></p>
                 <div class="modal-footer text-right">
                     <button type="submit" id="btnQuenMatKhau" name="btn_submit" class="btn btn-default">Gửi

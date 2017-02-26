@@ -34,7 +34,7 @@ class controller
             $dsKhuNghiDuongBanner[] = $khuNghiDuongBanner;
         }
         //echo count($dsKhuNghiDuongSlier);
-        $imagick = new \Imagick(realpath('C:\xampp\htdocs' . BASE_DIR . $du_lieu_tham_gia['hinh_anh']));
+        $imagick = new \Imagick(realpath(REAL_PATH . BASE_DIR . $du_lieu_tham_gia['hinh_anh']));
         $imagick->resizeImage(1070, 868, Imagick::FILTER_LANCZOS, 1);
         $width_khung_1 = 257.5;
         $high_khung_1 = 217;
@@ -104,6 +104,21 @@ class controller
         require_once "view/home.php"; //nạp layout
     }//index
 
+
+    private function uploadHinh()
+    {
+        if (isset($_FILES['fileup'])) {
+            $error = $_FILES['fileup']['error'];
+            if ($error == UPLOAD_ERR_OK) {
+                $tmp_name = $_FILES["fileup"]["tmp_name"];
+                $name = "img/" . time() . "_" . basename($_FILES["fileup"]["name"]);
+                move_uploaded_file($tmp_name, self::UPDATE_DIR . $name);
+                return $name;
+            }
+        }
+        return null;
+    }
+
     function detail()
     {
         require_once "view/home.php";
@@ -145,8 +160,7 @@ class controller
                 $_SESSION['diachitaikhoan'] = $row['diachi'];
                 $_SESSION['sodienthoaitaikhoan'] = $row['dienthoai'];
             }
-            if (isset($_POST["rememberme"])) {
-
+            if ($remember == "true") {
                 setcookie("tendangnhap", $tendangnhap, time() + 2592000);
                 setcookie("matkhau", $matkhau, time() + 2592000);
                 setcookie("rememberme", $remember, time() + 2592000);
@@ -155,8 +169,7 @@ class controller
                 setcookie("matkhau", $matkhau, time());
                 setcookie("rememberme", $remember, time());
             }
-            header('location:' . BASE_URL . $this->lang . "/controller/index");
-            echo "<script>alert('Đăng nhập thành công')</script>";
+            echo "true";
         } else {
             session_unset();
             session_destroy();
@@ -165,17 +178,36 @@ class controller
                 setcookie("matkhau", $_COOKIE["matkhau"], time());
                 setcookie("rememberme", $_COOKIE["rememberme"], time());
             }
-            header('location:' . BASE_URL . $this->lang . "/controller/index");
+            echo "false";
         }
     }
 
+    /**
+     * resgiter
+     * @return 0 same email
+     * @return 1 same number phone
+     * @return 2 sucessfull
+     * @return 3 fail
+     */
     public function dangKy()
     {
-        $diaChiEmail = $_POST["diaChiEmail"];
-        $dienthoai = $_POST["dienthoai"];
-        if ($this->control->themTaiKhoanDangKy($diaChiEmail, $dienthoai)) {
-            header('location:' . BASE_URL . $this->lang . "/controller/index");
-        }
+        $imageResgiter = $this->uploadHinh();
+        if($imageResgiter == null)
+            $imageResgiter = "NULL";
+        $emailResgiter = $_POST["emailResgiter"];
+        $passwordResgiter = $_POST["passwordResgiter"];
+        $nameResgiter = $_POST["nameResgiter"];
+        $addressResgiter = $_POST["addressResgiter"];
+        $numberPhoneResgiter = $_POST["numberPhoneResgiter"];
+        $sexResgiter = $_POST["sexResgiter"];
+        if($this->control->isHasEmail($emailResgiter)!="")
+            echo 0;
+        else if($this->control->isHasNumberPhone($numberPhoneResgiter)!="")
+            echo 1;
+        else if ($this->control->insertAccountUser($imageResgiter, $emailResgiter,$passwordResgiter,$nameResgiter,$addressResgiter,$numberPhoneResgiter,$sexResgiter))
+            echo 2;
+        else
+            echo 3;
     }
 
     public function quenmatkhau()
@@ -309,8 +341,7 @@ class controller
             $adults = $_POST["adults"];
             $childs = $_POST["childs"];
             $note = $_POST["note"];
-            if ($this->control->bookNow($id_user, $id_resort, $date_start, $date_end,$room, $adults, $childs ,$note))
-            {
+            if ($this->control->bookNow($id_user, $id_resort, $date_start, $date_end, $room, $adults, $childs, $note)) {
                 $this->index();
             }
             {
@@ -610,7 +641,7 @@ class controller
             $khuNghiDuongBanner = $this->control->layThongTinChiTietKhuNghiDuong($banner['idkhunghiduong']);
             $dsKhuNghiDuongBanner[] = $khuNghiDuongBanner;
         }
-
+        $exchange_rates = $this->control->getExchangeRates()['value'];
         $resort = $this->control->getDetailsResort($id);
         $listImageResort = $this->control->getListImageResort($id);
         $lat = $resort['lat'];
@@ -671,7 +702,7 @@ class controller
                 $date = new DateTime('now');
                 date_sub($date, date_interval_create_from_date_string('7 days'));
                 $resort_type_clause = "";
-                if(!$isWorld)
+                if (!$isWorld)
                     $sort_by_clause = " resort.date_created >= '" . $date->format('Y-m-d') . "' ";
                 else
                     $sort_by_clause = " AND resort.date_created >= '" . $date->format('Y-m-d') . "' ";
@@ -682,7 +713,7 @@ class controller
             }
         } else if ($resort_type == 1) {
             if ($sort_by == 0) {
-                if(!$isWorld)
+                if (!$isWorld)
                     $resort_type_clause = " resort.id_resort_type = 0 ";
                 else
                     $resort_type_clause = " AND resort.id_resort_type = 0 ";
@@ -690,13 +721,13 @@ class controller
             } else if ($sort_by == 1) {
                 $date = new DateTime('now');
                 date_sub($date, date_interval_create_from_date_string('7 days'));
-                if(!$isWorld)
+                if (!$isWorld)
                     $resort_type_clause = " resort.id_resort_type = 0 ";
                 else
                     $resort_type_clause = " AND resort.id_resort_type = 0 ";
                 $sort_by_clause = " AND resort.date_created > '" . $date->format('Y-m-d') . "' ";
             } else if ($sort_by == 2) {
-                if(!$isWorld)
+                if (!$isWorld)
                     $resort_type_clause = " resort.id_resort_type = 0 ";
                 else
                     $resort_type_clause = " AND resort.id_resort_type = 0 ";
@@ -705,7 +736,7 @@ class controller
             }
         } else if ($resort_type == 2) {
             if ($sort_by == 0) {
-                if(!$isWorld)
+                if (!$isWorld)
                     $resort_type_clause = " resort.id_resort_type = 1 ";
                 else
                     $resort_type_clause = " AND resort.id_resort_type = 1 ";
@@ -713,13 +744,13 @@ class controller
             } else if ($sort_by == 1) {
                 $date = new DateTime('now');
                 date_sub($date, date_interval_create_from_date_string('7 days'));
-                if(!$isWorld)
+                if (!$isWorld)
                     $resort_type_clause = " resort.id_resort_type = 1";
                 else
                     $resort_type_clause = " AND resort.id_resort_type = 1 ";
                 $sort_by_clause = " AND resort.date_created > '" . $date->format('Y-m-d') . "' ";
             } else if ($sort_by == 2) {
-                if(!$isWorld)
+                if (!$isWorld)
                     $resort_type_clause = " resort.id_resort_type = 1 ";
                 else
                     $resort_type_clause = " AND resort.id_resort_type = 1 ";
@@ -949,6 +980,5 @@ class controller
             }
         }
     }
-
 
 }//class

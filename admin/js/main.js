@@ -1,22 +1,5 @@
 $(document).ready(function () {
-    $('#btn_dangky').click(function () {
-        diaChiEmail = $('#diaChiEmail').val();
-        dienthoai = $('#dienthoai').val();
-        if (validateEmail(email)) {
-        } else {
-            $("#thongbao").text(email + " không đúng");
-            return false;
-        }
-        if (diaChiEmail == "" || dienthoai == "") {
-            $('#thongbao').text("Hãy nhập đầy đủ thông tin");
-            return false;
-        }
-        if (isNaN(dienthoai)) {
-            $('#thongbao').text("Điện thoại phải là số");
-            return false;
-        }
-        return true;
-    });
+
 
     $('#btnLuuThongTin').click(function () {
         tentaikhoan = $('#tentaikhoan').val();

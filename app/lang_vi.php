@@ -54,10 +54,14 @@ define("MatKhauCu","Mật khẩu cũ");
 define("MatKhauMoi","Mật khẩu mới");
 define("NhapLaiMatKhau","Nhập lại mật khẩu");
 define("NutDoiMatKhau","Lưu");
-
+define("Nam","Nam");
+define("Nu","Nữ");
 define("TTDangKy","ĐĂNG KÝ");
 define("DiaChiEmail","Địa chỉ thư điện tử");
 define("DienThoaiDK","Số điện thoại");
+define("HoTenDK","Họ tên");
+define("DiaChiDK","Địa chỉ");
+define("GioiTinhDK","Giới tính");
 define("DangKy","Đăng ký");
 define("VideoCuaChungToi","VIDEO CỦA CHÚNG TÔI");
 
@@ -84,3 +88,7 @@ define("HomeShare","Nhà");
 define("SapXepTheo","Sắp xếp theo");
 define("KhuyenMai","Khuyến mãi");
 define("Moi","Mới");
+define("XemThongTinCaNhan","Xem thông tin cá nhân");
+define("Gia","Giá");
+define("HinhDaiDien","Hình đại diện");
+define("GioiTinh","Giới tính");

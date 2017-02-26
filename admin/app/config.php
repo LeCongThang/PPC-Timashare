@@ -12,3 +12,4 @@ define('PASS_DB', "");
 
 define('DEFAULT_CONTROLLER','controlleradmin');
 define('DEFAULT_ACTION','index');
+define('REAL_PATH','C:\xampp\htdocs');

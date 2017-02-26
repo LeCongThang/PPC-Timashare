@@ -23,6 +23,11 @@ class modelslider
         $sql_slider = "INSERT INTO slider(image_slider, duongdan_slider) VALUES('$hinh', '$duong_dan')";
         $kq_slider = $this->db->query($sql_slider);
         if($kq_slider){
+            $imagick = new \Imagick(realpath(REAL_PATH . BASE_DIR . $hinh));
+            $image_high = $imagick->getImageHeight();
+            $imagick->resizeImage(1366, $image_high, Imagick::FILTER_LANCZOS, 1);
+            $imagick->cropImage(1366,850,0,0);
+            file_put_contents(REAL_PATH . BASE_DIR . $hinh, $imagick);
             $last_id = mysqli_insert_id($this->db);
             $sql_slider_vi = "INSERT INTO slider_ngonngu(id_slider,noidung_slider,tieude_slider,mota_slider,ngon_ngu) VALUES ('$last_id', '$noi_dung_vi', '$tieu_de_vi','$mo_ta_vi','vi')";
             $sql_slider_en = "INSERT INTO slider_ngonngu(id_slider,noidung_slider,tieude_slider,mota_slider,ngon_ngu) VALUES ('$last_id', '$noi_dung_en', '$tieu_de_en','$mo_ta_en','en')";
@@ -44,6 +49,14 @@ class modelslider
         $sql_slider_vi = "UPDATE slider_ngonngu SET noidung_slider ='".$noi_dung_vi."', tieude_slider ='".$tieu_de_vi."', mota_slider ='".$mo_ta_vi."' WHERE id_slider =".$id." AND ngon_ngu = 'vi'";
         $sql_slider_en = "UPDATE slider_ngonngu SET noidung_slider ='".$noi_dung_en."', tieude_slider ='".$tieu_de_en."', mota_slider ='".$mo_ta_en."' WHERE id_slider =".$id." AND ngon_ngu = 'en'";
         $kq_hinh = $this->db->query($sql_hinh);
+        if($kq_hinh&&$hinh!=null)
+        {
+            $imagick = new \Imagick(realpath(REAL_PATH . BASE_DIR . $hinh));
+            $image_high = $imagick->getImageHeight();
+            $imagick->resizeImage(1366, $image_high, Imagick::FILTER_LANCZOS, 1);
+            $imagick->cropImage(1366,850,0,0);
+            file_put_contents(REAL_PATH . BASE_DIR . $hinh, $imagick);
+        }
         $kq_slider_vi = $this->db->query($sql_slider_vi);
         $kq_slider_en = $this->db->query($sql_slider_en);
         if($kq_hinh && $kq_slider_vi && $kq_slider_en)

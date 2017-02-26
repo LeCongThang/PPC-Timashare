@@ -103,6 +103,15 @@ $str = str_replace("{HomeShare}", HomeShare, $str);
 $str = str_replace("{SapXepTheo}", SapXepTheo, $str);
 $str = str_replace("{KhuyenMai}", KhuyenMai, $str);
 $str = str_replace("{Moi}", Moi, $str);
+$str = str_replace("{XemThongTinCaNhan}", XemThongTinCaNhan, $str);
+$str = str_replace("{Gia}", Gia, $str);
+$str = str_replace("{HinhDaiDien}", HinhDaiDien, $str);
+$str = str_replace("{HoTenDK}", HoTenDK, $str);
+$str = str_replace("{GioiTinhDK}", GioiTinhDK, $str);
+$str = str_replace("{DiaChiDK}", DiaChiDK, $str);
+$str = str_replace("{Nam}", Nam, $str);
+$str = str_replace("{Nu}", Nu, $str);
+$str = str_replace("{GioiTinh}", GioiTinh, $str);
 echo $str;
 
 

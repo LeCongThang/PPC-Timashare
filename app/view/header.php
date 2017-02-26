@@ -41,26 +41,35 @@
             <div class="collapse navbar-collapse" id="navbar-brand-centered">
                 <ul class="nav navbar-nav" class="menuleft">
                     <li id="language">
+                        <!--                        <div id="lang">-->
+                        <!--                            <a href="--><? //= BASE_URL . "en/" ?><!--"> <img src="-->
+                        <? // BASE_DIR ?><!--img/icon_flag_usa.png" align=left-->
+                        <!--                                                                    style="margin-right: 5px"></a>-->
+                        <!--                            <a href="--><? //= BASE_URL . "vi/" ?><!--"> <img src="-->
+                        <? //=BASE_DIR ?><!--img/vietnamflag.gif" align=left></a>-->
+                        <!--                        </div>-->
+
                         <dl id="sample" class="dropdown">
                             <dt>
                                 <?php
                                 if ($_SESSION['lang'] == "vi") {
-                                    echo '<a style="color: white;" href="#" onclick="return false;"><img class="flag"src="' . BASE_DIR . 'img/vietnamflag.gif"alt=""/></a>';
+                                    echo '<a style="color: white;" href="#" onclick="return false;"><img class="flag"src="' . BASE_DIR . 'img/vietnamflag.gif"alt=""/> Vietnamese</a>';
                                 } else if ($_SESSION['lang'] == "en") {
-                                    echo '<a style="color: white;" href="#" onclick="return false;"><img class="flag"src="' . BASE_DIR . 'img/icon_flag_usa.png"alt=""/></a>';
+                                    echo '<a style="color: white;" href="#" onclick="return false;"><img class="flag"src="' . BASE_DIR . 'img/icon_flag_usa.png"alt=""/> English</a>';
                                 }
                                 ?>
                             </dt>
                             <dd>
                                 <ul>
-                                    <li><a  style="color: white;" href="<?= BASE_URL . "en/" ?>"><img class="flag"
-                                                                               src="<?= BASE_DIR ?>img/icon_flag_usa.png"
-                                                                               alt=""/>
-                                            <span class="value">En</span></a></li>
-                                    <li><a  style="color: white;" href="<?= BASE_URL . "vi/" ?>"><img class="flag"
-                                                                               src="<?= BASE_DIR ?>img/vietnamflag.gif"
-                                                                               alt=""/>
-                                            <span class="value">Vi</span></a></li>
+                                    <li>
+                                        <?php
+                                        if ($_SESSION['lang'] == "en") {
+                                            echo '<a style="color: white;" href="' . BASE_URL . 'vi/" ><img class="flag"src="' . BASE_DIR . 'img/vietnamflag.gif"alt=""/> Vietnamese</a>';
+                                        } else if ($_SESSION['lang'] == "vi") {
+                                            echo '<a style="color: white;" href="' . BASE_URL . 'en/" ><img class="flag"src="' . BASE_DIR . 'img/icon_flag_usa.png"alt=""/> English</a>';
+                                        }
+                                        ?>
+                                    </li>
                                 </ul>
                             </dd>
                         </dl>
@@ -129,7 +138,6 @@
                     echo '</div></div>';
                 }
                 echo '<center><a href="' . $itemSlider['duongdan_slider'] . '" class="btnBookNow btn btn-default " style="margin-bottom:10px;" >' . $itemSlider['noidung_slider'] . '</a></center></div></div>';
-
             }
             ?>
             <!--        </div>-->
@@ -154,7 +162,7 @@
                     else if($key==3) echo'<div class="thumbnail" style="margin-right: 10px">';
                     else echo'<div class="thumbnail">';
                     echo '<img src="' . BASE_DIR . $khuNghiDuongBanner['link'] . '">';
-                    echo ' <div class="caption"><h6>' ?>{KhuNghiDuong2}<?php echo '</h6><h5>' . $khuNghiDuongBanner['ten'] . '</h5><p>' . $khuNghiDuongBanner['thongtin'] . '</p>';
+                    echo ' <div class="caption"><h6>' ?>{KhuNghiDuong2}<?php echo '</h6><h5>' . $khuNghiDuongBanner['ten'] . '</h5><p class ="content_banner">' . $khuNghiDuongBanner['thongtin'] . '</p>';
                     echo '<a href="' . BASE_URL . $_SESSION['lang'] . '/controller/loadingDetailsResort/' . $khuNghiDuongBanner['id'] . '" class="btn btn-default" id="btnreadmore">' ?>{TimHieuThem}<?php echo '</a></div></div></div>';
                 }
                 ?>

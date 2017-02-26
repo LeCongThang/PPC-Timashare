@@ -7,7 +7,8 @@ body {
     text-align: justify;
     padding-top: 10px;
     letter-spacing: 1px;
-    font-weight: bold;
+    /*font-weight: bold;*/
+    font-family: "Helvetica Neue",Helvetica,Arial,sans-serif;
 }
 
 #row_so {
@@ -38,7 +39,7 @@ h2 {
     text-align: justify;
     /*padding-top: 10px;*/
     /*letter-spacing: 1px;*/
-    font-weight: bold;
+    /*font-weight: bold;*/
     font-size: 13px;
 }
 
@@ -53,7 +54,7 @@ h2 {
     /*padding-top: 10px;*/
     /*letter-spacing: 1px;*/
     text-align: center;
-    font-weight: bold;
+    /*font-weight: bold;*/
     font-size: 16px;
 }
 
@@ -182,7 +183,6 @@ h2 {
 
 .noi_dung_link_tim_hieu {
     color: #772221;
-    font-weight: bold;
     text-align: justify;
 }
 
@@ -380,4 +380,14 @@ h2 {
  }
 .nav>li>a:focus, .nav>li>a:hover{
     background-color: #8a6d3b!important;
+}
+
+.buttonBook>a:hover{
+    color: white;
+    background: black;
+}
+
+.content_banner{
+    overflow: hidden;
+    height: 55px;
 }

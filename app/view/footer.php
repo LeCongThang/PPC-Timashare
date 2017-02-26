@@ -104,12 +104,7 @@
         }
 
 
-        $('#hrefdangky').click(function () {
-            mainModal = modaldangky;
-            mainModal.style.display = "block";
-            $('#thongbao').text("");
-            return false;
-        });
+
 
         $('#hrefXemThongTin').click(function () {
             mainModal = modalxemthongtin;
@@ -141,41 +136,61 @@
 
         // When the user clicks anywhere outside of the modal, close it
         window.onclick = function (event) {
-            if (event.target == mainModal) {
-                mainModal.style.display = "none";
-                $('#thongbaodn').text("");
-                $('#thongbao').text("");
-                $('#thongbaodoimatkhau').text("");
-                //
-                //
+            if (event.target == modal) {
+                modal.style.display = "none";
             }
+            if (event.target == modaldangky) {
+                modaldangky.style.display = "none";
+            }
+            if (event.target == modalxemthongtin) {
+                modalxemthongtin.style.display = "none";
+            }
+            if (event.target == modalquenmatkhau) {
+                modalquenmatkhau.style.display = "none";
+            }
+            if (event.target == modaldatcho) {
+                modaldatcho.style.display = "none";
+            } if (event.target == modaldoimatkhau) {
+                modaldoimatkhau.style.display = "none";
+            }
+
+
+
         }
 
         //Button close Modal
         $('#btn_close').click(function () {
-            mainModal.style.display = "none";
+            modal.style.display = "none";
             $('#thongbaodn').text("");
         });
 
-        $('#btn_thoatdangky').click(function () {
-            mainModal.style.display = "none";
-            $('#thongbao').text("");
-        });
+
 
         $('#btnThoatQuenMatKhau').click(function () {
-            mainModal.style.display = "none";
+            modalquenmatkhau.style.display = "none";
         });
 
 
         $('#btnHuyThongTin').click(function () {
-            mainModal.style.display = "none";
+            modalxemthongtin.style.display = "none";
         });
 
         $('#btn_thoatdangkyknd').click(function () {
-            mainModal.style.display = "none";
+            modaldatcho.style.display = "none";
             $('#thongbaodn').text("");
         });
 
+        $('#hrefdangky').click(function () {
+            mainModal = modaldangky;
+            mainModal.style.display = "block";
+            $('#thongbao').text("");
+            return false;
+        });
+
+        $('#btn_thoatdangky').click(function () {
+            modaldangky.style.display = "none";
+            $('#thongbao').text("");
+        });
     });
 
 

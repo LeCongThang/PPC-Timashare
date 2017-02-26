@@ -2,13 +2,13 @@
 
 <script
     src="https://developers.google.com/maps/documentation/javascript/examples/markerclusterer/markerclusterer.js"></script>
-<script>var resort_id = <?=$resort['id']?></script>
-<script>var account_id = <?php  echo isset($_SESSION["id"]) ? $_SESSION["id"] : "-1"?></script>
+<script>var resort_id = <?= $resort['id'] ?></script>
+<script>var account_id = <?php echo isset($_SESSION["id"]) ? $_SESSION["id"] : "-1" ?></script>
 <div class="container">
     <div class="row">
         <div class="col-md-12 col-sm-12" style="padding-left: 0px;padding-right: 0px">
             <hr class="text-left" style="width:50px;border:2px solid #362516;margin-left:0px;">
-            <h3 class="title_h3"><?php echo $resort['name']?></h3>
+            <h3 class="title_h3"><?php echo $resort['name'] ?></h3>
             <div id="Carousel" class="carousel slide" data-ride="carousel" style="height: 555px">
                 <div class="carousel-inner" role="listbox">
                     <?php
@@ -20,12 +20,14 @@
                     ?>
                 </div>
                 <!-- Left and right controls -->
-                <a class="left carousel-control" style=" width: 0px; margin-left: -60px;color: black;" href="#Carousel" role="button"
+                <a class="left carousel-control" style=" width: 0px; margin-left: -60px;color: black;" href="#Carousel"
+                   role="button"
                    data-slide="prev">
                     <span class="glyphicon glyphicon-chevron-left" aria-hidden="true"></span>
                     <span class="sr-only">Previous</span>
                 </a>
-                <a class="right carousel-control" style=" width: 0px; margin-right: -60px;color: black;" href="#Carousel"
+                <a class="right carousel-control" style=" width: 0px; margin-right: -60px;color: black;"
+                   href="#Carousel"
                    role="button" data-slide="next">
                     <span class="glyphicon glyphicon-chevron-right" aria-hidden="true"></span>
                     <span class="sr-only">Next</span>
@@ -41,11 +43,14 @@
                     <p><h5 class="h5_content_resort"><?= $resort['service'] ?></h5></p>
                     <li><h4 class="h4_content_resort">{ThietBiVaDichVuLuuTru}</h4></li>
                     <p><h5 class="h5_content_resort"><?= $resort['equipment'] ?></h5></p>
+                    <li><h4 class="h4_content_resort">{Gia}</h4></li>
+                    <p><h5
+                        class="h5_content_resort"><?php echo $_SESSION['lang'] == "en" ? $resort['price'] . " USD" : ($resort['price'] * $exchange_rates) . " VNĐ" ?></h5></p>
                 </ul>
             </div>
             <div class="col-md-2 col-md-offset-5" style="margin-top: 20px">
 
-                <button id="btnDatCho" class="btnBookNow" style="margin-top: 0px"  >{DatCho}</button>
+                <button id="btnDatCho" class="btnBookNow" style="margin-top: 0px">{DatCho}</button>
             </div>
             <div class="col-md-12 col-sm-12" id="map_google">
                 <div id="map"></div>

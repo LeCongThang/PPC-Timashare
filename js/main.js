@@ -12,24 +12,6 @@ $(document).ready(function () {
         e.preventDefault();
     });
 
-    $('#btn_dangky').click(function () {
-        diaChiEmail = $('#diaChiEmail').val();
-        dienthoai = $('#dienthoai').val();
-        if (diaChiEmail == "" || dienthoai == "") {
-            $('#thongbao').text("Hãy nhập đầy đủ thông tin");
-            return false;
-        }
-        if (isNaN(dienthoai)) {
-            $('#thongbao').text("Điện thoại phải là số");
-            return false;
-        }
-        if (!validateEmail(diaChiEmail)) {
-            $("#thongbao").text(diaChiEmail + " không đúng");
-            return false;
-        }
-        return true;
-    });
-
     $('#btn_change_newpass').click(function () {
         matkhaumoi = $('#new_password').val();
         nhaplaimatkhaumoi = $('#re_new_password').val();
@@ -93,31 +75,12 @@ $(document).ready(function () {
 
     $('#btnQuenMatKhau').click(function () {
         tendangnhapll = $('#tendangnhapll').val();
-        sodienthoaitaikhoanll = $('#sodienthoaitaikhoanll').val();
-        loiguiqmk = 0;
-        if (isNaN(sodienthoaitaikhoanll)) {
-            loiguiqmk++;
-            $('#thongbaoQuenMatKhau').text("Điện thoại phải là số");
-        }
-        if (tendangnhapll == "" || sodienthoaitaikhoanll == "") {
+        if (tendangnhapll == "") {
             $('#thongbaoQuenMatKhau').text("Hãy nhập đầy đủ thông tin");
-            loiguiqmk++;
-        }
-        if (loiguiqmk != 0) {
-            return false;
         }
         return true;
     });
 
-    $('#btn_dangnhap').click(function () {
-        tendangnhap = $('#username').val();
-        matkhau = $('#password').val();
-        if (tendangnhap == "" || matkhau == "") {
-            $('#thongbaodn').text("Hãy nhập đầy đủ thông tin");
-            return false;
-        }
-        return true;
-    });
 
     $('#doimatkhau').click(function () {
         matkhaucu = $('#matkhaucu').val();

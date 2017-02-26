@@ -13,3 +13,5 @@ define('DEFAULT_CONTROLLER','controller');
 define('DEFAULT_ACTION','index');
 
 define('NGONNGU','vi,en');
+
+define('REAL_PATH','C:\xampp\htdocs');

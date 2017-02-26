@@ -4,6 +4,9 @@ class model
 {
 
     public $db;
+    const STATUS_ACTIVE = 1;
+    const STATUS_NEW = 0;
+    const STATUS_CANCEL = -1;
 
     public function __construct()
     {
@@ -220,12 +223,6 @@ class model
         return true;
     }
 
-    public function themTaiKhoanDangKy($email, $sodienthoai)
-    {
-        $sql = "insert into taikhoandangky(email_taikhoandk, sdt_taikhoandk, trangthai_taikhoandk) values ('" . $email . "','" . $sodienthoai . "',1)";
-        return mysqli_query($this->db, $sql);
-    }
-
     public function layDuLieuThamGia()
     {
         $sql = "SELECT thamgia.hinh_anh, thamgia.link_hinh_1, thamgia.link_hinh_2, thamgia.link_hinh_3, thamgia.link_hinh_4, thamgia.link_hinh_5, thamgia_ngonngu.label_hinh_1, thamgia_ngonngu.label_hinh_2, thamgia_ngonngu.label_hinh_3, thamgia_ngonngu.label_hinh_4, thamgia_ngonngu.label_hinh_5 FROM thamgia, thamgia_ngonngu WHERE thamgia.id = thamgia_ngonngu.id_thamgia AND thamgia_ngonngu.ngonngu ='" . $_SESSION['lang'] . "'";
@@ -370,7 +367,7 @@ class model
 
     public function getDetailsResort($id)
     {
-        $sql = "SELECT resort.lat, resort.lng, resort_language.name, resort.id, resort_language.address, resort_language.introduce, resort_language.location, resort_language.service, resort_language.equipment FROM resort, resort_language WHERE resort.id = resort_language.id_resort AND resort_language.language ='" . $_SESSION['lang'] . "' AND resort.id = " . $id . " AND resort.status = 0";
+        $sql = "SELECT resort.price, resort.lat, resort.lng, resort_language.name, resort.id, resort_language.address, resort_language.introduce, resort_language.location, resort_language.service, resort_language.equipment FROM resort, resort_language WHERE resort.id = resort_language.id_resort AND resort_language.language ='" . $_SESSION['lang'] . "' AND resort.id = " . $id . " AND resort.status = 0";
         $result = mysqli_query($this->db, $sql);
         if (!$result) {
             die("Error in query in here");
@@ -1020,6 +1017,64 @@ class model
             die("Error in updatePasswordKey");
         } else {
             $this->updatePasswordKey("", $id_user);
+        }
+        return $result;
+    }
+
+    public function getExchangeRates()
+    {
+        $sql = "Select * FROM settings WHERE settings.key = 'exchange_rates'";
+        $result = mysqli_query($this->db, $sql);
+
+        if (!$result) {
+            die("Error in getExchangeRates");
+        }
+
+        return mysqli_fetch_assoc($result);
+    }
+
+    public function getMoneyBonus()
+    {
+        $sql = "Select * FROM settings WHERE settings.key = 'register_discount'";
+        $result = mysqli_query($this->db, $sql);
+
+        if (!$result) {
+            die("Error in getMoneyBonus");
+        }
+
+        return mysqli_fetch_assoc($result);
+    }
+
+    public function isHasEmail($email)
+    {
+        $sql = "SELECT * FROM taikhoan WHERE tendangnhap = '{$email}'";
+        $result = mysqli_query($this->db, $sql);
+
+        if (!$result) {
+            die("Error in isHasEmail");
+        }
+        return mysqli_fetch_assoc($result);
+    }
+
+    public function isHasNumberPhone($numberPhone)
+    {
+        $sql = "SELECT * FROM taikhoan WHERE dienthoai = '{$numberPhone}'";
+        $result = mysqli_query($this->db, $sql);
+
+        if (!$result) {
+            die("Error in isHasNumberPhone");
+        }
+        return mysqli_fetch_assoc($result);
+    }
+
+    public function insertAccountUser($imageResgiter,$emailResgiter,$passwordResgiter,$nameResgiter,$addressResgiter,$numberPhoneResgiter,$sexResgiter)
+    {
+        $bonus_money = $this->getMoneyBonus()['value'];
+        $passwordResgiter_md5 = md5($passwordResgiter);
+        $sql = "INSERT INTO taikhoan(tendangnhap,matkhau,bonus_money,id_vaitro,hoten,diachi,dienthoai,sex,status,avatar) VALUES ('{$emailResgiter}','{$passwordResgiter_md5}','{$bonus_money}',1,'{$nameResgiter}','{$addressResgiter}','{$numberPhoneResgiter}',$sexResgiter,0,'{$imageResgiter}')";
+        $result = mysqli_query($this->db, $sql);
+        if (!$result) {
+            die("Error in insertAccountUser");
         }
         return $result;
     }
