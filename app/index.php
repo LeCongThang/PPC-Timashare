@@ -65,6 +65,7 @@ $str = str_replace("{Password}", Password, $str);
 $str = str_replace("{RememberPassword}", RememberPassword, $str);
 $str = str_replace("{DontHaveAccount}", DontHaveAccount, $str);
 $str = str_replace("{ForgotPassword}", ForgotPassword, $str);
+$str = str_replace("{ForgotPasswordUpper}", ForgotPasswordUpper, $str);
 $str = str_replace("{NutDangNhap}", NutDangNhap, $str);
 $str = str_replace("{Thoat}", Thoat, $str);
 $str = str_replace("{XinChao}", XinChao, $str);

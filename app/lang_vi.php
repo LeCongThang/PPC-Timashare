@@ -64,7 +64,7 @@ define("DiaChiDK","Địa chỉ");
 define("GioiTinhDK","Giới tính");
 define("DangKy","Đăng ký");
 define("VideoCuaChungToi","VIDEO CỦA CHÚNG TÔI");
-
+define("ForgotPasswordUpper","QUÊN MẬT KHẨU?");
 define("KhuNghiDuongGiaCa","KHU NGHỈ DƯỠNG & GIÁ CẢ");
 define("DanhMucKhuNghiDuong","DANH MỤC KHU NGHỈ DƯỠNG");
 define("GoiYChoKyNghi","GỢI Ý CHO KỲ NGHỈ");

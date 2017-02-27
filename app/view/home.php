@@ -255,51 +255,50 @@
                 <div class="col-md-12 col-sm-12">
                     <h4><b>{LienHe}</b></h4>
                 </div>
-                <form action="<?= BASE_URL . $_SESSION['lang'] ?>/controller/lienHe" method="post">
-                    <div class="col-md-4 col-sm-12">
-                        <div class="input-group" style="width:100%;">
-                            <!-- <span class="input-group-addon" id="basic-addon1">@</span> -->
-                            <input type="text" class="form-control" placeholder='{Ten}'
-                                   style="width:100%;border:1px solid grey;border-radius:2px;"
-                                   aria-describedby="basic-addon1" name="ten"
-                                   id="ten">
-                        </div>
+                <div class="col-md-4 col-sm-12">
+                    <div class="input-group" style="width:100%;">
+                        <!-- <span class="input-group-addon" id="basic-addon1">@</span> -->
+                        <input type="text" class="form-control" placeholder='{Ten}'
+                               style="width:100%;border:1px solid grey;border-radius:2px;"
+                               aria-describedby="basic-addon1" name="ten"
+                               id="ten">
                     </div>
-                    <div class="col-md-4 col-sm-12">
-                        <div class="input-group" style="width:100%;">
-                            <!-- <span class="input-group-addon" id="basic-addon1">@</span> -->
-                            <input type="text" class="form-control"
-                                   style="width:100%;border:1px solid grey; border-radius:2px;"
-                                   aria-describedby="basic-addon1" id="dienthoaicongty" placeholder='{DienThoai}'
-                                   name="dienthoaicongty">
-                        </div>
+                </div>
+                <div class="col-md-4 col-sm-12">
+                    <div class="input-group" style="width:100%;">
+                        <!-- <span class="input-group-addon" id="basic-addon1">@</span> -->
+                        <input type="text" class="form-control"
+                               style="width:100%;border:1px solid grey; border-radius:2px;"
+                               aria-describedby="basic-addon1" id="dienthoaicongty" placeholder='{DienThoai}'
+                               name="dienthoaicongty">
                     </div>
-                    <div class="col-md-4 col-sm-12">
-                        <div class="input-group" style="width:100%;">
-                            <!-- <span class="input-group-addon" id="basic-addon1">@</span> -->
-                            <input type="text" class="form-control"
-                                   style="width:100%;border:1px solid grey; border-radius:2px;"
-                                   aria-describedby="basic-addon1" id="email" placeholder='{Email}' name="email">
-                        </div>
+                </div>
+                <div class="col-md-4 col-sm-12">
+                    <div class="input-group" style="width:100%;">
+                        <!-- <span class="input-group-addon" id="basic-addon1">@</span> -->
+                        <input type="text" class="form-control"
+                               style="width:100%;border:1px solid grey; border-radius:2px;"
+                               aria-describedby="basic-addon1" id="email" placeholder='{Email}' name="email">
                     </div>
-                    <div class="col-md-12 col-sm-12" id="banner_5">
-                        <div class="input-group" style="width:100%;">
+                </div>
+                <div class="col-md-12 col-sm-12" id="banner_5">
+                    <div class="input-group" style="width:100%;">
                     <textarea rows="10" cols="159" style="width:100%;border:1px solid grey; border-radius:2px;"
+                              id="loinhan"
                               placeholder="{NoiDung}" name="loinhan"></textarea>
-                        </div>
-                        <p><span style="color: red;" id="thongbaoguilh"></span></p>
                     </div>
-                    <div class="col-md-9"></div>
-                    <div class="col-md-3" style="margin-top: -48px">
-                        <div class="input-group" style="width:100%;margin-left: -15px;margin-top: -15px;">
-                            <input type="submit" class="form-control"
-                                   style="width:100%;border:1px solid grey; border-radius:2px;"
-                                   aria-describedby="basic-addon1" id="btn_gui" value={Gui}>
-                        </div>
+                    <p><span style="color: red;" id="thongbaoguilh"></span></p>
+                </div>
+                <div class="col-md-9"></div>
+                <div class="col-md-3" style="margin-top: -48px">
+                    <div class="input-group" style="width:100%;margin-left: -15px;margin-top: -15px;">
+                        <input type="submit" class="form-control"
+                               style="width:100%;border:1px solid grey; border-radius:2px;"
+                               aria-describedby="basic-addon1" id="btn_gui" value={Gui}>
                     </div>
+                </div>
             </section>
         </div>
-        </form>
         <script>var lang = '<?=$_SESSION['lang']?>'</script>
         <div class="col-md-12 col-sm-12"
              STYLE="margin-top: 50px; margin-bottom: 50px; padding-left: 0px; padding-right: 0px">
@@ -334,10 +333,10 @@
 
             ?>
             <div class="row">
-            <?php
-            foreach ($ds_video as $key => $item_video) {
-                if ($key == 0) {
-                    echo ' <div class="col-md-7 col-sm-12">
+                <?php
+                foreach ($ds_video as $key => $item_video) {
+                    if ($key == 0) {
+                        echo ' <div class="col-md-7 col-sm-12">
                     <iframe allowfullscreen="allowfullscreen" id="main_video" width="100%" height="392" src="' . $item_video['url_video'] . '">
                     </iframe>
                 </div>
@@ -346,14 +345,14 @@
                     <div class="goPrevious glyphicon glyphicon-triangle-left"></div>
                     <div class="goNext glyphicon glyphicon-triangle-right"></div></div></h4>
                     <hr style="width:100%;border:1px solid #362516;margin-left:0px;margin-top:25px;">';
-                } else {
+                    } else {
+                    }
                 }
-            }
-            ?>
-            <div id="paging">
-                <div id="rows" style="padding-left: 0px"></div>
-                <div class="clr"></div>
-            </div>
+                ?>
+                <div id="paging">
+                    <div id="rows" style="padding-left: 0px"></div>
+                    <div class="clr"></div>
+                </div>
             </div>
         </div>
     </div>

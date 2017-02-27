@@ -90,7 +90,7 @@
                         else {
                             echo '<div class="dropdown btnUser"> <button id="btnXinChao"   class="btn btn-sucessful dropdown-toggle" type="button" data-toggle="dropdown">' . XinChao . $_SESSION['tentaikhoannguoidung'];
                             echo ' <span class="caret"></span></button><ul  style="background-color: #FAF9DB" class="dropdown-menu">';
-                            echo '<li><a href ="#" id="hrefXemThongTin" >Xem thông tin cá nhân</a></li>';
+                            echo '<li><a href ="#" id="hrefXemThongTin" >{XemThongTinCaNhan}</a></li>';
                             echo "<li><a href ='#' id='hrefDoiMatKhau'><span style='color: #333'>" . DoiMatKhau . "</span></a></li>";
                             echo '<li><a href = "#"></a></li>';
                             echo '<li><a href ="' . BASE_URL . $_SESSION['lang'] . '/controller/dangxuat" ><span style="color: #333">' . Thoat . '</a></span></li>';
@@ -185,6 +185,5 @@
 <script type="text/javascript" src="<?= BASE_DIR ?>ckeditor/ckeditor.js"></script>
 <script type="text/javascript" src="<?= BASE_DIR ?>js/main.js"></script>
 <script>var lang = '<?=$_SESSION['lang']?>'</script>
-
 </body>
 </html>

@@ -84,8 +84,8 @@
                             <table border="0" cellpadding="0" cellspacing="0" style="border-collapse:separate;mso-table-lspace:0pt;mso-table-rspace:0pt;width:100%;">
                                 <tr>
                                     <td style="font-family:sans-serif;font-size:14px;vertical-align:top;">
-                                        <p style="font-family:sans-serif;font-size:14px;font-weight:normal;margin:0;Margin-bottom:15px;">Xin chào <?= $user_name?>,</p>
-                                        <p style="font-family:sans-serif;font-size:14px;font-weight:normal;margin:0;Margin-bottom:15px;">Chúng tôi đã nhận được yêu cầu của bạn! Vui lòng nhấn vào button để đặt mật khẩu mới</p>
+                                        <p style="font-family:sans-serif;font-size:14px;font-weight:normal;margin:0;Margin-bottom:15px;">Hello <?= $user_name?>,</p>
+                                        <p style="font-family:sans-serif;font-size:14px;font-weight:normal;margin:0;Margin-bottom:15px;">We have received your request! Please click the button to set a new password</p>
                                         <table border="0" cellpadding="0" cellspacing="0" class="btn btn-primary" style="border-collapse:separate;mso-table-lspace:0pt;mso-table-rspace:0pt;box-sizing:border-box;width:100%;">
                                             <tbody>
                                             <tr>
@@ -93,7 +93,7 @@
                                                     <table border="0" cellpadding="0" cellspacing="0" style="border-collapse:separate;mso-table-lspace:0pt;mso-table-rspace:0pt;width:100%;width:auto;">
                                                         <tbody>
                                                         <tr>
-                                                            <td style="font-family:sans-serif;font-size:14px;vertical-align:top;background-color:#ffffff;border-radius:5px;text-align:center;background-color:#3498db;"> <a href="<?= $password_key?>" target="_blank" style="text-decoration:underline;background-color:#ffffff;border:solid 1px #3498db;border-radius:5px;box-sizing:border-box;color:#3498db;cursor:pointer;display:inline-block;font-size:14px;font-weight:bold;margin:0;padding:12px 25px;text-decoration:none;text-transform:capitalize;background-color:#3498db;border-color:#3498db;color:#ffffff;">Đặt lại mật khẩu</a> </td>
+                                                            <td style="font-family:sans-serif;font-size:14px;vertical-align:top;background-color:#ffffff;border-radius:5px;text-align:center;background-color:#3498db;"> <a href="<?= $password_key?>" target="_blank" style="text-decoration:underline;background-color:#ffffff;border:solid 1px #3498db;border-radius:5px;box-sizing:border-box;color:#3498db;cursor:pointer;display:inline-block;font-size:14px;font-weight:bold;margin:0;padding:12px 25px;text-decoration:none;text-transform:capitalize;background-color:#3498db;border-color:#3498db;color:#ffffff;">Reset password</a> </td>
                                                         </tr>
                                                         </tbody>
                                                     </table>
@@ -102,7 +102,7 @@
                                             </tbody>
                                         </table>
                                         <p style="font-family:sans-serif;font-size:14px;font-weight:normal;margin:0;Margin-bottom:15px;">
-                                            Nếu đường dẫn trên không hoạt động xin vui lòng liên hệ: info@ppc.com</p>
+                                            If the link above does not work, please contact: info@ppc.com</p>
                                     </td>
                                 </tr>
                             </table>

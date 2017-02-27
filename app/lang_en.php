@@ -46,6 +46,7 @@ define("Password","Password");
 define("RememberPassword","Remember password?");
 define("DontHaveAccount","Don't have account?");
 define("ForgotPassword","Forget password?");
+define("ForgotPasswordUpper","FORGET PASSWORD?");
 define("NutDangNhap","Login");
 define("Thoat","Exit");
 define("XinChao","Hello, ");

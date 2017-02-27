@@ -196,7 +196,8 @@ class model
             $sql = "UPDATE taikhoan SET matkhau='" . md5($matkhaumoi) . "' WHERE tendangnhap = '" . $tendangnhap . "'";
             return mysqli_query($this->db, $sql);
         }
-        return false;
+        else
+            return false;
     }
 
     public function doiquenmatkhau($tendangnhap, $matkhaumoi)

@@ -87,7 +87,13 @@
 
         if (btnDatCho != null) {
             btnDatCho.onclick = function () {
-                mainModal = modaldatcho;
+                var is_login = <?=$_SESSION["is_login"]?>;
+                if(is_login == true)
+                    mainModal = modaldatcho;
+                else {
+                    mainModal = modal;
+                    alert("Mời bạn đăng nhập trước khi đặt chỗ");
+                }
                 mainModal.style.display = "block";
                 $('#thongbaodatcho').text("");
                 return true;

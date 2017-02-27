@@ -15,3 +15,6 @@ define('DEFAULT_ACTION','index');
 define('NGONNGU','vi,en');
 
 define('REAL_PATH','C:\xampp\htdocs');
+define('USER_NAME_MAIL','mailer.proimage@gmail.com');
+define('PASSWORD_EMAIL','yhejvnfznrlvfxzo');
+define('USER_NAME_EMAIL_REPLY','mailer.proimage@gmail.com');

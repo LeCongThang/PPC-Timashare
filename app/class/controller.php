@@ -17,10 +17,12 @@ class controller
         $this->params = $params;
         $this->lang = $lang;
         $_SESSION['lang'] = $lang;
+
     }//construct
 
     function index()
     {
+        $_SESSION['is_login'] = "false";
         $dssbanner = $this->control->laydanhsach("banner");
         $ds_video = $this->control->laydanhsach("video");
         $dssliderw = $this->control->laydanhsachslider();
@@ -136,12 +138,10 @@ class controller
         $tendangnhap = $_SESSION['tendangnhap'];
         $matkhaucu = $_POST["matkhaucu"];
         $matkhaumoi = $_POST["matkhaumoi"];
-        if ($this->control->doimatkhau($tendangnhap, $matkhaucu, $matkhaumoi)) {
-            header('location:' . BASE_URL . $this->lang . "/controller/index");
-            echo "<script>alert('Đổi thành công')</script>";
-        } else {
-            echo "<script>alert('Đổi mật khẩu thất bại kiểm tra lại mật khẩu cũ')</script>";
-        }
+        if ($this->control->doimatkhau($tendangnhap, $matkhaucu, $matkhaumoi))
+            echo "true";
+        else
+            echo "false";
     }
 
 
@@ -155,6 +155,7 @@ class controller
             $_SESSION["tendangnhap"] = $tendangnhap;
             $row = $this->control->xemthongtincanhan($tendangnhap);
             if ($row > 0) {
+                $_SESSION['is_login'] = "true";
                 $_SESSION["id"] = $row['id'];
                 $_SESSION['tentaikhoan'] = $row['hoten'];
                 $_SESSION['diachitaikhoan'] = $row['diachi'];
@@ -171,6 +172,7 @@ class controller
             }
             echo "true";
         } else {
+            $_SESSION['is_login'] = "false";
             session_unset();
             session_destroy();
             if (isset($_COOKIE["tendangnhap"])) {
@@ -192,7 +194,7 @@ class controller
     public function dangKy()
     {
         $imageResgiter = $this->uploadHinh();
-        if($imageResgiter == null)
+        if ($imageResgiter == null)
             $imageResgiter = "NULL";
         $emailResgiter = $_POST["emailResgiter"];
         $passwordResgiter = $_POST["passwordResgiter"];
@@ -200,11 +202,11 @@ class controller
         $addressResgiter = $_POST["addressResgiter"];
         $numberPhoneResgiter = $_POST["numberPhoneResgiter"];
         $sexResgiter = $_POST["sexResgiter"];
-        if($this->control->isHasEmail($emailResgiter)!="")
+        if ($this->control->isHasEmail($emailResgiter) != "")
             echo 0;
-        else if($this->control->isHasNumberPhone($numberPhoneResgiter)!="")
+        else if ($this->control->isHasNumberPhone($numberPhoneResgiter) != "")
             echo 1;
-        else if ($this->control->insertAccountUser($imageResgiter, $emailResgiter,$passwordResgiter,$nameResgiter,$addressResgiter,$numberPhoneResgiter,$sexResgiter))
+        else if ($this->control->insertAccountUser($imageResgiter, $emailResgiter, $passwordResgiter, $nameResgiter, $addressResgiter, $numberPhoneResgiter, $sexResgiter))
             echo 2;
         else
             echo 3;
@@ -240,10 +242,10 @@ class controller
             $mail->Port = 587; // cổng để gửi mail
             $mail->SMTPSecure = "tls"; //Phương thức mã hóa thư - ssl hoặc tls
             $mail->SMTPAuth = true; //Xác thực SMTP
-            $mail->Username = "mailer.proimage@gmail.com"; // Tên đăng nhập tài khoản Gmail
-            $mail->Password = "yhejvnfznrlvfxzo"; //Mật khẩu của gmail
-            $mail->SetFrom("PPC-TimeShare Company", "Change password PPC-TimeShare account"); // Thông tin người gửi
-            $mail->AddReplyTo("mailer.proimage@gmail.com", "PPC-TimeShare Company");// Ấn định email sẽ nhận khi người dùng reply lại.
+            $mail->Username = USER_NAME_MAIL; // Tên đăng nhập tài khoản Gmail
+            $mail->Password = PASSWORD_EMAIL; //Mật khẩu của gmail
+            $mail->SetFrom(USER_NAME_MAIL, "Change password PPC-TimeShare account"); // Thông tin người gửi
+            $mail->AddReplyTo("mailer.proimage@gmail.com", USER_NAME_EMAIL_REPLY);// Ấn định email sẽ nhận khi người dùng reply lại.
             $mail->AddAddress($email, $user['hoten']);//Email của người nhận
             $mail->Subject = "Change password PPC-TimeShare account"; //Tiêu đề của thư
             ob_start();
@@ -260,27 +262,24 @@ class controller
 
             //Tiến hành gửi email và kiểm tra lỗi
             if (!$mail->Send()) {
-                echo "Có lỗi khi gửi mail: " . $mail->ErrorInfo;
+                echo "false";
             } else {
-                echo "Đã gửi thư thành công!";
+                echo "true";
             }
-        }
-
-        header('location:' . BASE_URL . $this->lang . "/controller/index");
+        } else
+            echo "false";
     }
 
     public function lienHe()
     {
-        $ten = $_POST["ten"];
+        $ten = $_POST["tencongty"];
         $dienthoai = $_POST["dienthoaicongty"];
-        $email = $_POST["email"];
+        $email = $_POST["emailcongty"];
         $loinhan = $_POST["loinhan"];
-        if ($this->control->themLienHe($ten, $dienthoai, $email, $loinhan)) {
-            echo "<script>alert('Đã gửi thành công')</script>";
-        } else
-            echo "<script>alert('Gửi lỗi, mời bạn gửi lại')</script>";
-        header('location:' . BASE_URL . $this->lang . "/controller/index");
-
+        if ($this->control->themLienHe($ten, $dienthoai, $email, $loinhan))
+            echo "true";
+        else
+            echo "false";
     }
 
 
@@ -322,6 +321,7 @@ class controller
 
     public function dangxuat()
     {
+        $_SESSION['is_login'] = "false";
         session_unset();
         session_destroy();
         header('location:' . BASE_URL . $this->lang . "/controller/index");

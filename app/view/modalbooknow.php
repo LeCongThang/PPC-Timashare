@@ -42,12 +42,12 @@
                 <div class="form-group">
                     <label for="comment">Ghi Chú:</label>
                     <textarea class="form-control" rows="5" id="comment" name="note"
-                              placeholder="Tối đa 200 kí tự" ></textarea>
+                              placeholder="Tối đa 200 kí tự"></textarea>
                 </div>
-                <input name="resort_id" value="<?=$resort['id'];?>" type="hidden">
+                <input name="resort_id" value="<?= $resort['id']; ?>" type="hidden">
                 <p><span style="color: red;" id="thongbaodatcho"></span></p>
                 <div class="modal-footer text-right">
-                    <button type="submit" id="btn_dangkyknd" name="dangky" class="btn btn-default" >
+                    <button type="submit" id="btn_dangkyknd" name="dangky" class="btn btn-default">
                         Xác nhận
                     </button>
                     <button type="button" id="btn_thoatdangkyknd" class="btn btn-default">Thoát</button>
