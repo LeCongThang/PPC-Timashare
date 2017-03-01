@@ -32,26 +32,6 @@ $(document).ready(function () {
         return true;
     });
 
-    $('#btnLuuThongTin').click(function () {
-        tentaikhoan = $('#tentaikhoan').val();
-        diachitaikhoan = $('#diachitaikhoan').val();
-        sodienthoaitaikhoan = $('#sodienthoaitaikhoan').val();
-        loi = 0;
-        if (isNaN(sodienthoaitaikhoan)) {
-            loi++;
-            $('#thongbaoXemThongTin').text("Điện thoại phải là số");
-        }
-        if (tentaikhoan == "" || diachitaikhoan == "" || sodienthoaitaikhoan == ""
-        ) {
-            loi++;
-            $('#thongbaoXemThongTin').text("Hãy nhập đầy đủ thông tin");
-        }
-        if (loi != 0) {
-            return false;
-        }
-        return true;
-    });
-
     $('#btn_gui').click(function () {
         var tencongty = $('#ten').val();
         var dienthoaicongty = $('#dienthoaicongty').val();

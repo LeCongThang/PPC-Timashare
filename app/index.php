@@ -113,6 +113,18 @@ $str = str_replace("{DiaChiDK}", DiaChiDK, $str);
 $str = str_replace("{Nam}", Nam, $str);
 $str = str_replace("{Nu}", Nu, $str);
 $str = str_replace("{GioiTinh}", GioiTinh, $str);
+$str = str_replace("{LichSuGiaoDich}", LichSuGiaoDich, $str);
+$str = str_replace("{NgayNhanPhong}", NgayNhanPhong, $str);
+$str = str_replace("{NgayTraPhong}", NgayTraPhong, $str);
+$str = str_replace("{GhiChu}", GhiChu, $str);
+$str = str_replace("{NguoiLon}", NguoiLon, $str);
+$str = str_replace("{TreNho}", TreNho, $str);
+$str = str_replace("{TheUuDai}", TheUuDai, $str);
+$str = str_replace("{SoLuongPhong}", SoLuongPhong, $str);
+$str = str_replace("{ThanhCong}", ThanhCong, $str);
+$str = str_replace("{HuyBo}", HuyBo, $str);
+$str = str_replace("{ChuaDuyet}", ChuaDuyet, $str);
+$str = str_replace("{TrangThai}", TrangThai, $str);
 echo $str;
 
 

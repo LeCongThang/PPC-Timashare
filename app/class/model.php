@@ -157,14 +157,24 @@ class model
         return mysqli_query($this->db, $sql);
     }
 
-    public function bookNow($id_user, $id_resort, $date_start, $date_end,$room, $adults, $childs ,$note, $id_voucher)
+    public function bookNow($id_user, $id_resort, $date_start, $date_end, $room, $adults, $childs, $note, $id_voucher)
     {
         $resort_price = $this->getDetailsResort($id_resort)['price'];
         $exchange_rate = $this->getExchangeRates()['value'];
-        $value_voucher = $this->getVoucherById($id_voucher)['cost'];
-        $total_price = ($resort_price * $room) - $value_voucher;
+        if ($id_voucher != 0)
+            $value_voucher = $this->getVoucherById($id_voucher)['cost'];
+        else
+            $value_voucher = 0;
+        $datetime1 = strtotime($date_start);
+        $datetime2 = strtotime($date_end);
+        $secs = $datetime2 - $datetime1;// == <seconds between the two times>
+        $days = $secs / 86400;
+        $total_price = ($resort_price * $room * $days) - $value_voucher;
         $date_created = date("Y/m/d");
-        $sql = "insert into book_now(id_user,id_resort,note,start_date, end_date, adults, childs, room, status, created_at, voucher_id, updated_at, exchange_rate, total_price, resort_price, discount) values ({$id_user},{$id_resort},'{$note}','{$date_start}','{$date_end}',{$adults},{$childs},{$room},0,'{$date_created}',{$id_voucher},'{$date_created}',{$exchange_rate},{$total_price},{$resort_price},{$value_voucher})";
+        if ($id_voucher != 0)
+            $sql = "insert into book_now(id_user,id_resort,note,start_date, end_date, adults, childs, room, status, created_at, voucher_id, updated_at, exchange_rate, total_price, resort_price, discount) values ({$id_user},{$id_resort},'{$note}','{$date_start}','{$date_end}',{$adults},{$childs},{$room},0,'{$date_created}',{$id_voucher},'{$date_created}',{$exchange_rate},{$total_price},{$resort_price},{$value_voucher})";
+        else
+            $sql = "insert into book_now(id_user,id_resort,note,start_date, end_date, adults, childs, room, status, created_at, updated_at, exchange_rate, total_price, resort_price) values ({$id_user},{$id_resort},'{$note}','{$date_start}','{$date_end}',{$adults},{$childs},{$room},0,'{$date_created}','{$date_created}',{$exchange_rate},{$total_price},{$resort_price})";
         return mysqli_query($this->db, $sql);
     }
 
@@ -199,8 +209,7 @@ class model
         if ($this->kiemtrataikhoan($tendangnhap, $matkhaucu)) {
             $sql = "UPDATE taikhoan SET matkhau='" . md5($matkhaumoi) . "' WHERE tendangnhap = '" . $tendangnhap . "'";
             return mysqli_query($this->db, $sql);
-        }
-        else
+        } else
             return false;
     }
 
@@ -788,17 +797,17 @@ class model
         return $row['total'];
     }
 
-    public function getNumberResortById($id,$resort_type_clause, $sort_by_clause)
+    public function getNumberResortById($id, $resort_type_clause, $sort_by_clause)
     {
-        $sql = "SELECT COUNT(id) as total FROM resort WHERE id_city IN (SELECT city.id FROM city, country WHERE city.id_country = country.id AND country.id = " . $id . " ".$resort_type_clause.$sort_by_clause.")";
+        $sql = "SELECT COUNT(id) as total FROM resort WHERE id_city IN (SELECT city.id FROM city, country WHERE city.id_country = country.id AND country.id = " . $id . " " . $resort_type_clause . $sort_by_clause . ")";
         $result = $this->db->query($sql);
         $row = mysqli_fetch_assoc($result);
         return $row['total'];
     }
 
-    public function getNumberResortByIdCity($id,$resort_type_clause, $sort_by_clause)
+    public function getNumberResortByIdCity($id, $resort_type_clause, $sort_by_clause)
     {
-        $sql = "SELECT COUNT(id) as total FROM resort WHERE id_city = " . $id . " ".$resort_type_clause.$sort_by_clause."";
+        $sql = "SELECT COUNT(id) as total FROM resort WHERE id_city = " . $id . " " . $resort_type_clause . $sort_by_clause . "";
         $result = $this->db->query($sql);
         $row = mysqli_fetch_assoc($result);
         return $row['total'];
@@ -822,7 +831,7 @@ class model
 
     public function getAllResortPageById($id, $offset, $items, $resort_type_clause, $sort_by_clause)
     {
-        $sql = "SELECT * FROM resort, resort_image, resort_language WHERE resort.id = resort_image.id_resort AND resort_language.id_resort = resort.id AND resort_language.language = '" . $_SESSION['lang'] . "' ".$resort_type_clause.$sort_by_clause." AND id_city IN (SELECT city.id FROM city, country WHERE city.id_country = country.id AND country.id =" . $id . ") GROUP BY resort.id ORDER BY resort.id ASC LIMIT " . $offset . "," . $items;
+        $sql = "SELECT * FROM resort, resort_image, resort_language WHERE resort.id = resort_image.id_resort AND resort_language.id_resort = resort.id AND resort_language.language = '" . $_SESSION['lang'] . "' " . $resort_type_clause . $sort_by_clause . " AND id_city IN (SELECT city.id FROM city, country WHERE city.id_country = country.id AND country.id =" . $id . ") GROUP BY resort.id ORDER BY resort.id ASC LIMIT " . $offset . "," . $items;
         $result = mysqli_query($this->db, $sql);
         if (!$result) {
             die($sql);
@@ -838,7 +847,7 @@ class model
 
     public function getAllResortPageByIdCity($id, $offset, $items, $resort_type_clause, $sort_by_clause)
     {
-        $sql = "SELECT * FROM resort, resort_image, resort_language WHERE resort.id = resort_image.id_resort AND resort_language.id_resort = resort.id AND resort_language.language = '" . $_SESSION['lang'] . "' AND resort.id_city =" . $id . " ".$resort_type_clause.$sort_by_clause." GROUP BY resort.id ORDER BY resort.id ASC LIMIT " . $offset . "," . $items;
+        $sql = "SELECT * FROM resort, resort_image, resort_language WHERE resort.id = resort_image.id_resort AND resort_language.id_resort = resort.id AND resort_language.language = '" . $_SESSION['lang'] . "' AND resort.id_city =" . $id . " " . $resort_type_clause . $sort_by_clause . " GROUP BY resort.id ORDER BY resort.id ASC LIMIT " . $offset . "," . $items;
         $result = mysqli_query($this->db, $sql);
         if (!$result) {
             die($sql);
@@ -1072,7 +1081,7 @@ class model
         return mysqli_fetch_assoc($result);
     }
 
-    public function insertAccountUser($imageResgiter,$emailResgiter,$passwordResgiter,$nameResgiter,$addressResgiter,$numberPhoneResgiter,$sexResgiter)
+    public function insertAccountUser($imageResgiter, $emailResgiter, $passwordResgiter, $nameResgiter, $addressResgiter, $numberPhoneResgiter, $sexResgiter)
     {
         $bonus_money = $this->getMoneyBonus()['value'];
         $passwordResgiter_md5 = md5($passwordResgiter);
@@ -1081,12 +1090,18 @@ class model
         if (!$result) {
             die("Error in insertAccountUser");
         }
+        $last_id = mysqli_insert_id($this->db);
+        $date_now = date("Y-m-d");
+        $nameVoucher = "Voucher Resgiter";
+        $cost = 3;
+        $total = 1;
+        $this->insertVoucher($nameVoucher, $cost, $date_now, $last_id, $total);
         return $result;
     }
 
-    public function getListDiscount($id )
+    public function getListDiscount($id)
     {
-        $sql = "SELECT * FROM voucher WHERE id_user =".$id;
+        $sql = "SELECT * FROM voucher WHERE total > 0 AND id_user =" . $id;
         $result = mysqli_query($this->db, $sql);
         if (!$result) {
             die($sql);
@@ -1102,7 +1117,7 @@ class model
 
     public function getVoucherById($id)
     {
-        $sql = "SELECT * FROM voucher WHERE id =".$id;
+        $sql = "SELECT * FROM voucher WHERE id =" . $id;
         $result = mysqli_query($this->db, $sql);
 
         if (!$result) {
@@ -1110,4 +1125,81 @@ class model
         }
         return mysqli_fetch_assoc($result);
     }
+
+    public function insertVoucher($name, $cost, $date, $id_account, $total)
+    {
+        $sql = "INSERT INTO voucher(name,cost,date,id_user, total) VALUES ('{$name}',{$cost},'{$date}',{$id_account},{$total})";
+        $result = mysqli_query($this->db, $sql);
+        if (!$result) {
+            die("Error in insertVoucher");
+        }
+        return $result;
+    }
+
+    public function getNumberTotalVoucher($id_voucher)
+    {
+        $sql = "SELECT * FROM voucher WHERE id=" . $id_voucher;
+        $result = mysqli_query($this->db, $sql);
+
+        if (!$result) {
+            die("Error in getNumberTotalVoucher");
+        }
+        return mysqli_fetch_assoc($result);
+    }
+
+    public function decreaseNumberVoucher($id_voucher)
+    {
+        $totalNumberVoucher = $this->getNumberTotalVoucher($id_voucher)['total'] - 1;
+        $sql = "UPDATE voucher SET total = " . $totalNumberVoucher . " WHERE id=" . $id_voucher;
+        $result = mysqli_query($this->db, $sql);
+        if (!$result) {
+            die("Error in insertVoucher");
+        }
+        return $result;
+    }
+
+    /**
+     * @param $id_user
+     */
+    public function getTransactionHistory($id_user)
+    {
+        $sql = "SELECT book_now.created_at , book_now.id_book, book_now.exchange_rate, book_now.total_price, resort_language.name , resort_language.address FROM book_now,resort,resort_language WHERE book_now.id_resort = resort.id AND resort.id = resort_language.id_resort AND id_user =" . $id_user . " AND resort_language.language ='" . $_SESSION['lang'] . "'";
+        $result = mysqli_query($this->db, $sql);
+        if (!$result) {
+            die("Error in getTransactionHistory");
+        }
+        $list = array();
+        while ($row = mysqli_fetch_assoc($result)) {
+            $list[] = $row;
+        }
+        //remove out of memory
+        mysqli_free_result($result);
+        return $list;
+    }
+
+    public function getDetailTransactionByIdBook($id_book,$is_voucher)
+    {
+        if ($is_voucher == false)
+            $sql = "SELECT book_now.note, book_now.start_date,book_now.end_date,book_now.adults,book_now.childs,book_now.room,book_now.status ,book_now.created_at , book_now.id_book, book_now.exchange_rate, book_now.total_price, resort_language.name resort_name, resort_language.address FROM book_now,resort,resort_language WHERE  book_now.id_resort = resort.id AND resort.id = resort_language.id_resort AND book_now.id_book =" . $id_book . " AND resort_language.language ='{$_SESSION['lang']}'";
+        else
+            $sql = "SELECT book_now.note, book_now.start_date,book_now.end_date,book_now.adults,book_now.childs,book_now.room,book_now.status ,book_now.created_at , book_now.id_book, book_now.exchange_rate, book_now.total_price, resort_language.name resort_name, resort_language.address, voucher.name voucher_name, voucher.cost FROM book_now,resort,resort_language,voucher WHERE book_now.voucher_id = voucher.id AND book_now.id_resort = resort.id AND resort.id = resort_language.id_resort AND book_now.id_book =" . $id_book . " AND resort_language.language ='{$_SESSION['lang']}'";
+        $result = mysqli_query($this->db, $sql);
+
+        if (!$result) {
+            die($sql);
+        }
+        return mysqli_fetch_assoc($result);
+    }
+
+    public function getDetailTransaction($id_book)
+    {
+        $sql = "SELECT * FROM book_now WHERE id_book =" . $id_book;
+        $result = mysqli_query($this->db, $sql);
+
+        if (!$result) {
+            die($sql);
+        }
+        return mysqli_fetch_assoc($result);
+    }
+
 }//class

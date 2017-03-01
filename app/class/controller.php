@@ -205,7 +205,9 @@ class controller
         else if ($this->control->isHasNumberPhone($numberPhoneResgiter) != "")
             echo 1;
         else if ($this->control->insertAccountUser($imageResgiter, $emailResgiter, $passwordResgiter, $nameResgiter, $addressResgiter, $numberPhoneResgiter, $sexResgiter))
+        {
             echo 2;
+        }
         else
             echo 3;
     }
@@ -341,7 +343,11 @@ class controller
             $note = $_POST["note"];
             $id_voucher = $_POST["voucher"];
             if ($this->control->bookNow($id_user, $id_resort, $date_start, $date_end, $room, $adults, $childs, $note, $id_voucher))
+            {
+                if($id_voucher!=0)
+                    $this->control->decreaseNumberVoucher($id_voucher);
                 echo "true";
+            }
             else echo "false";
         }
     }
@@ -1069,6 +1075,41 @@ class controller
         $id_user = $_POST['id'];
         $list_discount = $this->control->getListDiscount($id_user);
         echo json_encode($list_discount);
+    }
+
+    public function getTransactionHistory()
+    {
+        $listTransactionHistory = $this->control->getTransactionHistory($_SESSION['id']);
+        $dssbanner = $this->control->laydanhsach("banner");
+        $dssliderw = $this->control->laydanhsachslider();
+        $dsKhuNghiDuongBanner = array();
+        foreach ($dssbanner as $banner) {
+            $khuNghiDuongBanner = $this->control->layThongTinChiTietKhuNghiDuong($banner['idkhunghiduong']);
+            $dsKhuNghiDuongBanner[] = $khuNghiDuongBanner;
+        }
+        require_once("view/TransactionHistory.php");
+    }
+
+    public function detailTransaction()
+    {
+        if (isset($this->params[0])) {
+            $id_book = $this->params[0];
+            $dssbanner = $this->control->laydanhsach("banner");
+            $dssliderw = $this->control->laydanhsachslider();
+            $dsKhuNghiDuongBanner = array();
+            foreach ($dssbanner as $banner) {
+                $khuNghiDuongBanner = $this->control->layThongTinChiTietKhuNghiDuong($banner['idkhunghiduong']);
+                $dsKhuNghiDuongBanner[] = $khuNghiDuongBanner;
+            }
+            $is_voucher = false;
+            $id_voucher = $this->control->getDetailTransaction($id_book)['voucher_id'];
+            if($id_voucher != NULL)
+                $is_voucher = true;
+            $transaction = $this->control->getDetailTransactionByIdBook($id_book,$is_voucher);
+            require_once("view/TransactionDetail.php");
+        }
+        else
+            $this->getTransactionHistory();
     }
 
 }//class

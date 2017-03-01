@@ -391,3 +391,9 @@ h2 {
     overflow: hidden;
     height: 55px;
 }
+
+.a_read_more{
+    color: #333;
+    text-decoration: none;
+    font-weight: bold;
+}

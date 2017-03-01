@@ -144,16 +144,17 @@
 
                         }
                     }).done(function (data) {
+                        var list_voucher = document.getElementById("list_voucher");
+                        for (i = 0; i < list_voucher.length; i++) {
+                            list_voucher.remove(i);
+                        }
+                        var option = document.createElement("option");
+                        option.text = "";
+                        option.value = 0;
+                        option.id = 0;
+                        list_voucher.add(option);
                         if (data.length > 0) {
-                            var list_voucher = document.getElementById("list_voucher");
-                            for (i = 0; i < list_voucher.length; i++) {
-                                list_voucher.remove(i);
-                            }
-                            var option = document.createElement("option");
-                            option.text = "";
-                            option.value = 0;
-                            option.id = 0;
-                            list_voucher.add(option);
+
                             $.each(data, function (i, val) {
                                 var option = document.createElement("option");
                                 option.text = val.name + " - "+val.cost +" USD";
