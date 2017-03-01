@@ -157,10 +157,14 @@ class model
         return mysqli_query($this->db, $sql);
     }
 
-    public function bookNow($id_user, $id_resort, $date_start, $date_end,$room, $adults, $childs ,$note)
+    public function bookNow($id_user, $id_resort, $date_start, $date_end,$room, $adults, $childs ,$note, $id_voucher)
     {
+        $resort_price = $this->getDetailsResort($id_resort)['price'];
+        $exchange_rate = $this->getExchangeRates()['value'];
+        $value_voucher = $this->getVoucherById($id_voucher)['cost'];
+        $total_price = ($resort_price * $room) - $value_voucher;
         $date_created = date("Y/m/d");
-        $sql = "insert into book_now(id_user,id_resort,note,start_date, end_date, adults, childs, room, status, created_at) values ({$id_user},{$id_resort},'{$note}','{$date_start}','{$date_end}',{$adults},{$childs},{$room},0,'{$date_created}')";
+        $sql = "insert into book_now(id_user,id_resort,note,start_date, end_date, adults, childs, room, status, created_at, voucher_id, updated_at, exchange_rate, total_price, resort_price, discount) values ({$id_user},{$id_resort},'{$note}','{$date_start}','{$date_end}',{$adults},{$childs},{$room},0,'{$date_created}',{$id_voucher},'{$date_created}',{$exchange_rate},{$total_price},{$resort_price},{$value_voucher})";
         return mysqli_query($this->db, $sql);
     }
 
@@ -1078,5 +1082,32 @@ class model
             die("Error in insertAccountUser");
         }
         return $result;
+    }
+
+    public function getListDiscount($id )
+    {
+        $sql = "SELECT * FROM voucher WHERE id_user =".$id;
+        $result = mysqli_query($this->db, $sql);
+        if (!$result) {
+            die($sql);
+        }
+        $list = array();
+        while ($row = mysqli_fetch_assoc($result)) {
+            $list[] = $row;
+        }
+        //remove out of memory
+        mysqli_free_result($result);
+        return $list;
+    }
+
+    public function getVoucherById($id)
+    {
+        $sql = "SELECT * FROM voucher WHERE id =".$id;
+        $result = mysqli_query($this->db, $sql);
+
+        if (!$result) {
+            die("Error in isHasNumberPhone");
+        }
+        return mysqli_fetch_assoc($result);
     }
 }//class

@@ -287,16 +287,16 @@
                               id="loinhan"
                               placeholder="{NoiDung}" name="loinhan"></textarea>
                     </div>
-                    <p><span style="color: red;" id="thongbaoguilh"></span></p>
                 </div>
                 <div class="col-md-9"></div>
-                <div class="col-md-3" style="margin-top: -48px">
+                <div class="col-md-3" style="margin-top: -40px">
                     <div class="input-group" style="width:100%;margin-left: -15px;margin-top: -15px;">
                         <input type="submit" class="form-control"
                                style="width:100%;border:1px solid grey; border-radius:2px;"
                                aria-describedby="basic-addon1" id="btn_gui" value={Gui}>
                     </div>
                 </div>
+                <div class="col-md-12"><p><span style="color: red;" id="thongbaoguilh"></span></p></div>
             </section>
         </div>
         <script>var lang = '<?=$_SESSION['lang']?>'</script>

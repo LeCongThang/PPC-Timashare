@@ -17,12 +17,10 @@ class controller
         $this->params = $params;
         $this->lang = $lang;
         $_SESSION['lang'] = $lang;
-
     }//construct
 
     function index()
     {
-        $_SESSION['is_login'] = "false";
         $dssbanner = $this->control->laydanhsach("banner");
         $ds_video = $this->control->laydanhsach("video");
         $dssliderw = $this->control->laydanhsachslider();
@@ -341,12 +339,10 @@ class controller
             $adults = $_POST["adults"];
             $childs = $_POST["childs"];
             $note = $_POST["note"];
-            if ($this->control->bookNow($id_user, $id_resort, $date_start, $date_end, $room, $adults, $childs, $note)) {
-                $this->index();
-            }
-            {
-
-            }
+            $id_voucher = $_POST["voucher"];
+            if ($this->control->bookNow($id_user, $id_resort, $date_start, $date_end, $room, $adults, $childs, $note, $id_voucher))
+                echo "true";
+            else echo "false";
         }
     }
 
@@ -460,9 +456,95 @@ class controller
             $geometry = $data['results'][0]['geometry']['location'];
             $lat = $geometry['lat'];
             $lng = $geometry['lng'];
-            require_once("view/ResortDirectory.php");
         }
         require_once("view/ResortDirectory.php");
+    }
+
+    public function directResortDriectoryView()
+    {
+        $id = 0;
+        $resort_type = 0;
+        $sort_by = 0;
+        $listContinents = "";
+
+        if (isset($_POST["resort_type"]))
+            $resort_type = $_POST["resort_type"];
+        if (isset($_POST["sort_by"]))
+            $sort_by = $_POST["sort_by"];
+
+        if ($resort_type == 0) {
+            if ($sort_by == 0) {
+                $resort_type_clause = "";
+                $sort_by_clause = "";
+            } else if ($sort_by == 1) {
+                $date = new DateTime('now');
+                date_sub($date, date_interval_create_from_date_string('7 days'));
+                $resort_type_clause = "";
+                $sort_by_clause = " AND resort.date_created > '" . $date->format('Y-m-d') . "' ";
+            } else if ($sort_by == 2) {
+                $resort_type_clause = "";
+                $date = new DateTime('now');
+                $sort_by_clause = " AND resort.id IN (SELECT details_deal_resort.id_resort FROM `details_deal_resort` WHERE date_start <= '" . $date->format('Y-m-d') . "' AND date_end >= '" . $date->format('Y-m-d') . "')";
+            }
+        } else if ($resort_type == 1) {
+            if ($sort_by == 0) {
+                $resort_type_clause = " AND resort.id_resort_type = 0 ";
+                $sort_by_clause = "";
+            } else if ($sort_by == 1) {
+                $date = new DateTime('now');
+                date_sub($date, date_interval_create_from_date_string('7 days'));
+                $resort_type_clause = " AND resort.id_resort_type = 0 ";
+                $sort_by_clause = " AND resort.date_created > '" . $date->format('Y-m-d') . "' ";
+            } else if ($sort_by == 2) {
+                $resort_type_clause = " AND resort.id_resort_type = 0 ";
+                $date = new DateTime('now');
+                $sort_by_clause = " AND resort.id IN (SELECT details_deal_resort.id_resort FROM `details_deal_resort` WHERE date_start <= '" . $date->format('Y-m-d') . "' AND date_end >= '" . $date->format('Y-m-d') . "')";
+            }
+        } else if ($resort_type == 2) {
+            if ($sort_by == 0) {
+                $resort_type_clause = " AND resort.id_resort_type = 1 ";
+                $sort_by_clause = "";
+            } else if ($sort_by == 1) {
+                $date = new DateTime('now');
+                date_sub($date, date_interval_create_from_date_string('7 days'));
+                $resort_type_clause = " AND resort.id_resort_type = 1 ";
+                $sort_by_clause = " AND resort.date_created > '" . $date->format('Y-m-d') . "' ";
+            } else if ($sort_by == 2) {
+                $resort_type_clause = " AND resort.id_resort_type = 1 ";
+                $date = new DateTime('now');
+                $sort_by_clause = " AND resort.id IN (SELECT details_deal_resort.id_resort FROM `details_deal_resort` WHERE date_start <= '" . $date->format('Y-m-d') . "' AND date_end >= '" . $date->format('Y-m-d') . "')";
+            }
+        }
+
+        if (!isset($this->params[0])) {
+            $regions = array(array());
+            $listContinents = $this->control->getListContinents();
+            foreach ($listContinents as $key => $continent) {
+                $regions[$key] = $this->control->getListRegions($continent['id']);
+            }
+            $listResort = $this->control->getAllResort($resort_type_clause, $sort_by_clause);
+        } else {
+            $id = $this->params[0];
+            if (!isset($this->params[1])) {
+                $country_name = $this->control->getLongNameCountry($id);
+                $listCity = $this->control->getListCityByIdCountry($id);
+                $address = $country_name;
+                $listResort = $this->control->getResortByCountryName($id, $resort_type_clause, $sort_by_clause);
+            } else {
+                $id_city = $this->params[1];
+                $city = $this->control->getCityById($id_city);
+                $name_city = $city['name'];
+                $listResort = $this->control->getAllResortByIdCity($id_city, $resort_type_clause, $sort_by_clause);
+                $address = $name_city;
+            }
+            $url = 'http://maps.google.com/maps/api/geocode/json?address=' . urlencode($address);
+            $output = $this->control->httpGet($url);
+            $data = json_decode($output, true);
+            $geometry = $data['results'][0]['geometry']['location'];
+            $lat = $geometry['lat'];
+            $lng = $geometry['lng'];
+        }
+        require_once("view/ResortDirectoryView.php");
     }
 
     public function laySoLuongVideo()
@@ -646,6 +728,7 @@ class controller
         $listImageResort = $this->control->getListImageResort($id);
         $lat = $resort['lat'];
         $lng = $resort['lng'];
+
         require_once("view/DetailsResort.php");
     }
 
@@ -979,6 +1062,13 @@ class controller
                 header('location:' . BASE_URL . $this->lang . "/controller/index");
             }
         }
+    }
+
+    public function getListDiscount()
+    {
+        $id_user = $_POST['id'];
+        $list_discount = $this->control->getListDiscount($id_user);
+        echo json_encode($list_discount);
     }
 
 }//class

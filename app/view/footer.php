@@ -40,11 +40,52 @@
         });
 
         // start submit search type and sort by resort
-        $("#sort_by").change(function () {
-            resort_sort.submit();
+        $(document).on('change', "#sort_by", function () {
+//            resort_sort.submit();
+            var sort_by_select = document.getElementById("sort_by");
+            var sort_by = sort_by_select.options[sort_by_select.selectedIndex].value;
+            var resort_type_select = document.getElementById("resort_type");
+            var resort_type = resort_type_select.options[resort_type_select.selectedIndex].value;
+            if (sort_by != "" && resort_type != "") {
+                $.ajax({
+                    url: '<?=isset($link) ? $link : ""?>',
+                    type: "POST",
+                    cache: false,
+                    data: {
+                        "sort_by": sort_by,
+                        "resort_type": resort_type
+                    },
+                    success: function (dulieu) {
+                        $("#resort_directory_main").html(dulieu);
+                    }
+                }).done(function (data) {
+                });
+                return true;
+            }
+
         });
-        $("#resort_type").change(function () {
-            resort_sort.submit();
+        $(document).on('change', "#resort_type", function () {
+//            resort_sort.submit();
+            var sort_by_select = document.getElementById("sort_by");
+            var sort_by = sort_by_select.options[sort_by_select.selectedIndex].value;
+            var resort_type_select = document.getElementById("resort_type");
+            var resort_type = resort_type_select.options[resort_type_select.selectedIndex].value;
+            if (sort_by != "" && resort_type != "") {
+                $.ajax({
+                    url: '<?=isset($link) ? $link : ""?>',
+                    type: "POST",
+                    cache: false,
+                    data: {
+                        "sort_by": sort_by,
+                        "resort_type": resort_type
+                    },
+                    success: function (dulieu) {
+                        $("#resort_directory_main").html(dulieu);
+                    }
+                }).done(function (data) {
+                });
+                return true;
+            }
         });
         // end submit search type and sort by resort
 
@@ -65,7 +106,7 @@
         // end code toggle question
 
         //All Modal
-        var mainModal = "" ;
+        var mainModal = "";
         var modal = document.getElementById('ModalDangNhap');
         var modaldangky = document.getElementById('ModalDangKy');
         var modalxemthongtin = document.getElementById('ModalXemThongTin');
@@ -87,10 +128,44 @@
 
         if (btnDatCho != null) {
             btnDatCho.onclick = function () {
-                var is_login = <?=$_SESSION["is_login"]?>;
-                if(is_login == true)
+                var is_login = <?php echo isset($_SESSION['tendangnhap']) ? "true" : "false"?>;
+
+                if (is_login == true){
                     mainModal = modaldatcho;
-                else {
+                    $.ajax({
+                        url:  '<?= $_SESSION['lang']?>' + '/controller/getListDiscount',
+                        type: "POST",
+                        dataType: "json",
+                        cache: false,
+                        data: {
+                            "id": '<?= isset($_SESSION['id'])?$_SESSION["id"]:""?>'
+                        },
+                        success: function (dulieu) {
+
+                        }
+                    }).done(function (data) {
+                        if (data.length > 0) {
+                            var list_voucher = document.getElementById("list_voucher");
+                            for (i = 0; i < list_voucher.length; i++) {
+                                list_voucher.remove(i);
+                            }
+                            var option = document.createElement("option");
+                            option.text = "";
+                            option.value = 0;
+                            option.id = 0;
+                            list_voucher.add(option);
+                            $.each(data, function (i, val) {
+                                var option = document.createElement("option");
+                                option.text = val.name + " - "+val.cost +" USD";
+                                option.value = val.id;
+                                option.id = val.id;
+                                list_voucher.add(option);
+                            });
+                        }
+                    });
+                }
+                else
+                {
                     mainModal = modal;
                     alert("Mời bạn đăng nhập trước khi đặt chỗ");
                 }
@@ -108,8 +183,6 @@
                 return true;
             }
         }
-
-
 
 
         $('#hrefXemThongTin').click(function () {
@@ -156,12 +229,10 @@
             }
             if (event.target == modaldatcho) {
                 modaldatcho.style.display = "none";
-            } if (event.target == modaldoimatkhau) {
+            }
+            if (event.target == modaldoimatkhau) {
                 modaldoimatkhau.style.display = "none";
             }
-
-
-
         }
 
         //Button close Modal
@@ -169,7 +240,6 @@
             modal.style.display = "none";
             $('#thongbaodn').text("");
         });
-
 
 
         $('#btnThoatQuenMatKhau').click(function () {

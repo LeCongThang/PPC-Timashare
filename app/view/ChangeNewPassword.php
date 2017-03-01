@@ -23,7 +23,7 @@
             <p style="text-align: center;margin-top: 10px;margin-bottom:10px"><span style="color: red;" id="annouce_change_newpass"></span></p>
             <div class="row">
                 <div class="col-md-2 col-md-offset-5" style="text-align: center;margin-top: 10px;margin-bottom:10px" >
-                    <button type="submit" id="btn_change_newpass" name="btn_submit" class="btn btn-primary">{NutDoiMatKhau}
+                    <button type="submit" id="btn_change_newpass" name="btn_submit" class="btn btn-primary btnBookNow" style="margin-top: 0px">{NutDoiMatKhau}
                     </button>
                 </div>
             </div>

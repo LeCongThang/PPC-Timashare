@@ -39,6 +39,7 @@
             } else {
                 sucessfull = false;
             }
+
         }
 
         function showPosition(position) {
@@ -48,6 +49,8 @@
         }
 
         getLocation();
+
+
         //=============================================
         //Khoi tao cac ham can thi khi Plugin duoc su dung
         //=============================================

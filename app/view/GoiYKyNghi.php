@@ -2,7 +2,7 @@
 <script>var lang = '<?=$_SESSION['lang']?>'</script>
 <script>var base_dir = '<?=BASE_DIR?>'</script>
 <script>var base_url = '<?=BASE_URL?>'</script>
-<script> var sucessfull = true </script>
+<script>var sucessfull = true </script>
 <script type="text/javascript" src="<?= BASE_DIR ?>js/paging_resort_hint.js"></script>
 
 <div class="container">
@@ -19,12 +19,5 @@
             <div id="row_hint"></div>
         </div>
     </div>
-
-    <!--            <div >-->
-    <!--                <div class="goPrevious_connect glyphicon glyphicon-triangle-left">Trước Tiếp theo</div>-->
-    <!--                <div class="goNext_connect glyphicon glyphicon-triangle-right"></div>-->
-    <!--            </div>-->
-
-
 </div>
 <?php include 'footer.php'; ?>
