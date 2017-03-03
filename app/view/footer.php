@@ -64,6 +64,7 @@
             }
 
         });
+
         $(document).on('change', "#resort_type", function () {
 //            resort_sort.submit();
             var sort_by_select = document.getElementById("sort_by");
@@ -105,168 +106,98 @@
 
         // end code toggle question
 
-        //All Modal
-        var mainModal = "";
-        var modal = document.getElementById('ModalDangNhap');
-        var modaldangky = document.getElementById('ModalDangKy');
-        var modalxemthongtin = document.getElementById('ModalXemThongTin');
-        var modalquenmatkhau = document.getElementById('ModalQuenMatKhau');
-        var modaldatcho = document.getElementById('ModalBookNow');
-        var modaldoimatkhau = document.getElementById('ModalDoiMatKhau');
-        var btn = document.getElementById('btnDangNhap');
-        var btnDatCho = document.getElementById('btnDatCho');
+        $("#btnDatCho").click(function () {
+            var is_login = <?php echo isset($_SESSION['tendangnhap']) ? "true" : "false"?>;
 
-        $('#hrefDoiMatKhau').click(function (e) {
-            e.preventDefault();
-            mainModal = modaldoimatkhau;
-            mainModal.style.display = "block";
-            $('#thongbaodoimatkhau').text("");
-            e.preventDefault();
-            return false;
+            if (is_login == true) {
+                $.ajax({
+                    url: '<?= $_SESSION['lang']?>' + '/controller/getListDiscount',
+                    type: "POST",
+                    dataType: "json",
+                    cache: false,
+                    data: {
+                        "id": '<?= isset($_SESSION['id']) ? $_SESSION["id"] : ""?>'
+                    },
+                    success: function (dulieu) {
+
+                    }
+                }).done(function (data) {
+                    var list_voucher = document.getElementById("list_voucher");
+                    for (i = 0; i < list_voucher.length; i++) {
+                        list_voucher.remove(i);
+                    }
+                    var option = document.createElement("option");
+                    option.text = "";
+                    option.value = 0;
+                    option.id = 0;
+                    list_voucher.add(option);
+                    if (data.length > 0) {
+
+                        $.each(data, function (i, val) {
+                            var option = document.createElement("option");
+                            option.text = val.name + " - " + val.cost + " USD";
+                            option.value = val.id;
+                            option.id = val.id;
+                            list_voucher.add(option);
+                        });
+                    }
+
+                    $("#ModalBookNow").modal();
+                    $('#thongbaodatcho').text("");
+                });
+            }
+            else {
+                alert("Mời bạn đăng nhập trước khi đặt chỗ");
+            }
+
+            return true;
         });
 
 
-        if (btnDatCho != null) {
-            btnDatCho.onclick = function () {
-                var is_login = <?php echo isset($_SESSION['tendangnhap']) ? "true" : "false"?>;
-
-                if (is_login == true){
-                    mainModal = modaldatcho;
-                    $.ajax({
-                        url:  '<?= $_SESSION['lang']?>' + '/controller/getListDiscount',
-                        type: "POST",
-                        dataType: "json",
-                        cache: false,
-                        data: {
-                            "id": '<?= isset($_SESSION['id'])?$_SESSION["id"]:""?>'
-                        },
-                        success: function (dulieu) {
-
-                        }
-                    }).done(function (data) {
-                        var list_voucher = document.getElementById("list_voucher");
-                        for (i = 0; i < list_voucher.length; i++) {
-                            list_voucher.remove(i);
-                        }
-                        var option = document.createElement("option");
-                        option.text = "";
-                        option.value = 0;
-                        option.id = 0;
-                        list_voucher.add(option);
-                        if (data.length > 0) {
-
-                            $.each(data, function (i, val) {
-                                var option = document.createElement("option");
-                                option.text = val.name + " - "+val.cost +" USD";
-                                option.value = val.id;
-                                option.id = val.id;
-                                list_voucher.add(option);
-                            });
-                        }
-                    });
-                }
-                else
-                {
-                    mainModal = modal;
-                    alert("Mời bạn đăng nhập trước khi đặt chỗ");
-                }
-                mainModal.style.display = "block";
-                $('#thongbaodatcho').text("");
-                return true;
-            }
-        }
-
-        if (btn != null) {
-            btn.onclick = function () {
-                mainModal = modal;
-                mainModal.style.display = "block";
-                $('#thongbaodn').text("");
-                return true;
-            }
-        }
-
-
         $('#hrefXemThongTin').click(function () {
-            mainModal = modalxemthongtin;
-            mainModal.style.display = "block";
-            $('#thongbao').text("");
+            $.ajax({
+                url: '<?= $_SESSION['lang']?>' + '/controller/getProFile',
+                type: "POST",
+                cache: false,
+                data: {
+                    "id": '<?= isset($_SESSION['id']) ? $_SESSION["id"] : ""?>'
+                },
+                success: function (dulieu) {
+                    $("#layoutXemThongTin").html(dulieu);
+                }
+            }).done(function (data) {
+                $("#ModalXemThongTin").modal();
+                $('#thongbao').text("");
+            });
+
             return false;
         });
 
         $('#hrefquenmatkhau').click(function () {
-            mainModal = modalquenmatkhau;
-            mainModal.style.display = "block";
-            modalquenmatkhau.style.display = "block";
+            $("#ModalQuenMatKhau").modal();
+            $('#thongbaoQuenMatKhau').text("");
             return false;
         });
 
-        $('#btnthoatdoimatkhau').click(function () {
-            mainModal.style.display = "none";
-        });
-
-        //-------------------------------------------------------------------------------------------------------------------
-        // Button X in modal
-        var span = document.getElementsByClassName("close")[0];// X for Modal dang ky
-
-        span.onclick = function () {
-            mainModal.style.display = "none";
-            $('#thongbaodn').text("");
-        }
-
-
-        // When the user clicks anywhere outside of the modal, close it
-        window.onclick = function (event) {
-            if (event.target == modal) {
-                modal.style.display = "none";
-            }
-            if (event.target == modaldangky) {
-                modaldangky.style.display = "none";
-            }
-            if (event.target == modalxemthongtin) {
-                modalxemthongtin.style.display = "none";
-            }
-            if (event.target == modalquenmatkhau) {
-                modalquenmatkhau.style.display = "none";
-            }
-            if (event.target == modaldatcho) {
-                modaldatcho.style.display = "none";
-            }
-            if (event.target == modaldoimatkhau) {
-                modaldoimatkhau.style.display = "none";
-            }
-        }
-
-        //Button close Modal
-        $('#btn_close').click(function () {
-            modal.style.display = "none";
-            $('#thongbaodn').text("");
-        });
-
-
-        $('#btnThoatQuenMatKhau').click(function () {
-            modalquenmatkhau.style.display = "none";
-        });
-
-
-        $('#btnHuyThongTin').click(function () {
-            modalxemthongtin.style.display = "none";
-        });
-
-        $('#btn_thoatdangkyknd').click(function () {
-            modaldatcho.style.display = "none";
-            $('#thongbaodn').text("");
-        });
 
         $('#hrefdangky').click(function () {
-            mainModal = modaldangky;
-            mainModal.style.display = "block";
+            $("#ModalDangKy").modal();
             $('#thongbao').text("");
             return false;
         });
 
-        $('#btn_thoatdangky').click(function () {
-            modaldangky.style.display = "none";
-            $('#thongbao').text("");
+        $('#btnDangNhap').click(function () {
+            $("#ModalDangNhap").modal();
+            $('#thongbaodn').text("");
+            return true;
+        });
+
+        $('#hrefDoiMatKhau').click(function (e) {
+            e.preventDefault();
+            $('#thongbaodoimatkhau').text("");
+            $("#ModalDoiMatKhau").modal();
+            e.preventDefault();
+            return false;
         });
     });
 

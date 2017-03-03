@@ -104,3 +104,5 @@ define("ThanhCong","Thành công");
 define("HuyBo","Hủy bỏ");
 define("ChuaDuyet","Chưa duyệt");
 define("TrangThai","Trạng thái");
+define("ThongTinCaNhan","Thông tin cá nhân");
+define("ThongTinDatCho","THÔNG TIN ĐẶT CHỖ");

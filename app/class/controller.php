@@ -8,6 +8,8 @@ class controller
     public $cname = "controller";
     public $lang = 'en';
 
+    const UPDATE_DIR = '../';
+
     function __construct($action, $params, $lang)
     {
         //function __construct($action, $params)
@@ -107,11 +109,25 @@ class controller
 
     private function uploadHinh()
     {
-        if (isset($_FILES['fileup'])) {
-            $error = $_FILES['fileup']['error'];
+        if (isset($_FILES['imgInp'])) {
+            $error = $_FILES['imgInp']['error'];
             if ($error == UPLOAD_ERR_OK) {
-                $tmp_name = $_FILES["fileup"]["tmp_name"];
-                $name = "img/" . time() . "_" . basename($_FILES["fileup"]["name"]);
+                $tmp_name = $_FILES["imgInp"]["tmp_name"];
+                $name = "img/" . time() . "_" . basename($_FILES["imgInp"]["name"]);
+                move_uploaded_file($tmp_name, self::UPDATE_DIR . $name);
+                return $name;
+            }
+        }
+        return null;
+    }
+
+    private function uploadHinhUpdate()
+    {
+        if (isset($_FILES['imgProFile'])) {
+            $error = $_FILES['imgProFile']['error'];
+            if ($error == UPLOAD_ERR_OK) {
+                $tmp_name = $_FILES["imgProFile"]["tmp_name"];
+                $name = "img/" . time() . "_" . basename($_FILES["imgProFile"]["name"]);
                 move_uploaded_file($tmp_name, self::UPDATE_DIR . $name);
                 return $name;
             }
@@ -180,6 +196,7 @@ class controller
             }
             echo "false";
         }
+
     }
 
     /**
@@ -208,6 +225,21 @@ class controller
         {
             echo 2;
         }
+        else
+            echo 3;
+    }
+
+    public function capNhatThongTin()
+    {
+        $imageUpdate = $this->uploadHinhUpdate();
+        if ($imageUpdate == null)
+            $imageUpdate = "NULL";
+        $nameUpdate = $_POST["nameUpdate"];
+        $addressUpdate = $_POST["addressUpdate"];
+        $numberPhoneUpdate = $_POST["numberPhoneUpdate"];
+        $sexUpdate = $_POST["sexUpdate"];
+        if ($this->control->UpdateAccountUser($imageUpdate,$nameUpdate, $addressUpdate, $numberPhoneUpdate, $sexUpdate))
+            echo 2;
         else
             echo 3;
     }
@@ -1110,6 +1142,15 @@ class controller
         }
         else
             $this->getTransactionHistory();
+    }
+
+    public function getProFile()
+    {
+        $id_account = $_POST['id'];
+        $my_profile = $this->control->getProFileByIdAccount($id_account);
+        $list_discount = $this->control->getListDiscount($id_account);
+        $exchange_rate = $this->control->getExchangeRates()['value'];
+        require_once("view/modalxemthongtincanhanview.php");
     }
 
 }//class

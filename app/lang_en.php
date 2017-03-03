@@ -106,3 +106,6 @@ define("ThanhCong","Complete");
 define("HuyBo","Cancel");
 define("ChuaDuyet","Unapproved");
 define("TrangThai","Status");
+define("ThongTinCaNhan","Profile");
+
+define("ThongTinDatCho","BOOK INFORMATION");

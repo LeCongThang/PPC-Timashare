@@ -76,13 +76,13 @@
                         <span id="result"></span>
                     </li>
                     <li><a href="<?= BASE_URL . $_SESSION['lang'] ?>/controller/index">{TrangChu}</a></li>
-                    <li><a href="<?=$_SESSION['lang'] ?>/#introduce">{GioiThieu}</a></li>
-                    <li><a href="<?=$_SESSION['lang'] ?>/#khunghiduong">{KhuNghiDuong}</a></li>
+                    <li><a href="<?= $_SESSION['lang'] ?>/#introduce">{GioiThieu}</a></li>
+                    <li><a href="<?= $_SESSION['lang'] ?>/#khunghiduong">{KhuNghiDuong}</a></li>
                 </ul>
                 <ul class="nav navbar-nav navbar-right" class="menuright">
-                    <li><a href="<?=$_SESSION['lang'] ?>/#thamgia">{ThamGia}</a></li>
-                    <li><a href="<?=$_SESSION['lang'] ?>/#trogiup">{TroGiup}</a></li>
-                    <li><a href="<?=$_SESSION['lang'] ?>/#lienhe">{LienHe}</a></li>
+                    <li><a href="<?= $_SESSION['lang'] ?>/#thamgia">{ThamGia}</a></li>
+                    <li><a href="<?= $_SESSION['lang'] ?>/#trogiup">{TroGiup}</a></li>
+                    <li><a href="<?= $_SESSION['lang'] ?>/#lienhe">{LienHe}</a></li>
                     <li>
                         <?php
                         if (!isset($_SESSION['tendangnhap']))
@@ -158,10 +158,10 @@
             <div class="row row-no-padding" id="row">
                 <?php
                 foreach ($dsKhuNghiDuongBanner as $key => $khuNghiDuongBanner) {
-                    echo '<div class="col-sm-12 col-sm-3">' ;
-                    if($key==0) echo'<div class="thumbnail" style="margin-left: 10px">';
-                    else if($key==3) echo'<div class="thumbnail" style="margin-right: 10px">';
-                    else echo'<div class="thumbnail">';
+                    echo '<div class="col-sm-12 col-sm-3">';
+                    if ($key == 0) echo '<div class="thumbnail" style="margin-left: 10px">';
+                    else if ($key == 3) echo '<div class="thumbnail" style="margin-right: 10px">';
+                    else echo '<div class="thumbnail">';
                     echo '<img src="' . BASE_DIR . $khuNghiDuongBanner['link'] . '">';
                     echo ' <div class="caption"><h6>' ?>{KhuNghiDuong2}<?php echo '</h6><h5>' . $khuNghiDuongBanner['ten'] . '</h5><p class ="content_banner">' . $khuNghiDuongBanner['thongtin'] . '</p>';
                     echo '<a href="' . BASE_URL . $_SESSION['lang'] . '/controller/loadingDetailsResort/' . $khuNghiDuongBanner['id'] . '" class="btn btn-default" id="btnreadmore">' ?>{TimHieuThem}<?php echo '</a></div></div></div>';
@@ -170,14 +170,16 @@
             </div><!--  End Row -->
         </div> <!-- end container -->
     </div>
-    <!--    Modal dang nhap -->
-    <?php include 'modaldangnhap.php'; ?>
-    <?php include 'modaldangky.php'; ?>
-    <?php include 'modaldoimatkhau.php'; ?>
-    <?php include 'modalquenmatkhau.php'; ?>
-    <div id="themkhunghiduong"></div><?php include 'modalthemkhunghiduong.php'; ?>
-    <div id="myProFile"></div>
-
+    <?php
+    if (!isset($_SESSION['id'])) {
+        include 'modaldangnhap.php';
+        include 'modaldangky.php';
+        include 'modalquenmatkhau.php';
+    } else {
+        include 'modalxemthongtincanhan.php';
+        include 'modaldoimatkhau.php';
+    }
+    ?>
 </header>
 
 <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"

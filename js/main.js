@@ -79,7 +79,6 @@ $(document).ready(function () {
         matkhaucu = $('#matkhaucu').val();
         matkhaumoi = $('#matkhaumoi').val();
         nhaplaimatkhaumoi = $('#nhaplaimatkhaumoi').val();
-        var modal_doi = document.getElementById("ModalDoiMatKhau");
         if (matkhaucu == "" || matkhaumoi == "") {
             $('#thongbaodoimatkhau').text("Hãy nhập đầy đủ thông tin");
             return false;
@@ -99,7 +98,7 @@ $(document).ready(function () {
                 },
                 success: function (dulieu) {
                     if (dulieu == true) {
-                        modal_doi.style.display = "none";
+                        $('#ModalDoiMatKhau').modal('toggle');
                         alert("Mật khẩu đã được thay đổi");
                     }
                     else {

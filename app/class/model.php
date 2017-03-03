@@ -1085,7 +1085,10 @@ class model
     {
         $bonus_money = $this->getMoneyBonus()['value'];
         $passwordResgiter_md5 = md5($passwordResgiter);
-        $sql = "INSERT INTO taikhoan(tendangnhap,matkhau,bonus_money,id_vaitro,hoten,diachi,dienthoai,sex,status,avatar) VALUES ('{$emailResgiter}','{$passwordResgiter_md5}','{$bonus_money}',1,'{$nameResgiter}','{$addressResgiter}','{$numberPhoneResgiter}',$sexResgiter,0,'{$imageResgiter}')";
+        if($imageResgiter != "NULL")
+            $sql = "INSERT INTO taikhoan(tendangnhap,matkhau,bonus_money,id_vaitro,hoten,diachi,dienthoai,sex,status,avatar) VALUES ('{$emailResgiter}','{$passwordResgiter_md5}','{$bonus_money}',1,'{$nameResgiter}','{$addressResgiter}','{$numberPhoneResgiter}',$sexResgiter,0,'{$imageResgiter}')";
+        else
+            $sql = "INSERT INTO taikhoan(tendangnhap,matkhau,bonus_money,id_vaitro,hoten,diachi,dienthoai,sex,status) VALUES ('{$emailResgiter}','{$passwordResgiter_md5}','{$bonus_money}',1,'{$nameResgiter}','{$addressResgiter}','{$numberPhoneResgiter}',$sexResgiter,0)";
         $result = mysqli_query($this->db, $sql);
         if (!$result) {
             die("Error in insertAccountUser");
@@ -1200,6 +1203,30 @@ class model
             die($sql);
         }
         return mysqli_fetch_assoc($result);
+    }
+
+    public function getProFileByIdAccount($id_account)
+    {
+        $sql = "SELECT * FROM taikhoan WHERE id =" . $id_account;
+        $result = mysqli_query($this->db, $sql);
+
+        if (!$result) {
+            die($sql);
+        }
+        return mysqli_fetch_assoc($result);
+    }
+
+    public function UpdateAccountUser($imageUpdate,$nameUpdate, $addressUpdate, $numberPhoneUpdate, $sexUpdate)
+    {
+        $sql = "UPDATE taikhoan SET hoten = '{$nameUpdate}', diachi = '{$addressUpdate}', dienthoai ='{$numberPhoneUpdate}', sex = {$sexUpdate}";
+        if($imageUpdate != "NULL")
+            $sql.=" , avatar ='{$imageUpdate}' ";
+        $sql.= " WHERE id =".$_SESSION['id'];
+        $result = mysqli_query($this->db, $sql);
+        if (!$result) {
+            die("Error in UpdateAccountUser");
+        }
+        return $result;
     }
 
 }//class

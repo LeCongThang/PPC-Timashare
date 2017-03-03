@@ -1,68 +1,74 @@
-<div id="ModalBookNow" class="modal">
-    <div class="modal-content">
-        <div class="modal-header">
-            <h3 style="text-align:center;"><b>THÔNG TIN ĐẶT CHỖ</b></h3>
-        </div>
-        <div class="modal-body">
-            <div class="form-group">
-                <div><h5><b>Từ ngày</b></h5></div>
-                <div>
-                    <div class='input-group date' id='datetimepicker6'>
-                        <input type='text' class="form-control" id="date_start"
-                               name="date_start"/>
-                        <span class="input-group-addon"><span
-                                class="glyphicon glyphicon-calendar"></span></span>
+<div class="modal fade bs-example-modal-lg" tabindex="-1" role="dialog" aria-labelledby="gridSystemModalLabel"
+     id="ModalBookNow">
+    <div class="modal-dialog modal-lg" role="document">
+        <div class="modal-content" style="margin: 0px;width: 100%;height: 100%">
+            <div class="modal-header">
+                <button type="button" class="close" data-dismiss="modal" aria-label="Close"><span
+                        aria-hidden="true">&times;</span></button>
+                <h3 style="text-align:center;" class="modal-title" id="gridSystemModalLabel">{ThongTinDatCho}</h3>
+            </div>
+            <div class="modal-body">
+                <div class="form-group">
+                    <div><h5><b>{NgayNhanPhong}</b></h5></div>
+                    <div>
+                        <div class='input-group date' id='datetimepicker6'>
+                            <input type='text' class="form-control" id="date_start"
+                                   name="date_start"/>
+                            <span class="input-group-addon"><span
+                                    class="glyphicon glyphicon-calendar"></span></span>
+                        </div>
                     </div>
                 </div>
-            </div>
-            <div class="form-group">
-                <div style="padding-left: 0px"><h5><b>Đến ngày</b></h5></div>
-                <div>
-                    <div class='input-group date' id='datetimepicker7'>
-                        <input type='text' class="form-control" id="date_end"
-                               name="date_end"/>
-                        <span class="input-group-addon"><span
-                                class="glyphicon glyphicon-calendar"></span></span>
+                <div class="form-group">
+                    <div style="padding-left: 0px"><h5><b>{NgayTraPhong}</b></h5></div>
+                    <div>
+                        <div class='input-group date' id='datetimepicker7'>
+                            <input type='text' class="form-control" id="date_end"
+                                   name="date_end"/>
+                            <span class="input-group-addon"><span
+                                    class="glyphicon glyphicon-calendar"></span></span>
+                        </div>
                     </div>
                 </div>
-            </div>
-            <div class="form-group">
-                <label for="comment">Số phòng</label>
-                <input type="number" class="form-control" min="0" max="100" step="1" value="0" name="room" id="room">
-            </div>
-            <div class="form-group">
-                <label for="comment">Số người lớn</label>
-                <input type="number" class="form-control" min="0" max="100" step="1" value="0" name="adults"
-                       id="adults">
-            </div>
-            <div class="form-group">
-                <label for="comment">Số trẻ em</label>
-                <input type="number" class="form-control" min="0" max="100" step="1" value="0" name="childs"
-                       id="childs">
-            </div>
-            <div class="form-group">
-                <label for="comment">Voucher</label>
-                <select class="form-control" id="list_voucher">
+                <div class="form-group">
+                    <label for="comment">{SoLuongPhong}</label>
+                    <input type="number" class="form-control" min="1" max="100" step="1" value="1" name="room"
+                           id="room">
+                </div>
+                <div class="form-group">
+                    <label for="comment">{NguoiLon}</label>
+                    <input type="number" class="form-control" min="1" max="100" step="1" value="1" name="adults"
+                           id="adults">
+                </div>
+                <div class="form-group">
+                    <label for="comment">{TreNho}</label>
+                    <input type="number" class="form-control" min="0" max="100" step="1" value="0" name="childs"
+                           id="childs">
+                </div>
+                <div class="form-group">
+                    <label for="comment">{TheUuDai}</label>
+                    <select class="form-control" id="list_voucher">
 
-                </select>
-            </div>
-            <div class="form-group">
-                <label for="comment">Ghi Chú:</label>
-                <textarea class="form-control" rows="5" id="note" name="note"
-                          placeholder="Tối đa 200 kí tự"></textarea>
-            </div>
-            <input id="resort_id" name="resort_id" value="<?= $resort['id']; ?>" type="hidden">
-            <p><span style="color: red;" id="thongbaodatcho"></span></p>
-            <div class="modal-footer text-right">
-                <button type="submit" id="btn_dangkyknd" name="btn_dangkyknd" class="btn btn-default">
-                    Xác nhận
-                </button>
-                <button type="button" id="btn_thoatdangkyknd" class="btn btn-default">Thoát</button>
+                    </select>
+                </div>
+                <div class="form-group">
+                    <label for="comment">{GhiChu}</label>
+                    <textarea class="form-control" rows="5" id="note" name="note"></textarea>
+                </div>
+                <input id="resort_id" name="resort_id" value="<?= $resort['id']; ?>" type="hidden">
+                <p><span style="color: red;" id="thongbaodatcho"></span></p>
+                <div class="modal-footer text-right">
+                    <button type="submit" id="btn_dangkyknd" name="btn_dangkyknd"class="btn btn-primary">
+                       {NutDoiMatKhau}
+                    </button>
+                    <button type="button" id="btn_thoatdangkyknd" class="btn btn-default" data-dismiss="modal">{Thoat}</button>
+                </div>
             </div>
         </div>
+        <!-- Modal content -->
     </div>
-    <!-- Modal content -->
 </div>
+
 <script type="text/javascript" src="<?= BASE_DIR ?>js/moment.js"></script>
 <script type="text/javascript" src="<?= BASE_DIR ?>js/collapse.js"></script>
 <script type="text/javascript" src="<?= BASE_DIR ?>js/transition.js"></script>
@@ -88,7 +94,6 @@
         $('#btn_dangkyknd').click(function () {
             var list_voucher = document.getElementById("list_voucher");
             var voucher = list_voucher.options[list_voucher.selectedIndex].value;
-            var modal_book_now = document.getElementById("ModalBookNow");
             var room = $('#room').val();
             var resort_id = $('#resort_id').val();
             var date_start = $('#date_start').val();
@@ -114,14 +119,14 @@
                         "childs": childs,
                         "note": note,
                         "voucher": voucher,
-                        "room":room
+                        "room": room
                     },
                     success: function (dulieu) {
                         if (dulieu == true) {
                             alert("Thành công");
                             location.reload();
-                            modal_book_now.style.display = "none";
-
+                            $("#ModalBookNow").toggle();
+                            $('#thongbaodatcho').text("");
                         }
                         else
                             alert("Thất bại, mời bạn thử lại");

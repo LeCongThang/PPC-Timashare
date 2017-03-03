@@ -1,19 +1,30 @@
-<div id="ModalQuenMatKhau" class="modal">
-    <div class="modal-content">
-        <div class="modal-header">
-            <h3 style="text-align:center;"><b>{ForgotPasswordUpper}</b></h3>
-        </div>
-        <div class="modal-body">
-            <div class="input-group" id="banner_5">
-                <span class="input-group-addon"><i class="glyphicon glyphicon-user"></i></span>
-                <input id="tendangnhapll" type="text" class="form-control" name="tendangnhapll"
-                       placeholder='{TenDangNhap}' required>
+<div id="ModalQuenMatKhau" class="modal fade bs-example-modal-lg" tabindex="-1" role="dialog"
+     aria-labelledby="gridSystemModalLabel">
+    <div class="modal-dialog modal-lg" role="document">
+        <div class="modal-content" style="margin: 0px;width: 100%;height: 100%">
+            <div class="modal-header">
+                <button type="button" class="close" data-dismiss="modal" aria-label="Close"><span
+                        aria-hidden="true">&times;</span></button>
+                <h3 style="text-align:center;" class="modal-title" id="gridSystemModalLabel">{ForgotPasswordUpper}</h3>
             </div>
-            <p><span style="color: red;" id="thongbaoQuenMatKhau"></span></p>
-            <div class="modal-footer text-right">
-                <button type="submit" id="btnQuenMatKhau" name="btn_submit" class="btn btn-default">{Gui}
-                </button>
-                <button type="button" id="btnThoatQuenMatKhau" class="btn btn-default">{Thoat}</button>
+            <div class="modal-body">
+                <div class="row">
+                    <div class="col-md-12 col-sm-12 col-xs-12 col-lg-12">
+                        <div class="input-group" id="banner_5">
+                            <span class="input-group-addon"><i class="glyphicon glyphicon-user"></i></span>
+                            <input id="tendangnhapll" type="text" class="form-control" name="tendangnhapll"
+                                   placeholder='{TenDangNhap}' required>
+                        </div>
+                    </div>
+                </div>
+                <p><span style="color: red;" id="thongbaoQuenMatKhau"></span></p>
+                <div class="modal-footer text-right">
+                    <button type="submit" id="btnQuenMatKhau" name="btn_submit" class="btn btn-primary">{Gui}
+                    </button>
+                    <button type="button" id="btnThoatQuenMatKhau" class="btn btn-default" data-dismiss="modal">
+                        {Thoat}
+                    </button>
+                </div>
             </div>
         </div>
     </div>

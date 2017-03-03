@@ -125,6 +125,8 @@ $str = str_replace("{ThanhCong}", ThanhCong, $str);
 $str = str_replace("{HuyBo}", HuyBo, $str);
 $str = str_replace("{ChuaDuyet}", ChuaDuyet, $str);
 $str = str_replace("{TrangThai}", TrangThai, $str);
+$str = str_replace("{ThongTinCaNhan}", ThongTinCaNhan, $str);
+$str = str_replace("{ThongTinDatCho}", ThongTinDatCho, $str);
 echo $str;
 
 
