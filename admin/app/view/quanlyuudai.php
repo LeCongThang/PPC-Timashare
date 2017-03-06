@@ -22,8 +22,8 @@
 <div class="wrapper">
 
     <!-- <header class="main-header"> -->
-
-    <!-- Left side column. contains the logo and sidebar -->
+    <?php require 'app/view/header.php' ?>
+    <!-- Left side column. contains the  logo and sidebar -->
     <?php require 'partials/slider-bar.php' ?>
 
     <!-- Content Wrapper. Contains page content -->

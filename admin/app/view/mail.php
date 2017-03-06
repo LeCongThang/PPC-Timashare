@@ -20,6 +20,7 @@
 </head>
 <body class="hold-transition skin-blue sidebar-mini">
 <div class="wrapper" style="height: 1000px;">
+    <?php require 'app/view/header.php' ?>
     <?php require 'partials/slider-bar.php' ?>
     <div class="content-wrapper">
         <!-- Content Header (Page header) -->
@@ -157,30 +158,30 @@
     </div>
     <!-- /.content-wrapper -->
 
-    <footer class="main-footer">
-        <div class="pull-right hidden-xs">
-            <b>Version</b> 2.3.6
-        </div>
-        <strong>Copyright &copy; 2014-2016 <a href="http://almsaeedstudio.com">Almsaeed Studio</a>.</strong> All rights
-        reserved.
-    </footer>
-
-
 </div>
-<!-- ./wrapper -->
+<footer class="main-footer">
+    <div class="pull-right hidden-xs">
+        <b>Version</b> 2.3.6
+    </div>
+    <strong>Copyright &copy; 2014-2016 <a href="http://almsaeedstudio.com">Almsaeed Studio</a>.</strong> All rights
+    reserved.
+</footer>
+
+
 <!-- jQuery 2.2.3 -->
-
-
+<script src="<?= BASE_DIR ?>plugins/jQuery/jquery-2.2.3.min.js"></script>
+<!-- Bootstrap 3.3.6 -->
+<script src="<?= BASE_DIR ?>js/bootstrap.min.js"></script>
 <!-- Slimscroll -->
 <script src="<?= BASE_DIR ?>plugins/slimScroll/jquery.slimscroll.min.js"></script>
 <!-- FastClick -->
 <script src="<?= BASE_DIR ?>plugins/fastclick/fastclick.js"></script>
-
+<!-- AdminLTE App -->
+<script src="<?= BASE_DIR ?>js/app.min.js"></script>
+<!-- AdminLTE for demo purposes -->
+<script src="<?= BASE_DIR ?>js/demo.js"></script>
 <!-- iCheck -->
 <script src="<?= BASE_DIR ?>plugins/iCheck/icheck.min.js"></script>
-<!-- Bootstrap WYSIHTML5 -->
-<script src="<?= BASE_DIR ?>plugins/bootstrap-wysihtml5/bootstrap3-wysihtml5.all.min.js"></script>
-<!-- Page Script -->
 
 <script type="text/javascript" src="<?= BASE_DIR ?>ckeditor/ckeditor.js"></script>
 </body>

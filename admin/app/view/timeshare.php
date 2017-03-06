@@ -22,7 +22,7 @@
 <div class="wrapper">
 
     <!-- <header class="main-header"> -->
-
+    <?php require 'app/view/header.php' ?>
     <!-- Left side column. contains the logo and sidebar -->
     <?php require 'partials/slider-bar.php' ?>
 
@@ -108,8 +108,6 @@
                         </div>
                         <!-- /. box -->
                     </div>
-
-
                 </form>
                 <!-- /.col -->
             </div>

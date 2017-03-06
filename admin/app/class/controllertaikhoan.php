@@ -70,8 +70,6 @@ class controllertaikhoan
         if (!isset($_SESSION['tendangnhapadmin']))
             header('location:' . BASE_URL_ADMIN . "controlleradmin/index");
         $ds_tai_khoan = $this->controllertaikhoan->laydanhsachtaikhoan();
-        $ds_tai_khoan_dk = $this->controllertaikhoan->laydanhsachtaikhoandk();
-        $ds_tai_khoan_dk_da_duyet = $this->controllertaikhoan->laydanhsachtaikhoandk_daduyet();
         require_once("app/view/quanlytaikhoan.php");
     }
 

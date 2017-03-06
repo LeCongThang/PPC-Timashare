@@ -20,6 +20,7 @@
 </head>
 <body class="hold-transition skin-blue sidebar-mini">
 <div class="wrapper">
+    <?php require 'app/view/header.php' ?>
 
     <!-- Left side column. contains the logo and sidebar -->
     <?php require 'partials/slider-bar.php' ?>
@@ -47,177 +48,56 @@
 
                             </div>
                         </div>
-                        <div class="bs-example bs-example-tabs" data-example-id="togglable-tabs">
-                            <ul class="nav nav-tabs" id="myTabs" role="tablist">
-                                <li role="presentation" class="active"><a href="#vi" id="vi-tab" role="tab"
-                                                                          data-toggle="tab"
-                                                                          aria-controls="gioithieu_vi"
-                                                                          aria-expanded="true">Tài Khoản</a></li>
-                                <li role="presentation" class=""><a href="#en" role="tab" id="en-tab"
-                                                                    data-toggle="tab"
-                                                                    aria-controls="gioithieu_en"
-                                                                    aria-expanded="false">Tài khoản đang chờ xét
-                                        duyệt</a></li>
+                        <div class="box-body">
+                            <table class="table">
+                                <thead>
+                                <tr>
+                                    <td>Tên đăng nhập</td>
+                                    <td>Họ tên</td>
+                                    <td>Địa chỉ</td>
+                                    <td>Điện thoại</td>
 
-                                <li role="presentation" class=""><a href="#tkdaduyet" role="tab" id="en-tab"
-                                                                    data-toggle="tab"
-                                                                    aria-controls="gioithieu_en"
-                                                                    aria-expanded="false">Tài khoản đã
-                                        duyệt</a></li>
-                            </ul>
-                            <div class="tab-content" id="myTabContent">
-                                <div class="tab-pane fade active in" role="tabpanel" id="vi"
-                                     aria-labelledby="vi-tab">
-                                    <!-- /.box-header -->
-                                    <div class="box-body">
-                                        <table class="table">
-                                            <thead>
-                                            <tr>
-                                                <td>Tên đăng nhập</td>
-                                                <td>Họ tên</td>
-                                                <td>Địa chỉ</td>
-                                                <td>Điện thoại</td>
+                                    <td></td>
+                                    <td></td>
+                                </tr>
+                                </thead>
+                                <tbody>
+                                <div class="row text-center">
+                                    <?php
+                                    foreach ($ds_tai_khoan as $key => $item_taikhoan) {
+                                        ?>
+                                        <tr>
+                                            <form
+                                                action="<?= BASE_URL_ADMIN ?>controllertaikhoan/layThongTinUser/<?php echo $item_taikhoan['tendangnhap']; ?>"
+                                                method="POST">
+                                                <input type="hidden" id="txt1" name="txt1"
+                                                       value="<?php echo $item_taikhoan['tendangnhap']; ?>">
+                                                <input type="hidden" name="txt3"
+                                                       value="<?php echo $item_taikhoan['hoten']; ?>">
+                                                <input type="hidden" name="txt4"
+                                                       value="<?php echo $item_taikhoan['diachi']; ?>">
+                                                <input type="hidden" name="txt5"
+                                                       value="<?php echo $item_taikhoan['dienthoai']; ?>">
+                                                <td><?php echo $item_taikhoan['tendangnhap']; ?></td>
+                                                <td><?php echo $item_taikhoan['hoten']; ?></td>
+                                                <td><?php echo $item_taikhoan['diachi']; ?></td>
+                                                <td><?php echo $item_taikhoan['dienthoai']; ?></td>
 
-                                                <td></td>
-                                                <td></td>
-                                            </tr>
-                                            </thead>
-                                            <tbody>
-                                            <div class="row text-center">
-                                                <?php
-                                                foreach ($ds_tai_khoan as $key => $item_taikhoan) {
-                                                    ?>
-                                                    <tr>
-                                                        <form
-                                                            action="<?= BASE_URL_ADMIN ?>controllertaikhoan/layThongTinUser/<?php echo $item_taikhoan['tendangnhap']; ?>"
-                                                            method="POST">
-                                                            <input type="hidden" id="txt1" name="txt1"
-                                                                   value="<?php echo $item_taikhoan['tendangnhap']; ?>">
-                                                            <input type="hidden" name="txt3"
-                                                                   value="<?php echo $item_taikhoan['hoten']; ?>">
-                                                            <input type="hidden" name="txt4"
-                                                                   value="<?php echo $item_taikhoan['diachi']; ?>">
-                                                            <input type="hidden" name="txt5"
-                                                                   value="<?php echo $item_taikhoan['dienthoai']; ?>">
-                                                            <td><?php echo $item_taikhoan['tendangnhap']; ?></td>
-                                                            <td><?php echo $item_taikhoan['hoten']; ?></td>
-                                                            <td><?php echo $item_taikhoan['diachi']; ?></td>
-                                                            <td><?php echo $item_taikhoan['dienthoai']; ?></td>
+                                                <td>
+                                                    <a href="<?= BASE_URL_ADMIN ?>controllertaikhoan/update/<?= $item_taikhoan['tendangnhap'] ?>"
+                                                       class="btn btn-primary">Sửa</a>
 
-                                                            <td>
-                                                                <a href="<?= BASE_URL_ADMIN ?>controllertaikhoan/update/<?= $item_taikhoan['tendangnhap'] ?>"
-                                                                   class="btn btn-primary">Sửa</a>
-
-                                                            </td>
-                                                            <td>
-                                                                <a href="<?= BASE_URL_ADMIN ?>controllertaikhoan/delete/<?= $item_taikhoan['tendangnhap'] ?>"
-                                                                   class="btn btn-danger">Xóa</a>
-                                                            </td>
-                                                        </form>
-                                                    </tr>
-                                                <?php } ?>
-                                            </div>
-                                            </tbody>
-                                        </table>
-                                    </div>
-                                    `
+                                                </td>
+                                                <td>
+                                                    <a href="<?= BASE_URL_ADMIN ?>controllertaikhoan/delete/<?= $item_taikhoan['tendangnhap'] ?>"
+                                                       class="btn btn-danger">Xóa</a>
+                                                </td>
+                                            </form>
+                                        </tr>
+                                    <?php } ?>
                                 </div>
-                                <div class="tab-pane fade" role="tabpanel" id="en"
-                                     aria-labelledby="en-tab">
-                                    <!-- /.box-header -->
-                                    <div class="box-body">
-                                        <table class="table">
-                                            <tr>
-                                                <td>Điện thoại</td>
-                                                <td>Email</td>
-                                                <td>Tình trạng</td>
-                                                <td style="width:10%;"></td>
-                                                <td></td>
-                                            </tr>
-                                            <tbody>
-                                            <div class="row text-center">
-                                                <?php
-                                                foreach ($ds_tai_khoan_dk as $key => $item_taikhoan) {
-                                                    ?>
-                                                    <tr>
-                                                        <form
-                                                            action="<?= BASE_URL_ADMIN ?>controllertaikhoan/layThongTinUser/<?php echo $item_taikhoan['tendangnhap']; ?>"
-                                                            method="POST">
-                                                            <input type="hidden" id="txt1" name="txt1"
-                                                                   value="<?php echo $item_taikhoan['tendangnhap']; ?>">
-                                                            <input type="hidden" name="txt3"
-                                                                   value="<?php echo $item_taikhoan['hoten']; ?>">
-                                                            <input type="hidden" name="txt4"
-                                                                   value="<?php echo $item_taikhoan['diachi']; ?>">
-                                                            <input type="hidden" name="txt5"
-                                                                   value="<?php echo $item_taikhoan['dienthoai']; ?>">
-                                                            <td><?php echo $item_taikhoan['sdt_taikhoandk']; ?></td>
-                                                            <td><?php echo $item_taikhoan['email_taikhoandk']; ?></td>
-                                                            <td><?php if ($item_taikhoan['trangthai_taikhoandk'] == 1) echo "Chưa duyệt"; else echo "Đã duyệt"; ?></td>
-                                                            <td>
-                                                                <a href="<?= BASE_URL_ADMIN ?>controllertaikhoan/create/<?= $item_taikhoan['email_taikhoandk'] ?>/<?= $item_taikhoan['sdt_taikhoandk'] ?>"
-                                                                   class="btn btn-primary">Tạo tài khoản</a>
-                                                            </td>
-                                                        </form>
-                                                        <td>
-                                                            <a href="<?= BASE_URL_ADMIN ?>controllertaikhoan/delete/<?php echo $item_taikhoan['tendangnhap']; ?>"
-                                                            <button type="button" class="btn btn-danger"> TỪ CHỐI
-                                                            </button>
-                                                        </td>
-                                                    </tr>
-                                                <?php } ?>
-                                            </div>
-                                            </tbody>
-                                        </table>
-                                    </div>
-                                </div>
-                                <div class="tab-pane fade" role="tabpanel" id="tkdaduyet"
-                                     aria-labelledby="tkdaduyet-tab">
-                                    <!-- /.box-header -->
-                                    <div class="box-body">
-                                        <table class="table">
-                                            <tr>
-                                                <td>Điện thoại</td>
-                                                <td>Email</td>
-                                                <td>Người duyệt</td>
-                                                <td>Ghi chú</td>
-                                                <td style="width:10%;"></td>
-                                                <td></td>
-                                            </tr>
-                                            <tbody>
-                                            <div class="row text-center">
-                                                <?php
-                                                foreach ($ds_tai_khoan_dk_da_duyet as $key => $item_taikhoan) {
-                                                    ?>
-                                                    <tr>
-                                                        <form
-                                                            action="<?= BASE_URL_ADMIN ?>controllertaikhoan/layThongTinUser/<?php echo $item_taikhoan['tendangnhap']; ?>"
-                                                            method="POST">
-                                                            <input type="hidden" id="txt1" name="txt1"
-                                                                   value="<?php echo $item_taikhoan['tendangnhap']; ?>">
-                                                            <input type="hidden" name="txt3"
-                                                                   value="<?php echo $item_taikhoan['hoten']; ?>">
-                                                            <input type="hidden" name="txt4"
-                                                                   value="<?php echo $item_taikhoan['diachi']; ?>">
-                                                            <input type="hidden" name="txt5"
-                                                                   value="<?php echo $item_taikhoan['dienthoai']; ?>">
-                                                            <td><?php echo $item_taikhoan['sdt_taikhoandk']; ?></td>
-                                                            <td><?php echo $item_taikhoan['email_taikhoandk']; ?></td>
-                                                            <td><?php echo $item_taikhoan['nguoiduyet_taikhoandk']; ?></td>
-                                                            <td><?php echo $item_taikhoan['ghichu'] ?></td>
-                                                        </form>
-                                                        <td>
-                                                            <a href="<?= BASE_URL_ADMIN ?>controllertaikhoan/deleteAccount/<?php echo $item_taikhoan['email_taikhoandk']; ?>"
-                                                            <button type="button" class="btn btn-danger"> XÓA</button>
-                                                        </td>
-                                                    </tr>
-                                                <?php } ?>
-                                            </div>
-                                            </tbody>
-                                        </table>
-                                    </div>
-                                </div>
-                            </div>
+                                </tbody>
+                            </table>
                         </div>
                         <!-- /.box-body -->
                     </div>

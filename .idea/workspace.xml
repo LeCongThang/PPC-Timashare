@@ -2,57 +2,24 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="48675101-2802-42b6-bd9d-0b7e31c69e3a" name="Default" comment="">
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/img/social1.png" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/img/social2.png" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/img/social3.png" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/img/social4.png" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/admin/app/view/content.php" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/admin/app/view/header.php" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/admin/app/view/modaltuchoi.php" afterPath="" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.idea/workspace.xml" afterPath="$PROJECT_DIR$/.idea/workspace.xml" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/admin/app/class/controlleradmin.php" afterPath="$PROJECT_DIR$/admin/app/class/controlleradmin.php" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/admin/app/class/controllernghiduong.php" afterPath="$PROJECT_DIR$/admin/app/class/controllernghiduong.php" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/admin/app/class/modeladmin.php" afterPath="$PROJECT_DIR$/admin/app/class/modeladmin.php" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/admin/app/class/modelnghiduong.php" afterPath="$PROJECT_DIR$/admin/app/class/modelnghiduong.php" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/admin/app/class/modeltaikhoan.php" afterPath="$PROJECT_DIR$/admin/app/class/modeltaikhoan.php" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/admin/app/view/admin.php" afterPath="$PROJECT_DIR$/admin/app/view/admin.php" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/admin/app/view/capnhatthongtin.php" afterPath="$PROJECT_DIR$/admin/app/view/capnhatthongtin.php" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/admin/app/class/controllertaikhoan.php" afterPath="$PROJECT_DIR$/admin/app/class/controllertaikhoan.php" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/admin/app/view/create-account-2.php" afterPath="$PROJECT_DIR$/admin/app/view/create-account-2.php" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/admin/app/view/create-account.php" afterPath="$PROJECT_DIR$/admin/app/view/create-account.php" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/admin/app/view/create-announce_papers.php" afterPath="$PROJECT_DIR$/admin/app/view/create-announce_papers.php" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/admin/app/view/create-deals.php" afterPath="$PROJECT_DIR$/admin/app/view/create-deals.php" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/admin/app/view/create-question.php" afterPath="$PROJECT_DIR$/admin/app/view/create-question.php" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/admin/app/view/create-recruitment.php" afterPath="$PROJECT_DIR$/admin/app/view/create-recruitment.php" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/admin/app/view/create-slider.php" afterPath="$PROJECT_DIR$/admin/app/view/create-slider.php" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/admin/app/view/create-video.php" afterPath="$PROJECT_DIR$/admin/app/view/create-video.php" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/admin/app/view/gioithieu.php" afterPath="$PROJECT_DIR$/admin/app/view/gioithieu.php" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/admin/app/view/create-resort.php" afterPath="$PROJECT_DIR$/admin/app/view/create-resort.php" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/admin/app/view/loiich.php" afterPath="$PROJECT_DIR$/admin/app/view/loiich.php" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/admin/app/view/mail.php" afterPath="$PROJECT_DIR$/admin/app/view/mail.php" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/admin/app/view/partials/slider-bar.php" afterPath="$PROJECT_DIR$/admin/app/view/partials/slider-bar.php" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/admin/app/view/quanlybook.php" afterPath="$PROJECT_DIR$/admin/app/view/quanlybook.php" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/admin/app/view/quanlycauhoi.php" afterPath="$PROJECT_DIR$/admin/app/view/quanlycauhoi.php" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/admin/app/view/quanlykhunghiduong.php" afterPath="$PROJECT_DIR$/admin/app/view/quanlykhunghiduong.php" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/admin/app/view/quanlytaikhoan.php" afterPath="$PROJECT_DIR$/admin/app/view/quanlytaikhoan.php" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/admin/app/view/quanlythamgia.php" afterPath="$PROJECT_DIR$/admin/app/view/quanlythamgia.php" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/admin/app/view/quanlythongbao.php" afterPath="$PROJECT_DIR$/admin/app/view/quanlythongbao.php" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/admin/app/view/quanlytuyendung.php" afterPath="$PROJECT_DIR$/admin/app/view/quanlytuyendung.php" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/admin/app/view/quanlyuudai.php" afterPath="$PROJECT_DIR$/admin/app/view/quanlyuudai.php" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/admin/app/view/quanlyvideo.php" afterPath="$PROJECT_DIR$/admin/app/view/quanlyvideo.php" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/admin/app/view/readmail.php" afterPath="$PROJECT_DIR$/admin/app/view/readmail.php" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/admin/app/view/readmailchecked.php" afterPath="$PROJECT_DIR$/admin/app/view/readmailchecked.php" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/admin/app/view/slider.php" afterPath="$PROJECT_DIR$/admin/app/view/slider.php" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/admin/app/view/thamgia.php" afterPath="$PROJECT_DIR$/admin/app/view/thamgia.php" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/admin/app/view/thongtincanhan.php" afterPath="$PROJECT_DIR$/admin/app/view/thongtincanhan.php" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/admin/app/view/timeshare.php" afterPath="$PROJECT_DIR$/admin/app/view/timeshare.php" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/app/class/controller.php" afterPath="$PROJECT_DIR$/app/class/controller.php" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/app/class/model.php" afterPath="$PROJECT_DIR$/app/class/model.php" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/app/view/ResortDirectory.php" afterPath="$PROJECT_DIR$/app/view/ResortDirectory.php" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/app/view/ResortDirectoryView.php" afterPath="$PROJECT_DIR$/app/view/ResortDirectoryView.php" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/app/view/footer.php" afterPath="$PROJECT_DIR$/app/view/footer.php" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/app/view/header.php" afterPath="$PROJECT_DIR$/app/view/header.php" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/app/view/home.php" afterPath="$PROJECT_DIR$/app/view/home.php" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/app/view/modalxemthongtincanhan.php" afterPath="$PROJECT_DIR$/app/view/modalxemthongtincanhan.php" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/app/view/modalxemthongtincanhanview.php" afterPath="$PROJECT_DIR$/app/view/modalxemthongtincanhanview.php" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/js/main.js" afterPath="$PROJECT_DIR$/js/main.js" />
     </list>
     <ignored path="PPC-Timeshare.iws" />
     <ignored path=".idea/workspace.xml" />
@@ -80,7 +47,108 @@
     <favorites_list name="PPC-Timeshare" />
   </component>
   <component name="FileEditorManager">
-    <leaf SIDE_TABS_SIZE_LIMIT_KEY="300" />
+    <leaf SIDE_TABS_SIZE_LIMIT_KEY="300">
+      <file leaf-file-name="create-account-2.php" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/admin/app/view/create-account-2.php">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="-829">
+              <caret line="31" column="40" selection-start-line="31" selection-start-column="40" selection-end-line="31" selection-end-column="40" />
+              <folding />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="quanlycauhoi.php" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/admin/app/view/quanlycauhoi.php">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="361">
+              <caret line="24" column="42" selection-start-line="24" selection-start-column="42" selection-end-line="24" selection-end-column="42" />
+              <folding />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="create-question.php" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/admin/app/view/create-question.php">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="225">
+              <caret line="27" column="42" selection-start-line="27" selection-start-column="42" selection-end-line="27" selection-end-column="42" />
+              <folding />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="quanlyuudai.php" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/admin/app/view/quanlyuudai.php">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="140">
+              <caret line="24" column="42" selection-start-line="24" selection-start-column="42" selection-end-line="24" selection-end-column="42" />
+              <folding />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="create-deals.php" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/admin/app/view/create-deals.php">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="327">
+              <caret line="41" column="42" selection-start-line="41" selection-start-column="42" selection-end-line="41" selection-end-column="42" />
+              <folding />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="quanlythongbao.php" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/admin/app/view/quanlythongbao.php">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="225">
+              <caret line="24" column="42" selection-start-line="24" selection-start-column="42" selection-end-line="24" selection-end-column="42" />
+              <folding />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="create-recruitment.php" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/admin/app/view/create-recruitment.php">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="208">
+              <caret line="27" column="42" selection-start-line="27" selection-start-column="42" selection-end-line="27" selection-end-column="42" />
+              <folding />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="create-announce_papers.php" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/admin/app/view/create-announce_papers.php">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="276">
+              <caret line="27" column="42" selection-start-line="27" selection-start-column="42" selection-end-line="27" selection-end-column="42" />
+              <folding />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="quanlytuyendung.php" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/admin/app/view/quanlytuyendung.php">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="157">
+              <caret line="24" column="42" selection-start-line="24" selection-start-column="42" selection-end-line="24" selection-end-column="42" />
+              <folding />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="quanlykhunghiduong.php" pinned="false" current-in-tab="true">
+        <entry file="file://$PROJECT_DIR$/admin/app/view/quanlykhunghiduong.php">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="153">
+              <caret line="9" column="27" selection-start-line="9" selection-start-column="27" selection-end-line="9" selection-end-column="27" />
+              <folding />
+            </state>
+          </provider>
+        </entry>
+      </file>
+    </leaf>
   </component>
   <component name="FileTemplateManagerImpl">
     <option name="RECENT_TEMPLATES">
@@ -96,7 +164,6 @@
   <component name="IdeDocumentHistory">
     <option name="CHANGED_PATHS">
       <list>
-        <option value="$PROJECT_DIR$/app/lang_vi.php" />
         <option value="$PROJECT_DIR$/app/index.php" />
         <option value="$PROJECT_DIR$/app/view/modalbooknow.php" />
         <option value="$PROJECT_DIR$/app/view/home.php" />
@@ -108,26 +175,12 @@
         <option value="$PROJECT_DIR$/admin/app/view/admin.php" />
         <option value="$PROJECT_DIR$/admin/app/view/content.php" />
         <option value="$PROJECT_DIR$/admin/app/view/capnhatthongtin.php" />
-        <option value="$PROJECT_DIR$/admin/app/view/create-account.php" />
-        <option value="$PROJECT_DIR$/admin/app/view/create-account-2.php" />
-        <option value="$PROJECT_DIR$/admin/app/view/create-announce_papers.php" />
-        <option value="$PROJECT_DIR$/admin/app/view/create-question.php" />
-        <option value="$PROJECT_DIR$/admin/app/view/create-recruitment.php" />
         <option value="$PROJECT_DIR$/admin/app/view/create-video.php" />
-        <option value="$PROJECT_DIR$/admin/app/view/loiich.php" />
-        <option value="$PROJECT_DIR$/admin/app/view/mail.php" />
         <option value="$PROJECT_DIR$/admin/app/view/quanlybook.php" />
-        <option value="$PROJECT_DIR$/admin/app/view/quanlycauhoi.php" />
-        <option value="$PROJECT_DIR$/admin/app/view/quanlytaikhoan.php" />
         <option value="$PROJECT_DIR$/admin/app/view/quanlythamgia.php" />
-        <option value="$PROJECT_DIR$/admin/app/view/quanlythongbao.php" />
-        <option value="$PROJECT_DIR$/admin/app/view/quanlytuyendung.php" />
-        <option value="$PROJECT_DIR$/admin/app/view/quanlyuudai.php" />
-        <option value="$PROJECT_DIR$/admin/app/view/quanlyvideo.php" />
         <option value="$PROJECT_DIR$/admin/app/view/readmail.php" />
         <option value="$PROJECT_DIR$/admin/app/view/readmailchecked.php" />
         <option value="$PROJECT_DIR$/admin/app/view/thamgia.php" />
-        <option value="$PROJECT_DIR$/admin/app/view/timeshare.php" />
         <option value="$PROJECT_DIR$/admin/app/view/header.php" />
         <option value="$PROJECT_DIR$/admin/app/view/dangnhap.php" />
         <option value="$PROJECT_DIR$/admin/app/view/partials/slider-bar.php" />
@@ -136,10 +189,7 @@
         <option value="$PROJECT_DIR$/admin/app/view/thongtincanhan.php" />
         <option value="$PROJECT_DIR$/app/view/modalxemthongtincanhanview.php" />
         <option value="$PROJECT_DIR$/admin/app/view/slider.php" />
-        <option value="$PROJECT_DIR$/admin/app/view/create-slider.php" />
         <option value="$PROJECT_DIR$/admin/app/view/gioithieu.php" />
-        <option value="$PROJECT_DIR$/admin/app/view/create-resort.php" />
-        <option value="$PROJECT_DIR$/admin/app/view/create-deals.php" />
         <option value="$PROJECT_DIR$/app/class/model.php" />
         <option value="$PROJECT_DIR$/app/view/ResortDirectoryView.php" />
         <option value="$PROJECT_DIR$/app/view/ResortDirectory.php" />
@@ -147,6 +197,24 @@
         <option value="$PROJECT_DIR$/admin/app/class/controllernghiduong.php" />
         <option value="$PROJECT_DIR$/admin/app/class/modelnghiduong.php" />
         <option value="$PROJECT_DIR$/admin/app/view/quanlykhunghiduong.php" />
+        <option value="$PROJECT_DIR$/admin/app/view/create-resort.php" />
+        <option value="$PROJECT_DIR$/admin/app/view/loiich.php" />
+        <option value="$PROJECT_DIR$/admin/app/view/timeshare.php" />
+        <option value="$PROJECT_DIR$/admin/app/view/mail.php" />
+        <option value="$PROJECT_DIR$/admin/app/class/controllertaikhoan.php" />
+        <option value="$PROJECT_DIR$/admin/app/view/create-slider.php" />
+        <option value="$PROJECT_DIR$/admin/app/view/quanlytaikhoan.php" />
+        <option value="$PROJECT_DIR$/admin/app/view/quanlyvideo.php" />
+        <option value="$PROJECT_DIR$/admin/app/view/create-account.php" />
+        <option value="$PROJECT_DIR$/admin/app/view/create-account-2.php" />
+        <option value="$PROJECT_DIR$/admin/app/view/quanlycauhoi.php" />
+        <option value="$PROJECT_DIR$/admin/app/view/create-question.php" />
+        <option value="$PROJECT_DIR$/admin/app/view/quanlyuudai.php" />
+        <option value="$PROJECT_DIR$/admin/app/view/create-deals.php" />
+        <option value="$PROJECT_DIR$/admin/app/view/quanlythongbao.php" />
+        <option value="$PROJECT_DIR$/admin/app/view/create-recruitment.php" />
+        <option value="$PROJECT_DIR$/admin/app/view/create-announce_papers.php" />
+        <option value="$PROJECT_DIR$/admin/app/view/quanlytuyendung.php" />
       </list>
     </option>
   </component>
@@ -260,6 +328,28 @@
             </PATH_ELEMENT>
             <PATH_ELEMENT>
               <option name="myItemId" value="view" />
+              <option name="myItemType" value="com.jetbrains.php.projectView.PhpTreeStructureProvider$1" />
+            </PATH_ELEMENT>
+          </PATH>
+          <PATH>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="PPC-Timeshare" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.ProjectViewProjectNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="PPC-Timeshare" />
+              <option name="myItemType" value="com.jetbrains.php.projectView.PhpTreeStructureProvider$1" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="admin" />
+              <option name="myItemType" value="com.jetbrains.php.projectView.PhpTreeStructureProvider$1" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="app" />
+              <option name="myItemType" value="com.jetbrains.php.projectView.PhpTreeStructureProvider$1" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="class" />
               <option name="myItemType" value="com.jetbrains.php.projectView.PhpTreeStructureProvider$1" />
             </PATH_ELEMENT>
           </PATH>
@@ -434,7 +524,7 @@
       <workItem from="1488508966974" duration="10862000" />
       <workItem from="1488563323673" duration="1493000" />
       <workItem from="1488608757518" duration="1825000" />
-      <workItem from="1488767855788" duration="21788000" />
+      <workItem from="1488767855788" duration="23636000" />
     </task>
     <task id="LOCAL-00001" summary="Update all">
       <created>1483670120952</created>
@@ -569,11 +659,18 @@
       <option name="project" value="LOCAL" />
       <updated>1488512927294</updated>
     </task>
-    <option name="localTasksCounter" value="20" />
+    <task id="LOCAL-00020" summary="Update admin BackEnd, search number in Front End">
+      <created>1488794655039</created>
+      <option name="number" value="00020" />
+      <option name="presentableId" value="LOCAL-00020" />
+      <option name="project" value="LOCAL" />
+      <updated>1488794655039</updated>
+    </task>
+    <option name="localTasksCounter" value="21" />
     <servers />
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="763891000" />
+    <option name="totallyTimeSpent" value="765739000" />
   </component>
   <component name="TodoView">
     <todo-panel id="selected-file">
@@ -586,9 +683,9 @@
   </component>
   <component name="ToolWindowManager">
     <frame x="-8" y="-8" width="1382" height="744" extended-state="6" />
-    <editor active="false" />
+    <editor active="true" />
     <layout>
-      <window_info id="Project" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" show_stripe_button="true" weight="0.33282906" sideWeight="0.4940171" order="0" side_tool="false" content_ui="combo" />
+      <window_info id="Project" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" show_stripe_button="true" weight="0.27685326" sideWeight="0.4940171" order="0" side_tool="false" content_ui="combo" />
       <window_info id="TODO" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.32991454" sideWeight="0.5" order="6" side_tool="false" content_ui="tabs" />
       <window_info id="Event Log" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.32991454" sideWeight="0.5" order="8" side_tool="true" content_ui="tabs" />
       <window_info id="Database" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.32980332" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
@@ -628,29 +725,16 @@
     <MESSAGE value="Update validation Book Search" />
     <MESSAGE value="Update Transaction History, My Profile" />
     <MESSAGE value="The First time , Update FrontEnd All" />
-    <option name="LAST_COMMIT_MESSAGE" value="The First time , Update FrontEnd All" />
+    <MESSAGE value="Update admin BackEnd, search number in Front End" />
+    <option name="LAST_COMMIT_MESSAGE" value="Update admin BackEnd, search number in Front End" />
   </component>
   <component name="XDebuggerManager">
     <breakpoint-manager>
-      <breakpoints>
-        <line-breakpoint enabled="true" type="php">
-          <url>file://$PROJECT_DIR$/admin/app/view/quanlytaikhoan.php</url>
-          <line>86</line>
-          <option name="timeStamp" value="1" />
-        </line-breakpoint>
-      </breakpoints>
       <option name="time" value="5" />
     </breakpoint-manager>
     <watches-manager />
   </component>
   <component name="editorHistoryManager">
-    <entry file="file://$PROJECT_DIR$/app/view/modaldoimatkhau.php">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="293">
-          <caret line="32" column="52" selection-start-line="32" selection-start-column="42" selection-end-line="32" selection-end-column="52" />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/js/main.js">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="408">
@@ -721,46 +805,6 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/admin/app/view/create-account.php">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="157">
-          <caret line="21" column="112" selection-start-line="21" selection-start-column="112" selection-end-line="21" selection-end-column="112" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/admin/app/view/create-account-2.php">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="89">
-          <caret line="19" column="112" selection-start-line="19" selection-start-column="112" selection-end-line="19" selection-end-column="112" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/admin/app/view/create-announce_papers.php">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="191">
-          <caret line="22" column="0" selection-start-line="22" selection-start-column="0" selection-end-line="22" selection-end-column="0" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/admin/app/view/create-question.php">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="123">
-          <caret line="21" column="112" selection-start-line="21" selection-start-column="112" selection-end-line="21" selection-end-column="112" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/admin/app/view/create-recruitment.php">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="106">
-          <caret line="21" column="112" selection-start-line="21" selection-start-column="112" selection-end-line="21" selection-end-column="112" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/admin/app/view/create-video.php">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="123">
@@ -788,14 +832,6 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/admin/app/view/loiich.php">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="242">
-          <caret line="18" column="112" selection-start-line="18" selection-start-column="112" selection-end-line="18" selection-end-column="112" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/admin/app/view/modaltuchoi.php">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="0">
@@ -804,82 +840,10 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/admin/app/view/mail.php">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="306">
-          <caret line="18" column="112" selection-start-line="18" selection-start-column="112" selection-end-line="18" selection-end-column="112" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/admin/app/view/quanlybook.php">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="306">
           <caret line="18" column="112" selection-start-line="18" selection-start-column="112" selection-end-line="18" selection-end-column="112" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/admin/app/view/quanlycauhoi.php">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="259">
-          <caret line="18" column="112" selection-start-line="18" selection-start-column="112" selection-end-line="18" selection-end-column="112" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/admin/app/view/quanlytaikhoan.php">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="140">
-          <caret line="18" column="112" selection-start-line="18" selection-start-column="112" selection-end-line="18" selection-end-column="112" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/admin/app/view/quanlythamgia.php">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="-4697">
-          <caret line="18" column="112" selection-start-line="18" selection-start-column="112" selection-end-line="18" selection-end-column="112" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/admin/app/view/quanlythongbao.php">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="123">
-          <caret line="18" column="112" selection-start-line="18" selection-start-column="112" selection-end-line="18" selection-end-column="112" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/admin/app/view/quanlytuyendung.php">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="55">
-          <caret line="18" column="112" selection-start-line="18" selection-start-column="112" selection-end-line="18" selection-end-column="112" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/admin/app/view/quanlyuudai.php">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="38">
-          <caret line="18" column="112" selection-start-line="18" selection-start-column="112" selection-end-line="18" selection-end-column="112" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/admin/app/view/quanlyvideo.php">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="191">
-          <caret line="18" column="112" selection-start-line="18" selection-start-column="112" selection-end-line="18" selection-end-column="112" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/admin/app/view/readmail.php">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="106">
-          <caret line="22" column="112" selection-start-line="22" selection-start-column="112" selection-end-line="22" selection-end-column="112" />
           <folding />
         </state>
       </provider>
@@ -896,14 +860,6 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="0">
           <caret line="0" column="0" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/admin/app/view/timeshare.php">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="293">
-          <caret line="31" column="28" selection-start-line="31" selection-start-column="28" selection-end-line="31" selection-end-column="28" />
           <folding />
         </state>
       </provider>
@@ -1003,14 +959,6 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/admin/app/view/thongtincanhan.php">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="268">
-          <caret line="179" column="0" selection-start-line="179" selection-start-column="0" selection-end-line="182" selection-end-column="9" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/admin/app/view/gioithieu.php">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="80">
@@ -1027,14 +975,6 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="221">
           <caret line="31" column="40" selection-start-line="31" selection-start-column="40" selection-end-line="31" selection-end-column="40" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/admin/app/view/create-deals.php">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="497">
-          <caret line="36" column="7" selection-start-line="36" selection-start-column="7" selection-end-line="36" selection-end-column="7" />
           <folding />
         </state>
       </provider>
@@ -1214,25 +1154,6 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/admin/app/view/create-slider.php">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="136">
-          <caret line="8" column="29" selection-start-line="8" selection-start-column="29" selection-end-line="8" selection-end-column="29" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/admin/app/view/create-resort.php">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="124">
-          <caret line="276" column="32" selection-start-line="276" selection-start-column="32" selection-end-line="276" selection-end-column="32" />
-          <folding>
-            <marker date="1488785183824" expanded="true" signature="4569:4907" ph="..." />
-            <marker date="1488785183824" expanded="true" signature="4695:4729" ph="..." />
-          </folding>
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/admin/app/class/controllernghiduong.php">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="327">
@@ -1272,10 +1193,187 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/admin/app/view/quanlykhunghiduong.php">
+    <entry file="file://$PROJECT_DIR$/admin/app/view/thongtincanhan.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="102">
+          <caret line="6" column="2" selection-start-line="6" selection-start-column="2" selection-end-line="18" selection-end-column="112" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/admin/app/view/readmail.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="310">
+          <caret line="34" column="55" selection-start-line="34" selection-start-column="55" selection-end-line="34" selection-end-column="55" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/admin/app/view/timeshare.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="92">
+          <caret line="133" column="0" selection-start-line="133" selection-start-column="0" selection-end-line="148" selection-end-column="82" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/admin/app/view/loiich.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="408">
+          <caret line="24" column="0" selection-start-line="24" selection-start-column="0" selection-end-line="24" selection-end-column="42" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/admin/app/view/create-resort.php">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="306">
-          <caret line="117" column="81" selection-start-line="117" selection-start-column="81" selection-end-line="117" selection-end-column="81" />
+          <caret line="21" column="35" selection-start-line="21" selection-start-column="35" selection-end-line="21" selection-end-column="35" />
+          <folding>
+            <element signature="n#div#0;n#div#0;n#body#0;n#html#0;n#!!top" expanded="false" />
+            <element signature="n#section#1;n#div#0;n#div#0;n#body#0;n#html#0;n#!!top" expanded="false" />
+            <element signature="n#div#0;n#section#1;n#div#0;n#div#0;n#body#0;n#html#0;n#!!top" expanded="false" />
+            <element signature="n#form#0;n#div#0;n#section#1;n#div#0;n#div#0;n#body#0;n#html#0;n#!!top" expanded="false" />
+            <marker date="1488794834367" expanded="true" signature="4814:5152" ph="..." />
+            <marker date="1488794834367" expanded="true" signature="4940:4974" ph="..." />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/admin/app/class/controllertaikhoan.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="289">
+          <caret line="74" column="0" selection-start-line="74" selection-start-column="0" selection-end-line="74" selection-end-column="0" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/admin/app/view/quanlythamgia.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="17">
+          <caret line="18" column="112" selection-start-line="18" selection-start-column="112" selection-end-line="18" selection-end-column="112" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/admin/app/view/mail.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="225">
+          <caret line="20" column="0" selection-start-line="22" selection-start-column="2" selection-end-line="22" selection-end-column="42" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/admin/app/view/quanlytaikhoan.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="140">
+          <caret line="22" column="42" selection-start-line="22" selection-start-column="3" selection-end-line="22" selection-end-column="42" />
+          <folding>
+            <element signature="n#div#2;n#div#0;n#div#0;n#div#0;n#section#1;n#div#0;n#div#0;n#body#0;n#html#0;n#!!top" expanded="false" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/admin/app/view/quanlyvideo.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="259">
+          <caret line="22" column="42" selection-start-line="22" selection-start-column="42" selection-end-line="22" selection-end-column="42" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/admin/app/view/create-account.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="259">
+          <caret line="27" column="42" selection-start-line="27" selection-start-column="42" selection-end-line="27" selection-end-column="42" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/admin/app/view/create-account-2.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="-829">
+          <caret line="31" column="40" selection-start-line="31" selection-start-column="40" selection-end-line="31" selection-end-column="40" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/admin/app/view/quanlycauhoi.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="361">
+          <caret line="24" column="42" selection-start-line="24" selection-start-column="42" selection-end-line="24" selection-end-column="42" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/admin/app/view/create-question.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="225">
+          <caret line="27" column="42" selection-start-line="27" selection-start-column="42" selection-end-line="27" selection-end-column="42" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/admin/app/view/quanlyuudai.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="140">
+          <caret line="24" column="42" selection-start-line="24" selection-start-column="42" selection-end-line="24" selection-end-column="42" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/admin/app/view/create-deals.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="327">
+          <caret line="41" column="42" selection-start-line="41" selection-start-column="42" selection-end-line="41" selection-end-column="42" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/admin/app/view/quanlythongbao.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="225">
+          <caret line="24" column="42" selection-start-line="24" selection-start-column="42" selection-end-line="24" selection-end-column="42" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/admin/app/view/create-recruitment.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="208">
+          <caret line="27" column="42" selection-start-line="27" selection-start-column="42" selection-end-line="27" selection-end-column="42" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/admin/app/view/create-announce_papers.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="276">
+          <caret line="27" column="42" selection-start-line="27" selection-start-column="42" selection-end-line="27" selection-end-column="42" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/admin/app/view/quanlytuyendung.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="157">
+          <caret line="24" column="42" selection-start-line="24" selection-start-column="42" selection-end-line="24" selection-end-column="42" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/admin/app/view/create-slider.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="486">
+          <caret line="89" column="114" selection-start-line="89" selection-start-column="114" selection-end-line="89" selection-end-column="114" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/admin/app/view/quanlykhunghiduong.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="153">
+          <caret line="9" column="27" selection-start-line="9" selection-start-column="27" selection-end-line="9" selection-end-column="27" />
           <folding />
         </state>
       </provider>

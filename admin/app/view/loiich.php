@@ -22,7 +22,7 @@
 <div class="wrapper">
 
     <!-- <header class="main-header"> -->
-
+    <?php require 'app/view/header.php' ?>
     <!-- Left side column. contains the logo and sidebar -->
     <?php require 'partials/slider-bar.php' ?>
 
@@ -102,14 +102,9 @@
                                             class="glyphicon glyphicon-pencil"></i>&nbsp <b>Cập nhật</b>
                                     </button>
                                 </div>
-                                <!-- <button type="reset" class="btn btn-default"><i class="fa fa-times"></i> Discard</button> -->
                             </div>
-                            <!-- /.box-footer -->
                         </div>
-                        <!-- /. box -->
                     </div>
-
-
                 </form>
                 <!-- /.col -->
             </div>
