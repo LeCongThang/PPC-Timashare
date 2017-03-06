@@ -99,13 +99,13 @@ class modeltaikhoan
 
     public function themTaiKhoan($tendangnhap, $matkhau, $hoten, $diachi, $dienthoai)
     {
-        $sql = "insert into taikhoan(tendangnhap,matkhau,id_vaitro,hoten,diachi,dienthoai) values ('" . $tendangnhap . "','" . md5($matkhau) . "', 1,'" . $hoten . "','" . $diachi . "','" . $dienthoai . "')";
+        $sql = "insert into taikhoan(tendangnhap,matkhau,id_vaitro,hoten,diachi,dienthoai) values ('" . $tendangnhap . "','" . password_hash($matkhau) . "', 1,'" . $hoten . "','" . $diachi . "','" . $dienthoai . "')";
         return mysqli_query($this->db, $sql);
     }
 
     public function capnhatthongtintk($tendangnhap, $matkhau, $hoten, $diachi, $sodienthoai)
     {
-        $sql = "UPDATE taikhoan SET hoten='" . $hoten . "', matkhau ='" . md5($matkhau) . "', diachi='" . $diachi . "', dienthoai='" . $sodienthoai . "' WHERE tendangnhap = '" . $tendangnhap . "'";
+        $sql = "UPDATE taikhoan SET hoten='" . $hoten . "', matkhau ='" . password_hash($matkhau) . "', diachi='" . $diachi . "', dienthoai='" . $sodienthoai . "' WHERE tendangnhap = '" . $tendangnhap . "'";
         return mysqli_query($this->db, $sql);
     }
 

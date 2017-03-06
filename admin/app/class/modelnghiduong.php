@@ -82,7 +82,7 @@ class modelnghiduong
     {
         $idCountry = $this->getIdCountry($resort_country);
         if ($idCountry == "") {
-            die("Error in getIdCountry");
+            die("Error in createResort");
         }
         $id_city_insert = "";
         $type = "";
@@ -111,21 +111,20 @@ class modelnghiduong
         $this->insertDetailResort($last_id, "vi", $resort_name, $resort_introduce, $resort_location, $resort_service, $resort_equipment, $resort_address);
         $last_id_vi = mysqli_insert_id($this->db);
         $this->updateInfoMap($last_id, $last_id_vi, $list_img[0], $resort_name, $resort_address, 'vi');
-        $this->updateNumberContinentsCountry($idCountry, $id_city_insert, $resort_type);
         return true;
     }
 
     // insert Resort co them truong id_country de de gom
     public function insertResort($resort_status, $resort_type, $resort_priority, $resort_price, $resort_lat, $resort_lon, $id_city, $date_insert)
     {
-        $sql = "INSERT INTO resort(status, id_resort_type, priority, lat, lng, id_city, price, date_created) VALUES (" . $resort_status . "," . $resort_type . "," . $resort_priority . ",'" . $resort_lat . "','" . $resort_lon . "'," . $id_city . "," . $resort_price . ",'" . $date_insert . "')";
+        $sql = "INSERT INTO resort(status, id_resort_type, priority, lat, lng, id_city, price, created_date) VALUES (" . $resort_status . "," . $resort_type . "," . $resort_priority . ",'" . $resort_lat . "','" . $resort_lon . "'," . $id_city . "," . $resort_price . ",'" . $date_insert . "')";
         $result = mysqli_query($this->db, $sql);
         return $result;
     }
 
     public function updateResort($id_resort, $resort_status, $resort_type, $resort_priority, $resort_price, $resort_lat, $resort_lon, $idCountry)
     {
-        $sql = "UPDATE resort SET status = " . $resort_status . ", id_resort_type = " . $resort_type . ", priority =" . $resort_priority . ", price =" . $resort_price . ", lat ='" . $resort_lat . "', lng ='" . $resort_lon . "', id_country =" . $idCountry . " WHERE id =" . $id_resort;
+        $sql = "UPDATE resort SET status = " . $resort_status . ", id_resort_type = " . $resort_type . ", priority =" . $resort_priority . ", price =" . $resort_price . ", lat ='" . $resort_lat . "', lng ='" . $resort_lon . "', id_city =" . $idCountry . " WHERE id =" . $id_resort;
         $result = mysqli_query($this->db, $sql);
         return $result;
     }
@@ -174,26 +173,6 @@ class modelnghiduong
         return $result;
     }
 
-    public function updateNumberContinentsCountry($id, $id_city, $resort_type)
-    {
-        $city = $this->getNumberCity($id_city);
-        $country = $this->getNumberCountry($this->getIdCountryByIdCity($id_city));
-        $countinents = $this->getNumberContinents($country['id_continents']);
-        if ($resort_type == 0) {
-            $numberCity = $city['number'] + 1;
-            $numberContinents = $countinents['number'] + 1;
-            $numberCountry = $country['number'] + 1;
-        } else {
-            $numberCity = $city['number_home'] + 1;
-            $numberContinents = $countinents['number_home'] + 1;
-            $numberCountry = $country['number_home'] + 1;
-        }
-
-        $this->updateNumberCountry($id, $numberCountry, $resort_type);
-        $this->updateNumberContinents($countinents['id'], $numberContinents, $resort_type);
-        $this->updateNumberCity($id_city, $numberCity, $resort_type);
-        return true;
-    }
 
     public function getIdCountryByIdCity($id_city)
     {
@@ -201,46 +180,16 @@ class modelnghiduong
         $result = mysqli_query($this->db, $sql);
 
         if (!$result) {
-            die("Error in getNumberCountry");
+            die("Error in getIdCountryByIdCity");
         }
 
         return mysqli_fetch_assoc($result)['id_country'];
     }
 
-    public function getNumberCountry($id)
-    {
-        $sql = "SELECT * FROM country WHERE id =" . $id;
-        $result = mysqli_query($this->db, $sql);
 
-        if (!$result) {
-            die("Error in getNumberCountry");
-        }
 
-        return mysqli_fetch_assoc($result);
-    }
 
-    public function getNumberCity($id)
-    {
-        $sql = "SELECT * FROM city WHERE id =" . $id;
-        $result = mysqli_query($this->db, $sql);
 
-        if (!$result) {
-            die("Error in getNumberCountry");
-        }
-
-        return mysqli_fetch_assoc($result);
-    }
-
-    public function getNumberContinents($id)
-    {
-        $sql = "SELECT  *  FROM continents WHERE id =" . $id;
-        $result = mysqli_query($this->db, $sql);
-        if (!$result) {
-            die("Error in getNumberContinents");
-        }
-
-        return mysqli_fetch_assoc($result);
-    }
 
     // đang làm tới đây
     public function getResortByCountryName($id, $lang)
@@ -277,24 +226,7 @@ class modelnghiduong
         $resort = $this->getDetailsResort($id_resort, 'vi');
         $id_city = $resort['id_city'];
         $resort_type = $resort['id_resort_type'];
-        $city = $this->getNumberCity($id_city);
         $id_country = $this->getIdCountryByIdCity($id_city);
-        $country = $this->getNumberCountry($id_country);
-        $continents = $this->getNumberContinents($country['id_continents']);
-        $id_continents = $continents['id'];
-        if ($resort_type == 0) {
-            $number_continents = $continents['number'] - 1;
-            $number_city = $city['number'] - 1;
-            $number_country = $country['number'] - 1;
-        } else {
-            $number_continents = $continents['number_home'] - 1;
-            $number_city = $city['number_home'] - 1;
-            $number_country = $country['number_home'] - 1;
-        }
-        $this->updateNumberCity($id_city, $number_city, $resort_type);
-        $this->updateNumberCountry($id_country, $number_country, $resort_type);
-        $this->updateNumberContinents($id_continents, $number_continents, $resort_type);
-
         $sql = "DELETE FROM resort where id = {$id_resort}";
         $sql_ngonngu = "DELETE FROM resort_language WHERE id_resort = {$id_resort}";
         $sql_image = "DELETE FROM resort_image WHERE id_resort = {$id_resort}";
@@ -307,38 +239,6 @@ class modelnghiduong
         return false;
     }
 
-    public function updateNumberCity($id_city, $number_city, $resort_type)
-    {
-        if ($resort_type == 0)
-            $number = "number";
-        else
-            $number = "number_home";
-        $sql = "UPDATE city SET " . $number . " = " . $number_city . " WHERE id =" . $id_city;
-        $kq = $this->db->query($sql);
-        return $kq;
-    }
-
-    public function updateNumberCountry($id_country, $number_country, $resort_type)
-    {
-        if ($resort_type == 0)
-            $number = "number";
-        else
-            $number = "number_home";
-        $sql = "UPDATE country SET " . $number . " = " . $number_country . " WHERE id =" . $id_country;
-        $kq = $this->db->query($sql);
-        return $kq;
-    }
-
-    public function updateNumberContinents($id_continents, $number_continents, $resort_type)
-    {
-        if ($resort_type == 0)
-            $number = "number";
-        else
-            $number = "number_home";
-        $sql = "UPDATE continents SET " . $number . " = " . $number_continents . " WHERE id =" . $id_continents;
-        $kq = $this->db->query($sql);
-        return $kq;
-    }
 
     public function deleteImage($id_image_remove)
     {
@@ -373,16 +273,30 @@ class modelnghiduong
         mysqli_free_result($result);
         return $list;
     }
-
-    public function update($id_resort, $resort_name_en, $resort_introduce_en, $resort_location_en, $resort_service_en, $resort_equipment_en, $resort_address_en, $list_img, $resort_name, $resort_introduce, $resort_location, $resort_service, $resort_equipment, $resort_status, $resort_type, $resort_priority, $resort_price, $resort_address, $resort_lat, $resort_lon, $resort_country)
+////////////////////////////////////////////////////////////////////////
+    public function update($id_resort, $resort_name_en, $resort_introduce_en, $resort_location_en, $resort_service_en, $resort_equipment_en, $resort_address_en, $list_img, $resort_name, $resort_introduce, $resort_location, $resort_service, $resort_equipment, $resort_status, $resort_type, $resort_priority, $resort_price, $resort_address, $resort_lat, $resort_lon, $resort_country, $city_name)
     {
         $idCountry = $this->getIdCountry($resort_country);
         if ($idCountry == "") {
             die("Error in getIdCountry");
         }
-        if (!$this->updateResort($id_resort, $resort_status, $resort_type, $resort_priority, $resort_price, $resort_lat, $resort_lon, $idCountry)) {
-            die("Error in createResort");
+        if ($city_name == "")
+            $type = "other";
+        else
+            $type = $city_name;
+
+        $city = $this->getIdCityByIdCountry($idCountry, $type);
+
+        if (empty($city)) {
+            $this->insertCity($idCountry, $type);
+            $id_city_insert = mysqli_insert_id($this->db);
+        } else
+            $id_city_insert = $this->getIdCityByIdCountry($idCountry, $type)['id'];
+
+        if (!$this->updateResort($id_resort, $resort_status, $resort_type, $resort_priority, $resort_price, $resort_lat, $resort_lon, $id_city_insert)) {
+            die("Error in update");
         }
+
 
         $this->insertImageResort($id_resort, $list_img);
         $list_image = $this->getListImageResort($id_resort);
@@ -405,7 +319,7 @@ class modelnghiduong
         $result = mysqli_query($this->db, $sql);
 
         if (!$result) {
-            die("Error in getNumberCountry");
+            die("Error in getIdResortLanguage");
         }
 
         return mysqli_fetch_assoc($result)['id_resort_language'];
@@ -425,7 +339,7 @@ class modelnghiduong
 
     public function insertCity($idCountry, $city_name)
     {
-        $sql = "INSERT INTO city (name,number,id_country) VALUES ('{$city_name}',0,'{$idCountry}')";
+        $sql = "INSERT INTO city (name,id_country) VALUES ('{$city_name}','{$idCountry}')";
         $kq = $this->db->query($sql);
         return $kq;
     }

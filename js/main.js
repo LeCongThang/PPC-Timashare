@@ -100,6 +100,10 @@ $(document).ready(function () {
                     if (dulieu == true) {
                         $('#ModalDoiMatKhau').modal('toggle');
                         alert("Mật khẩu đã được thay đổi");
+                        $('#matkhaucu').text("");
+                        $('#matkhaumoi').text("");
+                        $('#nhaplaimatkhaumoi').text("");
+                        $('#thongbaodoimatkhau').text("");
                     }
                     else {
                         $('#thongbaodoimatkhau').text("Mật khẩu cũ bị sai mời bạn nhập lại");

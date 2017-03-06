@@ -3,20 +3,8 @@
     <section class="sidebar">
         <!-- Sidebar user panel -->
         <div class="user-panel" style="color: white">
-            <h4 style="margin-top:10px; font-weight: bold;">Xin chào, <?= $_SESSION['tentaikhoan'] ?></h4>
+            <h4 style="margin-top:10px; font-weight: bold;">Xin chào, <?= $_SESSION['tentaikhoanadmin'] ?></h4>
         </div>
-        <!-- search form -->
-        <!--  <form action="#" method="get" class="sidebar-form">
-           <div class="input-group">
-             <input type="text" name="q" class="form-control" placeholder="Search...">
-                 <span class="input-group-btn">
-                   <button type="submit" name="search" id="search-btn" class="btn btn-flat"><i class="fa fa-search"></i>
-                   </button>
-                 </span>
-           </div>
-         </form> -->
-        <!-- /.search form -->
-        <!-- sidebar menu: : style can be found in sidebar.less -->
         <?php
         $menu = new menuhelper([
             'items' => [
@@ -126,6 +114,4 @@
         ?>
 
     </section>
-    -->
-    <!-- /.sidebar -->
 </aside>

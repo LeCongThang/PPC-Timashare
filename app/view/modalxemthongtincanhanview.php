@@ -12,7 +12,7 @@
                         <label>{HinhDaiDien}</label>
                         <div class="thumbnail input-group" style="text-align: center">
                             <img class="img-responsive"
-                                 src="<?php echo ($my_profile['avatar'] == NULL) ? (BASE_DIR . 'img/default_avatar.png') : $my_profile['avatar'] ?>"
+                                 src="<?php echo ($my_profile['avatar'] == NULL) ? (BASE_DIR . 'img/default_avatar.png') : BASE_DIR.$my_profile['avatar'] ?>"
                                  id="img" src="" style="width: 150px;height: 170px;">
                         </div>
                         <div class="input-group" style="text-align: center">

@@ -62,6 +62,7 @@
                         var x = Number(dulieu);
                         if (x == 2) {
                             $('#ModalXemThongTin').modal('toggle');
+                            location.reload();
                             alert("Cập nhật thông tin thành công");
                         }
                         else {

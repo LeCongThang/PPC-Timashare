@@ -140,12 +140,6 @@ class controller
         require_once "view/home.php";
     }//detail
 
-    public function kiemtramail()
-    {
-
-        return $this->control->dakiemtramail();
-    }
-
 
     public function doimatkhau()
     {
@@ -217,6 +211,7 @@ class controller
         $addressResgiter = $_POST["addressResgiter"];
         $numberPhoneResgiter = $_POST["numberPhoneResgiter"];
         $sexResgiter = $_POST["sexResgiter"];
+
         if ($this->control->isHasEmail($emailResgiter) != "")
             echo 0;
         else if ($this->control->isHasNumberPhone($numberPhoneResgiter) != "")
@@ -239,7 +234,10 @@ class controller
         $numberPhoneUpdate = $_POST["numberPhoneUpdate"];
         $sexUpdate = $_POST["sexUpdate"];
         if ($this->control->UpdateAccountUser($imageUpdate,$nameUpdate, $addressUpdate, $numberPhoneUpdate, $sexUpdate))
+        {
+            $_SESSION['tentaikhoan'] = $nameUpdate;
             echo 2;
+        }
         else
             echo 3;
     }
@@ -431,7 +429,7 @@ class controller
                 $date = new DateTime('now');
                 date_sub($date, date_interval_create_from_date_string('7 days'));
                 $resort_type_clause = "";
-                $sort_by_clause = " AND resort.date_created > '" . $date->format('Y-m-d') . "' ";
+                $sort_by_clause = " AND resort.created_date > '" . $date->format('Y-m-d') . "' ";
             } else if ($sort_by == 2) {
                 $resort_type_clause = "";
                 $date = new DateTime('now');
@@ -445,7 +443,7 @@ class controller
                 $date = new DateTime('now');
                 date_sub($date, date_interval_create_from_date_string('7 days'));
                 $resort_type_clause = " AND resort.id_resort_type = 0 ";
-                $sort_by_clause = " AND resort.date_created > '" . $date->format('Y-m-d') . "' ";
+                $sort_by_clause = " AND resort.created_date > '" . $date->format('Y-m-d') . "' ";
             } else if ($sort_by == 2) {
                 $resort_type_clause = " AND resort.id_resort_type = 0 ";
                 $date = new DateTime('now');
@@ -459,7 +457,7 @@ class controller
                 $date = new DateTime('now');
                 date_sub($date, date_interval_create_from_date_string('7 days'));
                 $resort_type_clause = " AND resort.id_resort_type = 1 ";
-                $sort_by_clause = " AND resort.date_created > '" . $date->format('Y-m-d') . "' ";
+                $sort_by_clause = " AND resort.created_date > '" . $date->format('Y-m-d') . "' ";
             } else if ($sort_by == 2) {
                 $resort_type_clause = " AND resort.id_resort_type = 1 ";
                 $date = new DateTime('now');
@@ -470,8 +468,15 @@ class controller
         if (!isset($this->params[0])) {
             $regions = array(array());
             $listContinents = $this->control->getListContinents();
+            $listCoutinentsNumber = array();
+            $listRegionNumber = array();
             foreach ($listContinents as $key => $continent) {
                 $regions[$key] = $this->control->getListRegions($continent['id']);
+                $listCoutinentsNumber[$key] = $this->control->getNumberResortByCountinent($continent['id'],$resort_type_clause,$sort_by_clause);
+                foreach ($regions[$continent['id'] - 1] as $key2 => $region) {
+                        $listRegionNumber[$key2] = $this->control->getNumberResortById($region['id'],$resort_type_clause,$sort_by_clause);
+
+                }
             }
             $listResort = $this->control->getAllResort($resort_type_clause, $sort_by_clause);
         } else {
@@ -480,11 +485,17 @@ class controller
                 $country_name = $this->control->getLongNameCountry($id);
                 $listCity = $this->control->getListCityByIdCountry($id);
                 $address = $country_name;
+                $countryNumber = $this->control->getNumberResortById($id, $resort_type_clause, $sort_by_clause);
+                $listCityNumber = array();
+                foreach ($listCity as $key => $city) {
+                    $listCityNumber[$key] = $this->control->getNumberResortByIdCity($city['id'],$resort_type_clause,$sort_by_clause);
+                }
                 $listResort = $this->control->getResortByCountryName($id, $resort_type_clause, $sort_by_clause);
             } else {
                 $id_city = $this->params[1];
                 $city = $this->control->getCityById($id_city);
                 $name_city = $city['name'];
+                $cityNumber = $this->control->getNumberResortByIdCity($id_city,$resort_type_clause,$sort_by_clause);
                 $listResort = $this->control->getAllResortByIdCity($id_city, $resort_type_clause, $sort_by_clause);
                 $address = $name_city;
             }
@@ -518,7 +529,7 @@ class controller
                 $date = new DateTime('now');
                 date_sub($date, date_interval_create_from_date_string('7 days'));
                 $resort_type_clause = "";
-                $sort_by_clause = " AND resort.date_created > '" . $date->format('Y-m-d') . "' ";
+                $sort_by_clause = " AND resort.created_date > '" . $date->format('Y-m-d') . "' ";
             } else if ($sort_by == 2) {
                 $resort_type_clause = "";
                 $date = new DateTime('now');
@@ -532,7 +543,7 @@ class controller
                 $date = new DateTime('now');
                 date_sub($date, date_interval_create_from_date_string('7 days'));
                 $resort_type_clause = " AND resort.id_resort_type = 0 ";
-                $sort_by_clause = " AND resort.date_created > '" . $date->format('Y-m-d') . "' ";
+                $sort_by_clause = " AND resort.created_date > '" . $date->format('Y-m-d') . "' ";
             } else if ($sort_by == 2) {
                 $resort_type_clause = " AND resort.id_resort_type = 0 ";
                 $date = new DateTime('now');
@@ -546,7 +557,7 @@ class controller
                 $date = new DateTime('now');
                 date_sub($date, date_interval_create_from_date_string('7 days'));
                 $resort_type_clause = " AND resort.id_resort_type = 1 ";
-                $sort_by_clause = " AND resort.date_created > '" . $date->format('Y-m-d') . "' ";
+                $sort_by_clause = " AND resort.created_date > '" . $date->format('Y-m-d') . "' ";
             } else if ($sort_by == 2) {
                 $resort_type_clause = " AND resort.id_resort_type = 1 ";
                 $date = new DateTime('now');
@@ -557,8 +568,14 @@ class controller
         if (!isset($this->params[0])) {
             $regions = array(array());
             $listContinents = $this->control->getListContinents();
+            $listCoutinentsNumber = array();
+            $listRegionNumber = array();
             foreach ($listContinents as $key => $continent) {
                 $regions[$key] = $this->control->getListRegions($continent['id']);
+                $listCoutinentsNumber[$key] = $this->control->getNumberResortByCountinent($continent['id'],$resort_type_clause,$sort_by_clause);
+                foreach ($regions[$continent['id'] - 1] as $key2 => $region) {
+                    $listRegionNumber[$key2] = $this->control->getNumberResortById($region['id'],$resort_type_clause,$sort_by_clause);
+                }
             }
             $listResort = $this->control->getAllResort($resort_type_clause, $sort_by_clause);
         } else {
@@ -567,11 +584,17 @@ class controller
                 $country_name = $this->control->getLongNameCountry($id);
                 $listCity = $this->control->getListCityByIdCountry($id);
                 $address = $country_name;
+                $countryNumber = $this->control->getNumberResortById($id, $resort_type_clause, $sort_by_clause);
+                $listCityNumber = array();
+                foreach ($listCity as $key => $city) {
+                    $listCityNumber[$key] = $this->control->getNumberResortByIdCity($city['id'],$resort_type_clause,$sort_by_clause);
+                }
                 $listResort = $this->control->getResortByCountryName($id, $resort_type_clause, $sort_by_clause);
             } else {
                 $id_city = $this->params[1];
                 $city = $this->control->getCityById($id_city);
                 $name_city = $city['name'];
+                $cityNumber = $this->control->getNumberResortByIdCity($id_city,$resort_type_clause,$sort_by_clause);
                 $listResort = $this->control->getAllResortByIdCity($id_city, $resort_type_clause, $sort_by_clause);
                 $address = $name_city;
             }
@@ -824,9 +847,9 @@ class controller
                 date_sub($date, date_interval_create_from_date_string('7 days'));
                 $resort_type_clause = "";
                 if (!$isWorld)
-                    $sort_by_clause = " resort.date_created >= '" . $date->format('Y-m-d') . "' ";
+                    $sort_by_clause = " resort.created_date >= '" . $date->format('Y-m-d') . "' ";
                 else
-                    $sort_by_clause = " AND resort.date_created >= '" . $date->format('Y-m-d') . "' ";
+                    $sort_by_clause = " AND resort.created_date >= '" . $date->format('Y-m-d') . "' ";
             } else if ($sort_by == 2) {
                 $resort_type_clause = "";
                 $date = new DateTime('now');
@@ -846,7 +869,7 @@ class controller
                     $resort_type_clause = " resort.id_resort_type = 0 ";
                 else
                     $resort_type_clause = " AND resort.id_resort_type = 0 ";
-                $sort_by_clause = " AND resort.date_created > '" . $date->format('Y-m-d') . "' ";
+                $sort_by_clause = " AND resort.created_date > '" . $date->format('Y-m-d') . "' ";
             } else if ($sort_by == 2) {
                 if (!$isWorld)
                     $resort_type_clause = " resort.id_resort_type = 0 ";
@@ -869,7 +892,7 @@ class controller
                     $resort_type_clause = " resort.id_resort_type = 1";
                 else
                     $resort_type_clause = " AND resort.id_resort_type = 1 ";
-                $sort_by_clause = " AND resort.date_created > '" . $date->format('Y-m-d') . "' ";
+                $sort_by_clause = " AND resort.created_date > '" . $date->format('Y-m-d') . "' ";
             } else if ($sort_by == 2) {
                 if (!$isWorld)
                     $resort_type_clause = " resort.id_resort_type = 1 ";
@@ -930,7 +953,7 @@ class controller
                 $date = new DateTime('now');
                 date_sub($date, date_interval_create_from_date_string('7 days'));
                 $resort_type_clause = "";
-                $sort_by_clause = " AND resort.date_created > '" . $date->format('Y-m-d') . "' ";
+                $sort_by_clause = " AND resort.created_date > '" . $date->format('Y-m-d') . "' ";
             } else if ($sort_by == 2) {
                 $resort_type_clause = "";
                 $date = new DateTime('now');
@@ -944,7 +967,7 @@ class controller
                 $date = new DateTime('now');
                 date_sub($date, date_interval_create_from_date_string('7 days'));
                 $resort_type_clause = " AND resort.id_resort_type = 0 ";
-                $sort_by_clause = " AND resort.date_created > '" . $date->format('Y-m-d') . "' ";
+                $sort_by_clause = " AND resort.created_date > '" . $date->format('Y-m-d') . "' ";
             } else if ($sort_by == 2) {
                 $resort_type_clause = " AND resort.id_resort_type = 0 ";
                 $date = new DateTime('now');
@@ -958,7 +981,7 @@ class controller
                 $date = new DateTime('now');
                 date_sub($date, date_interval_create_from_date_string('7 days'));
                 $resort_type_clause = " AND resort.id_resort_type = 1 ";
-                $sort_by_clause = " AND resort.date_created > '" . $date->format('Y-m-d') . "' ";
+                $sort_by_clause = " AND resort.created_date > '" . $date->format('Y-m-d') . "' ";
             } else if ($sort_by == 2) {
                 $resort_type_clause = " AND resort.id_resort_type = 1 ";
                 $date = new DateTime('now');

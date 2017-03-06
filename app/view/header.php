@@ -88,7 +88,7 @@
                         if (!isset($_SESSION['tendangnhap']))
                             echo '<button class="btn btn-sucessful" style="border-radius:0px;margin-top:10px;" id="btnDangNhap" type="button">{DangNhapDangKy}</button>';
                         else {
-                            echo '<div class="dropdown btnUser"> <button id="btnXinChao"   class="btn btn-sucessful dropdown-toggle" type="button" data-toggle="dropdown">' . XinChao . $_SESSION['tentaikhoannguoidung'];
+                            echo '<div class="dropdown btnUser"> <button id="btnXinChao"   class="btn btn-sucessful dropdown-toggle" type="button" data-toggle="dropdown">' . XinChao . $_SESSION['tentaikhoan'];
                             echo ' <span class="caret"></span></button><ul  style="background-color: #FAF9DB" class="dropdown-menu">';
                             echo '<li><a href ="#" id="hrefXemThongTin" >{XemThongTinCaNhan}</a></li>';
                             echo '<li><a href ="' . BASE_URL . $_SESSION['lang'] . '/controller/getTransactionHistory" >{LichSuGiaoDich}</a></li>';
@@ -170,6 +170,7 @@
             </div><!--  End Row -->
         </div> <!-- end container -->
     </div>
+    <!--    Modal dang nhap -->
     <?php
     if (!isset($_SESSION['id'])) {
         include 'modaldangnhap.php';

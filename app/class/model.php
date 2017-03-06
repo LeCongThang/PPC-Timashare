@@ -133,7 +133,9 @@ class model
 
     public function xulydangnhap($tendangnhap, $matkhau)
     {
-        $sql = "SELECT * FROM taikhoan WHERE tendangnhap='" . $tendangnhap . "' and matkhau='" . md5($matkhau) . "' and id_vaitro = 1";
+
+        $sql = "SELECT * FROM taikhoan WHERE tendangnhap='" . $tendangnhap . "' and id_vaitro = 1";
+
         if (!$kq = $this->db->query($sql))
             die($this->db->error);
 
@@ -141,13 +143,12 @@ class model
         if ($kq->num_rows == 0)
             return false;
         $row = $kq->fetch_assoc();
-        $_SESSION["tentaikhoannguoidung"] = $row['hoten'];
-        return true;
+        return password_verify($matkhau, $row['password']);
     }// xulydangnhap
 
     public function themTaiKhoan($tendangnhap, $matkhau, $hoten, $diachi, $dienthoai, $loaithaikhoan)
     {
-        $sql = "insert into taikhoan values ('" . $tendangnhap . "','" . md5($matkhau) . "'," . $loaithaikhoan . ",'" . $hoten . "','" . $diachi . "','" . $dienthoai . "')";
+        $sql = "insert into taikhoan values ('" . $tendangnhap . "','" . password_hash($matkhau, PASSWORD_DEFAULT) . "'," . $loaithaikhoan . ",'" . $hoten . "','" . $diachi . "','" . $dienthoai . "')";
         return mysqli_query($this->db, $sql);
     }
 
@@ -170,19 +171,14 @@ class model
         $secs = $datetime2 - $datetime1;// == <seconds between the two times>
         $days = $secs / 86400;
         $total_price = ($resort_price * $room * $days) - $value_voucher;
-        $date_created = date("Y/m/d");
+        $created_date = date("Y/m/d");
         if ($id_voucher != 0)
-            $sql = "insert into book_now(id_user,id_resort,note,start_date, end_date, adults, childs, room, status, created_at, voucher_id, updated_at, exchange_rate, total_price, resort_price, discount) values ({$id_user},{$id_resort},'{$note}','{$date_start}','{$date_end}',{$adults},{$childs},{$room},0,'{$date_created}',{$id_voucher},'{$date_created}',{$exchange_rate},{$total_price},{$resort_price},{$value_voucher})";
+            $sql = "insert into book_now(id_user,id_resort,note,start_date, end_date, adults, childs, room, status, created_at, voucher_id, updated_at, exchange_rate, total_price, resort_price, discount) values ({$id_user},{$id_resort},'{$note}','{$date_start}','{$date_end}',{$adults},{$childs},{$room},0,'{$created_date}',{$id_voucher},'{$created_date}',{$exchange_rate},{$total_price},{$resort_price},{$value_voucher})";
         else
-            $sql = "insert into book_now(id_user,id_resort,note,start_date, end_date, adults, childs, room, status, created_at, updated_at, exchange_rate, total_price, resort_price) values ({$id_user},{$id_resort},'{$note}','{$date_start}','{$date_end}',{$adults},{$childs},{$room},0,'{$date_created}','{$date_created}',{$exchange_rate},{$total_price},{$resort_price})";
+            $sql = "insert into book_now(id_user,id_resort,note,start_date, end_date, adults, childs, room, status, created_at, updated_at, exchange_rate, total_price, resort_price) values ({$id_user},{$id_resort},'{$note}','{$date_start}','{$date_end}',{$adults},{$childs},{$room},0,'{$created_date}','{$created_date}',{$exchange_rate},{$total_price},{$resort_price})";
         return mysqli_query($this->db, $sql);
     }
 
-    public function readmor($idsp)
-    {
-        $sql = "SELECT * FROM khunghiduong_" . $_SESSION['lang'] . " WHERE id =" . $idsp;
-        return mysqli_query($this->db, $sql);
-    }
 
     public function xemthongtincanhan($tendangnhap)
     {
@@ -193,21 +189,11 @@ class model
 
     }
 
-    public function kiemtrataikhoan($tendangnhap, $matkhau)
-    {
-        $sql = "SELECT * FROM taikhoan WHERE tendangnhap='" . $tendangnhap . "' and matkhau='" . md5($matkhau) . "' and id_vaitro = 1";
-        if (!$kq = $this->db->query($sql))
-            die($this->db->error);
-
-        if ($kq->num_rows == 0)
-            return false;
-        return true;
-    }// xulydangnhap
 
     public function doimatkhau($tendangnhap, $matkhaucu, $matkhaumoi)
     {
-        if ($this->kiemtrataikhoan($tendangnhap, $matkhaucu)) {
-            $sql = "UPDATE taikhoan SET matkhau='" . md5($matkhaumoi) . "' WHERE tendangnhap = '" . $tendangnhap . "'";
+        if ($this->xulydangnhap($tendangnhap, $matkhaucu)) {
+            $sql = "UPDATE taikhoan SET password='" . password_hash($matkhaumoi, PASSWORD_DEFAULT) . "' WHERE tendangnhap = '" . $tendangnhap . "'";
             return mysqli_query($this->db, $sql);
         } else
             return false;
@@ -215,7 +201,7 @@ class model
 
     public function doiquenmatkhau($tendangnhap, $matkhaumoi)
     {
-        $sql = "UPDATE taikhoan SET matkhau='" . md5($matkhaumoi) . "' WHERE tendangnhap = '" . $tendangnhap . "'";
+        $sql = "UPDATE taikhoan SET password='" . password_hash($matkhaumoi, PASSWORD_DEFAULT) . "' WHERE tendangnhap = '" . $tendangnhap . "'";
         return mysqli_query($this->db, $sql);
 
     }
@@ -797,19 +783,41 @@ class model
         return $row['total'];
     }
 
-    public function getNumberResortById($id, $resort_type_clause, $sort_by_clause)
+    // getNumber By Country
+    public function getNumberResortByCountinent($idCountinent, $resort_type_clause, $sort_by_clause)
     {
-        $sql = "SELECT COUNT(id) as total FROM resort WHERE id_city IN (SELECT city.id FROM city, country WHERE city.id_country = country.id AND country.id = " . $id . " " . $resort_type_clause . $sort_by_clause . ")";
-        $result = $this->db->query($sql);
-        $row = mysqli_fetch_assoc($result);
+        $sql = "SELECT COUNT(id) as total FROM resort WHERE id_city IN (SELECT city.id FROM city WHERE city.id_country IN ( SELECT country.id FROM country WHERE country.id_continents = " . $idCountinent . " )) " . $resort_type_clause . $sort_by_clause . "";
+        $result = mysqli_query($this->db, $sql);
+        if (!$result) {
+            die("Error in query in getNumberResortByCountinent");
+        }
+        $row = $result->fetch_assoc();
+
         return $row['total'];
     }
 
+
+    // getNumber By Country
+    public function getNumberResortById($id, $resort_type_clause, $sort_by_clause)
+    {
+        $sql = "SELECT COUNT(id) as total FROM resort WHERE id_city IN (SELECT city.id FROM city WHERE city.id_country = " . $id . ") " . $resort_type_clause . $sort_by_clause . "";
+        $result = mysqli_query($this->db, $sql);
+        if (!$result) {
+            die("Error in query in getNumberResortById");
+        }
+        $row = $result->fetch_assoc();
+        return $row['total'];
+    }
+
+    // getNumber By IdCity
     public function getNumberResortByIdCity($id, $resort_type_clause, $sort_by_clause)
     {
         $sql = "SELECT COUNT(id) as total FROM resort WHERE id_city = " . $id . " " . $resort_type_clause . $sort_by_clause . "";
         $result = $this->db->query($sql);
-        $row = mysqli_fetch_assoc($result);
+        if (!$result) {
+            die("Error in query in getNumberResortByIdCity");
+        }
+        $row = $result->fetch_assoc();
         return $row['total'];
     }
 
@@ -903,7 +911,7 @@ class model
 
     public function getAllResortPageSortByDate($offset, $items)
     {
-        $sql = "SELECT * FROM resort, resort_image, resort_language WHERE resort.id = resort_image.id_resort AND resort_language.id_resort = resort.id AND resort_language.language = '" . $_SESSION['lang'] . "' GROUP BY resort.id ORDER BY DATE(date_created) DESC, resort.id ASC LIMIT " . $offset . "," . $items;
+        $sql = "SELECT * FROM resort, resort_image, resort_language WHERE resort.id = resort_image.id_resort AND resort_language.id_resort = resort.id AND resort_language.language = '" . $_SESSION['lang'] . "' GROUP BY resort.id ORDER BY DATE(created_date) DESC, resort.id ASC LIMIT " . $offset . "," . $items;
         $result = mysqli_query($this->db, $sql);
         if (!$result) {
             die($sql);
@@ -1025,7 +1033,7 @@ class model
 
     public function updatePassword($id_user, $password)
     {
-        $sql = "UPDATE taikhoan SET matkhau ='" . md5($password) . "' WHERE id =" . $id_user;
+        $sql = "UPDATE taikhoan SET password ='" . password_hash($password, PASSWORD_DEFAULT) . "' WHERE id =" . $id_user;
         $result = mysqli_query($this->db, $sql);
         if (!$result) {
             die("Error in updatePasswordKey");
@@ -1084,11 +1092,11 @@ class model
     public function insertAccountUser($imageResgiter, $emailResgiter, $passwordResgiter, $nameResgiter, $addressResgiter, $numberPhoneResgiter, $sexResgiter)
     {
         $bonus_money = $this->getMoneyBonus()['value'];
-        $passwordResgiter_md5 = md5($passwordResgiter);
+        $passwordResgiter_password_hash = password_hash($passwordResgiter, PASSWORD_DEFAULT);
         if($imageResgiter != "NULL")
-            $sql = "INSERT INTO taikhoan(tendangnhap,matkhau,bonus_money,id_vaitro,hoten,diachi,dienthoai,sex,status,avatar) VALUES ('{$emailResgiter}','{$passwordResgiter_md5}','{$bonus_money}',1,'{$nameResgiter}','{$addressResgiter}','{$numberPhoneResgiter}',$sexResgiter,0,'{$imageResgiter}')";
+            $sql = "INSERT INTO taikhoan(tendangnhap,password,bonus_money,id_vaitro,hoten,diachi,dienthoai,sex,status,avatar) VALUES ('{$emailResgiter}','{$passwordResgiter_password_hash}','{$bonus_money}',1,'{$nameResgiter}','{$addressResgiter}','{$numberPhoneResgiter}',$sexResgiter,0,'{$imageResgiter}')";
         else
-            $sql = "INSERT INTO taikhoan(tendangnhap,matkhau,bonus_money,id_vaitro,hoten,diachi,dienthoai,sex,status) VALUES ('{$emailResgiter}','{$passwordResgiter_md5}','{$bonus_money}',1,'{$nameResgiter}','{$addressResgiter}','{$numberPhoneResgiter}',$sexResgiter,0)";
+            $sql = "INSERT INTO taikhoan(tendangnhap,password,bonus_money,id_vaitro,hoten,diachi,dienthoai,sex,status) VALUES ('{$emailResgiter}','{$passwordResgiter_password_hash}','{$bonus_money}',1,'{$nameResgiter}','{$addressResgiter}','{$numberPhoneResgiter}',$sexResgiter,0)";
         $result = mysqli_query($this->db, $sql);
         if (!$result) {
             die("Error in insertAccountUser");

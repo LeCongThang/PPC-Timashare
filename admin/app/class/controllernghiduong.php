@@ -143,8 +143,15 @@ class controllernghiduong
                 //var_dump($output);
                 $data = json_decode($output, true);
                 $resort_address_en = $data['results'][0]['formatted_address'];
+                $address_components = $data['results'][0]['address_components'];
+                $city = "";
+                $id_country = $this->control->getIdCountry($resort_country);
+                foreach ($address_components as $key => $component) {
+                    if ($component['types'][0] == "administrative_area_level_1")
+                        $city = $component['long_name'];
+                }
 
-                if ($this->control->update($id_resort, $resort_name_en, $resort_introduce_en, $resort_location_en, $resort_service_en, $resort_equipment_en, $resort_address_en, $hinh, $resort_name, $resort_introduce, $resort_location, $resort_service, $resort_equipment, $resort_status, $resort_type, $resort_priority, $resort_price, $resort_address, $resort_lat, $resort_lon, $resort_country))
+                if ($this->control->update($id_resort, $resort_name_en, $resort_introduce_en, $resort_location_en, $resort_service_en, $resort_equipment_en, $resort_address_en, $hinh, $resort_name, $resort_introduce, $resort_location, $resort_service, $resort_equipment, $resort_status, $resort_type, $resort_priority, $resort_price, $resort_address, $resort_lat, $resort_lon, $resort_country, $city))
                     $this->errors[] = 'Cập nhật khu nghỉ dưỡng thành công!';
                 else
                     $this->errors[] = 'Lỗi! Cập nhật khu nghỉ dưỡng không thành công!';

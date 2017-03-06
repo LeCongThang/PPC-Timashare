@@ -9,6 +9,7 @@ class controlleradmin
     public $current_action;
     public $cname = "controlleradmin";
     public $errors = [];
+    const UPDATE_DIR = '../';
     // end variable declaration of the class
 
     /*
@@ -38,6 +39,19 @@ class controlleradmin
         require_once "app/view/dangnhap.php";
     }//index
 
+    private function uploadHinhUpdate()
+    {
+        if (isset($_FILES['imgProFile'])) {
+            $error = $_FILES['imgProFile']['error'];
+            if ($error == UPLOAD_ERR_OK) {
+                $tmp_name = $_FILES["imgProFile"]["tmp_name"];
+                $name = "img/" . time() . "_" . basename($_FILES["imgProFile"]["name"]);
+                move_uploaded_file($tmp_name, self::UPDATE_DIR . $name);
+                return $name;
+            }
+        }
+        return null;
+    }
     /*
     * Name: loadingadmin
     * Input: null
@@ -59,10 +73,11 @@ class controlleradmin
     {
         $tendangnhap = $_POST["username"];
         $matkhau = $_POST["password"];
-        $ktTonTai = "SELECT * FROM taikhoan WHERE tendangnhap='" . $tendangnhap . "' and matkhau='" . md5($matkhau) . "' and id_vaitro = 2";
-        $truyvanktTonTai = $this->controlleradmin->xulydangnhap($ktTonTai);
+        $truyvanktTonTai = $this->controlleradmin->xulydangnhap($tendangnhap, $matkhau);
         if ($truyvanktTonTai) {
             $_SESSION["tendangnhapadmin"] = $tendangnhap;
+            $user = $this->controlleradmin->layThongTinTaiKhoanAdmin();
+            $_SESSION['tentaikhoanadmin'] = $user['hoten'];
             if (isset($_POST["rememberme"])) {
                 $remember = $_POST["rememberme"];
                 setcookie("tendangnhap", $tendangnhap, time() + 2592000);
@@ -113,12 +128,14 @@ class controlleradmin
     public function thayDoiThongTin()
     {
         if (count($_POST) > 0) {
-            $ho_ten = $_POST['ho_ten_admin'];
-            $dia_chi = $_POST['dia_chi_admin'];
-            $dien_thoai = $_POST['dien_thoai_admin'];
-            if ($this->controlleradmin->updateAccountAdmin($ho_ten, $dia_chi, $dien_thoai)) {
+            $hinh = $this->uploadHinhUpdate();
+            $fullName = $_POST['txtFullName'];
+            $address = $_POST['txtAddress'];
+            $phoneNumber = $_POST['txtPhoneNumber'];
+            $gender = $_POST['radGender'];
+            if ($this->controlleradmin->updateAccountAdmin($hinh,$fullName,$address,$phoneNumber,$gender)) {
                 $this->errors[] = 'Cập nhật thông tin thành công';
-                $_SESSION['tentaikhoan'] = $ho_ten;
+                $_SESSION['tentaikhoan'] = $fullName;
                 $this->layThongTinAdmin();
             } else {
                 $this->errors[] = 'Lỗi xin mời bạn thử lại';

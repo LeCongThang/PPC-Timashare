@@ -6,7 +6,7 @@
             <div class="row text-left">
                 <div class="col-md-12 col-sm-12">
                     <hr class="text-left" style="width:50px;border:2px solid #362516;margin-left:0px;">
-                    <h2>{GioiThieu}</h2>
+                    <h2><b>{GioiThieu}</b></h2>
                 </div>
                 <div class="col-md-6 col-sm-12">
                     <img src="<?= BASE_URL ?><?= $gioithieu['img_tieude'] ?>" style="width:100%;">
