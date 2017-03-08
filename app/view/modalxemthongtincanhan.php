@@ -23,8 +23,7 @@
         });
 
         $(document).on('click', "#btnThoatThongTin", function () {
-            var modalxemthongtin = document.getElementById('ModalXemThongTin');
-            modalxemthongtin.style.display = "none";
+            $('#ModalXemThongTin').modal('toggle');
         });
         function validateEmail(email) {
             var re = /^(([^<>()[\]\\.,;:\s@\"]+(\.[^<>()[\]\\.,;:\s@\"]+)*)|(\".+\"))@((\[[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}\])|(([a-zA-Z\-0-9]+\.)+[a-zA-Z]{2,}))$/;

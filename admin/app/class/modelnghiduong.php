@@ -22,7 +22,7 @@ class modelnghiduong
 
     public function getListResort($lang)
     {
-        $sql = "SELECT * FROM resort, resort_language WHERE resort.id = resort_language.id_resort AND resort_language.language ='" . $lang . "' AND resort.id_resort_type = 0";
+        $sql = "SELECT * FROM resort, resort_language WHERE resort.id = resort_language.id_resort AND resort_language.language ='" . $lang . "' AND resort.id_resort_type = 1";
         $result = mysqli_query($this->db, $sql);
         if (!$result) {
             die("Error in query getListResort");
@@ -54,7 +54,7 @@ class modelnghiduong
 
     public function getListHome($lang)
     {
-        $sql = "SELECT * FROM resort, resort_language WHERE resort.id = resort_language.id_resort AND resort_language.language ='" . $lang . "' AND resort.id_resort_type = 1";
+        $sql = "SELECT * FROM resort, resort_language WHERE resort.id = resort_language.id_resort AND resort_language.language ='" . $lang . "' AND resort.id_resort_type = 2";
         $result = mysqli_query($this->db, $sql);
         if (!$result) {
             die("Error in query getListResort");

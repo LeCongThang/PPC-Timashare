@@ -2,7 +2,7 @@
 
 class controllerslider
 {
-    const UPDATE_DIR = '../';
+    const UPDATE_DIR = '../../';
 
     public $controllerslider;
     public $params;

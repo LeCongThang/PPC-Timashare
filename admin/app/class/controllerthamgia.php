@@ -8,7 +8,7 @@
  */
 class controllerthamgia
 {
-    const UPDATE_DIR = '../';
+    const UPDATE_DIR = '../../';
     public $controllerthamgia;
     public $params;
     public $current_action;

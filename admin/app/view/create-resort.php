@@ -211,13 +211,13 @@ $isUpdate = isset($this->params[0]);
                                 </div>
                                 <div class="form-group">
                                     <label for="noidung">Loại dịch vụ</label>
-                                    <?php if ($isUpdate) $resort_vi['id_resort_type'] == 0 ? $inResort = true : $inResort = false; ?>
+                                    <?php if ($isUpdate) $resort_vi['id_resort_type'] == 1 ? $inResort = true : $inResort = false; ?>
                                     <label class="radio-inline"><input type="radio" name="resort_type"
-                                                                       value="0" <?php if ($isUpdate) echo $inResort ? "checked" : "" ?>>Khu
+                                                                       value="1" <?php if ($isUpdate) echo $inResort ? "checked" : "" ?>>Khu
                                         nghỉ
                                         dưỡng</label>
                                     <label class="radio-inline"><input type="radio" name="resort_type"
-                                                                       value="1" <?php if ($isUpdate) echo !$inResort ? "checked" : "" ?>>Nhà
+                                                                       value="2" <?php if ($isUpdate) echo !$inResort ? "checked" : "" ?>>Nhà
                                         nghỉ
                                         mát</label>
                                 </div>

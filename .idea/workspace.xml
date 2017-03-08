@@ -2,22 +2,13 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="48675101-2802-42b6-bd9d-0b7e31c69e3a" name="Default" comment="">
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/admin/app/class/controllerbanner.php" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/admin/app/class/modelbanner.php" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/admin/app/view/ReadBooked.php" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/admin/app/view/ReadBooking.php" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/admin/app/view/quanlybanner.php" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/admin/app/class/controllertrangthai.php" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/admin/app/view/home.php" afterPath="" />
-      <change type="MOVED" beforePath="$PROJECT_DIR$/admin/index.php" afterPath="$PROJECT_DIR$/admin/app/index.php" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/admin/css/select2.min.css" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/admin/js/select2.min.js" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.idea/workspace.xml" afterPath="$PROJECT_DIR$/.idea/workspace.xml" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/admin/.htaccess" afterPath="$PROJECT_DIR$/admin/.htaccess" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/admin/app/class/controlleradmin.php" afterPath="$PROJECT_DIR$/admin/app/class/controlleradmin.php" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/admin/app/class/controllerbook.php" afterPath="$PROJECT_DIR$/admin/app/class/controllerbook.php" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/admin/app/class/controllercauhoi.php" afterPath="$PROJECT_DIR$/admin/app/class/controllercauhoi.php" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/admin/app/class/controllerbanner.php" afterPath="$PROJECT_DIR$/admin/app/class/controllerbanner.php" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/admin/app/class/controllergioithieu.php" afterPath="$PROJECT_DIR$/admin/app/class/controllergioithieu.php" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/admin/app/class/controllerloiich.php" afterPath="$PROJECT_DIR$/admin/app/class/controllerloiich.php" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/admin/app/class/controllermail.php" afterPath="$PROJECT_DIR$/admin/app/class/controllermail.php" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/admin/app/class/controllernghiduong.php" afterPath="$PROJECT_DIR$/admin/app/class/controllernghiduong.php" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/admin/app/class/controllerslider.php" afterPath="$PROJECT_DIR$/admin/app/class/controllerslider.php" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/admin/app/class/controllertaikhoan.php" afterPath="$PROJECT_DIR$/admin/app/class/controllertaikhoan.php" />
@@ -27,49 +18,18 @@
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/admin/app/class/controllertimeshare.php" afterPath="$PROJECT_DIR$/admin/app/class/controllertimeshare.php" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/admin/app/class/controllertuyendung.php" afterPath="$PROJECT_DIR$/admin/app/class/controllertuyendung.php" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/admin/app/class/controlleruudai.php" afterPath="$PROJECT_DIR$/admin/app/class/controlleruudai.php" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/admin/app/class/controllervideo.php" afterPath="$PROJECT_DIR$/admin/app/class/controllervideo.php" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/admin/app/class/modelbook.php" afterPath="$PROJECT_DIR$/admin/app/class/modelbook.php" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/admin/app/class/modelnghiduong.php" afterPath="$PROJECT_DIR$/admin/app/class/modelnghiduong.php" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/admin/app/class/modeltaikhoan.php" afterPath="$PROJECT_DIR$/admin/app/class/modeltaikhoan.php" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/admin/app/view/admin.php" afterPath="$PROJECT_DIR$/admin/app/view/admin.php" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/admin/app/view/capnhatthongtin.php" afterPath="$PROJECT_DIR$/admin/app/view/capnhatthongtin.php" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/admin/app/view/create-account-2.php" afterPath="$PROJECT_DIR$/admin/app/view/create-account-2.php" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/admin/app/view/create-account.php" afterPath="$PROJECT_DIR$/admin/app/view/create-account.php" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/admin/app/view/create-announce_papers.php" afterPath="$PROJECT_DIR$/admin/app/view/create-announce_papers.php" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/admin/app/class/modeluudai.php" afterPath="$PROJECT_DIR$/admin/app/class/modeluudai.php" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/admin/app/config.php" afterPath="$PROJECT_DIR$/admin/app/config.php" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/admin/app/view/create-deals.php" afterPath="$PROJECT_DIR$/admin/app/view/create-deals.php" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/admin/app/view/create-question.php" afterPath="$PROJECT_DIR$/admin/app/view/create-question.php" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/admin/app/view/create-recruitment.php" afterPath="$PROJECT_DIR$/admin/app/view/create-recruitment.php" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/admin/app/view/create-resort.php" afterPath="$PROJECT_DIR$/admin/app/view/create-resort.php" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/admin/app/view/create-slider.php" afterPath="$PROJECT_DIR$/admin/app/view/create-slider.php" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/admin/app/view/create-video.php" afterPath="$PROJECT_DIR$/admin/app/view/create-video.php" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/admin/app/view/gioithieu.php" afterPath="$PROJECT_DIR$/admin/app/view/gioithieu.php" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/admin/app/view/loiich.php" afterPath="$PROJECT_DIR$/admin/app/view/loiich.php" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/admin/app/view/mail.php" afterPath="$PROJECT_DIR$/admin/app/view/mail.php" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/admin/app/view/partials/slider-bar.php" afterPath="$PROJECT_DIR$/admin/app/view/partials/slider-bar.php" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/admin/app/view/quanlybook.php" afterPath="$PROJECT_DIR$/admin/app/view/quanlybook.php" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/admin/app/view/quanlycauhoi.php" afterPath="$PROJECT_DIR$/admin/app/view/quanlycauhoi.php" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/admin/app/view/quanlykhunghiduong.php" afterPath="$PROJECT_DIR$/admin/app/view/quanlykhunghiduong.php" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/admin/app/view/quanlytaikhoan.php" afterPath="$PROJECT_DIR$/admin/app/view/quanlytaikhoan.php" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/admin/app/view/quanlythamgia.php" afterPath="$PROJECT_DIR$/admin/app/view/quanlythamgia.php" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/admin/app/view/quanlythongbao.php" afterPath="$PROJECT_DIR$/admin/app/view/quanlythongbao.php" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/admin/app/view/quanlytuyendung.php" afterPath="$PROJECT_DIR$/admin/app/view/quanlytuyendung.php" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/admin/app/view/quanlyuudai.php" afterPath="$PROJECT_DIR$/admin/app/view/quanlyuudai.php" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/admin/app/view/quanlyvideo.php" afterPath="$PROJECT_DIR$/admin/app/view/quanlyvideo.php" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/admin/app/view/readmail.php" afterPath="$PROJECT_DIR$/admin/app/view/readmail.php" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/admin/app/view/readmailchecked.php" afterPath="$PROJECT_DIR$/admin/app/view/readmailchecked.php" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/admin/app/view/slider.php" afterPath="$PROJECT_DIR$/admin/app/view/slider.php" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/admin/app/view/thamgia.php" afterPath="$PROJECT_DIR$/admin/app/view/thamgia.php" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/admin/app/view/thongtincanhan.php" afterPath="$PROJECT_DIR$/admin/app/view/thongtincanhan.php" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/admin/app/view/timeshare.php" afterPath="$PROJECT_DIR$/admin/app/view/timeshare.php" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/app/class/controller.php" afterPath="$PROJECT_DIR$/app/class/controller.php" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/app/class/model.php" afterPath="$PROJECT_DIR$/app/class/model.php" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/app/config.php" afterPath="$PROJECT_DIR$/app/config.php" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/app/view/ResortDirectory.php" afterPath="$PROJECT_DIR$/app/view/ResortDirectory.php" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/app/view/ResortDirectoryView.php" afterPath="$PROJECT_DIR$/app/view/ResortDirectoryView.php" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/app/view/header.php" afterPath="$PROJECT_DIR$/app/view/header.php" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/ckeditor/config.js" afterPath="$PROJECT_DIR$/ckeditor/config.js" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/css/responsive.css" afterPath="$PROJECT_DIR$/css/responsive.css" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/css/style.css" afterPath="$PROJECT_DIR$/css/style.css" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/css/stylehead.css" afterPath="$PROJECT_DIR$/css/stylehead.css" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/app/view/modalquenmatkhau.php" afterPath="$PROJECT_DIR$/app/view/modalquenmatkhau.php" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/app/view/modalxemthongtincanhan.php" afterPath="$PROJECT_DIR$/app/view/modalxemthongtincanhan.php" />
     </list>
     <ignored path="PPC-Timeshare.iws" />
     <ignored path=".idea/workspace.xml" />
@@ -97,169 +57,202 @@
     <favorites_list name="PPC-Timeshare" />
   </component>
   <component name="FileEditorManager">
-    <leaf SIDE_TABS_SIZE_LIMIT_KEY="300">
+    <leaf>
+      <file leaf-file-name="controller.php" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/app/class/controller.php">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="1337">
+              <caret line="540" column="69" selection-start-line="540" selection-start-column="69" selection-end-line="540" selection-end-column="69" />
+              <folding />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="create-deals.php" pinned="false" current-in-tab="true">
+        <entry file="file://$PROJECT_DIR$/admin/app/view/create-deals.php">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="204">
+              <caret line="20" column="45" selection-start-line="20" selection-start-column="45" selection-end-line="20" selection-end-column="45" />
+              <folding />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="select2.min.css" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/admin/css/select2.min.css">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="0">
+              <caret line="0" column="15167" selection-start-line="0" selection-start-column="15167" selection-end-line="0" selection-end-column="15167" />
+              <folding />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="create-slider.php" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/admin/app/view/create-slider.php">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="357">
+              <caret line="21" column="58" selection-start-line="21" selection-start-column="58" selection-end-line="21" selection-end-column="58" />
+              <folding />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="select2.min.js" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/admin/js/select2.min.js">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="34">
+              <caret line="2" column="1248" selection-start-line="2" selection-start-column="1248" selection-end-line="2" selection-end-column="1248" />
+              <folding>
+                <element signature="n#!!doc" expanded="true" />
+              </folding>
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="ResortDirectoryView.php" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/app/view/ResortDirectoryView.php">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="300">
+              <caret line="78" column="37" selection-start-line="78" selection-start-column="37" selection-end-line="78" selection-end-column="37" />
+              <folding>
+                <marker date="1488997825077" expanded="true" signature="3691:3702" ph="..." />
+                <marker date="1488997825077" expanded="true" signature="3789:3804" ph="..." />
+                <marker date="1488997825077" expanded="true" signature="3990:4022" ph="..." />
+                <marker date="1488997825077" expanded="true" signature="4272:4307" ph="..." />
+                <marker date="1488997825077" expanded="true" signature="4457:4471" ph="..." />
+                <marker date="1488997825077" expanded="true" signature="4984:4995" ph="..." />
+                <marker date="1488997825077" expanded="true" signature="4996:5251" ph="..." />
+                <marker date="1488997825077" expanded="true" signature="5082:5097" ph="..." />
+                <marker date="1488997825077" expanded="true" signature="5184:5216" ph="..." />
+                <marker date="1488997825077" expanded="true" signature="5217:5251" ph="..." />
+                <marker date="1488997825077" expanded="true" signature="5450:5485" ph="..." />
+                <marker date="1488997825077" expanded="true" signature="5645:5659" ph="..." />
+                <marker date="1488997825077" expanded="true" signature="7920:7939" ph="..." />
+                <marker date="1488997825077" expanded="true" signature="8136:8155" ph="..." />
+                <marker date="1488997825077" expanded="true" signature="8308:8327" ph="..." />
+              </folding>
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="controllerslider.php" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/admin/app/class/controllerslider.php">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="357">
+              <caret line="80" column="32" selection-start-line="80" selection-start-column="8" selection-end-line="80" selection-end-column="32" />
+              <folding />
+            </state>
+          </provider>
+        </entry>
+      </file>
       <file leaf-file-name="model.php" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/app/class/model.php">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="192">
-              <caret line="168" column="44" selection-start-line="168" selection-start-column="44" selection-end-line="168" selection-end-column="44" />
+            <state relative-caret-position="158">
+              <caret line="1022" column="37" selection-start-line="1022" selection-start-column="20" selection-end-line="1022" selection-end-column="37" />
               <folding>
-                <marker date="1488904324231" expanded="true" signature="472:486" ph="SELECT * FRO... ${$bang}" />
-                <marker date="1488904324231" expanded="true" signature="890:1164" ph="SELECT slide... slider" />
-                <marker date="1488904324231" expanded="true" signature="1555:1806" ph="SELECT gioit... gioithieu" />
-                <marker date="1488904324231" expanded="true" signature="2049:2323" ph="SELECT cauho... cauhoithuonggap" />
-                <marker date="1488904324231" expanded="true" signature="2732:2836" ph="SELECT * FRO... slider_ngonngu" />
-                <marker date="1488904324231" expanded="true" signature="3237:3251" ph="SELECT * FRO... ${$bang}" />
-                <marker date="1488904324231" expanded="true" signature="3440:3503" ph="SELECT * FRO... khunghiduong_" />
-                <marker date="1488904324231" expanded="true" signature="3704:3744" ph="SELECT * FRO... lienhe" />
-                <marker date="1488904324231" expanded="true" signature="4229:4310" ph="SELECT * FRO... taikhoan" />
-                <marker date="1488904324231" expanded="true" signature="4693:4876" ph="insert into taikhoan... " />
-                <marker date="1488904324231" expanded="true" signature="5021:5182" ph="insert into lienhe... " />
-                <marker date="1488904324231" expanded="true" signature="6001:6402" ph="insert into book_now... " />
-                <marker date="1488904324231" expanded="true" signature="6438:6786" ph="insert into book_now... " />
-                <marker date="1488904324231" expanded="true" signature="6917:6982" ph="SELECT * FRO... taikhoan" />
-                <marker date="1488904324231" expanded="true" signature="7284:7410" ph="UPDATE taikh... " />
-                <marker date="1488904324231" expanded="true" signature="7595:7721" ph="UPDATE taikh... " />
-                <marker date="1488904324231" expanded="true" signature="7883:8028" ph="UPDATE taikh... " />
-                <marker date="1488904324231" expanded="true" signature="8172:8275" ph="SELECT * FRO... taikhoan" />
-                <marker date="1488904324231" expanded="true" signature="8504:8915" ph="SELECT thamg... thamgia" />
-                <marker date="1488904324231" expanded="true" signature="9087:9129" ph="select count... video" />
-                <marker date="1488904324231" expanded="true" signature="9331:9395" ph="SELECT * FRO... video" />
-                <marker date="1488904324231" expanded="true" signature="9803:10002" ph="SELECT deals... deals" />
-                <marker date="1488904324231" expanded="true" signature="10420:10658" ph="SELECT deals... deals" />
-                <marker date="1488904324231" expanded="true" signature="11068:11104" ph="select count... deals" />
-                <marker date="1488904324231" expanded="true" signature="11292:11507" ph="SELECT deals... deals" />
-                <marker date="1488904324231" expanded="true" signature="11770:11812" ph="select count... connect_ppc" />
-                <marker date="1488904324231" expanded="true" signature="12012:12328" ph="SELECT conne... connect_ppc" />
-                <marker date="1488904324231" expanded="true" signature="12743:13042" ph="SELECT conne... connect_ppc" />
-                <marker date="1488904324231" expanded="true" signature="13307:13353" ph="select count... announce_papers" />
-                <marker date="1488904324231" expanded="true" signature="13554:13936" ph="SELECT annou... announce_papers" />
-                <marker date="1488904324231" expanded="true" signature="14351:14738" ph="SELECT resor... resort" />
-                <marker date="1488904324231" expanded="true" signature="15010:15239" ph="SELECT * FRO... resort" />
-                <marker date="1488904324231" expanded="true" signature="15525:15568" ph="SELECT * FRO... resort_image" />
-                <marker date="1488904324231" expanded="true" signature="16292:16368" ph="SELECT * FRO... owning_a_timeshare" />
-                <marker date="1488904324231" expanded="true" signature="16628:16703" ph="SELECT * FRO... benefit_timeshare" />
-                <marker date="1488904324231" expanded="true" signature="16961:16985" ph="SELECT * FRO... continents" />
-                <marker date="1488904324231" expanded="true" signature="17389:17432" ph="SELECT * FRO... country" />
-                <marker date="1488904324231" expanded="true" signature="24117:24169" ph="SELECT * FRO... continents" />
-                <marker date="1488904324231" expanded="true" signature="24456:24522" ph="UPDATE count... " />
-                <marker date="1488904324231" expanded="true" signature="24684:24942" ph="SELECT * FRO... resort" />
-                <marker date="1488904324231" expanded="true" signature="25381:25425" ph="select count... resort" />
-                <marker date="1488904324231" expanded="true" signature="25838:26078" ph="SELECT COUNT... resort" />
-                <marker date="1488904324231" expanded="true" signature="25894:26030" ph="SELECT city.... city" />
-                <marker date="1488904324231" expanded="true" signature="25946:26007" ph="SELECT count... country" />
-                <marker date="1488904324231" expanded="true" signature="26440:26604" ph="SELECT COUNT... resort" />
-                <marker date="1488904324231" expanded="true" signature="26496:26545" ph="SELECT city.... city" />
-                <marker date="1488904324231" expanded="true" signature="26959:27071" ph="SELECT COUNT... resort" />
-                <marker date="1488904324231" expanded="true" signature="27401:27705" ph="SELECT * FRO... resort" />
-                <marker date="1488904324231" expanded="true" signature="28159:28577" ph="SELECT * FRO... resort" />
-                <marker date="1488904324231" expanded="true" signature="29035:29371" ph="SELECT * FRO... resort" />
-                <marker date="1488904324231" expanded="true" signature="29768:29801" ph="SELECT * FRO... country" />
-                <marker date="1488904324231" expanded="true" signature="30045:30418" ph="SELECT * FRO... resort" />
-                <marker date="1488904324231" expanded="true" signature="30830:31110" ph="SELECT * FRO... resort" />
-                <marker date="1488904324231" expanded="true" signature="31527:31810" ph="SELECT * FRO... resort" />
-                <marker date="1488904324231" expanded="true" signature="32246:32594" ph="SELECT * FRO... resort" />
-                <marker date="1488904324231" expanded="true" signature="33013:33103" ph="SELECT * FRO... city" />
-                <marker date="1488904324231" expanded="true" signature="33370:33428" ph="SELECT * FRO... city" />
-                <marker date="1488904324231" expanded="true" signature="33814:33861" ph="SELECT * FRO... city" />
-                <marker date="1488904324231" expanded="true" signature="34156:34447" ph="SELECT * FRO... resort" />
-                <marker date="1488904324231" expanded="true" signature="34834:34892" ph="SELECT * FRO... taikhoan" />
-                <marker date="1488904324231" expanded="true" signature="35165:35233" ph="UPDATE taikh... " />
-                <marker date="1488904324231" expanded="true" signature="35485:35551" ph="SELECT * FRO... taikhoan" />
-                <marker date="1488904324231" expanded="true" signature="35814:35907" ph="UPDATE taikh... " />
-                <marker date="1488904324231" expanded="true" signature="36212:36272" ph="Select * FRO... settings" />
-                <marker date="1488904324231" expanded="true" signature="36515:36578" ph="Select * FRO... settings" />
-                <marker date="1488904324231" expanded="true" signature="36821:36874" ph="SELECT * FRO... taikhoan" />
-                <marker date="1488904324231" expanded="true" signature="37125:37182" ph="SELECT * FRO... taikhoan" />
-                <marker date="1488904324231" expanded="true" signature="37737:38023" ph="INSERT INTO taikhoan... " />
-                <marker date="1488904324231" expanded="true" signature="38059:38319" ph="INSERT INTO taikhoan... " />
-                <marker date="1488904324231" expanded="true" signature="38791:38842" ph="SELECT * FRO... voucher" />
-                <marker date="1488904324231" expanded="true" signature="39232:39264" ph="SELECT * FRO... voucher" />
-                <marker date="1488904324231" expanded="true" signature="39552:39662" ph="INSERT INTO voucher... " />
-                <marker date="1488904324231" expanded="true" signature="39899:39930" ph="SELECT * FRO... voucher" />
-                <marker date="1488904324231" expanded="true" signature="40296:40360" ph="UPDATE vouch... " />
-                <marker date="1488904324231" expanded="true" signature="40647:40990" ph="SELECT book_... book_now" />
-                <marker date="1488904324231" expanded="true" signature="41471:41945" ph="SELECT book_... book_now" />
-                <marker date="1488904324231" expanded="true" signature="41981:42540" ph="SELECT book_... book_now" />
-                <marker date="1488904324231" expanded="true" signature="42774:42812" ph="SELECT * FRO... book_now" />
-                <marker date="1488904324231" expanded="true" signature="43061:43094" ph="SELECT * FRO... taikhoan" />
-                <marker date="1488904324231" expanded="true" signature="43403:43518" ph="UPDATE taikh... " />
+                <marker date="1488998820115" expanded="true" signature="472:486" ph="SELECT * FRO... ${$bang}" />
+                <marker date="1488998820115" expanded="true" signature="896:1170" ph="SELECT slide... slider" />
+                <marker date="1488998820115" expanded="true" signature="1573:1824" ph="SELECT gioit... gioithieu" />
+                <marker date="1488998820115" expanded="true" signature="2074:2348" ph="SELECT cauho... cauhoithuonggap" />
+                <marker date="1488998820115" expanded="true" signature="2778:2882" ph="SELECT * FRO... slider_ngonngu" />
+                <marker date="1488998820115" expanded="true" signature="3300:3314" ph="SELECT * FRO... ${$bang}" />
+                <marker date="1488998820115" expanded="true" signature="3503:3566" ph="SELECT * FRO... khunghiduong_" />
+                <marker date="1488998820115" expanded="true" signature="3767:3807" ph="SELECT * FRO... lienhe" />
+                <marker date="1488998820115" expanded="true" signature="4292:4373" ph="SELECT * FRO... taikhoan" />
+                <marker date="1488998820115" expanded="true" signature="4756:4939" ph="insert into taikhoan... " />
+                <marker date="1488998820115" expanded="true" signature="5084:5245" ph="insert into lienhe... " />
+                <marker date="1488998820115" expanded="true" signature="6064:6465" ph="insert into book_now... " />
+                <marker date="1488998820115" expanded="true" signature="6501:6849" ph="insert into book_now... " />
+                <marker date="1488998820115" expanded="true" signature="6980:7045" ph="SELECT * FRO... taikhoan" />
+                <marker date="1488998820115" expanded="true" signature="7347:7473" ph="UPDATE taikh... " />
+                <marker date="1488998820115" expanded="true" signature="7658:7784" ph="UPDATE taikh... " />
+                <marker date="1488998820115" expanded="true" signature="7946:8091" ph="UPDATE taikh... " />
+                <marker date="1488998820115" expanded="true" signature="8235:8338" ph="SELECT * FRO... taikhoan" />
+                <marker date="1488998820115" expanded="true" signature="8567:8978" ph="SELECT thamg... thamgia" />
+                <marker date="1488998820115" expanded="true" signature="9150:9192" ph="select count... video" />
+                <marker date="1488998820115" expanded="true" signature="9394:9458" ph="SELECT * FRO... video" />
+                <marker date="1488998820115" expanded="true" signature="9878:10077" ph="SELECT deals... deals" />
+                <marker date="1488998820115" expanded="true" signature="10503:10741" ph="SELECT deals... deals" />
+                <marker date="1488998820115" expanded="true" signature="11163:11199" ph="select count... deals" />
+                <marker date="1488998820115" expanded="true" signature="11387:11602" ph="SELECT deals... deals" />
+                <marker date="1488998820115" expanded="true" signature="11875:11917" ph="select count... connect_ppc" />
+                <marker date="1488998820115" expanded="true" signature="12117:12433" ph="SELECT conne... connect_ppc" />
+                <marker date="1488998820115" expanded="true" signature="12858:13157" ph="SELECT conne... connect_ppc" />
+                <marker date="1488998820115" expanded="true" signature="13434:13480" ph="select count... announce_papers" />
+                <marker date="1488998820115" expanded="true" signature="13681:14063" ph="SELECT annou... announce_papers" />
+                <marker date="1488998820115" expanded="true" signature="14489:14876" ph="SELECT resor... resort" />
+                <marker date="1488998820115" expanded="true" signature="15160:15389" ph="SELECT * FRO... resort" />
+                <marker date="1488998820115" expanded="true" signature="15675:15718" ph="SELECT * FRO... resort_image" />
+                <marker date="1488998820115" expanded="true" signature="16456:16532" ph="SELECT * FRO... owning_a_timeshare" />
+                <marker date="1488998820115" expanded="true" signature="16806:16881" ph="SELECT * FRO... benefit_timeshare" />
+                <marker date="1488998820115" expanded="true" signature="17154:17178" ph="SELECT * FRO... continents" />
+                <marker date="1488998820115" expanded="true" signature="17595:17638" ph="SELECT * FRO... country" />
+                <marker date="1488998820115" expanded="true" signature="24333:24385" ph="SELECT * FRO... continents" />
+                <marker date="1488998820115" expanded="true" signature="24683:24749" ph="UPDATE count... " />
+                <marker date="1488998820115" expanded="true" signature="24911:25169" ph="SELECT * FRO... resort" />
+                <marker date="1488998820115" expanded="true" signature="25619:25663" ph="select count... resort" />
+                <marker date="1488998820115" expanded="true" signature="26076:26316" ph="SELECT COUNT... resort" />
+                <marker date="1488998820115" expanded="true" signature="26132:26268" ph="SELECT city.... city" />
+                <marker date="1488998820115" expanded="true" signature="26184:26245" ph="SELECT count... country" />
+                <marker date="1488998820115" expanded="true" signature="26678:26796" ph="SELECT COUNT... resort" />
+                <marker date="1488998820115" expanded="true" signature="26678:26843" ph="SELECT COUNT... resort" />
+                <marker date="1488998820115" expanded="true" signature="26734:26783" ph="SELECT city.... city" />
+                <marker date="1488998820115" expanded="true" signature="27198:27310" ph="SELECT COUNT... resort" />
+                <marker date="1488998820115" expanded="true" signature="27640:27944" ph="SELECT * FRO... resort" />
+                <marker date="1488998820115" expanded="true" signature="28398:28816" ph="SELECT * FRO... resort" />
+                <marker date="1488998820115" expanded="true" signature="29274:29610" ph="SELECT * FRO... resort" />
+                <marker date="1488998820115" expanded="true" signature="30007:30040" ph="SELECT * FRO... country" />
+                <marker date="1488998820115" expanded="true" signature="30279:30652" ph="SELECT * FRO... resort" />
+                <marker date="1488998820115" expanded="true" signature="31064:31344" ph="SELECT * FRO... resort" />
+                <marker date="1488998820115" expanded="true" signature="31761:32044" ph="SELECT * FRO... resort" />
+                <marker date="1488998820115" expanded="true" signature="32480:32828" ph="SELECT * FRO... resort" />
+                <marker date="1488998820115" expanded="true" signature="33247:33337" ph="SELECT * FRO... city" />
+                <marker date="1488998820115" expanded="true" signature="33604:33662" ph="SELECT * FRO... city" />
+                <marker date="1488998820115" expanded="true" signature="34048:34095" ph="SELECT * FRO... city" />
+                <marker date="1488998820115" expanded="true" signature="34390:34681" ph="SELECT * FRO... resort" />
+                <marker date="1488998820115" expanded="true" signature="35068:35126" ph="SELECT * FRO... taikhoan" />
+                <marker date="1488998820115" expanded="true" signature="35399:35467" ph="UPDATE taikh... " />
+                <marker date="1488998820115" expanded="true" signature="35719:35785" ph="SELECT * FRO... taikhoan" />
+                <marker date="1488998820115" expanded="true" signature="36048:36141" ph="UPDATE taikh... " />
+                <marker date="1488998820115" expanded="true" signature="36446:36506" ph="Select * FRO... settings" />
+                <marker date="1488998820115" expanded="true" signature="36749:36812" ph="Select * FRO... settings" />
+                <marker date="1488998820115" expanded="true" signature="37055:37108" ph="SELECT * FRO... taikhoan" />
+                <marker date="1488998820115" expanded="true" signature="37359:37416" ph="SELECT * FRO... taikhoan" />
+                <marker date="1488998820115" expanded="true" signature="37971:38228" ph="INSERT INTO taikhoan... " />
+                <marker date="1488998820115" expanded="true" signature="38264:38495" ph="INSERT INTO taikhoan... " />
+                <marker date="1488998820115" expanded="true" signature="38967:39018" ph="SELECT * FRO... voucher" />
+                <marker date="1488998820115" expanded="true" signature="39408:39440" ph="SELECT * FRO... voucher" />
+                <marker date="1488998820115" expanded="true" signature="39728:39838" ph="INSERT INTO voucher... " />
+                <marker date="1488998820115" expanded="true" signature="40075:40106" ph="SELECT * FRO... voucher" />
+                <marker date="1488998820115" expanded="true" signature="40472:40536" ph="UPDATE vouch... " />
+                <marker date="1488998820115" expanded="true" signature="40823:41166" ph="SELECT book_... book_now" />
+                <marker date="1488998820115" expanded="true" signature="41647:42121" ph="SELECT book_... book_now" />
+                <marker date="1488998820115" expanded="true" signature="42157:42716" ph="SELECT book_... book_now" />
+                <marker date="1488998820115" expanded="true" signature="42950:42988" ph="SELECT * FRO... book_now" />
+                <marker date="1488998820115" expanded="true" signature="43237:43270" ph="SELECT * FRO... taikhoan" />
+                <marker date="1488998820115" expanded="true" signature="43579:43694" ph="UPDATE taikh... " />
               </folding>
             </state>
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="controllerbook.php" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/admin/app/class/controllerbook.php">
+      <file leaf-file-name="config.php" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/app/config.php">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="255">
-              <caret line="50" column="57" selection-start-line="50" selection-start-column="57" selection-end-line="50" selection-end-column="57" />
+            <state relative-caret-position="289">
+              <caret line="17" column="50" selection-start-line="17" selection-start-column="25" selection-end-line="17" selection-end-column="50" />
               <folding />
             </state>
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="controlleradmin.php" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/admin/app/class/controlleradmin.php">
+      <file leaf-file-name="modalquenmatkhau.php" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/app/view/modalquenmatkhau.php">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="253">
-              <caret line="78" column="66" selection-start-line="78" selection-start-column="66" selection-end-line="78" selection-end-column="66" />
-              <folding />
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file leaf-file-name="modelbook.php" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/admin/app/class/modelbook.php">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="208">
-              <caret line="61" column="55" selection-start-line="61" selection-start-column="55" selection-end-line="61" selection-end-column="55" />
-              <folding>
-                <marker date="1488965918357" expanded="true" signature="469:817" ph="SELECT book_... book_now" />
-                <marker date="1488965918357" expanded="true" signature="469:841" ph="SELECT book_... book_now" />
-                <marker date="1488965918357" expanded="true" signature="1254:1696" ph="SELECT book_... book_now" />
-                <marker date="1488965918357" expanded="true" signature="1632:1695" ph="SELECT book_... book_now" />
-                <marker date="1488965918357" expanded="true" signature="2113:2687" ph="SELECT book_... book_now" />
-                <marker date="1488965918357" expanded="true" signature="2867:3416" ph="SELECT vouch... voucher" />
-                <marker date="1488965918357" expanded="true" signature="3734:3741" ph="UPDATE book_... " />
-                <marker date="1488965918357" expanded="true" signature="3734:3836" ph="UPDATE book_... " />
-                <marker date="1488965918357" expanded="true" signature="3734:3860" ph="UPDATE book_... " />
-                <marker date="1488965918357" expanded="true" signature="3734:3871" ph="UPDATE book_... " />
-                <marker date="1488965918357" expanded="true" signature="3734:3880" ph="UPDATE book_... " />
-                <marker date="1488965918357" expanded="true" signature="3734:3891" ph="UPDATE book_... " />
-                <marker date="1488965918357" expanded="true" signature="3734:3900" ph="UPDATE book_... " />
-                <marker date="1488965918357" expanded="true" signature="3734:3909" ph="UPDATE book_... " />
-                <marker date="1488965918357" expanded="true" signature="3734:3916" ph="UPDATE book_... " />
-                <marker date="1488965918357" expanded="true" signature="3734:3932" ph="UPDATE book_... " />
-                <marker date="1488965918357" expanded="true" signature="3734:3946" ph="UPDATE book_... " />
-                <marker date="1488965918357" expanded="true" signature="3734:3964" ph="UPDATE book_... " />
-                <marker date="1488965918357" expanded="true" signature="3734:3974" ph="UPDATE book_... " />
-                <marker date="1488965918357" expanded="true" signature="3734:3983" ph="UPDATE book_... " />
-                <marker date="1488965918357" expanded="true" signature="3734:3999" ph="UPDATE book_... " />
-                <marker date="1488965918357" expanded="true" signature="4126:4158" ph="DELETE FROM " />
-              </folding>
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file leaf-file-name="ReadBooking.php" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/admin/app/view/ReadBooking.php">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="119">
-              <caret line="127" column="64" selection-start-line="127" selection-start-column="64" selection-end-line="127" selection-end-column="64" />
-              <folding>
-                <marker date="1488966061847" expanded="true" signature="5323:5401" ph="..." />
-                <marker date="1488966061847" expanded="true" signature="14557:14569" ph="{...}" />
-              </folding>
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file leaf-file-name="ReadBooked.php" pinned="false" current-in-tab="true">
-        <entry file="file://$PROJECT_DIR$/admin/app/view/ReadBooked.php">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="255">
-              <caret line="132" column="54" selection-start-line="132" selection-start-column="54" selection-end-line="132" selection-end-column="54" />
+            <state relative-caret-position="205">
+              <caret line="48" column="36" selection-start-line="48" selection-start-column="36" selection-end-line="48" selection-end-column="36" />
               <folding />
             </state>
           </provider>
@@ -270,8 +263,9 @@
   <component name="FileTemplateManagerImpl">
     <option name="RECENT_TEMPLATES">
       <list>
-        <option value="JavaScript File" />
         <option value="HTML File" />
+        <option value="JavaScript File" />
+        <option value="CSS File" />
       </list>
     </option>
   </component>
@@ -281,32 +275,6 @@
   <component name="IdeDocumentHistory">
     <option name="CHANGED_PATHS">
       <list>
-        <option value="$PROJECT_DIR$/admin/app/index.php" />
-        <option value="$PROJECT_DIR$/admin/app/class/controllerbanner.php" />
-        <option value="$PROJECT_DIR$/admin/app/class/controllercauhoi.php" />
-        <option value="$PROJECT_DIR$/admin/app/class/controllergioithieu.php" />
-        <option value="$PROJECT_DIR$/admin/app/class/controllerloiich.php" />
-        <option value="$PROJECT_DIR$/admin/app/class/controllermail.php" />
-        <option value="$PROJECT_DIR$/admin/app/class/controllernghiduong.php" />
-        <option value="$PROJECT_DIR$/admin/app/class/controllerslider.php" />
-        <option value="$PROJECT_DIR$/admin/app/class/controllertaikhoan.php" />
-        <option value="$PROJECT_DIR$/admin/app/class/controllerthamgia.php" />
-        <option value="$PROJECT_DIR$/admin/app/class/controllerthongbao.php" />
-        <option value="$PROJECT_DIR$/admin/app/class/controllerthongtin.php" />
-        <option value="$PROJECT_DIR$/admin/app/class/controllertimeshare.php" />
-        <option value="$PROJECT_DIR$/admin/app/class/controllertuyendung.php" />
-        <option value="$PROJECT_DIR$/admin/app/class/controlleruudai.php" />
-        <option value="$PROJECT_DIR$/admin/app/class/controllervideo.php" />
-        <option value="$PROJECT_DIR$/admin/app/view/admin.php" />
-        <option value="$PROJECT_DIR$/admin/app/view/capnhatthongtin.php" />
-        <option value="$PROJECT_DIR$/admin/app/view/create-account.php" />
-        <option value="$PROJECT_DIR$/admin/app/view/create-account-2.php" />
-        <option value="$PROJECT_DIR$/admin/app/view/create-announce_papers.php" />
-        <option value="$PROJECT_DIR$/admin/app/view/create-question.php" />
-        <option value="$PROJECT_DIR$/admin/app/view/create-recruitment.php" />
-        <option value="$PROJECT_DIR$/admin/app/view/create-resort.php" />
-        <option value="$PROJECT_DIR$/admin/app/view/create-slider.php" />
-        <option value="$PROJECT_DIR$/admin/app/view/create-video.php" />
         <option value="$PROJECT_DIR$/admin/app/view/gioithieu.php" />
         <option value="$PROJECT_DIR$/admin/app/view/loiich.php" />
         <option value="$PROJECT_DIR$/admin/app/view/mail.php" />
@@ -326,12 +294,38 @@
         <option value="$PROJECT_DIR$/admin/app/view/thamgia.php" />
         <option value="$PROJECT_DIR$/admin/app/view/thongtincanhan.php" />
         <option value="$PROJECT_DIR$/admin/app/view/timeshare.php" />
-        <option value="$PROJECT_DIR$/admin/app/view/create-deals.php" />
         <option value="$PROJECT_DIR$/admin/app/class/controllerbook.php" />
-        <option value="$PROJECT_DIR$/admin/app/class/controlleradmin.php" />
         <option value="$PROJECT_DIR$/admin/app/class/modelbook.php" />
         <option value="$PROJECT_DIR$/admin/app/view/ReadBooking.php" />
         <option value="$PROJECT_DIR$/admin/app/view/ReadBooked.php" />
+        <option value="$PROJECT_DIR$/admin/app/class/modeluudai.php" />
+        <option value="$PROJECT_DIR$/admin/app/config.php" />
+        <option value="$PROJECT_DIR$/admin/app/class/modelnghiduong.php" />
+        <option value="$PROJECT_DIR$/admin/app/class/controlleradmin.php" />
+        <option value="$PROJECT_DIR$/admin/app/class/controllerbanner.php" />
+        <option value="$PROJECT_DIR$/admin/app/class/controllergioithieu.php" />
+        <option value="$PROJECT_DIR$/admin/app/class/controllerloiich.php" />
+        <option value="$PROJECT_DIR$/admin/app/class/controllerslider.php" />
+        <option value="$PROJECT_DIR$/admin/app/class/controllertaikhoan.php" />
+        <option value="$PROJECT_DIR$/admin/app/class/controllerthamgia.php" />
+        <option value="$PROJECT_DIR$/admin/app/class/controllerthongbao.php" />
+        <option value="$PROJECT_DIR$/admin/app/class/controllerthongtin.php" />
+        <option value="$PROJECT_DIR$/admin/app/class/controllertimeshare.php" />
+        <option value="$PROJECT_DIR$/admin/app/class/controllertuyendung.php" />
+        <option value="$PROJECT_DIR$/admin/app/class/controlleruudai.php" />
+        <option value="$PROJECT_DIR$/admin/app/class/controllervideo.php" />
+        <option value="$PROJECT_DIR$/admin/app/view/create-resort.php" />
+        <option value="$PROJECT_DIR$/admin/app/class/controllernghiduong.php" />
+        <option value="$PROJECT_DIR$/app/view/ResortDirectory.php" />
+        <option value="$PROJECT_DIR$/app/view/ResortDirectoryView.php" />
+        <option value="$PROJECT_DIR$/app/view/modalxemthongtincanhan.php" />
+        <option value="$PROJECT_DIR$/app/view/modalquenmatkhau.php" />
+        <option value="$PROJECT_DIR$/app/config.php" />
+        <option value="$PROJECT_DIR$/app/class/model.php" />
+        <option value="$PROJECT_DIR$/app/class/controller.php" />
+        <option value="$PROJECT_DIR$/admin/js/select2.min.js" />
+        <option value="$PROJECT_DIR$/admin/css/select2.min.css" />
+        <option value="$PROJECT_DIR$/admin/app/view/create-deals.php" />
       </list>
     </option>
   </component>
@@ -376,6 +370,7 @@
       <foldersAlwaysOnTop value="true" />
     </navigator>
     <panes>
+      <pane id="Scope" />
       <pane id="ProjectPane">
         <subPane>
           <PATH>
@@ -404,7 +399,39 @@
               <option name="myItemType" value="com.jetbrains.php.projectView.PhpTreeStructureProvider$1" />
             </PATH_ELEMENT>
             <PATH_ELEMENT>
+              <option name="myItemId" value="js" />
+              <option name="myItemType" value="com.jetbrains.php.projectView.PhpTreeStructureProvider$1" />
+            </PATH_ELEMENT>
+          </PATH>
+          <PATH>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="PPC-Timeshare" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.ProjectViewProjectNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="PPC-Timeshare" />
+              <option name="myItemType" value="com.jetbrains.php.projectView.PhpTreeStructureProvider$1" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
               <option name="myItemId" value="app" />
+              <option name="myItemType" value="com.jetbrains.php.projectView.PhpTreeStructureProvider$1" />
+            </PATH_ELEMENT>
+          </PATH>
+          <PATH>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="PPC-Timeshare" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.ProjectViewProjectNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="PPC-Timeshare" />
+              <option name="myItemType" value="com.jetbrains.php.projectView.PhpTreeStructureProvider$1" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="app" />
+              <option name="myItemType" value="com.jetbrains.php.projectView.PhpTreeStructureProvider$1" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="view" />
               <option name="myItemType" value="com.jetbrains.php.projectView.PhpTreeStructureProvider$1" />
             </PATH_ELEMENT>
           </PATH>
@@ -505,7 +532,6 @@
         </subPane>
       </pane>
       <pane id="Scratches" />
-      <pane id="Scope" />
     </panes>
   </component>
   <component name="PropertiesComponent">
@@ -518,6 +544,7 @@
     <property name="settings.editor.splitter.proportion" value="0.2" />
     <property name="full.screen.before.presentation.mode" value="false" />
     <property name="DefaultHtmlFileTemplate" value="HTML File" />
+    <property name="list.type.of.created.stylesheet" value="CSS" />
   </component>
   <component name="RecentsManager">
     <key name="MoveFile.RECENT_KEYS">
@@ -677,7 +704,9 @@
       <workItem from="1488799730213" duration="1091000" />
       <workItem from="1488856571783" duration="17753000" />
       <workItem from="1488895246708" duration="7606000" />
-      <workItem from="1488939736120" duration="16800000" />
+      <workItem from="1488939736120" duration="16866000" />
+      <workItem from="1488987084799" duration="9830000" />
+      <workItem from="1488998064331" duration="1966000" />
     </task>
     <task id="LOCAL-00001" summary="Update all">
       <created>1483670120952</created>
@@ -826,11 +855,18 @@
       <option name="project" value="LOCAL" />
       <updated>1488796467125</updated>
     </task>
-    <option name="localTasksCounter" value="22" />
+    <task id="LOCAL-00022" summary="Update All Funtion Ver 1.0">
+      <created>1488969245997</created>
+      <option name="number" value="00022" />
+      <option name="presentableId" value="LOCAL-00022" />
+      <option name="project" value="LOCAL" />
+      <updated>1488969245997</updated>
+    </task>
+    <option name="localTasksCounter" value="23" />
     <servers />
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="809044000" />
+    <option name="totallyTimeSpent" value="820906000" />
   </component>
   <component name="TodoView">
     <todo-panel id="selected-file">
@@ -845,11 +881,10 @@
     <frame x="-8" y="-8" width="1382" height="744" extended-state="6" />
     <editor active="true" />
     <layout>
-      <window_info id="Project" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" show_stripe_button="true" weight="0.31467474" sideWeight="0.4940171" order="0" side_tool="false" content_ui="combo" />
+      <window_info id="Project" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" show_stripe_button="true" weight="0.24583964" sideWeight="0.4940171" order="0" side_tool="false" content_ui="combo" />
       <window_info id="TODO" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.32991454" sideWeight="0.5" order="6" side_tool="false" content_ui="tabs" />
       <window_info id="Event Log" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.32991454" sideWeight="0.5" order="8" side_tool="true" content_ui="tabs" />
       <window_info id="Database" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.32980332" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
-      <window_info id="Find" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.50085473" sideWeight="0.5" order="1" side_tool="false" content_ui="tabs" />
       <window_info id="Version Control" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.32991454" sideWeight="0.5" order="10" side_tool="false" content_ui="tabs" />
       <window_info id="Structure" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.24962178" sideWeight="0.5" order="1" side_tool="false" content_ui="tabs" />
       <window_info id="Terminal" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.32804233" sideWeight="0.5" order="9" side_tool="false" content_ui="tabs" />
@@ -861,9 +896,28 @@
       <window_info id="Inspection" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.4" sideWeight="0.5" order="5" side_tool="false" content_ui="tabs" />
       <window_info id="Run" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="2" side_tool="false" content_ui="tabs" />
       <window_info id="Hierarchy" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.25" sideWeight="0.5" order="2" side_tool="false" content_ui="combo" />
+      <window_info id="Find" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.50085473" sideWeight="0.5" order="1" side_tool="false" content_ui="tabs" />
       <window_info id="Ant Build" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.25" sideWeight="0.5" order="1" side_tool="false" content_ui="tabs" />
       <window_info id="Debug" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.4" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
     </layout>
+  </component>
+  <component name="Vcs.Log.Tabs.Properties">
+    <option name="TAB_STATES">
+      <map>
+        <entry key="MAIN">
+          <value>
+            <State>
+              <option name="RECENTLY_FILTERED_USER_GROUPS">
+                <collection />
+              </option>
+              <option name="RECENTLY_FILTERED_BRANCH_GROUPS">
+                <collection />
+              </option>
+            </State>
+          </value>
+        </entry>
+      </map>
+    </option>
   </component>
   <component name="Vcs.Log.UiProperties">
     <option name="RECENTLY_FILTERED_USER_GROUPS">
@@ -887,7 +941,8 @@
     <MESSAGE value="The First time , Update FrontEnd All" />
     <MESSAGE value="Update admin BackEnd, search number in Front End" />
     <MESSAGE value="Update admin page tai khoan, book, banner" />
-    <option name="LAST_COMMIT_MESSAGE" value="Update admin page tai khoan, book, banner" />
+    <MESSAGE value="Update All Funtion Ver 1.0" />
+    <option name="LAST_COMMIT_MESSAGE" value="Update All Funtion Ver 1.0" />
   </component>
   <component name="XDebuggerManager">
     <breakpoint-manager>
@@ -903,343 +958,10 @@
     <watches-manager />
   </component>
   <component name="editorHistoryManager">
-    <entry file="file://$PROJECT_DIR$/admin/app/class/controllerthamgia.php">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="1001">
-          <caret line="82" column="31" selection-start-line="82" selection-start-column="31" selection-end-line="82" selection-end-column="31" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/admin/app/class/controllerthongbao.php">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="1256">
-          <caret line="109" column="31" selection-start-line="109" selection-start-column="31" selection-end-line="109" selection-end-column="31" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/admin/app/class/controllerthongtin.php">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="134">
-          <caret line="67" column="35" selection-start-line="67" selection-start-column="35" selection-end-line="67" selection-end-column="35" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/admin/app/class/controllertrangthai.php">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="-663">
-          <caret line="6" column="16" selection-start-line="6" selection-start-column="16" selection-end-line="6" selection-end-column="16" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/admin/app/class/controllertimeshare.php">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="134">
-          <caret line="38" column="35" selection-start-line="38" selection-start-column="35" selection-end-line="38" selection-end-column="35" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/admin/app/class/controllertuyendung.php">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="1222">
-          <caret line="107" column="31" selection-start-line="107" selection-start-column="31" selection-end-line="107" selection-end-column="31" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/admin/app/class/controlleruudai.php">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="1426">
-          <caret line="120" column="31" selection-start-line="120" selection-start-column="31" selection-end-line="120" selection-end-column="31" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/admin/app/class/controllervideo.php">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="899">
-          <caret line="66" column="31" selection-start-line="66" selection-start-column="31" selection-end-line="66" selection-end-column="31" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/admin/app/class/menuhelper.php">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="136">
-          <caret line="8" column="16" selection-start-line="8" selection-start-column="16" selection-end-line="8" selection-end-column="16" />
-          <folding>
-            <marker date="1483502964167" expanded="true" signature="207:377" ph="..." />
-            <marker date="1483502964167" expanded="true" signature="240:335" ph="..." />
-          </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/admin/app/class/modeladmin.php">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="111">
-          <caret line="55" column="41" selection-start-line="55" selection-start-column="41" selection-end-line="55" selection-end-column="41" />
-          <folding>
-            <marker date="1488782984471" expanded="true" signature="387:410" ph="SELECT * FRO... gioithieu" />
-            <marker date="1488782984471" expanded="true" signature="595:676" ph="SELECT * FRO... taikhoan" />
-            <marker date="1488782984471" expanded="true" signature="1005:1085" ph="SELECT * FRO... taikhoan" />
-            <marker date="1488782984471" expanded="true" signature="1301:1395" ph="UPDATE taikh... " />
-            <marker date="1488782984471" expanded="true" signature="1779:1906" ph="UPDATE taikh... " />
-          </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/admin/app/view/admin.php">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="255">
-          <caret line="30" column="19" selection-start-line="30" selection-start-column="19" selection-end-line="30" selection-end-column="19" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/admin/app/view/capnhatthongtin.php">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="374">
-          <caret line="22" column="19" selection-start-line="22" selection-start-column="19" selection-end-line="22" selection-end-column="19" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/admin/app/view/content.php">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="-2397">
-          <caret line="0" column="0" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/admin/app/view/create-account.php">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="374">
-          <caret line="22" column="19" selection-start-line="22" selection-start-column="19" selection-end-line="22" selection-end-column="19" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/admin/app/view/create-account-2.php">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="374">
-          <caret line="22" column="19" selection-start-line="22" selection-start-column="19" selection-end-line="22" selection-end-column="19" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/admin/app/view/create-question.php">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="459">
-          <caret line="27" column="38" selection-start-line="27" selection-start-column="38" selection-end-line="27" selection-end-column="38" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/admin/app/view/create-recruitment.php">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="459">
-          <caret line="27" column="38" selection-start-line="27" selection-start-column="38" selection-end-line="27" selection-end-column="38" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/admin/app/view/create-resort.php">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="323">
-          <caret line="37" column="38" selection-start-line="37" selection-start-column="38" selection-end-line="37" selection-end-column="38" />
-          <folding>
-            <marker date="1488964026541" expanded="true" signature="4810:5148" ph="..." />
-            <marker date="1488964026541" expanded="false" signature="4936:4970" ph="..." />
-          </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/admin/app/view/create-slider.php">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="255">
-          <caret line="27" column="38" selection-start-line="27" selection-start-column="38" selection-end-line="27" selection-end-column="38" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/admin/app/view/create-video.php">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="408">
-          <caret line="24" column="38" selection-start-line="24" selection-start-column="38" selection-end-line="24" selection-end-column="38" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/admin/app/view/dangnhap.php">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="0">
-          <caret line="0" column="0" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/admin/app/view/gioithieu.php">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="408">
-          <caret line="24" column="38" selection-start-line="24" selection-start-column="38" selection-end-line="24" selection-end-column="38" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/app/class/controller.php">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="88">
-          <caret line="139" column="27" selection-start-line="139" selection-start-column="27" selection-end-line="139" selection-end-column="27" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/admin/app/view/home.php">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="0">
-          <caret line="0" column="0" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/admin/app/view/header.php">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="255">
-          <caret line="15" column="36" selection-start-line="15" selection-start-column="36" selection-end-line="15" selection-end-column="36" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/admin/app/view/loiich.php">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="408">
-          <caret line="24" column="38" selection-start-line="24" selection-start-column="38" selection-end-line="24" selection-end-column="38" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/admin/app/view/mail.php">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="374">
-          <caret line="22" column="38" selection-start-line="22" selection-start-column="38" selection-end-line="22" selection-end-column="38" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/admin/app/view/quanlybanner.php">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="170">
-          <caret line="22" column="38" selection-start-line="22" selection-start-column="38" selection-end-line="22" selection-end-column="38" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/admin/app/view/quanlybook.php">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="374">
-          <caret line="22" column="38" selection-start-line="22" selection-start-column="38" selection-end-line="22" selection-end-column="38" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/admin/app/view/quanlycauhoi.php">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="408">
-          <caret line="24" column="38" selection-start-line="24" selection-start-column="38" selection-end-line="24" selection-end-column="38" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/admin/app/view/quanlykhunghiduong.php">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="374">
-          <caret line="22" column="38" selection-start-line="22" selection-start-column="38" selection-end-line="22" selection-end-column="38" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/admin/app/view/quanlythamgia.php">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="374">
-          <caret line="22" column="38" selection-start-line="22" selection-start-column="38" selection-end-line="22" selection-end-column="38" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/admin/app/view/quanlytaikhoan.php">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="374">
-          <caret line="22" column="38" selection-start-line="22" selection-start-column="38" selection-end-line="22" selection-end-column="38" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/admin/app/view/quanlythongbao.php">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="408">
-          <caret line="24" column="38" selection-start-line="24" selection-start-column="38" selection-end-line="24" selection-end-column="38" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/admin/app/view/quanlytuyendung.php">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="408">
-          <caret line="24" column="38" selection-start-line="24" selection-start-column="38" selection-end-line="24" selection-end-column="38" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/admin/app/view/quanlyuudai.php">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="408">
-          <caret line="24" column="38" selection-start-line="24" selection-start-column="38" selection-end-line="24" selection-end-column="38" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/admin/app/view/quanlyvideo.php">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="374">
-          <caret line="22" column="38" selection-start-line="22" selection-start-column="38" selection-end-line="22" selection-end-column="38" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/admin/app/view/readmail.php">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="238">
-          <caret line="32" column="34" selection-start-line="32" selection-start-column="34" selection-end-line="32" selection-end-column="34" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/admin/app/view/readmailchecked.php">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="442">
-          <caret line="26" column="38" selection-start-line="26" selection-start-column="38" selection-end-line="26" selection-end-column="38" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/admin/app/view/slider.php">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="425">
-          <caret line="25" column="38" selection-start-line="25" selection-start-column="38" selection-end-line="25" selection-end-column="38" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/admin/app/view/thamgia.php">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="408">
           <caret line="24" column="38" selection-start-line="24" selection-start-column="38" selection-end-line="24" selection-end-column="38" />
-          <folding />
         </state>
       </provider>
     </entry>
@@ -1247,7 +969,6 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="374">
           <caret line="22" column="38" selection-start-line="22" selection-start-column="38" selection-end-line="22" selection-end-column="38" />
-          <folding />
         </state>
       </provider>
     </entry>
@@ -1255,7 +976,6 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="408">
           <caret line="24" column="38" selection-start-line="24" selection-start-column="38" selection-end-line="24" selection-end-column="38" />
-          <folding />
         </state>
       </provider>
     </entry>
@@ -1263,169 +983,450 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="357">
           <caret line="21" column="112" selection-start-line="6" selection-start-column="2" selection-end-line="21" selection-end-column="112" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/admin/app/class/modelbook.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="1037">
+          <caret line="61" column="55" selection-start-line="61" selection-start-column="55" selection-end-line="61" selection-end-column="55" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/admin/app/view/ReadBooking.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="2159">
+          <caret line="127" column="64" selection-start-line="127" selection-start-column="64" selection-end-line="127" selection-end-column="64" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/admin/app/view/ReadBooked.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="136">
+          <caret line="125" column="38" selection-start-line="125" selection-start-column="38" selection-end-line="125" selection-end-column="38" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/admin/app/class/modeluudai.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="242">
+          <caret line="138" column="53" selection-start-line="138" selection-start-column="53" selection-end-line="138" selection-end-column="53" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/admin/app/config.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="136">
+          <caret line="8" column="14" selection-start-line="8" selection-start-column="14" selection-end-line="8" selection-end-column="14" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/app/class/PHPMailerAutoload.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="0">
+          <caret line="0" column="0" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/admin/app/class/modeltaikhoan.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="1095">
+          <caret line="104" column="0" selection-start-line="104" selection-start-column="0" selection-end-line="104" selection-end-column="0" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/admin/app/class/controlleradmin.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="187">
+          <caret line="11" column="32" selection-start-line="11" selection-start-column="4" selection-end-line="11" selection-end-column="32" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/admin/app/class/controllerbanner.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="68">
+          <caret line="4" column="32" selection-start-line="4" selection-start-column="32" selection-end-line="4" selection-end-column="32" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/admin/app/class/controllerbook.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="408">
+          <caret line="29" column="26" selection-start-line="29" selection-start-column="26" selection-end-line="29" selection-end-column="26" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/admin/app/class/controllercauhoi.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="0">
+          <caret line="0" column="0" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/admin/app/class/controllergioithieu.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="68">
+          <caret line="4" column="32" selection-start-line="4" selection-start-column="32" selection-end-line="4" selection-end-column="32" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/admin/app/class/controllerloiich.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="68">
+          <caret line="4" column="32" selection-start-line="4" selection-start-column="32" selection-end-line="4" selection-end-column="32" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/admin/app/class/controllermail.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="0">
+          <caret line="0" column="0" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/admin/app/class/controllertaikhoan.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="187">
+          <caret line="11" column="0" selection-start-line="11" selection-start-column="0" selection-end-line="11" selection-end-column="0" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/admin/app/class/controllerthamgia.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="170">
+          <caret line="10" column="32" selection-start-line="10" selection-start-column="32" selection-end-line="10" selection-end-column="32" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/admin/app/class/controllerthongbao.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="68">
+          <caret line="4" column="32" selection-start-line="4" selection-start-column="32" selection-end-line="4" selection-end-column="32" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/admin/app/class/controllerthongtin.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="68">
+          <caret line="4" column="32" selection-start-line="4" selection-start-column="32" selection-end-line="4" selection-end-column="32" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/admin/app/class/controllertimeshare.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="68">
+          <caret line="4" column="32" selection-start-line="4" selection-start-column="32" selection-end-line="4" selection-end-column="32" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/admin/app/class/controllertuyendung.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="68">
+          <caret line="4" column="32" selection-start-line="4" selection-start-column="32" selection-end-line="4" selection-end-column="32" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/admin/app/class/controlleruudai.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="68">
+          <caret line="4" column="32" selection-start-line="4" selection-start-column="32" selection-end-line="4" selection-end-column="32" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/admin/app/class/controllervideo.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="0">
+          <caret line="0" column="0" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/admin/app/view/create-resort.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="153">
+          <caret line="208" column="32" selection-start-line="208" selection-start-column="32" selection-end-line="208" selection-end-column="32" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/admin/app/class/controllernghiduong.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="1279">
+          <caret line="153" column="42" selection-start-line="153" selection-start-column="36" selection-end-line="153" selection-end-column="42" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/admin/app/class/modelnghiduong.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="277">
+          <caret line="338" column="9" selection-start-line="338" selection-start-column="9" selection-end-line="338" selection-end-column="9" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/app/view/ResortDirectory.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="487">
+          <caret line="85" column="36" selection-start-line="68" selection-start-column="28" selection-end-line="85" selection-end-column="36" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/js/paging_resort_new.js">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="-119">
+          <caret line="20" column="29" selection-start-line="20" selection-start-column="29" selection-end-line="20" selection-end-column="29" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/js/paging_resort_hint.js">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="-340">
+          <caret line="27" column="41" selection-start-line="27" selection-start-column="41" selection-end-line="27" selection-end-column="41" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/js/paging_resort_id.js">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="-34">
+          <caret line="26" column="48" selection-start-line="26" selection-start-column="48" selection-end-line="26" selection-end-column="48" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/js/paging_resort_city.js">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="-272">
+          <caret line="22" column="42" selection-start-line="22" selection-start-column="42" selection-end-line="22" selection-end-column="42" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/js/paging_resort.js">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="-51">
+          <caret line="22" column="42" selection-start-line="22" selection-start-column="42" selection-end-line="22" selection-end-column="42" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/js/paging_discover.js">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="374">
+          <caret line="46" column="70" selection-start-line="46" selection-start-column="41" selection-end-line="46" selection-end-column="70" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/js/paging_deals.js">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="-1989">
+          <caret line="22" column="42" selection-start-line="22" selection-start-column="42" selection-end-line="22" selection-end-column="42" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/js/main.js">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="289">
+          <caret line="17" column="16" selection-start-line="17" selection-start-column="16" selection-end-line="17" selection-end-column="16" />
           <folding />
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/admin/app/view/create-deals.php">
+    <entry file="file://$PROJECT_DIR$/app/view/footer.php">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="225">
-          <caret line="21" column="112" selection-start-line="21" selection-start-column="112" selection-end-line="21" selection-end-column="112" />
+        <state relative-caret-position="215">
+          <caret line="177" column="27" selection-start-line="177" selection-start-column="27" selection-end-line="177" selection-end-column="27" />
+          <folding>
+            <element signature="n#style#0;n#hr#0;n#!!top" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/app/view/modalxemthongtincanhanview.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="-639">
+          <caret line="25" column="35" selection-start-line="25" selection-start-column="35" selection-end-line="25" selection-end-column="35" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/app/view/modalxemthongtincanhan.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="181">
+          <caret line="25" column="51" selection-start-line="25" selection-start-column="51" selection-end-line="25" selection-end-column="51" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/app/view/modalquenmatkhau.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="205">
+          <caret line="48" column="36" selection-start-line="48" selection-start-column="36" selection-end-line="48" selection-end-column="36" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/app/config.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="289">
+          <caret line="17" column="50" selection-start-line="17" selection-start-column="25" selection-end-line="17" selection-end-column="50" />
           <folding />
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/app/class/model.php">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="192">
-          <caret line="168" column="44" selection-start-line="168" selection-start-column="44" selection-end-line="168" selection-end-column="44" />
+        <state relative-caret-position="158">
+          <caret line="1022" column="37" selection-start-line="1022" selection-start-column="20" selection-end-line="1022" selection-end-column="37" />
           <folding>
-            <marker date="1488904324231" expanded="true" signature="472:486" ph="SELECT * FRO... ${$bang}" />
-            <marker date="1488904324231" expanded="true" signature="890:1164" ph="SELECT slide... slider" />
-            <marker date="1488904324231" expanded="true" signature="1555:1806" ph="SELECT gioit... gioithieu" />
-            <marker date="1488904324231" expanded="true" signature="2049:2323" ph="SELECT cauho... cauhoithuonggap" />
-            <marker date="1488904324231" expanded="true" signature="2732:2836" ph="SELECT * FRO... slider_ngonngu" />
-            <marker date="1488904324231" expanded="true" signature="3237:3251" ph="SELECT * FRO... ${$bang}" />
-            <marker date="1488904324231" expanded="true" signature="3440:3503" ph="SELECT * FRO... khunghiduong_" />
-            <marker date="1488904324231" expanded="true" signature="3704:3744" ph="SELECT * FRO... lienhe" />
-            <marker date="1488904324231" expanded="true" signature="4229:4310" ph="SELECT * FRO... taikhoan" />
-            <marker date="1488904324231" expanded="true" signature="4693:4876" ph="insert into taikhoan... " />
-            <marker date="1488904324231" expanded="true" signature="5021:5182" ph="insert into lienhe... " />
-            <marker date="1488904324231" expanded="true" signature="6001:6402" ph="insert into book_now... " />
-            <marker date="1488904324231" expanded="true" signature="6438:6786" ph="insert into book_now... " />
-            <marker date="1488904324231" expanded="true" signature="6917:6982" ph="SELECT * FRO... taikhoan" />
-            <marker date="1488904324231" expanded="true" signature="7284:7410" ph="UPDATE taikh... " />
-            <marker date="1488904324231" expanded="true" signature="7595:7721" ph="UPDATE taikh... " />
-            <marker date="1488904324231" expanded="true" signature="7883:8028" ph="UPDATE taikh... " />
-            <marker date="1488904324231" expanded="true" signature="8172:8275" ph="SELECT * FRO... taikhoan" />
-            <marker date="1488904324231" expanded="true" signature="8504:8915" ph="SELECT thamg... thamgia" />
-            <marker date="1488904324231" expanded="true" signature="9087:9129" ph="select count... video" />
-            <marker date="1488904324231" expanded="true" signature="9331:9395" ph="SELECT * FRO... video" />
-            <marker date="1488904324231" expanded="true" signature="9803:10002" ph="SELECT deals... deals" />
-            <marker date="1488904324231" expanded="true" signature="10420:10658" ph="SELECT deals... deals" />
-            <marker date="1488904324231" expanded="true" signature="11068:11104" ph="select count... deals" />
-            <marker date="1488904324231" expanded="true" signature="11292:11507" ph="SELECT deals... deals" />
-            <marker date="1488904324231" expanded="true" signature="11770:11812" ph="select count... connect_ppc" />
-            <marker date="1488904324231" expanded="true" signature="12012:12328" ph="SELECT conne... connect_ppc" />
-            <marker date="1488904324231" expanded="true" signature="12743:13042" ph="SELECT conne... connect_ppc" />
-            <marker date="1488904324231" expanded="true" signature="13307:13353" ph="select count... announce_papers" />
-            <marker date="1488904324231" expanded="true" signature="13554:13936" ph="SELECT annou... announce_papers" />
-            <marker date="1488904324231" expanded="true" signature="14351:14738" ph="SELECT resor... resort" />
-            <marker date="1488904324231" expanded="true" signature="15010:15239" ph="SELECT * FRO... resort" />
-            <marker date="1488904324231" expanded="true" signature="15525:15568" ph="SELECT * FRO... resort_image" />
-            <marker date="1488904324231" expanded="true" signature="16292:16368" ph="SELECT * FRO... owning_a_timeshare" />
-            <marker date="1488904324231" expanded="true" signature="16628:16703" ph="SELECT * FRO... benefit_timeshare" />
-            <marker date="1488904324231" expanded="true" signature="16961:16985" ph="SELECT * FRO... continents" />
-            <marker date="1488904324231" expanded="true" signature="17389:17432" ph="SELECT * FRO... country" />
-            <marker date="1488904324231" expanded="true" signature="24117:24169" ph="SELECT * FRO... continents" />
-            <marker date="1488904324231" expanded="true" signature="24456:24522" ph="UPDATE count... " />
-            <marker date="1488904324231" expanded="true" signature="24684:24942" ph="SELECT * FRO... resort" />
-            <marker date="1488904324231" expanded="true" signature="25381:25425" ph="select count... resort" />
-            <marker date="1488904324231" expanded="true" signature="25838:26078" ph="SELECT COUNT... resort" />
-            <marker date="1488904324231" expanded="true" signature="25894:26030" ph="SELECT city.... city" />
-            <marker date="1488904324231" expanded="true" signature="25946:26007" ph="SELECT count... country" />
-            <marker date="1488904324231" expanded="true" signature="26440:26604" ph="SELECT COUNT... resort" />
-            <marker date="1488904324231" expanded="true" signature="26496:26545" ph="SELECT city.... city" />
-            <marker date="1488904324231" expanded="true" signature="26959:27071" ph="SELECT COUNT... resort" />
-            <marker date="1488904324231" expanded="true" signature="27401:27705" ph="SELECT * FRO... resort" />
-            <marker date="1488904324231" expanded="true" signature="28159:28577" ph="SELECT * FRO... resort" />
-            <marker date="1488904324231" expanded="true" signature="29035:29371" ph="SELECT * FRO... resort" />
-            <marker date="1488904324231" expanded="true" signature="29768:29801" ph="SELECT * FRO... country" />
-            <marker date="1488904324231" expanded="true" signature="30045:30418" ph="SELECT * FRO... resort" />
-            <marker date="1488904324231" expanded="true" signature="30830:31110" ph="SELECT * FRO... resort" />
-            <marker date="1488904324231" expanded="true" signature="31527:31810" ph="SELECT * FRO... resort" />
-            <marker date="1488904324231" expanded="true" signature="32246:32594" ph="SELECT * FRO... resort" />
-            <marker date="1488904324231" expanded="true" signature="33013:33103" ph="SELECT * FRO... city" />
-            <marker date="1488904324231" expanded="true" signature="33370:33428" ph="SELECT * FRO... city" />
-            <marker date="1488904324231" expanded="true" signature="33814:33861" ph="SELECT * FRO... city" />
-            <marker date="1488904324231" expanded="true" signature="34156:34447" ph="SELECT * FRO... resort" />
-            <marker date="1488904324231" expanded="true" signature="34834:34892" ph="SELECT * FRO... taikhoan" />
-            <marker date="1488904324231" expanded="true" signature="35165:35233" ph="UPDATE taikh... " />
-            <marker date="1488904324231" expanded="true" signature="35485:35551" ph="SELECT * FRO... taikhoan" />
-            <marker date="1488904324231" expanded="true" signature="35814:35907" ph="UPDATE taikh... " />
-            <marker date="1488904324231" expanded="true" signature="36212:36272" ph="Select * FRO... settings" />
-            <marker date="1488904324231" expanded="true" signature="36515:36578" ph="Select * FRO... settings" />
-            <marker date="1488904324231" expanded="true" signature="36821:36874" ph="SELECT * FRO... taikhoan" />
-            <marker date="1488904324231" expanded="true" signature="37125:37182" ph="SELECT * FRO... taikhoan" />
-            <marker date="1488904324231" expanded="true" signature="37737:38023" ph="INSERT INTO taikhoan... " />
-            <marker date="1488904324231" expanded="true" signature="38059:38319" ph="INSERT INTO taikhoan... " />
-            <marker date="1488904324231" expanded="true" signature="38791:38842" ph="SELECT * FRO... voucher" />
-            <marker date="1488904324231" expanded="true" signature="39232:39264" ph="SELECT * FRO... voucher" />
-            <marker date="1488904324231" expanded="true" signature="39552:39662" ph="INSERT INTO voucher... " />
-            <marker date="1488904324231" expanded="true" signature="39899:39930" ph="SELECT * FRO... voucher" />
-            <marker date="1488904324231" expanded="true" signature="40296:40360" ph="UPDATE vouch... " />
-            <marker date="1488904324231" expanded="true" signature="40647:40990" ph="SELECT book_... book_now" />
-            <marker date="1488904324231" expanded="true" signature="41471:41945" ph="SELECT book_... book_now" />
-            <marker date="1488904324231" expanded="true" signature="41981:42540" ph="SELECT book_... book_now" />
-            <marker date="1488904324231" expanded="true" signature="42774:42812" ph="SELECT * FRO... book_now" />
-            <marker date="1488904324231" expanded="true" signature="43061:43094" ph="SELECT * FRO... taikhoan" />
-            <marker date="1488904324231" expanded="true" signature="43403:43518" ph="UPDATE taikh... " />
+            <marker date="1488998820115" expanded="true" signature="472:486" ph="SELECT * FRO... ${$bang}" />
+            <marker date="1488998820115" expanded="true" signature="896:1170" ph="SELECT slide... slider" />
+            <marker date="1488998820115" expanded="true" signature="1573:1824" ph="SELECT gioit... gioithieu" />
+            <marker date="1488998820115" expanded="true" signature="2074:2348" ph="SELECT cauho... cauhoithuonggap" />
+            <marker date="1488998820115" expanded="true" signature="2778:2882" ph="SELECT * FRO... slider_ngonngu" />
+            <marker date="1488998820115" expanded="true" signature="3300:3314" ph="SELECT * FRO... ${$bang}" />
+            <marker date="1488998820115" expanded="true" signature="3503:3566" ph="SELECT * FRO... khunghiduong_" />
+            <marker date="1488998820115" expanded="true" signature="3767:3807" ph="SELECT * FRO... lienhe" />
+            <marker date="1488998820115" expanded="true" signature="4292:4373" ph="SELECT * FRO... taikhoan" />
+            <marker date="1488998820115" expanded="true" signature="4756:4939" ph="insert into taikhoan... " />
+            <marker date="1488998820115" expanded="true" signature="5084:5245" ph="insert into lienhe... " />
+            <marker date="1488998820115" expanded="true" signature="6064:6465" ph="insert into book_now... " />
+            <marker date="1488998820115" expanded="true" signature="6501:6849" ph="insert into book_now... " />
+            <marker date="1488998820115" expanded="true" signature="6980:7045" ph="SELECT * FRO... taikhoan" />
+            <marker date="1488998820115" expanded="true" signature="7347:7473" ph="UPDATE taikh... " />
+            <marker date="1488998820115" expanded="true" signature="7658:7784" ph="UPDATE taikh... " />
+            <marker date="1488998820115" expanded="true" signature="7946:8091" ph="UPDATE taikh... " />
+            <marker date="1488998820115" expanded="true" signature="8235:8338" ph="SELECT * FRO... taikhoan" />
+            <marker date="1488998820115" expanded="true" signature="8567:8978" ph="SELECT thamg... thamgia" />
+            <marker date="1488998820115" expanded="true" signature="9150:9192" ph="select count... video" />
+            <marker date="1488998820115" expanded="true" signature="9394:9458" ph="SELECT * FRO... video" />
+            <marker date="1488998820115" expanded="true" signature="9878:10077" ph="SELECT deals... deals" />
+            <marker date="1488998820115" expanded="true" signature="10503:10741" ph="SELECT deals... deals" />
+            <marker date="1488998820115" expanded="true" signature="11163:11199" ph="select count... deals" />
+            <marker date="1488998820115" expanded="true" signature="11387:11602" ph="SELECT deals... deals" />
+            <marker date="1488998820115" expanded="true" signature="11875:11917" ph="select count... connect_ppc" />
+            <marker date="1488998820115" expanded="true" signature="12117:12433" ph="SELECT conne... connect_ppc" />
+            <marker date="1488998820115" expanded="true" signature="12858:13157" ph="SELECT conne... connect_ppc" />
+            <marker date="1488998820115" expanded="true" signature="13434:13480" ph="select count... announce_papers" />
+            <marker date="1488998820115" expanded="true" signature="13681:14063" ph="SELECT annou... announce_papers" />
+            <marker date="1488998820115" expanded="true" signature="14489:14876" ph="SELECT resor... resort" />
+            <marker date="1488998820115" expanded="true" signature="15160:15389" ph="SELECT * FRO... resort" />
+            <marker date="1488998820115" expanded="true" signature="15675:15718" ph="SELECT * FRO... resort_image" />
+            <marker date="1488998820115" expanded="true" signature="16456:16532" ph="SELECT * FRO... owning_a_timeshare" />
+            <marker date="1488998820115" expanded="true" signature="16806:16881" ph="SELECT * FRO... benefit_timeshare" />
+            <marker date="1488998820115" expanded="true" signature="17154:17178" ph="SELECT * FRO... continents" />
+            <marker date="1488998820115" expanded="true" signature="17595:17638" ph="SELECT * FRO... country" />
+            <marker date="1488998820115" expanded="true" signature="24333:24385" ph="SELECT * FRO... continents" />
+            <marker date="1488998820115" expanded="true" signature="24683:24749" ph="UPDATE count... " />
+            <marker date="1488998820115" expanded="true" signature="24911:25169" ph="SELECT * FRO... resort" />
+            <marker date="1488998820115" expanded="true" signature="25619:25663" ph="select count... resort" />
+            <marker date="1488998820115" expanded="true" signature="26076:26316" ph="SELECT COUNT... resort" />
+            <marker date="1488998820115" expanded="true" signature="26132:26268" ph="SELECT city.... city" />
+            <marker date="1488998820115" expanded="true" signature="26184:26245" ph="SELECT count... country" />
+            <marker date="1488998820115" expanded="true" signature="26678:26796" ph="SELECT COUNT... resort" />
+            <marker date="1488998820115" expanded="true" signature="26678:26843" ph="SELECT COUNT... resort" />
+            <marker date="1488998820115" expanded="true" signature="26734:26783" ph="SELECT city.... city" />
+            <marker date="1488998820115" expanded="true" signature="27198:27310" ph="SELECT COUNT... resort" />
+            <marker date="1488998820115" expanded="true" signature="27640:27944" ph="SELECT * FRO... resort" />
+            <marker date="1488998820115" expanded="true" signature="28398:28816" ph="SELECT * FRO... resort" />
+            <marker date="1488998820115" expanded="true" signature="29274:29610" ph="SELECT * FRO... resort" />
+            <marker date="1488998820115" expanded="true" signature="30007:30040" ph="SELECT * FRO... country" />
+            <marker date="1488998820115" expanded="true" signature="30279:30652" ph="SELECT * FRO... resort" />
+            <marker date="1488998820115" expanded="true" signature="31064:31344" ph="SELECT * FRO... resort" />
+            <marker date="1488998820115" expanded="true" signature="31761:32044" ph="SELECT * FRO... resort" />
+            <marker date="1488998820115" expanded="true" signature="32480:32828" ph="SELECT * FRO... resort" />
+            <marker date="1488998820115" expanded="true" signature="33247:33337" ph="SELECT * FRO... city" />
+            <marker date="1488998820115" expanded="true" signature="33604:33662" ph="SELECT * FRO... city" />
+            <marker date="1488998820115" expanded="true" signature="34048:34095" ph="SELECT * FRO... city" />
+            <marker date="1488998820115" expanded="true" signature="34390:34681" ph="SELECT * FRO... resort" />
+            <marker date="1488998820115" expanded="true" signature="35068:35126" ph="SELECT * FRO... taikhoan" />
+            <marker date="1488998820115" expanded="true" signature="35399:35467" ph="UPDATE taikh... " />
+            <marker date="1488998820115" expanded="true" signature="35719:35785" ph="SELECT * FRO... taikhoan" />
+            <marker date="1488998820115" expanded="true" signature="36048:36141" ph="UPDATE taikh... " />
+            <marker date="1488998820115" expanded="true" signature="36446:36506" ph="Select * FRO... settings" />
+            <marker date="1488998820115" expanded="true" signature="36749:36812" ph="Select * FRO... settings" />
+            <marker date="1488998820115" expanded="true" signature="37055:37108" ph="SELECT * FRO... taikhoan" />
+            <marker date="1488998820115" expanded="true" signature="37359:37416" ph="SELECT * FRO... taikhoan" />
+            <marker date="1488998820115" expanded="true" signature="37971:38228" ph="INSERT INTO taikhoan... " />
+            <marker date="1488998820115" expanded="true" signature="38264:38495" ph="INSERT INTO taikhoan... " />
+            <marker date="1488998820115" expanded="true" signature="38967:39018" ph="SELECT * FRO... voucher" />
+            <marker date="1488998820115" expanded="true" signature="39408:39440" ph="SELECT * FRO... voucher" />
+            <marker date="1488998820115" expanded="true" signature="39728:39838" ph="INSERT INTO voucher... " />
+            <marker date="1488998820115" expanded="true" signature="40075:40106" ph="SELECT * FRO... voucher" />
+            <marker date="1488998820115" expanded="true" signature="40472:40536" ph="UPDATE vouch... " />
+            <marker date="1488998820115" expanded="true" signature="40823:41166" ph="SELECT book_... book_now" />
+            <marker date="1488998820115" expanded="true" signature="41647:42121" ph="SELECT book_... book_now" />
+            <marker date="1488998820115" expanded="true" signature="42157:42716" ph="SELECT book_... book_now" />
+            <marker date="1488998820115" expanded="true" signature="42950:42988" ph="SELECT * FRO... book_now" />
+            <marker date="1488998820115" expanded="true" signature="43237:43270" ph="SELECT * FRO... taikhoan" />
+            <marker date="1488998820115" expanded="true" signature="43579:43694" ph="UPDATE taikh... " />
           </folding>
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/admin/app/class/controllerbook.php">
+    <entry file="file://$PROJECT_DIR$/admin/app/class/controllerslider.php">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="255">
-          <caret line="50" column="57" selection-start-line="50" selection-start-column="57" selection-end-line="50" selection-end-column="57" />
+        <state relative-caret-position="357">
+          <caret line="80" column="32" selection-start-line="80" selection-start-column="8" selection-end-line="80" selection-end-column="32" />
           <folding />
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/admin/app/class/controlleradmin.php">
+    <entry file="file://$PROJECT_DIR$/app/view/ResortDirectoryView.php">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="253">
-          <caret line="78" column="66" selection-start-line="78" selection-start-column="66" selection-end-line="78" selection-end-column="66" />
+        <state relative-caret-position="300">
+          <caret line="78" column="37" selection-start-line="78" selection-start-column="37" selection-end-line="78" selection-end-column="37" />
+          <folding>
+            <marker date="1488997825077" expanded="true" signature="3691:3702" ph="..." />
+            <marker date="1488997825077" expanded="true" signature="3789:3804" ph="..." />
+            <marker date="1488997825077" expanded="true" signature="3990:4022" ph="..." />
+            <marker date="1488997825077" expanded="true" signature="4272:4307" ph="..." />
+            <marker date="1488997825077" expanded="true" signature="4457:4471" ph="..." />
+            <marker date="1488997825077" expanded="true" signature="4984:4995" ph="..." />
+            <marker date="1488997825077" expanded="true" signature="4996:5251" ph="..." />
+            <marker date="1488997825077" expanded="true" signature="5082:5097" ph="..." />
+            <marker date="1488997825077" expanded="true" signature="5184:5216" ph="..." />
+            <marker date="1488997825077" expanded="true" signature="5217:5251" ph="..." />
+            <marker date="1488997825077" expanded="true" signature="5450:5485" ph="..." />
+            <marker date="1488997825077" expanded="true" signature="5645:5659" ph="..." />
+            <marker date="1488997825077" expanded="true" signature="7920:7939" ph="..." />
+            <marker date="1488997825077" expanded="true" signature="8136:8155" ph="..." />
+            <marker date="1488997825077" expanded="true" signature="8308:8327" ph="..." />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/app/class/controller.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="1337">
+          <caret line="540" column="69" selection-start-line="540" selection-start-column="69" selection-end-line="540" selection-end-column="69" />
           <folding />
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/admin/app/class/modelbook.php">
+    <entry file="file://$PROJECT_DIR$/admin/js/select2.min.js">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="208">
-          <caret line="61" column="55" selection-start-line="61" selection-start-column="55" selection-end-line="61" selection-end-column="55" />
+        <state relative-caret-position="34">
+          <caret line="2" column="1248" selection-start-line="2" selection-start-column="1248" selection-end-line="2" selection-end-column="1248" />
           <folding>
-            <marker date="1488965918357" expanded="true" signature="469:817" ph="SELECT book_... book_now" />
-            <marker date="1488965918357" expanded="true" signature="469:841" ph="SELECT book_... book_now" />
-            <marker date="1488965918357" expanded="true" signature="1254:1696" ph="SELECT book_... book_now" />
-            <marker date="1488965918357" expanded="true" signature="1632:1695" ph="SELECT book_... book_now" />
-            <marker date="1488965918357" expanded="true" signature="2113:2687" ph="SELECT book_... book_now" />
-            <marker date="1488965918357" expanded="true" signature="2867:3416" ph="SELECT vouch... voucher" />
-            <marker date="1488965918357" expanded="true" signature="3734:3741" ph="UPDATE book_... " />
-            <marker date="1488965918357" expanded="true" signature="3734:3836" ph="UPDATE book_... " />
-            <marker date="1488965918357" expanded="true" signature="3734:3860" ph="UPDATE book_... " />
-            <marker date="1488965918357" expanded="true" signature="3734:3871" ph="UPDATE book_... " />
-            <marker date="1488965918357" expanded="true" signature="3734:3880" ph="UPDATE book_... " />
-            <marker date="1488965918357" expanded="true" signature="3734:3891" ph="UPDATE book_... " />
-            <marker date="1488965918357" expanded="true" signature="3734:3900" ph="UPDATE book_... " />
-            <marker date="1488965918357" expanded="true" signature="3734:3909" ph="UPDATE book_... " />
-            <marker date="1488965918357" expanded="true" signature="3734:3916" ph="UPDATE book_... " />
-            <marker date="1488965918357" expanded="true" signature="3734:3932" ph="UPDATE book_... " />
-            <marker date="1488965918357" expanded="true" signature="3734:3946" ph="UPDATE book_... " />
-            <marker date="1488965918357" expanded="true" signature="3734:3964" ph="UPDATE book_... " />
-            <marker date="1488965918357" expanded="true" signature="3734:3974" ph="UPDATE book_... " />
-            <marker date="1488965918357" expanded="true" signature="3734:3983" ph="UPDATE book_... " />
-            <marker date="1488965918357" expanded="true" signature="3734:3999" ph="UPDATE book_... " />
-            <marker date="1488965918357" expanded="true" signature="4126:4158" ph="DELETE FROM " />
+            <element signature="n#!!doc" expanded="true" />
           </folding>
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/admin/app/view/ReadBooking.php">
+    <entry file="file://$PROJECT_DIR$/admin/css/select2.min.css">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="119">
-          <caret line="127" column="64" selection-start-line="127" selection-start-column="64" selection-end-line="127" selection-end-column="64" />
-          <folding>
-            <marker date="1488966061847" expanded="true" signature="5323:5401" ph="..." />
-            <marker date="1488966061847" expanded="true" signature="14557:14569" ph="{...}" />
-          </folding>
+        <state relative-caret-position="0">
+          <caret line="0" column="15167" selection-start-line="0" selection-start-column="15167" selection-end-line="0" selection-end-column="15167" />
+          <folding />
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/admin/app/view/ReadBooked.php">
+    <entry file="file://$PROJECT_DIR$/admin/app/view/create-slider.php">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="255">
-          <caret line="132" column="54" selection-start-line="132" selection-start-column="54" selection-end-line="132" selection-end-column="54" />
+        <state relative-caret-position="357">
+          <caret line="21" column="58" selection-start-line="21" selection-start-column="58" selection-end-line="21" selection-end-column="58" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/admin/app/view/create-deals.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="204">
+          <caret line="20" column="45" selection-start-line="20" selection-start-column="45" selection-end-line="20" selection-end-column="45" />
           <folding />
         </state>
       </provider>

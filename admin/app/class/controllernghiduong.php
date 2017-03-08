@@ -2,7 +2,7 @@
 
 class controllernghiduong
 {
-    const UPDATE_DIR = '../';
+    const UPDATE_DIR = '../../';
     public $control;
     public $params;
     public $current_action;

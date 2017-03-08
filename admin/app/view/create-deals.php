@@ -20,6 +20,7 @@ $isUpdate = isset($this->params[0]);
     <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap-theme.min.css"
           integrity="sha384-rHyoN1iRsVXV4nD0JutlnGaslCJuC7uwjduW9SVrLvRYooPp2bWYgmgJQIXwl/Sp" crossorigin="anonymous">
     <link rel="stylesheet" href="<?= BASE_DIR_ADMIN ?>plugins/bootstrap-wysihtml5/bootstrap3-wysihtml5.min.css">
+    <link rel="stylesheet" type="text/css" href="<?= BASE_DIR_ADMIN ?>css/select2.min.css" rel="stylesheet"/>
 </head>
 <body class="hold-transition skin-blue sidebar-mini">
 <div class="wrapper">
@@ -144,7 +145,7 @@ $isUpdate = isset($this->params[0]);
                                         <div class="col-md-5">
                                             <div class='input-group date' id='datetimepicker6'>
                                                 <input type='text' class="form-control"
-                                                       name="date_start" <?php if ($isUpdate) echo 'value="' . $data_detail[0]['date_start'] . '"'; ?>/>
+                                                       name="date_start" <?php if ($isUpdate) echo 'value="' . $data_detail[0]['start_date'] . '"'; ?>/>
                                                 <span class="input-group-addon"><span
                                                         class="glyphicon glyphicon-calendar"></span></span>
                                             </div>
@@ -153,7 +154,7 @@ $isUpdate = isset($this->params[0]);
                                         <div class="col-md-5" style="padding-right: 0px">
                                             <div class='input-group date' id='datetimepicker7'>
                                                 <input type='text' class="form-control"
-                                                       name="date_end" <?php if ($isUpdate) echo 'value="' . $data_detail[0]['date_end'] . '"'; ?>/>
+                                                       name="date_end" <?php if ($isUpdate) echo 'value="' . $data_detail[0]['end_date'] . '"'; ?>/>
                                                 <span class="input-group-addon"><span
                                                         class="glyphicon glyphicon-calendar"></span></span>
                                             </div>
@@ -401,7 +402,7 @@ $isUpdate = isset($this->params[0]);
 <script src="<?= BASE_DIR ?>js/demo.js"></script>
 <!-- iCheck -->
 <script src="<?= BASE_DIR ?>plugins/iCheck/icheck.min.js"></script>
-<script src="https://cdnjs.cloudflare.com/ajax/libs/select2/4.0.3/js/select2.min.js"></script>
+<script type="text/javascript" src="<?= BASE_DIR_ADMIN ?>js/select2.min.js"></script>
 <script type="text/javascript" src="<?= BASE_DIR ?>ckeditor/ckeditor.js"></script>
 <script type="text/javascript" src="<?= BASE_DIR_ADMIN ?>js/moment.js"></script>
 <script type="text/javascript" src="<?= BASE_DIR_ADMIN ?>js/collapse.js"></script>

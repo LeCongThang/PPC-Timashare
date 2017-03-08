@@ -2,7 +2,7 @@
 
 class controllerthongtin
 {
-    const UPDATE_DIR = '../';
+    const UPDATE_DIR = '../../';
 
     public $controller_thongtin;
     public $params;

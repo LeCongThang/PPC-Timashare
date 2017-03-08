@@ -38,7 +38,6 @@
 
     $(document).ready(function () {
         $('#btnQuenMatKhau').click(function () {
-            var modal_quen_mat_khau = document.getElementById("ModalQuenMatKhau");
             var tendangnhapll = $('#tendangnhapll').val();
             if (tendangnhapll == "") {
                 $('#thongbaoQuenMatKhau').text("Hãy nhập đầy đủ thông tin");
@@ -47,7 +46,7 @@
                 $("#thongbaoQuenMatKhau").text("Hãy nhập email chính xác");
                 return false;
             } else {
-                modal_quen_mat_khau.style.display = "none";
+                $('#ModalQuenMatKhau').modal('toggle');
                 alert("Mời bạn kiểm tra mail ");
                 $.ajax({
                     url: lang + "/controller/quenmatkhau",

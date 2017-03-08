@@ -28,7 +28,7 @@ class model
         $sql = "SELECT * FROM " . $bang;
         $result = mysqli_query($this->db, $sql);
         if (!$result) {
-            die("Error in query");
+            die("Error in laydanhsach");
         }
         $list = array();
         while ($row = mysqli_fetch_assoc($result)) {
@@ -44,7 +44,7 @@ class model
         $sql = "SELECT slider.image_slider, slider.duongdan_slider, slider_ngonngu.noidung_slider, slider_ngonngu.tieude_slider, slider_ngonngu.mota_slider FROM slider,slider_ngonngu WHERE slider.id_slider = slider_ngonngu.id_slider AND slider_ngonngu.ngon_ngu = '" . $_SESSION['lang'] . "'";
         $result = mysqli_query($this->db, $sql);
         if (!$result) {
-            die("Error in query");
+            die("Error in laydanhsachslider");
         }
         $list = array();
         while ($row = mysqli_fetch_assoc($result)) {
@@ -60,7 +60,7 @@ class model
         $sql = "SELECT gioithieu.id, gioithieu.img_tieude, gioithieu_ngonngu.tieu_de, gioithieu_ngonngu.noidung_gioithieu  FROM gioithieu,gioithieu_ngonngu WHERE gioithieu.id = gioithieu_ngonngu.id_gioithieu AND gioithieu_ngonngu.ngonngu = '" . $_SESSION['lang'] . "'";
         $result = mysqli_query($this->db, $sql);
         if (!$result) {
-            die("Error in query");
+            die("Error in laygioithieu");
         }
         return mysqli_fetch_assoc($result);
     }
@@ -70,7 +70,7 @@ class model
         $sql = "SELECT cauhoithuonggap.id, cauhoithuonggap_ngonngu.cauhoi, cauhoithuonggap_ngonngu.cautraloi FROM cauhoithuonggap, cauhoithuonggap_ngonngu WHERE cauhoithuonggap.id = cauhoithuonggap_ngonngu.id_cauhoithuonggap AND cauhoithuonggap_ngonngu.ngonngu = '" . $_SESSION['lang'] . "'";
         $result = mysqli_query($this->db, $sql);
         if (!$result) {
-            die("Error in query");
+            die("Error in layDanhSachCauHoiThuongGap");
         }
         $list = array();
         while ($row = mysqli_fetch_assoc($result)) {
@@ -86,7 +86,7 @@ class model
         $sql = "SELECT * FROM slider_ngonngu WHERE id_slider=" . $idslider . " AND ngon_ngu ='" . $_SESSION['lang'] . "'";
         $result = mysqli_query($this->db, $sql);
         if (!$result) {
-            die("Error in query in here");
+            die("Error in query in layChiTietTheoNgonNgu");
         }
         $list = array();
         while ($row = mysqli_fetch_assoc($result)) {
@@ -244,7 +244,7 @@ class model
         $sql = "SELECT * FROM video ORDER BY id_video ASC LIMIT " . $offset . "," . $items;
         $result = mysqli_query($this->db, $sql);
         if (!$result) {
-            die("Error in query in here");
+            die("Error in query in layDanhSachVideo");
         }
         $list = array();
         while ($row = mysqli_fetch_assoc($result)) {
@@ -260,7 +260,7 @@ class model
         $sql = "SELECT deals.id, deals.image, deals_language.title, deals_language.content FROM deals, deals_language WHERE deals.id = deals_language.id_deals AND deals_language.language ='" . $_SESSION['lang'] . "'";
         $result = mysqli_query($this->db, $sql);
         if (!$result) {
-            die("Error in query in here");
+            die("Error in query in getListDeals");
         }
         $list = array();
         while ($row = mysqli_fetch_assoc($result)) {
@@ -276,7 +276,7 @@ class model
         $sql = "SELECT deals.id, deals.image, deals_language.title, deals_language.content FROM deals, deals_language WHERE deals.id = deals_language.id_deals AND deals_language.language ='" . $_SESSION['lang'] . "' ORDER BY id ASC LIMIT " . $offset . "," . $items;
         $result = mysqli_query($this->db, $sql);
         if (!$result) {
-            die("Error in query in here");
+            die("Error in query in getListDealsPage");
         }
         $list = array();
         while ($row = mysqli_fetch_assoc($result)) {
@@ -300,7 +300,7 @@ class model
         $sql = "SELECT deals.id, deals.image, deals_language.title, deals_language.content FROM deals, deals_language WHERE deals.id = deals_language.id_deals AND deals_language.language ='" . $_SESSION['lang'] . "' AND deals.id = " . $id;
         $result = mysqli_query($this->db, $sql);
         if (!$result) {
-            die("Error in query in here");
+            die("Error in query in getDetailDeals");
         }
         $row = $result->fetch_assoc();
         return $row;
@@ -319,7 +319,7 @@ class model
         $sql = "SELECT connect_ppc.id, connect_ppc.image, connect_ppc.date, connect_ppc_language.title, connect_ppc_language.content FROM connect_ppc, connect_ppc_language WHERE connect_ppc.id = connect_ppc_language.id_connect_ppc AND connect_ppc_language.language ='" . $_SESSION['lang'] . "' ORDER BY id ASC LIMIT " . $offset . "," . $items;
         $result = mysqli_query($this->db, $sql);
         if (!$result) {
-            die("Error in query in here");
+            die("Error in query in getListConnect");
         }
         $list = array();
         while ($row = mysqli_fetch_assoc($result)) {
@@ -335,7 +335,7 @@ class model
         $sql = "SELECT connect_ppc.id, connect_ppc.image, connect_ppc.date, connect_ppc_language.title, connect_ppc_language.content FROM connect_ppc, connect_ppc_language WHERE connect_ppc.id = connect_ppc_language.id_connect_ppc AND connect_ppc_language.language ='" . $_SESSION['lang'] . "' AND connect_ppc.id = " . $id;
         $result = mysqli_query($this->db, $sql);
         if (!$result) {
-            die("Error in query in here");
+            die("Error in query in getDetailConnect");
         }
         $row = $result->fetch_assoc();
         return $row;
@@ -354,7 +354,7 @@ class model
         $sql = "SELECT announce_papers.id, announce_papers.link, announce_papers.image, announce_papers.date, announce_papers_language.title, announce_papers_language.content FROM announce_papers, announce_papers_language WHERE announce_papers.id = announce_papers_language.id_announce_papers AND announce_papers_language.language ='" . $_SESSION['lang'] . "' ORDER BY id ASC LIMIT " . $offset . "," . $items;
         $result = mysqli_query($this->db, $sql);
         if (!$result) {
-            die("Error in query in here");
+            die("Error in query in getListAnnounce");
         }
         $list = array();
         while ($row = mysqli_fetch_assoc($result)) {
@@ -370,7 +370,7 @@ class model
         $sql = "SELECT resort.price, resort.lat, resort.lng, resort_language.name, resort.id, resort_language.address, resort_language.introduce, resort_language.location, resort_language.service, resort_language.equipment FROM resort, resort_language WHERE resort.id = resort_language.id_resort AND resort_language.language ='" . $_SESSION['lang'] . "' AND resort.id = " . $id . " AND resort.status = 0";
         $result = mysqli_query($this->db, $sql);
         if (!$result) {
-            die("Error in query in here");
+            die("Error in query in getDetailsResort");
         }
         $row = $result->fetch_assoc();
         return $row;
@@ -392,7 +392,7 @@ class model
         $sql = "SELECT * FROM resort_image WHERE id_resort=" . $id;
         $result = mysqli_query($this->db, $sql);
         if (!$result) {
-            die("Error in query in here");
+            die("Error in query in getListImageResort");
         }
         $list = array();
         while ($row = mysqli_fetch_assoc($result)) {
@@ -422,7 +422,7 @@ class model
         $sql = "SELECT * FROM owning_a_timeshare WHERE language ='" . $_SESSION['lang'] . "'";
         $result = mysqli_query($this->db, $sql);
         if (!$result) {
-            die("Error in query in here");
+            die("Error in query in getOwingATimeShare");
         }
         $row = $result->fetch_assoc();
         return $row;
@@ -433,7 +433,7 @@ class model
         $sql = "SELECT * FROM benefit_timeshare WHERE language ='" . $_SESSION['lang'] . "'";
         $result = mysqli_query($this->db, $sql);
         if (!$result) {
-            die("Error in query in here");
+            die("Error in query in getBenefitTimeShare");
         }
         $row = $result->fetch_assoc();
         return $row;
@@ -444,7 +444,7 @@ class model
         $sql = "SELECT * FROM continents";
         $result = mysqli_query($this->db, $sql);
         if (!$result) {
-            die("Error in query in here");
+            die("Error in query in getListContinents");
         }
         $list = array();
         while ($row = mysqli_fetch_assoc($result)) {
@@ -460,7 +460,7 @@ class model
         $sql = "SELECT * FROM country WHERE id_continents =" . $id;
         $result = mysqli_query($this->db, $sql);
         if (!$result) {
-            die("Error in query in here");
+            die("Error in query in getListRegions");
         }
         $list = array();
         while ($row = mysqli_fetch_assoc($result)) {
@@ -755,7 +755,7 @@ class model
         $sql = "SELECT * FROM continents WHERE name ='" . $name . "'";
         $result = mysqli_query($this->db, $sql);
         if (!$result) {
-            die("Error in query in here");
+            die("Error in query in getIdContinents");
         }
         $row = $result->fetch_assoc();
         return $row['id'];
@@ -772,7 +772,7 @@ class model
         $sql = "SELECT * FROM resort, resort_image, resort_language WHERE resort.id = resort_image.id_resort AND resort_language.id_resort = resort.id AND resort_language.language = '" . $_SESSION['lang'] . "' " . $resort_type_clause . $sort_by_clause . " GROUP BY resort.id";
         $result = mysqli_query($this->db, $sql);
         if (!$result) {
-            die("Error in query in here");
+            die("Error in query in setIdContinents");
         }
         $list = array();
         while ($row = mysqli_fetch_assoc($result)) {
@@ -811,7 +811,7 @@ class model
     // getNumber By Country
     public function getNumberResortById($id, $resort_type_clause, $sort_by_clause)
     {
-        $sql = "SELECT COUNT(id) as total FROM resort WHERE id_city IN (SELECT city.id FROM city WHERE city.id_country = " . $id . ") " . $resort_type_clause . $sort_by_clause . "";
+        $sql = "SELECT COUNT(id) as total FROM resort WHERE id_city IN (SELECT city.id FROM city WHERE city.id_country = " . $id . ") " . $resort_type_clause . $sort_by_clause . " ";
         $result = mysqli_query($this->db, $sql);
         if (!$result) {
             die("Error in query in getNumberResortById");
@@ -885,7 +885,7 @@ class model
         $sql = "SELECT * FROM country WHERE id = " . $id;
         $result = $this->db->query($sql);
         $row = mysqli_fetch_assoc($result);
-        return $row['long_name'];
+        return $row['name'];
     }
 
     public function getResortByCountryName($id, $resort_type_clause, $sort_by_clause)
@@ -1105,9 +1105,9 @@ class model
         $bonus_money = $this->getMoneyBonus()['value'];
         $passwordResgiter_password_hash = password_hash($passwordResgiter, PASSWORD_DEFAULT);
         if($imageResgiter != "NULL")
-            $sql = "INSERT INTO taikhoan(tendangnhap,password,bonus_money,id_vaitro,hoten,diachi,dienthoai,sex,status,avatar) VALUES ('{$emailResgiter}','{$passwordResgiter_password_hash}','{$bonus_money}',1,'{$nameResgiter}','{$addressResgiter}','{$numberPhoneResgiter}',$sexResgiter,0,'{$imageResgiter}')";
+            $sql = "INSERT INTO taikhoan(tendangnhap,password,id_vaitro,hoten,diachi,dienthoai,sex,status,avatar) VALUES ('{$emailResgiter}','{$passwordResgiter_password_hash}',1,'{$nameResgiter}','{$addressResgiter}','{$numberPhoneResgiter}',$sexResgiter,0,'{$imageResgiter}')";
         else
-            $sql = "INSERT INTO taikhoan(tendangnhap,password,bonus_money,id_vaitro,hoten,diachi,dienthoai,sex,status) VALUES ('{$emailResgiter}','{$passwordResgiter_password_hash}','{$bonus_money}',1,'{$nameResgiter}','{$addressResgiter}','{$numberPhoneResgiter}',$sexResgiter,0)";
+            $sql = "INSERT INTO taikhoan(tendangnhap,password,id_vaitro,hoten,diachi,dienthoai,sex,status) VALUES ('{$emailResgiter}','{$passwordResgiter_password_hash}',1,'{$nameResgiter}','{$addressResgiter}','{$numberPhoneResgiter}',$sexResgiter,0)";
         $result = mysqli_query($this->db, $sql);
         if (!$result) {
             die("Error in insertAccountUser");
@@ -1247,5 +1247,7 @@ class model
         }
         return $result;
     }
+
+
 
 }//class

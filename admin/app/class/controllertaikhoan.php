@@ -8,6 +8,7 @@ class controllertaikhoan
     public $cname = "controllertaikhoan";
     public $lang;
     public $errors = [];
+    const UPDATE_DIR = '../../';
 
     function __construct($action, $params)
     {

@@ -2,7 +2,7 @@
 
 class controllertimeshare
 {
-    const UPDATE_DIR = '../';
+    const UPDATE_DIR = '../../';
 
     public $controller_timeshare;
     public $params;

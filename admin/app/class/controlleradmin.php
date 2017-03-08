@@ -9,7 +9,7 @@ class controlleradmin
     public $current_action;
     public $cname = "controlleradmin";
     public $errors = [];
-    const UPDATE_DIR = '../';
+    const UPDATE_DIR = '../../';
     // end variable declaration of the class
 
     /*

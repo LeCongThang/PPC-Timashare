@@ -5,7 +5,7 @@ define("BASE_DIR", "/PPC-Timeshare/");
 
 
 define("HOST", "localhost");
-define('DB_NAME',  "ppctimeshare");
+define('DB_NAME',  "ppc_timeshare");
 define('USER_DB', "root");
 define('PASS_DB', "");
 

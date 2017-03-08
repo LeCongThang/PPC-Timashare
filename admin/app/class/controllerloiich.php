@@ -2,7 +2,7 @@
 
 class controllerloiich
 {
-    const UPDATE_DIR = '../';
+    const UPDATE_DIR = '../../';
 
     public $controller_loiich;
     public $params;

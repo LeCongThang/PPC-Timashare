@@ -2,7 +2,7 @@
 
 class controllerbanner
 {
-    const UPDATE_DIR = '../';
+    const UPDATE_DIR = '../../';
 
     public $controllerbanner;
     public $params;

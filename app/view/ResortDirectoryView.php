@@ -71,9 +71,9 @@ if (!$isWorld) {
                                     echo $listCoutinentsNumber[$key];
                                     echo ')</span></a><ul class="cautraloi" style="display: none;padding-left:35px;" >';
                                     foreach ($regions[$continent['id'] - 1] as $key2 => $region) {
-                                        if ($listRegionNumber[$key2] != 0) {
-                                            echo '<li style="margin-top: 5px;margin-bottom: 5px;"  class="noi_dung_link_tim_hieu"><a href="' . BASE_DIR . $_SESSION['lang'] . '/controller/chuyenTrangKhuNghiDuongGiaCa/' . $region['id'] . '" style="color:#3C2A1D;" >' . $region['long_name'] . '(';
-                                            echo $listRegionNumber[$key2];
+                                        if ($listRegionNumber[$key][$key2] != 0 ) {
+                                            echo '<li style="margin-top: 5px;margin-bottom: 5px;"  class="noi_dung_link_tim_hieu"><a href="' . BASE_DIR . $_SESSION['lang'] . '/controller/chuyenTrangKhuNghiDuongGiaCa/' . $region['id'] . '" style="color:#3C2A1D;" >' . $region['name'] . '(';
+                                            echo $listRegionNumber[$key][$key2];
                                             echo ')</a></li>';
                                         }
                                     }

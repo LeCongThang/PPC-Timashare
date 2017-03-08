@@ -2,8 +2,7 @@
 
 class controlleruudai
 {
-    const UPDATE_DIR = '../';
-
+    const UPDATE_DIR = '../../';
     public $controlleruudai;
     public $params;
     public $current_action;

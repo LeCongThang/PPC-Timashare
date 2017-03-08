@@ -216,11 +216,9 @@ class controller
             echo 0;
         else if ($this->control->isHasNumberPhone($numberPhoneResgiter) != "")
             echo 1;
-        else if ($this->control->insertAccountUser($imageResgiter, $emailResgiter, $passwordResgiter, $nameResgiter, $addressResgiter, $numberPhoneResgiter, $sexResgiter))
-        {
+        else if ($this->control->insertAccountUser($imageResgiter, $emailResgiter, $passwordResgiter, $nameResgiter, $addressResgiter, $numberPhoneResgiter, $sexResgiter)) {
             echo 2;
-        }
-        else
+        } else
             echo 3;
     }
 
@@ -233,12 +231,10 @@ class controller
         $addressUpdate = $_POST["addressUpdate"];
         $numberPhoneUpdate = $_POST["numberPhoneUpdate"];
         $sexUpdate = $_POST["sexUpdate"];
-        if ($this->control->UpdateAccountUser($imageUpdate,$nameUpdate, $addressUpdate, $numberPhoneUpdate, $sexUpdate))
-        {
+        if ($this->control->UpdateAccountUser($imageUpdate, $nameUpdate, $addressUpdate, $numberPhoneUpdate, $sexUpdate)) {
             $_SESSION['tentaikhoan'] = $nameUpdate;
             echo 2;
-        }
-        else
+        } else
             echo 3;
     }
 
@@ -365,20 +361,18 @@ class controller
         } else {
             $id_user = $_SESSION["id"];
             $id_resort = $_POST["resort_id"];
-            $date_start = $_POST["date_start"];
-            $date_end = $_POST["date_end"];
+            $start_date = $_POST["start_date"];
+            $end_date = $_POST["end_date"];
             $room = $_POST["room"];
             $adults = $_POST["adults"];
             $childs = $_POST["childs"];
             $note = $_POST["note"];
             $id_voucher = $_POST["voucher"];
-            if ($this->control->bookNow($id_user, $id_resort, $date_start, $date_end, $room, $adults, $childs, $note, $id_voucher))
-            {
-                if($id_voucher!=0)
+            if ($this->control->bookNow($id_user, $id_resort, $start_date, $end_date, $room, $adults, $childs, $note, $id_voucher)) {
+                if ($id_voucher != 0)
                     $this->control->decreaseNumberVoucher($id_voucher);
                 echo "true";
-            }
-            else echo "false";
+            } else echo "false";
         }
     }
 
@@ -433,7 +427,7 @@ class controller
             } else if ($sort_by == 2) {
                 $resort_type_clause = "";
                 $date = new DateTime('now');
-                $sort_by_clause = " AND resort.id IN (SELECT details_deal_resort.id_resort FROM `details_deal_resort` WHERE date_start <= '" . $date->format('Y-m-d') . "' AND date_end >= '" . $date->format('Y-m-d') . "')";
+                $sort_by_clause = " AND resort.id IN (SELECT details_deal_resort.id_resort FROM `details_deal_resort` WHERE start_date <= '" . $date->format('Y-m-d') . "' AND end_date >= '" . $date->format('Y-m-d') . "')";
             }
         } else if ($resort_type == 1) {
             if ($sort_by == 0) {
@@ -447,21 +441,21 @@ class controller
             } else if ($sort_by == 2) {
                 $resort_type_clause = " AND resort.id_resort_type = 0 ";
                 $date = new DateTime('now');
-                $sort_by_clause = " AND resort.id IN (SELECT details_deal_resort.id_resort FROM `details_deal_resort` WHERE date_start <= '" . $date->format('Y-m-d') . "' AND date_end >= '" . $date->format('Y-m-d') . "')";
+                $sort_by_clause = " AND resort.id IN (SELECT details_deal_resort.id_resort FROM `details_deal_resort` WHERE start_date <= '" . $date->format('Y-m-d') . "' AND end_date >= '" . $date->format('Y-m-d') . "')";
             }
         } else if ($resort_type == 2) {
             if ($sort_by == 0) {
-                $resort_type_clause = " AND resort.id_resort_type = 1 ";
+                $resort_type_clause = " AND resort.id_resort_type = 2 ";
                 $sort_by_clause = "";
             } else if ($sort_by == 1) {
                 $date = new DateTime('now');
                 date_sub($date, date_interval_create_from_date_string('7 days'));
-                $resort_type_clause = " AND resort.id_resort_type = 1 ";
+                $resort_type_clause = " AND resort.id_resort_type = 2 ";
                 $sort_by_clause = " AND resort.created_date > '" . $date->format('Y-m-d') . "' ";
             } else if ($sort_by == 2) {
-                $resort_type_clause = " AND resort.id_resort_type = 1 ";
+                $resort_type_clause = " AND resort.id_resort_type = 2 ";
                 $date = new DateTime('now');
-                $sort_by_clause = " AND resort.id IN (SELECT details_deal_resort.id_resort FROM `details_deal_resort` WHERE date_start <= '" . $date->format('Y-m-d') . "' AND date_end >= '" . $date->format('Y-m-d') . "')";
+                $sort_by_clause = " AND resort.id IN (SELECT details_deal_resort.id_resort FROM `details_deal_resort` WHERE start_date <= '" . $date->format('Y-m-d') . "' AND end_date >= '" . $date->format('Y-m-d') . "')";
             }
         }
 
@@ -469,13 +463,12 @@ class controller
             $regions = array(array());
             $listContinents = $this->control->getListContinents();
             $listCoutinentsNumber = array();
-            $listRegionNumber = array();
+            $listRegionNumber = array(array());
             foreach ($listContinents as $key => $continent) {
                 $regions[$key] = $this->control->getListRegions($continent['id']);
-                $listCoutinentsNumber[$key] = $this->control->getNumberResortByCountinent($continent['id'],$resort_type_clause,$sort_by_clause);
+                $listCoutinentsNumber[$key] = $this->control->getNumberResortByCountinent($continent['id'], $resort_type_clause, $sort_by_clause);
                 foreach ($regions[$continent['id'] - 1] as $key2 => $region) {
-                        $listRegionNumber[$key2] = $this->control->getNumberResortById($region['id'],$resort_type_clause,$sort_by_clause);
-
+                    $listRegionNumber[$key][$key2] = $this->control->getNumberResortById($region['id'], $resort_type_clause, $sort_by_clause);
                 }
             }
             $listResort = $this->control->getAllResort($resort_type_clause, $sort_by_clause);
@@ -488,14 +481,14 @@ class controller
                 $countryNumber = $this->control->getNumberResortById($id, $resort_type_clause, $sort_by_clause);
                 $listCityNumber = array();
                 foreach ($listCity as $key => $city) {
-                    $listCityNumber[$key] = $this->control->getNumberResortByIdCity($city['id'],$resort_type_clause,$sort_by_clause);
+                    $listCityNumber[$key] = $this->control->getNumberResortByIdCity($city['id'], $resort_type_clause, $sort_by_clause);
                 }
                 $listResort = $this->control->getResortByCountryName($id, $resort_type_clause, $sort_by_clause);
             } else {
                 $id_city = $this->params[1];
                 $city = $this->control->getCityById($id_city);
                 $name_city = $city['name'];
-                $cityNumber = $this->control->getNumberResortByIdCity($id_city,$resort_type_clause,$sort_by_clause);
+                $cityNumber = $this->control->getNumberResortByIdCity($id_city, $resort_type_clause, $sort_by_clause);
                 $listResort = $this->control->getAllResortByIdCity($id_city, $resort_type_clause, $sort_by_clause);
                 $address = $name_city;
             }
@@ -533,35 +526,35 @@ class controller
             } else if ($sort_by == 2) {
                 $resort_type_clause = "";
                 $date = new DateTime('now');
-                $sort_by_clause = " AND resort.id IN (SELECT details_deal_resort.id_resort FROM `details_deal_resort` WHERE date_start <= '" . $date->format('Y-m-d') . "' AND date_end >= '" . $date->format('Y-m-d') . "')";
+                $sort_by_clause = " AND resort.id IN (SELECT details_deal_resort.id_resort FROM `details_deal_resort` WHERE start_date <= '" . $date->format('Y-m-d') . "' AND end_date >= '" . $date->format('Y-m-d') . "')";
             }
         } else if ($resort_type == 1) {
             if ($sort_by == 0) {
-                $resort_type_clause = " AND resort.id_resort_type = 0 ";
+                $resort_type_clause = " AND resort.id_resort_type = 1 ";
                 $sort_by_clause = "";
             } else if ($sort_by == 1) {
                 $date = new DateTime('now');
                 date_sub($date, date_interval_create_from_date_string('7 days'));
-                $resort_type_clause = " AND resort.id_resort_type = 0 ";
+                $resort_type_clause = " AND resort.id_resort_type = 1 ";
                 $sort_by_clause = " AND resort.created_date > '" . $date->format('Y-m-d') . "' ";
             } else if ($sort_by == 2) {
-                $resort_type_clause = " AND resort.id_resort_type = 0 ";
+                $resort_type_clause = " AND resort.id_resort_type = 1 ";
                 $date = new DateTime('now');
-                $sort_by_clause = " AND resort.id IN (SELECT details_deal_resort.id_resort FROM `details_deal_resort` WHERE date_start <= '" . $date->format('Y-m-d') . "' AND date_end >= '" . $date->format('Y-m-d') . "')";
+                $sort_by_clause = " AND resort.id IN (SELECT details_deal_resort.id_resort FROM `details_deal_resort` WHERE start_date <= '" . $date->format('Y-m-d') . "' AND end_date >= '" . $date->format('Y-m-d') . "')";
             }
         } else if ($resort_type == 2) {
             if ($sort_by == 0) {
-                $resort_type_clause = " AND resort.id_resort_type = 1 ";
+                $resort_type_clause = " AND resort.id_resort_type = 2 ";
                 $sort_by_clause = "";
             } else if ($sort_by == 1) {
                 $date = new DateTime('now');
                 date_sub($date, date_interval_create_from_date_string('7 days'));
-                $resort_type_clause = " AND resort.id_resort_type = 1 ";
+                $resort_type_clause = " AND resort.id_resort_type = 2 ";
                 $sort_by_clause = " AND resort.created_date > '" . $date->format('Y-m-d') . "' ";
             } else if ($sort_by == 2) {
-                $resort_type_clause = " AND resort.id_resort_type = 1 ";
+                $resort_type_clause = " AND resort.id_resort_type = 2 ";
                 $date = new DateTime('now');
-                $sort_by_clause = " AND resort.id IN (SELECT details_deal_resort.id_resort FROM `details_deal_resort` WHERE date_start <= '" . $date->format('Y-m-d') . "' AND date_end >= '" . $date->format('Y-m-d') . "')";
+                $sort_by_clause = " AND resort.id IN (SELECT details_deal_resort.id_resort FROM `details_deal_resort` WHERE start_date <= '" . $date->format('Y-m-d') . "' AND end_date >= '" . $date->format('Y-m-d') . "')";
             }
         }
 
@@ -569,12 +562,12 @@ class controller
             $regions = array(array());
             $listContinents = $this->control->getListContinents();
             $listCoutinentsNumber = array();
-            $listRegionNumber = array();
+            $listRegionNumber = array(array());
             foreach ($listContinents as $key => $continent) {
                 $regions[$key] = $this->control->getListRegions($continent['id']);
-                $listCoutinentsNumber[$key] = $this->control->getNumberResortByCountinent($continent['id'],$resort_type_clause,$sort_by_clause);
+                $listCoutinentsNumber[$key] = $this->control->getNumberResortByCountinent($continent['id'], $resort_type_clause, $sort_by_clause);
                 foreach ($regions[$continent['id'] - 1] as $key2 => $region) {
-                    $listRegionNumber[$key2] = $this->control->getNumberResortById($region['id'],$resort_type_clause,$sort_by_clause);
+                    $listRegionNumber[$key][$key2] = $this->control->getNumberResortById($region['id'], $resort_type_clause, $sort_by_clause);
                 }
             }
             $listResort = $this->control->getAllResort($resort_type_clause, $sort_by_clause);
@@ -587,14 +580,14 @@ class controller
                 $countryNumber = $this->control->getNumberResortById($id, $resort_type_clause, $sort_by_clause);
                 $listCityNumber = array();
                 foreach ($listCity as $key => $city) {
-                    $listCityNumber[$key] = $this->control->getNumberResortByIdCity($city['id'],$resort_type_clause,$sort_by_clause);
+                    $listCityNumber[$key] = $this->control->getNumberResortByIdCity($city['id'], $resort_type_clause, $sort_by_clause);
                 }
                 $listResort = $this->control->getResortByCountryName($id, $resort_type_clause, $sort_by_clause);
             } else {
                 $id_city = $this->params[1];
                 $city = $this->control->getCityById($id_city);
                 $name_city = $city['name'];
-                $cityNumber = $this->control->getNumberResortByIdCity($id_city,$resort_type_clause,$sort_by_clause);
+                $cityNumber = $this->control->getNumberResortByIdCity($id_city, $resort_type_clause, $sort_by_clause);
                 $listResort = $this->control->getAllResortByIdCity($id_city, $resort_type_clause, $sort_by_clause);
                 $address = $name_city;
             }
@@ -853,7 +846,7 @@ class controller
             } else if ($sort_by == 2) {
                 $resort_type_clause = "";
                 $date = new DateTime('now');
-                $sort_by_clause = " resort.id IN (SELECT details_deal_resort.id_resort FROM `details_deal_resort` WHERE date_start <= '" . $date->format('Y-m-d') . "' AND date_end >= '" . $date->format('Y-m-d') . "')";
+                $sort_by_clause = " resort.id IN (SELECT details_deal_resort.id_resort FROM `details_deal_resort` WHERE start_date <= '" . $date->format('Y-m-d') . "' AND end_date >= '" . $date->format('Y-m-d') . "')";
             }
         } else if ($resort_type == 1) {
             if ($sort_by == 0) {
@@ -876,30 +869,30 @@ class controller
                 else
                     $resort_type_clause = " AND resort.id_resort_type = 0 ";
                 $date = new DateTime('now');
-                $sort_by_clause = " AND resort.id IN (SELECT details_deal_resort.id_resort FROM `details_deal_resort` WHERE date_start <= '" . $date->format('Y-m-d') . "' AND date_end >= '" . $date->format('Y-m-d') . "')";
+                $sort_by_clause = " AND resort.id IN (SELECT details_deal_resort.id_resort FROM `details_deal_resort` WHERE start_date <= '" . $date->format('Y-m-d') . "' AND end_date >= '" . $date->format('Y-m-d') . "')";
             }
         } else if ($resort_type == 2) {
             if ($sort_by == 0) {
                 if (!$isWorld)
-                    $resort_type_clause = " resort.id_resort_type = 1 ";
+                    $resort_type_clause = " resort.id_resort_type = 2 ";
                 else
-                    $resort_type_clause = " AND resort.id_resort_type = 1 ";
+                    $resort_type_clause = " AND resort.id_resort_type = 2 ";
                 $sort_by_clause = "";
             } else if ($sort_by == 1) {
                 $date = new DateTime('now');
                 date_sub($date, date_interval_create_from_date_string('7 days'));
                 if (!$isWorld)
-                    $resort_type_clause = " resort.id_resort_type = 1";
+                    $resort_type_clause = " resort.id_resort_type = 2";
                 else
-                    $resort_type_clause = " AND resort.id_resort_type = 1 ";
+                    $resort_type_clause = " AND resort.id_resort_type = 2 ";
                 $sort_by_clause = " AND resort.created_date > '" . $date->format('Y-m-d') . "' ";
             } else if ($sort_by == 2) {
                 if (!$isWorld)
-                    $resort_type_clause = " resort.id_resort_type = 1 ";
+                    $resort_type_clause = " resort.id_resort_type = 2 ";
                 else
-                    $resort_type_clause = " AND resort.id_resort_type = 1 ";
+                    $resort_type_clause = " AND resort.id_resort_type = 2 ";
                 $date = new DateTime('now');
-                $sort_by_clause = " AND resort.id IN (SELECT details_deal_resort.id_resort FROM `details_deal_resort` WHERE date_start <= '" . $date->format('Y-m-d') . "' AND date_end >= '" . $date->format('Y-m-d') . "')";
+                $sort_by_clause = " AND resort.id IN (SELECT details_deal_resort.id_resort FROM `details_deal_resort` WHERE start_date <= '" . $date->format('Y-m-d') . "' AND end_date >= '" . $date->format('Y-m-d') . "')";
             }
         }
         if (!$isWorld) {
@@ -957,7 +950,7 @@ class controller
             } else if ($sort_by == 2) {
                 $resort_type_clause = "";
                 $date = new DateTime('now');
-                $sort_by_clause = " AND resort.id IN (SELECT details_deal_resort.id_resort FROM `details_deal_resort` WHERE date_start <= '" . $date->format('Y-m-d') . "' AND date_end >= '" . $date->format('Y-m-d') . "')";
+                $sort_by_clause = " AND resort.id IN (SELECT details_deal_resort.id_resort FROM `details_deal_resort` WHERE start_date <= '" . $date->format('Y-m-d') . "' AND end_date >= '" . $date->format('Y-m-d') . "')";
             }
         } else if ($resort_type == 1) {
             if ($sort_by == 0) {
@@ -971,21 +964,21 @@ class controller
             } else if ($sort_by == 2) {
                 $resort_type_clause = " AND resort.id_resort_type = 0 ";
                 $date = new DateTime('now');
-                $sort_by_clause = " AND resort.id IN (SELECT details_deal_resort.id_resort FROM `details_deal_resort` WHERE date_start <= '" . $date->format('Y-m-d') . "' AND date_end >= '" . $date->format('Y-m-d') . "')";
+                $sort_by_clause = " AND resort.id IN (SELECT details_deal_resort.id_resort FROM `details_deal_resort` WHERE start_date <= '" . $date->format('Y-m-d') . "' AND end_date >= '" . $date->format('Y-m-d') . "')";
             }
         } else if ($resort_type == 2) {
             if ($sort_by == 0) {
-                $resort_type_clause = " AND resort.id_resort_type = 1 ";
+                $resort_type_clause = " AND resort.id_resort_type = 2 ";
                 $sort_by_clause = "";
             } else if ($sort_by == 1) {
                 $date = new DateTime('now');
                 date_sub($date, date_interval_create_from_date_string('7 days'));
-                $resort_type_clause = " AND resort.id_resort_type = 1 ";
+                $resort_type_clause = " AND resort.id_resort_type = 2 ";
                 $sort_by_clause = " AND resort.created_date > '" . $date->format('Y-m-d') . "' ";
             } else if ($sort_by == 2) {
-                $resort_type_clause = " AND resort.id_resort_type = 1 ";
+                $resort_type_clause = " AND resort.id_resort_type = 2 ";
                 $date = new DateTime('now');
-                $sort_by_clause = " AND resort.id IN (SELECT details_deal_resort.id_resort FROM `details_deal_resort` WHERE date_start <= '" . $date->format('Y-m-d') . "' AND date_end >= '" . $date->format('Y-m-d') . "')";
+                $sort_by_clause = " AND resort.id IN (SELECT details_deal_resort.id_resort FROM `details_deal_resort` WHERE start_date <= '" . $date->format('Y-m-d') . "' AND end_date >= '" . $date->format('Y-m-d') . "')";
             }
         }
         $isWorld = isset($this->params[0]);
@@ -1099,18 +1092,24 @@ class controller
     {
         if (isset($this->params[0])) {
             $password_key = $this->params[0];
-            $user = $this->control->checkPasswordKey($password_key);
-            if ($user != "") {
-                $id_user = $user['id'];
-                $dssbanner = $this->control->laydanhsach("banner");
-                $dssliderw = $this->control->laydanhsachslider();
-                $dsKhuNghiDuongBanner = array();
-                foreach ($dssbanner as $banner) {
-                    $khuNghiDuongBanner = $this->control->getDetailsResortWithOneImage($banner['idkhunghiduong']);
-                    $dsKhuNghiDuongBanner[] = $khuNghiDuongBanner;
+            if ($password_key != "") {
+                $user = $this->control->checkPasswordKey($password_key);
+                if ($user != "") {
+                    $id_user = $user['id'];
+                    $dssbanner = $this->control->laydanhsach("banner");
+                    $dssliderw = $this->control->laydanhsachslider();
+                    $dsKhuNghiDuongBanner = array();
+                    foreach ($dssbanner as $banner) {
+                        $khuNghiDuongBanner = $this->control->getDetailsResortWithOneImage($banner['idkhunghiduong']);
+                        $dsKhuNghiDuongBanner[] = $khuNghiDuongBanner;
+                    }
+                    require_once("view/ChangeNewPassword.php");
                 }
-                require_once("view/ChangeNewPassword.php");
+                else
+                    header('location:' . BASE_URL . $this->lang . "/controller/index");
             }
+            else
+                header('location:' . BASE_URL . $this->lang . "/controller/index");
         }
     }
 
@@ -1120,6 +1119,7 @@ class controller
             $id_user = $this->params[0];
             $password = $_POST['new_password'];
             if ($this->control->updatePassword($id_user, $password)) {
+                $this->control->updatePasswordKey("",$id_user);
                 header('location:' . BASE_URL . $this->lang . "/controller/index");
             }
         }
@@ -1158,12 +1158,11 @@ class controller
             }
             $is_voucher = false;
             $id_voucher = $this->control->getDetailTransaction($id_book)['voucher_id'];
-            if($id_voucher != NULL)
+            if ($id_voucher != NULL)
                 $is_voucher = true;
-            $transaction = $this->control->getDetailTransactionByIdBook($id_book,$is_voucher);
+            $transaction = $this->control->getDetailTransactionByIdBook($id_book, $is_voucher);
             require_once("view/TransactionDetail.php");
-        }
-        else
+        } else
             $this->getTransactionHistory();
     }
 

@@ -2,7 +2,7 @@
 
 class controllertuyendung
 {
-    const UPDATE_DIR = '../';
+    const UPDATE_DIR = '../../';
 
     public $controllertuyendung;
     public $params;
