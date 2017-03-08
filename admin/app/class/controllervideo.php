@@ -18,7 +18,7 @@ class controllervideo
 
     public function video()
     {
-        require_once("app/view/quanlyvideo.php");
+        require_once("view/quanlyvideo.php");
     }
 
     public function update()
@@ -36,7 +36,7 @@ class controllervideo
         if (!isset($_SESSION['tendangnhapadmin']))
             header('location:' . BASE_URL_ADMIN . "controlleradmin/index");
         $ds_video = $this->controllervideo->laydanhvideo();
-        require_once("app/view/quanlyvideo.php");
+        require_once("view/quanlyvideo.php");
     }
 
     public function create()
@@ -52,10 +52,10 @@ class controllervideo
                 else
                     $this->errors[] = 'Lỗi! Thêm video không thành công!';
                 $ds_video = $this->controllervideo->laydanhvideo();
-                require_once("app/view/quanlyvideo.php");
+                require_once("view/quanlyvideo.php");
                 return true;
         }
-        require_once("app/view/create-video.php");
+        require_once("view/create-video.php");
     }
 
     public function delete()
@@ -64,7 +64,7 @@ class controllervideo
 
         $this->controllervideo->delete($id);
         $ds_video = $this->controllervideo->laydanhvideo();
-        require_once("app/view/quanlyvideo.php");
+        require_once("view/quanlyvideo.php");
         return true;
 
     }

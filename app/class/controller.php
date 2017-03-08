@@ -32,7 +32,7 @@ class controller
         $cau_hoi_thuong_gap = $this->control->layDanhSachCauHoiThuongGap();
         $dsKhuNghiDuongBanner = array();
         foreach ($dssbanner as $banner) {
-            $khuNghiDuongBanner = $this->control->layThongTinChiTietKhuNghiDuong($banner['idkhunghiduong']);
+            $khuNghiDuongBanner = $this->control->getDetailsResortWithOneImage($banner['idkhunghiduong']);
             $dsKhuNghiDuongBanner[] = $khuNghiDuongBanner;
         }
         //echo count($dsKhuNghiDuongSlier);
@@ -389,12 +389,12 @@ class controller
         $gioithieu = $this->control->laydulieu("gioithieu_" . $_SESSION['lang']);
         $dsKhuNghiDuongBanner = array();
         foreach ($dssbanner as $banner) {
-            $khuNghiDuongBanner = $this->control->layThongTinChiTietKhuNghiDuong($banner['idkhunghiduong']);
+            $khuNghiDuongBanner = $this->control->getDetailsResortWithOneImage($banner['idkhunghiduong']);
             $dsKhuNghiDuongBanner[] = $khuNghiDuongBanner;
         }
         $idknd = $this->params[0];
         //echo $idknd;
-        $knd = $this->control->layThongTinChiTietKhuNghiDuong($idknd);
+        $knd = $this->control->getDetailsResortWithOneImage($idknd);
     }
 
     public function chuyenTrangKhuNghiDuongGiaCa()
@@ -417,7 +417,7 @@ class controller
         $cau_hoi_thuong_gap = $this->control->layDanhSachCauHoiThuongGap();
         $dsKhuNghiDuongBanner = array();
         foreach ($dssbanner as $banner) {
-            $khuNghiDuongBanner = $this->control->layThongTinChiTietKhuNghiDuong($banner['idkhunghiduong']);
+            $khuNghiDuongBanner = $this->control->getDetailsResortWithOneImage($banner['idkhunghiduong']);
             $dsKhuNghiDuongBanner[] = $khuNghiDuongBanner;
         }
 
@@ -639,7 +639,7 @@ class controller
         $dssliderw = $this->control->laydanhsachslider();
         $dsKhuNghiDuongBanner = array();
         foreach ($dssbanner as $banner) {
-            $khuNghiDuongBanner = $this->control->layThongTinChiTietKhuNghiDuong($banner['idkhunghiduong']);
+            $khuNghiDuongBanner = $this->control->getDetailsResortWithOneImage($banner['idkhunghiduong']);
             $dsKhuNghiDuongBanner[] = $khuNghiDuongBanner;
         }
         require_once("view/UuDaiDacBiet.php");
@@ -679,7 +679,7 @@ class controller
         $dssliderw = $this->control->laydanhsachslider();
         $dsKhuNghiDuongBanner = array();
         foreach ($dssbanner as $banner) {
-            $khuNghiDuongBanner = $this->control->layThongTinChiTietKhuNghiDuong($banner['idkhunghiduong']);
+            $khuNghiDuongBanner = $this->control->getDetailsResortWithOneImage($banner['idkhunghiduong']);
             $dsKhuNghiDuongBanner[] = $khuNghiDuongBanner;
         }
         require_once("view/DetailDeals.php");
@@ -715,7 +715,7 @@ class controller
         $dssliderw = $this->control->laydanhsachslider();
         $dsKhuNghiDuongBanner = array();
         foreach ($dssbanner as $banner) {
-            $khuNghiDuongBanner = $this->control->layThongTinChiTietKhuNghiDuong($banner['idkhunghiduong']);
+            $khuNghiDuongBanner = $this->control->getDetailsResortWithOneImage($banner['idkhunghiduong']);
             $dsKhuNghiDuongBanner[] = $khuNghiDuongBanner;
         }
         require_once("view/KetNoiPPC.php");
@@ -731,7 +731,7 @@ class controller
         $dssliderw = $this->control->laydanhsachslider();
         $dsKhuNghiDuongBanner = array();
         foreach ($dssbanner as $banner) {
-            $khuNghiDuongBanner = $this->control->layThongTinChiTietKhuNghiDuong($banner['idkhunghiduong']);
+            $khuNghiDuongBanner = $this->control->getDetailsResortWithOneImage($banner['idkhunghiduong']);
             $dsKhuNghiDuongBanner[] = $khuNghiDuongBanner;
         }
         require_once("view/DetailConnect.php");
@@ -767,7 +767,7 @@ class controller
         $dssliderw = $this->control->laydanhsachslider();
         $dsKhuNghiDuongBanner = array();
         foreach ($dssbanner as $banner) {
-            $khuNghiDuongBanner = $this->control->layThongTinChiTietKhuNghiDuong($banner['idkhunghiduong']);
+            $khuNghiDuongBanner = $this->control->getDetailsResortWithOneImage($banner['idkhunghiduong']);
             $dsKhuNghiDuongBanner[] = $khuNghiDuongBanner;
         }
         require_once("view/ThongBaoBaoChi.php");
@@ -781,7 +781,7 @@ class controller
         $dssliderw = $this->control->laydanhsachslider();
         $dsKhuNghiDuongBanner = array();
         foreach ($dssbanner as $banner) {
-            $khuNghiDuongBanner = $this->control->layThongTinChiTietKhuNghiDuong($banner['idkhunghiduong']);
+            $khuNghiDuongBanner = $this->control->getDetailsResortWithOneImage($banner['idkhunghiduong']);
             $dsKhuNghiDuongBanner[] = $khuNghiDuongBanner;
         }
         $exchange_rates = $this->control->getExchangeRates()['value'];
@@ -799,7 +799,7 @@ class controller
         $dssliderw = $this->control->laydanhsachslider();
         $dsKhuNghiDuongBanner = array();
         foreach ($dssbanner as $banner) {
-            $khuNghiDuongBanner = $this->control->layThongTinChiTietKhuNghiDuong($banner['idkhunghiduong']);
+            $khuNghiDuongBanner = $this->control->getDetailsResortWithOneImage($banner['idkhunghiduong']);
             $dsKhuNghiDuongBanner[] = $khuNghiDuongBanner;
         }
         $data = $this->control->getOwingATimeShare();
@@ -812,7 +812,7 @@ class controller
         $dssliderw = $this->control->laydanhsachslider();
         $dsKhuNghiDuongBanner = array();
         foreach ($dssbanner as $banner) {
-            $khuNghiDuongBanner = $this->control->layThongTinChiTietKhuNghiDuong($banner['idkhunghiduong']);
+            $khuNghiDuongBanner = $this->control->getDetailsResortWithOneImage($banner['idkhunghiduong']);
             $dsKhuNghiDuongBanner[] = $khuNghiDuongBanner;
         }
         $data = $this->control->getBenefitTimeShare();
@@ -1044,7 +1044,7 @@ class controller
         $dssliderw = $this->control->laydanhsachslider();
         $dsKhuNghiDuongBanner = array();
         foreach ($dssbanner as $banner) {
-            $khuNghiDuongBanner = $this->control->layThongTinChiTietKhuNghiDuong($banner['idkhunghiduong']);
+            $khuNghiDuongBanner = $this->control->getDetailsResortWithOneImage($banner['idkhunghiduong']);
             $dsKhuNghiDuongBanner[] = $khuNghiDuongBanner;
         }
         require_once("view/KhamPha.php");
@@ -1056,7 +1056,7 @@ class controller
         $dssliderw = $this->control->laydanhsachslider();
         $dsKhuNghiDuongBanner = array();
         foreach ($dssbanner as $banner) {
-            $khuNghiDuongBanner = $this->control->layThongTinChiTietKhuNghiDuong($banner['idkhunghiduong']);
+            $khuNghiDuongBanner = $this->control->getDetailsResortWithOneImage($banner['idkhunghiduong']);
             $dsKhuNghiDuongBanner[] = $khuNghiDuongBanner;
         }
         require_once("view/CoGiMoiPPC.php");
@@ -1068,7 +1068,7 @@ class controller
         $dssliderw = $this->control->laydanhsachslider();
         $dsKhuNghiDuongBanner = array();
         foreach ($dssbanner as $banner) {
-            $khuNghiDuongBanner = $this->control->layThongTinChiTietKhuNghiDuong($banner['idkhunghiduong']);
+            $khuNghiDuongBanner = $this->control->getDetailsResortWithOneImage($banner['idkhunghiduong']);
             $dsKhuNghiDuongBanner[] = $khuNghiDuongBanner;
         }
         require_once("view/GoiYKyNghi.php");
@@ -1106,7 +1106,7 @@ class controller
                 $dssliderw = $this->control->laydanhsachslider();
                 $dsKhuNghiDuongBanner = array();
                 foreach ($dssbanner as $banner) {
-                    $khuNghiDuongBanner = $this->control->layThongTinChiTietKhuNghiDuong($banner['idkhunghiduong']);
+                    $khuNghiDuongBanner = $this->control->getDetailsResortWithOneImage($banner['idkhunghiduong']);
                     $dsKhuNghiDuongBanner[] = $khuNghiDuongBanner;
                 }
                 require_once("view/ChangeNewPassword.php");
@@ -1139,7 +1139,7 @@ class controller
         $dssliderw = $this->control->laydanhsachslider();
         $dsKhuNghiDuongBanner = array();
         foreach ($dssbanner as $banner) {
-            $khuNghiDuongBanner = $this->control->layThongTinChiTietKhuNghiDuong($banner['idkhunghiduong']);
+            $khuNghiDuongBanner = $this->control->getDetailsResortWithOneImage($banner['idkhunghiduong']);
             $dsKhuNghiDuongBanner[] = $khuNghiDuongBanner;
         }
         require_once("view/TransactionHistory.php");
@@ -1153,7 +1153,7 @@ class controller
             $dssliderw = $this->control->laydanhsachslider();
             $dsKhuNghiDuongBanner = array();
             foreach ($dssbanner as $banner) {
-                $khuNghiDuongBanner = $this->control->layThongTinChiTietKhuNghiDuong($banner['idkhunghiduong']);
+                $khuNghiDuongBanner = $this->control->getDetailsResortWithOneImage($banner['idkhunghiduong']);
                 $dsKhuNghiDuongBanner[] = $khuNghiDuongBanner;
             }
             $is_voucher = false;

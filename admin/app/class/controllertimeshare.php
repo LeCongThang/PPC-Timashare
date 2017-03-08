@@ -36,7 +36,7 @@ class controllertimeshare
         $gioithieu_en = $this->controller_timeshare->laygioithieu("en");
         $gioithieu_vi = $this->controller_timeshare->laygioithieu("vi");
         if ($gioithieu_en != null && $gioithieu_vi != null) {
-            require_once("app/view/timeshare.php");
+            require_once("view/timeshare.php");
         } else {
             //Trang loi
         }

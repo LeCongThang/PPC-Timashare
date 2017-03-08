@@ -23,7 +23,8 @@ mysqli_query($connect, "SET NAMES 'UTF8'");
     <link rel="stylesheet" href="<?= BASE_DIR_ADMIN ?>plugins/bootstrap-wysihtml5/bootstrap3-wysihtml5.min.css">
 </head>
 <body class="hold-transition skin-blue sidebar-mini">
-<div class="wrapper" style="height: 1000px;">
+<div class="wrapper" style="height: 1000px">
+    <?php require 'view/header.php' ?>
     <?php require 'partials/slider-bar.php' ?>
 
     <div class="content-wrapper">
@@ -76,12 +77,10 @@ mysqli_query($connect, "SET NAMES 'UTF8'");
 <!-- /.content-wrapper -->
 
 <footer class="main-footer">
-    <div class="pull-right hidden-xs">
-        <b>Version</b> 2.3.6
-    </div>
-    <strong>Copyright &copy; 2014-2016 <a href="http://almsaeedstudio.com">Almsaeed Studio</a>.</strong> All rights
+    <strong>Copyright &copy; 2016 <a href="http://hbbsolution.com/">HBB Web Team</a>.</strong> All rights
     reserved.
 </footer>
+
 
 <!-- Control Sidebar -->
 <aside class="control-sidebar control-sidebar-dark">
@@ -278,22 +277,17 @@ mysqli_query($connect, "SET NAMES 'UTF8'");
 <div class="control-sidebar-bg"></div>
 </div>
 <!-- ./wrapper -->
+<!-- ./wrapper -->
 <!-- jQuery 2.2.3 -->
-<script src="../../plugins/jQuery/jquery-2.2.3.min.js"></script>
-<!-- Bootstrap 3.3.6 -->
-<script src="../../bootstrap/js/bootstrap.min.js"></script>
+<script src="<?= BASE_DIR ?>plugins/jQuery/jquery-2.2.3.min.js"></script>
 <!-- Slimscroll -->
-<script src="../../plugins/slimScroll/jquery.slimscroll.min.js"></script>
+<script src="<?= BASE_DIR ?>plugins/slimScroll/jquery.slimscroll.min.js"></script>
 <!-- FastClick -->
-<script src="../../plugins/fastclick/fastclick.js"></script>
-<!-- AdminLTE App -->
-<script src="../../dist/js/app.min.js"></script>
-<!-- AdminLTE for demo purposes -->
-<script src="../../dist/js/demo.js"></script>
+<script src="<?= BASE_DIR ?>plugins/fastclick/fastclick.js"></script>
 <!-- iCheck -->
-<script src="../../plugins/iCheck/icheck.min.js"></script>
+<script src="<?= BASE_DIR ?>plugins/iCheck/icheck.min.js"></script>
 <!-- Bootstrap WYSIHTML5 -->
-<script src="../../plugins/bootstrap-wysihtml5/bootstrap3-wysihtml5.all.min.js"></script>
+<script src="<?= BASE_DIR ?>plugins/bootstrap-wysihtml5/bootstrap3-wysihtml5.all.min.js"></script>
 <!-- Page Script -->
 <script>
     $(function () {
@@ -301,6 +295,5 @@ mysqli_query($connect, "SET NAMES 'UTF8'");
         $("#compose-textarea").wysihtml5();
     });
 </script>
-<script type="text/javascript" src="../../ckeditor/ckeditor.js"></script>
 </body>
 </html>

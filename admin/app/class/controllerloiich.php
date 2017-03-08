@@ -38,7 +38,7 @@ class controllerloiich
         $gioithieu_en = $this->controller_loiich->laygioithieu("en");
         $gioithieu_vi = $this->controller_loiich->laygioithieu("vi");
         if ($gioithieu_en != null && $gioithieu_vi != null) {
-            require_once("app/view/loiich.php");
+            require_once("view/loiich.php");
         } else {
             //Trang loi
         }

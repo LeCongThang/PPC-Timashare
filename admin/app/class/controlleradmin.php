@@ -36,7 +36,7 @@ class controlleradmin
     {
         if (isset($_SESSION['tendangnhapadmin']))
             header('location:' . BASE_URL_ADMIN . "controlleradmin/loadingadmin");
-        require_once "app/view/dangnhap.php";
+        require_once "view/dangnhap.php";
     }//index
 
     private function uploadHinhUpdate()
@@ -60,7 +60,7 @@ class controlleradmin
     * */
     function loadingadmin()
     {
-        require_once "app/view/admin.php";
+        require_once "view/admin.php";
     }//loadingadmin
 
     /*
@@ -78,6 +78,7 @@ class controlleradmin
             $_SESSION["tendangnhapadmin"] = $tendangnhap;
             $user = $this->controlleradmin->layThongTinTaiKhoanAdmin();
             $_SESSION['tentaikhoanadmin'] = $user['hoten'];
+            $_SESSION['idAdmin'] = $user['id'];
             if (isset($_POST["rememberme"])) {
                 $remember = $_POST["rememberme"];
                 setcookie("tendangnhap", $tendangnhap, time() + 2592000);
@@ -116,7 +117,7 @@ class controlleradmin
     public function layThongTinAdmin()
     {
         $tai_khoan = $this->controlleradmin->layThongTinTaiKhoanAdmin();
-        require_once("app/view/thongtincanhan.php");
+        require_once("view/thongtincanhan.php");
     }// layThongTinAdmin
 
     /*

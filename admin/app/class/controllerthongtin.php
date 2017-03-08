@@ -65,7 +65,7 @@ class controllerthongtin
         $gioithieu_en = $this->controller_thongtin->getInformation("en");
         $gioithieu_vi = $this->controller_thongtin->getInformation("vi");
         if ($gioithieu_en != null && $gioithieu_vi != null) {
-            require_once("app/view/capnhatthongtin.php");
+            require_once("view/capnhatthongtin.php");
         } else {
             //Trang loi
         }

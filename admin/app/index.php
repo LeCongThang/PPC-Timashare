@@ -3,8 +3,8 @@ error_reporting(E_ALL);
 session_start();
 //phpinfo();
 ini_set('display_errors', 1);
-require_once "app/config.php";
-require_once "app/helper.php";
+require_once "config.php";
+require_once "helper.php";
 $url = $_SERVER['REQUEST_URI'];
 
 $kq = tach_url($url, $cname, $action, $params);
@@ -24,7 +24,7 @@ else
 
 function __autoload($class_name)
 {
-    $filename = "app/class/" . $class_name . ".php";
+    $filename = "class/" . $class_name . ".php";
     if (file_exists($filename))
         require_once($filename);
 }// autoload

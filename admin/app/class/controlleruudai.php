@@ -41,7 +41,7 @@ class controlleruudai
             header('location:' . BASE_URL_ADMIN . "controlleradmin/index");
         $list_deals = $this->controlleruudai->getAll();
 
-        require_once("app/view/quanlyuudai.php");
+        require_once("view/quanlyuudai.php");
     }
 
 
@@ -65,14 +65,14 @@ class controlleruudai
                 else
                     $this->errors[] = 'Lỗi! Tạo ưu đãi không thành công!';
                 $list_deals = $this->controlleruudai->getAll();
-                require_once("app/view/quanlyuudai.php");
+                require_once("view/quanlyuudai.php");
                 return true;
             } else {
                 $this->errors[] = 'Vui lòng chọn hình ảnh!';
             }
         }
         $list_resort = $this->controlleruudai->getListResort();
-        require_once("app/view/create-deals.php");
+        require_once("view/create-deals.php");
     }
 
     public function update()
@@ -97,14 +97,14 @@ class controlleruudai
             else
                 $this->errors[] = 'Lỗi! Cập nhật ưu đãi không thành công!';
             $list_deals = $this->controlleruudai->getAll();
-            require_once("app/view/quanlyuudai.php");
+            require_once("view/quanlyuudai.php");
             return true;
         }
         $data_vi = $this->controlleruudai->get($id_deals, "vi");
         $data_en = $this->controlleruudai->get($id_deals, "en");
         $data_detail = $this->controlleruudai->getDetailsDealsResort($id_deals);
         $list_resort = $this->controlleruudai->getListResort();
-        require_once("app/view/create-deals.php");
+        require_once("view/create-deals.php");
         return true;
     }
 
@@ -118,7 +118,7 @@ class controlleruudai
         else
             $this->errors[] = 'Lỗi! Xóa ưu đãi không thành công!';
         $list_deals = $this->controlleruudai->getAll();
-        require_once("app/view/quanlyuudai.php");
+        require_once("view/quanlyuudai.php");
         return true;
     }
 

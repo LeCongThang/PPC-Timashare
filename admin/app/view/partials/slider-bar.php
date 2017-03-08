@@ -51,11 +51,11 @@
                     'url' => 'controllertimeshare/index',
                     'icon' => 'glyphicon glyphicon-pencil',
                 ],
-//                [
-//                    'title' => 'BOOK',
-//                    'url' => 'controllerbook/index',
-//                    'icon' => 'glyphicon glyphicon-globe',
-//                ],
+                [
+                    'title' => 'BOOK',
+                    'url' => 'controllerbook/index',
+                    'icon' => 'glyphicon glyphicon-globe',
+                ],
                 [
                     'title' => 'QUẢN LÝ LIÊN HỆ',
                     'url' => 'controllermail/index',
@@ -71,11 +71,11 @@
                     'url' => 'controllertaikhoan/index',
                     'icon' => 'glyphicon glyphicon-user',
                 ],
-                [
-                    'title' => 'QUẢN LÝ THAM GIA',
-                    'url' => 'controllerthamgia/index',
-                    'icon' => 'glyphicon glyphicon-log-in',
-                ],
+//                [
+//                    'title' => 'QUẢN LÝ THAM GIA',
+//                    'url' => 'controllerthamgia/index',
+//                    'icon' => 'glyphicon glyphicon-log-in',
+//                ],
                 [
                     'title' => 'QUẢN LÝ CÂU HỎI',
                     'url' => 'controllercauhoi/index',
@@ -96,15 +96,10 @@
                     'url' => 'controllertuyendung/index',
                     'icon' => 'glyphicon glyphicon-briefcase',
                 ],
-//                [
-//                    'title' => 'TRẠNG THÁI BOOK',
-//                    'url' => 'controllertrangthai/trangthai',
-//                    'icon' => 'glyphicon glyphicon-ok',
-//                ],
                 [
-                    'title' => 'LOG OUT',
-                    'url' => 'controlleradmin/dangxuat',
-                    'icon' => 'glyphicon glyphicon-log-out',
+                    'title' => 'QUẢN LÝ BANNER',
+                    'url' => 'controllerbanner/index',
+                    'icon' => 'glyphicon glyphicon-ok',
                 ]
             ],
             'class' => 'sidebar-menu',

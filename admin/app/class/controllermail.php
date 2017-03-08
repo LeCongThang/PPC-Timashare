@@ -26,21 +26,21 @@ class controllermail
     public function mail()
     {
 
-        require "app/view/mail.php";
+        require "view/mail.php";
     }
 
     public function xemmail()
     {
         $readmail = $this->params[0];
         $mail = $this->controllermail->read($readmail);
-        require "app/view/readmail.php";
+        require "view/readmail.php";
     }
 
     public function xemMailDaKiemTra()
     {
         $readmail = $this->params[0];
         $mail = $this->controllermail->read($readmail);
-        require "app/view/readmailchecked.php";
+        require "view/readmailchecked.php";
     }
 
     public function delete()
@@ -56,7 +56,7 @@ class controllermail
             header('location:' . BASE_URL_ADMIN . "controlleradmin/index");
         $ds_mail = $this->controllermail->laydanhsachmail();
         $ds_mail_da_duyet = $this->controllermail->layDanhSachMailDaDuyet();
-        require "app/view/mail.php";
+        require "view/mail.php";
     }
 
     public function update()
@@ -68,6 +68,6 @@ class controllermail
             $errors[] = "Duyệt chưa thành công";
         $ds_mail = $this->controllermail->laydanhsachmail();
         $ds_mail_da_duyet = $this->controllermail->layDanhSachMailDaDuyet();
-        require "app/view/mail.php";
+        require "view/mail.php";
     }
 }

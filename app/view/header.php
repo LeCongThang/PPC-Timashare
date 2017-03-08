@@ -1,7 +1,7 @@
 <!DOCTYPE html>
 <html>
 <head>
-    <title></title>
+    <title>PPC TimeShare</title>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1">
     <base href="<?= BASE_DIR ?>">
@@ -162,8 +162,8 @@
                     if ($key == 0) echo '<div class="thumbnail" style="margin-left: 10px">';
                     else if ($key == 3) echo '<div class="thumbnail" style="margin-right: 10px">';
                     else echo '<div class="thumbnail">';
-                    echo '<img src="' . BASE_DIR . $khuNghiDuongBanner['link'] . '">';
-                    echo ' <div class="caption"><h6>' ?>{KhuNghiDuong2}<?php echo '</h6><h5>' . $khuNghiDuongBanner['ten'] . '</h5><p class ="content_banner">' . $khuNghiDuongBanner['thongtin'] . '</p>';
+                    echo '<img class="img-responsive"" src="' . BASE_DIR . $khuNghiDuongBanner['image'] . '">';
+                    echo ' <div class="caption"><h6 style="font-weight: normal!important;">' ?>{KhuNghiDuong2}<?php echo '</h6><h5>' . $khuNghiDuongBanner['name'] . '</h5><div class ="content_banner">' . $khuNghiDuongBanner['introduce'] . '</div>';
                     echo '<a href="' . BASE_URL . $_SESSION['lang'] . '/controller/loadingDetailsResort/' . $khuNghiDuongBanner['id'] . '" class="btn btn-default" id="btnreadmore">' ?>{TimHieuThem}<?php echo '</a></div></div></div>';
                 }
                 ?>

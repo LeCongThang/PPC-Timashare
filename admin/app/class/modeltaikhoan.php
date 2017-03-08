@@ -22,7 +22,7 @@ class modeltaikhoan
 
     public function laydanhsachtaikhoan()
     {
-        $sql = "SELECT * FROM taikhoan WHERE id_vaitro = 1";
+        $sql = "SELECT * FROM taikhoan";
         $result = mysqli_query($this->db, $sql);
         if (!$result) {
             die("Error in query");
@@ -36,37 +36,6 @@ class modeltaikhoan
         return $list;
     }
 
-    public function laydanhsachtaikhoandk()
-    {
-        $sql = "SELECT * FROM taikhoandangky WHERE trangthai_taikhoandk = 1";
-        $result = mysqli_query($this->db, $sql);
-        if (!$result) {
-            die("Error in query");
-        }
-        $list = array();
-        while ($row = mysqli_fetch_assoc($result)) {
-            $list[] = $row;
-        }
-        //remove out of memory
-        mysqli_free_result($result);
-        return $list;
-    }
-
-    public function laydanhsachtaikhoandk_daduyet()
-    {
-        $sql = "SELECT * FROM taikhoandangky WHERE trangthai_taikhoandk = 0";
-        $result = mysqli_query($this->db, $sql);
-        if (!$result) {
-            die("Error in query");
-        }
-        $list = array();
-        while ($row = mysqli_fetch_assoc($result)) {
-            $list[] = $row;
-        }
-        //remove out of memory
-        mysqli_free_result($result);
-        return $list;
-    }
 
     public function delete($user)
     {
@@ -75,48 +44,60 @@ class modeltaikhoan
         return true;
     }
 
-    public function deleteAccount($user)
-    {
-        $sql = "DELETE FROM taikhoandangky WHERE email_taikhoandk = '$user' ";
-        $kq = $this->db->query($sql);
-        return true;
-    }
 
     public function update($user, $pass, $hoten, $diachi, $sodienthoai, $vaitro)
     {
-        $sql = "UPDATE taikhoan SET tendangnhap='$user',matkhau='$pass',id_vaitro='$vaitro',hoten='$hoten', diachi='$diachi',dienthoai=$sodienthoai WHERE tendangnhap='$user'";
+        $password_hash = password_hash($pass, PASSWORD_DEFAULT);
+        $sql = "UPDATE taikhoan SET tendangnhap='$user',password='{$password_hash}',id_vaitro='$vaitro',hoten='$hoten', diachi='$diachi',dienthoai=$sodienthoai WHERE tendangnhap='$user'";
         $kq = $this->db->query($sql);
         return true;
     }
 
-    public function layThongTinUser($user)
+    public function layThongTinUser($userId)
     {
-        $sql = "SELECT * FROM taikhoan WHERE tendangnhap='$user' limit 1 ";
+        $sql = "SELECT * FROM taikhoan WHERE id={$userId} ";
         $kq = $this->db->query($sql);
         $row = $kq->fetch_assoc();
         return $row;
     }
 
-    public function themTaiKhoan($tendangnhap, $matkhau, $hoten, $diachi, $dienthoai)
+    public function createAccount($userName, $hinh, $fullName, $address, $phoneNumber, $gender, $password, $status, $role)
     {
-        $sql = "insert into taikhoan(tendangnhap,matkhau,id_vaitro,hoten,diachi,dienthoai) values ('" . $tendangnhap . "','" . password_hash($matkhau) . "', 1,'" . $hoten . "','" . $diachi . "','" . $dienthoai . "')";
-        return mysqli_query($this->db, $sql);
+        $passwordHash = password_hash($password, PASSWORD_DEFAULT);
+        $sql = "INSERT INTO taikhoan(tendangnhap, avatar,password,id_vaito,hoten,diachi,dienthoai,sex,status) VALUES ('{$userName}', '{$hinh}','{$passwordHash}',{$role},'{$fullName}','{$address}','{$phoneNumber}',{$gender},{$status} )";
+        $result = mysqli_query($this->db, $sql);
+        if (!$result) {
+            die("Error in createAccount");
+        }
+        $last_id = mysqli_insert_id($this->db);
+        $date_now = date("Y-m-d");
+        $nameVoucher = "Voucher Resgiter";
+        $cost = 3;
+        $total = 1;
+        $this->insertVoucher($nameVoucher, $cost, $date_now, $last_id, $total);
+        return true;
     }
 
-    public function capnhatthongtintk($tendangnhap, $matkhau, $hoten, $diachi, $sodienthoai)
+    public function insertVoucher($name, $cost, $date, $id_account, $total)
     {
-        $sql = "UPDATE taikhoan SET hoten='" . $hoten . "', matkhau ='" . password_hash($matkhau) . "', diachi='" . $diachi . "', dienthoai='" . $sodienthoai . "' WHERE tendangnhap = '" . $tendangnhap . "'";
-        return mysqli_query($this->db, $sql);
+        $sql = "INSERT INTO voucher(name,cost,date,id_user, total) VALUES ('{$name}',{$cost},'{$date}',{$id_account},{$total})";
+        $result = mysqli_query($this->db, $sql);
+        if (!$result) {
+            die("Error in insertVoucher");
+        }
+        return $result;
     }
 
-    public function capNhatTaiKhoanDangKy($tendangnhap)
+    public function capnhatthongtintk($id, $hinh, $fullName, $address, $phoneNumber, $gender, $password, $status, $role)
     {
-        $sql = "UPDATE taikhoandangky SET trangthai_taikhoandk = 0, nguoiduyet_taikhoandk = '" . $_SESSION['tendangnhapadmin'] . "' WHERE email_taikhoandk ='" . $tendangnhap . "'";
-        return mysqli_query($this->db, $sql);
+        $passwordHash = password_hash($password, PASSWORD_DEFAULT);
+        $sql = "UPDATE taikhoan SET hoten='{$fullName}', diachi='{$address}',dienthoai='{$phoneNumber}',sex = {$gender}, password ='{$passwordHash}', status = {$status}, id_vaitro = {$role}";
+        if ($hinh != null)
+            $sql .= ", avatar = '{$hinh}' ";
+        $sql .= " WHERE id='" . $id . "'";
+        $kq = $this->db->query($sql);
+        return $kq;
     }
-
-
-
 }//class
 
 

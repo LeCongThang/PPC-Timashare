@@ -20,7 +20,7 @@
 </head>
 <body class="hold-transition skin-blue sidebar-mini">
 <div class="wrapper">
-    <?php require 'app/view/header.php' ?>
+    <?php require 'view/header.php' ?>
 
     <!-- Left side column. contains the logo and sidebar -->
     <?php require 'partials/slider-bar.php' ?>

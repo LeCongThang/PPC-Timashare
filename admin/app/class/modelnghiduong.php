@@ -150,6 +150,10 @@ class modelnghiduong
         if ($count > 0) {
             $sql = "INSERT INTO resort_image(image, id_resort) VALUES ";
             foreach ($list_img as $key => $img) {
+                $imagick = new \Imagick(realpath(REAL_PATH . BASE_DIR . $img));
+                $image_high = $imagick->getImageHeight();
+                $imagick->resizeImage(1170, 740, Imagick::FILTER_LANCZOS, 1);
+                file_put_contents(REAL_PATH . BASE_DIR . $img, $imagick);
                 if ($key < $count - 1)
                     $sql = $sql . "('" . $img . "', " . $id . "), ";
                 else

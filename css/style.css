@@ -397,3 +397,7 @@ h2 {
     text-decoration: none;
     font-weight: bold;
 }
+
+.btn-default:hover{
+    color: white!important;
+}

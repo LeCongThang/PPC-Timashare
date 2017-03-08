@@ -20,8 +20,7 @@
 </head>
 <body class="hold-transition skin-blue sidebar-mini">
 <div class="wrapper">
-    <?php require 'app/view/header.php' ?>
-
+    <?php require 'view/header.php' ?>
     <!-- Left side column. contains the logo and sidebar -->
     <?php require 'partials/slider-bar.php' ?>
 
@@ -45,7 +44,6 @@
                                    class="btn btn-success"><i
                                         class="glyphicon glyphicon-th-large"></i>&nbsp <b>Thêm tài khoản</b></a>
                                 <!-- <button type="button" class="btn btn-default"><i class="fa fa-pencil"></i> Draft</button> -->
-
                             </div>
                         </div>
                         <div class="box-body">
@@ -56,8 +54,8 @@
                                     <td>Họ tên</td>
                                     <td>Địa chỉ</td>
                                     <td>Điện thoại</td>
-
-                                    <td></td>
+                                    <td>Loại tài khoản</td>
+                                    <td>Tình trạng</td>
                                     <td></td>
                                 </tr>
                                 </thead>
@@ -67,32 +65,16 @@
                                     foreach ($ds_tai_khoan as $key => $item_taikhoan) {
                                         ?>
                                         <tr>
-                                            <form
-                                                action="<?= BASE_URL_ADMIN ?>controllertaikhoan/layThongTinUser/<?php echo $item_taikhoan['tendangnhap']; ?>"
-                                                method="POST">
-                                                <input type="hidden" id="txt1" name="txt1"
-                                                       value="<?php echo $item_taikhoan['tendangnhap']; ?>">
-                                                <input type="hidden" name="txt3"
-                                                       value="<?php echo $item_taikhoan['hoten']; ?>">
-                                                <input type="hidden" name="txt4"
-                                                       value="<?php echo $item_taikhoan['diachi']; ?>">
-                                                <input type="hidden" name="txt5"
-                                                       value="<?php echo $item_taikhoan['dienthoai']; ?>">
-                                                <td><?php echo $item_taikhoan['tendangnhap']; ?></td>
-                                                <td><?php echo $item_taikhoan['hoten']; ?></td>
-                                                <td><?php echo $item_taikhoan['diachi']; ?></td>
-                                                <td><?php echo $item_taikhoan['dienthoai']; ?></td>
-
-                                                <td>
-                                                    <a href="<?= BASE_URL_ADMIN ?>controllertaikhoan/update/<?= $item_taikhoan['tendangnhap'] ?>"
-                                                       class="btn btn-primary">Sửa</a>
-
-                                                </td>
-                                                <td>
-                                                    <a href="<?= BASE_URL_ADMIN ?>controllertaikhoan/delete/<?= $item_taikhoan['tendangnhap'] ?>"
-                                                       class="btn btn-danger">Xóa</a>
-                                                </td>
-                                            </form>
+                                            <td><?php echo $item_taikhoan['tendangnhap']; ?></td>
+                                            <td><?php echo $item_taikhoan['hoten']; ?></td>
+                                            <td><?php echo $item_taikhoan['diachi']; ?></td>
+                                            <td><?php echo $item_taikhoan['dienthoai']; ?></td>
+                                            <td><?php echo ($item_taikhoan['id_vaitro'] == 1) ? 'user' : 'admin' ?></td>
+                                            <td><?php echo ($item_taikhoan['status'] == 0) ? 'Còn hiệu lực' : 'Hạn chế' ?></td>
+                                            <td>
+                                                <a href="<?= BASE_URL_ADMIN ?>controllertaikhoan/update/<?= $item_taikhoan['id'] ?>"
+                                                   class="btn btn-primary">Sửa</a>
+                                            </td>
                                         </tr>
                                     <?php } ?>
                                 </div>

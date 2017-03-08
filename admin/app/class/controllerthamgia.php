@@ -28,7 +28,7 @@ class controllerthamgia
             header('location:' . BASE_URL_ADMIN . "controlleradmin/index");
         $du_lieu_vi = $this->controllerthamgia->layDuLieuThamGia("vi");
         $du_lieu_en = $this->controllerthamgia->layDuLieuThamGia("en");
-        require_once("app/view/thamgia.php");
+        require_once("view/thamgia.php");
     }
 
     private function uploadHinh()
@@ -80,7 +80,7 @@ class controllerthamgia
         $img_khung_5->cropImage($width_khung_5, $high_khung_5, 0, 434);
         array_push($array_img, $img_khung_5);
         $_SESSION['img'] = $this->hinh;
-        require_once("app/view/quanlythamgia.php");
+        require_once("view/quanlythamgia.php");
     }
 
     public function capNhatThamGia()

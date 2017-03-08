@@ -51,7 +51,7 @@ class controllergioithieu
         $gioithieu_en = $this->controller_gioithieu->laygioithieu("en");
         $gioithieu_vi = $this->controller_gioithieu->laygioithieu("vi");
         if ($gioithieu_en != null && $gioithieu_vi != null) {
-            require_once("app/view/gioithieu.php");
+            require_once("view/gioithieu.php");
         } else {
             //Trang loi
         }

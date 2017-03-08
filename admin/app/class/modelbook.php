@@ -25,26 +25,60 @@ class modelbook
         }
     }
 
-    public function getAll($customWhere = '')
+    public function getAllBooking()
     {
-        $sql = "select book_now.*,khunghiduong.thongtin from book_now JOIN khunghiduong ON khunghiduong.id_khunghi = book_now.id_khunghi ".$customWhere;
-        return  $this->db->query($sql);
+        $sql = "SELECT book_now.*,resort_language.name,taikhoan.hoten, taikhoan.diachi, taikhoan.dienthoai, taikhoan.sex, resort_language.address, resort.id_resort_type FROM book_now,resort,taikhoan,resort_language WHERE resort.id = resort_language.id_resort AND resort_language.language = 'vi' AND resort.id = book_now.id_resort AND taikhoan.id = book_now.id_user AND book_now.status = 0";
+        $result = mysqli_query($this->db, $sql);
+        if (!$result) {
+            die("Error in query getAllBooking");
+        }
+        $list = array();
+        while ($row = mysqli_fetch_assoc($result)) {
+            $list[] = $row;
+        }
+        //remove out of memory
+        mysqli_free_result($result);
+        return $list;
     }
 
-    public function get($id)
+    public function getAllBookingUpdated()
     {
-        $sql = "select book_now.*,khunghiduong.thongtin from book_now JOIN khunghiduong ON khunghiduong.id_khunghi = book_now.id_khunghi where book_now.id = {$id}  limit 1";
+        $sql = "SELECT book_now.*,resort_language.name,taikhoan.hoten, taikhoan.diachi, taikhoan.dienthoai, taikhoan.sex, resort_language.address, resort.id_resort_type FROM book_now,resort,taikhoan,resort_language WHERE resort.id = resort_language.id_resort AND resort_language.language = 'vi' AND resort.id = book_now.id_resort AND taikhoan.id = book_now.id_user AND book_now.id_book NOT IN (SELECT book_now.id_book FROM book_now WHERE book_now.status = 0)";
+        $result = mysqli_query($this->db, $sql);
+        if (!$result) {
+            die("Error in query getAllBookingUpdated");
+        }
+        $list = array();
+        while ($row = mysqli_fetch_assoc($result)) {
+            $list[] = $row;
+        }
+        //remove out of memory
+        mysqli_free_result($result);
+        return $list;
+    }
+
+    public function getDetailsBook($id)
+    {
+        $sql = "SELECT book_now.exchange_rate e, voucher.cost, book_now.status s , voucher.name n, book_now.*, resort.id, resort.id_resort_type, resort_language.name,taikhoan.tendangnhap, taikhoan.hoten, taikhoan.diachi, taikhoan.dienthoai, taikhoan.sex, resort_language.address, resort.id_resort_type FROM voucher, book_now,resort,taikhoan,resort_language WHERE voucher.id = book_now.voucher_id AND resort.id = resort_language.id_resort AND resort_language.language = 'vi' AND resort.id = book_now.id_resort AND taikhoan.id = book_now.id_user AND book_now.status = 0 AND book_now.id_book =".$id;
         $result = $this->db->query($sql);
         $row = $result->fetch_assoc();
         return $row;
     }
 
-    public function update($id, $ngay_den, $ngay_di, $ghichu)
+    public function getDetailsBooked($id)
     {
-        $sql = "UPDATE book_now SET ngay_den ='" . $ngay_den . "', ngay_di='" . $ngay_di . "',ghichu='" . $ghichu . "' WHERE id = {$id}";
- 
-        $kq = $this->db->query($sql);
+        $sql = "SELECT book_now.exchange_rate e,voucher.cost, book_now.status s , voucher.name n, book_now.*, resort.id, resort.id_resort_type, resort_language.name,taikhoan.tendangnhap, taikhoan.hoten, taikhoan.diachi, taikhoan.dienthoai, taikhoan.sex, resort_language.address, resort.id_resort_type FROM voucher, book_now,resort,taikhoan,resort_language WHERE voucher.id = book_now.voucher_id AND resort.id = resort_language.id_resort AND resort_language.language = 'vi' AND resort.id = book_now.id_resort AND taikhoan.id = book_now.id_user AND book_now.id_book =".$id;
+        $result = $this->db->query($sql);
+        $row = $result->fetch_assoc();
+        return $row;
+    }
 
+    public function update($id,$date_start,$date_end,$adults,$childs,$room,$total_price,$note,$status)
+    {
+        $user = $_SESSION["idAdmin"];
+        $created_date = date("Y/m/d");
+        $sql = "UPDATE book_now SET updated_at = '{$created_date}', updated_by = {$user}, start_date = '{$date_start}', end_date='{$date_end}', adults = {$adults}, childs = {$childs}, room = {$room}, total_price = {$total_price}, note = '{$note}', status ={$status} WHERE id_book =" .$id;
+        $kq = $this->db->query($sql);
         return $kq;
     }
 

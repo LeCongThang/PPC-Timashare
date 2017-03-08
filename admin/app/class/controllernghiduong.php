@@ -24,7 +24,7 @@ class controllernghiduong
         $listResortEn = $this->control->getListResort('en');
         $listHomeVi = $this->control->getListHome('vi');
         $listHomeEn = $this->control->getListHome('en');
-        require_once("app/view/quanlykhunghiduong.php");
+        require_once("view/quanlykhunghiduong.php");
     }
 
     private function uploadHinh()
@@ -93,13 +93,13 @@ class controllernghiduong
                 $listResortEn = $this->control->getListResort('en');
                 $listHomeVi = $this->control->getListHome('vi');
                 $listHomeEn = $this->control->getListHome('en');
-                require_once("app/view/quanlykhunghiduong.php");
+                require_once("view/quanlykhunghiduong.php");
                 return true;
             } else {
                 $this->errors[] = 'Vui lòng chọn hình ảnh!';
             }
         }
-        require_once("app/view/create-resort.php");
+        require_once("view/create-resort.php");
     }
 
     public function update()
@@ -159,7 +159,7 @@ class controllernghiduong
                 $listResortEn = $this->control->getListResort('en');
                 $listHomeVi = $this->control->getListHome('vi');
                 $listHomeEn = $this->control->getListHome('en');
-                require_once("app/view/quanlykhunghiduong.php");
+                require_once("view/quanlykhunghiduong.php");
                 return true;
             } else {
                 $this->errors[] = 'Vui lòng chọn hình ảnh!';
@@ -168,7 +168,7 @@ class controllernghiduong
         $resort_vi = $this->control->getDetailsResort($id_resort, 'vi');
         $resort_en = $this->control->getDetailsResort($id_resort, 'en');
         $resort_image = $this->control->getListImage($id_resort);
-        require_once("app/view/create-resort.php");
+        require_once("view/create-resort.php");
         return true;
     }
 
@@ -184,7 +184,7 @@ class controllernghiduong
         $listResortEn = $this->control->getListResort('en');
         $listHomeVi = $this->control->getListHome('vi');
         $listHomeEn = $this->control->getListHome('en');
-        require_once("app/view/quanlykhunghiduong.php");
+        require_once("view/quanlykhunghiduong.php");
     }
 
 

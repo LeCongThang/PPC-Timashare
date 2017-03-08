@@ -20,7 +20,7 @@
 </head>
 <body class="hold-transition skin-blue sidebar-mini">
 <div class="wrapper">
-    <?php require 'app/view/header.php' ?>
+    <?php require 'view/header.php' ?>
     <!-- <header class="main-header"> -->
 
     <!-- Left side column. contains the logo and sidebar -->
@@ -57,9 +57,7 @@
                             <?php
                             foreach ($ds_video as $key => $item_video) {
                                 ?>
-                                <form
-                                    action="<?= BASE_URL_ADMIN ?>controllervideo/update/<?= $item_video['id_video'] ?>"
-                                    method="POST" enctype="multipart/form-data">
+                                <form action="<?= BASE_URL_ADMIN ?>controllervideo/update/<?= $item_video['id_video'] ?>" method="POST" enctype="multipart/form-data">
                                     <div class="row" style="margin-top:20px;height: 100%">
                                         <div class="col-md-2 col-sm-12">
                                             <embed width="100%" height="100%"
@@ -95,7 +93,6 @@
                                             <a href="<?= BASE_URL_ADMIN ?>controllervideo/delete/<?= $item_video['id_video'] ?>"
                                                class="btn btn-danger">Xóa</a>
                                         </div>
-
                                     </div>
                                 </form>
                             <?php } ?>
@@ -112,12 +109,10 @@
     <!-- /.content-wrapper -->
 
     <footer class="main-footer">
-        <div class="pull-right hidden-xs">
-            <b>Version</b> 2.3.6
-        </div>
-        <strong>Copyright &copy; 2014-2016 <a href="http://almsaeedstudio.com">Almsaeed Studio</a>.</strong> All rights
+        <strong>Copyright &copy; 2016 <a href="http://hbbsolution.com/">HBB Web Team</a>.</strong> All rights
         reserved.
     </footer>
+
 
 
 </div>

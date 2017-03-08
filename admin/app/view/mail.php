@@ -20,7 +20,7 @@
 </head>
 <body class="hold-transition skin-blue sidebar-mini">
 <div class="wrapper" style="height: 1000px;">
-    <?php require 'app/view/header.php' ?>
+    <?php require 'view/header.php' ?>
     <?php require 'partials/slider-bar.php' ?>
     <div class="content-wrapper">
         <!-- Content Header (Page header) -->

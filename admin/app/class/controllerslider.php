@@ -40,7 +40,7 @@ class controllerslider
         if (!isset($_SESSION['tendangnhapadmin']))
             header('location:' . BASE_URL_ADMIN . "controlleradmin/index");
         $sliders = $this->controllerslider->getAll();
-        require_once("app/view/slider.php");
+        require_once("view/slider.php");
     }
 
 
@@ -62,13 +62,13 @@ class controllerslider
                 else
                     $this->errors[] = 'Lỗi! Tạo slider không thành công!';
                 $sliders = $this->controllerslider->getAll();
-                require_once("app/view/slider.php");
+                require_once("view/slider.php");
                 return true;
             } else {
                 $this->errors[] = 'Vui lòng chọn hình ảnh!';
             }
         }
-        require_once("app/view/create-slider.php");
+        require_once("view/create-slider.php");
     }
 
     public function update()
@@ -92,12 +92,12 @@ class controllerslider
             else
                 $this->errors[] = 'Lỗi! Cập nhật slider không thành công!';
             $sliders = $this->controllerslider->getAll();
-            require_once("app/view/slider.php");
+            require_once("view/slider.php");
             return true;
         }
         $data_vi = $this->controllerslider->get($id,"vi");
         $data_en = $this->controllerslider->get($id,"en");
-        require_once("app/view/create-slider.php");
+        require_once("view/create-slider.php");
         return true;
     }
 
@@ -111,7 +111,7 @@ class controllerslider
         else
             $this->errors[] = 'Lỗi! Xóa slider không thành công!';
         $sliders = $this->controllerslider->getAll();
-        require_once("app/view/slider.php");
+        require_once("view/slider.php");
         return true;
     }
 }//class

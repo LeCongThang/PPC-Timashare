@@ -37,7 +37,7 @@ class controllercauhoi
             header('location:' . BASE_URL_ADMIN . "controlleradmin/index");
         $ds_cau_hoi_vi = $this->controller_cauhoi->layDanhSachCauHoi("vi");
         $ds_cau_hoi_en = $this->controller_cauhoi->layDanhSachCauHoi("en");
-        require_once("app/view/quanlycauhoi.php");
+        require_once("view/quanlycauhoi.php");
     }
 
     /**
@@ -56,7 +56,7 @@ class controllercauhoi
             $this->controller_cauhoi->themMoiCauHoi($cau_hoi_vi, $cau_hoi_en, $cau_tra_loi_vi, $cau_tra_loi_en);
             redirect(BASE_URL_ADMIN . 'controllercauhoi/index');
         }
-        require_once("app/view/create-question.php");
+        require_once("view/create-question.php");
     }
 
     /**
@@ -82,7 +82,7 @@ class controllercauhoi
         }
         $data_vi = $this->controller_cauhoi->xemChiTietCauHoi($id, "vi");
         $data_en = $this->controller_cauhoi->xemChiTietCauHoi($id, "en");
-        require_once("app/view/create-question.php");
+        require_once("view/create-question.php");
     }
 
     /**

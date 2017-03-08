@@ -26,9 +26,9 @@ scratch. This page gets rid of all links and provides the needed markup only.
 <body class="hold-transition skin-blue sidebar-mini">
 <div class="wrapper">
 
-    <?php require 'app/view/header.php' ?>
-    <?php require 'app/view/partials/slider-bar.php' ?>
-    <?php require 'app/view/content.php' ?>
+    <?php require 'view/header.php' ?>
+    <?php require 'view/partials/slider-bar.php' ?>
+    <?php require 'view/content.php' ?>
 
     <!-- Main Footer -->
     <footer class="main-footer">

@@ -40,7 +40,7 @@ class controllerthongbao
         if (!isset($_SESSION['tendangnhapadmin']))
             header('location:' . BASE_URL_ADMIN . "controlleradmin/index");
         $list_deals = $this->controllerthongbao->getAll();
-        require_once("app/view/quanlythongbao.php");
+        require_once("view/quanlythongbao.php");
     }
 
 
@@ -60,13 +60,13 @@ class controllerthongbao
                 else
                     $this->errors[] = 'Lỗi! Tạo tin tuyển dụng không thành công!';
                 $list_deals = $this->controllerthongbao->getAll();
-                require_once("app/view/quanlythongbao.php");
+                require_once("view/quanlythongbao.php");
                 return true;
             } else {
                 $this->errors[] = 'Vui lòng chọn hình ảnh!';
             }
         }
-        require_once("app/view/create-announce_papers.php");
+        require_once("view/create-announce_papers.php");
     }
 
     public function update()
@@ -88,12 +88,12 @@ class controllerthongbao
             else
                 $this->errors[] = 'Lỗi! Cập nhật tin tuyển dụng không thành công!';
             $list_deals = $this->controllerthongbao->getAll();
-            require_once("app/view/quanlythongbao.php");
+            require_once("view/quanlythongbao.php");
             return true;
         }
         $data_vi = $this->controllerthongbao->get($id_deals, "vi");
         $data_en = $this->controllerthongbao->get($id_deals, "en");
-        require_once("app/view/create-announce_papers.php");
+        require_once("view/create-announce_papers.php");
         return true;
     }
 
@@ -107,7 +107,7 @@ class controllerthongbao
         else
             $this->errors[] = 'Lỗi! Xóa tin tuyển dụng không thành công!';
         $list_deals = $this->controllerthongbao->getAll();
-        require_once("app/view/quanlythongbao.php");
+        require_once("view/quanlythongbao.php");
         return true;
     }
 }//class

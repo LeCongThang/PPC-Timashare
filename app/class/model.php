@@ -376,6 +376,17 @@ class model
         return $row;
     }
 
+    public function getDetailsResortWithOneImage($id)
+    {
+        $sql = "SELECT * FROM resort, resort_image, resort_language WHERE resort.id = resort_image.id_resort AND resort_language.id_resort = resort.id AND resort_language.language = '" . $_SESSION['lang'] . "' " . " AND resort.id = {$id} LIMIT 1";
+        $result = mysqli_query($this->db, $sql);
+        if (!$result) {
+            die("Error in query in getDetailsResortWithOneImage");
+        }
+        $row = $result->fetch_assoc();
+        return $row;
+    }
+
     public function getListImageResort($id)
     {
         $sql = "SELECT * FROM resort_image WHERE id_resort=" . $id;

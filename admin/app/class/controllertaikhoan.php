@@ -17,10 +17,23 @@ class controllertaikhoan
         $this->lang = 'vi';
     }//construct
 
+    private function uploadHinhUpdate()
+    {
+        if (isset($_FILES['imgProFile'])) {
+            $error = $_FILES['imgProFile']['error'];
+            if ($error == UPLOAD_ERR_OK) {
+                $tmp_name = $_FILES["imgProFile"]["tmp_name"];
+                $name = "img/" . time() . "_" . basename($_FILES["imgProFile"]["name"]);
+                move_uploaded_file($tmp_name, self::UPDATE_DIR . $name);
+                return $name;
+            }
+        }
+        return null;
+    }
 
     public function taikhoan()
     {
-        require_once("app/view/quanlytaikhoan.php");
+        require_once("view/quanlytaikhoan.php");
     }
 
     public function layThongTinUser()
@@ -31,20 +44,22 @@ class controllertaikhoan
         $id = $this->params[0];
 
         if (count($_POST) > 0) {
-            $ten_dang_nhap = $_POST['ten_dang_nhap'];
-            $mat_khau = $_POST['mat_khau'];
-            $ho_ten = $_POST['ho_ten'];
-            $dia_chi = $_POST['dia_chi'];
-            $dien_thoai = $_POST['dien_thoai'];
-            if ($this->controllertaikhoan->capnhatthongtintk($ten_dang_nhap, $mat_khau, $ho_ten, $dia_chi, $dien_thoai))
-                //redirect(BASE_URL . $_SESSION['lang'] . '/controllerslider/index');
+            $hinh = $this->uploadHinhUpdate();
+            $fullName = $_POST['txtFullName'];
+            $address = $_POST['txtAddress'];
+            $phoneNumber = $_POST['txtPhoneNumber'];
+            $gender = $_POST['radGender'];
+            $password = $_POST['password'];
+            $status = $_POST['status'];
+            $role = $_POST['id_vaitro'];
+            if ($this->controllertaikhoan->capnhatthongtintk($id, $hinh, $fullName, $address, $phoneNumber, $gender, $password, $status, $role))
                 $this->errors[] = 'Tạo tài khoản thành công';
             else
                 $this->errors[] = 'Lỗi xin mời bạn thử lại';
             redirect(BASE_URL_ADMIN . 'controllertaikhoan/index');
         }
         $data = $this->controllertaikhoan->layThongTinUser($id);
-        require_once("app/view/create-account.php");
+        require_once("view/create-account.php");
     }
 
 
@@ -70,30 +85,31 @@ class controllertaikhoan
         if (!isset($_SESSION['tendangnhapadmin']))
             header('location:' . BASE_URL_ADMIN . "controlleradmin/index");
         $ds_tai_khoan = $this->controllertaikhoan->laydanhsachtaikhoan();
-        require_once("app/view/quanlytaikhoan.php");
+        require_once("view/quanlytaikhoan.php");
     }
 
     public function create()
     {
-        if (isset($this->params[0])&&isset($this->params[1])) {
-            $email = $this->params[0];
-            $sdt = $this->params[1];
-            require_once("app/view/create-account-2.php");
-        }
-        else
-            require_once("app/view/create-account.php");
         if (count($_POST) > 0) {
-            $ten_dang_nhap = $_POST['ten_dang_nhap'];
-            $mat_khau = $_POST['mat_khau'];
-            $ho_ten = $_POST['ho_ten'];
-            $dia_chi = $_POST['dia_chi'];
-            $dien_thoai = $_POST['dien_thoai'];
-            if ($this->controllertaikhoan->themTaiKhoan($ten_dang_nhap, $mat_khau, $ho_ten, $dia_chi, $dien_thoai)) {
+            $hinh = $this->uploadHinhUpdate();
+            $userName = $_POST['userName'];
+            $fullName = $_POST['txtFullName'];
+            $address = $_POST['txtAddress'];
+            $phoneNumber = $_POST['txtPhoneNumber'];
+            $gender = $_POST['radGender'];
+            $password = $_POST['password'];
+            $status = $_POST['status'];
+            $role = $_POST['id_vaitro'];
+            if ($this->controllertaikhoan->createAccount( $userName, $hinh, $fullName, $address, $phoneNumber, $gender, $password, $status, $role))
+            {
                 $this->errors[] = 'Tạo tài khoản thành công';
-                $this->controllertaikhoan->capNhatTaiKhoanDangKy($ten_dang_nhap);
-            } else
+
+            }
+            else
                 $this->errors[] = 'Lỗi xin mời bạn thử lại';
-        }
+            redirect(BASE_URL_ADMIN . 'controllertaikhoan/index');
+        } else
+            require_once("view/create-account-2.php");
     }
 
     public function update()
@@ -104,22 +120,24 @@ class controllertaikhoan
         $id = $this->params[0];
 
         if (count($_POST) > 0) {
-            $ten_dang_nhap = $_POST['ten_dang_nhap'];
-            $mat_khau = $_POST['mat_khau'];
-            $ho_ten = $_POST['ho_ten'];
-            $dia_chi = $_POST['dia_chi'];
-            $dien_thoai = $_POST['dien_thoai'];
-            if ($this->controllertaikhoan->capnhatthongtintk($ten_dang_nhap, $mat_khau, $ho_ten, $dia_chi, $dien_thoai))
-                //redirect(BASE_URL . $_SESSION['lang'] . '/controllerslider/index');
+            $hinh = $this->uploadHinhUpdate();
+            $fullName = $_POST['txtFullName'];
+            $address = $_POST['txtAddress'];
+            $phoneNumber = $_POST['txtPhoneNumber'];
+            $gender = $_POST['radGender'];
+            $password = $_POST['password'];
+            $status = $_POST['status'];
+            $role = $_POST['id_vaitro'];
+            if ($this->controllertaikhoan->capnhatthongtintk($id, $hinh, $fullName, $address, $phoneNumber, $gender, $password, $status, $role))
                 $this->errors[] = 'Cập nhật tài khoản thành công';
             else
                 $this->errors[] = 'Lỗi xin mời bạn thử lại';
-            //redirect(BASE_URL_ADMIN. 'controllertaikhoan/index');
+            redirect(BASE_URL_ADMIN . 'controllertaikhoan/index');
         }
-        $data = $this->controllertaikhoan->layThongTinUser($id);
-        require_once("app/view/create-account.php");
-    }
 
+        $tai_khoan = $this->controllertaikhoan->layThongTinUser($id);
+        require_once("view/create-account.php");
+    }
 
 
 }//class
