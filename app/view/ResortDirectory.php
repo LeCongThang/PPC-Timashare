@@ -64,12 +64,12 @@
                         <b>{KhuVuc}</b></h4>
                     <div class="dimAlignments" style="background: #E8E7E5 !important;">
                         <ul id="dimListPrim"
-                            style=" list-style:none;padding-left: 15px;margin-top: 0px;padding-top: 10px;padding-bottom: 10px">
+                            style=" list-style:none;padding-left: 15px;margin-top: 0px;padding-top: 0px;padding-bottom: 10px">
                             <?php
                             if (!$isWorld) {
                                 foreach ($listContinents as $key => $continent) {
                                     if ($listCoutinentsNumber[$key] != 0) {
-                                        echo '<li class="cauhoi" style="margin: 5px"><a class="test" href="#" onclick="return false;" ><span class="link_tim_hieu" style="color: #640100;">' . $continent['name'] . ' (';
+                                        echo '<li class="cauhoi" style="margin: 5px;margin-top: 1px"><a class="test" href="#" onclick="return false;" ><span class="link_tim_hieu" style="color: #640100;">' . $continent['name'] . ' (';
                                         echo $listCoutinentsNumber[$key];
                                         echo ')</span></a><ul class="cautraloi" style="display: none;padding-left:35px;" >';
                                         foreach ($regions[$continent['id'] - 1] as $key2 => $region) {
@@ -85,7 +85,7 @@
                                 }
                             } else {
                                 if (!$isCountry) {
-                                    echo '<li class="cauhoi" style="margin: 5px"><a class="test" href="#" onclick="return false;" ><span class="link_tim_hieu" style="color: #640100;">' . $country_name .'('.$countryNumber .')</span></a><ul class="cautraloi" style="display: none;padding-left:35px;" >
+                                    echo '<li class="cauhoi" style="margin: 5px;margin-top: 1px"><a class="test" href="#" onclick="return false;" ><span class="link_tim_hieu" style="color: #640100;">' . $country_name .'('.$countryNumber .')</span></a><ul class="cautraloi" style="display: none;padding-left:35px;" >
                                 ';
                                     foreach ($listCity as $key => $city) {
                                         if($listCityNumber[$key] != 0)

@@ -46,12 +46,14 @@ class controllerloiich
 
     public function capnhatgioithieu()
     {
+        if (!isset($_SESSION['tendangnhapadmin']))
+            header('location:' . BASE_URL_ADMIN . "controlleradmin/index");
         if (count($_POST) > 0) {
             $tieuDe_vi = $_POST['tieude_vi'];
             $noiDung_vi = $_POST['noidung_vi'];
             $tieuDe_en = $_POST['tieude_en'];
             $noiDung_en = $_POST['noidung_en'];
-            if($this->controller_loiich->update($tieuDe_vi, $noiDung_vi, $tieuDe_en, $noiDung_en))
+            if ($this->controller_loiich->update($tieuDe_vi, $noiDung_vi, $tieuDe_en, $noiDung_en))
                 $this->errors[] = 'Cập nhật thông tin thành công';
             else
                 $this->errors[] = 'Lỗi! Cập nhật không thành công';

@@ -189,5 +189,6 @@
 <script type="text/javascript" src="<?= BASE_DIR ?>ckeditor/ckeditor.js"></script>
 <script type="text/javascript" src="<?= BASE_DIR ?>js/main.js"></script>
 <script>var lang = '<?=$_SESSION['lang']?>'</script>
+
 </body>
 </html>

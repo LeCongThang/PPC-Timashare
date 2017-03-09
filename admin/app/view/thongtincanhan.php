@@ -19,7 +19,7 @@
     <link rel="stylesheet" href="<?= BASE_DIR_ADMIN ?>plugins/bootstrap-wysihtml5/bootstrap3-wysihtml5.min.css">
 </head>
 <body class="hold-transition skin-blue sidebar-mini">
-<div class="wrapper">
+<div class="wrapper" style="height: 900px">
     <?php require 'view/header.php' ?>
 
     <!-- Left side column. contains the logo and sidebar -->

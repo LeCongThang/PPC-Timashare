@@ -99,7 +99,7 @@ class modelnghiduong
             $id_city_insert = $this->getIdCityByIdCountry($idCountry, $type)['id'];
 
         $date_insert = date("Y/m/d");
-        if (!$this->insertResort($resort_status, $resort_type, $resort_priority, $resort_price, $resort_lat, $resort_lon, $id_city_insert, $date_insert)) {
+        if (!$this->insertResort($resort_status, $resort_type, $resort_priority, $resort_price, $resort_lat, $resort_lon, $id_city_insert, $date_insert,$idCountry)) {
             die("Error in createResort");
         }
         $last_id = mysqli_insert_id($this->db);
@@ -115,16 +115,16 @@ class modelnghiduong
     }
 
     // insert Resort co them truong id_country de de gom
-    public function insertResort($resort_status, $resort_type, $resort_priority, $resort_price, $resort_lat, $resort_lon, $id_city, $date_insert)
+    public function insertResort($resort_status, $resort_type, $resort_priority, $resort_price, $resort_lat, $resort_lon, $id_city, $date_insert, $idCountry)
     {
-        $sql = "INSERT INTO resort(status, id_resort_type, priority, lat, lng, id_city, price, created_date) VALUES (" . $resort_status . "," . $resort_type . "," . $resort_priority . ",'" . $resort_lat . "','" . $resort_lon . "'," . $id_city . "," . $resort_price . ",'" . $date_insert . "')";
+        $sql = "INSERT INTO resort(status, id_resort_type, priority, lat, lng, id_city, price, created_date,id_country) VALUES (" . $resort_status . "," . $resort_type . "," . $resort_priority . ",'" . $resort_lat . "','" . $resort_lon . "'," . $id_city . "," . $resort_price . ",'" . $date_insert . "',{$idCountry})";
         $result = mysqli_query($this->db, $sql);
         return $result;
     }
 
-    public function updateResort($id_resort, $resort_status, $resort_type, $resort_priority, $resort_price, $resort_lat, $resort_lon, $idCountry)
+    public function updateResort($id_resort, $resort_status, $resort_type, $resort_priority, $resort_price, $resort_lat, $resort_lon,$idCity, $idCountry)
     {
-        $sql = "UPDATE resort SET status = " . $resort_status . ", id_resort_type = " . $resort_type . ", priority =" . $resort_priority . ", price =" . $resort_price . ", lat ='" . $resort_lat . "', lng ='" . $resort_lon . "', id_city =" . $idCountry . " WHERE id =" . $id_resort;
+        $sql = "UPDATE resort SET status = " . $resort_status . ", id_resort_type = " . $resort_type . ", priority =" . $resort_priority . ", price =" . $resort_price . ", lat ='" . $resort_lat . "', lng ='" . $resort_lon . "', id_city =" . $idCity .", id_country =".$idCountry. " WHERE id =" . $id_resort;
         $result = mysqli_query($this->db, $sql);
         return $result;
     }
@@ -297,7 +297,7 @@ class modelnghiduong
         } else
             $id_city_insert = $this->getIdCityByIdCountry($idCountry, $type)['id'];
 
-        if (!$this->updateResort($id_resort, $resort_status, $resort_type, $resort_priority, $resort_price, $resort_lat, $resort_lon, $id_city_insert)) {
+        if (!$this->updateResort($id_resort, $resort_status, $resort_type, $resort_priority, $resort_price, $resort_lat, $resort_lon, $id_city_insert, $idCountry)) {
             die("Error in update");
         }
 

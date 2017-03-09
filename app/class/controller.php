@@ -23,88 +23,98 @@ class controller
 
     function index()
     {
-        $dssbanner = $this->control->laydanhsach("banner");
-        $ds_video = $this->control->laydanhsach("video");
-        $dssliderw = $this->control->laydanhsachslider();
-        $gioithieu = $this->control->laygioithieu();
-        $du_lieu_tham_gia = $this->control->layDuLieuThamGia();
+        try {
+            $dssbanner = $this->control->laydanhsach("banner");
+            $ds_video = $this->control->laydanhsach("video");
+            $dssliderw = $this->control->laydanhsachslider();
+            $gioithieu = $this->control->laygioithieu();
+            $du_lieu_tham_gia = $this->control->layDuLieuThamGia();
 
-        $cau_hoi_thuong_gap = $this->control->layDanhSachCauHoiThuongGap();
-        $dsKhuNghiDuongBanner = array();
-        foreach ($dssbanner as $banner) {
-            $khuNghiDuongBanner = $this->control->getDetailsResortWithOneImage($banner['idkhunghiduong']);
-            $dsKhuNghiDuongBanner[] = $khuNghiDuongBanner;
+            $cau_hoi_thuong_gap = $this->control->layDanhSachCauHoiThuongGap();
+            $dsKhuNghiDuongBanner = array();
+            foreach ($dssbanner as $banner) {
+                $khuNghiDuongBanner = $this->control->getDetailsResortWithOneImage($banner['idkhunghiduong']);
+                $dsKhuNghiDuongBanner[] = $khuNghiDuongBanner;
+            }
+            //echo count($dsKhuNghiDuongSlier);
+            $imagick = new \Imagick(realpath(REAL_PATH . BASE_DIR . $du_lieu_tham_gia['hinh_anh']));
+            $imagick->resizeImage(1070, 868, Imagick::FILTER_LANCZOS, 1);
+            $width_khung_1 = 257.5;
+            $high_khung_1 = 217;
+            $width_khung_2 = 252.5;
+            $high_khung_2 = 217;
+            $width_khung_3 = 520;
+            $high_khung_3 = 217;
+            $width_khung_4 = 535;
+            $high_khung_4 = 434;
+            $width_khung_5 = 1070;
+            $high_khung_5 = 434;
+            $array_img = array();
+            $img_khung_1 = clone $imagick;
+            $img_khung_1->cropImage($width_khung_1, $high_khung_1, 0, 0);
+            $img_khung_1->resizeImage(266.67, 216.35, Imagick::FILTER_LANCZOS, 1);
+            array_push($array_img, $img_khung_1);
+            $img_khung_2 = clone $imagick;
+            $img_khung_2->cropImage($width_khung_2, $high_khung_2, 277.5, 0);
+            $img_khung_2->resizeImage(267.78, 217.26, Imagick::FILTER_LANCZOS, 1);
+            array_push($array_img, $img_khung_2);
+            $img_khung_3 = clone $imagick;
+            $img_khung_3->cropImage($width_khung_3, $high_khung_3, 0, 217);
+            $img_khung_3->resizeImage(580.99, 217, Imagick::FILTER_LANCZOS, 1);
+            array_push($array_img, $img_khung_3);
+            $img_khung_4 = clone $imagick;
+            $img_khung_4->cropImage($width_khung_4, $high_khung_4, 550, 0);
+            $img_khung_4->resizeImage(568.99, 453.99, Imagick::FILTER_LANCZOS, 1);
+            array_push($array_img, $img_khung_4);
+            $img_khung_5 = clone $imagick;
+            $img_khung_5->cropImage($width_khung_5, $high_khung_5, 0, 434);
+            $img_khung_5->resizeImage(1157.99, 350, Imagick::FILTER_LANCZOS, 1);
+            array_push($array_img, $img_khung_5);
+
+            $imagick_t = new \Imagick(realpath(REAL_PATH . BASE_DIR . "img/wallpaper_nature.jpg"));
+            $imagick_t->resizeImage(1140, 560, Imagick::FILTER_LANCZOS, 1);
+            $width_khung_1_t = 850;
+            $high_khung_1_t = 270;
+            $width_khung_2_t = 270;
+            $high_khung_2_t = 270;
+            $width_khung_3_t = 270;
+            $high_khung_3_t = 270;
+            $width_khung_4_t = 270;
+            $high_khung_4_t = 270;
+            $width_khung_5_t = 280;
+            $high_khung_5_t = 560;
+            $array_img_t = array();
+            $img_khung_1_t = clone $imagick_t;
+            $img_khung_1_t->cropImage($width_khung_1_t, $high_khung_1_t, 0, 0);
+            //$img_khung_1->resizeImage(266.67,216.35, Imagick::FILTER_LANCZOS, 1);
+            array_push($array_img_t, $img_khung_1_t);
+            $img_khung_2_t = clone $imagick_t;
+            $img_khung_2_t->cropImage($width_khung_2_t, $high_khung_2_t, 0, 290);
+            //$img_khung_2_t->resizeImage(267.78,217.26, Imagick::FILTER_LANCZOS, 1);
+            array_push($array_img_t, $img_khung_2_t);
+            $img_khung_3_t = clone $imagick_t;
+            $img_khung_3_t->cropImage($width_khung_3_t, $high_khung_3_t, 290, 290);
+            //$img_khung_3_t->resizeImage(580.99,217, Imagick::FILTER_LANCZOS, 1);
+            array_push($array_img_t, $img_khung_3_t);
+            $img_khung_4_t = clone $imagick_t;
+            $img_khung_4_t->cropImage($width_khung_4_t, $high_khung_4_t, 580, 290);
+            //$img_khung_4_t->resizeImage(568.99,453.99, Imagick::FILTER_LANCZOS, 1);
+            array_push($array_img_t, $img_khung_4_t);
+            $img_khung_5_t = clone $imagick_t;
+            $img_khung_5_t->cropImage($width_khung_5_t, $high_khung_5_t, 860, 0);
+            //$img_khung_5_t->resizeImage(1157.99,350, Imagick::FILTER_LANCZOS, 1);
+            array_push($array_img_t, $img_khung_5_t);
+            require_once "view/home.php"; //nạp layout
+        } catch (Exception $ex) {
+            require_once "view/ErrorPage.php";
         }
-        //echo count($dsKhuNghiDuongSlier);
-        $imagick = new \Imagick(realpath(REAL_PATH . BASE_DIR . $du_lieu_tham_gia['hinh_anh']));
-        $imagick->resizeImage(1070, 868, Imagick::FILTER_LANCZOS, 1);
-        $width_khung_1 = 257.5;
-        $high_khung_1 = 217;
-        $width_khung_2 = 252.5;
-        $high_khung_2 = 217;
-        $width_khung_3 = 520;
-        $high_khung_3 = 217;
-        $width_khung_4 = 535;
-        $high_khung_4 = 434;
-        $width_khung_5 = 1070;
-        $high_khung_5 = 434;
-        $array_img = array();
-        $img_khung_1 = clone $imagick;
-        $img_khung_1->cropImage($width_khung_1, $high_khung_1, 0, 0);
-        $img_khung_1->resizeImage(266.67, 216.35, Imagick::FILTER_LANCZOS, 1);
-        array_push($array_img, $img_khung_1);
-        $img_khung_2 = clone $imagick;
-        $img_khung_2->cropImage($width_khung_2, $high_khung_2, 277.5, 0);
-        $img_khung_2->resizeImage(267.78, 217.26, Imagick::FILTER_LANCZOS, 1);
-        array_push($array_img, $img_khung_2);
-        $img_khung_3 = clone $imagick;
-        $img_khung_3->cropImage($width_khung_3, $high_khung_3, 0, 217);
-        $img_khung_3->resizeImage(580.99, 217, Imagick::FILTER_LANCZOS, 1);
-        array_push($array_img, $img_khung_3);
-        $img_khung_4 = clone $imagick;
-        $img_khung_4->cropImage($width_khung_4, $high_khung_4, 550, 0);
-        $img_khung_4->resizeImage(568.99, 453.99, Imagick::FILTER_LANCZOS, 1);
-        array_push($array_img, $img_khung_4);
-        $img_khung_5 = clone $imagick;
-        $img_khung_5->cropImage($width_khung_5, $high_khung_5, 0, 434);
-        $img_khung_5->resizeImage(1157.99, 350, Imagick::FILTER_LANCZOS, 1);
-        array_push($array_img, $img_khung_5);
 
-        $imagick_t = new \Imagick(realpath('C:\xampp\htdocs' . BASE_DIR . "img/wallpaper_nature.jpg"));
-        $imagick_t->resizeImage(1140, 560, Imagick::FILTER_LANCZOS, 1);
-        $width_khung_1_t = 850;
-        $high_khung_1_t = 270;
-        $width_khung_2_t = 270;
-        $high_khung_2_t = 270;
-        $width_khung_3_t = 270;
-        $high_khung_3_t = 270;
-        $width_khung_4_t = 270;
-        $high_khung_4_t = 270;
-        $width_khung_5_t = 280;
-        $high_khung_5_t = 560;
-        $array_img_t = array();
-        $img_khung_1_t = clone $imagick_t;
-        $img_khung_1_t->cropImage($width_khung_1_t, $high_khung_1_t, 0, 0);
-        //$img_khung_1->resizeImage(266.67,216.35, Imagick::FILTER_LANCZOS, 1);
-        array_push($array_img_t, $img_khung_1_t);
-        $img_khung_2_t = clone $imagick_t;
-        $img_khung_2_t->cropImage($width_khung_2_t, $high_khung_2_t, 0, 290);
-        //$img_khung_2_t->resizeImage(267.78,217.26, Imagick::FILTER_LANCZOS, 1);
-        array_push($array_img_t, $img_khung_2_t);
-        $img_khung_3_t = clone $imagick_t;
-        $img_khung_3_t->cropImage($width_khung_3_t, $high_khung_3_t, 290, 290);
-        //$img_khung_3_t->resizeImage(580.99,217, Imagick::FILTER_LANCZOS, 1);
-        array_push($array_img_t, $img_khung_3_t);
-        $img_khung_4_t = clone $imagick_t;
-        $img_khung_4_t->cropImage($width_khung_4_t, $high_khung_4_t, 580, 290);
-        //$img_khung_4_t->resizeImage(568.99,453.99, Imagick::FILTER_LANCZOS, 1);
-        array_push($array_img_t, $img_khung_4_t);
-        $img_khung_5_t = clone $imagick_t;
-        $img_khung_5_t->cropImage($width_khung_5_t, $high_khung_5_t, 860, 0);
-        //$img_khung_5_t->resizeImage(1157.99,350, Imagick::FILTER_LANCZOS, 1);
-        array_push($array_img_t, $img_khung_5_t);
-        require_once "view/home.php"; //nạp layout
     }//index
+
+    public function loadingErrorPage()
+    {
+        require_once("view/ErrorPage.php");
+    }
 
 
     private function uploadHinh()
@@ -298,14 +308,18 @@ class controller
 
     public function lienHe()
     {
-        $ten = $_POST["tencongty"];
-        $dienthoai = $_POST["dienthoaicongty"];
-        $email = $_POST["emailcongty"];
-        $loinhan = $_POST["loinhan"];
-        if ($this->control->themLienHe($ten, $dienthoai, $email, $loinhan))
-            echo "true";
-        else
-            echo "false";
+        try {
+            $ten = $_POST["tencongty"];
+            $dienthoai = $_POST["dienthoaicongty"];
+            $email = $_POST["emailcongty"];
+            $loinhan = $_POST["loinhan"];
+            if ($this->control->themLienHe($ten, $dienthoai, $email, $loinhan))
+                echo "true";
+            else
+                echo "false";
+        } catch (Exception $ex) {
+            require_once "view/ErrorPage.php";
+        }
     }
 
 
@@ -361,8 +375,8 @@ class controller
         } else {
             $id_user = $_SESSION["id"];
             $id_resort = $_POST["resort_id"];
-            $start_date = $_POST["start_date"];
-            $end_date = $_POST["end_date"];
+            $start_date = $_POST["date_start"];
+            $end_date = $_POST["date_end"];
             $room = $_POST["room"];
             $adults = $_POST["adults"];
             $childs = $_POST["childs"];
@@ -378,128 +392,142 @@ class controller
 
     public function xemChiTietKhuNghiDuong()
     {
-        $dssbanner = $this->control->laydanhsach("banner");
-        $dssliderw = $this->control->laydanhsachslider();
-        $gioithieu = $this->control->laydulieu("gioithieu_" . $_SESSION['lang']);
-        $dsKhuNghiDuongBanner = array();
-        foreach ($dssbanner as $banner) {
-            $khuNghiDuongBanner = $this->control->getDetailsResortWithOneImage($banner['idkhunghiduong']);
-            $dsKhuNghiDuongBanner[] = $khuNghiDuongBanner;
+        try {
+            $dssbanner = $this->control->laydanhsach("banner");
+            $dssliderw = $this->control->laydanhsachslider();
+            $gioithieu = $this->control->laydulieu("gioithieu_" . $_SESSION['lang']);
+            $dsKhuNghiDuongBanner = array();
+            foreach ($dssbanner as $banner) {
+                $khuNghiDuongBanner = $this->control->getDetailsResortWithOneImage($banner['idkhunghiduong']);
+                $dsKhuNghiDuongBanner[] = $khuNghiDuongBanner;
+            }
+            $idknd = $this->params[0];
+            //echo $idknd;
+            $knd = $this->control->getDetailsResortWithOneImage($idknd);
+        } catch (Exception $ex) {
+            require_once "view/ErrorPage.php";
         }
-        $idknd = $this->params[0];
-        //echo $idknd;
-        $knd = $this->control->getDetailsResortWithOneImage($idknd);
     }
 
     public function chuyenTrangKhuNghiDuongGiaCa()
     {
-        $id = 0;
-        $resort_type = 0;
-        $sort_by = 0;
-        $listContinents = "";
-        if (isset($_POST["resort_type"]))
-            $resort_type = $_POST["resort_type"];
-        if (isset($_POST["sort_by"]))
-            $sort_by = $_POST["sort_by"];
+        try {
+            $id = 0;
+            $resort_type = 0;
+            $sort_by = 0;
+            $listContinents = "";
+            if (isset($_POST["resort_type"]))
+                $resort_type = $_POST["resort_type"];
+            if (isset($_POST["sort_by"]))
+                $sort_by = $_POST["sort_by"];
 
-        $dssbanner = $this->control->laydanhsach("banner");
-        $ds_video = $this->control->laydanhsach("video");
-        $dssliderw = $this->control->laydanhsachslider();
-        $gioithieu = $this->control->laygioithieu();
-        $du_lieu_tham_gia = $this->control->layDuLieuThamGia();
+            $dssbanner = $this->control->laydanhsach("banner");
+            $ds_video = $this->control->laydanhsach("video");
+            $dssliderw = $this->control->laydanhsachslider();
+            $gioithieu = $this->control->laygioithieu();
+            $du_lieu_tham_gia = $this->control->layDuLieuThamGia();
 
-        $cau_hoi_thuong_gap = $this->control->layDanhSachCauHoiThuongGap();
-        $dsKhuNghiDuongBanner = array();
-        foreach ($dssbanner as $banner) {
-            $khuNghiDuongBanner = $this->control->getDetailsResortWithOneImage($banner['idkhunghiduong']);
-            $dsKhuNghiDuongBanner[] = $khuNghiDuongBanner;
-        }
-
-        if ($resort_type == 0) {
-            if ($sort_by == 0) {
-                $resort_type_clause = "";
-                $sort_by_clause = "";
-            } else if ($sort_by == 1) {
-                $date = new DateTime('now');
-                date_sub($date, date_interval_create_from_date_string('7 days'));
-                $resort_type_clause = "";
-                $sort_by_clause = " AND resort.created_date > '" . $date->format('Y-m-d') . "' ";
-            } else if ($sort_by == 2) {
-                $resort_type_clause = "";
-                $date = new DateTime('now');
-                $sort_by_clause = " AND resort.id IN (SELECT details_deal_resort.id_resort FROM `details_deal_resort` WHERE start_date <= '" . $date->format('Y-m-d') . "' AND end_date >= '" . $date->format('Y-m-d') . "')";
+            $cau_hoi_thuong_gap = $this->control->layDanhSachCauHoiThuongGap();
+            $dsKhuNghiDuongBanner = array();
+            foreach ($dssbanner as $banner) {
+                $khuNghiDuongBanner = $this->control->getDetailsResortWithOneImage($banner['idkhunghiduong']);
+                $dsKhuNghiDuongBanner[] = $khuNghiDuongBanner;
             }
-        } else if ($resort_type == 1) {
-            if ($sort_by == 0) {
-                $resort_type_clause = " AND resort.id_resort_type = 0 ";
-                $sort_by_clause = "";
-            } else if ($sort_by == 1) {
-                $date = new DateTime('now');
-                date_sub($date, date_interval_create_from_date_string('7 days'));
-                $resort_type_clause = " AND resort.id_resort_type = 0 ";
-                $sort_by_clause = " AND resort.created_date > '" . $date->format('Y-m-d') . "' ";
-            } else if ($sort_by == 2) {
-                $resort_type_clause = " AND resort.id_resort_type = 0 ";
-                $date = new DateTime('now');
-                $sort_by_clause = " AND resort.id IN (SELECT details_deal_resort.id_resort FROM `details_deal_resort` WHERE start_date <= '" . $date->format('Y-m-d') . "' AND end_date >= '" . $date->format('Y-m-d') . "')";
-            }
-        } else if ($resort_type == 2) {
-            if ($sort_by == 0) {
-                $resort_type_clause = " AND resort.id_resort_type = 2 ";
-                $sort_by_clause = "";
-            } else if ($sort_by == 1) {
-                $date = new DateTime('now');
-                date_sub($date, date_interval_create_from_date_string('7 days'));
-                $resort_type_clause = " AND resort.id_resort_type = 2 ";
-                $sort_by_clause = " AND resort.created_date > '" . $date->format('Y-m-d') . "' ";
-            } else if ($sort_by == 2) {
-                $resort_type_clause = " AND resort.id_resort_type = 2 ";
-                $date = new DateTime('now');
-                $sort_by_clause = " AND resort.id IN (SELECT details_deal_resort.id_resort FROM `details_deal_resort` WHERE start_date <= '" . $date->format('Y-m-d') . "' AND end_date >= '" . $date->format('Y-m-d') . "')";
-            }
-        }
 
-        if (!isset($this->params[0])) {
-            $regions = array(array());
-            $listContinents = $this->control->getListContinents();
-            $listCoutinentsNumber = array();
-            $listRegionNumber = array(array());
-            foreach ($listContinents as $key => $continent) {
-                $regions[$key] = $this->control->getListRegions($continent['id']);
-                $listCoutinentsNumber[$key] = $this->control->getNumberResortByCountinent($continent['id'], $resort_type_clause, $sort_by_clause);
-                foreach ($regions[$continent['id'] - 1] as $key2 => $region) {
-                    $listRegionNumber[$key][$key2] = $this->control->getNumberResortById($region['id'], $resort_type_clause, $sort_by_clause);
+            if ($resort_type == 0) {
+                if ($sort_by == 0) {
+                    $resort_type_clause = "";
+                    $sort_by_clause = "";
+                } else if ($sort_by == 1) {
+                    $date = new DateTime('now');
+                    date_sub($date, date_interval_create_from_date_string('7 days'));
+                    $resort_type_clause = "";
+                    $sort_by_clause = " AND resort.created_date > '" . $date->format('Y-m-d') . "' ";
+                } else if ($sort_by == 2) {
+                    $resort_type_clause = "";
+                    $date = new DateTime('now');
+                    $sort_by_clause = " AND resort.id IN (SELECT details_deal_resort.id_resort FROM `details_deal_resort` WHERE start_date <= '" . $date->format('Y-m-d') . "' AND end_date >= '" . $date->format('Y-m-d') . "')";
+                }
+            } else if ($resort_type == 1) {
+                if ($sort_by == 0) {
+                    $resort_type_clause = " AND resort.id_resort_type = 1 ";
+                    $sort_by_clause = "";
+                } else if ($sort_by == 1) {
+                    $date = new DateTime('now');
+                    date_sub($date, date_interval_create_from_date_string('7 days'));
+                    $resort_type_clause = " AND resort.id_resort_type = 1 ";
+                    $sort_by_clause = " AND resort.created_date > '" . $date->format('Y-m-d') . "' ";
+                } else if ($sort_by == 2) {
+                    $resort_type_clause = " AND resort.id_resort_type = 1 ";
+                    $date = new DateTime('now');
+                    $sort_by_clause = " AND resort.id IN (SELECT details_deal_resort.id_resort FROM `details_deal_resort` WHERE start_date <= '" . $date->format('Y-m-d') . "' AND end_date >= '" . $date->format('Y-m-d') . "')";
+                }
+            } else if ($resort_type == 2) {
+                if ($sort_by == 0) {
+                    $resort_type_clause = " AND resort.id_resort_type = 2 ";
+                    $sort_by_clause = "";
+                } else if ($sort_by == 1) {
+                    $date = new DateTime('now');
+                    date_sub($date, date_interval_create_from_date_string('7 days'));
+                    $resort_type_clause = " AND resort.id_resort_type = 2 ";
+                    $sort_by_clause = " AND resort.created_date > '" . $date->format('Y-m-d') . "' ";
+                } else if ($sort_by == 2) {
+                    $resort_type_clause = " AND resort.id_resort_type = 2 ";
+                    $date = new DateTime('now');
+                    $sort_by_clause = " AND resort.id IN (SELECT details_deal_resort.id_resort FROM `details_deal_resort` WHERE start_date <= '" . $date->format('Y-m-d') . "' AND end_date >= '" . $date->format('Y-m-d') . "')";
                 }
             }
-            $listResort = $this->control->getAllResort($resort_type_clause, $sort_by_clause);
-        } else {
-            $id = $this->params[0];
-            if (!isset($this->params[1])) {
-                $country_name = $this->control->getLongNameCountry($id);
-                $listCity = $this->control->getListCityByIdCountry($id);
-                $address = $country_name;
-                $countryNumber = $this->control->getNumberResortById($id, $resort_type_clause, $sort_by_clause);
-                $listCityNumber = array();
-                foreach ($listCity as $key => $city) {
-                    $listCityNumber[$key] = $this->control->getNumberResortByIdCity($city['id'], $resort_type_clause, $sort_by_clause);
+
+            if (!isset($this->params[0])) {
+                $regions = array(array());
+                $listContinents = $this->control->getListContinents();
+                $listCoutinentsNumber = array();
+                $listRegionNumber = array(array());
+                foreach ($listContinents as $key => $continent) {
+                    $regions[$key] = $this->control->getListRegions($continent['id']);
+                    $listCoutinentsNumber[$key] = $this->control->getNumberResortByCountinent($continent['id'], $resort_type_clause, $sort_by_clause);
+                    foreach ($regions[$continent['id'] - 1] as $key2 => $region) {
+                        $listRegionNumber[$key][$key2] = $this->control->getNumberResortById($region['id'], $resort_type_clause, $sort_by_clause);
+                    }
                 }
-                $listResort = $this->control->getResortByCountryName($id, $resort_type_clause, $sort_by_clause);
+                $listResort = $this->control->getAllResort($resort_type_clause, $sort_by_clause);
             } else {
-                $id_city = $this->params[1];
-                $city = $this->control->getCityById($id_city);
-                $name_city = $city['name'];
-                $cityNumber = $this->control->getNumberResortByIdCity($id_city, $resort_type_clause, $sort_by_clause);
-                $listResort = $this->control->getAllResortByIdCity($id_city, $resort_type_clause, $sort_by_clause);
-                $address = $name_city;
+                $id = $this->params[0];
+                if (!is_numeric($id)) {
+                    header('location:' . BASE_URL . $this->lang . "/controller/loadingErrorPage");
+                }
+                if (!isset($this->params[1])) {
+                    $country_name = $this->control->getLongNameCountry($id);
+                    $listCity = $this->control->getListCityByIdCountry($id);
+                    $address = $country_name;
+                    $countryNumber = $this->control->getNumberResortById($id, $resort_type_clause, $sort_by_clause);
+                    $listCityNumber = array();
+                    foreach ($listCity as $key => $city) {
+                        $listCityNumber[$key] = $this->control->getNumberResortByIdCity($city['id'], $resort_type_clause, $sort_by_clause);
+                    }
+                    $listResort = $this->control->getResortByCountryName($id, $resort_type_clause, $sort_by_clause);
+                } else {
+                    $id_city = $this->params[1];
+                    if (!is_numeric($id_city)) {
+                        header('location:' . BASE_URL . $this->lang . "/controller/loadingErrorPage");
+                    }
+                    $city = $this->control->getCityById($id_city);
+                    $name_city = $city['name'];
+                    $cityNumber = $this->control->getNumberResortByIdCity($id_city, $resort_type_clause, $sort_by_clause);
+                    $listResort = $this->control->getAllResortByIdCity($id_city, $resort_type_clause, $sort_by_clause);
+                    $address = $name_city;
+                }
+                $url = 'http://maps.google.com/maps/api/geocode/json?address=' . urlencode($address);
+                $output = $this->control->httpGet($url);
+                $data = json_decode($output, true);
+                $geometry = $data['results'][0]['geometry']['location'];
+                $lat = $geometry['lat'];
+                $lng = $geometry['lng'];
             }
-            $url = 'http://maps.google.com/maps/api/geocode/json?address=' . urlencode($address);
-            $output = $this->control->httpGet($url);
-            $data = json_decode($output, true);
-            $geometry = $data['results'][0]['geometry']['location'];
-            $lat = $geometry['lat'];
-            $lng = $geometry['lng'];
+            require_once("view/ResortDirectory.php");
+        } catch (Exception $ex) {
+            require_once "view/ErrorPage.php";
         }
-        require_once("view/ResortDirectory.php");
     }
 
     public function directResortDriectoryView()
@@ -599,6 +627,7 @@ class controller
             $lng = $geometry['lng'];
         }
         require_once("view/ResortDirectoryView.php");
+
     }
 
     public function laySoLuongVideo()
@@ -627,15 +656,19 @@ class controller
 
     public function loadingDealsPage()
     {
-        $list_deals = $this->control->getListDeals();
-        $dssbanner = $this->control->laydanhsach("banner");
-        $dssliderw = $this->control->laydanhsachslider();
-        $dsKhuNghiDuongBanner = array();
-        foreach ($dssbanner as $banner) {
-            $khuNghiDuongBanner = $this->control->getDetailsResortWithOneImage($banner['idkhunghiduong']);
-            $dsKhuNghiDuongBanner[] = $khuNghiDuongBanner;
+        try {
+            $list_deals = $this->control->getListDeals();
+            $dssbanner = $this->control->laydanhsach("banner");
+            $dssliderw = $this->control->laydanhsachslider();
+            $dsKhuNghiDuongBanner = array();
+            foreach ($dssbanner as $banner) {
+                $khuNghiDuongBanner = $this->control->getDetailsResortWithOneImage($banner['idkhunghiduong']);
+                $dsKhuNghiDuongBanner[] = $khuNghiDuongBanner;
+            }
+            require_once("view/UuDaiDacBiet.php");
+        } catch (Exception $ex) {
+            require_once "view/ErrorPage.php";
         }
-        require_once("view/UuDaiDacBiet.php");
     }
 
     public function getListDeals()
@@ -664,18 +697,25 @@ class controller
 
     public function getDetailDeals()
     {
-        $id_deals = $this->params[0];
-        settype($id_deals, "int");
-        $deals = $this->control->getDetailDeals($id_deals);
-        $list_deals = $this->control->getListDeals();
-        $dssbanner = $this->control->laydanhsach("banner");
-        $dssliderw = $this->control->laydanhsachslider();
-        $dsKhuNghiDuongBanner = array();
-        foreach ($dssbanner as $banner) {
-            $khuNghiDuongBanner = $this->control->getDetailsResortWithOneImage($banner['idkhunghiduong']);
-            $dsKhuNghiDuongBanner[] = $khuNghiDuongBanner;
+        try {
+            $id_deals = $this->params[0];
+            if (!is_numeric($id_deals)) {
+                header('location:' . BASE_URL . $this->lang . "/controller/loadingErrorPage");
+            }
+            settype($id_deals, "int");
+            $deals = $this->control->getDetailDeals($id_deals);
+            $list_deals = $this->control->getListDeals();
+            $dssbanner = $this->control->laydanhsach("banner");
+            $dssliderw = $this->control->laydanhsachslider();
+            $dsKhuNghiDuongBanner = array();
+            foreach ($dssbanner as $banner) {
+                $khuNghiDuongBanner = $this->control->getDetailsResortWithOneImage($banner['idkhunghiduong']);
+                $dsKhuNghiDuongBanner[] = $khuNghiDuongBanner;
+            }
+            require_once("view/DetailDeals.php");
+        } catch (Exception $ex) {
+            require_once("view/ErrorPage.php");
         }
-        require_once("view/DetailDeals.php");
     }
 
     public function getNumberConnect()
@@ -704,30 +744,41 @@ class controller
 
     public function loadingConnectPage()
     {
-        $dssbanner = $this->control->laydanhsach("banner");
-        $dssliderw = $this->control->laydanhsachslider();
-        $dsKhuNghiDuongBanner = array();
-        foreach ($dssbanner as $banner) {
-            $khuNghiDuongBanner = $this->control->getDetailsResortWithOneImage($banner['idkhunghiduong']);
-            $dsKhuNghiDuongBanner[] = $khuNghiDuongBanner;
+        try {
+            $dssbanner = $this->control->laydanhsach("banner");
+            $dssliderw = $this->control->laydanhsachslider();
+            $dsKhuNghiDuongBanner = array();
+            foreach ($dssbanner as $banner) {
+                $khuNghiDuongBanner = $this->control->getDetailsResortWithOneImage($banner['idkhunghiduong']);
+                $dsKhuNghiDuongBanner[] = $khuNghiDuongBanner;
+            }
+            require_once("view/KetNoiPPC.php");
+        } catch (Exception $ex) {
+            require_once "view/ErrorPage.php";
         }
-        require_once("view/KetNoiPPC.php");
     }
 
     public function getDetailConnect()
     {
-        $id_deals = $this->params[0];
-        settype($id_deals, "int");
-        $deals = $this->control->getDetailConnect($id_deals);
-        $list_deals = $this->control->getListDeals();
-        $dssbanner = $this->control->laydanhsach("banner");
-        $dssliderw = $this->control->laydanhsachslider();
-        $dsKhuNghiDuongBanner = array();
-        foreach ($dssbanner as $banner) {
-            $khuNghiDuongBanner = $this->control->getDetailsResortWithOneImage($banner['idkhunghiduong']);
-            $dsKhuNghiDuongBanner[] = $khuNghiDuongBanner;
+        try {
+            $id_deals = $this->params[0];
+            if (!is_numeric($id_deals)) {
+                header('location:' . BASE_URL . $this->lang . "/controller/loadingErrorPage");
+            }
+            settype($id_deals, "int");
+            $deals = $this->control->getDetailConnect($id_deals);
+            $list_deals = $this->control->getListDeals();
+            $dssbanner = $this->control->laydanhsach("banner");
+            $dssliderw = $this->control->laydanhsachslider();
+            $dsKhuNghiDuongBanner = array();
+            foreach ($dssbanner as $banner) {
+                $khuNghiDuongBanner = $this->control->getDetailsResortWithOneImage($banner['idkhunghiduong']);
+                $dsKhuNghiDuongBanner[] = $khuNghiDuongBanner;
+            }
+            require_once("view/DetailConnect.php");
+        } catch (Exception $ex) {
+            require_once("view/ErrorPage.php");
         }
-        require_once("view/DetailConnect.php");
     }
 
     public function getNumberAnncounce()
@@ -756,60 +807,81 @@ class controller
 
     public function loadingAnnouncePage()
     {
-        $dssbanner = $this->control->laydanhsach("banner");
-        $dssliderw = $this->control->laydanhsachslider();
-        $dsKhuNghiDuongBanner = array();
-        foreach ($dssbanner as $banner) {
-            $khuNghiDuongBanner = $this->control->getDetailsResortWithOneImage($banner['idkhunghiduong']);
-            $dsKhuNghiDuongBanner[] = $khuNghiDuongBanner;
+        try {
+            $dssbanner = $this->control->laydanhsach("banner");
+            $dssliderw = $this->control->laydanhsachslider();
+            $dsKhuNghiDuongBanner = array();
+            foreach ($dssbanner as $banner) {
+                $khuNghiDuongBanner = $this->control->getDetailsResortWithOneImage($banner['idkhunghiduong']);
+                $dsKhuNghiDuongBanner[] = $khuNghiDuongBanner;
+            }
+            require_once("view/ThongBaoBaoChi.php");
+        } catch (Exception $ex) {
+            require_once "view/ErrorPage.php";
         }
-        require_once("view/ThongBaoBaoChi.php");
     }
 
 
     public function loadingDetailsResort()
     {
-        $id = $this->params[0];
-        $dssbanner = $this->control->laydanhsach("banner");
-        $dssliderw = $this->control->laydanhsachslider();
-        $dsKhuNghiDuongBanner = array();
-        foreach ($dssbanner as $banner) {
-            $khuNghiDuongBanner = $this->control->getDetailsResortWithOneImage($banner['idkhunghiduong']);
-            $dsKhuNghiDuongBanner[] = $khuNghiDuongBanner;
-        }
-        $exchange_rates = $this->control->getExchangeRates()['value'];
-        $resort = $this->control->getDetailsResort($id);
-        $listImageResort = $this->control->getListImageResort($id);
-        $lat = $resort['lat'];
-        $lng = $resort['lng'];
+        try {
+            $id = $this->params[0];
+            if (!is_numeric($id)) {
+                header('location:' . BASE_URL . $this->lang . "/controller/loadingErrorPage");
+            }
+            $dssbanner = $this->control->laydanhsach("banner");
+            $dssliderw = $this->control->laydanhsachslider();
+            $dsKhuNghiDuongBanner = array();
+            foreach ($dssbanner as $banner) {
+                $khuNghiDuongBanner = $this->control->getDetailsResortWithOneImage($banner['idkhunghiduong']);
+                $dsKhuNghiDuongBanner[] = $khuNghiDuongBanner;
+            }
+            $exchange_rates = $this->control->getExchangeRates()['value'];
+            $resort = $this->control->getDetailsResort($id);
+            if($resort == null)
+                header('location:' . BASE_URL . $this->lang . "/controller/loadingErrorPage");
+            $listImageResort = $this->control->getListImageResort($id);
+            $lat = $resort['lat'];
+            $lng = $resort['lng'];
 
-        require_once("view/DetailsResort.php");
+            require_once("view/DetailsResort.php");
+        } catch (Exception $ex) {
+            require_once "view/ErrorPage.php";
+        }
     }
 
     public function loadingOwingATimeShare()
     {
-        $dssbanner = $this->control->laydanhsach("banner");
-        $dssliderw = $this->control->laydanhsachslider();
-        $dsKhuNghiDuongBanner = array();
-        foreach ($dssbanner as $banner) {
-            $khuNghiDuongBanner = $this->control->getDetailsResortWithOneImage($banner['idkhunghiduong']);
-            $dsKhuNghiDuongBanner[] = $khuNghiDuongBanner;
+        try {
+            $dssbanner = $this->control->laydanhsach("banner");
+            $dssliderw = $this->control->laydanhsachslider();
+            $dsKhuNghiDuongBanner = array();
+            foreach ($dssbanner as $banner) {
+                $khuNghiDuongBanner = $this->control->getDetailsResortWithOneImage($banner['idkhunghiduong']);
+                $dsKhuNghiDuongBanner[] = $khuNghiDuongBanner;
+            }
+            $data = $this->control->getOwingATimeShare();
+            require_once("view/KhachChuaSoHuu.php");
+        } catch (Exception $ex) {
+            require_once "view/ErrorPage.php";
         }
-        $data = $this->control->getOwingATimeShare();
-        require_once("view/KhachChuaSoHuu.php");
     }
 
     public function loadingBenefitTimeShare()
     {
-        $dssbanner = $this->control->laydanhsach("banner");
-        $dssliderw = $this->control->laydanhsachslider();
-        $dsKhuNghiDuongBanner = array();
-        foreach ($dssbanner as $banner) {
-            $khuNghiDuongBanner = $this->control->getDetailsResortWithOneImage($banner['idkhunghiduong']);
-            $dsKhuNghiDuongBanner[] = $khuNghiDuongBanner;
+        try {
+            $dssbanner = $this->control->laydanhsach("banner");
+            $dssliderw = $this->control->laydanhsachslider();
+            $dsKhuNghiDuongBanner = array();
+            foreach ($dssbanner as $banner) {
+                $khuNghiDuongBanner = $this->control->getDetailsResortWithOneImage($banner['idkhunghiduong']);
+                $dsKhuNghiDuongBanner[] = $khuNghiDuongBanner;
+            }
+            $data = $this->control->getBenefitTimeShare();
+            require_once("view/LoiIchTimeShare.php");
+        } catch (Exception $ex) {
+            require_once "view/ErrorPage.php";
         }
-        $data = $this->control->getBenefitTimeShare();
-        require_once("view/LoiIchTimeShare.php");
     }
 
     public function updateContinent()
@@ -1033,38 +1105,50 @@ class controller
 
     public function loadingDiscoverPage()
     {
-        $dssbanner = $this->control->laydanhsach("banner");
-        $dssliderw = $this->control->laydanhsachslider();
-        $dsKhuNghiDuongBanner = array();
-        foreach ($dssbanner as $banner) {
-            $khuNghiDuongBanner = $this->control->getDetailsResortWithOneImage($banner['idkhunghiduong']);
-            $dsKhuNghiDuongBanner[] = $khuNghiDuongBanner;
+        try {
+            $dssbanner = $this->control->laydanhsach("banner");
+            $dssliderw = $this->control->laydanhsachslider();
+            $dsKhuNghiDuongBanner = array();
+            foreach ($dssbanner as $banner) {
+                $khuNghiDuongBanner = $this->control->getDetailsResortWithOneImage($banner['idkhunghiduong']);
+                $dsKhuNghiDuongBanner[] = $khuNghiDuongBanner;
+            }
+            require_once("view/KhamPha.php");
+        } catch (Exception $ex) {
+            require_once "view/ErrorPage.php";
         }
-        require_once("view/KhamPha.php");
     }
 
     public function loadingResortNewPage()
     {
-        $dssbanner = $this->control->laydanhsach("banner");
-        $dssliderw = $this->control->laydanhsachslider();
-        $dsKhuNghiDuongBanner = array();
-        foreach ($dssbanner as $banner) {
-            $khuNghiDuongBanner = $this->control->getDetailsResortWithOneImage($banner['idkhunghiduong']);
-            $dsKhuNghiDuongBanner[] = $khuNghiDuongBanner;
+        try {
+            $dssbanner = $this->control->laydanhsach("banner");
+            $dssliderw = $this->control->laydanhsachslider();
+            $dsKhuNghiDuongBanner = array();
+            foreach ($dssbanner as $banner) {
+                $khuNghiDuongBanner = $this->control->getDetailsResortWithOneImage($banner['idkhunghiduong']);
+                $dsKhuNghiDuongBanner[] = $khuNghiDuongBanner;
+            }
+            require_once("view/CoGiMoiPPC.php");
+        } catch (Exception $ex) {
+            require_once "view/ErrorPage.php";
         }
-        require_once("view/CoGiMoiPPC.php");
     }
 
     public function loadingResortHintPage()
     {
-        $dssbanner = $this->control->laydanhsach("banner");
-        $dssliderw = $this->control->laydanhsachslider();
-        $dsKhuNghiDuongBanner = array();
-        foreach ($dssbanner as $banner) {
-            $khuNghiDuongBanner = $this->control->getDetailsResortWithOneImage($banner['idkhunghiduong']);
-            $dsKhuNghiDuongBanner[] = $khuNghiDuongBanner;
+        try {
+            $dssbanner = $this->control->laydanhsach("banner");
+            $dssliderw = $this->control->laydanhsachslider();
+            $dsKhuNghiDuongBanner = array();
+            foreach ($dssbanner as $banner) {
+                $khuNghiDuongBanner = $this->control->getDetailsResortWithOneImage($banner['idkhunghiduong']);
+                $dsKhuNghiDuongBanner[] = $khuNghiDuongBanner;
+            }
+            require_once("view/GoiYKyNghi.php");
+        } catch (Exception $ex) {
+            require_once "view/ErrorPage.php";
         }
-        require_once("view/GoiYKyNghi.php");
     }
 
 
@@ -1090,38 +1174,44 @@ class controller
 
     public function changePassword()
     {
-        if (isset($this->params[0])) {
-            $password_key = $this->params[0];
-            if ($password_key != "") {
-                $user = $this->control->checkPasswordKey($password_key);
-                if ($user != "") {
-                    $id_user = $user['id'];
-                    $dssbanner = $this->control->laydanhsach("banner");
-                    $dssliderw = $this->control->laydanhsachslider();
-                    $dsKhuNghiDuongBanner = array();
-                    foreach ($dssbanner as $banner) {
-                        $khuNghiDuongBanner = $this->control->getDetailsResortWithOneImage($banner['idkhunghiduong']);
-                        $dsKhuNghiDuongBanner[] = $khuNghiDuongBanner;
-                    }
-                    require_once("view/ChangeNewPassword.php");
-                }
-                else
+        try {
+            if (isset($this->params[0])) {
+                $password_key = $this->params[0];
+                if ($password_key != "") {
+                    $user = $this->control->checkPasswordKey($password_key);
+                    if ($user != "") {
+                        $id_user = $user['id'];
+                        $dssbanner = $this->control->laydanhsach("banner");
+                        $dssliderw = $this->control->laydanhsachslider();
+                        $dsKhuNghiDuongBanner = array();
+                        foreach ($dssbanner as $banner) {
+                            $khuNghiDuongBanner = $this->control->getDetailsResortWithOneImage($banner['idkhunghiduong']);
+                            $dsKhuNghiDuongBanner[] = $khuNghiDuongBanner;
+                        }
+                        require_once("view/ChangeNewPassword.php");
+                    } else
+                        header('location:' . BASE_URL . $this->lang . "/controller/index");
+                } else
                     header('location:' . BASE_URL . $this->lang . "/controller/index");
             }
-            else
-                header('location:' . BASE_URL . $this->lang . "/controller/index");
+        } catch (Exception $ex) {
+            require_once "view/ErrorPage.php";
         }
     }
 
     public function updatePassword()
     {
-        if (isset($this->params[0])) {
-            $id_user = $this->params[0];
-            $password = $_POST['new_password'];
-            if ($this->control->updatePassword($id_user, $password)) {
-                $this->control->updatePasswordKey("",$id_user);
-                header('location:' . BASE_URL . $this->lang . "/controller/index");
+        try {
+            if (isset($this->params[0])) {
+                $id_user = $this->params[0];
+                $password = $_POST['new_password'];
+                if ($this->control->updatePassword($id_user, $password)) {
+                    $this->control->updatePasswordKey("", $id_user);
+                    header('location:' . BASE_URL . $this->lang . "/controller/index");
+                }
             }
+        } catch (Exception $ex) {
+            require_once "view/ErrorPage.php";
         }
     }
 
@@ -1134,21 +1224,8 @@ class controller
 
     public function getTransactionHistory()
     {
-        $listTransactionHistory = $this->control->getTransactionHistory($_SESSION['id']);
-        $dssbanner = $this->control->laydanhsach("banner");
-        $dssliderw = $this->control->laydanhsachslider();
-        $dsKhuNghiDuongBanner = array();
-        foreach ($dssbanner as $banner) {
-            $khuNghiDuongBanner = $this->control->getDetailsResortWithOneImage($banner['idkhunghiduong']);
-            $dsKhuNghiDuongBanner[] = $khuNghiDuongBanner;
-        }
-        require_once("view/TransactionHistory.php");
-    }
-
-    public function detailTransaction()
-    {
-        if (isset($this->params[0])) {
-            $id_book = $this->params[0];
+        try {
+            $listTransactionHistory = $this->control->getTransactionHistory($_SESSION['id']);
             $dssbanner = $this->control->laydanhsach("banner");
             $dssliderw = $this->control->laydanhsachslider();
             $dsKhuNghiDuongBanner = array();
@@ -1156,23 +1233,51 @@ class controller
                 $khuNghiDuongBanner = $this->control->getDetailsResortWithOneImage($banner['idkhunghiduong']);
                 $dsKhuNghiDuongBanner[] = $khuNghiDuongBanner;
             }
-            $is_voucher = false;
-            $id_voucher = $this->control->getDetailTransaction($id_book)['voucher_id'];
-            if ($id_voucher != NULL)
-                $is_voucher = true;
-            $transaction = $this->control->getDetailTransactionByIdBook($id_book, $is_voucher);
-            require_once("view/TransactionDetail.php");
-        } else
-            $this->getTransactionHistory();
+            require_once("view/TransactionHistory.php");
+        } catch (Exception $ex) {
+            require_once "view/ErrorPage.php";
+        }
+    }
+
+    public function detailTransaction()
+    {
+        try {
+            if (isset($this->params[0])) {
+                $id_book = $this->params[0];
+                $dssbanner = $this->control->laydanhsach("banner");
+                $dssliderw = $this->control->laydanhsachslider();
+                $dsKhuNghiDuongBanner = array();
+                foreach ($dssbanner as $banner) {
+                    $khuNghiDuongBanner = $this->control->getDetailsResortWithOneImage($banner['idkhunghiduong']);
+                    $dsKhuNghiDuongBanner[] = $khuNghiDuongBanner;
+                }
+                $is_voucher = false;
+                $id_voucher = $this->control->getDetailTransaction($id_book)['voucher_id'];
+                if ($id_voucher != NULL)
+                    $is_voucher = true;
+                $transaction = $this->control->getDetailTransactionByIdBook($id_book, $is_voucher);
+                require_once("view/TransactionDetail.php");
+            } else
+                $this->getTransactionHistory();
+        } catch (Exception $ex) {
+            require_once "view/ErrorPage.php";
+        }
     }
 
     public function getProFile()
     {
-        $id_account = $_POST['id'];
-        $my_profile = $this->control->getProFileByIdAccount($id_account);
-        $list_discount = $this->control->getListDiscount($id_account);
-        $exchange_rate = $this->control->getExchangeRates()['value'];
-        require_once("view/modalxemthongtincanhanview.php");
+        try {
+            $id_account = $_POST['id'];
+            if (!is_numeric($id_account)) {
+                header('location:' . BASE_URL . $this->lang . "/controller/loadingErrorPage");
+            }
+            $my_profile = $this->control->getProFileByIdAccount($id_account);
+            $list_discount = $this->control->getListDiscount($id_account);
+            $exchange_rate = $this->control->getExchangeRates()['value'];
+            require_once("view/modalxemthongtincanhanview.php");
+        } catch (Exception $ex) {
+            require_once "view/ErrorPage.php";
+        }
     }
 
 }//class

@@ -25,12 +25,15 @@ class controllermail
 
     public function mail()
     {
-
+        if (!isset($_SESSION['tendangnhapadmin']))
+            header('location:' . BASE_URL_ADMIN . "controlleradmin/index");
         require "view/mail.php";
     }
 
     public function xemmail()
     {
+        if (!isset($_SESSION['tendangnhapadmin']))
+            header('location:' . BASE_URL_ADMIN . "controlleradmin/index");
         $readmail = $this->params[0];
         $mail = $this->controllermail->read($readmail);
         require "view/readmail.php";
@@ -38,6 +41,8 @@ class controllermail
 
     public function xemMailDaKiemTra()
     {
+        if (!isset($_SESSION['tendangnhapadmin']))
+            header('location:' . BASE_URL_ADMIN . "controlleradmin/index");
         $readmail = $this->params[0];
         $mail = $this->controllermail->read($readmail);
         require "view/readmailchecked.php";
@@ -45,6 +50,8 @@ class controllermail
 
     public function delete()
     {
+        if (!isset($_SESSION['tendangnhapadmin']))
+            header('location:' . BASE_URL_ADMIN . "controlleradmin/index");
         $user = $this->params[0];
         $this->controllermail->delete($user);
         $this->index();

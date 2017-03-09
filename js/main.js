@@ -18,12 +18,18 @@ $(document).ready(function () {
         loi = 0;
         if (matkhaumoi == "") {
             loi++;
-            $('#annouce_change_newpass').text("Hãy nhập đầy đủ thông tin");
+            if(lang == "vi")
+                $('#annouce_change_newpass').text("Hãy nhập đầy đủ thông tin");
+            else
+                $('#annouce_change_newpass').text("Please enter full information");
         }
         else {
             if (matkhaumoi != nhaplaimatkhaumoi) {
                 loi++;
-                $('#annouce_change_newpass').text("Mật khẩu nhập lại không trùng khớp");
+                if(lang == "vi")
+                    $('#annouce_change_newpass').text("Mật khẩu nhập lại không trùng khớp");
+                else
+                    $('#annouce_change_newpass').text("Repassword entered does not match");
             }
         }
         if (loi != 0) {
@@ -39,13 +45,22 @@ $(document).ready(function () {
         var loinhan = $('#loinhan').val();
 
         if (tencongty == "" || dienthoaicongty == "" || emailcongty == "" || loinhan == "") {
-            $('#thongbaoguilh').text("Hãy nhập đầy đủ thông tin liên hệ");
+            if(lang == "vi")
+                $('#thongbaoguilh').text("Hãy nhập đầy đủ thông tin");
+            else
+                $('#thongbaoguilh').text("Please enter full information");
             return false;
         } else if (isNaN(dienthoaicongty)) {
-            $('#thongbaoguilh').text("Điện thoại phải là số");
+            if(lang == "vi")
+                $('#thongbaoguilh').text("Điện thoại phải là số");
+            else
+                $('#thongbaoguilh').text("Number phone must be a number");
             return false;
         } else if (!validateEmail(emailcongty)) {
-            $("#thongbaoguilh").text("Email không đúng");
+            if(lang == "vi")
+                $('#thongbaoguilh').text("Địa chỉ thư điện tử không đúng định dạng");
+            else
+                $('#thongbaoguilh').text("Email incorrect");
             return false;
         } else {
             $.ajax({
@@ -60,10 +75,18 @@ $(document).ready(function () {
                     "loinhan": loinhan
                 },
                 success: function (dulieu) {
-                    if (dulieu == true)
-                        alert("Liên hệ đã được gửi tới ban quản trị");
+                    if (dulieu == true) {
+                        if(lang == "vi")
+                            alert("Liên hệ đã được gửi tới ban quản trị");
+                        else
+                            alert("Request has been submitted");
+                        location.reload();
+                    }
                     else {
-                        $('#thongbaoguilh').text("Gửi liên hệ bị lỗi, xin bạn gửi lại sau");
+                        if(lang == "vi")
+                            $('#thongbaoguilh').text("Gửi yêu cầu bị lỗi, mời bạn thực hiện lại sau");
+                        else
+                            $('#thongbaoguilh').text("Request has been error, please do it later");
                     }
                 }
             }).done(function (data) {
@@ -80,11 +103,17 @@ $(document).ready(function () {
         matkhaumoi = $('#matkhaumoi').val();
         nhaplaimatkhaumoi = $('#nhaplaimatkhaumoi').val();
         if (matkhaucu == "" || matkhaumoi == "") {
-            $('#thongbaodoimatkhau').text("Hãy nhập đầy đủ thông tin");
+            if(lang == "vi")
+                $('#thongbaodoimatkhau').text("Hãy nhập đầy đủ thông tin");
+            else
+                $('#thongbaodoimatkhau').text("Please enter full information");
             return false;
         }
         else if (matkhaumoi != nhaplaimatkhaumoi) {
-            $('#thongbaodoimatkhau').text("Mật khẩu nhập lại không trùng khớp");
+            if(lang == "vi")
+                $('#thongbaodoimatkhau').text("Mật khẩu nhập lại không trùng khớp");
+            else
+                $('#thongbaodoimatkhau').text("Repassword entered does not match");
             return false;
         } else {
             $.ajax({
@@ -99,14 +128,20 @@ $(document).ready(function () {
                 success: function (dulieu) {
                     if (dulieu == true) {
                         $('#ModalDoiMatKhau').modal('toggle');
-                        alert("Mật khẩu đã được thay đổi");
+                        if(lang == "vi")
+                            alert("Mật khẩu đã được thay đổi");
+                        else
+                            alert("Password has been changed");
                         $('#matkhaucu').text("");
                         $('#matkhaumoi').text("");
                         $('#nhaplaimatkhaumoi').text("");
                         $('#thongbaodoimatkhau').text("");
                     }
                     else {
-                        $('#thongbaodoimatkhau').text("Mật khẩu cũ bị sai mời bạn nhập lại");
+                        if(lang == "vi")
+                            $('#thongbaodoimatkhau').text("Mật khẩu cũ bị sai, mời bạn nhập lại");
+                        else
+                            $('#thongbaodoimatkhau').text("Old password entered does not match");
                     }
                 }
             }).done(function (data) {

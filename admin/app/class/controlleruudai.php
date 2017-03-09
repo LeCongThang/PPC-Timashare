@@ -46,6 +46,8 @@ class controlleruudai
 
     public function create()
     {
+        if (!isset($_SESSION['tendangnhapadmin']))
+            header('location:' . BASE_URL_ADMIN . "controlleradmin/index");
         $data = ['title' => '', 'content' => ''];
         if (count($_POST) > 0) {
             $hinh = $this->uploadHinh();
@@ -76,6 +78,8 @@ class controlleruudai
 
     public function update()
     {
+        if (!isset($_SESSION['tendangnhapadmin']))
+            header('location:' . BASE_URL_ADMIN . "controlleradmin/index");
         if (!isset($this->params[0])) {
             redirect(BASE_URL_ADMIN . 'controlleruudai/index');
         }
@@ -109,6 +113,8 @@ class controlleruudai
 
     public function delete()
     {
+        if (!isset($_SESSION['tendangnhapadmin']))
+            header('location:' . BASE_URL_ADMIN . "controlleradmin/index");
         if (!isset($this->params[0])) {
             redirect(BASE_URL_ADMIN . 'controlleruudai/index');
         }

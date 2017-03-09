@@ -34,6 +34,8 @@ class controllertaikhoan
 
     public function taikhoan()
     {
+        if (!isset($_SESSION['tendangnhapadmin']))
+            header('location:' . BASE_URL_ADMIN . "controlleradmin/index");
         require_once("view/quanlytaikhoan.php");
     }
 
@@ -66,6 +68,8 @@ class controllertaikhoan
 
     public function delete()
     {
+        if (!isset($_SESSION['tendangnhapadmin']))
+            header('location:' . BASE_URL_ADMIN . "controlleradmin/index");
         $user = $this->params[0];
         $this->controllertaikhoan->delete($user);
         $this->index();
@@ -74,6 +78,8 @@ class controllertaikhoan
 
     public function deleteAccount()
     {
+        if (!isset($_SESSION['tendangnhapadmin']))
+            header('location:' . BASE_URL_ADMIN . "controlleradmin/index");
         $user = $this->params[0];
         $this->controllertaikhoan->deleteAccount($user);
         $this->index();
@@ -91,6 +97,8 @@ class controllertaikhoan
 
     public function create()
     {
+        if (!isset($_SESSION['tendangnhapadmin']))
+            header('location:' . BASE_URL_ADMIN . "controlleradmin/index");
         if (count($_POST) > 0) {
             $hinh = $this->uploadHinhUpdate();
             $userName = $_POST['userName'];
@@ -115,6 +123,8 @@ class controllertaikhoan
 
     public function update()
     {
+        if (!isset($_SESSION['tendangnhapadmin']))
+            header('location:' . BASE_URL_ADMIN . "controlleradmin/index");
         if (!isset($this->params[0])) {
             redirect(BASE_URL_ADMIN . 'controllertaikhoan/index');
         }

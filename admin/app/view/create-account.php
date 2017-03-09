@@ -68,34 +68,34 @@
                                 <div class="form-group">
                                     <label for="noidung">Tên đăng nhập</label>
                                     <input class="form-control"
-                                           value="<?php echo $tai_khoan['tendangnhap']; ?>"
+                                           value="<?php echo $tai_khoan['tendangnhap']; ?>" required
                                            style="font-size:17px;font-family:verdana;text-align:justify;"
                                            disabled>
                                 </div>
                                 <div class="form-group">
                                     <label for="noidung">Mật khẩu</label>
-                                    <input class="form-control" type="password" name="password"
+                                    <input class="form-control" type="password" name="password" required
                                            value="<?php echo $tai_khoan['password']; ?>"
                                            style="font-size:17px;font-family:verdana;text-align:justify;">
                                 </div>
                                 <div class="form-group">
                                     <label for="noidung">Họ tên</label>
                                     <input class="form-control"
-                                           value="<?php echo $tai_khoan['hoten']; ?>"
+                                           value="<?php echo $tai_khoan['hoten']; ?>" required
                                            name="txtFullName"
                                            style="font-size:17px;font-family:verdana;text-align:justify;">
                                 </div>
                                 <div class="form-group">
                                     <label for="noidung">Địa chỉ</label>
                                     <input class="form-control"
-                                           value="<?php echo $tai_khoan['diachi']; ?>"
+                                           value="<?php echo $tai_khoan['diachi']; ?>" required
                                            name="txtAddress"
                                            style="font-size:17px;font-family:verdana;text-align:justify;">
                                 </div>
                                 <div class="form-group">
                                     <label for="noidung">Điện thoại</label>
                                     <input class="form-control"
-                                           value="<?php echo $tai_khoan['dienthoai']; ?>"
+                                           value="<?php echo $tai_khoan['dienthoai']; ?>" required
                                            name="txtPhoneNumber"
                                            style="font-size:17px;font-family:verdana;text-align:justify;">
                                 </div>

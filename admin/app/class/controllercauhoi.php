@@ -48,6 +48,8 @@ class controllercauhoi
      */
     public function create()
     {
+        if (!isset($_SESSION['tendangnhapadmin']))
+            header('location:' . BASE_URL_ADMIN . "controlleradmin/index");
         if (count($_POST) > 0) {
             $cau_hoi_vi = $_POST['cau_hoi_vi'];
             $cau_hoi_en = $_POST['cau_hoi_en'];
@@ -67,6 +69,8 @@ class controllercauhoi
      */
     public function update()
     {
+        if (!isset($_SESSION['tendangnhapadmin']))
+            header('location:' . BASE_URL_ADMIN . "controlleradmin/index");
         if (!isset($this->params[0])) {
             redirect(BASE_URL_ADMIN . 'controllercauhoi/index');
         }
@@ -93,6 +97,8 @@ class controllercauhoi
      */
     public function delete()
     {
+        if (!isset($_SESSION['tendangnhapadmin']))
+            header('location:' . BASE_URL_ADMIN . "controlleradmin/index");
         if (!isset($this->params[0])) {
             redirect(BASE_URL_ADMIN . 'controllercauhoi/index');
         }

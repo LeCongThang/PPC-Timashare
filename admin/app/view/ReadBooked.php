@@ -148,7 +148,7 @@
                                     </div>
                                     <div class="col-md-12 col-sm-12">
                                         <div class="form-group">
-                                            <h4>Voucher : <?= $data['n'] ?> - <?= $data['cost'] ?> USD</h4>
+                                            <h4>Voucher : <?=  isset($data['n'])?$data['n']:"" ?> - <?=isset($data['cost'])?$data['cost']:""  ?> USD</h4>
                                         </div>
                                     </div>
                                     <div class="col-md-12 col-sm-12">

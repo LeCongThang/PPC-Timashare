@@ -37,6 +37,7 @@
     </div>
 </footer>
 
+
 <script type="text/javascript">
     $(document).ready(function () {
 
@@ -149,7 +150,10 @@
                 });
             }
             else {
-                alert("Mời bạn đăng nhập trước khi đặt chỗ");
+                if(lang == "vi")
+                    alert("Mời bạn đăng nhập trước khi đặt chỗ");
+                else
+                    alert("Please login before book ");
             }
             $("#ModalDangNhap").modal();
             $('#thongbaodn').text("");
@@ -205,4 +209,5 @@
     });
 
 </script>
+
 </html>

@@ -41,6 +41,7 @@ class controlleradmin
 
     private function uploadHinhUpdate()
     {
+
         if (isset($_FILES['imgProFile'])) {
             $error = $_FILES['imgProFile']['error'];
             if ($error == UPLOAD_ERR_OK) {
@@ -116,6 +117,8 @@ class controlleradmin
     * */
     public function layThongTinAdmin()
     {
+        if (!isset($_SESSION['tendangnhapadmin']))
+            header('location:' . BASE_URL_ADMIN . "controlleradmin/index");
         $tai_khoan = $this->controlleradmin->layThongTinTaiKhoanAdmin();
         require_once("view/thongtincanhan.php");
     }// layThongTinAdmin
@@ -128,6 +131,8 @@ class controlleradmin
     * */
     public function thayDoiThongTin()
     {
+        if (!isset($_SESSION['tendangnhapadmin']))
+            header('location:' . BASE_URL_ADMIN . "controlleradmin/index");
         if (count($_POST) > 0) {
             $hinh = $this->uploadHinhUpdate();
             $fullName = $_POST['txtFullName'];
@@ -153,6 +158,8 @@ class controlleradmin
     * */
     public function doiMatKhau()
     {
+        if (!isset($_SESSION['tendangnhapadmin']))
+            header('location:' . BASE_URL_ADMIN . "controlleradmin/index");
         if (count($_POST) > 0) {
             $mat_khau_cu = $_POST['mat_khau_cu'];
             $mat_khau_moi = $_POST['mat_khau_moi'];

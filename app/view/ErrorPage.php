@@ -6,11 +6,13 @@
         <!-- ####################################################################################################### -->
         <section id="fof" class="clear">
             <!-- ####################################################################################################### -->
-            <div class="hgroup">
-                <h1><span><strong>4</strong></span><span><strong>0</strong></span><span><strong>4</strong></span></h1>
+            <div class="hgroup" style="text-align: center">
+                <h1 style="font-size: 80px"><span><strong>4</strong></span><span><strong>0</strong></span><span><strong>4</strong></span></h1>
                 <h2>Error ! <span>Page Not Found</span></h2>
+                <p >For Some Reason The Page You Requested Could Not Be Found On Our Server</p>
+                <a href="<?=BASE_URL?>en/controller/index">Back Home Page</a>
             </div>
-            <p>For Some Reason The Page You Requested Could Not Be Found On Our Server</p>
+
             <!-- ####################################################################################################### -->
         </section>
         <!-- ####################################################################################################### -->

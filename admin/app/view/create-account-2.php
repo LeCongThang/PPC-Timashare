@@ -68,33 +68,33 @@
                                 <div class="form-group">
                                     <label for="noidung">Tên đăng nhập</label>
                                     <input class="form-control" name="userName"
-                                           value=""
+                                           value="" required
                                            style="font-size:17px;font-family:verdana;text-align:justify;" >
                                 </div>
                                 <div class="form-group">
                                     <label for="noidung">Mật khẩu</label>
                                     <input class="form-control" type="password" name="password"
-                                           value=""
+                                           value="" required
                                            style="font-size:17px;font-family:verdana;text-align:justify;">
                                 </div>
                                 <div class="form-group">
                                     <label for="noidung">Họ tên</label>
                                     <input class="form-control"
-                                           value=""
+                                           value="" required
                                            name="txtFullName"
                                            style="font-size:17px;font-family:verdana;text-align:justify;">
                                 </div>
                                 <div class="form-group">
                                     <label for="noidung">Địa chỉ</label>
                                     <input class="form-control"
-                                           value=""
+                                           value="" required
                                            name="txtAddress"
                                            style="font-size:17px;font-family:verdana;text-align:justify;">
                                 </div>
                                 <div class="form-group">
                                     <label for="noidung">Điện thoại</label>
                                     <input class="form-control"
-                                           value=""
+                                           value="" required
                                            name="txtPhoneNumber"
                                            style="font-size:17px;font-family:verdana;text-align:justify;">
                                 </div>

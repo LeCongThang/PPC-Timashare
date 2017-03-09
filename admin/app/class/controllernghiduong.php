@@ -20,6 +20,8 @@ class controllernghiduong
 
     function index()
     {
+        if (!isset($_SESSION['tendangnhapadmin']))
+            header('location:' . BASE_URL_ADMIN . "controlleradmin/index");
         $listResortVi = $this->control->getListResort('vi');
         $listResortEn = $this->control->getListResort('en');
         $listHomeVi = $this->control->getListHome('vi');
@@ -50,6 +52,8 @@ class controllernghiduong
 
     public function create()
     {
+        if (!isset($_SESSION['tendangnhapadmin']))
+            header('location:' . BASE_URL_ADMIN . "controlleradmin/index");
         $data = ['title' => '', 'content' => ''];
         if (count($_POST) > 0) {
             $hinh = $this->uploadHinh();
@@ -104,6 +108,8 @@ class controllernghiduong
 
     public function update()
     {
+        if (!isset($_SESSION['tendangnhapadmin']))
+            header('location:' . BASE_URL_ADMIN . "controlleradmin/index");
         if (!isset($this->params[0])) {
             redirect(BASE_URL_ADMIN . 'controllerslider/index');
         }
@@ -174,6 +180,8 @@ class controllernghiduong
 
     public function delete()
     {
+        if (!isset($_SESSION['tendangnhapadmin']))
+            header('location:' . BASE_URL_ADMIN . "controlleradmin/index");
         $id = $this->params[0];
         $isSuccess = $this->control->delete($id);
         if ($isSuccess)

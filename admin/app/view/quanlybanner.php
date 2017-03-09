@@ -70,7 +70,7 @@
                                                 <td><?php echo $itemResort['address']; ?></td>
                                                 <td><?php echo $itemResort['priority']; ?></td>
                                                 <td><?php echo ($itemResort['status'] == 0) ? 'Còn hiệu lực' : 'Hạn chế' ?></td>
-                                                <td><?php echo ($itemResort['id_resort_type'] == 0) ? 'Resort' : 'Home' ?></td>
+                                                <td><?php echo ($itemResort['id_resort_type'] == 1) ? 'Resort' : 'Home' ?></td>
                                                 <input type="text" style="visibility: hidden" id="idBanner"
                                                        name="idBanner"
                                                        value="<?= $itemResort['b'] ?>">

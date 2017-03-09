@@ -1,4 +1,5 @@
 <?php
+error_reporting(0);
 $lang = 'en';
 session_start();
 require_once "config.php";

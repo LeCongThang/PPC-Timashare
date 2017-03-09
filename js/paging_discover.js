@@ -173,8 +173,18 @@
                     rows.empty();
 
                     $.each(data, function (i, val) {
+                        if((i+1)%3==1)
+                            rows.append('<div class = "row">');
                         var str = ' <div class="col-md-4 resort_info_discover"><img src="'+base_dir+val.image+'" class="img-responsive" style="width: 360px;height: 280px"><a href="'+base_url+lang+'/controller/loadingDetailsResort/'+val.id+'"><h4>'+val.name+'</h4></a><h5>'+val.address+'</h5> </div>';
                         rows.append(str);
+                        if((data.length-i) >3 ){
+                            if((i+1)%3==0)
+                                rows.append('</div>');
+                        }else {
+                            if(data.length == i)
+                                rows.append('</div>');
+                        }
+
                     });
 
                     //console.log(rows);

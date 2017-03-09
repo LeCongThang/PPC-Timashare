@@ -113,7 +113,7 @@ $isUpdate = isset($this->params[0]);
                                                 <label for="noidung">Tên </label>
                                                 <input placeholder="Tên khu nghỉ dưỡng" class="form-control"
                                                        value="<?php echo $isUpdate ? $resort_vi['name'] : "" ?>"
-                                                       name="resort_name"
+                                                       name="resort_name" required
                                                        style="font-size:17px;font-family:verdana;text-align:justify;">
                                             </div>
                                             <div class="form-group">
@@ -154,7 +154,7 @@ $isUpdate = isset($this->params[0]);
                                             <!--                                        start en-->
                                             <div class="form-group">
                                                 <label for="noidung">Tên </label>
-                                                <input placeholder="Tên khu nghỉ dưỡng" class="form-control"
+                                                <input placeholder="Tên khu nghỉ dưỡng" class="form-control" required
                                                        value="<?php echo $isUpdate ? $resort_en['name'] : "" ?>"
                                                        name="resort_name_en"
                                                        style="font-size:17px;font-family:verdana;text-align:justify;">
@@ -203,7 +203,7 @@ $isUpdate = isset($this->params[0]);
                                     <label for="noidung">Trạng thái</label>
                                     <?php if ($isUpdate) $resort_vi['status'] == 0 ? $inStock = true : $inStock = false; ?>
                                     <label class="radio-inline"><input type="radio" name="resort_status"
-                                                                       value="0" <?php if ($isUpdate) echo $inStock ? "checked" : "" ?> >Còn
+                                                                       value="0" <?php if ($isUpdate) echo $inStock ? "checked" : ""; else echo "checked"; ?> >Còn
                                         hàng</label>
                                     <label class="radio-inline"><input type="radio" name="resort_status"
                                                                        value="1" <?php if ($isUpdate) echo !$inStock ? "checked" : "" ?>>Hết
@@ -213,7 +213,7 @@ $isUpdate = isset($this->params[0]);
                                     <label for="noidung">Loại dịch vụ</label>
                                     <?php if ($isUpdate) $resort_vi['id_resort_type'] == 1 ? $inResort = true : $inResort = false; ?>
                                     <label class="radio-inline"><input type="radio" name="resort_type"
-                                                                       value="1" <?php if ($isUpdate) echo $inResort ? "checked" : "" ?>>Khu
+                                                                       value="1" <?php if ($isUpdate) echo $inResort ? "checked" : ""; else echo "checked"; ?>>Khu
                                         nghỉ
                                         dưỡng</label>
                                     <label class="radio-inline"><input type="radio" name="resort_type"
@@ -250,30 +250,25 @@ $isUpdate = isset($this->params[0]);
                                 <div class="form-group">
                                     <label for="noidung">Giá </label>
                                     <input placeholder="Gía mỗi phòng" class="form-control"
-                                           value="<?php echo $isUpdate ? $resort_vi['price'] : "" ?>"
+                                           value="<?php echo $isUpdate ? $resort_vi['price'] : "" ?>" required
                                            name="resort_price"
                                            style="font-size:17px;font-family:verdana;text-align:justify;">
                                 </div>
                                 <div class="form-group">
                                     <label for="noidung">Địa chỉ</label>
                                     <input type="text" class="form-control" id="us2-address"
-                                           value="<?php echo $isUpdate ? $resort_vi['address'] : "" ?>"
+                                           value="<?php echo $isUpdate ? $resort_vi['address'] : "" ?>" required
                                            name="resort_address"
                                            style="margin-bottom: 15px"/>
                                 </div>
                                 <div id="us2" style="width: 100%; height: 400px;"></div>
                                 <div class="clearfix">&nbsp;</div>
                                 <div class="form-group">
-                                    <input type="text" class="form-control" style="visibility: hidden"
+                                    <input type="text" class="form-control" style="visibility: hidden;height: 0px;width: 0px"
                                            name="resort_lat" id="us2-lat"/>
-                                </div>
-
-                                <div class="form-group">
-                                    <input type="text" class="form-control" style="visibility: hidden"
+                                    <input type="text" class="form-control" style="visibility: hidden;height: 0px;width: 0px"
                                            name="resort_lon" id="us2-lon"/>
-                                </div>
-                                <div class="form-group">
-                                    <input type="text" class="form-control" style="visibility: hidden"
+                                    <input type="text" class="form-control" style="visibility: hidden;height: 0px;width: 0px"
                                            id="us2-country" name="resort_country"/>
                                 </div>
                                 <div class="clearfix"></div>

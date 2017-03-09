@@ -25,29 +25,29 @@
                     <div class="col-md-12 col-sm-12">
                         <div class="input-group col-sm-12" id="banner_5">
                             <span class="input-group-addon"><i class="glyphicon glyphicon-envelope"></i></span>
-                            <input id="emailResgiter" type="text" class="form-control" name="emailResgiter"
+                            <input id="emailResgiter" type="text" class="form-control" name="emailResgiter" maxlength="50"
                                    placeholder='{DiaChiEmail}'>
                         </div>
                     </div>
                 </div>
                 <div class="input-group col-sm-12" id="banner_5">
                     <span class="input-group-addon"><i class="glyphicon glyphicon-lock"></i></span>
-                    <input id="passwordResgiter" type="password" class="form-control" name="passwordResgiter"
+                    <input id="passwordResgiter" type="password" class="form-control" name="passwordResgiter" maxlength="50"
                            placeholder='{Password}'>
                 </div>
                 <div class="input-group col-sm-12" id="banner_5">
                     <span class="input-group-addon"><i class="glyphicon glyphicon-pencil"></i></span>
-                    <input id="nameResgiter" type="text" class="form-control" name="nameResgiter"
+                    <input id="nameResgiter" type="text" class="form-control" name="nameResgiter" maxlength="100"
                            placeholder='{HoTenDK}'>
                 </div>
                 <div class="input-group col-sm-12" id="banner_5">
                     <span class="input-group-addon"><i class="glyphicon glyphicon-home"></i></span>
-                    <input id="addressResgiter" type="text" class="form-control" name="addressResgiter"
+                    <input id="addressResgiter" type="text" class="form-control" name="addressResgiter" maxlength="255"
                            placeholder='{DiaChiDK}'>
                 </div>
                 <div class="input-group col-sm-12" id="banner_5">
                     <span class="input-group-addon"><i class="glyphicon glyphicon-phone"></i></span>
-                    <input id="numberPhoneResgiter" type="text" class="form-control" name="numberPhoneResgiter"
+                    <input id="numberPhoneResgiter" type="text" class="form-control" name="numberPhoneResgiter" maxlength="20"
                            placeholder='{DienThoaiDK}'>
                 </div>
                 <div class="input-group col-sm-12" id="banner_5">
@@ -93,7 +93,6 @@
 
     $(document).ready(function () {
         $('#btn_dangky').click(function () {
-            var modal_dang_ky = document.getElementById("ModalDangKy");
             var emailResgiter = $('#emailResgiter').val();
             var passwordResgiter = $('#passwordResgiter').val();
             var nameResgiter = $('#nameResgiter').val();
@@ -111,13 +110,22 @@
             form_data.append('numberPhoneResgiter', numberPhoneResgiter);
             form_data.append('sexResgiter', sexResgiter);
             if (emailResgiter == "" || passwordResgiter == "" || nameResgiter == "" || addressResgiter == "" || numberPhoneResgiter == "" || sexResgiter == "") {
-                $('#thongbaodk').text("Hãy nhập đầy đủ thông tin");
+                if (lang == "vi")
+                    $('#thongbaodk').text("Hãy nhập đầy đủ thông tin");
+                else
+                    $('#thongbaodk').text("Please enter full information");
                 return false;
             } else if (!validateEmail(emailResgiter)) {
-                $("#thongbaodk").text(emailResgiter + " không đúng");
+                if (lang == "vi")
+                    $('#thongbaodk').text("Thư điện tử không đúng");
+                else
+                    $('#thongbaodk').text("Email is incorrect");
                 return false;
             } else if (isNaN(numberPhoneResgiter)) {
-                $('#thongbaodk').text("Điện thoại phải là số");
+                if (lang == "vi")
+                    $('#thongbaodk').text("Số điện thoại phải là số");
+                else
+                    $('#thongbaodk').text("Phone number must be number");
                 return false;
             } else {
                 $.ajax({
@@ -131,17 +139,33 @@
                     success: function (dulieu) {
                         var x = Number(dulieu);
                         if (x == 2) {
-                            modal_dang_ky.style.display = "none";
-                            alert("Đăng ký thành công mời bạn đăng nhập");
+                            $('#ModalDangKy').modal('toggle');
+                            if (lang == "vi")
+                                alert("Đăng ký thành công mời bạn đăng nhập");
+                            else
+                                alert("Resgiter account successfull");
+                            location.reload();
                         }
                         else {
-                            modal_dang_ky.style.display = "block";
-                            if (x == 3)
-                                $('#thongbaodk').text("Đăng ký bị lỗi, mời bạn thực hiện lại");
-                            else if (x == 0)
-                                $('#thongbaodk').text("Email này đã được sử dụng");
-                            else
-                                $('#thongbaodk').text("Số điện thoại này này đã được sử dụng");
+                            if (x == 3) {
+                                if (lang == "vi")
+                                    $('#thongbaodk').text("Đăng ký thất bại, mời thực hiện lại");
+                                else
+                                    $('#thongbaodk').text("Resgiter has been error");
+                            }
+                            else if (x == 0) {
+                                if (lang == "vi")
+                                    $('#thongbaodk').text("Thư điện tử này đã được sử dụng");
+                                else
+                                    $('#thongbaodk').text("Email has been used");
+                            }
+                            else {
+                                if (lang == "vi")
+                                    $('#thongbaodk').text("Số điện thoại này này đã được sử dụng");
+                                else
+                                    $('#thongbaodk').text("Number phone has been used");
+
+                            }
                         }
                     }
                 }).done(function (data) {

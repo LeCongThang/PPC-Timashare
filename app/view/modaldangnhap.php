@@ -14,10 +14,10 @@
                             <span class="input-group-addon"><i class="glyphicon glyphicon-user"></i></span>
                             <?php
                             if (isset($_COOKIE["tendangnhap"]) && isset($_COOKIE["rememberme"]))
-                                echo ' <input id="username" type="text" class="form-control" name="username"
+                                echo ' <input id="username" type="text" class="form-control" name="username" maxlength="50"
                            placeholder="' . '{TenDangNhap}' . '" value="' . $_COOKIE["tendangnhap"] . '">';
                             else
-                                echo ' <input id="username" type="text" class="form-control" name="username"
+                                echo ' <input id="username" type="text" class="form-control" name="username" maxlength="50"
                          placeholder="' . '{TenDangNhap}' . '" value="">';
                             ?>
                         </div>
@@ -29,10 +29,10 @@
                             <span class="input-group-addon"><i class="glyphicon glyphicon-lock"></i></span>
                             <?php
                             if (isset($_COOKIE["matkhau"]) && isset($_COOKIE["rememberme"]))
-                                echo ' <input id="password" type="password" class="form-control" name="password"
+                                echo ' <input id="password" type="password" class="form-control" name="password" maxlength="50"
                            placeholder="' . '{Password}' . '" value="' . $_COOKIE["matkhau"] . '">';
                             else
-                                echo ' <input id="password" type="password" class="form-control" name="password"
+                                echo ' <input id="password" type="password" class="form-control" name="password" maxlength="50"
                            placeholder="' . '{Password}' . '" value="">';
                             ?>
                         </div>
@@ -89,10 +89,16 @@
             var rememberme = document.getElementById("rememberme").checked;
             var modal_dang_nhap = document.getElementById("ModalDangNhap");
             if (tendangnhap == "" || matkhau == "") {
-                $('#thongbaodn').text("Hãy nhập đầy đủ thông tin");
+                if(lang == "vi")
+                    $('#thongbaodn').text("Hãy nhập đầy đủ thông tin");
+                else
+                    $('#thongbaodn').text("Please enter full information");
                 return false;
             } else if (!validateEmail(tendangnhap)) {
-                $("#thongbaodn").text("Địa chỉ email không đúng");
+                if (lang == "vi")
+                    $('#thongbaodn').text("Thư điện tử không đúng");
+                else
+                    $('#thongbaodn').text("Email is incorrect");
                 return false;
             }
             else {
@@ -111,7 +117,10 @@
                             location.reload();
                         else {
                             modal_dang_nhap.style.display = "block";
-                            $('#thongbaodn').text("Tên đăng nhập hoặc mật khẩu bị sai");
+                            if (lang == "vi")
+                                $('#thongbaodn').text("Tên đăng nhập hoặc mật khẩu bị sai");
+                            else
+                                $('#thongbaodn').text("User name or password incorrect");
                         }
                     }
                 }).done(function (data) {

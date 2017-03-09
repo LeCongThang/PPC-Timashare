@@ -103,7 +103,10 @@
             var note = $('#note').val();
 
             if (date_start == "" || date_end == "") {
-                $('#thongbaodatcho').text("Ngày lấy phòng và trả phòng không được trống");
+                if(lang == "vi")
+                    $('#thongbaodatcho').text("Ngày lấy phòng và trả phòng không được trống");
+                else
+                    $('#thongbaodatcho').text("Date start and date end not null");
                 return false;
             } else {
                 $.ajax({
@@ -123,13 +126,19 @@
                     },
                     success: function (dulieu) {
                         if (dulieu == true) {
-                            alert("Thành công");
+                            if(lang == "vi")
+                                alert("Đặt chỗ thành công, chúng tôi sẽ liên lạc với bạn");
+                            else
+                                alert("Book successful, we will contact you");
                             location.reload();
                             $("#ModalBookNow").toggle();
                             $('#thongbaodatcho').text("");
                         }
                         else
-                            alert("Thất bại, mời bạn thử lại");
+                            if(lang == "vi")
+                                alert("Thất bại, mời bạn thử lại");
+                            else
+                                alert("Eror, please do it later");
                     }
                 }).done(function (data) {
                 });

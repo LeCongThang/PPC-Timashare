@@ -27,6 +27,8 @@ class controllerbook
 
     public function index()
     {
+        if (!isset($_SESSION['tendangnhapadmin']))
+            header('location:' . BASE_URL_ADMIN . "controlleradmin/index");
         $listBooking = $this->bv->getAllBooking();
         $listBookingUpdated = $this->bv->getAllBookingUpdated();
         require "view/quanlybook.php";
@@ -34,6 +36,8 @@ class controllerbook
 
     public function update()
     {
+        if (!isset($_SESSION['tendangnhapadmin']))
+            header('location:' . BASE_URL_ADMIN . "controlleradmin/index");
         if (!isset($this->params[0])) {
             redirect(BASE_URL_ADMIN . 'controllerbook/index');
         }
@@ -62,6 +66,8 @@ class controllerbook
 
     public function get()
     {
+        if (!isset($_SESSION['tendangnhapadmin']))
+            header('location:' . BASE_URL_ADMIN . "controlleradmin/index");
         if (!isset($this->params[0])) {
             redirect(BASE_URL_ADMIN . 'controllerbook/index');
         }
@@ -72,6 +78,8 @@ class controllerbook
 
     public function delete()
     {
+        if (!isset($_SESSION['tendangnhapadmin']))
+            header('location:' . BASE_URL_ADMIN . "controlleradmin/index");
         if (!isset($this->params[0])) {
             redirect(BASE_URL . 'controllerbook/index');
         }

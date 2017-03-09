@@ -15,6 +15,11 @@
             }
         }
 
+        $(document).on('click', "#btnThoatThongTin", function () {
+            $('#ModalXemThongTin').modal('toggle');
+            location.reload();
+        });
+
         $(document).on('change', "#imgProFile", function () {
             readURL(this);
         });
@@ -22,9 +27,7 @@
             $("#tro_giup").toggle();
         });
 
-        $(document).on('click', "#btnThoatThongTin", function () {
-            $('#ModalXemThongTin').modal('toggle');
-        });
+
         function validateEmail(email) {
             var re = /^(([^<>()[\]\\.,;:\s@\"]+(\.[^<>()[\]\\.,;:\s@\"]+)*)|(\".+\"))@((\[[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}\])|(([a-zA-Z\-0-9]+\.)+[a-zA-Z]{2,}))$/;
             return re.test(email);
@@ -43,10 +46,16 @@
             form_data.append('numberPhoneUpdate', numberPhoneUpdate);
             form_data.append('sexUpdate', sexUpdate);
             if ( nameUpdate == "" || addressUpdate == "" || numberPhoneUpdate == "" || sexUpdate == "") {
-                $('#thongbaocapnhat').text("Hãy nhập đầy đủ thông tin");
+                if(lang == "vi")
+                    $('#thongbaocapnhat').text("Hãy nhập đầy đủ thông tin");
+                else
+                    $('#thongbaocapnhat').text("Please enter full information");
                 return false;
             }else if (isNaN(numberPhoneUpdate)) {
-                $('#thongbaocapnhat').text("Điện thoại phải là số");
+                if(lang == "vi")
+                    $('#thongbaocapnhat').text("Điện thoại phải là số");
+                else
+                    $('#thongbaocapnhat').text("Number phone must be number");
                 return false;
             } else {
                 $.ajax({
@@ -62,12 +71,20 @@
                         if (x == 2) {
                             $('#ModalXemThongTin').modal('toggle');
                             location.reload();
-                            alert("Cập nhật thông tin thành công");
+                            $('#thongbaocapnhat').text("");
+                            if(lang == "vi")
+                                alert("Cập nhật thông tin thành công");
+                            else
+                                alert("Update information successfull");
                         }
                         else {
                             modalxemthongtin.style.display = "block";
-                            if (x == 3)
-                                $('#thongbaocapnhat').text("Cập nhật thông tin bị lỗi, mời bạn thực hiện lại");
+                            if (x == 3){
+                                if(lang == "vi")
+                                    $('#thongbaocapnhat').text("Cập nhật thông tin bị lỗi, mời bạn thực hiện lại");
+                                else
+                                    $('#thongbaocapnhat').text("Update information has been error, please do it later");
+                            }
                         }
                     }
                 }).done(function (data) {

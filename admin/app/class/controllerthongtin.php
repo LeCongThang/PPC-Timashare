@@ -73,6 +73,8 @@ class controllerthongtin
 
     public function update()
     {
+        if (!isset($_SESSION['tendangnhapadmin']))
+            header('location:' . BASE_URL_ADMIN . "controlleradmin/index");
         if (count($_POST) > 0) {
             $hinh1 = $this->uploadHinh1();
             $hinh2 = $this->uploadHinh2();

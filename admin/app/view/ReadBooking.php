@@ -72,7 +72,7 @@
                                             <div class="col-md-5">
                                                 <div class='input-group date' id='datetimepicker6'>
                                                     <input type='text' class="form-control"
-                                                           name="date_start"
+                                                           name="date_start" required
                                                            value=" <?php echo $data['start_date'] ?>"/>
                                                     <span class="input-group-addon"><span
                                                             class="glyphicon glyphicon-calendar"></span></span>
@@ -81,7 +81,7 @@
                                             <div class="col-md-1" style="padding-left: 0px"><h4>Đến ngày</h4></div>
                                             <div class="col-md-5" style="padding-right: 0px">
                                                 <div class='input-group date' id='datetimepicker7'>
-                                                    <input type='text' class="form-control"
+                                                    <input type='text' class="form-control" required
                                                            name="date_end" value="<?php echo $data['end_date'] ?>"/>
                                                     <span class="input-group-addon"><span
                                                             class="glyphicon glyphicon-calendar"></span></span>
@@ -144,7 +144,7 @@
                                     </div>
                                     <div class="col-md-12 col-sm-12">
                                         <div class="form-group">
-                                            <h4>Voucher : <?= $data['n'] ?> - <?= $data['cost'] ?> USD</h4>
+                                            <h4>Voucher : <?=  isset($data['n'])?$data['n']:"" ?> - <?=isset($data['cost'])?$data['cost']:""  ?> USD</h4>
                                         </div>
                                     </div>
                                     <div class="col-md-12 col-sm-12">

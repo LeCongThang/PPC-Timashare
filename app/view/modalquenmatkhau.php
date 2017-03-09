@@ -40,14 +40,23 @@
         $('#btnQuenMatKhau').click(function () {
             var tendangnhapll = $('#tendangnhapll').val();
             if (tendangnhapll == "") {
-                $('#thongbaoQuenMatKhau').text("Hãy nhập đầy đủ thông tin");
+                if (lang == "vi")
+                    $('#thongbaoQuenMatKhau').text("Hãy nhập đầy đủ thông tin");
+                else
+                    $('#thongbaoQuenMatKhau').text("Please enter full information");
                 return false;
             } else if (!validateEmail(tendangnhapll)) {
-                $("#thongbaoQuenMatKhau").text("Hãy nhập email chính xác");
+                if (lang == "vi")
+                    $('#thongbaoQuenMatKhau').text("Thư điện tử không đúng");
+                else
+                    $('#thongbaoQuenMatKhau').text("Email is incorrect");
                 return false;
             } else {
                 $('#ModalQuenMatKhau').modal('toggle');
-                alert("Mời bạn kiểm tra mail ");
+                if(lang == "vi")
+                    alert("Mời bạn kiểm tra mail ");
+                else
+                    alert("Please check your email");
                 $.ajax({
                     url: lang + "/controller/quenmatkhau",
                     type: "POST",

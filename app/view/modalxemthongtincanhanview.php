@@ -41,19 +41,19 @@
                 </div>
                 <div class="input-group col-sm-12" id="banner_5">
                     <span class="input-group-addon"><i class="glyphicon glyphicon-pencil"></i></span>
-                    <input id="nameUpdate" type="text" class="form-control" name="nameUpdate"
+                    <input id="nameUpdate" type="text" class="form-control" name="nameUpdate" maxlength="50"
                            value="<?= $my_profile['hoten'] ?>"
                            placeholder='{HoTenDK}'>
                 </div>
                 <div class=" input-group col-sm-12" id="banner_5">
                     <span class="input-group-addon"><i class="glyphicon glyphicon-home"></i></span>
-                    <input id="addressUpdate" type="text" class="form-control" name="addressUpdate"
+                    <input id="addressUpdate" type="text" class="form-control" name="addressUpdate" maxlength="255"
                            value="<?= $my_profile['diachi'] ?>"
                            placeholder='{DiaChiDK}'>
                 </div>
                 <div class=" input-group col-sm-12" id="banner_5">
                     <span class="input-group-addon"><i class="glyphicon glyphicon-phone"></i></span>
-                    <input id="numberPhoneUpdate" type="text" class="form-control" name="numberPhoneUpdate"
+                    <input id="numberPhoneUpdate" type="text" class="form-control" name="numberPhoneUpdate" maxlength="20"
                            value="<?= $my_profile['dienthoai'] ?>"
                            placeholder='{DienThoaiDK}'>
                 </div>
@@ -85,4 +85,5 @@
         </div>
     </div>
 </div>
+
 <!-- Modal content -->

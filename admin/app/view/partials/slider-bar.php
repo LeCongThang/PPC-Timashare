@@ -22,6 +22,46 @@
                     'icon' => 'glyphicon-info-sign',
                 ],
                 [
+                    'title' => 'KHU NGHỈ DƯỠNG',
+                    'url' => 'controllernghiduong/index',
+                    'icon' => 'glyphicon glyphicon-tree-deciduous',
+                ],
+                [
+                    'title' => 'BOOK',
+                    'url' => 'controllerbook/index',
+                    'icon' => 'glyphicon glyphicon-globe',
+                ],
+                [
+                    'title' => 'QUẢN LÝ TÀI KHOẢN',
+                    'url' => 'controllertaikhoan/index',
+                    'icon' => 'glyphicon glyphicon-user',
+                ],
+                [
+                    'title' => 'QUẢN LÝ ƯU ĐÃI',
+                    'url' => 'controlleruudai/index',
+                    'icon' => 'glyphicon glyphicon-gift',
+                ],
+                [
+                    'title' => 'QUẢN LÝ THÔNG BÁO',
+                    'url' => 'controllerthongbao/index',
+                    'icon' => 'glyphicon glyphicon-bell',
+                ],
+                [
+                    'title' => 'QUẢN LÝ TUYỂN DỤNG',
+                    'url' => 'controllertuyendung/index',
+                    'icon' => 'glyphicon glyphicon-briefcase',
+                ],
+                [
+                    'title' => 'QUẢN LÝ LIÊN HỆ',
+                    'url' => 'controllermail/index',
+                    'icon' => 'glyphicon glyphicon-envelope',
+                ],
+                [
+                    'title' => 'QUẢN LÝ CÂU HỎI',
+                    'url' => 'controllercauhoi/index',
+                    'icon' => 'glyphicon glyphicon-question-sign',
+                ],
+                [
                     'title' => 'QUẢN LÝ ẢNH SLIDE',
                     'url' => 'controllerslider/index',
                     'icon' => 'glyphicon glyphicon-th-large',
@@ -30,11 +70,6 @@
                     'title' => 'GIỚI THIỆU',
                     'url' => 'controllergioithieu/index',
                     'icon' => 'glyphicon glyphicon-pencil',
-                ],
-                [
-                    'title' => 'KHU NGHỈ DƯỠNG',
-                    'url' => 'controllernghiduong/index',
-                    'icon' => 'glyphicon glyphicon-tree-deciduous',
                 ],
                 [
                     'title' => 'VỀ TIMESHARE',
@@ -52,50 +87,16 @@
                     'icon' => 'glyphicon glyphicon-pencil',
                 ],
                 [
-                    'title' => 'BOOK',
-                    'url' => 'controllerbook/index',
-                    'icon' => 'glyphicon glyphicon-globe',
-                ],
-                [
-                    'title' => 'QUẢN LÝ LIÊN HỆ',
-                    'url' => 'controllermail/index',
-                    'icon' => 'glyphicon glyphicon-envelope',
-                ],
-                [
                     'title' => 'QUẢN LÝ VIDEO',
                     'url' => 'controllervideo/index',
                     'icon' => 'glyphicon glyphicon-facetime-video',
                 ],
-                [
-                    'title' => 'QUẢN LÝ TÀI KHOẢN',
-                    'url' => 'controllertaikhoan/index',
-                    'icon' => 'glyphicon glyphicon-user',
-                ],
+
 //                [
 //                    'title' => 'QUẢN LÝ THAM GIA',
 //                    'url' => 'controllerthamgia/index',
 //                    'icon' => 'glyphicon glyphicon-log-in',
 //                ],
-                [
-                    'title' => 'QUẢN LÝ CÂU HỎI',
-                    'url' => 'controllercauhoi/index',
-                    'icon' => 'glyphicon glyphicon-question-sign',
-                ],
-                [
-                    'title' => 'QUẢN LÝ ƯU ĐÃI',
-                    'url' => 'controlleruudai/index',
-                    'icon' => 'glyphicon glyphicon-gift',
-                ],
-                [
-                    'title' => 'QUẢN LÝ THÔNG BÁO',
-                    'url' => 'controllerthongbao/index',
-                    'icon' => 'glyphicon glyphicon-bell',
-                ],
-                [
-                    'title' => 'QUẢN LÝ TUYỂN DỤNG',
-                    'url' => 'controllertuyendung/index',
-                    'icon' => 'glyphicon glyphicon-briefcase',
-                ],
                 [
                     'title' => 'QUẢN LÝ BANNER',
                     'url' => 'controllerbanner/index',

@@ -18,11 +18,15 @@ class controllervideo
 
     public function video()
     {
+        if (!isset($_SESSION['tendangnhapadmin']))
+            header('location:' . BASE_URL_ADMIN . "controlleradmin/index");
         require_once("view/quanlyvideo.php");
     }
 
     public function update()
     {
+        if (!isset($_SESSION['tendangnhapadmin']))
+            header('location:' . BASE_URL_ADMIN . "controlleradmin/index");
         $id = $this->params[0];
         $url_video = $_POST['url_video'];
         $ten_video_vi = $_POST['ten_video_vi'];
@@ -41,6 +45,8 @@ class controllervideo
 
     public function create()
     {
+        if (!isset($_SESSION['tendangnhapadmin']))
+            header('location:' . BASE_URL_ADMIN . "controlleradmin/index");
         $data = ['title' => '', 'content' => ''];
         if (count($_POST) > 0) {
                 $url_video = $_POST['url_video'];
@@ -60,6 +66,8 @@ class controllervideo
 
     public function delete()
     {
+        if (!isset($_SESSION['tendangnhapadmin']))
+            header('location:' . BASE_URL_ADMIN . "controlleradmin/index");
         $id = $this->params[0];
 
         $this->controllervideo->delete($id);

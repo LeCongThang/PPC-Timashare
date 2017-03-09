@@ -29,6 +29,8 @@ class controllerbanner
 
     public function insertBanner()
     {
+        if (!isset($_SESSION['tendangnhapadmin']))
+            header('location:' . BASE_URL_ADMIN . "controlleradmin/index");
         if (isset($_POST['idResort'])) {
             $idResort = $_POST['idResort'];
             $listBannerNull = $this->controllerbanner->getNumberNullBanner();
@@ -53,6 +55,8 @@ class controllerbanner
 
     public function removeBanner()
     {
+        if (!isset($_SESSION['tendangnhapadmin']))
+            header('location:' . BASE_URL_ADMIN . "controlleradmin/index");
         if (isset($_POST['idBanner'])) {
             $idBanner = $_POST['idBanner'];
             if($this->controllerbanner->removeResortBanner($idBanner))
