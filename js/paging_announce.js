@@ -176,33 +176,38 @@
                         var str = '<div class="col-md-6 col-sm-12 caption_deals"><img class="img-responsive" src="' + base_dir + val.image + '"><h3><a  href="' + val.link + '">' + val.title + '</a></h3><h5 class="content_">' + val.date + '</h5><p class="content_">' + val.content + '</p></div>';
                         rows.append(str);
                     });
-
+                    var pageNumber = parseInt(page);
+                    var pageList = Math.floor((pageNumber - 1) / 3) + 1;
+                    // console.log(pageList);
+                    var pageEnd = pageList * 3;
+                    var pageListLasted = Math.floor((options.total - 1) / 3) + 1;
                     //console.log(rows);
                     var temp = "";
-                    if(options.total>1){
-                        var num_sub = options.total - page;
-                        if (num_sub == 0) {
-                            for (var i = page - 2; i <= page; i++) {
-                                if (i == page)  temp += '<a class="a_active" href="#" style="margin-right: 3px" data-value = ' + i + '>' + i + '</a>';
-                                else if (i != 0)
-                                    temp += '<a href="#" style="margin-right: 3px" data-value = ' + i + '>' + i + '</a>';
-                            }
+                    if (pageListLasted != pageList){
+                        for (var i = pageEnd - 2; i <= pageEnd; i++) {
+                            if (i == pageNumber)  temp += '<a class="a_active" href="#" style="margin-right: 3px" data-value = ' + i + '>' + i + '</a>';
+                            else if (i != 0)
+                                temp += '<a href="#" style="margin-right: 3px" data-value = ' + i + '>' + i + '</a>';
                         }
-                        else {
-                            for (var i = page - 1; i <= page + 1; i++) {
-                                if (i == page)  temp += '<a class="a_active" href="#" style="margin-right: 3px" data-value = ' + i + '>' + i + '</a>';
-                                else if (i != 0)
-                                    temp += '<a href="#" style="margin-right: 3px" data-value = ' + i + '>' + i + '</a>';
-                            }
+                    } else
+                    {
+                        for (var i = pageEnd - 2; i <= options.total; i++) {
+                            if (i == pageNumber)  temp += '<a class="a_active" href="#" style="margin-right: 3px" data-value = ' + i + '>' + i + '</a>';
+                            else if (i != 0)
+                                temp += '<a href="#" style="margin-right: 3px" data-value = ' + i + '>' + i + '</a>';
                         }
-                    }else {
-                        temp += '<a class="a_active" href="#" style="margin-right: 3px" data-value = ' + 1 + '>' + 1 + '</a>';
                     }
                     var page_name = "";
                     if (lang == "vi")
                         page_name = "Trang ";
                     else page_name = "Page ";
-                    var bottom_content = '<div class="pages col-md-12"><p >' + page_name + temp + '</p></div>';
+                    var bottom_content = '<div class="pages  col-md-12"><p >' + page_name;
+                    if (pageList != 1)
+                        bottom_content += '<a href="#" data-value ='+ (pageEnd-5) +'">&lsaquo;&lsaquo;</a>  ';
+                    bottom_content += temp;
+                    if (pageListLasted != pageList)
+                        bottom_content += '  <a href="#" data-value ='+ (pageEnd+1) +'">&rsaquo;&rsaquo;</a>';
+                    bottom_content += '</p></div><br><br><br>';
                     rows.append(bottom_content);
                 }
             });

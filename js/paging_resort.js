@@ -13,8 +13,8 @@
             "height": 27,
             "currentPage": 1,
             "total": 0,
-            "btnPrevious": ".goPrevious_announce",
-            "btnNext": ".goNext_announce",
+            "btnPrevious": ".goPrevious_resort",
+            "btnNext": ".goNext_resort",
             "txtCurrentPage": "#currentPage_announce",
             "pageInfo": ".pageInfo_announce"
         };
@@ -52,7 +52,7 @@
                     "resort_type": resort_type,
                     "sort_by": sort_by
                 },
-                error: function(xhr, status, error) {
+                error: function (xhr, status, error) {
                     var err = eval("(" + xhr.responseText + ")");
                     alert(err.Message);
                 }
@@ -64,15 +64,6 @@
             //Gan su kien vao cho btnPrevious - btnNext - txtCurrentPage
             setCurrentPage(options.currentPage);
 
-            btnPrevious.on("click", function (e) {
-                goPrevious();
-                e.stopImmediatePropagation();
-            });
-
-            btnNext.on("click", function (e) {
-                goNext();
-                e.stopImmediatePropagation();
-            });
 
             txtCurrentPage.on("keyup", function (e) {
 
@@ -106,28 +97,14 @@
         //Ham xu ly khi nhan vao nut btnPrevious
         //=============================================
         function goPrevious() {
-            //console.log("goPrevious: " + options.currentPage);
-            if (options.currentPage != 1) {
-                var p = options.currentPage - 1;
-                loadData(p);
-                setCurrentPage(p);
-                options.currentPage = p;
-                pageInfo();
-            }
+
         }
 
         //=============================================
         //Ham xu ly khi nhan vao nut btnNext
         //=============================================
         function goNext() {
-            //console.log("goNext: " + options.currentPage);
-            if (options.currentPage != options.total) {
-                var p = options.currentPage + 1;
-                loadData(p);
-                setCurrentPage(p);
-                options.currentPage = p;
-                pageInfo();
-            }
+
         }
 
         function goCurrentPage(value) {
@@ -177,7 +154,7 @@
                     "items": options.items,
                     "currentPage": page
                 },
-                error: function(xhr, status, error) {
+                error: function (xhr, status, error) {
                     var err = eval("(" + xhr.responseText + ")");
                     alert(err.Message);
                 }
@@ -197,33 +174,38 @@
                             '<a href="' + base_url + lang + '/controller/loadingDetailsResort/' + val.id + '" id="btnreadmore" style="position: absolute;bottom: 0px;left: 15px"><b>' + tim_hieu_them + '</b></a></div>';
                         rows.append(str);
                     });
-
+                    var pageNumber = parseInt(page);
+                    var pageList = Math.floor((pageNumber - 1) / 3) + 1;
+                   // console.log(pageList);
+                    var pageEnd = pageList * 3;
+                    var pageListLasted = Math.floor((options.total - 1) / 3) + 1;
                     //console.log(rows);
                     var temp = "";
-                    if(options.total>1){
-                        var num_sub = options.total - page;
-                        if (num_sub == 0) {
-                            for (var i = page - 2; i <= page; i++) {
-                                if (i == page)  temp += '<a class="a_active" href="#" style="margin-right: 3px" data-value = ' + i + '>' + i + '</a>';
-                                else if (i != 0)
-                                    temp += '<a href="#" style="margin-right: 3px" data-value = ' + i + '>' + i + '</a>';
-                            }
+                    if (pageListLasted != pageList){
+                    for (var i = pageEnd - 2; i <= pageEnd; i++) {
+                        if (i == pageNumber)  temp += '<a class="a_active" href="#" style="margin-right: 3px" data-value = ' + i + '>' + i + '</a>';
+                        else if (i != 0)
+                            temp += '<a href="#" style="margin-right: 3px" data-value = ' + i + '>' + i + '</a>';
+                    }
+                    } else
+                    {
+                        for (var i = pageEnd - 2; i <= options.total; i++) {
+                            if (i == pageNumber)  temp += '<a class="a_active" href="#" style="margin-right: 3px" data-value = ' + i + '>' + i + '</a>';
+                            else if (i != 0)
+                                temp += '<a href="#" style="margin-right: 3px" data-value = ' + i + '>' + i + '</a>';
                         }
-                        else {
-                            for (var i = page - 1; i <= page + 1; i++) {
-                                if (i == page)  temp += '<a class="a_active" href="#" style="margin-right: 3px" data-value = ' + i + '>' + i + '</a>';
-                                else if (i != 0)
-                                    temp += '<a href="#" style="margin-right: 3px" data-value = ' + i + '>' + i + '</a>';
-                            }
-                        }
-                    }else {
-                        temp += '<a class="a_active" href="#" style="margin-right: 3px" data-value = ' + 1 + '>' + 1 + '</a>';
                     }
                     var page_name = "";
                     if (lang == "vi")
                         page_name = "Trang ";
                     else page_name = "Page ";
-                    var bottom_content = '<div class="pages  col-md-12"><p >' + page_name + temp + '</p></div><br><br><br>';
+                    var bottom_content = '<div class="pages  col-md-12"><p >' + page_name;
+                    if (pageList != 1)
+                        bottom_content += '<a href="#" data-value ='+ (pageEnd-5) +'">&lsaquo;&lsaquo;</a>  ';
+                    bottom_content += temp;
+                    if (pageListLasted != pageList)
+                        bottom_content += '  <a href="#" data-value ='+ (pageEnd+1) +'">&rsaquo;&rsaquo;</a>';
+                    bottom_content += '</p></div><br><br><br>';
                     rows.append(bottom_content);
                 }
             });

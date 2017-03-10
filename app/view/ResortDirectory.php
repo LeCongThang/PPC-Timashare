@@ -79,9 +79,8 @@
                                                 echo ')</a></li>';
                                             }
                                         }
+                                        echo '</ul></a>';
                                     }
-
-                                    echo '</ul></a>';
                                 }
                             } else {
                                 if (!$isCountry) {

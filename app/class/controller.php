@@ -923,23 +923,23 @@ class controller
         } else if ($resort_type == 1) {
             if ($sort_by == 0) {
                 if (!$isWorld)
-                    $resort_type_clause = " resort.id_resort_type = 0 ";
+                    $resort_type_clause = " resort.id_resort_type = 1 ";
                 else
-                    $resort_type_clause = " AND resort.id_resort_type = 0 ";
+                    $resort_type_clause = " AND resort.id_resort_type = 1 ";
                 $sort_by_clause = "";
             } else if ($sort_by == 1) {
                 $date = new DateTime('now');
                 date_sub($date, date_interval_create_from_date_string('7 days'));
                 if (!$isWorld)
-                    $resort_type_clause = " resort.id_resort_type = 0 ";
+                    $resort_type_clause = " resort.id_resort_type = 1 ";
                 else
-                    $resort_type_clause = " AND resort.id_resort_type = 0 ";
+                    $resort_type_clause = " AND resort.id_resort_type = 1 ";
                 $sort_by_clause = " AND resort.created_date > '" . $date->format('Y-m-d') . "' ";
             } else if ($sort_by == 2) {
                 if (!$isWorld)
-                    $resort_type_clause = " resort.id_resort_type = 0 ";
+                    $resort_type_clause = " resort.id_resort_type = 1 ";
                 else
-                    $resort_type_clause = " AND resort.id_resort_type = 0 ";
+                    $resort_type_clause = " AND resort.id_resort_type = 1 ";
                 $date = new DateTime('now');
                 $sort_by_clause = " AND resort.id IN (SELECT details_deal_resort.id_resort FROM `details_deal_resort` WHERE start_date <= '" . $date->format('Y-m-d') . "' AND end_date >= '" . $date->format('Y-m-d') . "')";
             }
@@ -1026,15 +1026,15 @@ class controller
             }
         } else if ($resort_type == 1) {
             if ($sort_by == 0) {
-                $resort_type_clause = " AND resort.id_resort_type = 0 ";
+                $resort_type_clause = " AND resort.id_resort_type = 1 ";
                 $sort_by_clause = "";
             } else if ($sort_by == 1) {
                 $date = new DateTime('now');
                 date_sub($date, date_interval_create_from_date_string('7 days'));
-                $resort_type_clause = " AND resort.id_resort_type = 0 ";
+                $resort_type_clause = " AND resort.id_resort_type = 1 ";
                 $sort_by_clause = " AND resort.created_date > '" . $date->format('Y-m-d') . "' ";
             } else if ($sort_by == 2) {
-                $resort_type_clause = " AND resort.id_resort_type = 0 ";
+                $resort_type_clause = " AND resort.id_resort_type = 1 ";
                 $date = new DateTime('now');
                 $sort_by_clause = " AND resort.id IN (SELECT details_deal_resort.id_resort FROM `details_deal_resort` WHERE start_date <= '" . $date->format('Y-m-d') . "' AND end_date >= '" . $date->format('Y-m-d') . "')";
             }
@@ -1083,6 +1083,27 @@ class controller
 
         $total = array("total" => 0);
         $pages = $this->control->getNumberResort("", "") / 9;
+        $total = array("total" => 0);
+        $tmp = explode(".", $pages);
+        if (count($tmp) > 1) {
+            $pages = $tmp[0] + 1;
+        } else {
+            $pages = $tmp[0];
+        }
+        $total["total"] = $pages;
+        echo json_encode($total);
+    }
+
+    public function getNumberResortSortByHint()
+    {
+        $lat = $this->params[0];
+        $lng = $this->params[1];
+        $resort_type = 0;
+        $sort_by = 0;
+        $listContinents = "";
+
+        $total = array("total" => 0);
+        $pages = $this->control->getNumberHint($lat, $lng, 1000) / 9;
         $total = array("total" => 0);
         $tmp = explode(".", $pages);
         if (count($tmp) > 1) {

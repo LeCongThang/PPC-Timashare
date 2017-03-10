@@ -29,7 +29,7 @@ define("TTInternationalCorporation1","MẠNG LƯỚI KHU NGHĨ DƯỠNG PHONG PH
 define("CTInternationalCorporation11","Các bạn có thể tự do khám phá hơn 4.500 khu nghỉ dưỡng dưới sự lựa chọn cẩn thận với tuần Thành viên mà PPC phụ trách trong khoảng 100 quốc gia.");
 define("TTInternationalCorporation12","Quy trình trao đổi rất đơn giản nếu bạn biết tới cách thức hoạt động. Chỉ cần đặt cọc gửi tiền tuần của bạn sớm nhất có thể với PPC Timeshare và chọn những tuần có sẵn mà các thành viên khác đã gửi vào trước đó rồi thực hiện trao đổi của bạn.");
 define("ExchangeEasier","TRAO ĐỔI DỄ DÀNG HƠN");
-define("TTInternationalCorporation2","ĐẶT CỌC CHO PPC");
+    define("TTInternationalCorporation2","ĐẶT CỌC CHO PPC");
 define("CTInternationalCorporation2","Chỉ cần đặt cọc tại PPC Timeshare, cơ hội trao đổi các kỳ nghỉ của bạn sẽ được thúc đẩy và quan trọng là gửi tiền là hoàn toàn miễn phí. Bạn không cần phải quan tâm thời gian cũng như địa điểm mà bạn có ý định đi du lịch khi bạn đặt cọc. Bạn có thể lên kế hoạch Trao Đổi Kỳ Nghỉ của bạn vào một ngày nào đó sớm nhất. Bạn cũng có thể đặt cọc chi phí tuần lễ trên website hoặc gọi cho chúng tôi. ");
 define("TTInternationalCorporation3","GIÚP BẠN TRAO ĐỔI KỲ NGHỈ");
 define("CTInternationalCorporation3","Có thể bình thường đơn giản chỉ cần lên mạng để gửi những yêu cầu trao đổi kỳ nghỉ. Tuy nhiên nếu vào những ngày nghỉ bạn muốn trao đổi lại không có, đừng ngần ngại tìm chúng tôi và chúng tôi sẽ tiếp tục tìm kiếm cho bạn 24/7. Hoặc gọi cho chúng tôi và chúng ta sẽ cũng nhau trao đổi về các lựa chọn kỳ nghỉ của bạn. Điều quan trọng là đặt cọc tiền PPC Tuần Lễ của bạn càng sớm càng tốt, 2 năm trước ngày bắt đầu, để tối đa hóa khả năng giao dịch của bạn.");

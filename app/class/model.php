@@ -794,6 +794,15 @@ class model
         return $row['total'];
     }
 
+    public function getNumberHint($lat, $lng, $distance)
+    {
+
+        $sql = "select count(id) as total from resort WHERE calc_distance(" . $lat . "," . $lng . ", resort.lat, resort.lng) < " . $distance ;
+        $result = $this->db->query($sql);
+        $row = mysqli_fetch_assoc($result);
+        return $row['total'];
+    }
+
     // getNumber By Country
     public function getNumberResortByCountinent($idCountinent, $resort_type_clause, $sort_by_clause)
     {

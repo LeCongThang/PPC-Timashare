@@ -66,6 +66,7 @@
                                         <table class="table">
                                             <thead>
                                             <tr>
+                                                <td>STT</td>
                                                 <td>Tên</td>
                                                 <td>Địa chỉ</td>
                                                 <td>Trạng thái</td>
@@ -78,6 +79,7 @@
                                                 foreach ($listResortVi as $key => $item_resort) {
                                                     ?>
                                                     <tr>
+                                                        <td><?php echo $key+1 ?></td>
                                                         <td><?php echo $item_resort['name']; ?></td>
                                                         <td><?php echo $item_resort['address']; ?></td>
                                                         <td><?php echo  ($item_resort['status'] == 0)? 'Còn hiệu lực': "Hết hiệu lực"; ?></td>
@@ -102,6 +104,7 @@
                                         <table class="table">
                                             <thead>
                                             <tr>
+                                                <td>STT</td>
                                                 <td>Tên</td>
                                                 <td>Địa chỉ</td>
                                                 <td>Trạng thái</td>
@@ -114,6 +117,7 @@
                                                 foreach ($listHomeVi as $key => $item_home) {
                                                     ?>
                                                     <tr>
+                                                        <td><?php echo $key+1 ?></td>
                                                         <td><?php echo $item_home['name']; ?></td>
                                                         <td><?php echo $item_home['address']; ?></td>
                                                         <td><?php echo  ($item_home['status'] == 0)? 'Còn hiệu lực': "Hết hiệu lực"; ?></td>

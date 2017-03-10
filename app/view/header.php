@@ -53,7 +53,7 @@
                             <dt>
                                 <?php
                                 if ($_SESSION['lang'] == "vi") {
-                                    echo '<a style="color: white;" href="#" onclick="return false;"><img class="flag"src="' . BASE_DIR . 'img/vietnamflag.gif"alt=""/> Vietnamese</a>';
+                                    echo '<a style="color: white;" href="#" onclick="return false;"><img class="flag"src="' . BASE_DIR . 'img/vietnamflag.gif"alt=""/> Tiếng Việt</a>';
                                 } else if ($_SESSION['lang'] == "en") {
                                     echo '<a style="color: white;" href="#" onclick="return false;"><img class="flag"src="' . BASE_DIR . 'img/icon_flag_usa.png"alt=""/> English</a>';
                                 }
@@ -64,9 +64,9 @@
                                     <li>
                                         <?php
                                         if ($_SESSION['lang'] == "en") {
-                                            echo '<a style="color: white;" href="' . BASE_URL . 'vi/" ><img class="flag"src="' . BASE_DIR . 'img/vietnamflag.gif"alt=""/> Vietnamese</a>';
+                                            echo '<a style="color: white;" href="' . BASE_URL . 'vi/" ><img style="margin-left: 5px;" class="flag"src="' . BASE_DIR . 'img/vietnamflag.gif"alt=""/> Tiếng Việt</a>';
                                         } else if ($_SESSION['lang'] == "vi") {
-                                            echo '<a style="color: white;" href="' . BASE_URL . 'en/" ><img class="flag"src="' . BASE_DIR . 'img/icon_flag_usa.png"alt=""/> English</a>';
+                                            echo '<a style="color: white;" href="' . BASE_URL . 'en/" ><img style="margin-left: 5px;" class="flag"src="' . BASE_DIR . 'img/icon_flag_usa.png"alt=""/> English</a>';
                                         }
                                         ?>
                                     </li>
