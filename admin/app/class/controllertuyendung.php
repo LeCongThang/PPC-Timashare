@@ -39,8 +39,36 @@ class controllertuyendung
     {
         if (!isset($_SESSION['tendangnhapadmin']))
             header('location:' . BASE_URL_ADMIN . "controlleradmin/index");
-        $list_deals = $this->controllertuyendung->getAll();
+        $currentPage = 1;
+        $numberPage = $this->getNumberPage();
+        $items = 5;
+
+        if (isset($this->params[0]))
+            if ($this->params[0] <= $numberPage)
+                $currentPage = $this->params[0];
+
+        $pageList = intval(($currentPage - 1) / 5) + 1;
+        $pageEnd = $pageList * 5;
+        $pageListLasted = intval(($numberPage - 1) / 5) + 1;
+
+        $offset = ($currentPage - 1) * $items;
+
+        ($pageListLasted != $pageList) ? $lastPage = $pageEnd : $lastPage = $numberPage;
+        $list_deals = $this->controllertuyendung->getAllLimit($offset, $items);
         require_once("view/quanlytuyendung.php");
+    }
+
+    public function getNumberPage()
+    {
+        $numberAll = $this->controllertuyendung->getNumber();
+        $pages = $numberAll / 5;
+        $tmp = explode(".", $pages);
+        if (count($tmp) > 1) {
+            $pages = $tmp[0] + 1;
+        } else {
+            $pages = $tmp[0];
+        }
+        return $pages;
     }
 
 
@@ -60,8 +88,7 @@ class controllertuyendung
                     $this->errors[] = 'Tạo tin tuyển dụng thành công!';
                 else
                     $this->errors[] = 'Lỗi! Tạo tin tuyển dụng không thành công!';
-                $list_deals = $this->controllertuyendung->getAll();
-                require_once("view/quanlytuyendung.php");
+                $this->index();
                 return true;
             } else {
                 $this->errors[] = 'Vui lòng chọn hình ảnh!';
@@ -89,8 +116,7 @@ class controllertuyendung
                 $this->errors[] = 'Cập nhật tin tuyển dụng thành công!';
             else
                 $this->errors[] = 'Lỗi! Cập nhật tin tuyển dụng không thành công!';
-            $list_deals = $this->controllertuyendung->getAll();
-            require_once("view/quanlytuyendung.php");
+            $this->index();
             return true;
         }
         $data_vi = $this->controllertuyendung->get($id_deals, "vi");
@@ -110,8 +136,7 @@ class controllertuyendung
             $this->errors[] = 'Xóa tin tuyển dụng thành công!';
         else
             $this->errors[] = 'Lỗi! Xóa tin tuyển dụng không thành công!';
-        $list_deals = $this->controllertuyendung->getAll();
-        require_once("view/quanlytuyendung.php");
+       $this->index();
         return true;
     }
 }//class

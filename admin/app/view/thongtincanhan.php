@@ -60,7 +60,7 @@
                                                 <label>Hình đại diện</label>
                                                 <div class="thumbnail input-group col-sm-12" style="text-align: center">
                                                     <img id="img"
-                                                         src="<?php echo ($tai_khoan['avatar'] == NULL) ? (BASE_DIR . 'img/default_avatar.png') : BASE_DIR.$tai_khoan['avatar'] ?>"
+                                                         src="<?php echo ($tai_khoan['avatar'] == NULL) ? (BASE_DIR . 'img/default_avatar.png') : BASE_DIR . $tai_khoan['avatar'] ?>"
                                                          style="width: 140px;height: 170px;">
                                                 </div>
                                                 <div class="input-group" style="text-align: center">
@@ -92,21 +92,22 @@
                                                 <label for="noidung">Họ tên</label>
                                                 <input class="form-control"
                                                        value="<?php echo $tai_khoan['hoten']; ?>"
-                                                       name="txtFullName"
+                                                       name="txtFullName" required maxlength="60"
                                                        style="font-size:17px;font-family:verdana;text-align:justify;">
                                             </div>
                                             <div class="form-group">
                                                 <label for="noidung">Địa chỉ</label>
                                                 <input class="form-control"
                                                        value="<?php echo $tai_khoan['diachi']; ?>"
-                                                       name="txtAddress"
+                                                       name="txtAddress" required maxlength="200"
                                                        style="font-size:17px;font-family:verdana;text-align:justify;">
                                             </div>
                                             <div class="form-group">
                                                 <label for="noidung">Điện thoại</label>
-                                                <input class="form-control"
+                                                <input class="form-control" id="txtPhoneNumber"
                                                        value="<?php echo $tai_khoan['dienthoai']; ?>"
-                                                       name="txtPhoneNumber"
+                                                       name="txtPhoneNumber" required maxlength="25"
+                                                       onkeyup="return numberphone(this)"
                                                        style="font-size:17px;font-family:verdana;text-align:justify;">
                                             </div>
                                             <div class="box-footer">
@@ -128,7 +129,7 @@
                                               enctype="multipart/form-data">
                                             <div class="form-group">
                                                 <label for="noidung">Mật khẩu cũ</label>
-                                                <input class="form-control"
+                                                <input class="form-control" required maxlength="50"
                                                        value=""
                                                        name="mat_khau_cu"
                                                        id="mat_khau_cu"
@@ -137,7 +138,7 @@
                                             </div>
                                             <div class="form-group">
                                                 <label for="noidung">Mật khẩu mới</label>
-                                                <input class="form-control"
+                                                <input class="form-control" required maxlength="50"
                                                        value=""
                                                        name="mat_khau_moi"
                                                        id="mat_khau_moi"
@@ -146,7 +147,7 @@
                                             </div>
                                             <div class="form-group">
                                                 <label for="noidung">Nhập lại mật khẩu mới</label>
-                                                <input class="form-control"
+                                                <input class="form-control" required maxlength="50"
                                                        value=""
                                                        id="nhap_lai_mat_khau_moi"
                                                        type="password"
@@ -202,6 +203,9 @@
 <script type="text/javascript" src="<?= BASE_DIR ?>ckeditor/ckeditor.js"></script>
 <!-- Page Script -->
 <script>
+    function numberphone(input) {
+        input.value = input.value.replace(/[^0-9\.\-\+\(\)\s]/g, '');
+    }
     $(document).ready(function () {
         $('#btn_doi_mat_khau').click(function () {
             matkhaucu = $('#mat_khau_cu').val();

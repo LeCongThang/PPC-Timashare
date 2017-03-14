@@ -94,12 +94,17 @@
                         <div class="box-body">
                             <div id="example1_wrapper" class="dataTables_wrapper form-inline dt-bootstrap">
                                 <div class="row">
-                                    <div class="col-sm-6">
-                                        <div id="example1_filter" class="dataTables_filter"><label>Search:<input
-                                                    type="search" class="form-control input-sm" placeholder=""
-                                                    aria-controls="example1"></label></div>
+                                    <div class="col-md-3">
+                                       <input class="form-control" type="text" value="" id="txtSearch"
+                                               placeholder="Tên khu nghỉ dưỡng">
+                                    </div>
+                                    <div class="col-md-3">
+                                        <input class="form-control btn btn-primary" type="button" value="Tìm kiếm"
+                                               onclick="search()"
+                                               id="btnSearch">
                                     </div>
                                 </div>
+                                <br>
                                 <div class="row">
                                     <div class="col-sm-12">
                                         <table id="example2" class="table table-bordered table-hover">
@@ -113,31 +118,10 @@
                                                 <th></th>
                                             </tr>
                                             </thead>
-                                            <tbody>
-                                            <div class="row text-center">
-                                                <?php
-                                                foreach ($listResortNotBanner as $key => $itemResort) {
-                                                    ?>
-                                                    <tr>
-                                                        <form
-                                                            action="<?= BASE_URL_ADMIN ?>controllerbanner/insertBanner"
-                                                            method="POST">
-                                                            <input type="text" style="visibility: hidden" id="idResort"
-                                                                   name="idResort"
-                                                                   value="<?= $itemResort['r'] ?>">
-                                                            <td><?php echo $itemResort['name']; ?></td>
-                                                            <td><?php echo $itemResort['address']; ?></td>
-                                                            <td><?php echo $itemResort['priority']; ?></td>
-                                                            <td><?php echo ($itemResort['status'] == 0) ? 'Còn hiệu lực' : 'Hạn chế' ?></td>
-                                                            <td><?php echo ($itemResort['id_resort_type'] == 0) ? 'Resort' : 'Home' ?></td>
-                                                            <td><input value="Thêm" type="submit"
-                                                                       class="btn btn-primary"></td>
-                                                        </form>
-                                                    </tr>
-                                                <?php } ?>
-                                            </div>
+                                            <tbody id="pagingResort">
                                             </tbody>
                                         </table>
+                                        <div id="page" class="pages col-md-12" style="text-align: center"></div>
                                     </div>
                                 </div>
                             </div>
@@ -157,11 +141,7 @@
 <!-- /.content-wrapper -->
 
 <footer class="main-footer">
-    <div class="pull-right hidden-xs">
-        <b>Version</b> 2.3.6
-    </div>
-    <strong>Copyright &copy; 2014-2016 <a href="http://almsaeedstudio.com">Almsaeed Studio</a>.</strong> All rights
-    reserved.
+    <strong>Copyright &copy; 2016 <a href="http://hbbsolution.com/">HBB Web Team</a>.</strong> All rights reserved.
 </footer>
 
 <!-- ./wrapper -->
@@ -181,17 +161,98 @@
 <script src="<?= BASE_DIR ?>plugins/iCheck/icheck.min.js"></script>
 
 <script type="text/javascript" src="<?= BASE_DIR ?>ckeditor/ckeditor.js"></script>
+<script> var BASE_ADMIN = '<?=BASE_URL_ADMIN?>';</script>
 <script>
-    $(function () {
-        $("#example1").DataTable();
-        $('#example2').DataTable({
-            "paging": true,
-            "lengthChange": true,
-            "searching": true,
-            "ordering": true,
-            "info": true,
-            "autoWidth": false
+    function search() {
+        var txtSearch = $('#txtSearch').val();
+        $.ajax({
+            url: BASE_ADMIN + "controllerbanner/search",
+            type: "POST",
+            dataType: "json",
+            cache: false,
+            data: {
+                "txtSearch": txtSearch
+            },
+            success: function (data) {
+                paging(data, 1);
+            }
+        }).done(function (data) {
         });
+        return true;
+    }
+
+    function paging(data, page) {
+        if (data.length > 0) {
+            var dataPaging = "";
+            page = parseInt(page);
+            var begin = (page - 1) * 15;
+            for (var i = begin; i < begin + 15; i++) {
+                if (i < data.length) {
+                    dataPaging+= '<tr>';
+                    dataPaging+= '<td>' + data[i].name + '</td><td>' + data[i].address + '</td><td>' + data[i].priority + '</td>';
+                    (data[i].status == 1) ? dataPaging += '<td>Hết hiệu lực</td>' : dataPaging += '<td>Còn hiệu lực</td>';
+                    (data[i].id_resort_type == 1) ? dataPaging += '<td>Khu nghỉ dưỡng</td>' : dataPaging += '<td>Trao đổi nhà</td>';
+                    dataPaging += '<td>' + '<a href="' + BASE_ADMIN + 'controllerbanner/insertBanner/' + data[i].r + '"class="btn btn-primary">Thêm</a></td>';
+                    dataPaging += '</tr>';
+                }
+            }
+            $('#pagingResort').empty();
+            $('#pagingResort').append(dataPaging);
+            pagingNumber(data, page);
+        }
+        else {
+            $('#pagingResort').empty();
+            $('#page').empty();
+        }
+    }
+
+    function pagingNumber(data, current) {
+        var str = "<p>Trang  ";
+        var numberPage = Math.ceil(data.length / 15);
+        var currentPage = parseInt(current);
+        var pageList = Math.floor((currentPage - 1) / 5) + 1;
+        var pageEnd = pageList * 5;
+        var pageListLasted = Math.floor((numberPage - 1) / 5) + 1;
+        var pageLast = 1;
+        (pageListLasted != pageList) ? pageLast = pageEnd : pageLast = numberPage;
+
+        if (pageList != 1)
+            str += '<a onclick="loadPage(' + (pageEnd - 5) + ')" >&lsaquo;&lsaquo;  </a>';
+        for (var i = pageEnd - 4; i <= pageLast; i++) {
+            if (i == currentPage)
+                str += '<a style="margin-right: 3px;font-weight: bolder;color:black" class="active" onclick="loadPage(' + i + ')">' + i + '</a>';
+            else if (i != 0)
+                str += '<a style="margin-right: 3px" onclick="loadPage(' + i + ')">' + i + '</a>';
+        }
+        if (pageListLasted != pageList)
+            str += '<a onclick="loadPage(' + (pageEnd + 1) + ')" >  &rsaquo;&rsaquo;</a>';
+        str += '</p>';
+        $('#page').empty();
+        $('#page').append(str);
+    }
+
+    function loadPage(page) {
+        var txtSearch = $('#txtSearch').val();
+        $.ajax({
+            url: BASE_ADMIN + "controllerbanner/search",
+            type: "POST",
+            dataType: "json",
+            cache: false,
+            data: {
+                "txtSearch": txtSearch
+            },
+            success: function (data) {
+                paging(data, page);
+            }
+        }).done(function (data) {
+        });
+        return true;
+    }
+
+</script>
+<script>
+    $(document).ready(function () {
+        search();
     });
 </script>
 </body>

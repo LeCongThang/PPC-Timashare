@@ -3,7 +3,7 @@
     <section class="sidebar">
         <!-- Sidebar user panel -->
         <div class="user-panel" style="color: white">
-            <h4 style="margin-top:10px; font-weight: bold;">Xin chào, <?= $_SESSION['tentaikhoanadmin'] ?></h4>
+            <h4 style="margin-top:10px; font-weight: bold;">Chào, <?= $_SESSION['tentaikhoanadmin'] ?></h4>
         </div>
         <?php
         $menu = new menuhelper([

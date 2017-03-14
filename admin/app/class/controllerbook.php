@@ -29,8 +29,8 @@ class controllerbook
     {
         if (!isset($_SESSION['tendangnhapadmin']))
             header('location:' . BASE_URL_ADMIN . "controlleradmin/index");
-        $listBooking = $this->bv->getAllBooking();
-        $listBookingUpdated = $this->bv->getAllBookingUpdated();
+//        $listBooking = $this->bv->getAllBooking();
+//        $listBookingUpdated = $this->bv->getAllBookingUpdated();
         require "view/quanlybook.php";
     }
 
@@ -56,12 +56,11 @@ class controllerbook
                 $errors[] = "Thành công";
             else
                 $errors[] = "Thất bại mời bạn thực hiện lại";
-            $listBooking = $this->bv->getAllBooking();
-            $listBookingUpdated = $this->bv->getAllBookingUpdated();
-            require "view/quanlybook.php";
+            $this->index();
+        } else {
+            $data = $this->bv->getDetailsBook($id);
+            require_once("view/ReadBooking.php");
         }
-        $data = $this->bv->getDetailsBook($id);
-        require_once("view/ReadBooking.php");
     }
 
     public function get()
@@ -85,5 +84,23 @@ class controllerbook
         }
         $this->bv->delete($this->params[0]);
         redirect(BASE_URL . 'controllerbook/index');
+    }
+
+    public function search()
+    {
+        (isset($_POST['txtSearch'])) ? $txtSearch = $_POST['txtSearch'] : $txtSearch = "";
+        (isset($_POST['txtSearchName'])) ? $txtSearchName = $_POST['txtSearchName'] : $txtSearchName = "";
+        (isset($_POST['txtSearchResort'])) ? $txtSearchResort = $_POST['txtSearchResort'] : $txtSearchResort = "";
+        $list = $this->bv->search($txtSearch, $txtSearchName, $txtSearchResort);
+        echo json_encode($list);
+    }
+
+    public function searchBooked()
+    {
+        (isset($_POST['txtSearchBooked'])) ? $txtSearchBooked = $_POST['txtSearchBooked'] : $txtSearchBooked = "";
+        (isset($_POST['txtSearchNameBooked'])) ? $txtSearchNameBooked = $_POST['txtSearchNameBooked'] : $txtSearchNameBooked = "";
+        (isset($_POST['txtSearchResortBooked'])) ? $txtSearchResortBooked = $_POST['txtSearchResortBooked'] : $txtSearchResortBooked = "";
+        $list = $this->bv->searchBooked($txtSearchBooked, $txtSearchNameBooked, $txtSearchResortBooked);
+        echo json_encode($list);
     }
 }

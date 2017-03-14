@@ -203,11 +203,9 @@ $isUpdate = isset($this->params[0]);
                                     <label for="noidung">Trạng thái</label>
                                     <?php if ($isUpdate) $resort_vi['status'] == 0 ? $inStock = true : $inStock = false; ?>
                                     <label class="radio-inline"><input type="radio" name="resort_status"
-                                                                       value="0" <?php if ($isUpdate) echo $inStock ? "checked" : ""; else echo "checked"; ?> >Còn
-                                        hàng</label>
+                                                                       value="0" <?php if ($isUpdate) echo $inStock ? "checked" : ""; else echo "checked"; ?> >Có hiệu lực</label>
                                     <label class="radio-inline"><input type="radio" name="resort_status"
-                                                                       value="1" <?php if ($isUpdate) echo !$inStock ? "checked" : "" ?>>Hết
-                                        hàng</label>
+                                                                       value="1" <?php if ($isUpdate) echo !$inStock ? "checked" : "" ?>>Hết hiệu lực</label>
                                 </div>
                                 <div class="form-group">
                                     <label for="noidung">Loại dịch vụ</label>

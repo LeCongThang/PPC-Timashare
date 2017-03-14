@@ -94,12 +94,12 @@ $isUpdate = isset($this->params[0]);
                                                 <label for="noidung">Tiêu đề</label>
                                                 <input placeholder="Tiêu đề" class="form-control"
                                                        value="<?php echo $isUpdate ? $data_vi['title'] : "" ?>"
-                                                       name="tieude_vi"
+                                                       name="tieude_vi" required maxlength="50"
                                                        style="font-size:17px;font-family:verdana;text-align:justify;">
                                             </div>
                                             <div class="form-group">
                                                 <label for="noidung">Nội dung</label>
-                                                <textarea placeholder="Mô tả" name="noidung_vi" class="ckeditor"
+                                                <textarea placeholder="Mô tả" name="noidung_vi" class="ckeditor" required
                                                           cols="30"
                                                           rows="10"
                                                           title=""><?php echo $isUpdate ? $data_vi['content'] : "" ?></textarea>
@@ -109,7 +109,7 @@ $isUpdate = isset($this->params[0]);
                                              aria-labelledby="en-tab">
                                             <div class="form-group">
                                                 <label for="noidung">Tiêu đề</label>
-                                                <input placeholder="Tiêu đề" class="form-control"
+                                                <input placeholder="Tiêu đề" class="form-control" required maxlength="50"
                                                        value="<?php echo $isUpdate ? $data_en['title'] : "" ?>"
                                                        name="tieude_en"
                                                        style="font-size:17px;font-family:verdana;text-align:justify;">
@@ -117,7 +117,7 @@ $isUpdate = isset($this->params[0]);
 
                                             <div class="form-group">
                                                 <label for="noidung">Nội dung</label>
-                                                <textarea placeholder="Mô tả" name="noidung_en" class="ckeditor"
+                                                <textarea placeholder="Mô tả" name="noidung_en" class="ckeditor" required
                                                           cols="30"
                                                           rows="10"
                                                           title=""><?php echo $isUpdate ? $data_en['content'] : "" ?></textarea>
@@ -128,7 +128,7 @@ $isUpdate = isset($this->params[0]);
                                     <div class="form-group">
                                         <label for="noidung">Chọn khu nghỉ dưỡng</label>
                                         <select class="js-example-basic-multiple js-states form-control"
-                                                style="color: black!important;"
+                                                style="color: black!important;" required
                                                 id="id_label_multiple" name="list_resort[]"
                                                 multiple="multiple">
                                             <?php
@@ -144,7 +144,7 @@ $isUpdate = isset($this->params[0]);
                                         <div class="col-md-1" style="padding-left: 0px"><h5><b>Từ ngày</b></h5></div>
                                         <div class="col-md-5">
                                             <div class='input-group date' id='datetimepicker6'>
-                                                <input type='text' class="form-control"
+                                                <input type='text' class="form-control" required
                                                        name="date_start" <?php if ($isUpdate) echo 'value="' . $data_detail[0]['start_date'] . '"'; ?>/>
                                                 <span class="input-group-addon"><span
                                                         class="glyphicon glyphicon-calendar"></span></span>
@@ -153,7 +153,7 @@ $isUpdate = isset($this->params[0]);
                                         <div class="col-md-1" style="padding-left: 0px"><h5><b>Đến ngày</b></h5></div>
                                         <div class="col-md-5" style="padding-right: 0px">
                                             <div class='input-group date' id='datetimepicker7'>
-                                                <input type='text' class="form-control"
+                                                <input type='text' class="form-control" required
                                                        name="date_end" <?php if ($isUpdate) echo 'value="' . $data_detail[0]['end_date'] . '"'; ?>/>
                                                 <span class="input-group-addon"><span
                                                         class="glyphicon glyphicon-calendar"></span></span>
@@ -187,10 +187,7 @@ $isUpdate = isset($this->params[0]);
 <!-- /.content-wrapper -->
 
 <footer class="main-footer">
-    <div class="pull-right hidden-xs">
-        <b>Version</b> 2.3.6
-    </div>
-    <strong>Copyright &copy; 2014-2016 <a href="http://almsaeedstudio.com">Almsaeed Studio</a>.</strong> All rights
+    <strong>Copyright &copy; 2016 <a href="http://hbbsolution.com/">HBB Web Team</a>.</strong> All rights
     reserved.
 </footer>
 

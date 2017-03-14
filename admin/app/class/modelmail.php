@@ -73,6 +73,50 @@ class modelmail
         $sql = "UPDATE lienhe SET trangthai = 1, nguoi_duyet = '" . $_SESSION['tendangnhapadmin'] . "' WHERE id = " . $id;
         return $this->db->query($sql);
     }
+
+    public function search($txtSearchName,$txtSearchAddress,$txtSearchPhone)
+    {
+        $sql = "SELECT * FROM lienhe WHERE trangthai =0 ";
+        if($txtSearchName != "")
+            $sql.= " AND ten_lienhe like '%".$txtSearchName."%'";
+        if($txtSearchAddress != "")
+            $sql.= " AND email_lienhe like '%".$txtSearchAddress."%'";
+        if($txtSearchPhone != "")
+            $sql.= " AND sdt_lienhe like '%".$txtSearchPhone."%'";
+        $result = mysqli_query($this->db, $sql);
+        if (!$result) {
+            die("Error in query");
+        }
+        $list = array();
+        while ($row = mysqli_fetch_assoc($result)) {
+            $list[] = $row;
+        }
+        //remove out of memory
+        mysqli_free_result($result);
+        return $list;
+    }
+
+    public function searchChecked($txtSearchName,$txtSearchAddress,$txtSearchPhone)
+    {
+        $sql = "SELECT * FROM lienhe WHERE trangthai =1 ";
+        if($txtSearchName != "")
+            $sql.= " AND ten_lienhe like '%".$txtSearchName."%'";
+        if($txtSearchAddress != "")
+            $sql.= " AND email_lienhe like '%".$txtSearchAddress."%'";
+        if($txtSearchPhone != "")
+            $sql.= " AND sdt_lienhe like '%".$txtSearchPhone."%'";
+        $result = mysqli_query($this->db, $sql);
+        if (!$result) {
+            die("Error in query");
+        }
+        $list = array();
+        while ($row = mysqli_fetch_assoc($result)) {
+            $list[] = $row;
+        }
+        //remove out of memory
+        mysqli_free_result($result);
+        return $list;
+    }
 }//class
 
 

@@ -39,8 +39,36 @@ class controllervideo
     {
         if (!isset($_SESSION['tendangnhapadmin']))
             header('location:' . BASE_URL_ADMIN . "controlleradmin/index");
-        $ds_video = $this->controllervideo->laydanhvideo();
+        $currentPage = 1;
+        $numberPage = $this->getNumberPage();
+        $items = 5;
+
+        if (isset($this->params[0]))
+            if ($this->params[0] <= $numberPage)
+                $currentPage = $this->params[0];
+
+        $pageList = intval(($currentPage - 1) / 5) + 1;
+        $pageEnd = $pageList * 5;
+        $pageListLasted = intval(($numberPage - 1) / 5) + 1;
+
+        $offset = ($currentPage - 1) * $items;
+
+        ($pageListLasted != $pageList) ? $lastPage = $pageEnd : $lastPage = $numberPage;
+        $ds_video = $this->controllervideo->laydanhvideolimit($offset,$items);
         require_once("view/quanlyvideo.php");
+    }
+
+    public function getNumberPage()
+    {
+        $numberAll = $this->controllervideo->getNumber();
+        $pages = $numberAll / 5;
+        $tmp = explode(".", $pages);
+        if (count($tmp) > 1) {
+            $pages = $tmp[0] + 1;
+        } else {
+            $pages = $tmp[0];
+        }
+        return $pages;
     }
 
     public function create()
@@ -57,8 +85,7 @@ class controllervideo
                     $this->errors[] = 'Thêm video thành công!';
                 else
                     $this->errors[] = 'Lỗi! Thêm video không thành công!';
-                $ds_video = $this->controllervideo->laydanhvideo();
-                require_once("view/quanlyvideo.php");
+               $this->index();
                 return true;
         }
         require_once("view/create-video.php");
@@ -71,8 +98,7 @@ class controllervideo
         $id = $this->params[0];
 
         $this->controllervideo->delete($id);
-        $ds_video = $this->controllervideo->laydanhvideo();
-        require_once("view/quanlyvideo.php");
+        $this->index();
         return true;
 
     }

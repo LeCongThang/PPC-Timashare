@@ -81,6 +81,22 @@
                                 <?php endforeach; ?>
                                 </tbody>
                             </table>
+                            <div id="page" class="pages col-md-12" style="text-align: center">
+                                <p>Trang
+                                    <?php
+                                    if ($pageList != 1)
+                                        echo '<a href="' . BASE_DIR_ADMIN . 'controllercauhoi/index/' . ($pageEnd - 5) . '">&lsaquo;&lsaquo;  </a>';
+                                    for ($i = $pageEnd - 4; $i <= $lastPage; $i++) {
+                                        if ($i == $currentPage)
+                                            echo '<a style="margin-right: 3px;font-weight: bolder;color:black" class="active"  href="' . BASE_DIR_ADMIN . 'controllercauhoi/index/' . ($i) . '">' . $i . '</a>';
+                                        else if ($i != 0)
+                                            echo '<a style="margin-right: 3px" href="' . BASE_DIR_ADMIN . 'controllercauhoi/index/' . ($i) . '">' . $i . '</a>';
+                                    }
+                                    if ($pageListLasted != $pageList)
+                                        echo '<a href="' . BASE_DIR_ADMIN . 'controllercauhoi/index/' . ($pageEnd + 1) . '">  &rsaquo;&rsaquo;</a>';
+                                    ?>
+                                </p>
+                            </div>
                         </div>
                         <!-- /.box-body -->
                         <div class="box-footer">
@@ -101,10 +117,7 @@
 <!-- /.content-wrapper -->
 
 <footer class="main-footer">
-    <div class="pull-right hidden-xs">
-        <b>Version</b> 2.3.6
-    </div>
-    <strong>Copyright &copy; 2014-2016 <a href="http://almsaeedstudio.com">Almsaeed Studio</a>.</strong> All rights
+    <strong>Copyright &copy; 2016 <a href="http://hbbsolution.com/">HBB Web Team</a>.</strong> All rights
     reserved.
 </footer>
 

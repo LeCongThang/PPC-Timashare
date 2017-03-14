@@ -26,9 +26,26 @@
 
     <form class="form-signin" action="<?= BASE_URL_ADMIN ?>controlleradmin/dangNhap" method="POST">
         <h1 style="color: white" class="form-signin-heading text-muted">Đăng nhập</h1>
-        <input type="text" class="form-control" placeholder="Tên đăng nhập" required="" autofocus="" name="username">
-        <input type="password" class="form-control" placeholder="Mật khẩu" required="" name="password">
+        <?php
+        if (isset($_COOKIE["tendangnhap"]))
+            echo '<input type="text" class="form-control" placeholder="Tên đăng nhập" required="" autofocus="" name="username" value="'.$_COOKIE['tendangnhap'].'" >';
+        else
+            echo '<input type="text" class="form-control" placeholder="Tên đăng nhập" required="" autofocus="" name="username">';
+        ?>
+        <?php
+        if (isset($_COOKIE["matkhau"]))
+            echo '<input type="password" class="form-control" placeholder="Mật khẩu" required="" name="password" value="'.$_COOKIE['matkhau'].'" >';
+        else
+            echo '<input type="password" class="form-control" placeholder="Mật khẩu" required="" name="password">';
+        ?>
 
+
+        <?php
+        if (isset($_COOKIE["rememberme"]))
+            echo " <input id='rememberme' type='checkbox'  name='rememberme' checked='checked'><label style='color: white'>  Nhớ mật khẩu ?</label>";
+        else
+            echo " <input id='rememberme' type='checkbox'  name='rememberme' ><label style='color: white'>  Nhớ mật khẩu ?</label>";
+        ?>
         <button class="btn btn-lg btn-primary btn-block" type="submit">
             Đăng nhập
         </button>

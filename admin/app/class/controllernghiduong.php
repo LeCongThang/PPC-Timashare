@@ -20,12 +20,9 @@ class controllernghiduong
 
     function index()
     {
+
         if (!isset($_SESSION['tendangnhapadmin']))
             header('location:' . BASE_URL_ADMIN . "controlleradmin/index");
-        $listResortVi = $this->control->getListResort('vi');
-        $listResortEn = $this->control->getListResort('en');
-        $listHomeVi = $this->control->getListHome('vi');
-        $listHomeEn = $this->control->getListHome('en');
         require_once("view/quanlykhunghiduong.php");
     }
 
@@ -48,6 +45,19 @@ class controllernghiduong
 
         }
         return null;
+    }
+
+    public function getNumberPage()
+    {
+        $numberAll = $this->control->getNumberPage("", "");
+        $pages = $numberAll / 15;
+        $tmp = explode(".", $pages);
+        if (count($tmp) > 1) {
+            $pages = $tmp[0] + 1;
+        } else {
+            $pages = $tmp[0];
+        }
+        return $pages;
     }
 
     public function create()
@@ -93,11 +103,7 @@ class controllernghiduong
                     $this->errors[] = 'Tạo khu nghỉ dưỡng thành công!';
                 else
                     $this->errors[] = 'Lỗi! Tạo khu nghỉ dưỡng không thành công!';
-                $listResortVi = $this->control->getListResort('vi');
-                $listResortEn = $this->control->getListResort('en');
-                $listHomeVi = $this->control->getListHome('vi');
-                $listHomeEn = $this->control->getListHome('en');
-                require_once("view/quanlykhunghiduong.php");
+                $this->index();
                 return true;
             } else {
                 $this->errors[] = 'Vui lòng chọn hình ảnh!';
@@ -161,11 +167,7 @@ class controllernghiduong
                     $this->errors[] = 'Cập nhật khu nghỉ dưỡng thành công!';
                 else
                     $this->errors[] = 'Lỗi! Cập nhật khu nghỉ dưỡng không thành công!';
-                $listResortVi = $this->control->getListResort('vi');
-                $listResortEn = $this->control->getListResort('en');
-                $listHomeVi = $this->control->getListHome('vi');
-                $listHomeEn = $this->control->getListHome('en');
-                require_once("view/quanlykhunghiduong.php");
+                $this->index();
                 return true;
             } else {
                 $this->errors[] = 'Vui lòng chọn hình ảnh!';
@@ -188,12 +190,16 @@ class controllernghiduong
             $this->errors[] = 'Xóa khu nghỉ dưỡng thành công!';
         else
             $this->errors[] = 'Xóa khu nghỉ dưỡng thất bại!';
-        $listResortVi = $this->control->getListResort('vi');
-        $listResortEn = $this->control->getListResort('en');
-        $listHomeVi = $this->control->getListHome('vi');
-        $listHomeEn = $this->control->getListHome('en');
-        require_once("view/quanlykhunghiduong.php");
+        $this->index();
     }
 
 
+    public function search()
+    {
+        (isset($_POST['txtSearch'])) ? $txtSearch = $_POST['txtSearch'] : $txtSearch = "";
+        (isset($_POST['type'])) ? $type = $_POST['type'] : $type = -1;
+        (isset($_POST['status'])) ? $status = $_POST['status'] : $status = -1;
+        $list = $this->control->search($txtSearch, $type, $status);
+        echo json_encode($list);
+    }
 }//class

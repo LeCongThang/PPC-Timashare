@@ -47,6 +47,35 @@
                             </div>
                         </div>
                         <div class="box-body">
+                            <div class="row">
+                                <div class="col-md-3">
+                                    <input class="form-control" type="text" value="" id="txtSearch"
+                                           placeholder="Tên đăng nhập">
+                                </div>
+                                <div class="col-md-3">
+                                    <input class="form-control" type="text" value="" id="txtSearchPhone"
+                                           placeholder="Số điện thoại">
+                                </div>
+                                <div class="col-md-2">
+                                    <select id="type" class="form-control">
+                                        <option value="-1" selected>Phân loại</option>
+                                        <option value="1">User</option>
+                                        <option value="2">Admin</option>
+                                    </select>
+                                </div>
+                                <div class="col-md-2">
+                                    <select id="status" class="form-control">
+                                        <option value="-1" selected>Trạng thái</option>
+                                        <option value="0">Còn hiệu lực</option>
+                                        <option value="1">Vô hiệu hóa</option>
+                                    </select>
+                                </div>
+                                <div class="col-md-2">
+                                    <input class="form-control btn btn-primary" type="button" value="Tìm kiếm"
+                                           onclick="search()"
+                                           id="btnSearch">
+                                </div>
+                            </div>
                             <table class="table">
                                 <thead>
                                 <tr>
@@ -59,27 +88,11 @@
                                     <td></td>
                                 </tr>
                                 </thead>
-                                <tbody>
-                                <div class="row text-center">
-                                    <?php
-                                    foreach ($ds_tai_khoan as $key => $item_taikhoan) {
-                                        ?>
-                                        <tr>
-                                            <td><?php echo $item_taikhoan['tendangnhap']; ?></td>
-                                            <td><?php echo $item_taikhoan['hoten']; ?></td>
-                                            <td><?php echo $item_taikhoan['diachi']; ?></td>
-                                            <td><?php echo $item_taikhoan['dienthoai']; ?></td>
-                                            <td><?php echo ($item_taikhoan['id_vaitro'] == 1) ? 'user' : 'admin' ?></td>
-                                            <td><?php echo ($item_taikhoan['status'] == 0) ? 'Còn hiệu lực' : 'Hạn chế' ?></td>
-                                            <td>
-                                                <a href="<?= BASE_URL_ADMIN ?>controllertaikhoan/update/<?= $item_taikhoan['id'] ?>"
-                                                   class="btn btn-primary">Sửa</a>
-                                            </td>
-                                        </tr>
-                                    <?php } ?>
-                                </div>
+                                <tbody id="pagingAccount">
                                 </tbody>
                             </table>
+                            <div id="page" class="pages col-md-12" style="text-align: center">
+                            </div>
                         </div>
                         <!-- /.box-body -->
                     </div>
@@ -93,12 +106,8 @@
     </div>
 </div>
 <!-- /.content-wrapper -->
-
 <footer class="main-footer">
-    <div class="pull-right hidden-xs">
-        <b>Version</b> 2.3.6
-    </div>
-    <strong>Copyright &copy; 2014-2016 <a href="http://almsaeedstudio.com">Almsaeed Studio</a>.</strong> All rights
+    <strong>Copyright &copy; 2016 <a href="http://hbbsolution.com/">HBB Web Team</a>.</strong> All rights
     reserved.
 </footer>
 
@@ -119,7 +128,115 @@
 <script src="<?= BASE_DIR ?>plugins/iCheck/icheck.min.js"></script>
 
 <script type="text/javascript" src="<?= BASE_DIR ?>ckeditor/ckeditor.js"></script>
+<script> var BASE_ADMIN = '<?=BASE_URL_ADMIN?>';</script>
+<script>
+    function search() {
+        var txtSearch = $('#txtSearch').val();
+        var txtSearchPhone = $('#txtSearchPhone').val();
+        var type_ = document.getElementById("type");
+        var type = type_.options[type_.selectedIndex].value;
+        var status_ = document.getElementById("status");
+        var status = status_.options[status_.selectedIndex].value;
+        $.ajax({
+            url: BASE_ADMIN + "controllertaikhoan/search",
+            type: "POST",
+            dataType: "json",
+            cache: false,
+            data: {
+                "txtSearch": txtSearch,
+                "txtSearchPhone": txtSearchPhone,
+                "type": type,
+                "status": status
+            },
+            success: function (data) {
+                paging(data, 1);
+            }
+        }).done(function (data) {
+        });
+        return true;
+    }
 
+    function paging(data, page) {
+        if (data.length > 0) {
+            var dataPaging = "";
+            page = parseInt(page);
+            var begin = (page - 1) * 15;
+            for (var i = begin; i < begin + 15; i++) {
+                if (i < data.length) {
+                    dataPaging += '<tr><td>' + data[i].tendangnhap + '</td><td>' + data[i].hoten + '</td><td>' + data[i].diachi + '</td><td>' + data[i].dienthoai + '</td>';
+                    (data[i].id_vaitro == 1) ? dataPaging += '<td>User</td>' : dataPaging += '<td>Admin</td>';
+                    (data[i].status == 1) ? dataPaging += '<td>Hết hiệu lực</td>' : dataPaging += '<td>Còn hiệu lực</td>';
+                    dataPaging += '<td>' + '<a href="' + BASE_ADMIN + 'controllertaikhoan/update/' + data[i].id + '"class="btn btn-primary">Sửa</a></td>';
+                    dataPaging += '</tr>';
+                }
+            }
+            $('#pagingAccount').empty();
+            $('#pagingAccount').append(dataPaging);
+            pagingNumber(data, page);
+        }
+        else {
+            $('#pagingAccount').empty();
+            $('#page').empty();
+        }
+    }
+
+    function pagingNumber(data, current) {
+        var str = "<p>Trang  ";
+        var numberPage = Math.ceil(data.length / 15);
+        var currentPage = parseInt(current);
+        var pageList = Math.floor((currentPage - 1) / 5) + 1;
+        var pageEnd = pageList * 5;
+        var pageListLasted = Math.floor((numberPage - 1) / 5) + 1;
+        var pageLast = 1;
+        (pageListLasted != pageList) ? pageLast = pageEnd : pageLast = numberPage;
+
+        if (pageList != 1)
+            str += '<a onclick="loadPage(' + (pageEnd - 5) + ')" >&lsaquo;&lsaquo;  </a>';
+        for (var i = pageEnd - 4; i <= pageLast; i++) {
+            if (i == currentPage)
+                str += '<a style="margin-right: 3px;font-weight: bolder;color:black" class="active" onclick="loadPage(' + i + ')">' + i + '</a>';
+            else if (i != 0)
+                str += '<a style="margin-right: 3px" onclick="loadPage(' + i + ')">' + i + '</a>';
+        }
+        if (pageListLasted != pageList)
+            str += '<a onclick="loadPage(' + (pageEnd + 1) + ')" >  &rsaquo;&rsaquo;</a>';
+        str += '</p>';
+        $('#page').empty();
+        $('#page').append(str);
+    }
+
+    function loadPage(page) {
+        var txtSearch = $('#txtSearch').val();
+        var txtSearchPhone = $('#txtSearchPhone').val();
+        var type_ = document.getElementById("type");
+        var type = type_.options[type_.selectedIndex].value;
+        var status_ = document.getElementById("status");
+        var status = status_.options[status_.selectedIndex].value;
+        $.ajax({
+            url: BASE_ADMIN + "controllertaikhoan/search",
+            type: "POST",
+            dataType: "json",
+            cache: false,
+            data: {
+                "txtSearch": txtSearch,
+                "txtSearchPhone": txtSearchPhone,
+                "type": type,
+                "status": status
+            },
+            success: function (data) {
+                paging(data, page);
+            }
+        }).done(function (data) {
+        });
+        return true;
+    }
+
+</script>
+<script>
+    $(document).ready(function () {
+        search();
+    });
+</script>
 </body>
 
 </html>

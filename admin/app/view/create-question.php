@@ -77,7 +77,7 @@ $isUpdate = isset($this->params[0]);
                                             <div class="form-group">
                                                 <label for="noidung">Câu hỏi</label>
                                                 <textarea placeholder="Câu hỏi" name="cau_hoi_vi" class="ckeditor" cols="30"
-                                                          rows="10"
+                                                          rows="10" required
                                                           title="">
                                         <?php echo $isUpdate ? $data_vi['cauhoi'] : "" ?>
                                     </textarea>
@@ -85,7 +85,7 @@ $isUpdate = isset($this->params[0]);
                                             <div class="form-group">
                                                 <label for="noidung">Câu trả lời</label>
                                                 <textarea placeholder="Câu trả lời" name="cau_tra_loi_vi" class="ckeditor" cols="30"
-                                                          rows="10"
+                                                          rows="10" required
                                                           title="">
                                         <?php echo $isUpdate ? $data_vi['cautraloi'] : "" ?>
                                     </textarea>
@@ -97,7 +97,7 @@ $isUpdate = isset($this->params[0]);
                                             <div class="form-group">
                                                 <label for="noidung">Câu hỏi</label>
                                                 <textarea placeholder="Câu hỏi" name="cau_hoi_en" class="ckeditor" cols="30"
-                                                          rows="10"
+                                                          rows="10" required
                                                           title="">
                                         <?php echo $isUpdate ? $data_en['cauhoi'] : "" ?>
                                     </textarea>
@@ -105,7 +105,7 @@ $isUpdate = isset($this->params[0]);
                                             <div class="form-group">
                                                 <label for="noidung">Câu trả lời</label>
                                                 <textarea placeholder="Câu trả lời" name="cau_tra_loi_en" class="ckeditor" cols="30"
-                                                          rows="10"
+                                                          rows="10" required
                                                           title="">
                                         <?php echo $isUpdate ? $data_en['cautraloi'] : "" ?>
                                     </textarea>
@@ -138,10 +138,7 @@ $isUpdate = isset($this->params[0]);
 <!-- /.content-wrapper -->
 
 <footer class="main-footer">
-    <div class="pull-right hidden-xs">
-        <b>Version</b> 2.3.6
-    </div>
-    <strong>Copyright &copy; 2014-2016 <a href="http://almsaeedstudio.com">Almsaeed Studio</a>.</strong> All rights
+    <strong>Copyright &copy; 2016 <a href="http://hbbsolution.com/">HBB Web Team</a>.</strong> All rights
     reserved.
 </footer>
 

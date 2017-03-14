@@ -7,14 +7,14 @@
         //Cac gia mac cua options
         //=============================================
         var defaults = {
-            "rows": "#row_resort",
+            "rows": "#rowResort",
             "pages": "#",
             "items": 5,
             "height": 27,
             "currentPage": 1,
             "total": 0,
-            "btnPrevious": ".goPrevious_announce",
-            "btnNext": ".goNext_announce",
+            "btnPrevious": ".goPrevious_resort",
+            "btnNext": ".goNext_resort",
             "txtCurrentPage": "#currentPage_announce",
             "pageInfo": ".pageInfo_announce"
         };
@@ -35,7 +35,7 @@
         //Khoi tao cac ham can thi khi Plugin duoc su dung
         //=============================================
         init();
-        //setRowsHeight();
+        setRowsHeight();
 
         //=============================================
         //Ham khoi dong
@@ -44,13 +44,18 @@
 
             //Lay tong so trang
             $.ajax({
-                url: lang + "/controller/getNumberResort/" +id,
+                url: "/controllernghiduong/getNumberResort",
                 type: "POST",
                 dataType: "json",
                 cache: false,
                 data: {
-                    "resort_type": resort_type,
-                    "sort_by": sort_by
+                    "txtSearch": txtSearch,
+                    "type": type,
+                    "status": status
+                },
+                error: function (xhr, status, error) {
+                    var err = eval("(" + xhr.responseText + ")");
+                    alert(err.Message);
                 }
             }).done(function (data) {
                 options.total = data.total;
@@ -60,15 +65,6 @@
             //Gan su kien vao cho btnPrevious - btnNext - txtCurrentPage
             setCurrentPage(options.currentPage);
 
-            btnPrevious.on("click", function (e) {
-                goPrevious();
-                e.stopImmediatePropagation();
-            });
-
-            btnNext.on("click", function (e) {
-                goNext();
-                e.stopImmediatePropagation();
-            });
 
             txtCurrentPage.on("keyup", function (e) {
 
@@ -102,28 +98,14 @@
         //Ham xu ly khi nhan vao nut btnPrevious
         //=============================================
         function goPrevious() {
-            //console.log("goPrevious: " + options.currentPage);
-            if (options.currentPage != 1) {
-                var p = options.currentPage - 1;
-                loadData(p);
-                setCurrentPage(p);
-                options.currentPage = p;
-                pageInfo();
-            }
+
         }
 
         //=============================================
         //Ham xu ly khi nhan vao nut btnNext
         //=============================================
         function goNext() {
-            //console.log("goNext: " + options.currentPage);
-            if (options.currentPage != options.total) {
-                var p = options.currentPage + 1;
-                loadData(p);
-                setCurrentPage(p);
-                options.currentPage = p;
-                pageInfo();
-            }
+
         }
 
         function goCurrentPage(value) {
@@ -163,7 +145,7 @@
         function loadData(page) {
             //console.log("loadData");
             $.ajax({
-                url: lang + "/controller/getAllResort/" +id,
+                url: lang + "/controller/getAllResort",
                 type: "POST",
                 dataType: "json",
                 cache: false,
@@ -172,7 +154,12 @@
                     "sort_by": sort_by,
                     "items": options.items,
                     "currentPage": page
+                },
+                error: function (xhr, status, error) {
+                    var err = eval("(" + xhr.responseText + ")");
+                    alert(err.Message);
                 }
+
             }).done(function (data) {
                 //console.log(data);
                 if (data.length > 0) {
@@ -188,20 +175,19 @@
                             '<a href="' + base_url + lang + '/controller/loadingDetailsResort/' + val.id + '" id="btnreadmore" style="position: absolute;bottom: 0px;left: 15px"><b>' + tim_hieu_them + '</b></a></div>';
                         rows.append(str);
                     });
-
                     var pageNumber = parseInt(page);
                     var pageList = Math.floor((pageNumber - 1) / 3) + 1;
-                    // console.log(pageList);
+                   // console.log(pageList);
                     var pageEnd = pageList * 3;
                     var pageListLasted = Math.floor((options.total - 1) / 3) + 1;
                     //console.log(rows);
                     var temp = "";
                     if (pageListLasted != pageList){
-                        for (var i = pageEnd - 2; i <= pageEnd; i++) {
-                            if (i == pageNumber)  temp += '<a class="a_active" href="#" style="margin-right: 3px" data-value = ' + i + '>' + i + '</a>';
-                            else if (i != 0)
-                                temp += '<a href="#" style="margin-right: 3px" data-value = ' + i + '>' + i + '</a>';
-                        }
+                    for (var i = pageEnd - 2; i <= pageEnd; i++) {
+                        if (i == pageNumber)  temp += '<a class="a_active" href="#" style="margin-right: 3px" data-value = ' + i + '>' + i + '</a>';
+                        else if (i != 0)
+                            temp += '<a href="#" style="margin-right: 3px" data-value = ' + i + '>' + i + '</a>';
+                    }
                     } else
                     {
                         for (var i = pageEnd - 2; i <= options.total; i++) {
@@ -230,7 +216,7 @@
 
 $(document).ready(function (e) {
     var obj = {'items': 2};
-    $("#paging_resort").zPaging(obj);
+    $("#pagingResort").zPaging(obj);
 });
 
 

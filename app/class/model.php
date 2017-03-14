@@ -378,7 +378,7 @@ class model
 
     public function getDetailsResortWithOneImage($id)
     {
-        $sql = "SELECT * FROM resort, resort_image, resort_language WHERE resort.id = resort_image.id_resort AND resort_language.id_resort = resort.id AND resort_language.language = '" . $_SESSION['lang'] . "' " . " AND resort.id = {$id} LIMIT 1";
+        $sql = "SELECT * FROM resort, resort_image, resort_language WHERE resort.id = resort_image.id_resort AND resort_language.id_resort = resort.id AND resort.status = 0 AND resort_language.language = '" . $_SESSION['lang'] . "' " . " AND resort.id = {$id} LIMIT 1";
         $result = mysqli_query($this->db, $sql);
         if (!$result) {
             die("Error in query in getDetailsResortWithOneImage");
@@ -769,7 +769,7 @@ class model
 
     public function getAllResort($resort_type_clause, $sort_by_clause)
     {
-        $sql = "SELECT * FROM resort, resort_image, resort_language WHERE resort.id = resort_image.id_resort AND resort_language.id_resort = resort.id AND resort_language.language = '" . $_SESSION['lang'] . "' " . $resort_type_clause . $sort_by_clause . " GROUP BY resort.id";
+        $sql = "SELECT * FROM resort, resort_image, resort_language WHERE resort.id = resort_image.id_resort AND resort.status = 0 AND resort_language.id_resort = resort.id AND resort_language.language = '" . $_SESSION['lang'] . "' " . $resort_type_clause . $sort_by_clause . " GROUP BY resort.id";
         $result = mysqli_query($this->db, $sql);
         if (!$result) {
             die("Error in query in setIdContinents");
@@ -786,9 +786,9 @@ class model
 
     public function getNumberResort($resort_type_clause, $sort_by_clause)
     {
-        $sql = "select count(id) as total from resort WHERE " . $resort_type_clause . $sort_by_clause;
+        $sql = "select count(id) as total from resort WHERE  " . $resort_type_clause . $sort_by_clause. "";
         if ($resort_type_clause == "" && $sort_by_clause == "")
-            $sql = $sql . " 1";
+            $sql = $sql . " 1 AND resort.status = 0";
         $result = $this->db->query($sql);
         $row = mysqli_fetch_assoc($result);
         return $row['total'];
@@ -797,7 +797,7 @@ class model
     public function getNumberHint($lat, $lng, $distance)
     {
 
-        $sql = "select count(id) as total from resort WHERE calc_distance(" . $lat . "," . $lng . ", resort.lat, resort.lng) < " . $distance ;
+        $sql = "select count(id) as total from resort WHERE calc_distance(" . $lat . "," . $lng . ", resort.lat, resort.lng) < " . $distance. " AND resort.status = 0" ;
         $result = $this->db->query($sql);
         $row = mysqli_fetch_assoc($result);
         return $row['total'];
@@ -806,7 +806,7 @@ class model
     // getNumber By Country
     public function getNumberResortByCountinent($idCountinent, $resort_type_clause, $sort_by_clause)
     {
-        $sql = "SELECT COUNT(id) as total FROM resort WHERE id_city IN (SELECT city.id FROM city WHERE city.id_country IN ( SELECT country.id FROM country WHERE country.id_continents = " . $idCountinent . " )) " . $resort_type_clause . $sort_by_clause . "";
+        $sql = "SELECT COUNT(id) as total FROM resort WHERE resort.status = 0 AND id_city IN (SELECT city.id FROM city WHERE  city.id_country IN ( SELECT country.id FROM country WHERE country.id_continents = " . $idCountinent . " )) " . $resort_type_clause . $sort_by_clause . "";
         $result = mysqli_query($this->db, $sql);
         if (!$result) {
             die("Error in query in getNumberResortByCountinent");
@@ -820,7 +820,7 @@ class model
     // getNumber By Country
     public function getNumberResortById($id, $resort_type_clause, $sort_by_clause)
     {
-        $sql = "SELECT COUNT(id) as total FROM resort WHERE id_city IN (SELECT city.id FROM city WHERE city.id_country = " . $id . ") " . $resort_type_clause . $sort_by_clause . " ";
+        $sql = "SELECT COUNT(id) as total FROM resort WHERE resort.status = 0 AND id_city IN (SELECT city.id FROM city WHERE city.id_country = " . $id . ") " . $resort_type_clause . $sort_by_clause . " ";
         $result = mysqli_query($this->db, $sql);
         if (!$result) {
             die("Error in query in getNumberResortById");
@@ -832,7 +832,7 @@ class model
     // getNumber By IdCity
     public function getNumberResortByIdCity($id, $resort_type_clause, $sort_by_clause)
     {
-        $sql = "SELECT COUNT(id) as total FROM resort WHERE id_city = " . $id . " " . $resort_type_clause . $sort_by_clause . "";
+        $sql = "SELECT COUNT(id) as total FROM resort  WHERE resort.status = 0 AND id_city = " . $id . " " . $resort_type_clause . $sort_by_clause . "";
         $result = $this->db->query($sql);
         if (!$result) {
             die("Error in query in getNumberResortByIdCity");
@@ -843,7 +843,7 @@ class model
 
     public function getAllResortPage($offset, $items, $resort_type_clause, $sort_by_clause)
     {
-        $sql = "SELECT * FROM resort, resort_image, resort_language WHERE resort.id = resort_image.id_resort AND resort_language.id_resort = resort.id AND resort_language.language = '" . $_SESSION['lang'] . "' " . $resort_type_clause . $sort_by_clause . " GROUP BY resort.id ORDER BY resort.id ASC LIMIT " . $offset . "," . $items;
+        $sql = "SELECT * FROM resort, resort_image, resort_language WHERE resort.status = 0 AND resort.id = resort_image.id_resort AND resort_language.id_resort = resort.id AND resort_language.language = '" . $_SESSION['lang'] . "' " . $resort_type_clause . $sort_by_clause . " GROUP BY resort.id ORDER BY resort.id ASC LIMIT " . $offset . "," . $items;
         $result = mysqli_query($this->db, $sql);
         if (!$result) {
             die($sql);
@@ -859,7 +859,7 @@ class model
 
     public function getAllResortPageById($id, $offset, $items, $resort_type_clause, $sort_by_clause)
     {
-        $sql = "SELECT * FROM resort, resort_image, resort_language WHERE resort.id = resort_image.id_resort AND resort_language.id_resort = resort.id AND resort_language.language = '" . $_SESSION['lang'] . "' " . $resort_type_clause . $sort_by_clause . " AND id_city IN (SELECT city.id FROM city, country WHERE city.id_country = country.id AND country.id =" . $id . ") GROUP BY resort.id ORDER BY resort.id ASC LIMIT " . $offset . "," . $items;
+        $sql = "SELECT * FROM resort, resort_image, resort_language WHERE resort.status = 0 AND resort.id = resort_image.id_resort AND resort_language.id_resort = resort.id AND resort_language.language = '" . $_SESSION['lang'] . "' " . $resort_type_clause . $sort_by_clause . " AND id_city IN (SELECT city.id FROM city, country WHERE city.id_country = country.id AND country.id =" . $id . ") GROUP BY resort.id ORDER BY resort.id ASC LIMIT " . $offset . "," . $items;
         $result = mysqli_query($this->db, $sql);
         if (!$result) {
             die($sql);
@@ -875,7 +875,7 @@ class model
 
     public function getAllResortPageByIdCity($id, $offset, $items, $resort_type_clause, $sort_by_clause)
     {
-        $sql = "SELECT * FROM resort, resort_image, resort_language WHERE resort.id = resort_image.id_resort AND resort_language.id_resort = resort.id AND resort_language.language = '" . $_SESSION['lang'] . "' AND resort.id_city =" . $id . " " . $resort_type_clause . $sort_by_clause . " GROUP BY resort.id ORDER BY resort.id ASC LIMIT " . $offset . "," . $items;
+        $sql = "SELECT * FROM resort, resort_image, resort_language WHERE resort.status = 0 AND resort.id = resort_image.id_resort AND resort_language.id_resort = resort.id AND resort_language.language = '" . $_SESSION['lang'] . "' AND resort.id_city =" . $id . " " . $resort_type_clause . $sort_by_clause . " GROUP BY resort.id ORDER BY resort.id ASC LIMIT " . $offset . "," . $items;
         $result = mysqli_query($this->db, $sql);
         if (!$result) {
             die($sql);
@@ -899,7 +899,7 @@ class model
 
     public function getResortByCountryName($id, $resort_type_clause, $sort_by_clause)
     {
-        $sql = "SELECT * FROM resort, resort_image, resort_language WHERE resort.id = resort_image.id_resort AND resort_language.id_resort = resort.id AND resort_language.language = '" . $_SESSION['lang'] . "' " . $resort_type_clause . $sort_by_clause . " AND id_city IN (SELECT city.id FROM city, country WHERE city.id_country = country.id AND country.id = " . $id . ") GROUP BY resort.id";
+        $sql = "SELECT * FROM resort, resort_image, resort_language WHERE resort.status = 0 AND resort.id = resort_image.id_resort AND resort_language.id_resort = resort.id AND resort_language.language = '" . $_SESSION['lang'] . "' " . $resort_type_clause . $sort_by_clause . " AND id_city IN (SELECT city.id FROM city, country WHERE city.id_country = country.id AND country.id = " . $id . ") GROUP BY resort.id";
         $result = mysqli_query($this->db, $sql);
         if (!$result) {
             die($sql);
@@ -915,7 +915,7 @@ class model
 
     public function getAllResortPageSortByPriority($offset, $items)
     {
-        $sql = "SELECT * FROM resort, resort_image, resort_language WHERE resort.id = resort_image.id_resort AND resort_language.id_resort = resort.id AND resort_language.language = '" . $_SESSION['lang'] . "' GROUP BY resort.id ORDER BY resort.priority DESC, resort.id ASC LIMIT " . $offset . "," . $items;
+        $sql = "SELECT * FROM resort, resort_image, resort_language WHERE resort.status = 0 AND resort.id = resort_image.id_resort AND resort_language.id_resort = resort.id AND resort_language.language = '" . $_SESSION['lang'] . "' GROUP BY resort.id ORDER BY resort.priority DESC, resort.id ASC LIMIT " . $offset . "," . $items;
         $result = mysqli_query($this->db, $sql);
         if (!$result) {
             die($sql);
@@ -931,7 +931,7 @@ class model
 
     public function getAllResortPageSortByDate($offset, $items)
     {
-        $sql = "SELECT * FROM resort, resort_image, resort_language WHERE resort.id = resort_image.id_resort AND resort_language.id_resort = resort.id AND resort_language.language = '" . $_SESSION['lang'] . "' GROUP BY resort.id ORDER BY DATE(created_date) DESC, resort.id ASC LIMIT " . $offset . "," . $items;
+        $sql = "SELECT * FROM resort, resort_image, resort_language WHERE resort.status = 0 AND resort.id = resort_image.id_resort AND resort_language.id_resort = resort.id AND resort_language.language = '" . $_SESSION['lang'] . "' GROUP BY resort.id ORDER BY DATE(created_date) DESC, resort.id ASC LIMIT " . $offset . "," . $items;
         $result = mysqli_query($this->db, $sql);
         if (!$result) {
             die($sql);
@@ -947,7 +947,7 @@ class model
 
     public function getAllResortSortByHint($offset, $items, $lat, $lng, $distance)
     {
-        $sql = "SELECT * FROM resort, resort_image, resort_language WHERE resort.id = resort_image.id_resort AND resort_language.id_resort = resort.id AND resort_language.language = '" . $_SESSION['lang'] . "' AND calc_distance(" . $lat . "," . $lng . ", resort.lat, resort.lng) < " . $distance . " GROUP BY resort.id ORDER BY  resort.id ASC LIMIT " . $offset . "," . $items;
+        $sql = "SELECT * FROM resort, resort_image, resort_language WHERE resort.status = 0 AND resort.id = resort_image.id_resort AND resort_language.id_resort = resort.id AND resort_language.language = '" . $_SESSION['lang'] . "' AND calc_distance(" . $lat . "," . $lng . ", resort.lat, resort.lng) < " . $distance . " GROUP BY resort.id ORDER BY  resort.id ASC LIMIT " . $offset . "," . $items;
         $result = mysqli_query($this->db, $sql);
         if (!$result) {
             die($sql);
@@ -1003,7 +1003,7 @@ class model
 
     public function getAllResortByIdCity($id, $resort_type_clause, $sort_by_clause)
     {
-        $sql = "SELECT * FROM resort, resort_image, resort_language WHERE resort.id = resort_image.id_resort AND resort_language.id_resort = resort.id AND resort_language.language = '" . $_SESSION['lang'] . "' " . $resort_type_clause . $sort_by_clause . " AND resort.id_city = " . $id . " GROUP BY resort.id";
+        $sql = "SELECT * FROM resort, resort_image, resort_language WHERE resort.status = 0 AND resort.id = resort_image.id_resort AND resort_language.id_resort = resort.id AND resort_language.language = '" . $_SESSION['lang'] . "' " . $resort_type_clause . $sort_by_clause . " AND resort.id_city = " . $id . " GROUP BY resort.id";
         $result = mysqli_query($this->db, $sql);
         if (!$result) {
             die($sql);

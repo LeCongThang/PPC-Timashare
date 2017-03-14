@@ -126,7 +126,7 @@
                                             </div>
                                             <div class="col-md-2" style="padding-left: 0px"><h4>Tổng giá</h4></div>
                                             <div class="col-md-2" style="padding-right: 0px">
-                                                <input type="number" class="form-control" min="1" max="100" step="1"
+                                                <input type="number" class="form-control" min="1"  step="1"
                                                        value="<?= $data['total_price'] ?>" name="total_price"
                                                        id="room">
                                             </div>

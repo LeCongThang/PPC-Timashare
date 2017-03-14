@@ -57,7 +57,7 @@
                                     <div class="input-group" style="text-align: center">
                                         <label
                                             class="radio-inline"><input
-                                                type="radio" value="0"
+                                                type="radio" value="0" checked
                                                 name="radGender">Nam</label>
                                         <label
                                             class="radio-inline"><input

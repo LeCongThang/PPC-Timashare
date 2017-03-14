@@ -36,6 +36,30 @@ class modeltaikhoan
         return $list;
     }
 
+    public function getListAccount($offset, $item)
+    {
+        $sql = "SELECT * FROM taikhoan ORDER BY id ASC LIMIT " . $offset . "," . $item;
+        $result = mysqli_query($this->db, $sql);
+        if (!$result) {
+            die("Error in query");
+        }
+        $list = array();
+        while ($row = mysqli_fetch_assoc($result)) {
+            $list[] = $row;
+        }
+        //remove out of memory
+        mysqli_free_result($result);
+        return $list;
+    }
+
+    public function getNumber()
+    {
+        $sql = "select count(id) as total from taikhoan";
+        $result = $this->db->query($sql);
+        $row = mysqli_fetch_assoc($result);
+        return $row['total'];
+    }
+
 
     public function delete($user)
     {
@@ -64,7 +88,7 @@ class modeltaikhoan
     public function createAccount($userName, $hinh, $fullName, $address, $phoneNumber, $gender, $password, $status, $role)
     {
         $passwordHash = password_hash($password, PASSWORD_DEFAULT);
-        $sql = "INSERT INTO taikhoan(tendangnhap, avatar,password,id_vaito,hoten,diachi,dienthoai,sex,status) VALUES ('{$userName}', '{$hinh}','{$passwordHash}',{$role},'{$fullName}','{$address}','{$phoneNumber}',{$gender},{$status} )";
+        $sql = "INSERT INTO taikhoan(tendangnhap, avatar,password,id_vaitro,hoten,diachi,dienthoai,sex,status) VALUES ('{$userName}', '{$hinh}','{$passwordHash}',{$role},'{$fullName}','{$address}','{$phoneNumber}',{$gender},{$status} )";
         $result = mysqli_query($this->db, $sql);
         if (!$result) {
             die("Error in createAccount");
@@ -97,6 +121,31 @@ class modeltaikhoan
         $sql .= " WHERE id='" . $id . "'";
         $kq = $this->db->query($sql);
         return $kq;
+    }
+
+    public function search($txtSearch,$txtSearchPhone, $type, $status)
+    {
+        $sql = "SELECT * FROM taikhoan WHERE 1 ";
+        if ($txtSearch != "")
+            $sql .= " AND hoten like '%" . $txtSearch . "%' ";
+        if ($txtSearchPhone != "")
+            $sql .= " AND dienthoai like '%" . $txtSearchPhone . "%' ";
+        if ($type != -1)
+            $sql .= " AND id_vaitro = " . $type;
+        if ($status != -1)
+            $sql .= " AND status = " . $status;
+        $result = mysqli_query($this->db, $sql);
+        if (!$result) {
+            die("Error in query in search");
+        }
+
+        $list = array();
+        while ($row = mysqli_fetch_assoc($result)) {
+            $list[] = $row;
+        }
+        //remove out of memory
+        mysqli_free_result($result);
+        return $list;
     }
 }//class
 

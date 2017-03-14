@@ -75,7 +75,7 @@
                                         <!-- /.box-header -->
                                         <div class="box-body">
                                             <div class="form-group">
-                                                <input class="form-control"
+                                                <input class="form-control" required
                                                        value="<?php echo $gioithieu_vi['tieu_de']; ?>"
                                                        name="tieude_vi"
                                                        style="font-size:17px;font-family:verdana;text-align:justify;">
@@ -89,7 +89,7 @@
                                     <div class="tab-pane fade" role="tabpanel" id="en" aria-labelledby="en-tab">
                                         <div class="box-body">
                                             <div class="form-group">
-                                                <input class="form-control"
+                                                <input class="form-control" required
                                                        value="<?php echo $gioithieu_en['tieu_de']; ?>"
                                                        name="tieude_en"
                                                        style="font-size:17px;font-family:verdana;text-align:justify;">

@@ -98,6 +98,22 @@
                             <?php } ?>
                             <!-- /.col -->
                             <!-- </table> -->
+                            <div id="page" class="pages col-md-12" style="text-align: center">
+                                <p>Trang
+                                    <?php
+                                    if ($pageList != 1)
+                                        echo '<a href="' . BASE_DIR_ADMIN . 'controllervideo/index/' . ($pageEnd - 5) . '">&lsaquo;&lsaquo;  </a>';
+                                    for ($i = $pageEnd - 4; $i <= $lastPage; $i++) {
+                                        if ($i == $currentPage)
+                                            echo '<a style="margin-right: 3px;font-weight: bolder;color:black" class="active"  href="' . BASE_DIR_ADMIN . 'controllervideo/index/' . ($i) . '">' . $i . '</a>';
+                                        else if ($i != 0)
+                                            echo '<a style="margin-right: 3px" href="' . BASE_DIR_ADMIN . 'controllervideo/index/' . ($i) . '">' . $i . '</a>';
+                                    }
+                                    if ($pageListLasted != $pageList)
+                                        echo '<a href="' . BASE_DIR_ADMIN . 'controllervideo/index/' . ($pageEnd + 1) . '">  &rsaquo;&rsaquo;</a>';
+                                    ?>
+                                </p>
+                            </div>
                         </div>
                     </div>
                 </div>

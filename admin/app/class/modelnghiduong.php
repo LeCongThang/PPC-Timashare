@@ -20,9 +20,34 @@ class modelnghiduong
         }
     }
 
-    public function getListResort($lang)
+
+    public function getNumberPage($clause, $type)
     {
-        $sql = "SELECT * FROM resort, resort_language WHERE resort.id = resort_language.id_resort AND resort_language.language ='" . $lang . "' AND resort.id_resort_type = 1";
+        $sql = "select count(id) as total from resort, resort_language WHERE resort.id = resort_language.id_resort AND resort_language.language = 'vi' " . $clause . $type;
+        $result = $this->db->query($sql);
+        $row = mysqli_fetch_assoc($result);
+        return $row['total'];
+    }
+
+    public function getListAll($lang, $offset, $item)
+    {
+        $sql = "SELECT * FROM resort, resort_language WHERE resort.id = resort_language.id_resort AND resort_language.language ='" . $lang . "' ORDER BY id ASC LIMIT " . $offset . "," . $item;
+        $result = mysqli_query($this->db, $sql);
+        if (!$result) {
+            die("Error in query getListResort");
+        }
+        $list = array();
+        while ($row = mysqli_fetch_assoc($result)) {
+            $list[] = $row;
+        }
+        //remove out of memory
+        mysqli_free_result($result);
+        return $list;
+    }
+
+    public function getListResort($lang, $clause, $offset, $item)
+    {
+        $sql = "SELECT * FROM resort, resort_language WHERE resort.id = resort_language.id_resort AND resort_language.language ='" . $lang . "' AND resort.id_resort_type = 1 " . $clause . " ORDER BY id ASC LIMIT " . $offset . "," . $item;
         $result = mysqli_query($this->db, $sql);
         if (!$result) {
             die("Error in query getListResort");
@@ -52,9 +77,9 @@ class modelnghiduong
         return $list;
     }
 
-    public function getListHome($lang)
+    public function getListHome($lang, $clause, $offset, $item)
     {
-        $sql = "SELECT * FROM resort, resort_language WHERE resort.id = resort_language.id_resort AND resort_language.language ='" . $lang . "' AND resort.id_resort_type = 2";
+        $sql = "SELECT * FROM resort, resort_language WHERE resort.id = resort_language.id_resort AND resort_language.language ='" . $lang . "' AND resort.id_resort_type = 2" . $clause . " ORDER BY id ASC LIMIT " . $offset . "," . $item;
         $result = mysqli_query($this->db, $sql);
         if (!$result) {
             die("Error in query getListResort");
@@ -99,7 +124,7 @@ class modelnghiduong
             $id_city_insert = $this->getIdCityByIdCountry($idCountry, $type)['id'];
 
         $date_insert = date("Y/m/d");
-        if (!$this->insertResort($resort_status, $resort_type, $resort_priority, $resort_price, $resort_lat, $resort_lon, $id_city_insert, $date_insert,$idCountry)) {
+        if (!$this->insertResort($resort_status, $resort_type, $resort_priority, $resort_price, $resort_lat, $resort_lon, $id_city_insert, $date_insert, $idCountry)) {
             die("Error in createResort");
         }
         $last_id = mysqli_insert_id($this->db);
@@ -122,9 +147,9 @@ class modelnghiduong
         return $result;
     }
 
-    public function updateResort($id_resort, $resort_status, $resort_type, $resort_priority, $resort_price, $resort_lat, $resort_lon,$idCity, $idCountry)
+    public function updateResort($id_resort, $resort_status, $resort_type, $resort_priority, $resort_price, $resort_lat, $resort_lon, $idCity, $idCountry)
     {
-        $sql = "UPDATE resort SET status = " . $resort_status . ", id_resort_type = " . $resort_type . ", priority =" . $resort_priority . ", price =" . $resort_price . ", lat ='" . $resort_lat . "', lng ='" . $resort_lon . "', id_city =" . $idCity .", id_country =".$idCountry. " WHERE id =" . $id_resort;
+        $sql = "UPDATE resort SET status = " . $resort_status . ", id_resort_type = " . $resort_type . ", priority =" . $resort_priority . ", price =" . $resort_price . ", lat ='" . $resort_lat . "', lng ='" . $resort_lon . "', id_city =" . $idCity . ", id_country =" . $idCountry . " WHERE id =" . $id_resort;
         $result = mysqli_query($this->db, $sql);
         return $result;
     }
@@ -189,10 +214,6 @@ class modelnghiduong
 
         return mysqli_fetch_assoc($result)['id_country'];
     }
-
-
-
-
 
 
     // đang làm tới đây
@@ -277,6 +298,7 @@ class modelnghiduong
         mysqli_free_result($result);
         return $list;
     }
+
 ////////////////////////////////////////////////////////////////////////
     public function update($id_resort, $resort_name_en, $resort_introduce_en, $resort_location_en, $resort_service_en, $resort_equipment_en, $resort_address_en, $list_img, $resort_name, $resort_introduce, $resort_location, $resort_service, $resort_equipment, $resort_status, $resort_type, $resort_priority, $resort_price, $resort_address, $resort_lat, $resort_lon, $resort_country, $city_name)
     {
@@ -346,6 +368,29 @@ class modelnghiduong
         $sql = "INSERT INTO city (name,id_country) VALUES ('{$city_name}','{$idCountry}')";
         $kq = $this->db->query($sql);
         return $kq;
+    }
+
+    public function search($txtSearch, $type, $status)
+    {
+        $sql = "SELECT * FROM resort, resort_language WHERE resort.id = resort_language.id_resort AND resort_language.language ='vi'";
+        if ($txtSearch != "")
+            $sql .= " AND resort_language.name like '%" . $txtSearch . "%' ";
+        if ($type != -1)
+            $sql .= " AND resort.id_resort_type = " . $type;
+        if ($status != -1)
+            $sql .= " AND resort.status = " . $status;
+        $result = mysqli_query($this->db, $sql);
+        if (!$result) {
+            die("Error in query in search");
+        }
+
+        $list = array();
+        while ($row = mysqli_fetch_assoc($result)) {
+            $list[] = $row;
+        }
+        //remove out of memory
+        mysqli_free_result($result);
+        return $list;
     }
 
 }//class

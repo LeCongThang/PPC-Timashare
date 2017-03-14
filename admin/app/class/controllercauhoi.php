@@ -35,9 +35,36 @@ class controllercauhoi
     {
         if (!isset($_SESSION['tendangnhapadmin']))
             header('location:' . BASE_URL_ADMIN . "controlleradmin/index");
-        $ds_cau_hoi_vi = $this->controller_cauhoi->layDanhSachCauHoi("vi");
-        $ds_cau_hoi_en = $this->controller_cauhoi->layDanhSachCauHoi("en");
+        $currentPage = 1;
+        $numberPage = $this->getNumberPage();
+        $items = 5;
+
+        if (isset($this->params[0]))
+            if ($this->params[0] <= $numberPage)
+                $currentPage = $this->params[0];
+
+        $pageList = intval(($currentPage - 1) / 5) + 1;
+        $pageEnd = $pageList * 5;
+        $pageListLasted = intval(($numberPage - 1) / 5) + 1;
+
+        $offset = ($currentPage - 1) * $items;
+
+        ($pageListLasted != $pageList) ? $lastPage = $pageEnd : $lastPage = $numberPage;
+        $ds_cau_hoi_vi = $this->controller_cauhoi->layDanhSachCauHoiLimit("vi",$offset,$items);
         require_once("view/quanlycauhoi.php");
+    }
+
+    public function getNumberPage()
+    {
+        $numberAll = $this->controller_cauhoi->getNumber();
+        $pages = $numberAll / 5;
+        $tmp = explode(".", $pages);
+        if (count($tmp) > 1) {
+            $pages = $tmp[0] + 1;
+        } else {
+            $pages = $tmp[0];
+        }
+        return $pages;
     }
 
     /**

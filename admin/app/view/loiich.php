@@ -61,7 +61,7 @@
                                         <!-- /.box-header -->
                                         <div class="box-body">
                                             <div class="form-group">
-                                                <input class="form-control"
+                                                <input class="form-control" required
                                                        value="<?php echo $gioithieu_vi['title']; ?>"
                                                        name="tieude_vi"
                                                        style="font-size:17px;font-family:verdana;text-align:justify;">
@@ -78,7 +78,7 @@
                                     <div class="tab-pane fade" role="tabpanel" id="en" aria-labelledby="en-tab">
                                         <div class="box-body">
                                             <div class="form-group">
-                                                <input class="form-control"
+                                                <input class="form-control" required
                                                        value="<?php echo $gioithieu_en['title']; ?>"
                                                        name="tieude_en"
                                                        style="font-size:17px;font-family:verdana;text-align:justify;">
@@ -116,13 +116,9 @@
 <!-- /.content-wrapper -->
 
 <footer class="main-footer">
-    <div class="pull-right hidden-xs">
-        <b>Version</b> 2.3.6
-    </div>
-    <strong>Copyright &copy; 2014-2016 <a href="http://almsaeedstudio.com">Almsaeed Studio</a>.</strong> All rights
+    <strong>Copyright &copy; 2016 <a href="http://hbbsolution.com/">HBB Web Team</a>.</strong> All rights
     reserved.
 </footer>
-
 
 <!-- Add the sidebar's background. This div must be placed
      immediately after the control sidebar -->

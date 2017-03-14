@@ -74,25 +74,37 @@ class controlleradmin
     {
         $tendangnhap = $_POST["username"];
         $matkhau = $_POST["password"];
+        if(isset($_POST["rememberme"]))
+            $remember = "true";
+        else
+            $remember = "false";
         $truyvanktTonTai = $this->controlleradmin->xulydangnhap($tendangnhap, $matkhau);
         if ($truyvanktTonTai) {
             $_SESSION["tendangnhapadmin"] = $tendangnhap;
             $user = $this->controlleradmin->layThongTinTaiKhoanAdmin();
             $_SESSION['tentaikhoanadmin'] = $user['hoten'];
             $_SESSION['idAdmin'] = $user['id'];
-            if (isset($_POST["rememberme"])) {
-                $remember = $_POST["rememberme"];
+
+            if ($remember == "true") {
                 setcookie("tendangnhap", $tendangnhap, time() + 2592000);
                 setcookie("matkhau", $matkhau, time() + 2592000);
                 setcookie("rememberme", $remember, time() + 2592000);
             } else {
                 setcookie("tendangnhap", $tendangnhap, time());
                 setcookie("matkhau", $matkhau, time());
+                setcookie("rememberme", $remember, time());
             }
             $this->loadingadmin();
         } else {
-            echo "<script>alert('Tài khoản hoặc mật khẩu không đúng')</script>";
-            header('location:' . BASE_URL_ADMIN . "controlleradmin/index");
+            session_unset();
+            session_destroy();
+            if (isset($_COOKIE["tendangnhap"])) {
+                unset($_COOKIE['tendangnhap']);
+                unset($_COOKIE['matkhau']);
+                unset($_COOKIE['rememberme']);
+            }
+            $this->index();
+//            header('location:' . BASE_URL_ADMIN . "controlleradmin/index");
         }
     }// dangnhap
 

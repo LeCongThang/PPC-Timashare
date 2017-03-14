@@ -54,7 +54,7 @@
         //=============================================
         //Khoi tao cac ham can thi khi Plugin duoc su dung
         //=============================================
-        setRowsHeight();
+       // setRowsHeight();
 
         //=============================================
         //Ham khoi dong

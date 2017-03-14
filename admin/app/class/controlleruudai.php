@@ -38,9 +38,37 @@ class controlleruudai
     {
         if (!isset($_SESSION['tendangnhapadmin']))
             header('location:' . BASE_URL_ADMIN . "controlleradmin/index");
-        $list_deals = $this->controlleruudai->getAll();
+        $currentPage = 1;
+        $numberPage = $this->getNumberPage();
+        $items = 5;
+
+        if (isset($this->params[0]))
+            if ($this->params[0] <= $numberPage)
+                $currentPage = $this->params[0];
+
+        $pageList = intval(($currentPage - 1) / 5) + 1;
+        $pageEnd = $pageList * 5;
+        $pageListLasted = intval(($numberPage - 1) / 5) + 1;
+
+        $offset = ($currentPage - 1) * $items;
+
+        ($pageListLasted != $pageList) ? $lastPage = $pageEnd : $lastPage = $numberPage;
+        $list_deals = $this->controlleruudai->getAllLimit($offset, $items);
 
         require_once("view/quanlyuudai.php");
+    }
+
+    public function getNumberPage()
+    {
+        $numberAll = $this->controlleruudai->getNumber();
+        $pages = $numberAll / 5;
+        $tmp = explode(".", $pages);
+        if (count($tmp) > 1) {
+            $pages = $tmp[0] + 1;
+        } else {
+            $pages = $tmp[0];
+        }
+        return $pages;
     }
 
 
@@ -59,20 +87,15 @@ class controlleruudai
                 $list_resort_choose = $_POST['list_resort'];
                 $date_start = $_POST['date_start'];
                 $date_end = $_POST['date_end'];
-                if ($this->controlleruudai->create($tieu_de_vi, $noi_dung_vi, $tieu_de_en, $noi_dung_en, $hinh,  $list_resort_choose, $date_start, $date_end))
-                {
+                if ($this->controlleruudai->create($tieu_de_vi, $noi_dung_vi, $tieu_de_en, $noi_dung_en, $hinh, $list_resort_choose, $date_start, $date_end)) {
                     $this->errors[] = 'Tạo ưu đãi thành công!';
-                }
-                else
+                } else
                     $this->errors[] = 'Lỗi! Tạo ưu đãi không thành công!';
-                $list_deals = $this->controlleruudai->getAll();
-                require_once("view/quanlyuudai.php");
-                return true;
+                $this->index();
             } else {
                 $this->errors[] = 'Vui lòng chọn hình ảnh!';
             }
         }
-        $list_resort = $this->controlleruudai->getListResort();
         require_once("view/create-deals.php");
     }
 
@@ -91,7 +114,10 @@ class controlleruudai
             $noi_dung_vi = $_POST['noidung_vi'];
             $tieu_de_en = $_POST['tieude_en'];
             $noi_dung_en = $_POST['noidung_en'];
-            $list_resort_choose = $_POST['list_resort'];
+            if (isset($_POST['list_resort']))
+                $list_resort_choose = $_POST['list_resort'];
+            else
+                $list_resort_choose = "";
             $date_start = $_POST['date_start'];
             $date_end = $_POST['date_end'];
             $this->controlleruudai->updateDetails($id_deals, $list_resort_choose, $date_start, $date_end);
@@ -99,16 +125,14 @@ class controlleruudai
                 $this->errors[] = 'Cập nhật ưu đãi thành công!';
             else
                 $this->errors[] = 'Lỗi! Cập nhật ưu đãi không thành công!';
-            $list_deals = $this->controlleruudai->getAll();
-            require_once("view/quanlyuudai.php");
-            return true;
+            $this->index();
+        } else {
+            $data_vi = $this->controlleruudai->get($id_deals, "vi");
+            $data_en = $this->controlleruudai->get($id_deals, "en");
+            $data_detail = $this->controlleruudai->getDetailsDealsResort($id_deals);
+            $list_resort = $this->controlleruudai->getListResort();
+            require_once("view/create-deals.php");
         }
-        $data_vi = $this->controlleruudai->get($id_deals, "vi");
-        $data_en = $this->controlleruudai->get($id_deals, "en");
-        $data_detail = $this->controlleruudai->getDetailsDealsResort($id_deals);
-        $list_resort = $this->controlleruudai->getListResort();
-        require_once("view/create-deals.php");
-        return true;
     }
 
     public function delete()
@@ -122,12 +146,8 @@ class controlleruudai
             $this->errors[] = 'Xóa ưu đãi thành công!';
         else
             $this->errors[] = 'Lỗi! Xóa ưu đãi không thành công!';
-        $list_deals = $this->controlleruudai->getAll();
-        require_once("view/quanlyuudai.php");
-        return true;
+        $this->index();
     }
-
-
 }//class
 
 ?>

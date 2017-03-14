@@ -61,7 +61,7 @@ $isUpdate = isset($this->params[0]);
                             </div>
                             <div class="form-group">
                                 <label for="noidung">Đường dẫn</label>
-                                <input placeholder="Đường dẫn" class="form-control"
+                                <input placeholder="Đường dẫn" class="form-control" required
                                        value="<?php echo $isUpdate ? $data_vi['duongdan_slider'] : "" ?>"
                                        name="duongdan"
                                        style="font-size:17px;font-family:verdana;text-align:justify;">
@@ -90,8 +90,8 @@ $isUpdate = isset($this->params[0]);
                                                    style="font-size:17px;font-family:verdana;text-align:justify;">
                                         </div>
                                         <div class="form-group">
-                                            <label for="noidung">Nội dung</label>
-                                            <input placeholder="Nội dung" class="form-control"
+                                            <label for="noidung">Tiêu đề nút</label>
+                                            <input placeholder="Nội dung" class="form-control" required
                                                    value="<?php echo $isUpdate ? $data_vi['noidung_slider'] : "" ?>"
                                                    name="noidung_vi"
                                                    style="font-size:17px;font-family:verdana;text-align:justify;">
@@ -114,8 +114,8 @@ $isUpdate = isset($this->params[0]);
                                                    style="font-size:17px;font-family:verdana;text-align:justify;">
                                         </div>
                                         <div class="form-group">
-                                            <label for="noidung">Nội dung</label>
-                                            <input placeholder="Nội dung" class="form-control"
+                                            <label for="noidung">Tiêu đề nút</label>
+                                            <input placeholder="Nội dung" class="form-control" required
                                                    value="<?php echo $isUpdate ? $data_en['noidung_slider'] : "" ?>"
                                                    name="noidung_en"
                                                    style="font-size:17px;font-family:verdana;text-align:justify;">

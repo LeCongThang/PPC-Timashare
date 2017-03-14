@@ -116,4 +116,51 @@ class modelbook
         $kq = $this->db->query($sql);
         return $kq;
     }
+
+    public function search($txtSearch,$txtSearchName,$txtSearchResort)
+    {
+        $sql = "SELECT book_now.*,resort_language.name,taikhoan.hoten, taikhoan.diachi, taikhoan.dienthoai, taikhoan.sex, resort_language.address, resort.id_resort_type FROM book_now,resort,taikhoan,resort_language WHERE resort.id = resort_language.id_resort AND resort_language.language = 'vi' AND resort.id = book_now.id_resort AND taikhoan.id = book_now.id_user AND book_now.status = 0";
+        if($txtSearch != "")
+            $sql.= " AND book_now.id_book =".$txtSearch;
+        if($txtSearchName != "")
+            $sql.= " AND taikhoan.hoten like '%".$txtSearchName."%'";
+        if($txtSearchResort != "")
+            $sql.= " AND resort_language.name like '%".$txtSearchResort."%'";
+
+        $result = mysqli_query($this->db, $sql);
+        if (!$result) {
+            die("Error in query search");
+        }
+        $list = array();
+        while ($row = mysqli_fetch_assoc($result)) {
+            $list[] = $row;
+        }
+        //remove out of memory
+        mysqli_free_result($result);
+        return $list;
+    }
+
+
+    public function searchBooked($txtSearch,$txtSearchName,$txtSearchResort)
+    {
+        $sql = "SELECT book_now.*,resort_language.name,taikhoan.hoten, taikhoan.diachi, taikhoan.dienthoai, taikhoan.sex, resort_language.address, resort.id_resort_type FROM book_now,resort,taikhoan,resort_language WHERE resort.id = resort_language.id_resort AND resort_language.language = 'vi' AND resort.id = book_now.id_resort AND taikhoan.id = book_now.id_user AND book_now.id_book NOT IN (SELECT book_now.id_book FROM book_now WHERE book_now.status = 0)";
+        if($txtSearch != "")
+            $sql.= " AND book_now.id_book =".$txtSearch;
+        if($txtSearchName != "")
+            $sql.= " AND taikhoan.hoten like '%".$txtSearchName."%'";
+        if($txtSearchResort != "")
+            $sql.= " AND resort_language.name like '%".$txtSearchResort."%'";
+
+        $result = mysqli_query($this->db, $sql);
+        if (!$result) {
+            die("Error in query search");
+        }
+        $list = array();
+        while ($row = mysqli_fetch_assoc($result)) {
+            $list[] = $row;
+        }
+        //remove out of memory
+        mysqli_free_result($result);
+        return $list;
+    }
 }

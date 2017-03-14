@@ -19,7 +19,7 @@
     <link rel="stylesheet" href="<?= BASE_DIR_ADMIN ?>plugins/bootstrap-wysihtml5/bootstrap3-wysihtml5.min.css">
 </head>
 <body class="hold-transition skin-blue sidebar-mini">
-<div class="wrapper" style="height: 1000px;">
+<div class="wrapper">
     <?php require 'view/header.php' ?>
     <?php require 'partials/slider-bar.php' ?>
     <div class="content-wrapper">
@@ -35,7 +35,6 @@
         <!-- Main content -->
         <section class="content">
             <div class="row">
-                <!-- /.col -->
                 <div class="col-md-12">
                     <div class="box box-primary">
                         <div class="box-header with-border">
@@ -61,7 +60,27 @@
                             <div class="tab-content" id="myTabContent">
                                 <div class="tab-pane fade active in" role="tabpanel" id="vi"
                                      aria-labelledby="vi-tab">
-                                    <div class="box-body no-padding">
+                                    <div class="box-body">
+                                        <div class="row">
+                                            <div class="col-md-3">
+                                                <input class="form-control" type="text" value="" id="txtSearchName"
+                                                       placeholder="Tên liên hệ">
+                                            </div>
+                                            <div class="col-md-3">
+                                                <input class="form-control" type="text" value="" id="txtSearchAddress"
+                                                       placeholder="Địa chỉ liên hệ">
+                                            </div>
+                                            <div class="col-md-3">
+                                                <input class="form-control" type="text" value="" id="txtSearchPhone"
+                                                       placeholder="Số điện thoại liên hệ">
+                                            </div>
+                                            <div class="col-md-3">
+                                                <input class="form-control btn btn-primary" type="button"
+                                                       value="Tìm kiếm"
+                                                       onclick="search()"
+                                                       id="btnSearch">
+                                            </div>
+                                        </div>
                                         <div class="table-responsive mailbox-messages">
                                             <table class="table table-hover table-striped">
                                                 <thead>
@@ -72,35 +91,39 @@
                                                     <th></th>
                                                 </tr>
                                                 </thead>
-                                                <tbody>
-                                                <?php
-                                                foreach ($ds_mail as $key => $item_mail) {
-                                                    ?>
-                                                    <tr>
-                                                        <td class="mailbox-name"><a
-                                                                href="<?= BASE_URL_ADMIN ?>controllermail/xemmail/<?php echo $item_mail['id']; ?> "><?php echo $item_mail['ten_lienhe']; ?></a>
-                                                        </td>
-                                                        <td class="mailbox-subject">
-                                                            <b><?php echo $item_mail['email_lienhe']; ?></b>
-                                                        </td>
-                                                        <td class="mailbox-attachment"><?php echo $item_mail['sdt_lienhe']; ?></td>
-                                                        <td class="mailbox-date"><a
-                                                                href="<?= BASE_URL_ADMIN ?>controllermail/delete/<?php echo $item_mail['id']; ?> ">
-                                                                <button class="btn btn-info"><i
-                                                                        class="glyphicon glyphicon-trash"></i></button>
-                                                            </a></td>
-                                                    </tr>
-                                                    <?php
-                                                }
-                                                ?>
+                                                <tbody id="paging">
                                                 </tbody>
                                             </table>
+                                            <div id="page" class="pages col-md-12" style="text-align: center"></div>
                                         </div>
                                     </div>
                                 </div>
                                 <div class="tab-pane" role="tabpanel" id="en"
                                      aria-labelledby="en-tab">
-                                    <div class="box-body no-padding">
+                                    <div class="box-body">
+                                        <div class="row">
+                                            <div class="col-md-3">
+                                                <input class="form-control" type="text" value=""
+                                                       id="txtSearchNameChecked"
+                                                       placeholder="Tên liên hệ">
+                                            </div>
+                                            <div class="col-md-3">
+                                                <input class="form-control" type="text" value=""
+                                                       id="txtSearchAddressChecked"
+                                                       placeholder="Địa chỉ liên hệ">
+                                            </div>
+                                            <div class="col-md-3">
+                                                <input class="form-control" type="text" value=""
+                                                       id="txtSearchPhoneChecked"
+                                                       placeholder="Số điện thoại liên hệ">
+                                            </div>
+                                            <div class="col-md-3">
+                                                <input class="form-control btn btn-primary" type="button"
+                                                       value="Tìm kiếm"
+                                                       onclick="searchChecked()"
+                                                       id="btnSearch">
+                                            </div>
+                                        </div>
                                         <div class="table-responsive mailbox-messages">
                                             <table class="table table-hover table-striped">
                                                 <thead>
@@ -112,33 +135,11 @@
                                                     <th></th>
                                                 </tr>
                                                 </thead>
-                                                <tbody>
-                                                <?php
-                                                foreach ($ds_mail_da_duyet as $key => $item_mail) {
-                                                    ?>
-                                                    <tr>
-                                                        <!--                                                <td><input type="checkbox" nam></td>-->
-                                                        <td class="mailbox-name"><a
-                                                                href="<?= BASE_URL_ADMIN ?>controllermail/xemMailDaKiemTra/<?php echo $item_mail['id']; ?> "><?php echo $item_mail['ten_lienhe']; ?></a>
-                                                        </td>
-                                                        <td class="mailbox-subject">
-                                                            <b><?php echo $item_mail['email_lienhe']; ?></b>
-                                                        </td>
-                                                        <td class="mailbox-attachment"><?php echo $item_mail['sdt_lienhe']; ?></td>
-                                                        <td class="mailbox-subject">
-                                                            <b><?php echo $item_mail['nguoi_duyet']; ?></b>
-                                                        </td>
-                                                        <td class="mailbox-date"><a
-                                                                href="<?= BASE_URL_ADMIN ?>controllermail/delete/<?php echo $item_mail['id']; ?> ">
-                                                                <button class="btn btn-info"><i
-                                                                        class="glyphicon glyphicon-trash"></i></button>
-                                                            </a></td>
-                                                    </tr>
-                                                    <?php
-                                                }
-                                                ?>
+                                                <tbody id="pagingChecked">
                                                 </tbody>
                                             </table>
+                                            <div id="pageChecked" class="pages col-md-12"
+                                                 style="text-align: center"></div>
                                             <!-- /.table -->
                                         </div>
                                         <!-- /.mail-box-messages -->
@@ -159,11 +160,9 @@
     <!-- /.content-wrapper -->
 
 </div>
+
 <footer class="main-footer">
-    <div class="pull-right hidden-xs">
-        <b>Version</b> 2.3.6
-    </div>
-    <strong>Copyright &copy; 2014-2016 <a href="http://almsaeedstudio.com">Almsaeed Studio</a>.</strong> All rights
+    <strong>Copyright &copy; 2016 <a href="http://hbbsolution.com/">HBB Web Team</a>.</strong> All rights
     reserved.
 </footer>
 
@@ -184,5 +183,199 @@
 <script src="<?= BASE_DIR ?>plugins/iCheck/icheck.min.js"></script>
 
 <script type="text/javascript" src="<?= BASE_DIR ?>ckeditor/ckeditor.js"></script>
+<script> var BASE_ADMIN = '<?=BASE_URL_ADMIN?>';</script>
+<script>
+    function search() {
+        var txtSearchName = $('#txtSearchName').val();
+        var txtSearchAddress = $('#txtSearchAddress').val();
+        var txtSearchPhone = $('#txtSearchPhone').val();
+        $.ajax({
+            url: BASE_ADMIN + "controllermail/search",
+            type: "POST",
+            dataType: "json",
+            cache: false,
+            data: {
+                "txtSearchName": txtSearchName,
+                "txtSearchAddress": txtSearchAddress,
+                "txtSearchPhone": txtSearchPhone
+            },
+            success: function (data) {
+                paging(data, 1);
+            }
+        }).done(function (data) {
+        });
+        return true;
+    }
+
+    function paging(data, page) {
+        if (data.length > 0) {
+            var dataPaging = "";
+            page = parseInt(page);
+            var begin = (page - 1) * 15;
+            for (var i = begin; i < begin + 15; i++) {
+                if (i < data.length) {
+                    dataPaging += '<tr><td class="mailbox-name">' + '<a href="' + BASE_ADMIN + 'controllermail/xemmail/' + data[i].id + '">' + data[i].ten_lienhe + '</a></td>';
+                    dataPaging += '<td class="mailbox-subject">' + data[i].email_lienhe + '</td><td class="mailbox-attachment">' + data[i].sdt_lienhe + '</td>';
+                    dataPaging += '<td>' + '<a href="' + BASE_ADMIN + 'controllermail/delete/' + data[i].id + '"><button class="btn btn-info"><i class="glyphicon glyphicon-trash"></i></button></a></td>';
+                    dataPaging += '</tr>';
+                }
+            }
+            $('#paging').empty();
+            $('#paging').append(dataPaging);
+            pagingNumber(data, page);
+        }
+        else {
+            $('#paging').empty();
+            $('#page').empty();
+        }
+    }
+
+    function pagingNumber(data, current) {
+        var str = "<p>Trang  ";
+        var numberPage = Math.ceil(data.length / 15);
+        var currentPage = parseInt(current);
+        var pageList = Math.floor((currentPage - 1) / 5) + 1;
+        var pageEnd = pageList * 5;
+        var pageListLasted = Math.floor((numberPage - 1) / 5) + 1;
+        var pageLast = 1;
+        (pageListLasted != pageList) ? pageLast = pageEnd : pageLast = numberPage;
+
+        if (pageList != 1)
+            str += '<a onclick="loadPage(' + (pageEnd - 5) + ')" >&lsaquo;&lsaquo;  </a>';
+        for (var i = pageEnd - 4; i <= pageLast; i++) {
+            if (i == currentPage)
+                str += '<a style="margin-right: 3px;font-weight: bolder;color:black" class="active" onclick="loadPage(' + i + ')">' + i + '</a>';
+            else if (i != 0)
+                str += '<a style="margin-right: 3px" onclick="loadPage(' + i + ')">' + i + '</a>';
+        }
+        if (pageListLasted != pageList)
+            str += '<a onclick="loadPage(' + (pageEnd + 1) + ')" >  &rsaquo;&rsaquo;</a>';
+        str += '</p>';
+        $('#page').empty();
+        $('#page').append(str);
+    }
+
+    function loadPage(page) {
+        var txtSearchName = $('#txtSearchName').val();
+        var txtSearchAddress = $('#txtSearchAddress').val();
+        var txtSearchPhone = $('#txtSearchPhone').val();
+        $.ajax({
+            url: BASE_ADMIN + "controllermail/search",
+            type: "POST",
+            dataType: "json",
+            cache: false,
+            data: {
+                "txtSearchName": txtSearchName,
+                "txtSearchAddress": txtSearchAddress,
+                "txtSearchPhone": txtSearchPhone
+            },
+            success: function (data) {
+                paging(data, page);
+            }
+        }).done(function (data) {
+        });
+        return true;
+    }
+
+    function searchChecked() {
+        var txtSearchNameChecked = $('#txtSearchNameChecked').val();
+        var txtSearchAddressChecked = $('#txtSearchAddressChecked').val();
+        var txtSearchPhoneChecked = $('#txtSearchPhoneChecked').val();
+        $.ajax({
+            url: BASE_ADMIN + "controllermail/searchChecked",
+            type: "POST",
+            dataType: "json",
+            cache: false,
+            data: {
+                "txtSearchNameChecked": txtSearchNameChecked,
+                "txtSearchAddressChecked": txtSearchAddressChecked,
+                "txtSearchPhoneChecked": txtSearchPhoneChecked
+            },
+            success: function (data) {
+                pagingChecked(data, 1);
+            }
+        }).done(function (data) {
+        });
+        return true;
+    }
+
+    function pagingChecked(data, page) {
+        if (data.length > 0) {
+            var dataPaging = "";
+            page = parseInt(page);
+            var begin = (page - 1) * 15;
+            for (var i = begin; i < begin + 15; i++) {
+                if (i < data.length) {
+                    dataPaging += '<tr><td class="mailbox-name">' + '<a href="' + BASE_ADMIN + 'controllermail/xemMailDaKiemTra/' + data[i].id + '">' + data[i].ten_lienhe + '</a></td>';
+                    dataPaging += '<td class="mailbox-subject">' + data[i].email_lienhe + '</td><td class="mailbox-attachment">' + data[i].sdt_lienhe + '</td><td class="mailbox-attachment">' + data[i].nguoi_duyet + '</td>';
+                    dataPaging += '<td>' + '<a href="' + BASE_ADMIN + 'controllermail/delete/' + data[i].id + '"><button class="btn btn-info"><i class="glyphicon glyphicon-trash"></i></button></a></td>';
+                    dataPaging += '</tr>';
+                }
+            }
+            $('#pagingChecked').empty();
+            $('#pagingChecked').append(dataPaging);
+            pagingNumberChecked(data, page);
+        }
+        else {
+            $('#pagingChecked').empty();
+            $('#pageChecked').empty();
+        }
+    }
+
+    function pagingNumberChecked(data, current) {
+        var str = "<p>Trang  ";
+        var numberPage = Math.ceil(data.length / 15);
+        var currentPage = parseInt(current);
+        var pageList = Math.floor((currentPage - 1) / 5) + 1;
+        var pageEnd = pageList * 5;
+        var pageListLasted = Math.floor((numberPage - 1) / 5) + 1;
+        var pageLast = 1;
+        (pageListLasted != pageList) ? pageLast = pageEnd : pageLast = numberPage;
+
+        if (pageList != 1)
+            str += '<a onclick="loadPageChecked(' + (pageEnd - 5) + ')" >&lsaquo;&lsaquo;  </a>';
+        for (var i = pageEnd - 4; i <= pageLast; i++) {
+            if (i == currentPage)
+                str += '<a style="margin-right: 3px;font-weight: bolder;color:black" class="active" onclick="loadPageChecked(' + i + ')">' + i + '</a>';
+            else if (i != 0)
+                str += '<a style="margin-right: 3px" onclick="loadPageChecked(' + i + ')">' + i + '</a>';
+        }
+        if (pageListLasted != pageList)
+            str += '<a onclick="loadPageChecked(' + (pageEnd + 1) + ')" >  &rsaquo;&rsaquo;</a>';
+        str += '</p>';
+        $('#pageChecked').empty();
+        $('#pageChecked').append(str);
+    }
+
+    function loadPageChecked(page) {
+        var txtSearchNameChecked = $('#txtSearchNameChecked').val();
+        var txtSearchAddressChecked = $('#txtSearchAddressChecked').val();
+        var txtSearchPhoneChecked = $('#txtSearchPhoneChecked').val();
+        $.ajax({
+            url: BASE_ADMIN + "controllermail/searchChecked",
+            type: "POST",
+            dataType: "json",
+            cache: false,
+            data: {
+                "txtSearchNameChecked": txtSearchNameChecked,
+                "txtSearchAddressChecked": txtSearchAddressChecked,
+                "txtSearchPhoneChecked": txtSearchPhoneChecked
+            },
+            success: function (data) {
+                pagingChecked(data, page);
+            }
+        }).done(function (data) {
+        });
+        return true;
+    }
+
+
+</script>
+<script>
+    $(document).ready(function () {
+        search();
+        searchChecked();
+    });
+</script>
 </body>
 </html>

@@ -19,9 +19,31 @@ class modelvideo
             mysqli_close($this->db);
         }
     }
+    public function getNumber()
+    {
+        $sql = "select count(id_video) as total from video";
+        $result = $this->db->query($sql);
+        $row = mysqli_fetch_assoc($result);
+        return $row['total'];
+    }
 
     public function laydanhvideo(){
         $sql = "SELECT * FROM video";
+        $result = mysqli_query($this->db, $sql);
+        if (!$result) {
+            die("Error in query");
+        }
+        $list = array();
+        while ($row = mysqli_fetch_assoc($result)) {
+            $list[] = $row;
+        }
+        //remove out of memory
+        mysqli_free_result($result);
+        return $list;
+    }
+
+    public function laydanhvideoLimit($offset, $item){
+        $sql = "SELECT * FROM video ORDER BY video.id_video ASC LIMIT " . $offset . "," . $item;
         $result = mysqli_query($this->db, $sql);
         if (!$result) {
             die("Error in query");

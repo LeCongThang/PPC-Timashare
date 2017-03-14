@@ -75,7 +75,7 @@ $isUpdate = isset($this->params[0]);
                                 </div>
                                 <div class="form-group">
                                     <label for="noidung">Đường dẫn</label>
-                                    <input placeholder="Đường dẫn" class="form-control"
+                                    <input placeholder="Đường dẫn" class="form-control" required
                                            value="<?php echo $isUpdate ? $data_vi['link'] : "" ?>"
                                            name="link"
                                            style="font-size:17px;font-family:verdana;text-align:justify;">
@@ -98,7 +98,7 @@ $isUpdate = isset($this->params[0]);
                                              aria-labelledby="vi-tab">
                                             <div class="form-group">
                                                 <label for="noidung">Tiêu đề</label>
-                                                <input placeholder="Tiêu đề" class="form-control"
+                                                <input placeholder="Tiêu đề" class="form-control" required
                                                        value="<?php echo $isUpdate ? $data_vi['title'] : "" ?>"
                                                        name="tieude_vi"
                                                        style="font-size:17px;font-family:verdana;text-align:justify;">
@@ -106,7 +106,7 @@ $isUpdate = isset($this->params[0]);
                                             <div class="form-group">
                                                 <label for="noidung">Nội dung</label>
                                                 <textarea placeholder="Mô tả" name="noidung_vi" class="ckeditor" cols="30"
-                                                           rows="10"
+                                                           rows="10" required
                                                            title=""><?php echo $isUpdate ? $data_vi['content'] : "" ?></textarea>
                                             </div>
                                         </div>
@@ -114,7 +114,7 @@ $isUpdate = isset($this->params[0]);
                                              aria-labelledby="en-tab">
                                             <div class="form-group">
                                                 <label for="noidung">Tiêu đề</label>
-                                                <input placeholder="Tiêu đề" class="form-control"
+                                                <input placeholder="Tiêu đề" class="form-control" required
                                                        value="<?php echo $isUpdate ? $data_en['title'] : "" ?>"
                                                        name="tieude_en"
                                                        style="font-size:17px;font-family:verdana;text-align:justify;">
@@ -123,7 +123,7 @@ $isUpdate = isset($this->params[0]);
                                             <div class="form-group">
                                                 <label for="noidung">Nội dung</label>
                                                 <textarea placeholder="Mô tả" name="noidung_en" class="ckeditor" cols="30"
-                                                          rows="10"
+                                                          rows="10" required
                                                           title=""><?php echo $isUpdate ? $data_en['content'] : "" ?></textarea>
                                             </div>
                                         </div>
@@ -154,10 +154,7 @@ $isUpdate = isset($this->params[0]);
 <!-- /.content-wrapper -->
 
 <footer class="main-footer">
-    <div class="pull-right hidden-xs">
-        <b>Version</b> 2.3.6
-    </div>
-    <strong>Copyright &copy; 2014-2016 <a href="http://almsaeedstudio.com">Almsaeed Studio</a>.</strong> All rights
+    <strong>Copyright &copy; 2016 <a href="http://hbbsolution.com/">HBB Web Team</a>.</strong> All rights
     reserved.
 </footer>
 

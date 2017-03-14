@@ -23,7 +23,7 @@ class controllerbanner
         if (!isset($_SESSION['tendangnhapadmin']))
             header('location:' . BASE_URL_ADMIN . "controlleradmin/index");
         $listResortBanner = $this->controllerbanner->getAllResortBanner();
-        $listResortNotBanner = $this->controllerbanner->getAllResortExceptionResortBanner();
+//        $listResortNotBanner = $this->controllerbanner->getAllResortExceptionResortBanner();
         require_once("view/quanlybanner.php");
     }
 
@@ -31,13 +31,13 @@ class controllerbanner
     {
         if (!isset($_SESSION['tendangnhapadmin']))
             header('location:' . BASE_URL_ADMIN . "controlleradmin/index");
-        if (isset($_POST['idResort'])) {
-            $idResort = $_POST['idResort'];
+        if (isset($this->params[0])) {
+            $idResort = $this->params[0];
             $listBannerNull = $this->controllerbanner->getNumberNullBanner();
             $number = count($listBannerNull);
             if ($number > 0) {
                 $idBanner = $listBannerNull[0]['id'];
-                if($this->controllerbanner->insertResortBanner($idResort,$idBanner))
+                if ($this->controllerbanner->insertResortBanner($idResort, $idBanner))
                     $this->errors[] = 'Thêm thành công';
                 else
                     $this->errors[] = 'Thêm thất bại, mời bạn thử lại!!!';
@@ -46,9 +46,8 @@ class controllerbanner
 
             }
             $listResortBanner = $this->controllerbanner->getAllResortBanner();
-            $listResortNotBanner = $this->controllerbanner->getAllResortExceptionResortBanner();
+//            $listResortNotBanner = $this->controllerbanner->getAllResortExceptionResortBanner();
             require_once("view/quanlybanner.php");
-            return true;
         } else
             $this->index();
     }
@@ -59,15 +58,22 @@ class controllerbanner
             header('location:' . BASE_URL_ADMIN . "controlleradmin/index");
         if (isset($_POST['idBanner'])) {
             $idBanner = $_POST['idBanner'];
-            if($this->controllerbanner->removeResortBanner($idBanner))
+            if ($this->controllerbanner->removeResortBanner($idBanner))
                 $this->errors[] = 'Xóa thành công';
             else
                 $this->errors[] = 'Xóa thất bại, mời bạn thử lại!!!';
             $listResortBanner = $this->controllerbanner->getAllResortBanner();
-            $listResortNotBanner = $this->controllerbanner->getAllResortExceptionResortBanner();
+            //$listResortNotBanner = $this->controllerbanner->getAllResortExceptionResortBanner();
             require_once("view/quanlybanner.php");
         } else
             $this->index();
+    }
+
+    public function search()
+    {
+        (isset($_POST['txtSearch'])) ? $txtSearch = $_POST['txtSearch'] : $txtSearch = "";
+        $list = $this->controllerbanner->getAllResortExceptionResortBannerLimit($txtSearch);
+        echo json_encode($list);
     }
 
 }//class

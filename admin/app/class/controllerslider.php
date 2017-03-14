@@ -39,10 +39,37 @@ class controllerslider
     {
         if (!isset($_SESSION['tendangnhapadmin']))
             header('location:' . BASE_URL_ADMIN . "controlleradmin/index");
-        $sliders = $this->controllerslider->getAll();
+        $currentPage = 1;
+        $numberPage = $this->getNumberPage();
+        $items = 2;
+
+        if (isset($this->params[0]))
+            if ($this->params[0] <= $numberPage)
+                $currentPage = $this->params[0];
+
+        $pageList = intval(($currentPage - 1) / 5) + 1;
+        $pageEnd = $pageList * 5;
+        $pageListLasted = intval(($numberPage - 1) / 5) + 1;
+
+        $offset = ($currentPage - 1) * $items;
+
+        ($pageListLasted != $pageList) ? $lastPage = $pageEnd : $lastPage = $numberPage;
+        $sliders = $this->controllerslider->getAllLimit($offset, $items);
         require_once("view/slider.php");
     }
 
+    public function getNumberPage()
+    {
+        $numberAll = $this->controllerslider->getNumber();
+        $pages = $numberAll / 2;
+        $tmp = explode(".", $pages);
+        if (count($tmp) > 1) {
+            $pages = $tmp[0] + 1;
+        } else {
+            $pages = $tmp[0];
+        }
+        return $pages;
+    }
 
     public function create()
     {
@@ -59,12 +86,11 @@ class controllerslider
                 $tieu_de_en = $_POST['tieude_en'];
                 $noi_dung_en = $_POST['noidung_en'];
                 $mo_ta_en = $_POST['mota_en'];
-                if($this->controllerslider->create($tieu_de_vi, $noi_dung_vi, $mo_ta_vi, $tieu_de_en, $noi_dung_en, $mo_ta_en, $duong_dan, $hinh))
+                if ($this->controllerslider->create($tieu_de_vi, $noi_dung_vi, $mo_ta_vi, $tieu_de_en, $noi_dung_en, $mo_ta_en, $duong_dan, $hinh))
                     $this->errors[] = 'Tạo slider thành công!';
                 else
                     $this->errors[] = 'Lỗi! Tạo slider không thành công!';
-                $sliders = $this->controllerslider->getAll();
-                require_once("view/slider.php");
+                $this->index();
                 return true;
             } else {
                 $this->errors[] = 'Vui lòng chọn hình ảnh!';
@@ -78,7 +104,7 @@ class controllerslider
         if (!isset($_SESSION['tendangnhapadmin']))
             header('location:' . BASE_URL_ADMIN . "controlleradmin/index");
         if (!isset($this->params[0])) {
-            redirect(BASE_URL_ADMIN .'controllerslider/index');
+            redirect(BASE_URL_ADMIN . 'controllerslider/index');
         }
         $id = $this->params[0];
 
@@ -95,12 +121,11 @@ class controllerslider
                 $this->errors[] = 'Cập nhật slider thành công!';
             else
                 $this->errors[] = 'Lỗi! Cập nhật slider không thành công!';
-            $sliders = $this->controllerslider->getAll();
-            require_once("view/slider.php");
+            $this->index();
             return true;
         }
-        $data_vi = $this->controllerslider->get($id,"vi");
-        $data_en = $this->controllerslider->get($id,"en");
+        $data_vi = $this->controllerslider->get($id, "vi");
+        $data_en = $this->controllerslider->get($id, "en");
         require_once("view/create-slider.php");
         return true;
     }
@@ -110,14 +135,13 @@ class controllerslider
         if (!isset($_SESSION['tendangnhapadmin']))
             header('location:' . BASE_URL_ADMIN . "controlleradmin/index");
         if (!isset($this->params[0])) {
-            redirect(BASE_URL_ADMIN. 'controllerslider/index');
+            redirect(BASE_URL_ADMIN . 'controllerslider/index');
         }
-        if($this->controllerslider->delete($this->params[0]))
+        if ($this->controllerslider->delete($this->params[0]))
             $this->errors[] = 'Xóa slider thành công!';
         else
             $this->errors[] = 'Lỗi! Xóa slider không thành công!';
-        $sliders = $this->controllerslider->getAll();
-        require_once("view/slider.php");
+        $this->index();
         return true;
     }
 }//class

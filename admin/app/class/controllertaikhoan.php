@@ -91,8 +91,36 @@ class controllertaikhoan
     {
         if (!isset($_SESSION['tendangnhapadmin']))
             header('location:' . BASE_URL_ADMIN . "controlleradmin/index");
-        $ds_tai_khoan = $this->controllertaikhoan->laydanhsachtaikhoan();
+//        $currentPage = 1;
+//        $numberPage = $this->getNumberPage();
+//        $items = 15;
+//
+//        if (isset($this->params[0]))
+//            if ($this->params[0] <= $numberPage)
+//                $currentPage = $this->params[0];
+//
+//        $pageList = intval(($currentPage - 1) / 5) + 1;
+//        $pageEnd = $pageList * 5;
+//        $pageListLasted = intval(($numberPage - 1) / 5) + 1;
+//
+//        $offset = ($currentPage - 1) * $items;
+//
+//        ($pageListLasted != $pageList) ? $lastPage = $pageEnd : $lastPage = $numberPage;
+//        $ds_tai_khoan = $this->controllertaikhoan->getListAccount($offset,$items);
         require_once("view/quanlytaikhoan.php");
+    }
+
+    public function getNumberPage()
+    {
+        $numberAll = $this->controllertaikhoan->getNumber();
+        $pages = $numberAll / 15;
+        $tmp = explode(".", $pages);
+        if (count($tmp) > 1) {
+            $pages = $tmp[0] + 1;
+        } else {
+            $pages = $tmp[0];
+        }
+        return $pages;
     }
 
     public function create()
@@ -112,11 +140,10 @@ class controllertaikhoan
             if ($this->controllertaikhoan->createAccount( $userName, $hinh, $fullName, $address, $phoneNumber, $gender, $password, $status, $role))
             {
                 $this->errors[] = 'Tạo tài khoản thành công';
-
             }
             else
                 $this->errors[] = 'Lỗi xin mời bạn thử lại';
-            redirect(BASE_URL_ADMIN . 'controllertaikhoan/index');
+            $this->index();
         } else
             require_once("view/create-account-2.php");
     }
@@ -148,6 +175,16 @@ class controllertaikhoan
 
         $tai_khoan = $this->controllertaikhoan->layThongTinUser($id);
         require_once("view/create-account.php");
+    }
+
+    public function search()
+    {
+        (isset($_POST['txtSearch'])) ? $txtSearch = $_POST['txtSearch'] : $txtSearch = "";
+        (isset($_POST['txtSearchPhone'])) ? $txtSearchPhone = $_POST['txtSearchPhone'] : $txtSearchPhone = "";
+        (isset($_POST['type'])) ? $type = $_POST['type'] : $type = -1;
+        (isset($_POST['status'])) ? $status = $_POST['status'] : $status = -1;
+        $list = $this->controllertaikhoan->search($txtSearch,$txtSearchPhone, $type, $status);
+        echo json_encode($list);
     }
 
 

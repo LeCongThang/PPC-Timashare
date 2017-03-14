@@ -18,6 +18,16 @@ class modelslider
             mysqli_close($this->db);
         }
     }
+
+
+    public function getNumber()
+    {
+        $sql = "select count(id_slider) as total from slider";
+        $result = $this->db->query($sql);
+        $row = mysqli_fetch_assoc($result);
+        return $row['total'];
+    }
+
     public function create($tieu_de_vi, $noi_dung_vi, $mo_ta_vi, $tieu_de_en, $noi_dung_en, $mo_ta_en, $duong_dan, $hinh)
     {
         $sql_slider = "INSERT INTO slider(image_slider, duongdan_slider) VALUES('$hinh', '$duong_dan')";
@@ -66,6 +76,13 @@ class modelslider
     public function getAll($customWhere = "")
     {
         $sql = "select * from slider ".$customWhere;
+
+        return  $this->db->query($sql);
+    }
+
+    public function getAllLimit($offset,$items)
+    {
+        $sql = "select * from slider ORDER BY id_slider ASC LIMIT " . $offset . "," . $items;
 
         return  $this->db->query($sql);
     }

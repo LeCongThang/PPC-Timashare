@@ -19,6 +19,14 @@ class modeltuyendung
         }
     }
 
+    public function getNumber()
+    {
+        $sql = "select count(id) as total from connect_ppc";
+        $result = $this->db->query($sql);
+        $row = mysqli_fetch_assoc($result);
+        return $row['total'];
+    }
+
     public function create($tieu_de_vi, $noi_dung_vi, $tieu_de_en, $noi_dung_en, $hinh)
     {
         $date_insert = date("Y/m/d");
@@ -57,6 +65,22 @@ class modeltuyendung
     public function getAll()
     {
         $sql = "select connect_ppc.id, connect_ppc.image, connect_ppc_language.title, connect_ppc_language.content from connect_ppc,connect_ppc_language WHERE connect_ppc.id = connect_ppc_language.id_connect_ppc AND connect_ppc_language.language = 'vi'" ;
+        $result = mysqli_query($this->db, $sql);
+        if (!$result) {
+            die("Error in query getListResort");
+        }
+        $list = array();
+        while ($row = mysqli_fetch_assoc($result)) {
+            $list[] = $row;
+        }
+        //remove out of memory
+        mysqli_free_result($result);
+        return $list;
+    }
+
+    public function getAllLimit($offset, $item)
+        {
+        $sql = "select connect_ppc.id, connect_ppc.image, connect_ppc_language.title, connect_ppc_language.content from connect_ppc,connect_ppc_language WHERE connect_ppc.id = connect_ppc_language.id_connect_ppc AND connect_ppc_language.language = 'vi' ORDER BY connect_ppc.id ASC LIMIT " . $offset . "," . $item;
         $result = mysqli_query($this->db, $sql);
         if (!$result) {
             die("Error in query getListResort");

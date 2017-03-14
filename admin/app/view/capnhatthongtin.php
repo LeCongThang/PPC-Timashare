@@ -73,7 +73,7 @@
                                         <!-- /.box-header -->
                                         <div class="box-body">
                                             <div class="form-group">
-                                                <input class="form-control"
+                                                <input class="form-control" required
                                                        value="<?php echo $gioithieu_vi['title_about_1']; ?>"
                                                        name="tieude_vi1"
                                                        style="font-size:17px;font-family:verdana;text-align:justify;">
@@ -90,7 +90,7 @@
                                     <div class="tab-pane fade" role="tabpanel" id="en1" aria-labelledby="en1-tab">
                                         <div class="box-body">
                                             <div class="form-group">
-                                                <input class="form-control"
+                                                <input class="form-control" required
                                                        value="<?php echo $gioithieu_en['title_about_1']; ?>"
                                                        name="tieude_en1"
                                                        style="font-size:17px;font-family:verdana;text-align:justify;">
@@ -208,13 +208,9 @@
 <!-- /.content-wrapper -->
 
 <footer class="main-footer">
-    <div class="pull-right hidden-xs">
-        <b>Version</b> 2.3.6
-    </div>
-    <strong>Copyright &copy; 2014-2016 <a href="http://almsaeedstudio.com">Almsaeed Studio</a>.</strong> All rights
+    <strong>Copyright &copy; 2016 <a href="http://hbbsolution.com/">HBB Web Team</a>.</strong> All rights
     reserved.
 </footer>
-
 <!-- ./wrapper -->
 <!-- jQuery 2.2.3 -->
 <script src="<?= BASE_DIR ?>plugins/jQuery/jquery-2.2.3.min.js"></script>

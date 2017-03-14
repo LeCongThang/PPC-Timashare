@@ -10,10 +10,11 @@ $kq = tach_url($url, $lang, $cname, $action, $params);
 if (class_exists($cname, true) == true)
     $c = new $cname($action, $params, $lang);
 else
+    require_once("view/ErrorPage.php");
 //if (class_exists($cname, true)==true)
 //	$c = new $cname($action, $params);
 //else
-    die('Khong co controller ' . $cname);
+//    die('Khong co controller ' . $cname);
 
 require "lang_$lang.php";
 ob_start();
@@ -21,7 +22,8 @@ ob_start();
 if (method_exists($c, $action))
     $c->$action();
 else
-    die('Khong co action' . $action);
+    require_once("view/ErrorPage.php");
+    //die('Khong co action' . $action);
 
 $str = ob_get_clean();
 $str = str_replace("{TrangChu}", TrangChu, $str);

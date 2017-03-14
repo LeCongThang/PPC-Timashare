@@ -77,4 +77,22 @@ class controllermail
         $ds_mail_da_duyet = $this->controllermail->layDanhSachMailDaDuyet();
         require "view/mail.php";
     }
+
+    public function search()
+    {
+        (isset($_POST['txtSearchName'])) ? $txtSearchName = $_POST['txtSearchName'] : $txtSearchName = "";
+        (isset($_POST['txtSearchAddress'])) ? $txtSearchAddress = $_POST['txtSearchAddress'] : $txtSearchAddress = "";
+        (isset($_POST['txtSearchPhone'])) ? $txtSearchPhone = $_POST['txtSearchPhone'] : $txtSearchPhone = "";
+        $list = $this->controllermail->search($txtSearchName,$txtSearchAddress,$txtSearchPhone);
+        echo json_encode($list);
+    }
+
+    public function searchChecked()
+    {
+        (isset($_POST['txtSearchNameChecked'])) ? $txtSearchNameChecked = $_POST['txtSearchNameChecked'] : $txtSearchNameChecked = "";
+        (isset($_POST['txtSearchAddressChecked'])) ? $txtSearchAddressChecked = $_POST['txtSearchAddressChecked'] : $txtSearchAddressChecked = "";
+        (isset($_POST['txtSearchPhoneChecked'])) ? $txtSearchPhoneChecked = $_POST['txtSearchPhoneChecked'] : $txtSearchPhoneChecked = "";
+        $list = $this->controllermail->searchChecked($txtSearchNameChecked,$txtSearchAddressChecked,$txtSearchPhoneChecked);
+        echo json_encode($list);
+    }
 }

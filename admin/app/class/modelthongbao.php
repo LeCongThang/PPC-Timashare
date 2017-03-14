@@ -19,6 +19,14 @@ class modelthongbao
         }
     }
 
+    public function getNumber()
+    {
+        $sql = "select count(id) as total from announce_papers";
+        $result = $this->db->query($sql);
+        $row = mysqli_fetch_assoc($result);
+        return $row['total'];
+    }
+
     public function create($tieu_de_vi, $noi_dung_vi, $tieu_de_en, $noi_dung_en, $hinh, $link)
     {
         $date_insert = date("Y/m/d");
@@ -59,7 +67,23 @@ class modelthongbao
         $sql = "select announce_papers.id, announce_papers.link, announce_papers.image, announce_papers_language.title, announce_papers_language.content from announce_papers,announce_papers_language WHERE announce_papers.id = announce_papers_language.id_announce_papers AND announce_papers_language.language = 'vi'" ;
         $result = mysqli_query($this->db, $sql);
         if (!$result) {
-            die("Error in query getListResort");
+            die("Error in query getAll");
+        }
+        $list = array();
+        while ($row = mysqli_fetch_assoc($result)) {
+            $list[] = $row;
+        }
+        //remove out of memory
+        mysqli_free_result($result);
+        return $list;
+    }
+
+    public function getAllLimit($offset, $item)
+    {
+        $sql = "select announce_papers.id, announce_papers.link, announce_papers.image, announce_papers_language.title, announce_papers_language.content from announce_papers,announce_papers_language WHERE announce_papers.id = announce_papers_language.id_announce_papers AND announce_papers_language.language = 'vi' ORDER BY announce_papers.id ASC LIMIT " . $offset . "," . $item;
+        $result = mysqli_query($this->db, $sql);
+        if (!$result) {
+            die("Error in query getAllLimit");
         }
         $list = array();
         while ($row = mysqli_fetch_assoc($result)) {

@@ -19,7 +19,7 @@
     <link rel="stylesheet" href="<?= BASE_DIR_ADMIN ?>plugins/bootstrap-wysihtml5/bootstrap3-wysihtml5.min.css">
 </head>
 <body class="hold-transition skin-blue sidebar-mini">
-<div class="wrapper">
+<div class="wrapper" style="height: 100%">
 
     <!-- <header class="main-header"> -->
     <?php require 'view/header.php' ?>
@@ -117,15 +117,10 @@
     </div>
 </div>
 <!-- /.content-wrapper -->
-
 <footer class="main-footer">
-    <div class="pull-right hidden-xs">
-        <b>Version</b> 2.3.6
-    </div>
-    <strong>Copyright &copy; 2014-2016 <a href="http://almsaeedstudio.com">Almsaeed Studio</a>.</strong> All rights
+    <strong>Copyright &copy; 2016 <a href="http://hbbsolution.com/">HBB Web Team</a>.</strong> All rights
     reserved.
 </footer>
-
 
 <!-- Add the sidebar's background. This div must be placed
      immediately after the control sidebar -->

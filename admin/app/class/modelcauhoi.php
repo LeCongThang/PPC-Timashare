@@ -30,9 +30,33 @@ class modelcauhoi
         }
     }
 
+    public function getNumber()
+    {
+        $sql = "select count(id) as total from cauhoithuonggap";
+        $result = $this->db->query($sql);
+        $row = mysqli_fetch_assoc($result);
+        return $row['total'];
+    }
+
     public function layDanhSachCauHoi($lang)
     {
         $sql = "SELECT cauhoithuonggap_ngonngu.cauhoi, cauhoithuonggap_ngonngu.cautraloi, cauhoithuonggap.id FROM cauhoithuonggap, cauhoithuonggap_ngonngu WHERE cauhoithuonggap.id = cauhoithuonggap_ngonngu.id_cauhoithuonggap AND ngonngu ='" . $lang . "'";
+        $result = mysqli_query($this->db, $sql);
+        if (!$result) {
+            die("Error in query");
+        }
+        $list = array();
+        while ($row = mysqli_fetch_assoc($result)) {
+            $list[] = $row;
+        }
+        //remove out of memory
+        mysqli_free_result($result);
+        return $list;
+    }
+
+    public function layDanhSachCauHoiLimit($lang, $offset, $item)
+    {
+        $sql = "SELECT cauhoithuonggap_ngonngu.cauhoi, cauhoithuonggap_ngonngu.cautraloi, cauhoithuonggap.id FROM cauhoithuonggap, cauhoithuonggap_ngonngu WHERE cauhoithuonggap.id = cauhoithuonggap_ngonngu.id_cauhoithuonggap AND ngonngu ='" . $lang . "' ORDER BY cauhoithuonggap.id ASC LIMIT " . $offset . "," . $item;
         $result = mysqli_query($this->db, $sql);
         if (!$result) {
             die("Error in query");
