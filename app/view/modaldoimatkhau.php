@@ -1,7 +1,7 @@
 <div id="ModalDoiMatKhau" class="modal fade bs-example-modal-lg" tabindex="-1" role="dialog"
      aria-labelledby="gridSystemModalLabel">
     <div class="modal-dialog modal-lg" role="document">
-        <div class="modal-content" style="margin: 0px;width: 100%;height: 100%">
+        <div class="modal-content"  style="width: 100%;height: 100%">
             <div class="modal-header">
                 <button type="button" class="close" data-dismiss="modal" aria-label="Close"><span
                         aria-hidden="true">&times;</span></button>

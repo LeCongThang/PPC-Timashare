@@ -18,10 +18,17 @@
     <link rel="stylesheet" type="text/css" href="<?= BASE_DIR ?>css/stylehead.css">
     <!-- Latest compiled and minified JavaScript -->
     <script src="<?= BASE_DIR ?>plugins/jQuery/jquery-2.2.3.min.js"></script>
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"
+            integrity="sha384-Tc5IQib027qvyjSMfHjOMaLkfuWVxZxUPnCJA7l2mCWNIpG9mGCD8wGNIcPD7Txa"
+            crossorigin="anonymous"></script>
+    <script type="text/javascript" src="<?= BASE_DIR ?>ckeditor/ckeditor.js"></script>
+    <script type="text/javascript" src="<?= BASE_DIR ?>js/main.js"></script>
+    <script>var lang = '<?=$_SESSION['lang']?>'</script>
+
 </head>
 <body>
 <div class="container">
-    <nav class="navbar navbar-fixed-top" style="background-color:transparent" role="navigation">
+    <nav class="navbar navbar-fixed-top navbar-custom" style="background-color:transparent" role="navigation">
         <div class="container-fluid">
             <!-- Brand and toggle get grouped for better mobile display -->
             <div class="navbar-header">
@@ -38,17 +45,9 @@
                 </div>
             </div> <!--  end banner brand -->
             <!-- Collect the nav links, forms, and other content for toggling -->
-            <div class="collapse navbar-collapse" id="navbar-brand-centered">
-                <ul class="nav navbar-nav" class="menuleft">
+            <div class="res-display">
+                <ul class="nav navbar-nav res-list" id="langue">
                     <li id="language">
-                        <!--                        <div id="lang">-->
-                        <!--                            <a href="--><? //= BASE_URL . "en/" ?><!--"> <img src="-->
-                        <? // BASE_DIR ?><!--img/icon_flag_usa.png" align=left-->
-                        <!--                                                                    style="margin-right: 5px"></a>-->
-                        <!--                            <a href="--><? //= BASE_URL . "vi/" ?><!--"> <img src="-->
-                        <? //=BASE_DIR ?><!--img/vietnamflag.gif" align=left></a>-->
-                        <!--                        </div>-->
-
                         <dl id="sample" class="dropdown">
                             <dt>
                                 <?php
@@ -75,24 +74,20 @@
                         </dl>
                         <span id="result"></span>
                     </li>
-                    <li><a href="<?= BASE_URL . $_SESSION['lang'] ?>/controller/index">{TrangChu}</a></li>
-                    <li><a href="<?= $_SESSION['lang'] ?>/#introduce">{GioiThieu}</a></li>
-                    <li><a href="<?= $_SESSION['lang'] ?>/#khunghiduong">{KhuNghiDuong}</a></li>
                 </ul>
-                <ul class="nav navbar-nav navbar-right" class="menuright">
-                    <li><a href="<?= $_SESSION['lang'] ?>/#thamgia">{ThamGia}</a></li>
-                    <li><a href="<?= $_SESSION['lang'] ?>/#trogiup">{TroGiup}</a></li>
-                    <li><a href="<?= $_SESSION['lang'] ?>/#lienhe">{LienHe}</a></li>
-                    <li>
+            </div>
+            <div class="res-display loginringht">
+                <ul class="nav navbar-nav res-list" id="loginmenu">
+                    <li id="btn-dn" style="list-style:none; ">
                         <?php
                         if (!isset($_SESSION['tendangnhap']))
-                            echo '<button class="btn btn-sucessful" style="border-radius:0px;margin-top:10px;" id="btnDangNhap" type="button">{DangNhapDangKy}</button>';
+                            echo '<button class="btn btn-sucessful dangNhap" style="border-radius:0px;margin-top:10px;" id="btnDangNhap" type="button" >{DangNhapDangKy}</button>';
                         else {
                             echo '<div class="dropdown btnUser"> <button id="btnXinChao"   class="btn btn-sucessful dropdown-toggle" type="button" data-toggle="dropdown">' . XinChao . $_SESSION['tentaikhoan'];
                             echo ' <span class="caret"></span></button><ul  style="background-color: #FAF9DB" class="dropdown-menu">';
-                            echo '<li><a href ="#" id="hrefXemThongTin" >{XemThongTinCaNhan}</a></li>';
+                            echo '<li><a href ="#" class="thongtin" id="hrefXemThongTin" >{XemThongTinCaNhan}</a></li>';
                             echo '<li><a href ="' . BASE_URL . $_SESSION['lang'] . '/controller/getTransactionHistory" >{LichSuGiaoDich}</a></li>';
-                            echo "<li><a href ='#' id='hrefDoiMatKhau'><span style='color: #333'>" . DoiMatKhau . "</span></a></li>";
+                            echo "<li><a href ='#' class='matkhau' id='hrefDoiMatKhau'><span style='color: #333'>" . DoiMatKhau . "</span></a></li>";
                             echo '<li><a href = "#"></a></li>';
                             echo '<li><a href ="' . BASE_URL . $_SESSION['lang'] . '/controller/dangxuat" ><span style="color: #333">' . Thoat . '</a></span></li>';
                             echo '</ul></div>';
@@ -100,15 +95,62 @@
                         ?>
                     </li>
                 </ul>
-
+            </div>
+            <div class="collapse navbar-collapse" id="navbar-brand-centered">
+                <ul class="nav navbar-nav" id="menuleft">
+                    <li><a href="<?= BASE_URL . $_SESSION['lang'] ?>/controller/index">{TrangChu}</a></li>
+                    <li><a href="<?= $_SESSION['lang'] ?>/#introduce">{GioiThieu}</a></li>
+                    <li><a href="<?= $_SESSION['lang'] ?>/#khunghiduong">{KhuNghiDuong}</a></li>
+                </ul>
+                <ul class="nav navbar-nav navbar-right menurightipd" id="menuright">
+                    <li><a href="<?= $_SESSION['lang'] ?>/#thamgia">{ThamGia}</a></li>
+                    <li><a href="<?= $_SESSION['lang'] ?>/#trogiup">{TroGiup}</a></li>
+                    <li><a href="<?= $_SESSION['lang'] ?>/#lienhe">{LienHe}</a></li>
+                    <li class="logindn" id="btn-dn">
+                        <?php
+                        if (!isset($_SESSION['tendangnhap']))
+                            echo '<button class="btn btn-sucessful dangNhap" style="border-radius:0px;margin-top:10px;" id="btnDangNhap" type="button" >{DangNhapDangKy}</button>';
+                        else {
+                            echo '<div class="dropdown btnUser"> <button id="btnXinChao"   class="btn btn-sucessful dropdown-toggle" type="button" data-toggle="dropdown">' . XinChao . $_SESSION['tentaikhoan'];
+                            echo ' <span class="caret"></span></button><ul  style="background-color: #FAF9DB" class="dropdown-menu">';
+                            echo '<li><a href ="#" class="thongtin" id="hrefXemThongTin" >{XemThongTinCaNhan}</a></li>';
+                            echo '<li><a href ="' . BASE_URL . $_SESSION['lang'] . '/controller/getTransactionHistory" >{LichSuGiaoDich}</a></li>';
+                            echo "<li><a href ='#' class='matkhau' id='hrefDoiMatKhau'><span style='color: #333'>" . DoiMatKhau . "</span></a></li>";
+                            echo '<li><a href = "#"></a></li>';
+                            echo '<li><a href ="' . BASE_URL . $_SESSION['lang'] . '/controller/dangxuat" ><span style="color: #333">' . Thoat . '</a></span></li>';
+                            echo '</ul></div>';
+                        }
+                        ?>
+                    </li>
+                </ul>
             </div> <!-- END COLLAPSE -->
+            <div class="" id="resbtn-dn">
+                <ul class="nav navbar-nav res-list">
+                    <li>
+                        <?php
+                        if (!isset($_SESSION['tendangnhap']))
+                            echo '<button class="btn btn-sucessful dangNhap" style="border-radius:0px;margin-top:10px;" id="btnDangNhap" type="button" >{DangNhapDangKy}</button>';
+                        else {
+                            echo '<div class="dropdown btnUser"> <button id="btnXinChao"   class="btn btn-sucessful dropdown-toggle" type="button" data-toggle="dropdown">' . XinChao . $_SESSION['tentaikhoan'];
+                            echo ' <span class="caret"></span></button><ul  style="background-color: #FAF9DB" class="dropdown-menu">';
+                            echo '<li><a href ="#" class="thongtin" id="hrefXemThongTin" >{XemThongTinCaNhan}</a></li>';
+                            echo '<li><a href ="' . BASE_URL . $_SESSION['lang'] . '/controller/getTransactionHistory" >{LichSuGiaoDich}</a></li>';
+                            echo "<li><a href ='#' class='matkhau' id='hrefDoiMatKhau'><span style='color: #333'>" . DoiMatKhau . "</span></a></li>";
+                            echo '<li><a href = "#"></a></li>';
+                            echo '<li><a href ="' . BASE_URL . $_SESSION['lang'] . '/controller/dangxuat" ><span style="color: #333">' . Thoat . '</a></span></li>';
+                            echo '</ul></div>';
+                        }
+                        ?>
+                    </li>
+                </ul>
+            </div>
         </div> <!-- end container-fluid -->
     </nav>
 </div> <!-- end container -->
 <header id="header">
     <div id="myCarousel" class="carousel slide" data-ride="carousel">
         <!-- Indicators -->
-        <ol class="carousel-indicators">
+        <ol class="carousel-indicators hidden">
             <?php
             foreach ($dssliderw as $key => $itemSlider) {
                 if ($key == 0)
@@ -138,10 +180,10 @@
                     echo '<div class="carousel-caption"><div class = "row"> <div class="col-md offset-4 col-md-8">';
                     echo '</div></div>';
                 }
-                echo '<center><a href="' . $itemSlider['duongdan_slider'] . '" class="btnBookNow btn btn-default " style="margin-bottom:10px;" >' . $itemSlider['noidung_slider'] . '</a></center></div></div>';
-            }
-            ?>
-            <!--        </div>-->
+                echo '<center><a href="' . $itemSlider['duongdan_slider'] . '" class="btnBookNow btn btn-default " id="disp" style="margin-bottom:10px;" >' . $itemSlider['noidung_slider'] . '</a></center></div></div>';
+    }
+    ?>
+    <!--        </div>-->
             <!-- Left and right controls -->
             <a class="left carousel-control" href="#myCarousel" role="button" data-slide="prev">
                 <span class="glyphicon glyphicon-chevron-left" aria-hidden="true"></span>
@@ -183,12 +225,6 @@
     ?>
 </header>
 
-<script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"
-        integrity="sha384-Tc5IQib027qvyjSMfHjOMaLkfuWVxZxUPnCJA7l2mCWNIpG9mGCD8wGNIcPD7Txa"
-        crossorigin="anonymous"></script>
-<script type="text/javascript" src="<?= BASE_DIR ?>ckeditor/ckeditor.js"></script>
-<script type="text/javascript" src="<?= BASE_DIR ?>js/main.js"></script>
-<script>var lang = '<?=$_SESSION['lang']?>'</script>
 
 </body>
 </html>

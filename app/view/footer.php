@@ -160,7 +160,7 @@
             return true;
         });
 
-        $('#hrefXemThongTin').click(function () {
+        $('.thongtin').click(function () {
             $.ajax({
                 url: '<?= $_SESSION['lang']?>' + '/controller/getProFile',
                 type: "POST",
@@ -192,17 +192,15 @@
             return false;
         });
 
-        $('#btnDangNhap').click(function () {
+        $('.dangNhap').click(function () {
             $("#ModalDangNhap").modal();
             $('#thongbaodn').text("");
             return true;
         });
 
-        $('#hrefDoiMatKhau').click(function (e) {
-            e.preventDefault();
+        $('.matkhau').click(function () {
             $('#thongbaodoimatkhau').text("");
             $("#ModalDoiMatKhau").modal();
-            e.preventDefault();
             return false;
         });
 

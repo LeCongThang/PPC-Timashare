@@ -401,3 +401,9 @@ h2 {
 .btn-default:hover{
     color: white!important;
 }
+.img-responsive{
+    width:100%;
+}
+#res-ourvideo{
+    margin-top: -45px;
+}

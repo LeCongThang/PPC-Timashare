@@ -119,59 +119,53 @@
         </div>
     </div>
     <section id="khunghiduong">
-        <div class="container">
-            <div class="row">
+        <div class="row space">
+            <div class="col-md-12 col-sm-12">
                 <hr class="text-left" style="width:50px;border:2px solid #362516;margin-left:0px;">
                 <h3 style="font-weight: bold">{KhuNghiDuongGiaCa}</h3>
-                <div class="col-md-9 col-sm-12" id="img_left_img">
-                    <div class="container">
-                        <div class="row">
-                    <div class="col-md-12 col-sm-12" id="img_top_img" style="background-image: url(<?php echo 'data:image/jpg;base64,' . base64_encode($array_img_t[0]->getImageBlob()). '"' ?>); ">
-                        <div class='captions captions_top'>
-                            <p><a href="<?= BASE_DIR . $_SESSION['lang'] ?>/controller/chuyenTrangKhuNghiDuongGiaCa">{DanhMucKhuNghiDuong}</a></p>
-                        </div>
-
-                    </div>
-                            </div>
-                    </div>
-                    <div class="container">
-                        <div class="row">
-                    <div class="col-md-4 col-sm-12" id="img_left_bottom_img">
-                        <div class='captions captions_bottom'>
-                            <p><a href="<?= BASE_URL . $_SESSION['lang'] ?>/controller/loadingResortHintPage">{GoiYChoKyNghi}</a>
-                            </p>
-                        </div>
-                        <?php echo "<img class='img-responsive khu_nghi_duong_gia_ca_img' src='data:image/jpg;base64," . base64_encode($array_img_t[1]->getImageBlob()) . "' />"; ?>
-                    </div>
-                    <div class="col-md-4 col-sm-12" id="img_mid_bottom_img">
-                        <div class='captions captions_bottom'>
-                            <p><a href="<?= BASE_URL . $_SESSION['lang'] ?>/controller/loadingDiscoverPage">{KhamPhaCacDiaDiem}</a>
-                            </p>
-                        </div>
-                        <?php echo "<img class='img-responsive khu_nghi_duong_gia_ca_img' src='data:image/jpg;base64," . base64_encode($array_img_t[2]->getImageBlob()) . "' />"; ?>
-                    </div>
-                    <div class="col-md-4 col-sm-12" id="img_right_bottom_img">
-                        <div class='captions captions_bottom'>
-                            <p><a href="<?= BASE_URL . $_SESSION['lang'] ?>/controller/loadingResortNewPage">{CoGiMoiTaiTimeShare}</a>
-                            </p>
-                        </div>
-                        <?php echo "<img class='img-responsive khu_nghi_duong_gia_ca_img' src='data:image/jpg;base64," . base64_encode($array_img_t[3]->getImageBlob()) . "' />"; ?>
-                    </div>
-                            </div>
-                        </div>
-                </div>
-                <div class="col-md-3 col-sm-12" id="img_right_img">
-                    <div class='captions captions_right'>
-                        <p style="padding-top: 65%;text-align: center"><a
-                                href="<?= BASE_URL . $_SESSION['lang'] ?>/controller/loadingDealsPage">{UuDaiDacBiet}</a>
+            </div>
+            <div class="col-md-9 col-sm-12" id="img_left_img">
+                <div class="col-md-12 col-sm-12" id="img_top_img">
+                    <div class='captions captions_top'>
+                        <p>
+                            <a href="<?= BASE_DIR . $_SESSION['lang'] ?>/controller/chuyenTrangKhuNghiDuongGiaCa">{DanhMucKhuNghiDuong}</a>
                         </p>
                     </div>
-                    <?php echo "<img class='img-responsive khu_nghi_duong_gia_ca_img' src='data:image/jpg;base64," . base64_encode($array_img_t[4]->getImageBlob()) . "' />"; ?>
+                    <?php echo "<img class='img-responsive khu_nghi_duong_gia_ca_img' src='data:image/jpg;base64," . base64_encode($array_img_t[0]->getImageBlob()) . "' />"; ?>
+                </div>
+
+                <div class="col-md-4 col-sm-6" id="img_left_bottom_img">
+                    <div class='captions captions_bottom'>
+                        <p><a href="<?= BASE_URL . $_SESSION['lang'] ?>/controller/loadingResortHintPage">{GoiYChoKyNghi}</a>
+                        </p>
+                    </div>
+                    <?php echo "<img class='img-responsive khu_nghi_duong_gia_ca_img' src='data:image/jpg;base64," . base64_encode($array_img_t[1]->getImageBlob()) . "' />"; ?>
+                </div>
+
+                <div class="col-md-4 col-sm-6" id="img_mid_bottom_img">
+                    <div class='captions captions_bottom'>
+                        <p><a href="<?= BASE_URL . $_SESSION['lang'] ?>/controller/loadingDiscoverPage">{KhamPhaCacDiaDiem}</a>
+                        </p>
+                    </div>
+                    <?php echo "<img class='img-responsive khu_nghi_duong_gia_ca_img' src='data:image/jpg;base64," . base64_encode($array_img_t[2]->getImageBlob()) . "' />"; ?>
+                </div>
+                <div class="col-md-4 col-sm-12" id="img_right_bottom_img">
+                    <div class='captions captions_bottom'>
+                        <p><a href="<?= BASE_URL . $_SESSION['lang'] ?>/controller/loadingResortNewPage">{CoGiMoiTaiTimeShare}</a>
+                        </p>
+                    </div>
+                    <?php echo "<img class='img-responsive khu_nghi_duong_gia_ca_img' src='data:image/jpg;base64," . base64_encode($array_img_t[3]->getImageBlob()) . "' />"; ?>
                 </div>
             </div>
+            <div class="col-md-3 col-sm-12" id="img_right_img">
+                <div class='captions captions_right'>
+                    <p style="padding-top: 65%;text-align: center"><a
+                            href="<?= BASE_URL . $_SESSION['lang'] ?>/controller/loadingDealsPage">{UuDaiDacBiet}</a>
+                    </p>
+                </div>
+                <?php echo "<img class='img-responsive khu_nghi_duong_gia_ca_img' src='data:image/jpg;base64," . base64_encode($array_img_t[4]->getImageBlob()) . "' />"; ?>
+            </div>
         </div>
-
-
     </section>
 
     <div class="clearfix"></div>
@@ -299,8 +293,8 @@
                 </div>
             </div>
             <div class="col-md-9"></div>
-            <div class="col-md-3" style="margin-top: -40px">
-                <div class="input-group" style="width:100%;margin-left: -15px;margin-top: -15px;">
+            <div class="col-md-3" style="margin-top: -40px" id="send_screen">
+                <div class="input-group" style="width:100%;margin-left: -15px;margin-top: -15px;" id="screen_send">
                     <input type="submit" class="form-control"
                            style="width:100%;border:1px solid grey; border-radius:2px;"
                            aria-describedby="basic-addon1" id="btn_gui" value={Gui}>
@@ -322,46 +316,30 @@
             <h3><b>PPC TIMESHARE TV</b></h3>
             <br><br>
         </div>
-        <?php
-
-        //Detect special conditions devices
-        $iPod = stripos($_SERVER['HTTP_USER_AGENT'], "iPod");
-        $iPhone = stripos($_SERVER['HTTP_USER_AGENT'], "iPhone");
-        $iPad = stripos($_SERVER['HTTP_USER_AGENT'], "iPad");
-        $Android = stripos($_SERVER['HTTP_USER_AGENT'], "Android");
-        $webOS = stripos($_SERVER['HTTP_USER_AGENT'], "webOS");
-
-        //do something with this information
-        if ($iPod || $iPhone || $iPad) {
-            //browser reported as an iPhone/iPod touch -- do something here
-        } else if ($Android) {
-            echo ' <a href="https://play.google.com/store/apps/details?id=com.perfectproperties.app.ppc_app&hl=it">Play store</a>';
-            //browser reported as an Android device -- do something here
-        } else if ($webOS) {
-            //browser reported as a webOS device -- do something here
-        }
-
-        ?>
-        <div class="row">
-            <?php
-            foreach ($ds_video as $key => $item_video) {
-                if ($key == 0) {
-                    echo ' <div class="col-md-7 col-sm-12">
+        <div class="container">
+            <div class="row">
+                <?php
+                foreach ($ds_video as $key => $item_video) {
+                    if ($key == 0) {
+                        echo ' <div class="col-md-7 col-sm-12">
                     <iframe allowfullscreen="allowfullscreen" id="main_video" width="100%" height="392" src="' . $item_video['url_video'] . '">
                     </iframe>
                 </div>
                 <div class="col-md-5 col-sm-12">
-                    <h4 style="margin-top:-45px;"><b>{VideoCuaChungToi}</b> <div style="float:right">
-                    <div class="goPrevious glyphicon glyphicon-triangle-left"></div>
-                    <div class="goNext glyphicon glyphicon-triangle-right"></div></div></h4>
+                    <h4 id="res-ourvideo""><b>{VideoCuaChungToi}</b> <div style="float:right">
+                    <div class="goPrevious glyphicon glyphicon-triangle-left">
+                    </div>
+                    <div class="goNext glyphicon glyphicon-triangle-right">
+                    </div></div></h4>
                     <hr style="width:100%;border:1px solid #362516;margin-left:0px;margin-top:25px;">';
-                } else {
+                    } else {
+                    }
                 }
-            }
-            ?>
-            <div id="paging">
-                <div id="rows" style="padding-left: 0px"></div>
-                <div class="clr"></div>
+                ?>
+                <div id="paging">
+                    <div id="rows" style="padding-left: 0px"></div>
+                    <div class="clr"></div>
+                </div>
             </div>
         </div>
     </div>

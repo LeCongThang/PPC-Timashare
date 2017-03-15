@@ -1,7 +1,17 @@
 body {
     overflow-x: hidden;
+    max-width: 100%;
 }
-
+.chuthich{
+    display: inline;
+}
+.img-res{
+    margin-top: -150px;
+    width:40%;
+}
+#resbtn-dn{
+    display: none;  
+}
 .bannerDecription {
     margin-bottom: 400px;
     text-align: justify;
@@ -124,11 +134,11 @@ img.pic {
 }
 
 .navbar-toggle {
-    border: 2px solid white !important;
+    border: 2px solid #372618 !important;
 }
 
 .navbar-toggle span {
-    border: 2px solid white !important;
+    border: 2px solid #372618 !important;
 }
 
 .nav {
@@ -160,7 +170,6 @@ img.pic {
     font-size: 14px;
 
 }
-
 .navbar-custom {
     background-color: transparent;
 }
@@ -319,4 +328,7 @@ select#language option[value="AsiaEnglish"] {
 
 .resort_info_discover h5{
     font-weight: bold;
+}
+.loginringht{
+    display: none;
 }
