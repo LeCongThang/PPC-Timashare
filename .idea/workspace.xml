@@ -3,49 +3,6 @@
   <component name="ChangeListManager">
     <list default="true" id="48675101-2802-42b6-bd9d-0b7e31c69e3a" name="Default" comment="">
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.idea/workspace.xml" afterPath="$PROJECT_DIR$/.idea/workspace.xml" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/admin/app/class/controllermail.php" afterPath="$PROJECT_DIR$/admin/app/class/controllermail.php" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/admin/app/class/controlleruudai.php" afterPath="$PROJECT_DIR$/admin/app/class/controlleruudai.php" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/admin/app/class/modelbook.php" afterPath="$PROJECT_DIR$/admin/app/class/modelbook.php" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/admin/app/class/modelmail.php" afterPath="$PROJECT_DIR$/admin/app/class/modelmail.php" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/admin/app/class/modelnghiduong.php" afterPath="$PROJECT_DIR$/admin/app/class/modelnghiduong.php" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/admin/app/class/modeltaikhoan.php" afterPath="$PROJECT_DIR$/admin/app/class/modeltaikhoan.php" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/admin/app/class/modelthongbao.php" afterPath="$PROJECT_DIR$/admin/app/class/modelthongbao.php" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/admin/app/class/modelthongtin.php" afterPath="$PROJECT_DIR$/admin/app/class/modelthongtin.php" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/admin/app/class/modeltuyendung.php" afterPath="$PROJECT_DIR$/admin/app/class/modeltuyendung.php" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/admin/app/class/modeluudai.php" afterPath="$PROJECT_DIR$/admin/app/class/modeluudai.php" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/admin/app/class/modelvideo.php" afterPath="$PROJECT_DIR$/admin/app/class/modelvideo.php" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/admin/app/view/create-account-2.php" afterPath="$PROJECT_DIR$/admin/app/view/create-account-2.php" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/admin/app/view/create-account.php" afterPath="$PROJECT_DIR$/admin/app/view/create-account.php" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/admin/app/view/create-deals.php" afterPath="$PROJECT_DIR$/admin/app/view/create-deals.php" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/admin/app/view/create-resort.php" afterPath="$PROJECT_DIR$/admin/app/view/create-resort.php" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/admin/app/view/mail.php" afterPath="$PROJECT_DIR$/admin/app/view/mail.php" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/admin/app/view/quanlycauhoi.php" afterPath="$PROJECT_DIR$/admin/app/view/quanlycauhoi.php" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/admin/app/view/quanlykhunghiduong.php" afterPath="$PROJECT_DIR$/admin/app/view/quanlykhunghiduong.php" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/admin/app/view/quanlytaikhoan.php" afterPath="$PROJECT_DIR$/admin/app/view/quanlytaikhoan.php" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/admin/app/view/quanlythongbao.php" afterPath="$PROJECT_DIR$/admin/app/view/quanlythongbao.php" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/admin/app/view/quanlytuyendung.php" afterPath="$PROJECT_DIR$/admin/app/view/quanlytuyendung.php" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/admin/app/view/quanlyuudai.php" afterPath="$PROJECT_DIR$/admin/app/view/quanlyuudai.php" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/admin/app/view/quanlyvideo.php" afterPath="$PROJECT_DIR$/admin/app/view/quanlyvideo.php" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/admin/app/view/slider.php" afterPath="$PROJECT_DIR$/admin/app/view/slider.php" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/app/class/controller.php" afterPath="$PROJECT_DIR$/app/class/controller.php" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/app/class/model.php" afterPath="$PROJECT_DIR$/app/class/model.php" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/app/view/ChangeNewPassword.php" afterPath="$PROJECT_DIR$/app/view/ChangeNewPassword.php" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/app/view/LoiIchTimeShare.php" afterPath="$PROJECT_DIR$/app/view/LoiIchTimeShare.php" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/app/view/TransactionHistory.php" afterPath="$PROJECT_DIR$/app/view/TransactionHistory.php" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/app/view/footer.php" afterPath="$PROJECT_DIR$/app/view/footer.php" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/app/view/header.php" afterPath="$PROJECT_DIR$/app/view/header.php" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/app/view/home.php" afterPath="$PROJECT_DIR$/app/view/home.php" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/app/view/modalbooknow.php" afterPath="$PROJECT_DIR$/app/view/modalbooknow.php" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/app/view/modaldangky.php" afterPath="$PROJECT_DIR$/app/view/modaldangky.php" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/app/view/modaldangnhap.php" afterPath="$PROJECT_DIR$/app/view/modaldangnhap.php" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/app/view/modaldoimatkhau.php" afterPath="$PROJECT_DIR$/app/view/modaldoimatkhau.php" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/app/view/modalquenmatkhau.php" afterPath="$PROJECT_DIR$/app/view/modalquenmatkhau.php" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/css/responsive.css" afterPath="$PROJECT_DIR$/css/responsive.css" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/css/style.css" afterPath="$PROJECT_DIR$/css/style.css" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/css/stylehead.css" afterPath="$PROJECT_DIR$/css/stylehead.css" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/css/stylehover.css" afterPath="$PROJECT_DIR$/css/stylehover.css" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/js/main.js" afterPath="$PROJECT_DIR$/js/main.js" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/js/paging_resort.js" afterPath="$PROJECT_DIR$/js/paging_resort.js" />
     </list>
     <ignored path="PPC-Timeshare.iws" />
     <ignored path=".idea/workspace.xml" />
@@ -504,7 +461,7 @@
       <workItem from="1489993592518" duration="331000" />
       <workItem from="1490079076880" duration="3393000" />
       <workItem from="1490330012461" duration="13200000" />
-      <workItem from="1490587582648" duration="945000" />
+      <workItem from="1490587582648" duration="1508000" />
     </task>
     <task id="LOCAL-00001" summary="Update all">
       <created>1483670120952</created>
@@ -695,11 +652,18 @@
       <option name="project" value="LOCAL" />
       <updated>1489592583970</updated>
     </task>
-    <option name="localTasksCounter" value="28" />
+    <task id="LOCAL-00028" summary="Update Reponsive Web">
+      <created>1490589093323</created>
+      <option name="number" value="00028" />
+      <option name="presentableId" value="LOCAL-00028" />
+      <option name="project" value="LOCAL" />
+      <updated>1490589093323</updated>
+    </task>
+    <option name="localTasksCounter" value="29" />
     <servers />
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="960724000" />
+    <option name="totallyTimeSpent" value="961287000" />
   </component>
   <component name="TodoView">
     <todo-panel id="selected-file">
@@ -863,6 +827,10 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="365">
           <caret line="34" column="73" selection-start-line="34" selection-start-column="73" selection-end-line="34" selection-end-column="73" />
+          <folding>
+            <marker date="1489945122084" expanded="true" signature="495:666" ph="UPDATE about... " />
+            <marker date="1489945122084" expanded="true" signature="1542:1596" ph="SELECT * FRO... about" />
+          </folding>
         </state>
       </provider>
     </entry>
@@ -870,6 +838,7 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="711">
           <caret line="52" column="0" selection-start-line="52" selection-start-column="0" selection-end-line="52" selection-end-column="0" />
+          <folding />
         </state>
       </provider>
     </entry>
@@ -877,6 +846,14 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="231">
           <caret line="181" column="45" selection-start-line="181" selection-start-column="45" selection-end-line="181" selection-end-column="45" />
+          <folding>
+            <marker date="1490332314030" expanded="true" signature="5938:5951" ph="..." />
+            <marker date="1490332314030" expanded="true" signature="7166:7183" ph="..." />
+            <marker date="1490332314030" expanded="true" signature="7329:7346" ph="..." />
+            <marker date="1490332314030" expanded="true" signature="7614:7631" ph="..." />
+            <marker date="1490332314030" expanded="true" signature="7777:7794" ph="..." />
+            <marker date="1490332314030" expanded="true" signature="8107:8118" ph="..." />
+          </folding>
         </state>
       </provider>
     </entry>
@@ -884,6 +861,12 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="374">
           <caret line="22" column="0" selection-start-line="22" selection-start-column="0" selection-end-line="22" selection-end-column="0" />
+          <folding>
+            <marker date="1490332999468" expanded="true" signature="815:826" ph="..." />
+            <marker date="1490332999468" expanded="true" signature="896:948" ph="..." />
+            <marker date="1490332999468" expanded="true" signature="1011:1042" ph="..." />
+            <marker date="1490332999468" expanded="true" signature="1149:1161" ph="..." />
+          </folding>
         </state>
       </provider>
     </entry>
@@ -891,6 +874,17 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="416">
           <caret line="265" column="86" selection-start-line="265" selection-start-column="86" selection-end-line="265" selection-end-column="86" />
+          <folding>
+            <marker date="1490335316708" expanded="true" signature="12508:12522" ph="..." />
+            <marker date="1490335316708" expanded="true" signature="16661:16858" ph="..." />
+            <marker date="1490335316708" expanded="true" signature="16805:16835" ph="..." />
+            <marker date="1490335316708" expanded="true" signature="16907:17324" ph="..." />
+            <marker date="1490335316708" expanded="false" signature="16990:17001" ph="..." />
+            <marker date="1490335316708" expanded="true" signature="17002:17217" ph="..." />
+            <marker date="1490335316708" expanded="true" signature="17081:17108" ph="..." />
+            <marker date="1490335316708" expanded="true" signature="17184:17211" ph="..." />
+            <marker date="1490335316708" expanded="false" signature="17255:17323" ph="..." />
+          </folding>
         </state>
       </provider>
     </entry>
@@ -898,6 +892,7 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="-1363">
           <caret line="29" column="20" selection-start-line="29" selection-start-column="20" selection-end-line="29" selection-end-column="20" />
+          <folding />
         </state>
       </provider>
     </entry>
@@ -912,6 +907,10 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="0">
           <caret line="0" column="36" selection-start-line="0" selection-start-column="36" selection-end-line="0" selection-end-column="36" />
+          <folding>
+            <marker date="1490336614655" expanded="true" signature="3053:3077" ph="..." />
+            <marker date="1490336614655" expanded="true" signature="3285:3309" ph="..." />
+          </folding>
         </state>
       </provider>
     </entry>
@@ -919,6 +918,7 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="0">
           <caret line="0" column="38" selection-start-line="0" selection-start-column="38" selection-end-line="0" selection-end-column="38" />
+          <folding />
         </state>
       </provider>
     </entry>
@@ -926,6 +926,7 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="0">
           <caret line="0" column="39" selection-start-line="0" selection-start-column="39" selection-end-line="0" selection-end-column="39" />
+          <folding />
         </state>
       </provider>
     </entry>
@@ -947,6 +948,7 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="303">
           <caret line="124" column="46" selection-start-line="124" selection-start-column="46" selection-end-line="124" selection-end-column="46" />
+          <folding />
         </state>
       </provider>
     </entry>
@@ -954,6 +956,7 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="408">
           <caret line="231" column="0" selection-start-line="231" selection-start-column="0" selection-end-line="243" selection-end-column="1" />
+          <folding />
         </state>
       </provider>
     </entry>
@@ -961,6 +964,26 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="306">
           <caret line="18" column="84" selection-start-line="18" selection-start-column="84" selection-end-line="18" selection-end-column="84" />
+          <folding>
+            <marker date="1490338813698" expanded="true" signature="2818:2831" ph="..." />
+            <marker date="1490338813698" expanded="true" signature="3074:3087" ph="..." />
+            <marker date="1490338813698" expanded="true" signature="5285:5319" ph="..." />
+            <marker date="1490338813698" expanded="true" signature="5705:5730" ph="..." />
+            <marker date="1490338813698" expanded="true" signature="6126:6137" ph="..." />
+            <marker date="1490338813698" expanded="true" signature="6360:6371" ph="..." />
+            <marker date="1490338813698" expanded="true" signature="7599:7633" ph="..." />
+            <marker date="1490338813698" expanded="true" signature="8019:8044" ph="..." />
+            <marker date="1490338813698" expanded="true" signature="8440:8451" ph="..." />
+            <marker date="1490338813698" expanded="true" signature="8674:8685" ph="..." />
+            <marker date="1490338813698" expanded="true" signature="9205:9239" ph="..." />
+            <marker date="1490338813698" expanded="true" signature="9625:9650" ph="..." />
+            <marker date="1490338813698" expanded="true" signature="10046:10057" ph="..." />
+            <marker date="1490338813698" expanded="true" signature="10280:10291" ph="..." />
+            <marker date="1490338813698" expanded="true" signature="12434:12453" ph="..." />
+            <marker date="1490338813698" expanded="true" signature="13520:13537" ph="..." />
+            <marker date="1490338813698" expanded="true" signature="13618:13636" ph="..." />
+            <marker date="1490338813698" expanded="true" signature="13869:13899" ph="..." />
+          </folding>
         </state>
       </provider>
     </entry>
@@ -968,6 +991,7 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="677">
           <caret line="436" column="26" selection-start-line="436" selection-start-column="26" selection-end-line="436" selection-end-column="26" />
+          <folding />
         </state>
       </provider>
     </entry>
@@ -975,6 +999,7 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="612">
           <caret line="51" column="5" selection-start-line="51" selection-start-column="5" selection-end-line="51" selection-end-column="5" />
+          <folding />
         </state>
       </provider>
     </entry>
@@ -982,6 +1007,7 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="467">
           <caret line="53" column="39" selection-start-line="53" selection-start-column="39" selection-end-line="53" selection-end-column="39" />
+          <folding />
         </state>
       </provider>
     </entry>
@@ -996,6 +1022,14 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="572">
           <caret line="167" column="71" selection-start-line="167" selection-start-column="71" selection-end-line="167" selection-end-column="71" />
+          <folding>
+            <marker date="1490340025619" expanded="true" signature="9412:9420" ph="‹" />
+            <marker date="1490340025619" expanded="true" signature="9420:9428" ph="‹" />
+            <marker date="1490340025619" expanded="true" signature="9561:9610" ph="..." />
+            <marker date="1490340025619" expanded="true" signature="9736:9753" ph="..." />
+            <marker date="1490340025619" expanded="true" signature="9919:9927" ph="›" />
+            <marker date="1490340025619" expanded="true" signature="9927:9935" ph="›" />
+          </folding>
         </state>
       </provider>
     </entry>
@@ -1003,6 +1037,7 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="467">
           <caret line="150" column="57" selection-start-line="150" selection-start-column="57" selection-end-line="150" selection-end-column="57" />
+          <folding />
         </state>
       </provider>
     </entry>
@@ -1010,6 +1045,7 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="430">
           <caret line="79" column="96" selection-start-line="79" selection-start-column="47" selection-end-line="79" selection-end-column="96" />
+          <folding />
         </state>
       </provider>
     </entry>
@@ -1024,6 +1060,7 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="646">
           <caret line="62" column="37" selection-start-line="62" selection-start-column="37" selection-end-line="62" selection-end-column="37" />
+          <folding />
         </state>
       </provider>
     </entry>
@@ -1031,6 +1068,20 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="481">
           <caret line="398" column="55" selection-start-line="398" selection-start-column="41" selection-end-line="398" selection-end-column="55" />
+          <folding>
+            <marker date="1490341560029" expanded="true" signature="13490:13498" ph="‹" />
+            <marker date="1490341560029" expanded="true" signature="13498:13506" ph="‹" />
+            <marker date="1490341560029" expanded="true" signature="13639:13688" ph="..." />
+            <marker date="1490341560029" expanded="true" signature="13814:13831" ph="..." />
+            <marker date="1490341560029" expanded="true" signature="13997:14005" ph="›" />
+            <marker date="1490341560029" expanded="true" signature="14005:14013" ph="›" />
+            <marker date="1490341560029" expanded="true" signature="17378:17386" ph="‹" />
+            <marker date="1490341560029" expanded="true" signature="17386:17394" ph="‹" />
+            <marker date="1490341560029" expanded="true" signature="17527:17576" ph="..." />
+            <marker date="1490341560029" expanded="true" signature="17709:17726" ph="..." />
+            <marker date="1490341560029" expanded="true" signature="17906:17914" ph="›" />
+            <marker date="1490341560029" expanded="true" signature="17914:17922" ph="›" />
+          </folding>
         </state>
       </provider>
     </entry>
@@ -1038,6 +1089,7 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="583">
           <caret line="148" column="77" selection-start-line="148" selection-start-column="77" selection-end-line="148" selection-end-column="77" />
+          <folding />
         </state>
       </provider>
     </entry>
@@ -1045,6 +1097,7 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="102">
           <caret line="81" column="40" selection-start-line="81" selection-start-column="40" selection-end-line="81" selection-end-column="40" />
+          <folding />
         </state>
       </provider>
     </entry>
@@ -1052,6 +1105,7 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="535">
           <caret line="156" column="17" selection-start-line="156" selection-start-column="17" selection-end-line="156" selection-end-column="17" />
+          <folding />
         </state>
       </provider>
     </entry>
@@ -1066,6 +1120,7 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="379">
           <caret line="144" column="0" selection-start-line="144" selection-start-column="0" selection-end-line="159" selection-end-column="9" />
+          <folding />
         </state>
       </provider>
     </entry>
@@ -1073,6 +1128,14 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="-442">
           <caret line="89" column="26" selection-start-line="89" selection-start-column="26" selection-end-line="89" selection-end-column="26" />
+          <folding>
+            <marker date="1490339699824" expanded="true" signature="8856:8864" ph="‹" />
+            <marker date="1490339699824" expanded="true" signature="8864:8872" ph="‹" />
+            <marker date="1490339699824" expanded="true" signature="9005:9054" ph="..." />
+            <marker date="1490339699824" expanded="true" signature="9180:9197" ph="..." />
+            <marker date="1490339699824" expanded="true" signature="9363:9371" ph="›" />
+            <marker date="1490339699824" expanded="true" signature="9371:9379" ph="›" />
+          </folding>
         </state>
       </provider>
     </entry>
@@ -1087,6 +1150,25 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="277">
           <caret line="95" column="217" selection-start-line="95" selection-start-column="217" selection-end-line="95" selection-end-column="217" />
+          <folding>
+            <marker date="1490342561234" expanded="true" signature="384:420" ph="select count... deals" />
+            <marker date="1490342561234" expanded="true" signature="967:1007" ph="INSERT INTO deals... " />
+            <marker date="1490342561234" expanded="true" signature="1252:1368" ph="INSERT INTO deals_language... " />
+            <marker date="1490342561234" expanded="true" signature="1400:1516" ph="INSERT INTO deals_language... " />
+            <marker date="1490342561234" expanded="true" signature="2053:2069" ph="UPDATE deals... " />
+            <marker date="1490342561234" expanded="true" signature="2571:2712" ph="UPDATE deals... " />
+            <marker date="1490342561234" expanded="true" signature="2740:2881" ph="UPDATE deals... " />
+            <marker date="1490342561234" expanded="true" signature="3145:3321" ph="select deals... deals" />
+            <marker date="1490342561234" expanded="true" signature="3739:3962" ph="select deals... deals" />
+            <marker date="1490342561234" expanded="true" signature="4376:4522" ph="SELECT resor... resort" />
+            <marker date="1490342561234" expanded="true" signature="4928:5132" ph="SELECT deals... deals" />
+            <marker date="1490342561234" expanded="true" signature="5305:5335" ph="DELETE FROM " />
+            <marker date="1490342561234" expanded="true" signature="5367:5411" ph="DELETE FROM " />
+            <marker date="1490342561234" expanded="true" signature="5448:5495" ph="DELETE FROM " />
+            <marker date="1490342561234" expanded="true" signature="5904:6041" ph="INSERT INTO details_deal_resort... " />
+            <marker date="1490342561234" expanded="true" signature="6196:6559" ph="SELECT detai... details_deal_resort" />
+            <marker date="1490342561234" expanded="true" signature="7052:7099" ph="DELETE FROM " />
+          </folding>
         </state>
       </provider>
     </entry>
@@ -1094,6 +1176,7 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="1258">
           <caret line="89" column="50" selection-start-line="89" selection-start-column="44" selection-end-line="89" selection-end-column="50" />
+          <folding />
         </state>
       </provider>
     </entry>
@@ -1101,6 +1184,20 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="331">
           <caret line="94" column="9" selection-start-line="94" selection-start-column="9" selection-end-line="94" selection-end-column="9" />
+          <folding>
+            <marker date="1490342580117" expanded="true" signature="387:433" ph="select count... announce_papers" />
+            <marker date="1490342580117" expanded="true" signature="994:1078" ph="INSERT INTO announce_papers... " />
+            <marker date="1490342580117" expanded="true" signature="1288:1434" ph="INSERT INTO announce_papers_language... " />
+            <marker date="1490342580117" expanded="true" signature="1476:1622" ph="INSERT INTO announce_papers_language... " />
+            <marker date="1490342580117" expanded="true" signature="2077:2103" ph="UPDATE annou... " />
+            <marker date="1490342580117" expanded="true" signature="2589:2760" ph="UPDATE annou... " />
+            <marker date="1490342580117" expanded="true" signature="2798:2969" ph="UPDATE annou... " />
+            <marker date="1490342580117" expanded="true" signature="3351:3649" ph="select annou... announce_papers" />
+            <marker date="1490342580117" expanded="true" signature="4061:4415" ph="select annou... announce_papers" />
+            <marker date="1490342580117" expanded="true" signature="4827:5162" ph="SELECT annou... announce_papers" />
+            <marker date="1490342580117" expanded="true" signature="5335:5375" ph="DELETE FROM " />
+            <marker date="1490342580117" expanded="true" signature="5407:5471" ph="DELETE FROM " />
+          </folding>
         </state>
       </provider>
     </entry>
@@ -1108,6 +1205,15 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="459">
           <caret line="45" column="65" selection-start-line="45" selection-start-column="65" selection-end-line="45" selection-end-column="65" />
+          <folding>
+            <marker date="1490342630019" expanded="true" signature="384:426" ph="select count... video" />
+            <marker date="1490342630019" expanded="true" signature="604:623" ph="SELECT * FRO... video" />
+            <marker date="1490342630019" expanded="true" signature="1028:1099" ph="SELECT * FRO... video" />
+            <marker date="1490342630019" expanded="true" signature="1532:1685" ph="UPDATE video... " />
+            <marker date="1490342630019" expanded="true" signature="1815:1829" ph="SELECT * FRO... ${$bang}" />
+            <marker date="1490342630019" expanded="true" signature="2106:2223" ph="INSERT INTO video... " />
+            <marker date="1490342630019" expanded="true" signature="2345:2381" ph="DELETE FROM " />
+          </folding>
         </state>
       </provider>
     </entry>
@@ -1115,6 +1221,20 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="510">
           <caret line="90" column="282" selection-start-line="90" selection-start-column="282" selection-end-line="90" selection-end-column="282" />
+          <folding>
+            <marker date="1490342601115" expanded="true" signature="388:430" ph="select count... connect_ppc" />
+            <marker date="1490342601115" expanded="true" signature="980:1046" ph="INSERT INTO connect_ppc... " />
+            <marker date="1490342601115" expanded="true" signature="1236:1370" ph="INSERT INTO connect_ppc_language... " />
+            <marker date="1490342601115" expanded="true" signature="1408:1542" ph="INSERT INTO connect_ppc_language... " />
+            <marker date="1490342601115" expanded="true" signature="1958:1980" ph="UPDATE conne... " />
+            <marker date="1490342601115" expanded="true" signature="2439:2598" ph="UPDATE conne... " />
+            <marker date="1490342601115" expanded="true" signature="2632:2791" ph="UPDATE conne... " />
+            <marker date="1490342601115" expanded="true" signature="3149:3385" ph="select conne... connect_ppc" />
+            <marker date="1490342601115" expanded="true" signature="3808:4096" ph="select conne... connect_ppc" />
+            <marker date="1490342601115" expanded="true" signature="4510:4780" ph="SELECT conne... connect_ppc" />
+            <marker date="1490342601115" expanded="true" signature="4953:4989" ph="DELETE FROM " />
+            <marker date="1490342601115" expanded="true" signature="5021:5077" ph="DELETE FROM " />
+          </folding>
         </state>
       </provider>
     </entry>
