@@ -39,17 +39,19 @@
 
 
 <script type="text/javascript">
-    $(document).ready(function () {
 
-        $('.trogiup').click(function () {
+    $(document).ready(function () {
+        $(".trogiup").click(function (e) {
             $("#tro_giup").toggle();
+            e.stopPropagation();
+            e.preventDefault();
         });
+
         $('.cauhoi a.test').on("click", function (e) {
             $(this).next('ul').toggle();
             e.stopPropagation();
             e.preventDefault();
         });
-
         $(document).on('change', "#sort_by", function () {
             var sort_by_select = document.getElementById("sort_by");
             var sort_by = sort_by_select.options[sort_by_select.selectedIndex].value;
@@ -109,6 +111,34 @@
         });
         $(".dropdown img.flag").toggleClass("flagvisibility");
 
+
+
+        $('#hrefquenmatkhau').click(function () {
+            $("#ModalDangNhap").modal('hide');
+            $("#ModalQuenMatKhau").modal();
+            $('#thongbaoQuenMatKhau').text("");
+            return false;
+        });
+
+
+        $('#hrefdangky').click(function () {
+            $("#ModalDangNhap").modal('hide');
+            $("#ModalDangKy").modal();
+            $('#thongbao').text("");
+            return false;
+        });
+
+        $('.dangNhap').click(function () {
+            $("#ModalDangNhap").modal();
+            $('#thongbaodn').text("");
+            return true;
+        });
+
+        $('.matkhau').click(function () {
+            $('#thongbaodoimatkhau').text("");
+            $("#ModalDoiMatKhau").modal();
+            return false;
+        });
         $("#btnDatCho").click(function () {
             var is_login = <?php echo isset($_SESSION['tendangnhap']) ? "true" : "false"?>;
 
@@ -150,7 +180,7 @@
                 });
             }
             else {
-                if(lang == "vi")
+                if (lang == "vi")
                     alert("Mời bạn đăng nhập trước khi đặt chỗ");
                 else
                     alert("Please login before book ");
@@ -178,32 +208,6 @@
 
             return false;
         });
-
-        $('#hrefquenmatkhau').click(function () {
-            $("#ModalQuenMatKhau").modal();
-            $('#thongbaoQuenMatKhau').text("");
-            return false;
-        });
-
-
-        $('#hrefdangky').click(function () {
-            $("#ModalDangKy").modal();
-            $('#thongbao').text("");
-            return false;
-        });
-
-        $('.dangNhap').click(function () {
-            $("#ModalDangNhap").modal();
-            $('#thongbaodn').text("");
-            return true;
-        });
-
-        $('.matkhau').click(function () {
-            $('#thongbaodoimatkhau').text("");
-            $("#ModalDoiMatKhau").modal();
-            return false;
-        });
-
     });
 
 </script>

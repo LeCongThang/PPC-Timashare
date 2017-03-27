@@ -97,6 +97,7 @@
                                     <input class="form-control"
                                            value="<?php echo $tai_khoan['dienthoai']; ?>" required
                                            name="txtPhoneNumber"
+                                           onkeyup="return numberphone(this)"
                                            style="font-size:17px;font-family:verdana;text-align:justify;">
                                 </div>
                                 <div class="form-group">
@@ -170,6 +171,9 @@
 <script type="text/javascript" src="<?= BASE_DIR ?>ckeditor/ckeditor.js"></script>
 <!-- Page Script -->
 <script>
+    function numberphone(input) {
+        input.value = input.value.replace(/[^0-9\.\-\+\(\)\s]/g, '');
+    }
     $(document).ready(function () {
         $('#btn_doi_mat_khau').click(function () {
             matkhaucu = $('#mat_khau_cu').val();

@@ -67,7 +67,7 @@
                                     <select id="status" class="form-control">
                                         <option value="-1" selected>Trạng thái</option>
                                         <option value="0">Còn hiệu lực</option>
-                                        <option value="1">Vô hiệu hóa</option>
+                                        <option value="1">Giới hạn</option>
                                     </select>
                                 </div>
                                 <div class="col-md-2">
@@ -165,7 +165,7 @@
                 if (i < data.length) {
                     dataPaging += '<tr><td>' + data[i].tendangnhap + '</td><td>' + data[i].hoten + '</td><td>' + data[i].diachi + '</td><td>' + data[i].dienthoai + '</td>';
                     (data[i].id_vaitro == 1) ? dataPaging += '<td>User</td>' : dataPaging += '<td>Admin</td>';
-                    (data[i].status == 1) ? dataPaging += '<td>Hết hiệu lực</td>' : dataPaging += '<td>Còn hiệu lực</td>';
+                    (data[i].status == 1) ? dataPaging += '<td>Giới hạn</td>' : dataPaging += '<td>Còn hiệu lực</td>';
                     dataPaging += '<td>' + '<a href="' + BASE_ADMIN + 'controllertaikhoan/update/' + data[i].id + '"class="btn btn-primary">Sửa</a></td>';
                     dataPaging += '</tr>';
                 }

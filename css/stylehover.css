@@ -1,7 +1,7 @@
 
 .th {
-position:relative;
-overflow:hidden;
+    position:relative;
+    overflow:hidden;
 }
 
 .caps {
@@ -30,15 +30,15 @@ overflow:hidden;
 
 .captions_bottom {
     margin: auto;
-     position:absolute;
-     padding: 10px;
-     background-color: rgba(0, 0, 0, 0.5);
-     /*border: 1px solid black;*/
-     opacity: 0.8;
-     width: 100%;
-     height: 30%;
-     filter: alpha(opacity=60); /* For IE8 and earlier */
- }
+    position:absolute;
+    padding: 10px;
+    background-color: rgba(0, 0, 0, 0.5);
+    /*border: 1px solid black;*/
+    opacity: 0.8;
+    width: 100%;
+    height: 30%;
+    filter: alpha(opacity=60); /* For IE8 and earlier */
+}
 .captions_right {
     position:absolute;
     padding: 10px;

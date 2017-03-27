@@ -29,6 +29,10 @@ class modelthongbao
 
     public function create($tieu_de_vi, $noi_dung_vi, $tieu_de_en, $noi_dung_en, $hinh, $link)
     {
+        $imagick1 = new \Imagick(realpath(REAL_PATH . BASE_DIR . $hinh));
+        $image_high1 = $imagick1->getImageHeight();
+        $imagick1->resizeImage(530, 323, Imagick::FILTER_LANCZOS, 1);
+        file_put_contents(REAL_PATH . BASE_DIR . $hinh, $imagick1);
         $date_insert = date("Y/m/d");
         $sql_announce_papers = "INSERT INTO announce_papers(image,date, link) VALUES('$hinh','$date_insert','$link')";
         $kq_announce_papers = $this->db->query($sql_announce_papers);
@@ -48,6 +52,10 @@ class modelthongbao
     {
         $sql_hinh = "UPDATE announce_papers SET ";
         if ($hinh != null) {
+            $imagick1 = new \Imagick(realpath(REAL_PATH . BASE_DIR . $hinh));
+            $image_high1 = $imagick1->getImageHeight();
+            $imagick1->resizeImage(530, 323, Imagick::FILTER_LANCZOS, 1);
+            file_put_contents(REAL_PATH . BASE_DIR . $hinh, $imagick1);
             $sql_hinh .= "image='" . $hinh . "',";
         }
         $sql_hinh .= " link ='".$link."' where id = {$id_announce_papers}";
@@ -80,7 +88,7 @@ class modelthongbao
 
     public function getAllLimit($offset, $item)
     {
-        $sql = "select announce_papers.id, announce_papers.link, announce_papers.image, announce_papers_language.title, announce_papers_language.content from announce_papers,announce_papers_language WHERE announce_papers.id = announce_papers_language.id_announce_papers AND announce_papers_language.language = 'vi' ORDER BY announce_papers.id ASC LIMIT " . $offset . "," . $item;
+        $sql = "select announce_papers.id, announce_papers.link, announce_papers.image, announce_papers_language.title, announce_papers_language.content from announce_papers,announce_papers_language WHERE announce_papers.id = announce_papers_language.id_announce_papers AND announce_papers_language.language = 'vi' ORDER BY announce_papers.id DESC LIMIT " . $offset . "," . $item;
         $result = mysqli_query($this->db, $sql);
         if (!$result) {
             die("Error in query getAllLimit");

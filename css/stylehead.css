@@ -2,16 +2,6 @@ body {
     overflow-x: hidden;
     max-width: 100%;
 }
-.chuthich{
-    display: inline;
-}
-.img-res{
-    margin-top: -150px;
-    width:40%;
-}
-#resbtn-dn{
-    display: none;  
-}
 .bannerDecription {
     margin-bottom: 400px;
     text-align: justify;
@@ -20,6 +10,17 @@ body {
     padding-bottom: 20px;
     background-color: rgba(249, 252, 233, 0.5);
 }
+.chuthich{
+    display: inline;
+}
+.img-res{
+    margin-top: -150px;
+    width:40%;
+}
+#resbtn-dn{
+    display: none;
+}
+
 
 .dropdown dd {
     position: relative;

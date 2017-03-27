@@ -43,7 +43,7 @@ class modelvideo
     }
 
     public function laydanhvideoLimit($offset, $item){
-        $sql = "SELECT * FROM video ORDER BY video.id_video ASC LIMIT " . $offset . "," . $item;
+        $sql = "SELECT * FROM video ORDER BY video.id_video DESC LIMIT " . $offset . "," . $item;
         $result = mysqli_query($this->db, $sql);
         if (!$result) {
             die("Error in query");

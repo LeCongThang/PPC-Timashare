@@ -4,9 +4,6 @@
         position: absolute;
     }
 
-    .container {
-        width: 1200px;
-    }
     .btnBookNow {
         color: white;
         margin-top: -400px;
@@ -43,7 +40,7 @@
 
     #btnreadmore {
         margin-top: 5px;
-        color: white;
+        color: white !important;
         padding-top: 5px;
         padding-bottom: 5px;
         padding-left: 20px;
@@ -56,44 +53,55 @@
     #langue{
         width:100px;
     }
+
 }
 @media (width:1024px){
-    .bannerDecription{
-        display: none !important;
-    }
-          #img_top_img{
-     width:100%;
-     height: auto;
+    #img_top_img{
+        width:100%;
+        height: auto;
     }
     #img_mid_bottom_img{
-     width:100%;
-     height: auto;
-     margin-left: 0px;
+        width:100%;
+        height: auto;
+        margin-left: 0px;
     }
     #img_left_bottom_img{
-     width:100%;
-     height: auto;
+        width:100%;
+        height: auto;
     }
     #img_right_bottom_img{
-     width:100%;
-     height: auto;
-     margin-left: 0px;
+        width:100%;
+        height: auto;
+        margin-left: 0px;
     }
     #img_right_img{
-     width:100%;
-     height: auto;
-     margin-left: 10px;
+        width:100%;
+        height: auto;
+        margin-left: 10px;
     }
     #img_left_img{
-     width:100%;
-     height: auto;
-     margin-right: 10px;
-     margin-left: 10px;
+        width:100%;
+        height: auto;
+        margin-right: 10px;
+        margin-left: 10px;
+    }
+    .bannerDecription {
+        margin-bottom: 150px;
+        width: 600px;
+        text-align: justify;
+        margin-left: -250px;
+        padding-top: 20px;
+        padding-bottom: 20px;
+        background-color: rgba(249, 252, 233, 0.5);
     }
 }
 /* Smaller than standard 1200 */
 
 @media (max-width: 991px) {
+    #screen_send{
+        margin-left: 0px!important;
+        margin-top: 0px!important;
+    }
     .navbar-header {
         float: none;
     }
@@ -129,13 +137,6 @@
     .collapsing {
         overflow: hidden!important;
     }
-    #send_screen{
-        margin-top: 0px!important;
-    }
-    #screen_send{
-        margin-left: 0px!important;
-        margin-top: 0px!important;
-    }
 }
 /* Smaller than standard 1200 */
 @media only screen and (max-width: 1199px) {
@@ -145,25 +146,28 @@
 }
 /* Between 992 and 1199 */
 @media only screen and (min-width: 992px) and (max-width: 1199px) {
-  @media (min-width: 992px) {
-  .nav-tabs.nav-justified > li {
-    display: table-cell;
-    width: 1%;
-  }
-  .nav-tabs.nav-justified > li > a {
-    margin-bottom: 0;
-  }
-}
+    @media (min-width: 992px) {
+        .nav-tabs.nav-justified > li {
+            display: table-cell;
+            width: 1%;
+        }
+        .nav-tabs.nav-justified > li > a {
+            margin-bottom: 0;
+        }
+    }
 }
 
 /* All Mobile Sizes */
 @media only screen and (max-width: 767px) {
-
+    #screen_send{
+        margin-left: 0px!important;
+        margin-top: 0px!important;
+    }
     .navbar {
         position: relative !important;
     }
     .navbar-nav > li > a {
-      color: black !important;
+        color: black !important;
     }
     .navbar-custom{
         background-color: white !important;
@@ -204,16 +208,12 @@
         width: 40%;
         margin-left: 25px;
     }
-
     .navbar-toggle {
-
         border: 2px solid #372618 !important;
     }
-
     .navbar-toggle span {
-        border: 2px solid white !important;
+        border: 2px solid #372618 !important;
     }
-
     .btnBookNow {
         color: white;
         margin-top: -400px;
@@ -229,121 +229,168 @@
 
     #btnreadmore {
         margin-top: 5px;
-        color: white;
+        color: white !important;
         padding-top: 5px;
         padding-bottom: 5px;
         padding-left: 20px;
         padding-right: 20px;
         text-align: center;
-        background-color: #8B4726;
-        border-color: #8B4726;
+        background-color: #362516;
+        border-color: #362516;
         background-image: none !important;
     }
 
     .bannerDecription {
-        margin-bottom: 300px;
+        margin-bottom:0px;
         text-align: justify;
         margin-left: -200px;
         background-color: rgba(249, 252, 233, 0.5);
     }
-
     .myh3h4 {
         margin-left: 200px;
         color: #362516;
     }
+    .myh3{
+        font-size: 13px;
+    }
+    .myh4{
+        font-size: 12px;
+    }
     #img_top_img{
-     width:100%;
-     height: auto;
+        width:100%;
+        height: auto;
     }
     #img_mid_bottom_img{
-     width:100%;
-     height: auto;
-     margin-left: 0px;
+        width:100%;
+        height: auto;
+        margin-left: 0px;
     }
     #img_left_bottom_img{
-     width:100%;
-     height: auto;
+        width:100%;
+        height: auto;
     }
     #img_right_bottom_img{
-     width:100%;
-     height: auto;
-     margin-left: 0px;
+        width:100%;
+        height: auto;
+        margin-left: 0px;
     }
     #img_right_img{
-     width:100%;
-     height: auto;
-     margin-left: 10px;
+        width:100%;
+        height: auto;
+        margin-left: 10px;
     }
     #img_left_img{
-     width:100%;
-     height: auto;
-     margin-right: 10px;
-     margin-left: 10px;
+        width:100%;
+        height: auto;
+        margin-right: 10px;
+        margin-left: 10px;
     }
-       #disp{
+    #disp{
         display:none;
     }
-    #screen_send{
-        margin-left: 0px!important;
-        margin-top: 0px!important;
+    .resort_item .div-img{
+        padding-left: 0px;
+        width:50%;
+    }
+    .resort_info{
+        padding-right: 0px;
+        position: relative;
+        float:left;
+        margin-bottom: 40px;
+    }
+    .btnreadmore{
+        position: absolute;
+        bottom: 0px;
+        margin-bottom: -20px;
     }
 }
 @media(width: 768px)
 {
-    .menurightipd{
-        margin-top: -70px !important;
+    .navbar-toggle {
+
+        border: 2px solid #372618 !important;
+    }
+    .navbar-toggle span {
+        border: 2px solid #372618 !important;
+    }
+    .navbar-collapse {
+        background-color: white !important;
+        border-top: 1px solid transparent;
+        box-shadow: inset 0 1px 0 rgba(255,255,255,0.1);
+    }
+    .navbar-nav li a{
+        color: #372618;
+    }
+    #menuright {
+        margin-top: 0px;
+        padding-top: 0px;
+    }
+
+    #menuleft {
+        padding-bottom: 0px;
+        margin-bottom: 0px;
     }
     .loginringht{
-         display: block !important;
-       float: right;
+        display: block !important;
+        float: right;
         margin-top: -60px
     }
     .logindn{
-        display: none!important;
+        display: none !important;
     }
 
     #btn-dn{
         margin-left: -130px;
     }
-        #img_top_img{
-     width:100%;
-     height: auto;
+    #img_top_img{
+        width:100%;
+        height: auto;
     }
     #img_mid_bottom_img{
-     width:100%;
-     height: auto;
-     margin-left: 0px;
+        width:100%;
+        height: auto;
+        margin-left: 0px;
     }
     #img_left_bottom_img{
-     width:100%;
-     height: auto;
+        width:100%;
+        height: auto;
     }
     #img_right_bottom_img{
-     width:100%;
-     height: auto;
-     margin-left: 0px;
+        width:100%;
+        height: auto;
+        margin-left: 0px;
     }
     #img_right_img{
-     width:100%;
-     height: auto;
-     margin-left: 10px;
+        width:100%;
+        height: auto;
+        margin-left: 10px;
     }
     #img_left_img{
-     width:100%;
-     height: auto;
-     margin-right: 10px;
-     margin-left: 10px;
+        width:100%;
+        height: auto;
+        margin-right: 10px;
+        margin-left: 10px;
+    }
+    .bannerDecription {
+        margin-bottom: 100px;
+        width: 600px;
+        text-align: justify;
+        margin-left: -250px;
+        padding-top: 20px;
+        padding-bottom: 20px;
+        background-color: rgba(249, 252, 233, 0.5);
+    }
+    .myh3{
+        font-size: 13px;
+    }
+    .myh4{
+        font-size: 12px;
     }
     #screen_send{
         margin-left: 0px!important;
         margin-top: 0px!important;
     }
-    #send_screen{
-        margin-top: 0px!important;
-    }
 }
-
-
 @media(width: 767px)
 {
     .menurightipd{
@@ -351,7 +398,7 @@
     }
     .loginringht{
         display: none; !important;
-       float: right;
+        float: right;
         margin-top: -60px
     }
     .logindn{
@@ -361,40 +408,38 @@
     #btn-dn{
         margin-left: 0px
     }
-        #img_top_img{
-     width:100%;
-     height: auto;
+    #img_top_img{
+        width:100%;
+        height: auto;
     }
     #img_mid_bottom_img{
-     width:100%;
-     height: auto;
-     margin-left: 0px;
+        width:100%;
+        height: auto;
+        margin-left: 0px;
     }
     #img_left_bottom_img{
-     width:100%;
-     height: auto;
+        width:100%;
+        height: auto;
     }
     #img_right_bottom_img{
-     width:100%;
-     height: auto;
-     margin-left: 0px;
+        width:100%;
+        height: auto;
+        margin-left: 0px;
     }
     #img_right_img{
-     width:100%;
-     height: auto;
-     margin-left: 10px;
+        width:100%;
+        height: auto;
+        margin-left: 10px;
     }
     #img_left_img{
-     width:100%;
-     height: auto;
-     margin-right: 10px;
-     margin-left: 10px;
+        width:100%;
+        height: auto;
+        margin-right: 10px;
+        margin-left: 10px;
     }
-
     #screen_send{
         margin-left: 0px!important;
         margin-top: 0px!important;
     }
-
 }
 

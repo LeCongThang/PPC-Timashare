@@ -29,6 +29,10 @@ class modeluudai
 
     public function create($tieu_de_vi, $noi_dung_vi, $tieu_de_en, $noi_dung_en, $hinh, $list_id_resort, $start_date, $end_date)
     {
+        $imagick1 = new \Imagick(realpath(REAL_PATH . BASE_DIR . $hinh));
+        $image_high1 = $imagick1->getImageHeight();
+        $imagick1->resizeImage(530, 262, Imagick::FILTER_LANCZOS, 1);
+        file_put_contents(REAL_PATH . BASE_DIR . $hinh, $imagick1);
         $sql_deals = "INSERT INTO deals(image) VALUES('$hinh')";
         $kq_deals = $this->db->query($sql_deals);
         if ($kq_deals)
@@ -46,13 +50,17 @@ class modeluudai
             }
 
         }
-        return false;
+        return true;
     }
 
     public function update($id_deals, $tieu_de_vi, $noi_dung_vi, $tieu_de_en, $noi_dung_en, $hinh)
     {
         $sql_hinh = "UPDATE deals SET ";
         if ($hinh != null) {
+            $imagick1 = new \Imagick(realpath(REAL_PATH . BASE_DIR . $hinh));
+            $image_high1 = $imagick1->getImageHeight();
+            $imagick1->resizeImage(530, 262, Imagick::FILTER_LANCZOS, 1);
+            file_put_contents(REAL_PATH . BASE_DIR . $hinh, $imagick1);
             $sql_hinh .= "image='" . $hinh . "'";
             $sql_hinh .= " where id = {$id_deals}";
             $kq_hinh = $this->db->query($sql_hinh);
@@ -85,7 +93,7 @@ class modeluudai
 
     public function getAllLimit($offset, $item)
     {
-        $sql = "select  deals.id, deals.image, deals_language.title, deals_language.content from deals,deals_language WHERE deals.id = deals_language.id_deals AND deals_language.language = 'vi' ORDER BY deals.id ASC LIMIT " . $offset . "," . $item;
+        $sql = "select  deals.id, deals.image, deals_language.title, deals_language.content from deals,deals_language WHERE deals.id = deals_language.id_deals AND deals_language.language = 'vi' ORDER BY deals.id DESC LIMIT " . $offset . "," . $item;
         $result = mysqli_query($this->db, $sql);
         if (!$result) {
             die("Error in query getListResort");

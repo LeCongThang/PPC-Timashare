@@ -9,20 +9,18 @@
     <!-- Latest compiled and minified CSS -->
     <link rel="stylesheet" type="text/css" href="<?= BASE_DIR ?>css/stylehover.css">
     <link rel="stylesheet" type="text/css" href="<?= BASE_DIR ?>css/style.css">
-    <link rel="stylesheet" type="text/css" href="<?= BASE_DIR ?>css/responsive.css">
+
     <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css"
           integrity="sha384-BVYiiSIFeK1dGmJRAkycuHAHRg32OmUcww7on3RYdg4Va+PmSTsz/K68vbdEjh4u" crossorigin="anonymous">
     <!-- Optional theme -->
     <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap-theme.min.css"
           integrity="sha384-rHyoN1iRsVXV4nD0JutlnGaslCJuC7uwjduW9SVrLvRYooPp2bWYgmgJQIXwl/Sp" crossorigin="anonymous">
     <link rel="stylesheet" type="text/css" href="<?= BASE_DIR ?>css/stylehead.css">
+    <link rel="stylesheet" type="text/css" href="<?= BASE_DIR ?>css/responsive.css">
+
     <!-- Latest compiled and minified JavaScript -->
     <script src="<?= BASE_DIR ?>plugins/jQuery/jquery-2.2.3.min.js"></script>
-    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"
-            integrity="sha384-Tc5IQib027qvyjSMfHjOMaLkfuWVxZxUPnCJA7l2mCWNIpG9mGCD8wGNIcPD7Txa"
-            crossorigin="anonymous"></script>
-    <script type="text/javascript" src="<?= BASE_DIR ?>ckeditor/ckeditor.js"></script>
-    <script type="text/javascript" src="<?= BASE_DIR ?>js/main.js"></script>
+
     <script>var lang = '<?=$_SESSION['lang']?>'</script>
 
 </head>
@@ -62,10 +60,16 @@
                                 <ul>
                                     <li>
                                         <?php
+                                        $actual_link = (isset($_SERVER['HTTPS']) ? "https" : "http") . "://$_SERVER[HTTP_HOST]$_SERVER[REQUEST_URI]";
                                         if ($_SESSION['lang'] == "en") {
-                                            echo '<a style="color: white;" href="' . BASE_URL . 'vi/" ><img style="margin-left: 5px;" class="flag"src="' . BASE_DIR . 'img/vietnamflag.gif"alt=""/> Tiếng Việt</a>';
+                                            $actual_link = str_replace("/en/","/vi/",$actual_link);
                                         } else if ($_SESSION['lang'] == "vi") {
-                                            echo '<a style="color: white;" href="' . BASE_URL . 'en/" ><img style="margin-left: 5px;" class="flag"src="' . BASE_DIR . 'img/icon_flag_usa.png"alt=""/> English</a>';
+                                            $actual_link = str_replace("/vi/","/en/",$actual_link);
+                                        }
+                                        if ($_SESSION['lang'] == "en") {
+                                            echo '<a style="color: white;" href="'.$actual_link.'" ><img style="margin-left: 5px;" class="flag"src="' . BASE_DIR . 'img/vietnamflag.gif"alt=""/> Tiếng Việt</a>';
+                                        } else if ($_SESSION['lang'] == "vi") {
+                                            echo '<a style="color: white;" href="'.$actual_link.'" ><img style="margin-left: 5px;" class="flag"src="' . BASE_DIR . 'img/icon_flag_usa.png"alt=""/> English</a>';
                                         }
                                         ?>
                                     </li>
@@ -224,7 +228,11 @@
     }
     ?>
 </header>
-
+<script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"
+        integrity="sha384-Tc5IQib027qvyjSMfHjOMaLkfuWVxZxUPnCJA7l2mCWNIpG9mGCD8wGNIcPD7Txa"
+        crossorigin="anonymous"></script>
+<script type="text/javascript" src="<?= BASE_DIR ?>ckeditor/ckeditor.js"></script>
+<script type="text/javascript" src="<?= BASE_DIR ?>js/main.js"></script>
 
 </body>
 </html>

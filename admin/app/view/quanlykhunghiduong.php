@@ -61,7 +61,7 @@
                                     <select id="status" class="form-control">
                                         <option value="-1" selected>Trạng thái</option>
                                         <option value="0">Còn hiệu lực</option>
-                                        <option value="1">Vô hiệu hóa</option>
+                                        <option value="1">Hết hiệu lực</option>
                                     </select>
                                 </div>
                                 <div class="col-md-3">

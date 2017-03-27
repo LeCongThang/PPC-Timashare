@@ -83,6 +83,7 @@ class modelmail
             $sql.= " AND email_lienhe like '%".$txtSearchAddress."%'";
         if($txtSearchPhone != "")
             $sql.= " AND sdt_lienhe like '%".$txtSearchPhone."%'";
+        $sql.= " ORDER BY lienhe.id DESC";
         $result = mysqli_query($this->db, $sql);
         if (!$result) {
             die("Error in query");
@@ -105,6 +106,7 @@ class modelmail
             $sql.= " AND email_lienhe like '%".$txtSearchAddress."%'";
         if($txtSearchPhone != "")
             $sql.= " AND sdt_lienhe like '%".$txtSearchPhone."%'";
+        $sql.= " ORDER BY lienhe.id DESC";
         $result = mysqli_query($this->db, $sql);
         if (!$result) {
             die("Error in query");

@@ -27,7 +27,7 @@ class modelbook
 
     public function getAllBooking()
     {
-        $sql = "SELECT book_now.*,resort_language.name,taikhoan.hoten, taikhoan.diachi, taikhoan.dienthoai, taikhoan.sex, resort_language.address, resort.id_resort_type FROM book_now,resort,taikhoan,resort_language WHERE resort.id = resort_language.id_resort AND resort_language.language = 'vi' AND resort.id = book_now.id_resort AND taikhoan.id = book_now.id_user AND book_now.status = 0";
+        $sql = "SELECT book_now.*,resort_language.name,taikhoan.hoten, taikhoan.diachi, taikhoan.dienthoai, taikhoan.sex, resort_language.address, resort.id_resort_type FROM book_now,resort,taikhoan,resort_language WHERE resort.id = resort_language.id_resort AND resort_language.language = 'vi' AND resort.id = book_now.id_resort AND taikhoan.id = book_now.id_user AND book_now.status = 0 ORDER BY book_now.id_book DESC ";
         $result = mysqli_query($this->db, $sql);
         if (!$result) {
             die("Error in query getAllBooking");
@@ -43,7 +43,7 @@ class modelbook
 
     public function getAllBookingUpdated()
     {
-        $sql = "SELECT book_now.*,resort_language.name,taikhoan.hoten, taikhoan.diachi, taikhoan.dienthoai, taikhoan.sex, resort_language.address, resort.id_resort_type FROM book_now,resort,taikhoan,resort_language WHERE resort.id = resort_language.id_resort AND resort_language.language = 'vi' AND resort.id = book_now.id_resort AND taikhoan.id = book_now.id_user AND book_now.id_book NOT IN (SELECT book_now.id_book FROM book_now WHERE book_now.status = 0)";
+        $sql = "SELECT book_now.*,resort_language.name,taikhoan.hoten, taikhoan.diachi, taikhoan.dienthoai, taikhoan.sex, resort_language.address, resort.id_resort_type FROM book_now,resort,taikhoan,resort_language WHERE resort.id = resort_language.id_resort AND resort_language.language = 'vi' AND resort.id = book_now.id_resort AND taikhoan.id = book_now.id_user AND book_now.id_book NOT IN (SELECT book_now.id_book FROM book_now WHERE book_now.status = 0) ORDER BY book_now.id_book DESC ";
         $result = mysqli_query($this->db, $sql);
         if (!$result) {
             die("Error in query getAllBookingUpdated");
@@ -119,14 +119,14 @@ class modelbook
 
     public function search($txtSearch,$txtSearchName,$txtSearchResort)
     {
-        $sql = "SELECT book_now.*,resort_language.name,taikhoan.hoten, taikhoan.diachi, taikhoan.dienthoai, taikhoan.sex, resort_language.address, resort.id_resort_type FROM book_now,resort,taikhoan,resort_language WHERE resort.id = resort_language.id_resort AND resort_language.language = 'vi' AND resort.id = book_now.id_resort AND taikhoan.id = book_now.id_user AND book_now.status = 0";
+        $sql = "SELECT book_now.*,resort_language.name,taikhoan.hoten, taikhoan.diachi, taikhoan.dienthoai, taikhoan.sex, resort_language.address, resort.id_resort_type FROM book_now,resort,taikhoan,resort_language WHERE resort.id = resort_language.id_resort AND resort_language.language = 'vi' AND resort.id = book_now.id_resort AND taikhoan.id = book_now.id_user AND book_now.status = 0 ";
         if($txtSearch != "")
             $sql.= " AND book_now.id_book =".$txtSearch;
         if($txtSearchName != "")
             $sql.= " AND taikhoan.hoten like '%".$txtSearchName."%'";
         if($txtSearchResort != "")
             $sql.= " AND resort_language.name like '%".$txtSearchResort."%'";
-
+        $sql.= " ORDER BY book_now.id_book DESC ";
         $result = mysqli_query($this->db, $sql);
         if (!$result) {
             die("Error in query search");
@@ -143,14 +143,14 @@ class modelbook
 
     public function searchBooked($txtSearch,$txtSearchName,$txtSearchResort)
     {
-        $sql = "SELECT book_now.*,resort_language.name,taikhoan.hoten, taikhoan.diachi, taikhoan.dienthoai, taikhoan.sex, resort_language.address, resort.id_resort_type FROM book_now,resort,taikhoan,resort_language WHERE resort.id = resort_language.id_resort AND resort_language.language = 'vi' AND resort.id = book_now.id_resort AND taikhoan.id = book_now.id_user AND book_now.id_book NOT IN (SELECT book_now.id_book FROM book_now WHERE book_now.status = 0)";
+        $sql = "SELECT book_now.*,resort_language.name,taikhoan.hoten, taikhoan.diachi, taikhoan.dienthoai, taikhoan.sex, resort_language.address, resort.id_resort_type FROM book_now,resort,taikhoan,resort_language WHERE resort.id = resort_language.id_resort AND resort_language.language = 'vi' AND resort.id = book_now.id_resort AND taikhoan.id = book_now.id_user AND book_now.id_book NOT IN (SELECT book_now.id_book FROM book_now WHERE book_now.status = 0) ";
         if($txtSearch != "")
             $sql.= " AND book_now.id_book =".$txtSearch;
         if($txtSearchName != "")
             $sql.= " AND taikhoan.hoten like '%".$txtSearchName."%'";
         if($txtSearchResort != "")
             $sql.= " AND resort_language.name like '%".$txtSearchResort."%'";
-
+        $sql.= " ORDER BY book_now.id_book DESC ";
         $result = mysqli_query($this->db, $sql);
         if (!$result) {
             die("Error in query search");

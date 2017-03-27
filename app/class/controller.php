@@ -104,6 +104,7 @@ class controller
             $img_khung_5_t->cropImage($width_khung_5_t, $high_khung_5_t, 860, 0);
             //$img_khung_5_t->resizeImage(1157.99,350, Imagick::FILTER_LANCZOS, 1);
             array_push($array_img_t, $img_khung_5_t);
+            $about = $this->control->loadAbout($_SESSION['lang']);
             require_once "view/home.php"; //nạp layout
         } catch (Exception $ex) {
             require_once "view/ErrorPage.php";

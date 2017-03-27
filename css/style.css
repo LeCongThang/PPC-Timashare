@@ -377,7 +377,7 @@ h2 {
     padding-left: 0px;
     padding-right: 0px;
     margin-bottom: 40px;
- }
+}
 .nav>li>a:focus, .nav>li>a:hover{
     background-color: #8a6d3b!important;
 }
@@ -406,4 +406,34 @@ h2 {
 }
 #res-ourvideo{
     margin-top: -45px;
+}
+.resort_item{
+    margin-bottom: 15px;
+    height:200px;
+}
+.div-img{
+    padding-left: 0px;
+}
+.resort_info{
+    padding-right: 0px;
+    position: relative;
+    height: 100%;
+    margin-bottom: 40px;
+}
+.btnreadmore{
+    position: absolute;
+    bottom: 0px;
+    left: 15px;
+}
+#btnreadmore {
+    margin-top: 5px;
+    color: white !important;
+    padding-top: 5px;
+    padding-bottom: 5px;
+    padding-left: 20px;
+    padding-right: 20px;
+    text-align: center;
+    background-color: #362516;
+    border-color: #362516;
+    background-image: none !important;
 }

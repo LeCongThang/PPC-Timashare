@@ -1,4 +1,4 @@
-<div id="ModalDangNhap" class="modal fade " tabindex="-1" role="dialog" aria-labelledby="myLargeModalLabel">
+<div id="ModalDangNhap" class="modal " tabindex="-1" role="dialog" aria-labelledby="myLargeModalLabel">
     <div class="modal-dialog modal-lg" role="document" >
         <div class="modal-content"  style="width: 100%;height: 100%" >
             <div class="modal-header">

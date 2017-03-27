@@ -28,22 +28,22 @@
         <h2 style="color:white;text-align:center;">{WhatIsTimeShare}</h2>
         <div class="col-md-6 col-sm-12" id="banner_5">
             <div class="image_banner">
-                <img src="<?= BASE_URL ?>img/banner_5.png" style="width:100%;" alt="">
+                <img src="<?= BASE_URL.$about['image_1'] ?>" style="width:100%;" alt="">
             </div>
             <div id="conten_banner">
-                <h4><b>1.{TitleWhatIsTimeShare1}</b></h4>
+                <h4><b>1.<?=$about['title_about_1']?></b></h4>
                 <!--<br>-->
-                <p>{ContentWhatIsTimeShare1}</p>
+                <p><?=$about['content_about_1']?></p>
             </div>
         </div>
         <div class="col-md-6 col-sm-12 " id="banner_5">
             <div class="image_banner">
-                <img src="<?= BASE_URL ?>img/banner_6.png" style="width:100%;" alt="">
+                <img src="<?= BASE_URL.$about['image_2'] ?>" style="width:100%;" alt="">
             </div>
             <div id="conten_banner">
-                <h4><b>2.{TitleWhatIsTimeShare2}</b></h4>
+                <h4><b>2.<?=$about['title_about_2']?></b></h4>
                 <!--<br>-->
-                <p>{ContentWhatIsTimeShare2}</p>
+                <p><?=$about['content_about_2']?></p>
             </div>
         </div>
     </div>

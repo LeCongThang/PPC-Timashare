@@ -247,7 +247,7 @@ $isUpdate = isset($this->params[0]);
                                 </div>
                                 <div class="form-group">
                                     <label for="noidung">Giá </label>
-                                    <input placeholder="Gía mỗi phòng" class="form-control"
+                                    <input placeholder="Giá mỗi phòng" class="form-control" onkeyup=" return numberphone(this)"
                                            value="<?php echo $isUpdate ? $resort_vi['price'] : "" ?>" required
                                            name="resort_price"
                                            style="font-size:17px;font-family:verdana;text-align:justify;">
@@ -535,6 +535,9 @@ $isUpdate = isset($this->params[0]);
 <script type="text/javascript" src="<?= BASE_DIR ?>ckeditor/ckeditor.js"></script>
 <!-- Page Script -->
 <script>
+    function numberphone(input) {
+        input.value = input.value.replace(/[^0-9]/g, '');
+    }
     $("#image-upload").fileinput({
         'showUpload': false,
         'previewFileType': 'image',

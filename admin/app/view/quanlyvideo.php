@@ -90,7 +90,7 @@
                                         <div class="col-md-2 col-sm-12" style="margin-top: 25px; padding-left: 0px">
                                             <button type="submit" class="btn btn-primary" name="submit">Cập nhật
                                             </button>
-                                            <a href="<?= BASE_URL_ADMIN ?>controllervideo/delete/<?= $item_video['id_video'] ?>"
+                                            <ahref="" onclick="ftDelete('<?=$item_video['id_video'];?>');"
                                                class="btn btn-danger">Xóa</a>
                                         </div>
                                     </div>
@@ -145,11 +145,20 @@
 <script src="<?= BASE_DIR ?>plugins/bootstrap-wysihtml5/bootstrap3-wysihtml5.all.min.js"></script>
 <!-- Page Script -->
 <script>
-    $(function () {
-        //Add text editor
-        $("#compose-textarea").wysihtml5();
-    });
+    function ftDelete($id) {
+        var answer=confirm('Bạn có chắc muốn xóa?');
+        if(answer){
+            $.ajax({
+                type: "POST",
+                url: "<?=BASE_URL_ADMIN?>controllervideo/delete/"+$id,
+                success: function(data){
+                    window.location.href='<?=BASE_URL_ADMIN?>controllervideo/index';
+                    alert("Xóa thành công");
+                }
+            });
+        }
+
+    }
 </script>
-<script type="text/javascript" src="../../ckeditor/ckeditor.js"></script>
 </body>
 </html>

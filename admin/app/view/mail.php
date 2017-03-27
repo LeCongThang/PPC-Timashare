@@ -216,7 +216,7 @@
                 if (i < data.length) {
                     dataPaging += '<tr><td class="mailbox-name">' + '<a href="' + BASE_ADMIN + 'controllermail/xemmail/' + data[i].id + '">' + data[i].ten_lienhe + '</a></td>';
                     dataPaging += '<td class="mailbox-subject">' + data[i].email_lienhe + '</td><td class="mailbox-attachment">' + data[i].sdt_lienhe + '</td>';
-                    dataPaging += '<td>' + '<a href="' + BASE_ADMIN + 'controllermail/delete/' + data[i].id + '"><button class="btn btn-info"><i class="glyphicon glyphicon-trash"></i></button></a></td>';
+                    dataPaging += '<td>' + '<a  href="" onclick="ftDelete('+data[i].id + ')"><button class="btn btn-info"><i class="glyphicon glyphicon-trash"></i></button></a></td>';
                     dataPaging += '</tr>';
                 }
             }
@@ -308,7 +308,7 @@
                 if (i < data.length) {
                     dataPaging += '<tr><td class="mailbox-name">' + '<a href="' + BASE_ADMIN + 'controllermail/xemMailDaKiemTra/' + data[i].id + '">' + data[i].ten_lienhe + '</a></td>';
                     dataPaging += '<td class="mailbox-subject">' + data[i].email_lienhe + '</td><td class="mailbox-attachment">' + data[i].sdt_lienhe + '</td><td class="mailbox-attachment">' + data[i].nguoi_duyet + '</td>';
-                    dataPaging += '<td>' + '<a href="' + BASE_ADMIN + 'controllermail/delete/' + data[i].id + '"><button class="btn btn-info"><i class="glyphicon glyphicon-trash"></i></button></a></td>';
+                    dataPaging += '<td>' + '<a href="" onclick="ftDelete1('+data[i].id + ')"><button class="btn btn-info"><i class="glyphicon glyphicon-trash"></i></button></a></td>';
                     dataPaging += '</tr>';
                 }
             }
@@ -376,6 +376,35 @@
         search();
         searchChecked();
     });
+    function ftDelete($id) {
+        var answer=confirm('Bạn có chắc muốn xóa?');
+        if(answer){
+            $.ajax({
+                type: "POST",
+                url: "<?=BASE_URL_ADMIN?>controllermail/delete/"+$id,
+                success: function(data){
+                    alert("Xóa thành công");
+                    search();
+                }
+            });
+        }
+
+    }
+
+    function ftDelete1($id) {
+        var answer=confirm('Bạn có chắc muốn xóa?');
+        if(answer){
+            $.ajax({
+                type: "POST",
+                url: "<?=BASE_URL_ADMIN?>controllermail/delete/"+$id,
+                success: function(data){
+                    alert("Xóa thành công");
+                    searchChecked();
+                }
+            });
+        }
+
+    }
 </script>
 </body>
 </html>

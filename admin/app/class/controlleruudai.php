@@ -95,8 +95,10 @@ class controlleruudai
             } else {
                 $this->errors[] = 'Vui lòng chọn hình ảnh!';
             }
+        } else {
+            $list_resort = $this->controlleruudai->getListResort();
+            require_once("view/create-deals.php");
         }
-        require_once("view/create-deals.php");
     }
 
     public function update()

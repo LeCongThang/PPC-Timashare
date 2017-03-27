@@ -125,7 +125,7 @@ class modeltaikhoan
 
     public function search($txtSearch,$txtSearchPhone, $type, $status)
     {
-        $sql = "SELECT * FROM taikhoan WHERE 1 ";
+        $sql = "SELECT * FROM taikhoan WHERE 1  ";
         if ($txtSearch != "")
             $sql .= " AND hoten like '%" . $txtSearch . "%' ";
         if ($txtSearchPhone != "")
@@ -134,6 +134,7 @@ class modeltaikhoan
             $sql .= " AND id_vaitro = " . $type;
         if ($status != -1)
             $sql .= " AND status = " . $status;
+        $sql.= " ORDER BY taikhoan.id DESC";
         $result = mysqli_query($this->db, $sql);
         if (!$result) {
             die("Error in query in search");

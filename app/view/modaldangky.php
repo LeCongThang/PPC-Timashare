@@ -1,4 +1,4 @@
-<div id="ModalDangKy" class="modal fade bs-example-modal-lg" tabindex="-1" role="dialog"
+<div id="ModalDangKy" class="modal bs-example-modal-lg" tabindex="-1" role="dialog"
      aria-labelledby="gridSystemModalLabel">
     <div class="modal-dialog modal-lg" role="document">
         <div class="modal-content"  style="width: 100%;height: 100%">
@@ -47,7 +47,7 @@
                 </div>
                 <div class="input-group col-sm-12" id="banner_5">
                     <span class="input-group-addon"><i class="glyphicon glyphicon-phone"></i></span>
-                    <input id="numberPhoneResgiter" type="text" class="form-control" name="numberPhoneResgiter" maxlength="20"
+                    <input  onkeyup="return numberphone(this)" id="numberPhoneResgiter" type="text" class="form-control" name="numberPhoneResgiter" maxlength="20"
                            placeholder='{DienThoaiDK}'>
                 </div>
                 <div class="input-group col-sm-12" id="banner_5">
@@ -70,6 +70,9 @@
     </div>
 </div>
 <script>
+    function numberphone(input) {
+        input.value = input.value.replace(/[^0-9\.\-\+\(\)\s]/g, '');
+    }
     function readURL(input) {
         if (input.files && input.files[0]) {
             var reader = new FileReader();

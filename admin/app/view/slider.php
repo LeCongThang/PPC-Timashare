@@ -56,7 +56,7 @@
                             <table class="table">
                                 <thead>
                                 <tr>
-                                    <th>STT</th>
+                                    <th>Mã số</th>
                                     <th>Hình ảnh</th>
                                     <th></th>
                                 </tr>
@@ -65,7 +65,7 @@
                                 <?php foreach ($sliders as $key => $slider): ?>
                                     <tr>
                                         <td>
-                                            <?= $key + 1 ?>
+                                            <?=$slider['id_slider'] ?>
                                         </td>
                                         <td width="50%">
                                             <img class="img-responsive"
@@ -74,7 +74,7 @@
                                         <td>
                                             <a href="<?= BASE_URL_ADMIN ?>controllerslider/update/<?= $slider['id_slider'] ?>"
                                                class="btn btn-primary">Sửa</a>
-                                            <a href="<?= BASE_URL_ADMIN ?>controllerslider/delete/<?= $slider['id_slider'] ?>"
+                                            <a href="" onclick="ftDelete('<?=$slider['id_slider'];?>');"
                                                class="btn btn-danger">Xóa</a>
                                         </td>
                                     </tr>
@@ -130,5 +130,21 @@
 <script src="<?= BASE_DIR ?>plugins/iCheck/icheck.min.js"></script>
 
 <script type="text/javascript" src="<?= BASE_DIR ?>ckeditor/ckeditor.js"></script>
+<script>
+    function ftDelete($id) {
+        var answer=confirm('Bạn có chắc muốn xóa?');
+        if(answer){
+            $.ajax({
+                type: "POST",
+                url: "<?=BASE_URL_ADMIN?>controllerslider/delete/"+$id,
+                success: function(data){
+                    window.location.href='<?=BASE_URL_ADMIN?>controllerslider/index';
+                    alert("Xóa thành công");
+                }
+            });
+        }
+
+    }
+</script>
 </body>
 </html>

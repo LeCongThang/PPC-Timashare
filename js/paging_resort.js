@@ -165,30 +165,32 @@
                     rows.empty();
 
                     $.each(data, function (i, val) {
-                        var str = ' <div class="resort_item" style="margin-bottom: 15px;height:200px ">' +
-                            '<div class="col-sm-4 " style="padding-left: 0px">' + '<img src="' + base_dir + val.image + '" class="img-responsive" style="height: 200px"/></div>' +
-                            '<div class="col-sm-8 resort_info" style="padding-right: 0px;position: relative;height: 100%;margin-bottom: 40px"  >' +
+                        var str = ' <div class="resort_item">' +
+                            '<div class="col-sm-4 div-img" >' +
+                            '<img src="' + base_dir + val.image + '" class="img-responsive" style="height: 200px"/>' +
+                            '</div>' +
+                            '<div class="col-sm-8 resort_info" >' +
                             '<h4>' + val.name + '</h4>' +
                             '<h5>' + val.address + '</h5>' +
                             '<div class="resort_introduce">' + val.introduce + '</div>' +
-                            '<a href="' + base_url + lang + '/controller/loadingDetailsResort/' + val.id + '" id="btnreadmore" style="position: absolute;bottom: 0px;left: 15px"><b>' + tim_hieu_them + '</b></a></div>';
+                            '<a class="btnreadmore"  href="' + base_url + lang + '/controller/loadingDetailsResort/' + val.id + '" id="btnreadmore"><b>' + tim_hieu_them + '</b></a>' +
+                            '</div></div>';
                         rows.append(str);
                     });
                     var pageNumber = parseInt(page);
                     var pageList = Math.floor((pageNumber - 1) / 3) + 1;
-                   // console.log(pageList);
+                    // console.log(pageList);
                     var pageEnd = pageList * 3;
                     var pageListLasted = Math.floor((options.total - 1) / 3) + 1;
                     //console.log(rows);
                     var temp = "";
-                    if (pageListLasted != pageList){
-                    for (var i = pageEnd - 2; i <= pageEnd; i++) {
-                        if (i == pageNumber)  temp += '<a class="a_active" href="#" style="margin-right: 3px" data-value = ' + i + '>' + i + '</a>';
-                        else if (i != 0)
-                            temp += '<a href="#" style="margin-right: 3px" data-value = ' + i + '>' + i + '</a>';
-                    }
-                    } else
-                    {
+                    if (pageListLasted != pageList) {
+                        for (var i = pageEnd - 2; i <= pageEnd; i++) {
+                            if (i == pageNumber)  temp += '<a class="a_active" href="#" style="margin-right: 3px" data-value = ' + i + '>' + i + '</a>';
+                            else if (i != 0)
+                                temp += '<a href="#" style="margin-right: 3px" data-value = ' + i + '>' + i + '</a>';
+                        }
+                    } else {
                         for (var i = pageEnd - 2; i <= options.total; i++) {
                             if (i == pageNumber)  temp += '<a class="a_active" href="#" style="margin-right: 3px" data-value = ' + i + '>' + i + '</a>';
                             else if (i != 0)
@@ -199,12 +201,12 @@
                     if (lang == "vi")
                         page_name = "Trang ";
                     else page_name = "Page ";
-                    var bottom_content = '<div class="pages  col-md-12"><p >' + page_name;
+                    var bottom_content = '<div style="clear:both;"></div><div class="pages  col-md-12"><p >' + page_name;
                     if (pageList != 1)
-                        bottom_content += '<a href="#" data-value ='+ (pageEnd-5) +'">&lsaquo;&lsaquo;</a>  ';
+                        bottom_content += '<a href="#" data-value =' + (pageEnd - 5) + '">&lsaquo;&lsaquo;</a>  ';
                     bottom_content += temp;
                     if (pageListLasted != pageList)
-                        bottom_content += '  <a href="#" data-value ='+ (pageEnd+1) +'">&rsaquo;&rsaquo;</a>';
+                        bottom_content += '  <a href="#" data-value =' + (pageEnd + 1) + '">&rsaquo;&rsaquo;</a>';
                     bottom_content += '</p></div><br><br><br>';
                     rows.append(bottom_content);
                 }

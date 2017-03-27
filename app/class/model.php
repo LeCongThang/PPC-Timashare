@@ -1257,6 +1257,16 @@ class model
         return $result;
     }
 
+    public function loadAbout($lang){
+        $sql = "SELECT * FROM about WHERE about_language ='".$lang."'";
+        $result = mysqli_query($this->db, $sql);
+
+        if (!$result) {
+            die($sql);
+        }
+        return mysqli_fetch_assoc($result);
+    }
+
 
 
 }//class

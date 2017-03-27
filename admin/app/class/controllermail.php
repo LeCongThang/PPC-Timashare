@@ -54,7 +54,6 @@ class controllermail
             header('location:' . BASE_URL_ADMIN . "controlleradmin/index");
         $user = $this->params[0];
         $this->controllermail->delete($user);
-        $this->index();
     }
 
     public function index()

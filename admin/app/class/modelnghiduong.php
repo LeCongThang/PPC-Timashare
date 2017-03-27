@@ -372,13 +372,14 @@ class modelnghiduong
 
     public function search($txtSearch, $type, $status)
     {
-        $sql = "SELECT * FROM resort, resort_language WHERE resort.id = resort_language.id_resort AND resort_language.language ='vi'";
+        $sql = "SELECT * FROM resort, resort_language WHERE resort.id = resort_language.id_resort AND resort_language.language ='vi'  ";
         if ($txtSearch != "")
             $sql .= " AND resort_language.name like '%" . $txtSearch . "%' ";
         if ($type != -1)
             $sql .= " AND resort.id_resort_type = " . $type;
         if ($status != -1)
             $sql .= " AND resort.status = " . $status;
+        $sql .= " ORDER BY resort.id DESC";
         $result = mysqli_query($this->db, $sql);
         if (!$result) {
             die("Error in query in search");

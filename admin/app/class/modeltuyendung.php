@@ -29,6 +29,10 @@ class modeltuyendung
 
     public function create($tieu_de_vi, $noi_dung_vi, $tieu_de_en, $noi_dung_en, $hinh)
     {
+        $imagick1 = new \Imagick(realpath(REAL_PATH . BASE_DIR . $hinh));
+        $image_high1 = $imagick1->getImageHeight();
+        $imagick1->resizeImage(530, 323, Imagick::FILTER_LANCZOS, 1);
+        file_put_contents(REAL_PATH . BASE_DIR . $hinh, $imagick1);
         $date_insert = date("Y/m/d");
         $sql_connect_ppc = "INSERT INTO connect_ppc(image,date) VALUES('$hinh','$date_insert')";
         $kq_connect_ppc = $this->db->query($sql_connect_ppc);
@@ -48,6 +52,10 @@ class modeltuyendung
     {
         $sql_hinh = "UPDATE connect_ppc SET ";
         if ($hinh != null) {
+            $imagick1 = new \Imagick(realpath(REAL_PATH . BASE_DIR . $hinh));
+            $image_high1 = $imagick1->getImageHeight();
+            $imagick1->resizeImage(566, 323, Imagick::FILTER_LANCZOS, 1);
+            file_put_contents(REAL_PATH . BASE_DIR . $hinh, $imagick1);
             $sql_hinh .= "image='" . $hinh . "'";
         }
         $sql_hinh .= " where id = {$id_connect_ppc}";
@@ -80,7 +88,7 @@ class modeltuyendung
 
     public function getAllLimit($offset, $item)
         {
-        $sql = "select connect_ppc.id, connect_ppc.image, connect_ppc_language.title, connect_ppc_language.content from connect_ppc,connect_ppc_language WHERE connect_ppc.id = connect_ppc_language.id_connect_ppc AND connect_ppc_language.language = 'vi' ORDER BY connect_ppc.id ASC LIMIT " . $offset . "," . $item;
+        $sql = "select connect_ppc.id, connect_ppc.image, connect_ppc_language.title, connect_ppc_language.content from connect_ppc,connect_ppc_language WHERE connect_ppc.id = connect_ppc_language.id_connect_ppc AND connect_ppc_language.language = 'vi' ORDER BY connect_ppc.id DESC LIMIT " . $offset . "," . $item;
         $result = mysqli_query($this->db, $sql);
         if (!$result) {
             die("Error in query getListResort");

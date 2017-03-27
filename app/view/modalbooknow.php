@@ -32,17 +32,17 @@
                 </div>
                 <div class="form-group">
                     <label for="comment">{SoLuongPhong}</label>
-                    <input type="number" class="form-control" min="1" max="100" step="1" value="1" name="room"
+                    <input type="number" onkeyup=" return numberphone(this)" class="form-control" min="1" max="100" step="1" value="1" name="room"
                            id="room">
                 </div>
                 <div class="form-group">
                     <label for="comment">{NguoiLon}</label>
-                    <input type="number" class="form-control" min="1" max="100" step="1" value="1" name="adults"
+                    <input type="number" onkeyup="return numberphone(this)" class="form-control" min="1" max="100" step="1" value="1" name="adults"
                            id="adults">
                 </div>
                 <div class="form-group">
                     <label for="comment">{TreNho}</label>
-                    <input type="number" class="form-control" min="0" max="100" step="1" value="0" name="childs"
+                    <input type="number" onkeyup="return numberphone(this)" class="form-control" min="0" max="100" step="1" value="0" name="childs"
                            id="childs">
                 </div>
                 <div class="form-group">
@@ -75,7 +75,11 @@
 <script type="text/javascript" src="<?= BASE_DIR ?>js/bootstrap-datetimepicker.js"></script>
 
 <script>
+    function numberphone(input) {
+        input.value = input.value.replace(/[^0-9]/g, '');
+    }
     $(document).ready(function () {
+
         $(function () {
             $('#datetimepicker6').datetimepicker({format: 'YYYY-MM-DD'});
             $('#datetimepicker7').datetimepicker({

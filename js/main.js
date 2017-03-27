@@ -4,7 +4,6 @@ function validateEmail(email) {
 }
 
 $(document).ready(function () {
-
     $(document).on("click", 'div.name-video a', function (e) {
         e.preventDefault();
         data = $(this).data("value");
@@ -150,5 +149,4 @@ $(document).ready(function () {
         }
         return true;
     });
-
 });
