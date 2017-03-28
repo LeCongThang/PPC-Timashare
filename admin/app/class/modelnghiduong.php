@@ -157,14 +157,14 @@ class modelnghiduong
     public function insertDetailResort($id, $lang, $resort_name, $resort_introduce, $resort_location, $resort_service, $resort_equipment, $resort_address)
     {
         $info_map = "";
-        $sql = "INSERT INTO resort_language(introduce, location, service, equipment, language, id_resort, name, address, info_map) VALUES ('" . $resort_introduce . "','" . $resort_location . "','" . $resort_service . "','" . $resort_equipment . "','" . $lang . "'," . $id . ",'" . $resort_name . "','" . $resort_address . "','" . $info_map . "')";
+        $sql = "INSERT INTO resort_language(introduce, location, service, equipment, language, id_resort, name, address, info_map) VALUES ('" . $resort_introduce . "','" . $resort_location . "','" . $resort_service . "','" . $resort_equipment . "','" . $lang . "'," . $id . ",'" . mysqli_real_escape_string($this->db,$resort_name) . "','" . $resort_address . "','" . $info_map . "')";
         $result = mysqli_query($this->db, $sql);
         return $result;
     }
 
     public function updateDetailResort($id_resort_language, $resort_name, $resort_introduce, $resort_location, $resort_service, $resort_equipment, $resort_address)
     {
-        $sql = "UPDATE resort_language SET name ='" . $resort_name . "', introduce ='" . $resort_introduce . "', location ='" . $resort_location . "', service ='" . $resort_service . "', equipment ='" . $resort_equipment . "', address ='" . $resort_address . "' WHERE id_resort_language =" . $id_resort_language;
+        $sql = "UPDATE resort_language SET name ='" .  mysqli_real_escape_string($this->db,$resort_name) . "', introduce ='" . $resort_introduce . "', location ='" . $resort_location . "', service ='" . $resort_service . "', equipment ='" . $resort_equipment . "', address ='" . $resort_address . "' WHERE id_resort_language =" . $id_resort_language;
         $result = mysqli_query($this->db, $sql);
         return $result;
     }
@@ -192,10 +192,9 @@ class modelnghiduong
 
     public function updateInfoMap($id_resort, $id_resort_language, $img, $name, $address, $lang)
     {
-        $info_map = '<div id="bodyContent"><img style="height: 100px; width:200px;float:left" border="0" src="' . BASE_DIR . $img . '"/> <a href ="' . BASE_URL . $lang . '/controller/loadingDetailsResort/' . $id_resort . '"> <b>' . $name . '</b></a><br/><br/>' . $address . '</div>';
+        $info_map ='<div id="bodyContent"><img style="height: 100px; width:200px;float:left" border="0" src="' . BASE_DIR . $img . '"/> <a href ="' . BASE_URL . $lang . '/controller/loadingDetailsResort/' . $id_resort . '"> <b>' . mysqli_real_escape_string($this->db,$name) . '</b></a><br/><br/>' . $address . '</div>';
         $sql = "UPDATE resort_language SET info_map ='" . $info_map . "' WHERE 	id_resort_language =" . $id_resort_language;
         $result = mysqli_query($this->db, $sql);
-
         if (!$result) {
             die("Error in updateInfoMap");
         }

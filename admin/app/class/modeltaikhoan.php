@@ -114,7 +114,11 @@ class modeltaikhoan
 
     public function capnhatthongtintk($id, $hinh, $fullName, $address, $phoneNumber, $gender, $password, $status, $role)
     {
-        $passwordHash = password_hash($password, PASSWORD_DEFAULT);
+        $passwordOld = $this->layThongTinUser($id)['password'];
+        if($passwordOld != $password)
+            $passwordHash = password_hash($password, PASSWORD_DEFAULT);
+        else
+            $passwordHash = $password;
         $sql = "UPDATE taikhoan SET hoten='{$fullName}', diachi='{$address}',dienthoai='{$phoneNumber}',sex = {$gender}, password ='{$passwordHash}', status = {$status}, id_vaitro = {$role}";
         if ($hinh != null)
             $sql .= ", avatar = '{$hinh}' ";

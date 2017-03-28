@@ -17,7 +17,7 @@
           integrity="sha384-rHyoN1iRsVXV4nD0JutlnGaslCJuC7uwjduW9SVrLvRYooPp2bWYgmgJQIXwl/Sp" crossorigin="anonymous">
     <link rel="stylesheet" type="text/css" href="<?= BASE_DIR ?>css/stylehead.css">
     <link rel="stylesheet" type="text/css" href="<?= BASE_DIR ?>css/responsive.css">
-
+    <link rel="stylesheet" href="<?=BASE_DIR?>font/css/font-awesome.min.css">
     <!-- Latest compiled and minified JavaScript -->
     <script src="<?= BASE_DIR ?>plugins/jQuery/jquery-2.2.3.min.js"></script>
 
@@ -50,9 +50,9 @@
                             <dt>
                                 <?php
                                 if ($_SESSION['lang'] == "vi") {
-                                    echo '<a style="color: white;" href="#" onclick="return false;"><img class="flag"src="' . BASE_DIR . 'img/vietnamflag.gif"alt=""/> Tiếng Việt</a>';
+                                    echo '<a style="color: white;" href="#" onclick="return false;"><img class="flag"src="' . BASE_DIR . 'img/vietnamflag.jpg"alt=""/> Tiếng Việt <i class="fa fa-chevron-circle-down"></i></a>';
                                 } else if ($_SESSION['lang'] == "en") {
-                                    echo '<a style="color: white;" href="#" onclick="return false;"><img class="flag"src="' . BASE_DIR . 'img/icon_flag_usa.png"alt=""/> English</a>';
+                                    echo '<a style="color: white;" href="#" onclick="return false;"><img class="flag"src="' . BASE_DIR . 'img/icon_flag_usa.png"alt=""/> English <i class="fa fa-chevron-circle-down"></i></a>';
                                 }
                                 ?>
                             </dt>
@@ -63,11 +63,13 @@
                                         $actual_link = (isset($_SERVER['HTTPS']) ? "https" : "http") . "://$_SERVER[HTTP_HOST]$_SERVER[REQUEST_URI]";
                                         if ($_SESSION['lang'] == "en") {
                                             $actual_link = str_replace("/en/","/vi/",$actual_link);
+                                            if($actual_link==BASE_URL)
+                                                $actual_link = BASE_URL."vi/";
                                         } else if ($_SESSION['lang'] == "vi") {
                                             $actual_link = str_replace("/vi/","/en/",$actual_link);
                                         }
                                         if ($_SESSION['lang'] == "en") {
-                                            echo '<a style="color: white;" href="'.$actual_link.'" ><img style="margin-left: 5px;" class="flag"src="' . BASE_DIR . 'img/vietnamflag.gif"alt=""/> Tiếng Việt</a>';
+                                            echo '<a style="color: white;" href="'.$actual_link.'" ><img style="margin-left: 5px;" class="flag"src="' . BASE_DIR . 'img/vietnamflag.jpg"alt=""/> Tiếng Việt</a>';
                                         } else if ($_SESSION['lang'] == "vi") {
                                             echo '<a style="color: white;" href="'.$actual_link.'" ><img style="margin-left: 5px;" class="flag"src="' . BASE_DIR . 'img/icon_flag_usa.png"alt=""/> English</a>';
                                         }
@@ -102,7 +104,7 @@
             </div>
             <div class="collapse navbar-collapse" id="navbar-brand-centered">
                 <ul class="nav navbar-nav" id="menuleft">
-                    <li><a href="<?= BASE_URL . $_SESSION['lang'] ?>/controller/index">{TrangChu}</a></li>
+                    <li><a id="trangChu" href="<?= BASE_URL . $_SESSION['lang'] ?>/controller/index">{TrangChu}</a></li>
                     <li><a href="<?= $_SESSION['lang'] ?>/#introduce">{GioiThieu}</a></li>
                     <li><a href="<?= $_SESSION['lang'] ?>/#khunghiduong">{KhuNghiDuong}</a></li>
                 </ul>

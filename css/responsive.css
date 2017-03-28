@@ -1,5 +1,8 @@
 
 @media only screen and (min-width: 1200px) {
+    #trangChu{
+        padding-left: 30px;
+    }
     .navbar {
         position: absolute;
     }
@@ -56,6 +59,9 @@
 
 }
 @media (width:1024px){
+    #trangChu{
+        padding-left: 30px;
+    }
     #img_top_img{
         width:100%;
         height: auto;
@@ -98,6 +104,9 @@
 /* Smaller than standard 1200 */
 
 @media (max-width: 991px) {
+    #trangChu{
+        padding-left: 30px;
+    }
     #screen_send{
         margin-left: 0px!important;
         margin-top: 0px!important;
@@ -154,11 +163,17 @@
         .nav-tabs.nav-justified > li > a {
             margin-bottom: 0;
         }
+        #trangChu{
+            padding-left: 30px;
+        }
     }
 }
 
 /* All Mobile Sizes */
 @media only screen and (max-width: 767px) {
+    #trangChu{
+        padding-left: 15px;
+    }
     #screen_send{
         margin-left: 0px!important;
         margin-top: 0px!important;
@@ -303,9 +318,15 @@
         bottom: 0px;
         margin-bottom: -20px;
     }
+    .resort_item{
+        clear: both;
+    }
 }
 @media(width: 768px)
 {
+    #trangChu{
+        padding-left: 15px;
+    }
     .navbar-toggle {
 
         border: 2px solid #372618 !important;
@@ -393,6 +414,9 @@
 }
 @media(width: 767px)
 {
+    #trangChu{
+        padding-left: 15px;
+    }
     .menurightipd{
         margin-top: 0px !important;
     }

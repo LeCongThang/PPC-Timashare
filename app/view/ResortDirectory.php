@@ -181,9 +181,9 @@
                     {
                     $count = count($listResort);
                     if ($key < $count - 1)
-                        echo "{lat: " . $listResort[$key]['lat'] . ", lng:" . $listResort[$key]['lng'] . ", info:'" . $listResort[$key]['info_map'] . "'},";
+                        echo "{lat: " . $listResort[$key]['lat'] . ", lng:" . $listResort[$key]['lng'] . ", info:'" . addslashes($listResort[$key]['info_map']) . "'},";
                     else
-                        echo "{lat: " . $listResort[$key]['lat'] . ", lng:" . $listResort[$key]['lng'] . ", info:'" . $listResort[$key]['info_map'] . "'}";
+                        echo "{lat: " . $listResort[$key]['lat'] . ", lng:" . $listResort[$key]['lng'] . ", info:'" . addslashes($listResort[$key]['info_map']) . "'}";
                     ?>
                     <?php }?>
                 ]

@@ -56,7 +56,7 @@ class modelcauhoi
 
     public function layDanhSachCauHoiLimit($lang, $offset, $item)
     {
-        $sql = "SELECT cauhoithuonggap_ngonngu.cauhoi, cauhoithuonggap_ngonngu.cautraloi, cauhoithuonggap.id FROM cauhoithuonggap, cauhoithuonggap_ngonngu WHERE cauhoithuonggap.id = cauhoithuonggap_ngonngu.id_cauhoithuonggap AND ngonngu ='" . $lang . "' ORDER BY cauhoithuonggap.id ASC LIMIT " . $offset . "," . $item;
+        $sql = "SELECT cauhoithuonggap_ngonngu.cauhoi, cauhoithuonggap_ngonngu.cautraloi, cauhoithuonggap.id FROM cauhoithuonggap, cauhoithuonggap_ngonngu WHERE cauhoithuonggap.id = cauhoithuonggap_ngonngu.id_cauhoithuonggap AND ngonngu ='" . $lang . "' ORDER BY cauhoithuonggap.id DESC LIMIT " . $offset . "," . $item;
         $result = mysqli_query($this->db, $sql);
         if (!$result) {
             die("Error in query");

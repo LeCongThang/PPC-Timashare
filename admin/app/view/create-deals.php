@@ -230,6 +230,7 @@ $isUpdate = isset($this->params[0]);
         });
     });
 
+
     function readURL(input) {
         if (input.files && input.files[0]) {
             var reader = new FileReader();
@@ -255,7 +256,7 @@ $isUpdate = isset($this->params[0]);
             if (isset($list_resort)) {
                 foreach ($list_resort as $key => $resort) {
                     echo " {
-                id: '" . $resort['id'] . "',text: '" . $resort['name'] . "'},";
+                id: '" . $resort['id'] . "',text: '" . addslashes($resort['name']) . "'},";
                 }
             }
             ?>
