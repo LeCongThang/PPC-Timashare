@@ -41,7 +41,7 @@ class model
 
     public function laydanhsachslider()
     {
-        $sql = "SELECT slider.image_slider, slider.duongdan_slider, slider_ngonngu.noidung_slider, slider_ngonngu.tieude_slider, slider_ngonngu.mota_slider FROM slider,slider_ngonngu WHERE slider.id_slider = slider_ngonngu.id_slider AND slider_ngonngu.ngon_ngu = '" . $_SESSION['lang'] . "'";
+        $sql = "SELECT slider.image_slider, slider.duongdan_slider, slider_ngonngu.link_lang, slider_ngonngu.noidung_slider, slider_ngonngu.tieude_slider, slider_ngonngu.mota_slider FROM slider,slider_ngonngu WHERE slider.id_slider = slider_ngonngu.id_slider AND slider_ngonngu.ngon_ngu = '" . $_SESSION['lang'] . "'";
         $result = mysqli_query($this->db, $sql);
         if (!$result) {
             die("Error in laydanhsachslider");
@@ -133,7 +133,8 @@ class model
 
     public function xulydangnhap($tendangnhap, $matkhau)
     {
-
+        $tendangnhap = addslashes($tendangnhap);
+        $matkhau = addslashes($matkhau);
         $sql = "SELECT * FROM taikhoan WHERE tendangnhap='" . $tendangnhap . "' and id_vaitro = 1";
 
         if (!$kq = $this->db->query($sql))
@@ -148,18 +149,31 @@ class model
 
     public function themTaiKhoan($tendangnhap, $matkhau, $hoten, $diachi, $dienthoai, $loaithaikhoan)
     {
+        $tendangnhap = addslashes($tendangnhap);
+        $matkhau = addslashes($matkhau);
+        $hoten = addslashes($hoten);
+        $diachi = addslashes($diachi);
+        $dienthoai = addslashes($dienthoai);
+
         $sql = "insert into taikhoan values ('" . $tendangnhap . "','" . password_hash($matkhau, PASSWORD_DEFAULT) . "'," . $loaithaikhoan . ",'" . $hoten . "','" . $diachi . "','" . $dienthoai . "')";
         return mysqli_query($this->db, $sql);
     }
 
     public function themLienHe($ten, $dienthoai, $email, $tinnhan)
     {
+        $ten = addslashes($ten);
+        $dienthoai = addslashes($dienthoai);
+        $email = addslashes($email);
+        $tinnhan = addslashes($tinnhan);
+
         $sql = "insert into lienhe(ten_lienhe,sdt_lienhe,email_lienhe,conten_lienhe,trangthai) values ('" . $ten . "','" . $dienthoai . "','" . $email . "','" . $tinnhan . "',0)";
         return mysqli_query($this->db, $sql);
     }
 
     public function bookNow($id_user, $id_resort, $date_start, $date_end, $room, $adults, $childs, $note, $id_voucher)
     {
+        $note = addslashes($note);
+
         $resort_price = $this->getDetailsResort($id_resort)['price'];
         $exchange_rate = $this->getExchangeRates()['value'];
         if ($id_voucher != 0)
@@ -192,6 +206,9 @@ class model
 
     public function doimatkhau($tendangnhap, $matkhaucu, $matkhaumoi)
     {
+        $matkhaucu = addslashes($matkhaucu);
+        $matkhaumoi = addslashes($matkhaumoi);
+
         if ($this->xulydangnhap($tendangnhap, $matkhaucu)) {
             $sql = "UPDATE taikhoan SET password='" . password_hash($matkhaumoi, PASSWORD_DEFAULT) . "' WHERE tendangnhap = '" . $tendangnhap . "'";
             return mysqli_query($this->db, $sql);
@@ -1065,7 +1082,7 @@ class model
 
     public function getExchangeRates()
     {
-        $sql = "Select * FROM settings WHERE settings.key = 'exchange_rates'";
+        $sql = "Select * FROM settings WHERE settings.key = 'commission_fee'";
         $result = mysqli_query($this->db, $sql);
 
         if (!$result) {

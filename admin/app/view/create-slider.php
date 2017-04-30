@@ -59,13 +59,6 @@ $isUpdate = isset($this->params[0]);
                                 </div>
                                 <!-- up file anh -->
                             </div>
-                            <div class="form-group">
-                                <label for="noidung">Đường dẫn</label>
-                                <input placeholder="Đường dẫn" class="form-control" required
-                                       value="<?php echo $isUpdate ? $data_vi['duongdan_slider'] : "" ?>"
-                                       name="duongdan"
-                                       style="font-size:17px;font-family:verdana;text-align:justify;">
-                            </div>
                             <div class="bs-example bs-example-tabs" data-example-id="togglable-tabs">
                                 <ul class="nav nav-tabs" id="myTabs" role="tablist">
                                     <li role="presentation" class="active"><a href="#vi" id="vi-tab" role="tab"
@@ -82,6 +75,13 @@ $isUpdate = isset($this->params[0]);
                                 <div class="tab-content" id="myTabContent">
                                     <div class="tab-pane fade active in" role="tabpanel" id="vi"
                                          aria-labelledby="vi-tab">
+                                        <div class="form-group">
+                                            <label for="noidung">Đường dẫn</label>
+                                            <input placeholder="Đường dẫn" class="form-control" required
+                                                   value="<?php echo $isUpdate ? $data_vi['link_lang'] : "" ?>"
+                                                   name="link_vi"
+                                                   style="font-size:17px;font-family:verdana;text-align:justify;">
+                                        </div>
                                         <div class="form-group">
                                             <label for="noidung">Tiêu đề</label>
                                             <input placeholder="Tiêu đề" class="form-control"
@@ -106,6 +106,13 @@ $isUpdate = isset($this->params[0]);
                                     </div>
                                     <div class="tab-pane fade" role="tabpanel" id="en"
                                          aria-labelledby="en-tab">
+                                        <div class="form-group">
+                                            <label for="noidung">Đường dẫn</label>
+                                            <input placeholder="Đường dẫn" class="form-control" required
+                                                   value="<?php echo $isUpdate ? $data_vi['link_lang'] : "" ?>"
+                                                   name="link_en"
+                                                   style="font-size:17px;font-family:verdana;text-align:justify;">
+                                        </div>
                                         <div class="form-group">
                                             <label for="noidung">Tiêu đề</label>
                                             <input placeholder="Tiêu đề" class="form-control"

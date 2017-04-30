@@ -1,7 +1,7 @@
 <!DOCTYPE html>
 <html>
 <head>
-    <title>PPC TimeShare</title>
+    <title>PPC Timeshare</title>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1">
     <base href="<?= BASE_DIR ?>">
@@ -50,9 +50,9 @@
                             <dt>
                                 <?php
                                 if ($_SESSION['lang'] == "vi") {
-                                    echo '<a style="color: white;" href="#" onclick="return false;"><img class="flag"src="' . BASE_DIR . 'img/vietnamflag.jpg"alt=""/> Tiếng Việt <i class="fa fa-chevron-circle-down"></i></a>';
+                                    echo '<a id="flag_lang" style="color: white;" href="#" onclick="return false;"><img class="flag"src="' . BASE_DIR . 'img/vietnamflag.jpg"alt=""/> Tiếng Việt <i class="fa fa-chevron-circle-down"></i></a>';
                                 } else if ($_SESSION['lang'] == "en") {
-                                    echo '<a style="color: white;" href="#" onclick="return false;"><img class="flag"src="' . BASE_DIR . 'img/icon_flag_usa.png"alt=""/> English <i class="fa fa-chevron-circle-down"></i></a>';
+                                    echo '<a id="flag_lang" style="color: white;" href="#" onclick="return false;"><img class="flag"src="' . BASE_DIR . 'img/icon_flag_usa.png"alt=""/> English <i class="fa fa-chevron-circle-down"></i></a>';
                                 }
                                 ?>
                             </dt>
@@ -63,15 +63,15 @@
                                         $actual_link = (isset($_SERVER['HTTPS']) ? "https" : "http") . "://$_SERVER[HTTP_HOST]$_SERVER[REQUEST_URI]";
                                         if ($_SESSION['lang'] == "en") {
                                             $actual_link = str_replace("/en/","/vi/",$actual_link);
-                                            if($actual_link==BASE_URL)
-                                                $actual_link = BASE_URL."vi/";
+                                            if($actual_link==BASE_URL || $actual_link == BASE_URL_2)
+                                                $actual_link = $actual_link."vi/";
                                         } else if ($_SESSION['lang'] == "vi") {
                                             $actual_link = str_replace("/vi/","/en/",$actual_link);
                                         }
                                         if ($_SESSION['lang'] == "en") {
-                                            echo '<a style="color: white;" href="'.$actual_link.'" ><img style="margin-left: 5px;" class="flag"src="' . BASE_DIR . 'img/vietnamflag.jpg"alt=""/> Tiếng Việt</a>';
+                                            echo '<a id="flag_lang" style="color: white;" href="'.$actual_link.'" ><img style="margin-left: 5px;" class="flag"src="' . BASE_DIR . 'img/vietnamflag.jpg"alt=""/> Tiếng Việt</a>';
                                         } else if ($_SESSION['lang'] == "vi") {
-                                            echo '<a style="color: white;" href="'.$actual_link.'" ><img style="margin-left: 5px;" class="flag"src="' . BASE_DIR . 'img/icon_flag_usa.png"alt=""/> English</a>';
+                                            echo '<a id="flag_lang" style="color: white;" href="'.$actual_link.'" ><img style="margin-left: 5px;" class="flag"src="' . BASE_DIR . 'img/icon_flag_usa.png"alt=""/> English</a>';
                                         }
                                         ?>
                                     </li>
@@ -104,7 +104,7 @@
             </div>
             <div class="collapse navbar-collapse" id="navbar-brand-centered">
                 <ul class="nav navbar-nav" id="menuleft">
-                    <li><a id="trangChu" href="<?= BASE_URL . $_SESSION['lang'] ?>/controller/index">{TrangChu}</a></li>
+                    <li id="trangChu"><a  href="<?= BASE_URL . $_SESSION['lang'] ?>/controller/index">{TrangChu}</a></li>
                     <li><a href="<?= $_SESSION['lang'] ?>/#introduce">{GioiThieu}</a></li>
                     <li><a href="<?= $_SESSION['lang'] ?>/#khunghiduong">{KhuNghiDuong}</a></li>
                 </ul>
@@ -186,7 +186,7 @@
                     echo '<div class="carousel-caption"><div class = "row"> <div class="col-md offset-4 col-md-8">';
                     echo '</div></div>';
                 }
-                echo '<center><a href="' . $itemSlider['duongdan_slider'] . '" class="btnBookNow btn btn-default " id="disp" style="margin-bottom:10px;" >' . $itemSlider['noidung_slider'] . '</a></center></div></div>';
+                echo '<center><a href="' . $itemSlider['link_lang'] . '" class="btnBookNow btn btn-default " id="disp" style="margin-bottom:10px;" >' . $itemSlider['noidung_slider'] . '</a></center></div></div>';
     }
     ?>
     <!--        </div>-->

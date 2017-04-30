@@ -9,21 +9,21 @@
                     </div>
                 </div>
                 <div class="dc col-lg-4" style="margin-top: 80px">
-                    <p>Perfect Property Company Vietnam</p>
+                    <p>PPC Timeshare</p>
                     <p>Lầu 3 tòa nhà Jabes 1, 244 Cống Quỳnh,</p>
                     <p>P. Phạm Ngũ Lão, Quận 1, Tp HCM</p>
-                    <p>Hotline: 0988 084 009</p>
+                    <p>Hotline: +84903818687</p>
                 </div>
                 <div class="sdt col-lg-4" style="margin-top: 80px">
-                    <p>Perfect Property Company USA</p>
-                    <p>42 Broadwat Suit 12-233 New York, NY 10004</p>
-                    <p>Phone: 917 831 0562</p>
-                    <p>Email: info@perfectproperties.vn</p>
+                    <p>PPC Timeshare</p>
+                    <p>42 Broadway Suite 12-233 New York City, NY 10004</p>
+                    <p>Phone: +13479919999</p>
+                    <p>Email: info@ppctimeshare.com</p>
                 </div>
             </div>
         </div>
         <div class="row">
-            <div class="col-lg-offset-9" style="margin-bottom: 5%">
+            <div class="col-lg-offset-9" >
                 <div class="text-right">
                     <p>
                         <a href="#"><img src="<?= BASE_DIR ?>img/social1.png"></a>
@@ -33,6 +33,9 @@
                     </p>
                 </div>
             </div>
+        </div>
+        <div class="row">
+            <div class="col-md-6 col-md-offset-3"><p style="padding-left: 15px"><b>Copyright ©2016 PPC TimeShare. All Rights Reserved.</b></p></div>
         </div>
     </div>
 </footer>

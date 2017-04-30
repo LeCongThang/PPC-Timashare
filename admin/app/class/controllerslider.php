@@ -79,14 +79,15 @@ class controllerslider
         if (count($_POST) > 0) {
             $hinh = $this->uploadHinh();
             if ($hinh != null) {
-                $duong_dan = $_POST['duongdan'];
+                $link_vi = $_POST['link_vi'];
+                $link_en = $_POST['link_en'];
                 $tieu_de_vi = $_POST['tieude_vi'];
                 $noi_dung_vi = $_POST['noidung_vi'];
                 $mo_ta_vi = $_POST['mota_vi'];
                 $tieu_de_en = $_POST['tieude_en'];
                 $noi_dung_en = $_POST['noidung_en'];
                 $mo_ta_en = $_POST['mota_en'];
-                if ($this->controllerslider->create($tieu_de_vi, $noi_dung_vi, $mo_ta_vi, $tieu_de_en, $noi_dung_en, $mo_ta_en, $duong_dan, $hinh))
+                if ($this->controllerslider->create($tieu_de_vi, $noi_dung_vi, $mo_ta_vi, $tieu_de_en, $noi_dung_en, $mo_ta_en, $link_vi, $link_en, $hinh))
                     $this->errors[] = 'Tạo slider thành công!';
                 else
                     $this->errors[] = 'Lỗi! Tạo slider không thành công!';
@@ -110,14 +111,15 @@ class controllerslider
 
         if (count($_POST) > 0) {
             $hinh = $this->uploadHinh();
-            $duong_dan = $_POST['duongdan'];
+            $link_vi = $_POST['link_vi'];
+            $link_en = $_POST['link_en'];
             $tieu_de_vi = $_POST['tieude_vi'];
             $noi_dung_vi = $_POST['noidung_vi'];
             $mo_ta_vi = $_POST['mota_vi'];
             $tieu_de_en = $_POST['tieude_en'];
             $noi_dung_en = $_POST['noidung_en'];
             $mo_ta_en = $_POST['mota_en'];
-            if ($this->controllerslider->update($id, $tieu_de_vi, $noi_dung_vi, $mo_ta_vi, $tieu_de_en, $noi_dung_en, $mo_ta_en, $duong_dan, $hinh))
+            if ($this->controllerslider->update($id, $tieu_de_vi, $noi_dung_vi, $mo_ta_vi, $tieu_de_en, $noi_dung_en, $mo_ta_en, $link_vi, $link_en, $hinh))
                 $this->errors[] = 'Cập nhật slider thành công!';
             else
                 $this->errors[] = 'Lỗi! Cập nhật slider không thành công!';

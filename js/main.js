@@ -108,6 +108,14 @@ $(document).ready(function () {
                 $('#thongbaodoimatkhau').text("Please enter full information");
             return false;
         }
+        else if(matkhaucu==matkhaumoi)
+        {
+            if(lang == "vi")
+                $('#thongbaodoimatkhau').text("Mật khẩu mới và cũ không được giống nhau");
+            else
+                $('#thongbaodoimatkhau').text("Current and new passwords are not the same");
+            return false;
+        }
         else if (matkhaumoi != nhaplaimatkhaumoi) {
             if(lang == "vi")
                 $('#thongbaodoimatkhau').text("Mật khẩu nhập lại không trùng khớp");

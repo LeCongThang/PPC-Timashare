@@ -16,7 +16,7 @@ define("Gui","Gửi");
 define("CauHoiThuongGap","Câu hỏi thường gặp");
 define("CachSuDung","Cách sử dụng");
 
-define("WhatIsTimeShare","TimeShare LÀ GÌ?");
+define("WhatIsTimeShare","Timeshare LÀ GÌ?");
 define("TitleWhatIsTimeShare1","Timeshare là gì?");
 define("ContentWhatIsTimeShare1","Timeshare có nhiều dạng khác nhau, tuy nhiên với nhiều hình thức và quy mô thì Timeshare được hiểu một cách phổ biến nhất như là kỳ nghỉ chia sẻ phòng ốc bởi các chủ nhà với nhau.");
 define("TitleWhatIsTimeShare2","Khởi phát khi nào và ở đâu?");
